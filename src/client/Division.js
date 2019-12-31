@@ -58,13 +58,13 @@ class Division extends Component {
             <tr>
               <th>Place</th>
               <th>Player</th>
-              <th>MP</th>
-              <th>W</th>
-              <th>L</th>
-              <th>GF</th>
-              <th>GA</th>
-              <th>GD</th>
+              <th>Matches Played</th>
+              <th>Record</th>
+              <th>Games For</th>
+              <th>Games Against</th>
+              <th>Game Difference</th>
               <th>Points</th>
+              <th>Points/Match</th>
             </tr>
 
             {/* Make a row for each player, looping through the data */}
@@ -79,12 +79,12 @@ class Division extends Component {
                   <td>{index + 1}</td>
                   <td>{player.name}</td>
                   <td>{player.mp}</td>
-                  <td>{player.wins}</td>
-                  <td>{player.losses}</td>
+                  <td>{player.wins}  -  {player.losses}</td>
                   <td>{player.gf}</td>
                   <td>{player.ga}</td>
                   <td>{player.gd}</td>
-                  <td>{player.pts}</td>
+                  <td>{player.points}</td>
+                  <td>{(player.points / player.mp).toFixed(2)}</td>
                 </tr>
               );
             })}
