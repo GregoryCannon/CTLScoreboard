@@ -49,7 +49,7 @@ class Division extends Component {
           <tbody>
             {/* Title row */}
             <tr>
-              <th className="Division-title" colspan="9">
+              <th className="Division-title" colSpan="9">
                 CTL Division {this.props.data.divisionName} League Standings
               </th>
             </tr>
