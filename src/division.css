@@ -1,0 +1,26 @@
+table {
+  width: 500px;
+  background: lightblue;
+  border-spacing: 0px;
+  margin: 0px auto;
+}
+
+th {
+  font-weight: bold;
+  background: darkblue;
+  color: white;
+}
+
+th,
+td {
+  padding: 8px 20px;
+  text-align: right;
+}
+
+td {
+  text-transform: uppercase;
+}
+
+.Division-title {
+  text-align: center;
+}
