@@ -27,6 +27,26 @@
   }
 }
 
+.Content-container {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.Left-panel {
+  width: 70%;
+  padding: 0px 30px;
+}
+
+.Right-panel {
+  width: 30%;
+  background: lightgrey;
+  padding: 30px;
+}
+
 .Division {
   margin: 40px 0;
+}
+
+.Loading-text {
+  font-size: 24px;
 }

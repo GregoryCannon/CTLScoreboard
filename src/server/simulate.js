@@ -1,26 +1,99 @@
+const NUM_ITERATIONS = 10000;
 
+const util = require("./util");
 
-function getMatchSchedule(division, matchData){
-  const matchSchedule = [];
+/*
+Simulate one run through from the current moment in time to the end of the season.
+Code is similar to `computeRawStandings` in compute.js
+*/
+function simulateOneIteration(
+  division,
+  matchSchedule,
+  promoCounts,
+  relegationCounts
+) {
+  const cloneDivision = JSON.parse(JSON.stringify(division));
 
-  // Get all matchups
-  for (let i = 0; i < division.players.length; i++){
-    for (let j = 0; j < division.players.length; j++){
-      // Toss out matches vs. yourself or not in alphabetical order (to not double count)
-      if (division.players[i] >= division.players[j]){
-        continue;
-      }
-      
+  const divisionStandings = cloneDivision.standings;
+
+  // Loop through the match schedule and pick random winners
+  for (let i = 0; i < matchSchedule.length; i++) {
+    const playerName1 = matchSchedule[i].playerName1;
+    const playerName2 = matchSchedule[i].playerName2;
+
+    const randWinIndex = Math.floor(Math.random() * 2);
+    const winnerName = [playerName1, playerName2][randWinIndex];
+    const loserName = [playerName1, playerName2][1 - randWinIndex];
+    const winner = util.getPlayerData(divisionStandings, winnerName);
+    const loser = util.getPlayerData(divisionStandings, loserName);
+    const randLoserGames = Math.floor(Math.random() * 3);
+
+    // Update the four key source of truth properties (W,L,GF,GA) for each match
+    // console.log("winner:", winnerName, "current points:", winner.points)
+    // console.log("loser:", loserName, "current points:", loser.points)
+    winner["wins"] += 1;
+    winner["gf"] += 3;
+    winner["ga"] += randLoserGames;
+    winner["points"] += 4;
+    loser["losses"] += 1;
+    loser["gf"] += randLoserGames;
+    loser["ga"] += 3;
+    loser["points"] += randLoserGames;
+    // console.log("new winner points:", winner.points)
+    // console.log("new loser points:", loser.points)
+  }
+
+  // Loop through the standings by player and update the rest of the properties
+  // (MP, GD)
+  for (let p = 0; p < divisionStandings.length; p++) {
+    player = divisionStandings[p];
+    player.mp = player.wins + player.losses;
+    player.gd = player.gf - player.ga;
+  }
+
+  // Sort the simulated results by points, GD, etc.
+  divisionStandings.sort(util.compareRaw);
+
+  // Determine who gets promoted
+  const numPromo = division.numAutoPromo + division.numSoftPromo;
+  const numRelegate = division.numSoftRelegate + division.numHardRelegate;
+
+  // console.log("\n\n\nAbout to promo/relegate-------------" + JSON.stringify(divisionStandings, null, 3));
+
+  // Auto promo
+  for (let i = 0; i < division.numAutoPromo; i++) {
+    const promoedName = divisionStandings[i].name;
+    // console.log("Promo: " + promoedName);
+    promoCounts[promoedName] += 1;
+  }
+
+  // Soft promo gets a 50% chance of promoing
+  for (let i = division.numAutoPromo; i < numPromo; i++) {
+    const maybePromoedName = divisionStandings[i].name;
+    const coinFlip = Math.floor(Math.random() * 2);
+    if (coinFlip == 1) {
+      // console.log("Promo: " + promoedName);
+      promoCounts[maybePromoedName] += 1;
     }
   }
 
-  // Count how
+  // Auto relegate
+  const end = cloneDivision.players.length - 1;
+  for (let j = end; j > end - division.numHardRelegate; j--) {
+    const relegatedName = divisionStandings[j].name;
+    // console.log("Relegated: " + relegatedName);
+    relegationCounts[relegatedName] += 1;
+  }
 
-
-
-
-
-  return matchSchedule;
+  // Auto relegate
+  for (let j = end - division.numHardRelegate; j > end - numRelegate; j--) {
+    const maybeRelegatedName = divisionStandings[j].name;
+    const coinFlip = Math.floor(Math.random() * 2);
+    if (coinFlip == 1) {
+      // console.log("Relegated: " + relegatedName);
+      relegationCounts[maybeRelegatedName] += 1;
+    }
+  }
 }
 
 /* 
@@ -28,21 +101,44 @@ Main method to:
 - Simulate many games
 - Add a property to each player based on promo chance and relegation chance
 - Sort by promo chance and relegation chance */
-function runSimulation(division, matchData){
+function runSimulation(division, matchSchedule) {
   // Make result counter objects
-  const promoCounts = {}
-  const relegationCounts = {}
-  for (let p = 0; p < division.players.length; p++){
+  const promoCounts = {};
+  const relegationCounts = {};
+  for (let p = 0; p < division.players.length; p++) {
     promoCounts[division.players[p]] = 0;
     relegationCounts[division.players[p]] = 0;
   }
 
-  console.log("promoCounts", promoCounts, "\nrelegationCounts", relegationCounts);
+  // Simulate all the iterations
+  for (let iterCount = 0; iterCount < NUM_ITERATIONS; iterCount++) {
+    simulateOneIteration(
+      division,
+      matchSchedule,
+      promoCounts,
+      relegationCounts
+    );
+  }
 
-  // Get match schedule
-  const matchSchedule = getMatchSchedule
+  // Compute promotion chances
+  for (let p = 0; p < division.players.length; p++) {
+    const player = division.standings[p];
+    player.promoChance = (
+      (promoCounts[player.name] * 100) /
+      NUM_ITERATIONS
+    ).toFixed(0);
+    player.relegationChance = (
+      (relegationCounts[player.name] * 100) /
+      NUM_ITERATIONS
+    ).toFixed(0);
+  }
+
+  // Sort by the simulation data
+  division.standings.sort(util.compareSimulated);
+
+  return division;
 }
 
 module.exports = {
   runSimulation
-}
+};
