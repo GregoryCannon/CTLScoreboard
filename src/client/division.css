@@ -6,9 +6,9 @@ table {
 }
 
 th {
-  font-weight: bold;
-  background: darkblue;
-  color: white;
+  font-weight: 500;
+  background: #20325a;
+  color: white !important;
 }
 
 th,

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Division from "./Division";
+import ReportingPanel from "./ReportingPanel";
+import MatchHistory from "./MatchHistory";
 import logo from "./logo.svg";
 import "./App.css";
 const util = require("../server/util.js");
@@ -24,7 +26,6 @@ class App extends Component {
 
     request.onload = function() {
       // Begin accessing JSON data here
-      console.log(request.response);
       var newDivisionData = JSON.parse(request.response);
       this.setState({
         ...this.state,
@@ -50,19 +51,21 @@ class App extends Component {
         </div>
         <div className="Content-container">
           <div className="Left-panel">
-            <p className="Loading-text">{this.state.isFetching ? "Fetching data..." : ""}</p>
+            <p className="Loading-text">
+              {this.state.isFetching ? "Fetching data..." : ""}
+            </p>
             {this.state.divisionData.map((division, i) => {
               return <Division key={i} data={division} />;
             })}
           </div>
           <div className="Right-panel">
-            <div>Report Matches</div>
+            <div className="Reporting-panel-card">
+              <ReportingPanel />
+            </div>
 
-            <select>
-              <option>Division 1</option>
-              <option>Division 2</option>
-              <option>Division 3</option>
-              </select>
+            <div className="Match-history-card">
+              <MatchHistory matchList={util.sampleMatchData} />
+            </div>
           </div>
         </div>
       </div>

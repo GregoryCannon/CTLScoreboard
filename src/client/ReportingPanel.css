@@ -1,0 +1,54 @@
+.Report-matches-title {
+  height: 30px;
+  line-height: 30px;
+  padding: 10px;
+  background: #85878c;
+  color: white;
+  box-shadow: 0 2px 4px -2px black;
+}
+
+.Reporting-panel-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 16px;
+}
+
+select {
+  font-size: 16px;
+  text-align: center;
+}
+
+#submit-button {
+  padding: 15px 20px;
+  background: red;
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-top: 4px;
+  margin-bottom: 24px;
+}
+
+#submit-button :disabled {
+  background: #6a9eec;
+}
+
+.Win-count-input {
+  font-size: 20px;
+  width: 50px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.Status-text,
+.Error-text {
+  margin-top: 25px;
+}
+
+.Status-text {
+  color: black;
+}
+
+.Error-text {
+  color: red;
+}

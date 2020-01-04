@@ -88,149 +88,241 @@ const memeDivisionData = [
       }
     ]
   },
+  {
+    divisionName: "1.3m",
+    numWinner: 1,
+    numAutoPromo: 0,
+    numSoftPromo: 0,
+    numSoftRelegate: 1,
+    numHardRelegate: 1,
+    players: [
+      "adammts",
+      "mohammad",
+      "batfoy",
+      "hydrantdude",
+      "brodin",
+      "beastinshen",
+      "cheez_fish"
+    ],
+    standings: [
+      {
+        name: "greg",
+        mp: 12,
+        wins: 12,
+        losses: 0,
+        gf: 36,
+        ga: 1,
+        gd: 36,
+        points: 48
+      },
+      {
+        name: "jdmfx_",
+        mp: 2,
+        wins: 0,
+        losses: 2,
+        gf: 1,
+        ga: 6,
+        gd: -5,
+        points: 1
+      },
+      {
+        name: "jonas",
+        mp: 2,
+        wins: 0,
+        losses: 2,
+        gf: 0,
+        ga: 6,
+        gd: -6,
+        points: 0
+      },
+      {
+        name: "vst_koryan",
+        mp: 2,
+        wins: 0,
+        losses: 2,
+        gf: 0,
+        ga: 6,
+        gd: -6,
+        points: 0
+      },
+      {
+        name: "greentea",
+        mp: 2,
+        wins: 0,
+        losses: 2,
+        gf: 0,
+        ga: 6,
+        gd: -6,
+        points: 0
+      },
+      {
+        name: "boom_jeff",
+        mp: 2,
+        wins: 0,
+        losses: 2,
+        gf: 0,
+        ga: 6,
+        gd: -6,
+        points: 0
+      },
+      {
+        name: "buuuuuuuuco",
+        mp: 2,
+        wins: 0,
+        losses: 2,
+        gf: 0,
+        ga: 6,
+        gd: -6,
+        points: 0
+      }
+    ]
+  }
 ];
 
-
-
-
-
-
-// const matchData = [
-//   {
-//     division: "2",
-//     winner: "phamtom",
-//     loser: "moodeuce",
-//     winner_games: 3,
-//     loser_games: 0
-//   },
-//   {
-//     division: "2",
-//     winner: "moodeuce",
-//     loser: "phamtom",
-//     winner_games: 3,
-//     loser_games: 2
-//   },
-//   {
-//     division: "2",
-//     winner: "moodeuce",
-//     loser: "galoomba",
-//     winner_games: 3,
-//     loser_games: 1
-//   },
-//   {
-//     division: "2",
-//     winner: "phamtom",
-//     loser: "b14nk",
-//     winner_games: 3,
-//     loser_games: 0
-//   },
-//   {
-//     division: "2",
-//     winner: "tristop",
-//     loser: "b14nk",
-//     winner_games: 3,
-//     loser_games: 0
-//   },
-//   {
-//     division: "2",
-//     winner: "jakegames2",
-//     loser: "b14nk",
-//     winner_games: 3,
-//     loser_games: 0
-//   },
-//   {
-//     division: "2",
-//     winner: "moodeuce",
-//     loser: "b14nk",
-//     winner_games: 3,
-//     loser_games: 0
-//   },
-//   {
-//     division: "2",
-//     winner: "galoomba",
-//     loser: "b14nk",
-//     winner_games: 3,
-//     loser_games: 0
-//   },
-//   /* Artificial example to confirm GD can break ties
-//     adammts - 4 pts, GD 1
-//     mohammad - 4 pts, GD 2
-//     */
-//   {
-//     division: "1",
-//     winner: "adammts",
-//     loser: "cheez_fish",
-//     winner_games: 3,
-//     loser_games: 2
-//   },
-//   {
-//     division: "1",
-//     winner: "mohammad",
-//     loser: "cheez_fish",
-//     winner_games: 3,
-//     loser_games: 1
-//   },
-//   /* Artificial example to confirm MW can break ties
-//      batfoy: 3-0 2-3 2-3 3-2,  12 pts, GD 2, 2 MW
-//      hydrant: 3-2 3-2 0-3 3-0,  12 pts, GD 2, 3 MW
-//      */
-//   {
-//     division: "1",
-//     winner: "batfoy",
-//     loser: "cheez_fish",
-//     winner_games: 3,
-//     loser_games: 0
-//   },
-//   {
-//     division: "1",
-//     winner: "beastinshen",
-//     loser: "batfoy",
-//     winner_games: 3,
-//     loser_games: 2
-//   },
-//   {
-//     division: "1",
-//     winner: "brodin",
-//     loser: "batfoy",
-//     winner_games: 3,
-//     loser_games: 2
-//   },
-//   {
-//     division: "1",
-//     winner: "batfoy",
-//     loser: "cheez_fish",
-//     winner_games: 3,
-//     loser_games: 2
-//   },
-//   {
-//     division: "1",
-//     winner: "hydrantdude",
-//     loser: "cheez_fish",
-//     winner_games: 3,
-//     loser_games: 2
-//   },
-//   {
-//     division: "1",
-//     winner: "hydrantdude",
-//     loser: "beastinshen",
-//     winner_games: 3,
-//     loser_games: 2
-//   },
-//   {
-//     division: "1",
-//     winner: "brodin",
-//     loser: "hydrantdude",
-//     winner_games: 3,
-//     loser_games: 0
-//   },
-//   {
-//     division: "1",
-//     winner: "hydrantdude",
-//     loser: "cheez_fish",
-//     winner_games: 3,
-//     loser_games: 0
-//   }
-// ];
+const sampleMatchData = [
+  {
+    division: "2",
+    winner: "phamtom",
+    loser: "moodeuce",
+    winner_games: 3,
+    loser_games: 0,
+    winner_home: true
+  },
+  {
+    division: "2",
+    winner: "moodeuce",
+    loser: "phamtom",
+    winner_games: 3,
+    loser_games: 2,
+    winner_home: false
+  },
+  {
+    division: "2",
+    winner: "moodeuce",
+    loser: "galoomba",
+    winner_games: 3,
+    loser_games: 1,
+    winner_home: true
+  },
+  {
+    division: "2",
+    winner: "phamtom",
+    loser: "b14nk",
+    winner_games: 3,
+    loser_games: 0,
+    winner_home: true
+  },
+  {
+    division: "2",
+    winner: "tristop",
+    loser: "b14nk",
+    winner_games: 3,
+    loser_games: 0,
+    winner_home: false
+  },
+  {
+    division: "2",
+    winner: "jakegames2",
+    loser: "b14nk",
+    winner_games: 3,
+    loser_games: 0,
+    winner_home: false
+  },
+  {
+    division: "2",
+    winner: "moodeuce",
+    loser: "b14nk",
+    winner_games: 3,
+    loser_games: 0,
+    winner_home: true
+  },
+  {
+    division: "2",
+    winner: "galoomba",
+    loser: "b14nk",
+    winner_games: 3,
+    loser_games: 0,
+    winner_home: false
+  },
+  /* Artificial example to confirm GD can break ties
+    adammts - 4 pts, GD 1
+    mohammad - 4 pts, GD 2
+    */
+  {
+    division: "1",
+    winner: "adammts",
+    loser: "cheez_fish",
+    winner_games: 3,
+    loser_games: 2
+  },
+  {
+    division: "1",
+    winner: "mohammad",
+    loser: "cheez_fish",
+    winner_games: 3,
+    loser_games: 1
+  },
+  /* Artificial example to confirm MW can break ties
+     batfoy: 3-0 2-3 2-3 3-2,  12 pts, GD 2, 2 MW
+     hydrant: 3-2 3-2 0-3 3-0,  12 pts, GD 2, 3 MW
+     */
+  {
+    division: "1",
+    winner: "batfoy",
+    loser: "cheez_fish",
+    winner_games: 3,
+    loser_games: 0
+  },
+  {
+    division: "1",
+    winner: "beastinshen",
+    loser: "batfoy",
+    winner_games: 3,
+    loser_games: 2
+  },
+  {
+    division: "1",
+    winner: "brodin",
+    loser: "batfoy",
+    winner_games: 3,
+    loser_games: 2
+  },
+  {
+    division: "1",
+    winner: "batfoy",
+    loser: "cheez_fish",
+    winner_games: 3,
+    loser_games: 2
+  },
+  {
+    division: "1",
+    winner: "hydrantdude",
+    loser: "cheez_fish",
+    winner_games: 3,
+    loser_games: 2
+  },
+  {
+    division: "1",
+    winner: "hydrantdude",
+    loser: "beastinshen",
+    winner_games: 3,
+    loser_games: 2
+  },
+  {
+    division: "1",
+    winner: "brodin",
+    loser: "hydrantdude",
+    winner_games: 3,
+    loser_games: 0
+  },
+  {
+    division: "1",
+    winner: "hydrantdude",
+    loser: "cheez_fish",
+    winner_games: 3,
+    loser_games: 0
+  }
+];
 
 function countMatchesPlayed(playerName1, playerName2, divMatches) {
   let count = 0;
@@ -329,6 +421,7 @@ function getPlayerData(list, playerName) {
 
 module.exports = {
   memeDivisionData,
+  sampleMatchData,
   compareRaw,
   compareSimulated,
   getPlayerData,
