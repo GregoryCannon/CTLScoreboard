@@ -7,7 +7,17 @@
   box-shadow: 0 2px 4px -2px black;
 }
 
-.Reporting-panel-container {
+.Report-matches-form {
+  padding: 0 10px;
+}
+
+.Match-reporting-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.Match-reporting-subpanel {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,13 +34,25 @@ select {
   background: red;
   color: white;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 1.4vw;
   margin-top: 4px;
   margin-bottom: 24px;
 }
 
 #submit-button :disabled {
   background: #6a9eec;
+}
+
+.Select-reporting-division {
+  margin: 25px 0;
+}
+
+.Division-picker {
+  font-size: 16px;
+}
+
+.Defeated-text {
+  margin: 0px 4px;
 }
 
 .Win-count-input {

@@ -1,8 +1,8 @@
 table {
-  width: 480px;
   background: lightblue;
   border-spacing: 0px;
   margin: 0px auto;
+  text-align: center;
 }
 
 th {
@@ -13,8 +13,7 @@ th {
 
 th,
 td {
-  padding: 8px 12px;
-  text-align: right;
+  padding: 8px 4px;
 }
 
 td {
@@ -23,4 +22,8 @@ td {
 
 .Division-title {
   text-align: center;
+}
+
+.Extra-padding-left {
+  padding-left: 10px;
 }

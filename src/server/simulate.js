@@ -67,7 +67,7 @@ function simulateOneIteration(
     promoCounts[promoedName] += 1;
   }
 
-  // Soft promo gets a 50% chance of promoing
+  // Soft promo gets a 50% chance of promoing (I know it's oversimplifying but whatever)
   for (let i = division.numAutoPromo; i < numPromo; i++) {
     const maybePromoedName = divisionStandings[i].name;
     const coinFlip = Math.floor(Math.random() * 2);
@@ -85,7 +85,7 @@ function simulateOneIteration(
     relegationCounts[relegatedName] += 1;
   }
 
-  // Auto relegate
+  // Soft relegate gets 50% chance of relegating
   for (let j = end - division.numHardRelegate; j > end - numRelegate; j--) {
     const maybeRelegatedName = divisionStandings[j].name;
     const coinFlip = Math.floor(Math.random() * 2);

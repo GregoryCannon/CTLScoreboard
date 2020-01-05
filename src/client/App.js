@@ -10,36 +10,52 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      isFetching: false,
-      divisionData: util.memeDivisionData
+      isFetchingStandings: false,
+      isFetchingMatches: false,
+      divisionData: util.memeDivisionData,
+      matchData: util.sampleMatchData
     };
   }
 
-  fetchData() {
-    this.setState({ ...this.state, isFetching: true });
+  fetchStandings() {
+    this.setState({ ...this.state, isFetchingStandings: true });
 
-    // make api call
     var request = new XMLHttpRequest();
+    request.open("GET", util.getApiUrl("standings"), true);
 
-    // Open a new connection, using the GET request on the URL endpoint
-    request.open("GET", "http://localhost:8080/match-data", true);
-
+    // Callback for result
     request.onload = function() {
-      // Begin accessing JSON data here
       var newDivisionData = JSON.parse(request.response);
       this.setState({
         ...this.state,
         divisionData: newDivisionData,
-        isFetching: false
+        isFetchingStandings: false
       });
     }.bind(this);
 
-    // Send request
+    request.send();
+  }
+
+  fetchMatches() {
+    var request = new XMLHttpRequest();
+    request.open("GET", util.getApiUrl("match-data"), true);
+
+    // Callback for result
+    request.onload = function() {
+      var newMatchData = JSON.parse(request.response);
+      this.setState({
+        ...this.state,
+        matchData: newMatchData,
+        isFetchingMatches: false
+      });
+    }.bind(this);
+
     request.send();
   }
 
   componentDidMount() {
-    this.fetchData();
+    this.fetchStandings();
+    this.fetchMatches();
   }
 
   render() {
@@ -52,7 +68,9 @@ class App extends Component {
         <div className="Content-container">
           <div className="Left-panel">
             <p className="Loading-text">
-              {this.state.isFetching ? "Fetching data..." : ""}
+              {this.state.isFetchingStandings || this.state.isFetchingMatches
+                ? "Fetching data..."
+                : ""}
             </p>
             {this.state.divisionData.map((division, i) => {
               return <Division key={i} data={division} />;
@@ -64,9 +82,14 @@ class App extends Component {
             </div>
 
             <div className="Match-history-card">
-              <MatchHistory matchList={util.sampleMatchData} />
+              <MatchHistory matchList={this.state.matchData} />
             </div>
           </div>
+        </div>
+
+        <div className="Attribution-text">
+          Website developed by Greg Cannon. Source code available on{" "}
+          <a href="https://github.com/GregoryCannon/CTLScoreboard">Github</a>.
         </div>
       </div>
     );

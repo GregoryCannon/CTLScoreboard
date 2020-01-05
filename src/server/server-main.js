@@ -11,8 +11,8 @@ const util = require("./util");
 
 // Database config
 var monk = require("monk");
-var db = monk("localhost:27017/ctl-matches");
-
+var db = monk(process.env.MONGODB_URI || "localhost:27017/ctl-matches");
+var ObjectID = db.helper.id.ObjectID;
 console.log("Server is running");
 
 // Process the raw DB match data into standings
@@ -38,16 +38,11 @@ app.use(function(req, res, next) {
   next();
 });
 
-// Main GET match data request
-app.get("/match-data", function(req, res) {
-  // Get matches from db
-  const matchListDb = req.db.get("matchList");
-  matchListDb.find({}, {}, function(e, matches) {
-    console.log("matches", matches);
-    // Process and return
-    return res.send(getStandings(matches));
-  });
-});
+/*
+ -------------------
+ Helper methods
+ -------------------
+ */
 
 function checkMatchAlreadyExists(matches, winner, loser, winnerHome) {
   for (let i = 0; i < matches.length; i++) {
@@ -63,6 +58,44 @@ function checkMatchAlreadyExists(matches, winner, loser, winnerHome) {
   return false;
 }
 
+function getMatchAlreadyExistsErrorMessage(winner, loser, winnerHome) {
+  return (
+    "A match has already been reported between " +
+    winner +
+    " and " +
+    loser +
+    " (with " +
+    (winnerHome ? winner : loser) +
+    " at home)"
+  );
+}
+
+/* 
+  ----------
+  Main request handlers
+  ----------
+  */
+
+// Main GET standings request
+app.get("/standings", function(req, res) {
+  // Get matches from db
+  const matchListDb = req.db.get("matchList");
+  matchListDb.find({}, {}, function(e, matches) {
+    console.log("matches", matches);
+    // Process and return
+    return res.send(getStandings(matches));
+  });
+});
+
+// Main GET match data request
+app.get("/match-data", function(req, res) {
+  // Get matches from db
+  const matchListDb = req.db.get("matchList");
+  matchListDb.find({}, {}, function(e, matches) {
+    return res.send(matches);
+  });
+});
+
 // Main POST request to report a match
 app.post("/match-data", function(req, res) {
   console.log("Received request: ", req.body);
@@ -73,19 +106,14 @@ app.post("/match-data", function(req, res) {
     const winner = req.body.winner;
     const loser = req.body.loser;
     const winnerHome = req.body.winner_home;
-    // const matchesParsed = JSON.parse(matches);
     if (checkMatchAlreadyExists(matches, winner, loser, winnerHome)) {
-      const errMessage =
-        "A match has already been reported between " +
-        winner +
-        " and " +
-        loser +
-        " (with " +
-        (winnerHome ? winner : loser) +
-        " at home)";
       res.send({
         didSucceed: false,
-        errorMessage: errMessage
+        errorMessage: getMatchAlreadyExistsErrorMessage(
+          winner,
+          loser,
+          winnerHome
+        )
       });
     } else {
       // Continue with the post
@@ -96,15 +124,41 @@ app.post("/match-data", function(req, res) {
             didSucceed: false,
             errorMessage: err
           });
-          return;
         } else {
           // And forward to success page
           res.send({
             didSucceed: true,
             errorMessage: ""
           });
-          return;
         }
+      });
+    }
+  });
+});
+
+app.delete("/match-data", function(req, res) {
+  // Continue with the post
+  console.log("Received delete request:", req.body);
+  const matchListDb = req.db.get("matchList");
+  if (req.body === {}) {
+    res.send({
+      didSucceed: false,
+      errorMessage:
+        "The server didn't receive any data on which match to delete"
+    });
+  }
+  matchListDb.remove(req.body, function(err, doc) {
+    if (err) {
+      // If it failed, return error
+      res.send({
+        didSucceed: false,
+        errorMessage: err
+      });
+    } else {
+      // And forward to success page
+      res.send({
+        didSucceed: true,
+        errorMessage: ""
       });
     }
   });

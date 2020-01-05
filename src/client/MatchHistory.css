@@ -14,18 +14,36 @@
 }
 
 .Reported-match {
-  padding: 4px 40px 4px 8px;
+  padding-right: 10px;
   position: relative;
   border: 1px solid #ccc;
+  border-bottom: 0;
   text-align: left;
   display: flex;
   flex-flow: row nowrap;
 }
 
-.Trash-can {
-  position: absolute;
-  right: 8px;
-  top: 4px;
+.Match-division {
+  padding: 4px 8px;
+  border-right: 1px solid #ccc;
+}
+
+.Match-text {
+  flex: 1;
+  padding: 4px
+}
+
+.Delete-match-button {
+  margin: auto 0;
+  top: 6px;
+}
+
+.Delete-match-button i {
+  color: #929292;
+}
+
+.Delete-match-button i:hover {
+  color: #b7b7b7;
 }
 
 .Scrollable-list {

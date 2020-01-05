@@ -40,6 +40,14 @@ class Division extends Component {
     }
     return colors;
   }
+
+  renderPercentage(percentChance) {
+    if (percentChance === undefined) {
+      return "-";
+    }
+    return percentChance + "%";
+  }
+
   render() {
     const rowColors = this.getRowColors(this.props.data);
 
@@ -56,7 +64,7 @@ class Division extends Component {
 
             {/* Row headings */}
             <tr>
-              <th>Place</th>
+              <th className="Extra-padding-left">Place</th>
               <th>Player</th>
               <th>Matches Played</th>
               <th>Match Record</th>
@@ -76,7 +84,7 @@ class Division extends Component {
                     backgroundColor: rowColors[index]
                   }}
                 >
-                  <td>{index + 1}</td>
+                  <td className="Extra-padding-left">{index + 1}</td>
                   <td>{player.name}</td>
                   <td>{player.mp}</td>
                   <td>
@@ -87,8 +95,8 @@ class Division extends Component {
                   </td>
                   <td>{player.gd}</td>
                   <td>{player.points}</td>
-                  <td>{player.promoChance}%</td>
-                  <td>{player.relegationChance}%</td>
+                  <td>{this.renderPercentage(player.promoChance)}</td>
+                  <td>{this.renderPercentage(player.relegationChance)}</td>
                 </tr>
               );
             })}

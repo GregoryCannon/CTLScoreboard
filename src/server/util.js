@@ -1,3 +1,5 @@
+//const ObjectId = require("mongodb").ObjectId;
+
 const memeDivisionData = [
   {
     divisionName: "1.3m",
@@ -178,6 +180,179 @@ const memeDivisionData = [
     ]
   }
 ];
+
+// const sampleMatchData = [
+//   {
+//     _id: ObjectId("5e0cf031963a5bb7c0c617b5"),
+//     division: "2",
+//     winner: "phamtom",
+//     loser: "moodeuce",
+//     winner_games: 3,
+//     loser_games: 0
+//   },
+//   {
+//     _id: ObjectId("5e0cf07e963a5bb7c0c617b6"),
+//     division: "2",
+//     winner: "moodeuce",
+//     loser: "phamtom",
+//     winner_games: 3,
+//     loser_games: 2
+//   },
+//   {
+//     _id: ObjectId("5e0cf07e963a5bb7c0c617b7"),
+//     division: "2",
+//     winner: "moodeuce",
+//     loser: "galoomba",
+//     winner_games: 3,
+//     loser_games: 1
+//   },
+//   {
+//     _id: ObjectId("5e0cf07e963a5bb7c0c617b8"),
+//     division: "2",
+//     winner: "phamtom",
+//     loser: "b14nk",
+//     winner_games: 3,
+//     loser_games: 0
+//   },
+//   {
+//     _id: ObjectId("5e0cf07e963a5bb7c0c617b9"),
+//     division: "2",
+//     winner: "tristop",
+//     loser: "b14nk",
+//     winner_games: 3,
+//     loser_games: 0
+//   },
+//   {
+//     _id: ObjectId("5e0cf07e963a5bb7c0c617ba"),
+//     division: "2",
+//     winner: "jakegames2",
+//     loser: "b14nk",
+//     winner_games: 3,
+//     loser_games: 0
+//   },
+//   {
+//     _id: ObjectId("5e0cf07e963a5bb7c0c617bb"),
+//     division: "2",
+//     winner: "moodeuce",
+//     loser: "b14nk",
+//     winner_games: 3,
+//     loser_games: 0
+//   },
+//   {
+//     _id: ObjectId("5e0cf07e963a5bb7c0c617bc"),
+//     division: "2",
+//     winner: "galoomba",
+//     loser: "b14nk",
+//     winner_games: 3,
+//     loser_games: 0
+//   },
+//   /* Artificial example to confirm GD can break ties
+//     adammts - 4 pts, GD 1
+//     mohammad - 4 pts, GD 2
+//     */
+//   {
+//     _id: ObjectId("5e0cf07e963a5bb7c0c617bd"),
+//     division: "1",
+//     winner: "adammts",
+//     loser: "cheez_fish",
+//     winner_games: 3,
+//     loser_games: 2
+//   },
+//   {
+//     _id: ObjectId("5e0cf07e963a5bb7c0c617be"),
+//     division: "1",
+//     winner: "mohammad",
+//     loser: "cheez_fish",
+//     winner_games: 3,
+//     loser_games: 1
+//   },
+//    Artificial example to confirm MW can break ties
+//      batfoy: 3-0 2-3 2-3 3-2,  12 pts, GD 2, 2 MW
+//      hydrant: 3-2 3-2 0-3 3-0,  12 pts, GD 2, 3 MW
+
+//   {
+//     _id: ObjectId("5e0cf07e963a5bb7c0c617bf"),
+//     division: "1",
+//     winner: "batfoy",
+//     loser: "cheez_fish",
+//     winner_games: 3,
+//     loser_games: 0
+//   },
+//   {
+//     _id: ObjectId("5e0cf07e963a5bb7c0c617c0"),
+//     division: "1",
+//     winner: "beastinshen",
+//     loser: "batfoy",
+//     winner_games: 3,
+//     loser_games: 2
+//   },
+//   {
+//     _id: ObjectId("5e0cf07e963a5bb7c0c617c1"),
+//     division: "1",
+//     winner: "brodin",
+//     loser: "batfoy",
+//     winner_games: 3,
+//     loser_games: 2
+//   },
+//   {
+//     _id: ObjectId("5e0cf07e963a5bb7c0c617c2"),
+//     division: "1",
+//     winner: "batfoy",
+//     loser: "cheez_fish",
+//     winner_games: 3,
+//     loser_games: 2
+//   },
+//   {
+//     _id: ObjectId("5e0cf07e963a5bb7c0c617c3"),
+//     division: "1",
+//     winner: "hydrantdude",
+//     loser: "cheez_fish",
+//     winner_games: 3,
+//     loser_games: 2
+//   },
+//   {
+//     _id: ObjectId("5e0cf07e963a5bb7c0c617c4"),
+//     division: "1",
+//     winner: "hydrantdude",
+//     loser: "beastinshen",
+//     winner_games: 3,
+//     loser_games: 2
+//   },
+//   {
+//     _id: ObjectId("5e0cf07e963a5bb7c0c617c5"),
+//     division: "1",
+//     winner: "brodin",
+//     loser: "hydrantdude",
+//     winner_games: 3,
+//     loser_games: 0
+//   },
+//   {
+//     _id: ObjectId("5e0cf07e963a5bb7c0c617c6"),
+//     division: "1",
+//     winner: "hydrantdude",
+//     loser: "cheez_fish",
+//     winner_games: 3,
+//     loser_games: 0
+//   },
+//   {
+//     _id: ObjectId("5e0e949a03d98f13ec3e2dc7"),
+//     division: "1",
+//     winner: "brodin",
+//     loser: "hydrantdude",
+//     winner_games: 3,
+//     loser_games: 2,
+//     winner_home: true
+//   },
+//   {
+//     _id: ObjectId("5e0e94c103d98f13ec3e2dc8"),
+//     division: "1",
+//     winner: "brodin",
+//     loser: "hydrantdude",
+//     winner_games: 3,
+//     loser_games: 1,
+//     winner_home: true
+//   }
+// ];
 
 const sampleMatchData = [
   {
@@ -419,11 +594,16 @@ function getPlayerData(list, playerName) {
   console.log("Unable to find player ", playerName, "in list:\n", list);
 }
 
+function getApiUrl(suffix) {
+  return (process.env.API_URL || "http://localhost:8080") + "/" + suffix;
+}
+
 module.exports = {
   memeDivisionData,
   sampleMatchData,
   compareRaw,
   compareSimulated,
   getPlayerData,
-  getMatchSchedule
+  getMatchSchedule,
+  getApiUrl
 };

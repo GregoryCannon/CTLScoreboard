@@ -1,6 +1,11 @@
 .App {
   text-align: center;
   font-color: black;
+  font-size: 1.25vw;
+}
+
+.App .Report-matches-form * {
+  font-size: 1.25vw;
 }
 
 .App-logo {
@@ -55,24 +60,7 @@
 
 .Match-history-card {
   margin-top: 20px;
-}
-
-.Select-reporting-division {
-  margin: 25px 0;
-}
-
-.Division-picker {
-  font-size: 16px;
-}
-
-.Defeated-text {
-  margin: 0px 4px;
-}
-
-.Match-reporting-container {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
+  margin-bottom: 10px;
 }
 
 .Division {
@@ -81,4 +69,14 @@
 
 .Loading-text {
   font-size: 24px;
+}
+
+.Attribution-text {
+  font-size: 1.1vw;
+  margin-bottom: 4px;
+  color: #444;
+}
+
+.Attribution-text a {
+  color: grey;
 }
