@@ -10,9 +10,15 @@ const simulate = require("./simulate");
 const util = require("./util");
 
 // Database config
-var monk = require("monk");
-var db = monk(process.env.MONGODB_URI || "localhost:27017/ctl-matches");
+const monk = require("monk");
+const db = monk(process.env.MONGODB_URI || "localhost:27017/ctl-matches");
+const matchListDb = db.get("matchList");
 var ObjectID = db.helper.id.ObjectID;
+
+// Create a logger
+const logger = require("simple-node-logger").createSimpleFileLogger(
+  "project.log"
+);
 
 // Make our db accessible to our router
 app.use(function(req, res, next) {
@@ -36,8 +42,7 @@ function invalidateCache() {
 function refreshCachedStandings(callback) {
   console.log("-- Fetching matches from database...");
   // Get matches from db
-  const matchListDb = db.get("matchList");
-  matchListDb.find({}, {}, function(e, matches) {
+  getMatches(function(e, matches) {
     console.log("-- Calculating standings...");
     // Process and save in cache
     cachedFinalStandings = getStandings(matches);
@@ -46,13 +51,15 @@ function refreshCachedStandings(callback) {
   });
 }
 
-// Calculate the standings once on startup
-
 /*
  -------------------
  Helper methods
  -------------------
  */
+
+function getMatches(callback) {
+  matchListDb.find({ valid: true }, callback);
+}
 
 // Process the raw DB match data into standings
 function getStandings(matchData) {
@@ -112,6 +119,7 @@ function getMatchAlreadyExistsErrorMessage(winner, loser, winnerHome) {
 
 // Main GET standings request
 app.get("/standings", function(req, res) {
+  logger.info("--- Get standings request: ", req.body);
   if (cachedFinalStandings != null) {
     console.log("Sending response with cached standings");
     return res.send(cachedFinalStandings);
@@ -126,24 +134,28 @@ app.get("/standings", function(req, res) {
 
 // Main GET match data request
 app.get("/match-data", function(req, res) {
+  logger.info("--- Get match data request: ", req.body);
   // Get matches from db
-  const matchListDb = req.db.get("matchList");
-  matchListDb.find({}, {}, function(e, matches) {
+  getMatches(function(e, matches) {
     return res.send(matches);
   });
 });
 
 // Main POST request to report a match
 app.post("/match-data", function(req, res) {
+  logger.info("--- Post match request: ", req.body);
   console.log("Received request: ", req.body);
 
   // Check that the match hasn't already been reported
-  const matchListDb = req.db.get("matchList");
-  matchListDb.find({}, {}, function(e, matches) {
+  getMatches(function(e, matches) {
     const winner = req.body.winner;
     const loser = req.body.loser;
     const winnerHome = req.body.winner_home;
     if (checkMatchAlreadyExists(matches, winner, loser, winnerHome)) {
+      logger.info(
+        "Post match failed - match already exists\nRequest: ",
+        req.body
+      );
       res.send({
         didSucceed: false,
         errorMessage: getMatchAlreadyExistsErrorMessage(
@@ -154,15 +166,24 @@ app.post("/match-data", function(req, res) {
       });
     } else {
       // Continue with the post
-      matchListDb.insert(req.body, function(err, doc) {
+      const newMatchData = { ...req.body, valid: true };
+      matchListDb.insert(newMatchData, function(err, doc) {
         if (err) {
+          logger.error(err);
           // If it failed, return error
+          logger.info(
+            "Post match failed\nRequest: ",
+            req.body,
+            "\nError: ",
+            err
+          );
           res.send({
             didSucceed: false,
             errorMessage: err
           });
         } else {
           // Otherwise, notify of success
+          logger.info("Post match succeeded\nRequest: ", req.body);
           invalidateCache();
           res.send({
             didSucceed: true,
@@ -175,24 +196,32 @@ app.post("/match-data", function(req, res) {
 });
 
 app.delete("/match-data", function(req, res) {
+  logger.info("--- Delete match request: ", req.body);
   console.log("Received delete request:", req.body);
-  const matchListDb = req.db.get("matchList");
   if (req.body === {}) {
+    logger.info("Delete match failed — empty body\nRequest: ", req.body);
     res.send({
       didSucceed: false,
       errorMessage:
         "The server didn't receive any data on which match to delete"
     });
   }
-  matchListDb.remove(req.body, function(err, doc) {
+
+  const idOnlyBody = { _id: req.body._id };
+  matchListDb.update(idOnlyBody, { $set: { valid: false } }, function(
+    err,
+    doc
+  ) {
     if (err) {
       // If it failed, return error
+      logger.info("Delete match failed\nRequest:", req.body, "\nError: ", err);
       res.send({
         didSucceed: false,
         errorMessage: err
       });
     } else {
       // Otherwise, notify success
+      logger.info("Delete match succeeded (invalidated)\nRequest: ", req.body);
       invalidateCache();
       res.send({
         didSucceed: true,
@@ -200,9 +229,29 @@ app.delete("/match-data", function(req, res) {
       });
     }
   });
+
+  // matchListDb.remove(req.body, function(err, doc) {
+  //   if (err) {
+  //     // If it failed, return error
+  //     logger.info("Delete match failed\nRequest:", req.body, "\nError: ", err);
+  //     res.send({
+  //       didSucceed: false,
+  //       errorMessage: err
+  //     });
+  //   } else {
+  //     // Otherwise, notify success
+  //     logger.info("Delete match succeeded\nRequest: ", req.body, "\nDeleted match: ", doc);
+  //     invalidateCache();
+  //     res.send({
+  //       didSucceed: true,
+  //       errorMessage: ""
+  //     });
+  //   }
+  // });
 });
 
 app.get("/", function(req, res) {
+  logger.info("--- Get frontend request");
   res.sendFile(path.join(__dirname, "../../build", "index.html"));
 });
 

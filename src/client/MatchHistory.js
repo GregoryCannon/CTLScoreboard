@@ -21,7 +21,7 @@ class MatchHistory extends Component {
     return matchMoment.format("HH:MM MMM DD, YYYY");
   }
 
-  makeDeleteRequest(idToDelete) {
+  makeDeleteRequest(matchData) {
     var request = new XMLHttpRequest();
     request.open("DELETE", util.getApiUrl("match-data", true));
     request.setRequestHeader("Content-type", "application/json");
@@ -39,9 +39,7 @@ class MatchHistory extends Component {
     }.bind(this);
 
     // Send request with the id of the match to delete
-    const requestBody = {
-      _id: idToDelete
-    };
+    const requestBody = matchData;
     console.log("Sending request with body:", requestBody);
     request.send(JSON.stringify(requestBody));
   }
@@ -52,7 +50,7 @@ class MatchHistory extends Component {
     const confirmMessage = `Are you sure you want to delete this match between ${matchData.winner} and ${matchData.loser}?`;
     var result = confirm(confirmMessage);
     if (result) {
-      this.makeDeleteRequest(matchData._id);
+      this.makeDeleteRequest(matchData);
     }
   }
 
