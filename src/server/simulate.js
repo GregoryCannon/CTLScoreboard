@@ -1,4 +1,4 @@
-const NUM_ITERATIONS = 10000;
+const NUM_ITERATIONS = 20000;
 
 const util = require("./util");
 

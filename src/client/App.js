@@ -15,6 +15,7 @@ class App extends Component {
       divisionData: util.memeDivisionData,
       matchData: util.sampleMatchData
     };
+    this.refreshData = this.refreshData.bind(this);
   }
 
   fetchStandings() {
@@ -53,14 +54,30 @@ class App extends Component {
     request.send();
   }
 
-  componentDidMount() {
-    this.fetchStandings();
+  refreshData() {
     this.fetchMatches();
+    this.fetchStandings();
+  }
+
+  componentDidMount() {
+    this.refreshData();
   }
 
   render() {
     return (
       <div className="App">
+        <div
+          className="Loading-display"
+          style={{
+            visibility:
+              this.state.isFetchingStandings || this.state.isFetchingMatches
+                ? "visible"
+                : "hidden"
+          }}
+        >
+          <div className="Loading-background" />
+          <div className="Loading-spinner" />
+        </div>
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to CTL</h2>
@@ -78,11 +95,14 @@ class App extends Component {
           </div>
           <div className="Right-panel">
             <div className="Reporting-panel-card">
-              <ReportingPanel />
+              <ReportingPanel refreshFunction={this.refreshData} />
             </div>
 
             <div className="Match-history-card">
-              <MatchHistory matchList={this.state.matchData} />
+              <MatchHistory
+                matchList={this.state.matchData}
+                refreshFunction={this.refreshData}
+              />
             </div>
           </div>
         </div>

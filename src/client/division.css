@@ -1,22 +1,22 @@
-table {
+.Division table {
   background: lightblue;
   border-spacing: 0px;
   margin: 0px auto;
   text-align: center;
 }
 
-th {
+.Division th {
   font-weight: 500;
   background: #20325a;
   color: white !important;
 }
 
-th,
+.Division th,
 td {
   padding: 8px 4px;
 }
 
-td {
+.Division td {
   text-transform: uppercase;
 }
 

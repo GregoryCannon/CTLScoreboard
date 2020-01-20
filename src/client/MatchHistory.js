@@ -21,11 +21,12 @@ class MatchHistory extends Component {
       console.log(request.response);
       const response = JSON.parse(request.response);
       if (response.didSucceed) {
-        alert("Match deleted!");
+        // Refresh data
+        this.props.refreshFunction();
       } else {
         alert("Failed to delete match. Reason:\n\n" + response.errorMessage);
       }
-    };
+    }.bind(this);
 
     // Send request with the id of the match to delete
     const requestBody = {
@@ -50,22 +51,30 @@ class MatchHistory extends Component {
       <div className="Match-history">
         <div className="Match-history-title">Match History</div>
         <div className="Scrollable-list">
-          {this.props.matchList.map((match, i) => {
-            return (
-              <div key={i} className="Reported-match">
-                <span className="Match-division">D{match.division}</span>
-                <span className="Match-text">{this.getMatchText(match)}</span>
-                <a
-                  className="Delete-match-button"
-                  onClick={() => {
-                    this.deleteMatchClicked(i);
-                  }}
-                >
-                  <i className="fas fa-trash"></i>
-                </a>
-              </div>
-            );
-          })}
+          <table>
+            <tbody>
+              {[...this.props.matchList].reverse().map((match, i) => {
+                return (
+                  <tr key={this.getMatchText(match)} className="Reported-match">
+                    <td className="Match-division">D{match.division}</td>
+                    <td className="Match-text">{this.getMatchText(match)}</td>
+                    <td>
+                      <a
+                        className="Delete-match-button"
+                        onClick={() => {
+                          this.deleteMatchClicked(
+                            this.props.matchList.length - 1 - i
+                          );
+                        }}
+                      >
+                        <i className="fas fa-trash"></i>
+                      </a>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
         </div>
       </div>
     );

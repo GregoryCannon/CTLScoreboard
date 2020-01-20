@@ -13,7 +13,46 @@ const util = require("./util");
 var monk = require("monk");
 var db = monk(process.env.MONGODB_URI || "localhost:27017/ctl-matches");
 var ObjectID = db.helper.id.ObjectID;
-console.log("Server is running");
+
+// Make our db accessible to our router
+app.use(function(req, res, next) {
+  req.db = db;
+  next();
+});
+
+/*
+--------------------
+Cache
+(Store the calculated standings in memory, only updating when matches added or deleted)
+--------------------
+*/
+let cachedFinalStandings = null;
+
+// Whenever there is new information that hasn't been processed, clear the cache to force a refresh
+function invalidateCache() {
+  cachedFinalStandings = null;
+}
+
+function refreshCachedStandings(callback) {
+  console.log("-- Fetching matches from database...");
+  // Get matches from db
+  const matchListDb = db.get("matchList");
+  matchListDb.find({}, {}, function(e, matches) {
+    console.log("-- Calculating standings...");
+    // Process and save in cache
+    cachedFinalStandings = getStandings(matches);
+    console.log("Finished calculating standings");
+    callback();
+  });
+}
+
+// Calculate the standings once on startup
+
+/*
+ -------------------
+ Helper methods
+ -------------------
+ */
 
 // Process the raw DB match data into standings
 function getStandings(matchData) {
@@ -32,18 +71,6 @@ function getStandings(matchData) {
   return finalStandings;
 }
 
-// Make our db accessible to our router
-app.use(function(req, res, next) {
-  req.db = db;
-  next();
-});
-
-/*
- -------------------
- Helper methods
- -------------------
- */
-
 function checkMatchAlreadyExists(matches, winner, loser, winnerHome) {
   for (let i = 0; i < matches.length; i++) {
     const match = matches[i];
@@ -51,6 +78,13 @@ function checkMatchAlreadyExists(matches, winner, loser, winnerHome) {
       match.winner === winner &&
       match.loser === loser &&
       match.winner_home === winnerHome
+    ) {
+      return true;
+    }
+    if (
+      match.winner === loser &&
+      match.loser === winner &&
+      match.winner_home !== winnerHome
     ) {
       return true;
     }
@@ -78,13 +112,16 @@ function getMatchAlreadyExistsErrorMessage(winner, loser, winnerHome) {
 
 // Main GET standings request
 app.get("/standings", function(req, res) {
-  // Get matches from db
-  const matchListDb = req.db.get("matchList");
-  matchListDb.find({}, {}, function(e, matches) {
-    console.log("matches", matches);
-    // Process and return
-    return res.send(getStandings(matches));
-  });
+  if (cachedFinalStandings != null) {
+    console.log("Sending response with cached standings");
+    return res.send(cachedFinalStandings);
+  } else {
+    console.log("Invalid cache, forced to refresh");
+    refreshCachedStandings(() => {
+      console.log("Sending response with calculated standings");
+      return res.send(cachedFinalStandings);
+    });
+  }
 });
 
 // Main GET match data request
@@ -125,7 +162,8 @@ app.post("/match-data", function(req, res) {
             errorMessage: err
           });
         } else {
-          // And forward to success page
+          // Otherwise, notify of success
+          invalidateCache();
           res.send({
             didSucceed: true,
             errorMessage: ""
@@ -137,7 +175,6 @@ app.post("/match-data", function(req, res) {
 });
 
 app.delete("/match-data", function(req, res) {
-  // Continue with the post
   console.log("Received delete request:", req.body);
   const matchListDb = req.db.get("matchList");
   if (req.body === {}) {
@@ -155,7 +192,8 @@ app.delete("/match-data", function(req, res) {
         errorMessage: err
       });
     } else {
-      // And forward to success page
+      // Otherwise, notify success
+      invalidateCache();
       res.send({
         didSucceed: true,
         errorMessage: ""
@@ -167,5 +205,16 @@ app.delete("/match-data", function(req, res) {
 app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "../../build", "index.html"));
 });
+
+/*
+Start script
+*/
+function main() {
+  console.log("Server is running");
+  refreshCachedStandings(() => {
+    console.log("Refreshed standings locally!");
+  });
+}
+main();
 
 app.listen(process.env.PORT || 8080);

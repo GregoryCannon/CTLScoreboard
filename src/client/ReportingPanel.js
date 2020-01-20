@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./ReportingPanel.css";
 const configData = require("../server/config_data");
 const util = require("../server/util");
+var moment = require("moment");
 const GAMES_TO_WIN = 3;
 
 class ReportingPanel extends Component {
@@ -15,7 +16,8 @@ class ReportingPanel extends Component {
       loserName: "",
       loserGameCount: "",
       winnerGameCount: GAMES_TO_WIN,
-      winnerHome: ""
+      winnerHome: "",
+      moment: moment()
     };
     this.changeReportingDivision = this.changeReportingDivision.bind(this);
     this.changeWinner = this.changeWinner.bind(this);
@@ -85,7 +87,7 @@ class ReportingPanel extends Component {
       return "Enter the game count of the match loser";
     }
     if (this.state.winnerGameCount !== GAMES_TO_WIN) {
-      return "Enter the game count of match winner";
+      return "The winner should have won 3 games.";
     }
     if (this.state.winnerHome === "") {
       return "Select which player was home for this match";
@@ -93,13 +95,13 @@ class ReportingPanel extends Component {
 
     // Invalid info
     if (this.state.winnerName === this.state.loserName) {
-      return "Invalid match — A player cannot face themselves.";
+      return "Invalid match: a player cannot face themselves.";
     }
     if (this.state.loserGameCount < 0 || this.state.winnerGameCount < 0) {
-      return "Invalid match — Can't have a negative number of wins";
+      return "Invalid match: can't have a negative number of wins";
     }
     if (this.state.loserGameCount > this.state.winnerGameCount - 1) {
-      return "Invalid match — The loser has more game wins than the winner.";
+      return "Invalid match: the winner must win more games than the loser.";
     }
 
     // Otherwise, no issues
@@ -115,7 +117,6 @@ class ReportingPanel extends Component {
 
     // Set a callback for the result
     request.onload = function() {
-      console.log("Received response from server:\n", request.response);
       const response = JSON.parse(request.response);
       if (response.didSucceed) {
         this.setState({
@@ -123,6 +124,8 @@ class ReportingPanel extends Component {
           statusText: "Submitted match!",
           statusTextIsError: false
         });
+        // Refresh parent
+        this.props.refreshFunction();
       } else {
         this.setState({
           ...this.state,
@@ -160,6 +163,7 @@ class ReportingPanel extends Component {
   }
 
   render() {
+    console.log("Status text is error: ", this.state.statusTextIsError);
     const playerNameList = this.getPlayerList();
     return (
       <div>
@@ -173,89 +177,101 @@ class ReportingPanel extends Component {
               onChange={this.changeReportingDivision}
             >
               {configData.divisionData.map((division, i) => {
-                return <option key={i}>{division.divisionName}</option>;
+                return (
+                  <option key={division.divisionName}>
+                    {division.divisionName}
+                  </option>
+                );
               })}
             </select>
           </div>
 
           {this.state.reportingDivision !== "" ? (
-            <div className="Match-reporting-container">
-              {/* Winner panel */}
-              <div className="Match-reporting-subpanel">
-                <select
-                  id="winner-name"
-                  defaultValue=""
-                  onChange={this.changeWinner}
-                >
-                  <option value="" disabled>
-                    (winner)
-                  </option>
-                  {playerNameList.map((playerName, i) => {
-                    return <option key={i}>{playerName}</option>;
-                  })}
-                </select>
-                <input
-                  id="winner-game-count"
-                  className="Win-count-input"
-                  type="number"
-                  defaultValue={GAMES_TO_WIN}
-                  onChange={this.changeWinnerGameCount}
-                ></input>
-                <div>
-                  <label htmlFor="winner-home">Home</label>
+            <div>
+              <div className="Match-reporting-container">
+                {/* Winner panel */}
+                <div className="Match-reporting-subpanel">
+                  <select
+                    id="winner-name"
+                    defaultValue=""
+                    onChange={this.changeWinner}
+                  >
+                    <option value="" disabled>
+                      (winner)
+                    </option>
+                    {playerNameList.map(playerName => {
+                      return <option key={playerName}>{playerName}</option>;
+                    })}
+                  </select>
                   <input
-                    id="winner-home"
-                    type="radio"
-                    name="home-away"
-                    onChange={e => {
-                      this.changeWinnerHome(event.target.value === "on");
-                    }}
+                    id="winner-game-count"
+                    className="Win-count-input"
+                    type="number"
+                    defaultValue={GAMES_TO_WIN}
+                    onChange={this.changeWinnerGameCount}
                   ></input>
+                  <div>
+                    <label htmlFor="winner-home">Home</label>
+                    <input
+                      id="winner-home"
+                      type="radio"
+                      name="home-away"
+                      onChange={e => {
+                        this.changeWinnerHome(event.target.value === "on");
+                      }}
+                    ></input>
+                  </div>
+                </div>
+
+                <div className="Defeated-text">defeated</div>
+
+                {/* Loser panel */}
+
+                <div className="Match-reporting-subpanel">
+                  <select
+                    id="loser-name"
+                    defaultValue=""
+                    onChange={this.changeLoser}
+                  >
+                    <option value="" disabled>
+                      (loser)
+                    </option>
+                    {playerNameList.map((playerName, i) => {
+                      return <option key={playerName}>{playerName}</option>;
+                    })}
+                  </select>
+                  <input
+                    id="loser-game-count"
+                    className="Win-count-input"
+                    type="number"
+                    onChange={this.changeLoserGameCount}
+                  ></input>
+
+                  <div>
+                    <label htmlFor="loser-home">Home</label>
+                    <input
+                      id="loser-home"
+                      type="radio"
+                      name="home-away"
+                      onChange={e => {
+                        this.changeWinnerHome(event.target.value === "off");
+                      }}
+                    ></input>
+                  </div>
                 </div>
               </div>
 
-              <div className="Defeated-text">defeated</div>
-
-              {/* Loser panel */}
-
-              <div className="Match-reporting-subpanel">
-                <select
-                  id="loser-name"
-                  defaultValue=""
-                  onChange={this.changeLoser}
-                >
-                  <option value="" disabled>
-                    (loser)
-                  </option>
-                  {playerNameList.map((playerName, i) => {
-                    return <option key={i}>{playerName}</option>;
-                  })}
-                </select>
-                <input
-                  id="loser-game-count"
-                  className="Win-count-input"
-                  type="number"
-                  onChange={this.changeLoserGameCount}
-                ></input>
-
-                <div>
-                  <label htmlFor="loser-home">Home</label>
-                  <input
-                    id="loser-home"
-                    type="radio"
-                    name="home-away"
-                    onChange={e => {
-                      this.changeWinnerHome(event.target.value === "off");
-                    }}
-                  ></input>
-                </div>
-              </div>
+              {/* Date picker */}
             </div>
           ) : (
-            <p>Select a divison above to report a match!</p>
+            <p>Select a division above to report a match!</p>
           )}
 
-          <p className="{this.state.statusTextIsError ? Error-text : Status-text}">
+          <p
+            className={
+              this.state.statusTextIsError ? "Error-text" : "Status-text"
+            }
+          >
             {this.state.statusText}
           </p>
           <button onClick={this.submitClicked} id="submit-button">

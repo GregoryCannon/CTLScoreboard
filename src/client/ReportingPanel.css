@@ -34,9 +34,9 @@ select {
   background: red;
   color: white;
   border-radius: 8px;
-  font-size: 1.4vw;
   margin-top: 4px;
   margin-bottom: 24px;
+  border: none;
 }
 
 #submit-button :disabled {
