@@ -81,6 +81,10 @@ class App extends Component {
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to CTL</h2>
+          <div className="Header-nav">
+            <a onClick={this.authenticateAdmin}>Admin login</a>
+            <a onClick={this.saveImage}>Export Standings to Image</a>
+          </div>
         </div>
         <div className="Content-container">
           <div className="Left-panel">

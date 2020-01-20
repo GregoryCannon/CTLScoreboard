@@ -16,9 +16,23 @@
 
 .App-header {
   background-color: #222;
-  height: 150px;
-  padding: 20px;
   color: white;
+}
+
+.Header-nav {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.Header-nav a {
+  font-size: 1vw;
+  display: inline-block;
+  padding: 12px;
+  background-color: #222;
+}
+
+.Header-nav a:hover {
+  background-color: #6d6d6d;
 }
 
 .App-intro {
