@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./ReportingPanel.css";
+const moment = require("moment");
 const configData = require("../server/config_data");
 const util = require("../server/util");
-var moment = require("moment");
 const GAMES_TO_WIN = 3;
 
 class ReportingPanel extends Component {
@@ -16,8 +16,7 @@ class ReportingPanel extends Component {
       loserName: "",
       loserGameCount: "",
       winnerGameCount: GAMES_TO_WIN,
-      winnerHome: "",
-      moment: moment()
+      winnerHome: ""
     };
     this.changeReportingDivision = this.changeReportingDivision.bind(this);
     this.changeWinner = this.changeWinner.bind(this);
@@ -142,7 +141,8 @@ class ReportingPanel extends Component {
       loser: this.state.loserName,
       winner_games: this.state.winnerGameCount,
       loser_games: this.state.loserGameCount,
-      winner_home: this.state.winnerHome
+      winner_home: this.state.winnerHome,
+      report_date: moment.utc().unix()
     };
     request.send(JSON.stringify(requestBody));
   }

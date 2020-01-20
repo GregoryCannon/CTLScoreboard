@@ -32,6 +32,11 @@
   padding: 4px;
 }
 
+.Match-date {
+  font-size: 1.1vw;
+  color: grey;
+}
+
 .Delete-match-button {
   margin: auto 0;
   top: 6px;

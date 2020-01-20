@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./MatchHistory.css";
+const moment = require("moment");
+
 const util = require("../server/util");
 
 class MatchHistory extends Component {
@@ -9,6 +11,14 @@ class MatchHistory extends Component {
     } ${match.winner_home ? "(A)" : "(H)"}, ${match.winner_games}-${
       match.loser_games
     }`;
+  }
+
+  getMatchDateFormatted(match) {
+    if (!match.report_date) {
+      return "unknown date";
+    }
+    const matchMoment = moment.unix(match.report_date).utc();
+    return matchMoment.format("HH:MM MMM DD, YYYY");
   }
 
   makeDeleteRequest(idToDelete) {
@@ -57,7 +67,13 @@ class MatchHistory extends Component {
                 return (
                   <tr key={this.getMatchText(match)} className="Reported-match">
                     <td className="Match-division">D{match.division}</td>
-                    <td className="Match-text">{this.getMatchText(match)}</td>
+                    <td className="Match-text">
+                      {this.getMatchText(match)}
+                      <br />
+                      <span className="Match-date">
+                        {this.getMatchDateFormatted(match)}
+                      </span>
+                    </td>
                     <td>
                       <a
                         className="Delete-match-button"
