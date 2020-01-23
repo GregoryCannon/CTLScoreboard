@@ -55,7 +55,6 @@ class MatchHistory extends Component {
   }
 
   isMatchDeletable(match) {
-    console.log("Checking deletability, isAdmin:", this.props.isAdmin);
     const deleteButtonCutoffTime = moment()
       .utc()
       .subtract(15, "minutes")

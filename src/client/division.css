@@ -7,8 +7,16 @@
 
 .Division th {
   font-weight: 500;
-  background: #20325a;
+  background-color: #20325a;
   color: white !important;
+}
+
+.Division .Header-sorted-by {
+  background-color: #65769a;
+}
+
+.Division .Header-sortable:hover {
+  background-color: #3c507b;
 }
 
 .Division th,

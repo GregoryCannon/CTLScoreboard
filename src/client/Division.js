@@ -2,6 +2,13 @@ import React, { Component } from "react";
 import "./division.css";
 
 class Division extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      sortBy: "promo" // Either 'promo' for simul results, or 'points' for points
+    };
+  }
   // Get a list of the colors for the player slots, ordered first place to last
   getRowColors(divisionData) {
     const winner = "rgb(255, 204, 0)";
@@ -50,6 +57,12 @@ class Division extends Component {
 
   render() {
     const rowColors = this.getRowColors(this.props.data);
+    const sortedPlayers = [...this.props.data.standings];
+    if (this.state.sortBy == "points") {
+      sortedPlayers.sort((player1, player2) => {
+        return player2.points - player1.points;
+      });
+    }
 
     return (
       <div className="Division">
@@ -70,13 +83,35 @@ class Division extends Component {
               <th>Match Record</th>
               <th>Game Record</th>
               <th>Game Difference</th>
-              <th>Points</th>
-              <th>Promo Chance</th>
+              <th
+                className={
+                  this.state.sortBy == "points"
+                    ? "Header-sorted-by"
+                    : "Header-sortable"
+                }
+                onClick={() => {
+                  this.setState({ sortBy: "points" });
+                }}
+              >
+                Points
+              </th>
+              <th
+                className={
+                  this.state.sortBy == "promo"
+                    ? "Header-sorted-by"
+                    : "Header-sortable"
+                }
+                onClick={() => {
+                  this.setState({ sortBy: "promo" });
+                }}
+              >
+                Promo Chance
+              </th>
               <th>Relegation Chance</th>
             </tr>
 
             {/* Make a row for each player, looping through the data */}
-            {this.props.data.standings.map((player, index) => {
+            {sortedPlayers.map((player, index) => {
               return (
                 <tr
                   key={index}

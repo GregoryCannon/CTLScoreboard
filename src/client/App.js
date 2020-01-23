@@ -106,7 +106,6 @@ class App extends Component {
   }
 
   render() {
-    console.log("Rerendering App.js. isAdmin:", this.state.isAdmin);
     return (
       <div className="App">
         <div
