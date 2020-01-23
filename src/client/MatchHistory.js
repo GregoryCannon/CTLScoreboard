@@ -54,6 +54,15 @@ class MatchHistory extends Component {
     }
   }
 
+  isMatchDeletable(match) {
+    console.log("Checking deletability, isAdmin:", this.props.isAdmin);
+    const deleteButtonCutoffTime = moment()
+      .utc()
+      .subtract(15, "minutes")
+      .unix();
+    return this.props.isAdmin || match.report_date > deleteButtonCutoffTime;
+  }
+
   render() {
     return (
       <div className="Match-history">
@@ -75,6 +84,11 @@ class MatchHistory extends Component {
                     <td>
                       <a
                         className="Delete-match-button"
+                        style={{
+                          visibility: this.isMatchDeletable(match)
+                            ? "visible"
+                            : "hidden"
+                        }}
                         onClick={() => {
                           this.deleteMatchClicked(
                             this.props.matchList.length - 1 - i

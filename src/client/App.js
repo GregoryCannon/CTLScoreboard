@@ -4,6 +4,8 @@ import ReportingPanel from "./ReportingPanel";
 import MatchHistory from "./MatchHistory";
 import logo from "./logo.svg";
 import "./App.css";
+import html2canvas from "html2canvas";
+const moment = require("moment");
 const util = require("../server/util.js");
 
 class App extends Component {
@@ -12,10 +14,50 @@ class App extends Component {
     this.state = {
       isFetchingStandings: false,
       isFetchingMatches: false,
+      isAdmin: false,
       divisionData: util.memeDivisionData,
-      matchData: util.sampleMatchData
+      matchData: util.sampleMatchData,
+      showAdminPasswordForm: false,
+      currentTypedAdminPassword: ""
     };
     this.refreshData = this.refreshData.bind(this);
+    this.authenticateAdmin = this.authenticateAdmin.bind(this);
+    this.toggleAdminPasswordForm = this.toggleAdminPasswordForm.bind(this);
+  }
+
+  authenticateAdmin() {
+    if (this.state.currentTypedAdminPassword == util.getAdminPassword()) {
+      this.setState({ ...this.state, isAdmin: true });
+    } else {
+      alert("Incorrect admin password");
+    }
+  }
+
+  toggleAdminPasswordForm() {
+    this.setState({
+      ...this.state,
+      showAdminPasswordForm: !this.state.showAdminPasswordForm
+    });
+  }
+
+  saveImage() {
+    html2canvas(document.querySelector("#Page-1")).then(function(canvas) {
+      const fileName =
+        "CTL Standings part 1" +
+        moment()
+          .utc()
+          .format("MM/DD/YYYY");
+      util.downloadCanvasAsPng(canvas, fileName);
+    });
+
+    html2canvas(document.querySelector("#Page-2")).then(function(canvas) {
+      const fileName =
+        "CTL Standings part 2" +
+        moment()
+          .utc()
+          .format("MM/DD/YYYY");
+      util.downloadCanvasAsPng(canvas, fileName);
+    });
   }
 
   fetchStandings() {
@@ -64,6 +106,7 @@ class App extends Component {
   }
 
   render() {
+    console.log("Rerendering App.js. isAdmin:", this.state.isAdmin);
     return (
       <div className="App">
         <div
@@ -82,20 +125,52 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to CTL</h2>
           <div className="Header-nav">
-            <a onClick={this.authenticateAdmin}>Admin login</a>
-            <a onClick={this.saveImage}>Export Standings to Image</a>
+            <button
+              className="Admin-login-button"
+              disabled={this.state.isAdmin}
+              onClick={this.toggleAdminPasswordForm}
+            >
+              {this.state.isAdmin ? "You're now an admin!" : "Admin login"}
+            </button>
+            <div
+              className="Password-entry-form"
+              style={{
+                visibility:
+                  this.state.showAdminPasswordForm && !this.state.isAdmin
+                    ? "visible"
+                    : "hidden"
+              }}
+            >
+              Enter the admin password
+              <br />
+              <input
+                name="myPass"
+                id="myPass"
+                type="password"
+                onChange={() => {
+                  this.setState({
+                    currentTypedAdminPassword: event.target.value
+                  });
+                }}
+              />
+              <br />
+              <button onClick={this.authenticateAdmin}>Submit</button>
+            </div>
+            <button onClick={this.saveImage}>Export Standings to Image</button>
           </div>
         </div>
         <div className="Content-container">
           <div className="Left-panel">
-            <p className="Loading-text">
-              {this.state.isFetchingStandings || this.state.isFetchingMatches
-                ? "Fetching data..."
-                : ""}
-            </p>
-            {this.state.divisionData.map((division, i) => {
-              return <Division key={i} data={division} />;
-            })}
+            <div id="Page-1">
+              {this.state.divisionData.slice(0, 4).map((division, i) => {
+                return <Division key={i} data={division} />;
+              })}
+            </div>
+            <div id="Page-2">
+              {this.state.divisionData.slice(4).map((division, i) => {
+                return <Division key={i} data={division} />;
+              })}
+            </div>
           </div>
           <div className="Right-panel">
             <div className="Reporting-panel-card">
@@ -106,6 +181,7 @@ class App extends Component {
               <MatchHistory
                 matchList={this.state.matchData}
                 refreshFunction={this.refreshData}
+                isAdmin={this.state.isAdmin}
               />
             </div>
           </div>
