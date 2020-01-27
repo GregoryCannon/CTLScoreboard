@@ -1,0 +1,31 @@
+{
+  "name": "ctl-scoreboard",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "eslint": "^5.16.0",
+    "express": "^4.17.1",
+    "html2canvas": "^1.0.0-rc.5",
+    "input-moment": "^0.4.0",
+    "moment": "^2.24.0",
+    "mongodb": "^3.4.1",
+    "monk": "^7.1.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "0.9.x",
+    "simple-node-logger": "^18.12.24"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  },
+  "proxy": "http://localhost:8080",
+  "scripts": {
+    "start": "yarn format && react-scripts start",
+    "server": "yarn format && node /server/app.js",
+    "build": "yarn format && react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "format": "prettier --write \"src/**/*.+(js|jsx|json|css|md)\""
+  }
+}
