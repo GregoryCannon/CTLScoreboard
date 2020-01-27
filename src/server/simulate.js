@@ -60,8 +60,8 @@ function simulateOneIteration(
 
   // console.log("\n\n\nAbout to promo/relegate-------------" + JSON.stringify(divisionStandings, null, 3));
 
-  // Auto promo
-  for (let i = 0; i < division.numAutoPromo; i++) {
+  // Auto promo or win
+  for (let i = 0; i < division.numAutoPromo + division.numWinner; i++) {
     const promoedName = divisionStandings[i].name;
     // console.log("Promo: " + promoedName);
     promoCounts[promoedName] += 1;

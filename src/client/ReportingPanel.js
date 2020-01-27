@@ -28,7 +28,15 @@ class ReportingPanel extends Component {
   }
 
   changeReportingDivision(event) {
-    this.setState({ ...this.state, reportingDivision: event.target.value });
+    this.setState({
+      ...this.state,
+      reportingDivision: event.target.value,
+      winnerName: "",
+      loserName: "",
+      loserGameCount: "",
+      winnerGameCount: GAMES_TO_WIN,
+      winnerHome: ""
+    });
   }
 
   getPlayerList() {
@@ -196,7 +204,7 @@ class ReportingPanel extends Component {
                     defaultValue=""
                     onChange={this.changeWinner}
                   >
-                    <option value="" disabled>
+                    <option value="" selected disabled>
                       (winner)
                     </option>
                     {playerNameList.map(playerName => {
@@ -233,7 +241,7 @@ class ReportingPanel extends Component {
                     defaultValue=""
                     onChange={this.changeLoser}
                   >
-                    <option value="" disabled>
+                    <option value="" selected disabled>
                       (loser)
                     </option>
                     {playerNameList.map((playerName, i) => {

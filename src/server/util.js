@@ -568,7 +568,17 @@ function compareRaw(player1, player2) {
 
 /* Comparison function to sort players based on their simulation data. */
 function compareSimulated(player1, player2) {
-  // If their promo chances differ (after they were rounded to 1%), sort based on that
+  // Ideally, sort based on (promo %) - (rel %)
+  // If it's significantly different between the two players, sort by that
+  const diffFactor =
+    player2.promoChance -
+    player2.relegationChance -
+    (player1.promoChance - player1.relegationChance);
+  if (Math.abs(diffFactor) > 3) {
+    return diffFactor;
+  }
+
+  // Otherwise, if their promo chances differ (after they were rounded to 1%), sort based on that
   if (player2.promoChance !== player1.promoChance) {
     return player2.promoChance - player1.promoChance;
   }

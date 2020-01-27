@@ -17,7 +17,7 @@
   padding-right: 10px;
   position: relative;
   border: 1px solid #ccc;
-  border-bottom: 0;
+  border-top: 0;
   text-align: left;
   flex-flow: row nowrap;
 }
@@ -52,7 +52,7 @@
 
 .Scrollable-list {
   overflow-y: scroll;
-  height: 240px;
+  height: 280px;
 }
 
 .Scrollable-list table {

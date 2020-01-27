@@ -11,12 +11,35 @@
   color: white !important;
 }
 
+/* A div container to allow the header to be split horizontally into text and sort arrow */
+.Header-sortable-inner {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.fa-angle-down {
+  padding-top: 2px;
+  padding-left: 2px;
+  margin: auto;
+}
+
+.Division .Header-sorted-by .fa-angle-down {
+  visibility: visible;
+}
+
+.Division .Header-sortable .fa-angle-down {
+  visibility: hidden;
+}
+
 .Division .Header-sorted-by {
   background-color: #65769a;
+  height: 100%;
 }
 
 .Division .Header-sortable:hover {
   background-color: #3c507b;
+  height: 100%;
 }
 
 .Division th,
@@ -33,5 +56,5 @@ td {
 }
 
 .Extra-padding-left {
-  padding-left: 10px;
+  padding-left: 10px !important;
 }

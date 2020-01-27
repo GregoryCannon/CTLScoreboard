@@ -93,7 +93,10 @@ class Division extends Component {
                   this.setState({ sortBy: "points" });
                 }}
               >
-                Points
+                <div className="Header-sortable-inner">
+                  <div>Points</div>
+                  <i class="fas fa-angle-down"></i>
+                </div>
               </th>
               <th
                 className={
@@ -105,9 +108,30 @@ class Division extends Component {
                   this.setState({ sortBy: "promo" });
                 }}
               >
-                Promo Chance
+                <div className="Header-sortable-inner">
+                  <div>
+                    {this.props.data.divisionName == "1"
+                      ? "Win Chance"
+                      : "Promo Chance"}
+                  </div>
+                  <i class="fas fa-angle-down"></i>
+                </div>
               </th>
-              <th>Relegation Chance</th>
+              <th
+                className={
+                  this.state.sortBy == "promo"
+                    ? "Header-sorted-by"
+                    : "Header-sortable"
+                }
+                onClick={() => {
+                  this.setState({ sortBy: "promo" });
+                }}
+              >
+                <div className="Header-sortable-inner">
+                  <div>Relegation Chance</div>
+                  <i class="fas fa-angle-down"></i>
+                </div>
+              </th>
             </tr>
 
             {/* Make a row for each player, looping through the data */}
