@@ -229,25 +229,6 @@ app.delete("/match-data", function(req, res) {
       });
     }
   });
-
-  // matchListDb.remove(req.body, function(err, doc) {
-  //   if (err) {
-  //     // If it failed, return error
-  //     logger.info("Delete match failed\nRequest:", req.body, "\nError: ", err);
-  //     res.send({
-  //       didSucceed: false,
-  //       errorMessage: err
-  //     });
-  //   } else {
-  //     // Otherwise, notify success
-  //     logger.info("Delete match succeeded\nRequest: ", req.body, "\nDeleted match: ", doc);
-  //     invalidateCache();
-  //     res.send({
-  //       didSucceed: true,
-  //       errorMessage: ""
-  //     });
-  //   }
-  // });
 });
 
 app.get("/", function(req, res) {

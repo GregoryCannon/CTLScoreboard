@@ -609,6 +609,7 @@ function getApiUrl(suffix) {
 }
 
 function getAdminPassword() {
+  console.log("process.env", process.env);
   return process.env.ADMIN_PASSWORD || "tameimpalajimhalpert";
 }
 
