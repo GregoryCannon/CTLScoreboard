@@ -21,9 +21,9 @@
   },
   "proxy": "http://localhost:8080",
   "scripts": {
-    "start": "yarn format && react-scripts start",
-    "server": "yarn format && node /server/app.js",
-    "build": "yarn format && react-scripts build",
+    "start-react": "npm run format && react-scripts start",
+    "start": "npm run format && node src/server/server-main.js",
+    "build": "npm run format && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "format": "prettier --write \"src/**/*.+(js|jsx|json|css|md)\""
