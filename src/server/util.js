@@ -605,11 +605,11 @@ function getPlayerData(list, playerName) {
 }
 
 function getApiUrl(suffix) {
+  console.log("process.env", process.env);
   return (process.env.API_URL || "http://localhost:8080") + "/" + suffix;
 }
 
 function getAdminPassword() {
-  console.log("process.env", process.env);
   return process.env.ADMIN_PASSWORD || "tameimpalajimhalpert";
 }
 
