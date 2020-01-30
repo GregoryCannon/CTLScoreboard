@@ -23,7 +23,7 @@ const logger = require("simple-node-logger").createSimpleFileLogger(
 );
 
 // Configure the discord bot
-const token = "NjcyMzE1NzgzMzYzMTY2MjA4.XjJuYg.D_q_PoI4Mye42DnaDuFRJmpEJJs";
+const token = "NjcyMzE1NzgzMzYzMTY2MjA4.XjKMew.G96pU7U86WumR4r6KrsqZFflmAg";
 const discordBot = new BotClient(token);
 discordBot.start();
 
@@ -56,11 +56,10 @@ function refreshCachedStandings(callback) {
     console.log("Finished calculating standings");
     callback();
 
-    // Test sending out a discord ping
-    const discordTestMatch = matches[0];
-    discordBot.reportMatch(discordTestMatch);
+    // // Test sending out a discord ping
+    // const discordTestMatch = matches[0];
+    // discordBot.reportMatch(discordTestMatch);
   });
-
 }
 
 /*
@@ -194,9 +193,10 @@ app.post("/match-data", function(req, res) {
             errorMessage: err
           });
         } else {
-          // Otherwise, notify of success
+          // Otherwise, notify of success and post to discord
           logger.info("Post match succeeded\nRequest: ", req.body);
           invalidateCache();
+          discordBot.reportMatch(req.body);
           res.send({
             didSucceed: true,
             errorMessage: ""

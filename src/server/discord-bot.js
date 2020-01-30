@@ -17,7 +17,8 @@ class BotClient {
   constructor(token) {
     this.token = token;
     this.client = new Discord.Client();
-    this.mainChannel = "the-lab"
+    this.mainChannel = "the-lab";
+    this.isReady = false;
     this.pendingMessages = [];
   }
 
@@ -36,32 +37,35 @@ class BotClient {
     return `:fire: ${formattedDate} ${homePlayer} (H) v ${awayPlayer} (A) ${match.winner_games}-${match.loser_games} ${match.vod_url}`;
   }
 
-  sendMessageInChannel(messageText, channelName){
-    console.log("channelName", channelName);
-    console.log("channels:", this.client.channels);
-    this.client.channels.find(x => x.name === channelName).send(messageText);
+  sendMessageInChannel(messageText, channelName) {
+    if (this.isReady){
+      this.client.channels.find(x => x.name === channelName).send(messageText);
+    } else {
+      this.pendingMessages.push([channelName, messageText]);
+    }
   }
 
-  sendMessage(messageText){
-    this.sendMessageInChannel(messageText, this.mainChannel)
+  sendMessage(messageText) {
+    this.sendMessageInChannel(messageText, this.mainChannel);
   }
 
   reportMatch(match) {
-    this.pendingMessages.push(this.formatMatch(match));
+    this.sendMessage(this.formatMatch(match))
   }
 
   start() {
     this.client.on("ready", () => {
       console.log("CTL-Reporting-Bot is ready");
-      //this.sendMessage("Greetings from CTL-Reporting-Bot");
-      while (this.pendingMessages.length > 0){
+      this.isReady = true;
+
+      while (this.pendingMessages.length > 0) {
         const pendingMessage = this.pendingMessages.shift();
-        this.sendMessage(pendingMessage);
+        this.sendMessage(pendingMessage[0], pendingMessage[1]);
       }
     });
 
     this.client.on("message", msg => {
-      if (msg.channel.name !== this.mainChannel){
+      if (msg.channel.name !== this.mainChannel) {
         return;
       }
 
@@ -72,7 +76,9 @@ class BotClient {
       }
 
       if (msg.content == "!who") {
-        msg.channel.send(`The person who just pinged me is ${msg.author.username}`);
+        msg.channel.send(
+          `The person who just pinged me is ${msg.author.username}`
+        );
       }
     });
 
@@ -82,4 +88,4 @@ class BotClient {
 
 module.exports = {
   BotClient
-}
+};
