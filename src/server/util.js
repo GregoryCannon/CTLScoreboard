@@ -1,4 +1,3 @@
-//const ObjectId = require("mongodb").ObjectId;
 
 // Since I can't figure out environment variables in React rip
 process.env.API_URL = "https://ctlscoreboard.herokuapp.com/";

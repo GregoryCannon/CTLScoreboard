@@ -1,13 +1,15 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
-const app = express();
-app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, "../../build")));
-
 const compute = require("./compute");
 const simulate = require("./simulate");
 const util = require("./util");
+const BotClient = require("./discord-bot").BotClient;
+
+// Configure express
+const app = express();
+app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, "../../build")));
 
 // Database config
 const monk = require("monk");
@@ -19,6 +21,11 @@ var ObjectID = db.helper.id.ObjectID;
 const logger = require("simple-node-logger").createSimpleFileLogger(
   "project.log"
 );
+
+// Configure the discord bot
+const token = "NjcyMzE1NzgzMzYzMTY2MjA4.XjJuYg.D_q_PoI4Mye42DnaDuFRJmpEJJs";
+const discordBot = new BotClient(token);
+discordBot.start();
 
 // Make our db accessible to our router
 app.use(function(req, res, next) {
@@ -48,7 +55,12 @@ function refreshCachedStandings(callback) {
     cachedFinalStandings = getStandings(matches);
     console.log("Finished calculating standings");
     callback();
+
+    // Test sending out a discord ping
+    const discordTestMatch = matches[0];
+    discordBot.reportMatch(discordTestMatch);
   });
+
 }
 
 /*
