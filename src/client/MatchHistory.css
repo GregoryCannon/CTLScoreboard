@@ -44,6 +44,7 @@
 
 .Delete-match-button i {
   color: #929292;
+  margin-right: 8px;
 }
 
 .Delete-match-button i:hover {
@@ -57,4 +58,5 @@
 
 .Scrollable-list table {
   border-collapse: collapse;
+  width: 100%;
 }

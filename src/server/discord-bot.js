@@ -27,7 +27,7 @@ class BotClient {
       return "unknown date";
     }
     const matchMoment = moment.unix(match.report_date).utc();
-    return matchMoment.format("DD MMMM YYYY HH:MM") + " UTC";
+    return matchMoment.format("DD MMMM YYYY HH:mm") + " UTC";
   }
 
   formatMatch(match) {
@@ -38,7 +38,7 @@ class BotClient {
   }
 
   sendMessageInChannel(messageText, channelName) {
-    if (this.isReady){
+    if (this.isReady) {
       this.client.channels.find(x => x.name === channelName).send(messageText);
     } else {
       this.pendingMessages.push([channelName, messageText]);
@@ -50,7 +50,7 @@ class BotClient {
   }
 
   reportMatch(match) {
-    this.sendMessage(this.formatMatch(match))
+    this.sendMessage(this.formatMatch(match));
   }
 
   start() {

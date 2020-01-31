@@ -58,7 +58,7 @@ select {
 .Win-count-input {
   font-size: 20px;
   width: 50px;
-  margin: 10px auto;
+  margin: 7px auto;
   text-align: center;
 }
 
@@ -73,4 +73,12 @@ select {
 
 .Error-text {
   color: red;
+}
+
+.Text-input-table {
+  border: none;
+}
+
+.text-input-table tr {
+  padding: 3px 0;
 }

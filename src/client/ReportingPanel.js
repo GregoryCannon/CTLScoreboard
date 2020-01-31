@@ -16,7 +16,9 @@ class ReportingPanel extends Component {
       loserName: "",
       loserGameCount: "",
       winnerGameCount: GAMES_TO_WIN,
-      winnerHome: ""
+      winnerHome: "",
+      vodUrl: "",
+      restreamer: ""
     };
     this.changeReportingDivision = this.changeReportingDivision.bind(this);
     this.changeWinner = this.changeWinner.bind(this);
@@ -25,6 +27,8 @@ class ReportingPanel extends Component {
     this.changeWinnerGameCount = this.changeWinnerGameCount.bind(this);
     this.submitClicked = this.submitClicked.bind(this);
     this.changeWinnerHome = this.changeWinnerHome.bind(this);
+    this.changeVodUrl = this.changeVodUrl.bind(this);
+    this.changeRestreamer = this.changeRestreamer.bind(this);
   }
 
   changeReportingDivision(event) {
@@ -53,11 +57,11 @@ class ReportingPanel extends Component {
   }
 
   changeWinner(event) {
-    this.setState({ ...this.state, winnerName: event.target.value });
+    this.setState({ winnerName: event.target.value });
   }
 
   changeLoser(event) {
-    this.setState({ ...this.state, loserName: event.target.value });
+    this.setState({ loserName: event.target.value });
   }
 
   changeLoserGameCount(event) {
@@ -74,8 +78,16 @@ class ReportingPanel extends Component {
     });
   }
 
+  changeVodUrl(event) {
+    this.setState({ vodUrl: event.target.value });
+  }
+
+  changeRestreamer(event) {
+    this.setState({ restreamer: event.target.value });
+  }
+
   changeWinnerHome(isHome) {
-    this.setState({ ...this.state, winnerHome: isHome });
+    this.setState({ winnerHome: isHome });
   }
 
   // Check the form and return either 'valid' or the error to be displayed
@@ -150,7 +162,9 @@ class ReportingPanel extends Component {
       winner_games: this.state.winnerGameCount,
       loser_games: this.state.loserGameCount,
       winner_home: this.state.winnerHome,
-      report_date: moment.utc().unix()
+      report_date: moment.utc().unix(),
+      restreamer: this.state.restreamer,
+      vod_url: this.state.vodUrl
     };
     request.send(JSON.stringify(requestBody));
   }
@@ -171,6 +185,12 @@ class ReportingPanel extends Component {
   }
 
   render() {
+    const dateDefault = moment
+      .utc()
+      .toISOString()
+      .substr(0, 16);
+    console.log("Current moment ISO:", dateDefault);
+    console.log("Working date:", "2017-06-13T13:00");
     console.log("Status text is error: ", this.state.statusTextIsError);
     const playerNameList = this.getPlayerList();
     return (
@@ -269,7 +289,38 @@ class ReportingPanel extends Component {
                 </div>
               </div>
 
-              {/* Date picker */}
+              <table className="Text-input-table">
+                <tbody>
+                  <tr>
+                    <td>Match Date</td>
+                    <td>
+                      <input type="datetime-local" defaultValue={dateDefault} />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>VOD</td>
+                    <td>
+                      <input
+                        type="text"
+                        placeholder="Twitch URL"
+                        onChange={this.changeVodUrl}
+                      />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>Restreamer</td>
+                    <td>
+                      <input
+                        type="text"
+                        placeholder="Twitch username"
+                        onChange={this.changeRestreamer}
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           ) : (
             <p>Select a division above to report a match!</p>
