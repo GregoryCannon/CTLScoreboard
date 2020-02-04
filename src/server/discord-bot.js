@@ -26,8 +26,8 @@ class BotClient {
     if (!match.report_date) {
       return "unknown date";
     }
-    const matchMoment = moment.unix(match.report_date).utc();
-    return matchMoment.format("DD MMMM YYYY HH:mm") + " UTC";
+    const matchMoment = moment.unix(match.report_date);
+    return matchMoment.format("DD MMMM YYYY hh:mm") + " UTC";
   }
 
   formatMatch(match) {

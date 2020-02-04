@@ -12,28 +12,26 @@ class ReportingPanel extends Component {
       statusText: "",
       statusTextIsError: false,
       reportingDivision: configData.divisionData[0].divisionName,
-      winnerName: "",
-      loserName: "",
-      loserGameCount: "",
-      winnerGameCount: GAMES_TO_WIN,
-      winnerHome: "",
-      vodUrl: "",
-      restreamer: ""
+      winnerHome: ""
     };
+    this.divisionInput = React.createRef();
+    this.winnerNameInput = React.createRef();
+    this.loserNameInput = React.createRef();
+    this.loserGamesInput = React.createRef();
+    this.winnerGamesInput = React.createRef();
+    this.winnerHomeInput = React.createRef();
+    this.loserHomeInput = React.createRef();
+    this.vodUrlInput = React.createRef();
+    this.restreamerInput = React.createRef();
+    this.datePickerInput = React.createRef();
+
     this.changeReportingDivision = this.changeReportingDivision.bind(this);
-    this.changeWinner = this.changeWinner.bind(this);
-    this.changeLoser = this.changeLoser.bind(this);
-    this.changeLoserGameCount = this.changeLoserGameCount.bind(this);
-    this.changeWinnerGameCount = this.changeWinnerGameCount.bind(this);
     this.submitClicked = this.submitClicked.bind(this);
     this.changeWinnerHome = this.changeWinnerHome.bind(this);
-    this.changeVodUrl = this.changeVodUrl.bind(this);
-    this.changeRestreamer = this.changeRestreamer.bind(this);
   }
 
   changeReportingDivision(event) {
     this.setState({
-      ...this.state,
       reportingDivision: event.target.value,
       winnerName: "",
       loserName: "",
@@ -56,70 +54,41 @@ class ReportingPanel extends Component {
     return filteredDivisions[0].players;
   }
 
-  changeWinner(event) {
-    this.setState({ winnerName: event.target.value });
-  }
-
-  changeLoser(event) {
-    this.setState({ loserName: event.target.value });
-  }
-
-  changeLoserGameCount(event) {
-    this.setState({
-      ...this.state,
-      loserGameCount: parseInt(event.target.value, 10)
-    });
-  }
-
-  changeWinnerGameCount(event) {
-    this.setState({
-      ...this.state,
-      winnerGameCount: parseInt(event.target.value, 10)
-    });
-  }
-
-  changeVodUrl(event) {
-    this.setState({ vodUrl: event.target.value });
-  }
-
-  changeRestreamer(event) {
-    this.setState({ restreamer: event.target.value });
-  }
-
   changeWinnerHome(isHome) {
     this.setState({ winnerHome: isHome });
   }
 
   // Check the form and return either 'valid' or the error to be displayed
-  validateForm() {
+  validateFormData(formData) {
+    console.log(formData);
     // Missing info
-    if (!this.state.reportingDivision) {
+    if (!formData.division) {
       return "Select a division for the match";
     }
-    if (this.state.winnerName === "") {
+    if (formData.winner === "") {
       return "Select the match winner";
     }
-    if (this.state.loserName === "") {
+    if (formData.loser === "") {
       return "Select the match loser";
     }
-    if (this.state.loserGameCount === "") {
+    if (!Number.isInteger(formData.loser_games)) {
       return "Enter the game count of the match loser";
     }
-    if (this.state.winnerGameCount !== GAMES_TO_WIN) {
+    if (formData.winner_games !== GAMES_TO_WIN) {
       return "The winner should have won 3 games.";
     }
-    if (this.state.winnerHome === "") {
+    if (formData.winner_home === "") {
       return "Select which player was home for this match";
     }
 
     // Invalid info
-    if (this.state.winnerName === this.state.loserName) {
+    if (formData.winner === formData.loser) {
       return "Invalid match: a player cannot face themselves.";
     }
-    if (this.state.loserGameCount < 0 || this.state.winnerGameCount < 0) {
+    if (formData.loser_games < 0 || formData.winner_games < 0) {
       return "Invalid match: can't have a negative number of wins";
     }
-    if (this.state.loserGameCount > this.state.winnerGameCount - 1) {
+    if (formData.loser_games > formData.winner_games - 1) {
       return "Invalid match: the winner must win more games than the loser.";
     }
 
@@ -127,7 +96,7 @@ class ReportingPanel extends Component {
     return "valid";
   }
 
-  makeSubmitRequest() {
+  makeSubmitRequest(formData) {
     var request = new XMLHttpRequest();
 
     // Open a new connection, using the POST request on the URL endpoint
@@ -139,7 +108,6 @@ class ReportingPanel extends Component {
       const response = JSON.parse(request.response);
       if (response.didSucceed) {
         this.setState({
-          ...this.state,
           statusText: "Submitted match!",
           statusTextIsError: false
         });
@@ -147,7 +115,6 @@ class ReportingPanel extends Component {
         this.props.refreshFunction();
       } else {
         this.setState({
-          ...this.state,
           statusText: response.errorMessage,
           statusTextIsError: true
         });
@@ -155,33 +122,34 @@ class ReportingPanel extends Component {
     }.bind(this);
 
     // Send request (formatted exactly like in DB for easy forwarding)
-    const requestBody = {
-      division: this.state.reportingDivision,
-      winner: this.state.winnerName,
-      loser: this.state.loserName,
-      winner_games: this.state.winnerGameCount,
-      loser_games: this.state.loserGameCount,
-      winner_home: this.state.winnerHome,
-      report_date: moment.utc().unix(),
-      restreamer: this.state.restreamer,
-      vod_url: this.state.vodUrl
-    };
-    request.send(JSON.stringify(requestBody));
+    request.send(JSON.stringify(formData));
   }
 
   submitClicked() {
     // Check for errors
-    const validationResult = this.validateForm();
+
+    const formData = {
+      division: this.divisionInput.current.value,
+      winner: this.winnerNameInput.current.value,
+      loser: this.loserNameInput.current.value,
+      winner_games: parseInt(this.winnerGamesInput.current.value, 10),
+      loser_games: parseInt(this.loserGamesInput.current.value, 10),
+      winner_home: this.state.winnerHome,
+      report_date: moment(this.datePickerInput.current.value).unix(),
+      restreamer: this.restreamerInput.current.value,
+      vod_url: this.vodUrlInput.current.value
+    };
+
+    const validationResult = this.validateFormData(formData);
     if (validationResult !== "valid") {
       this.setState({
-        ...this.state,
         statusText: validationResult,
         statusTextIsError: true
       });
       return;
     }
 
-    this.makeSubmitRequest();
+    this.makeSubmitRequest(formData);
   }
 
   render() {
@@ -190,8 +158,6 @@ class ReportingPanel extends Component {
       .toISOString()
       .substr(0, 16);
     console.log("Current moment ISO:", dateDefault);
-    console.log("Working date:", "2017-06-13T13:00");
-    console.log("Status text is error: ", this.state.statusTextIsError);
     const playerNameList = this.getPlayerList();
     return (
       <div>
@@ -201,7 +167,8 @@ class ReportingPanel extends Component {
           <div className="Select-reporting-division">
             Division{" "}
             <select
-              className="Division-picker"
+              className="Division-Input"
+              ref={this.divisionInput}
               onChange={this.changeReportingDivision}
             >
               {configData.divisionData.map((division, i) => {
@@ -222,7 +189,7 @@ class ReportingPanel extends Component {
                   <select
                     id="winner-name"
                     defaultValue=""
-                    onChange={this.changeWinner}
+                    ref={this.winnerNameInput}
                   >
                     <option value="" selected disabled>
                       (winner)
@@ -236,7 +203,7 @@ class ReportingPanel extends Component {
                     className="Win-count-input"
                     type="number"
                     defaultValue={GAMES_TO_WIN}
-                    onChange={this.changeWinnerGameCount}
+                    ref={this.winnerGamesInput}
                   ></input>
                   <div>
                     <label htmlFor="winner-home">Home</label>
@@ -244,6 +211,7 @@ class ReportingPanel extends Component {
                       id="winner-home"
                       type="radio"
                       name="home-away"
+                      ref={this.winnerHomeInput}
                       onChange={e => {
                         this.changeWinnerHome(event.target.value === "on");
                       }}
@@ -259,7 +227,7 @@ class ReportingPanel extends Component {
                   <select
                     id="loser-name"
                     defaultValue=""
-                    onChange={this.changeLoser}
+                    ref={this.loserNameInput}
                   >
                     <option value="" selected disabled>
                       (loser)
@@ -272,7 +240,7 @@ class ReportingPanel extends Component {
                     id="loser-game-count"
                     className="Win-count-input"
                     type="number"
-                    onChange={this.changeLoserGameCount}
+                    ref={this.loserGamesInput}
                   ></input>
 
                   <div>
@@ -292,9 +260,13 @@ class ReportingPanel extends Component {
               <table className="Text-input-table">
                 <tbody>
                   <tr>
-                    <td>Match Date</td>
+                    <td>Match Date (UTC)</td>
                     <td>
-                      <input type="datetime-local" defaultValue={dateDefault} />
+                      <input
+                        type="datetime-local"
+                        defaultValue={dateDefault}
+                        ref={this.datePickerInput}
+                      />
                     </td>
                   </tr>
 
@@ -304,7 +276,7 @@ class ReportingPanel extends Component {
                       <input
                         type="text"
                         placeholder="Twitch URL"
-                        onChange={this.changeVodUrl}
+                        ref={this.vodUrlInput}
                       />
                     </td>
                   </tr>
@@ -315,7 +287,7 @@ class ReportingPanel extends Component {
                       <input
                         type="text"
                         placeholder="Twitch username"
-                        onChange={this.changeRestreamer}
+                        ref={this.restreamerInput}
                       />
                     </td>
                   </tr>

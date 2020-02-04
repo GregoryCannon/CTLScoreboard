@@ -17,16 +17,8 @@ class MatchHistory extends Component {
     if (!match.report_date) {
       return "unknown date";
     }
-    console.log("Formatting Date: ", match.report_date);
-    console.log(
-      "Formatted: ",
-      moment
-        .unix(match.report_date)
-        .utc()
-        .format("HH:MM MMM DD, YYYY")
-    );
-    const matchMoment = moment.unix(match.report_date).utc();
-    return matchMoment.format("HH:mm MMM DD, YYYY");
+    const matchMoment = moment.unix(match.report_date);
+    return matchMoment.format("hh:mm MMM DD, YYYY");
   }
 
   makeDeleteRequest(matchData) {

@@ -23,7 +23,7 @@ const logger = require("simple-node-logger").createSimpleFileLogger(
 );
 
 // Configure the discord bot
-const token = ;
+const token = "NjcyMzE1NzgzMzYzMTY2MjA4.XjPlkg.SR9j3zQJ5r-2z1d8nmWC_j1xjyI";
 const discordBot = new BotClient(token);
 discordBot.start();
 
