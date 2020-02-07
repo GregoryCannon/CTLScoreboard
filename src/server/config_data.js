@@ -1,5 +1,3 @@
-const restreamers = ["Kingsman", "Kryptonick", "Dog"];
-
 const divisionData = [
   {
     divisionName: "1",
