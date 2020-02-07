@@ -23,7 +23,7 @@ const logger = require("simple-node-logger").createSimpleFileLogger(
 );
 
 // Configure the discord bot
-const token = "";
+const token = process.env.DISCORD_TOKEN;
 const discordBot = new BotClient(token);
 discordBot.start();
 
@@ -32,9 +32,6 @@ app.use(function(req, res, next) {
   req.db = db;
   next();
 });
-
-// For testing process.env
-console.log(util.getAdminPassword());
 
 /*
 --------------------
@@ -219,6 +216,7 @@ app.post("/match-data", function(req, res) {
   });
 });
 
+// Main DELETE match request
 app.delete("/match-data", function(req, res) {
   logger.info("--- Delete match request: ", req.body);
   console.log("Received delete request:", req.body);
@@ -255,6 +253,24 @@ app.delete("/match-data", function(req, res) {
   });
 });
 
+app.post("/authenticate", function(req, res) {
+  console.log("Auth attempt with password:", req.body.password);
+  if (
+    req.body.password === (process.env.ADMIN_PASSWORD || "tameimpalajimhalpert")
+  ) {
+    console.log("Auth passed, sending response");
+    res.send({
+      didSucceed: true
+    });
+  } else {
+    console.log("Auth failed, sending response");
+    res.send({
+      didSucceed: false
+    });
+  }
+});
+
+// GET request for serving the frontend
 app.get("/", function(req, res) {
   logger.info("--- Get frontend request");
   res.sendFile(path.join(__dirname, "../../build", "index.html"));

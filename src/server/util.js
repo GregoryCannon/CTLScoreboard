@@ -433,16 +433,8 @@ function getPlayerData(list, playerName) {
 }
 
 function getApiUrl(suffix) {
-  return (process.env.API_URL || "http://localhost:8080") + "/" + suffix;
-}
-
-function getAdminPassword() {
-  console.log(
-    "Admin password is:",
-    process.env.REACT_APP_ADMIN_PASSWORD || "tameimpalajimhalpert"
-  );
-  console.log("Process.env:", process.env);
-  return process.env.REACT_APP_ADMIN_PASSWORD || "tameimpalajimhalpert";
+  // return (process.env.API_URL || "http://localhost:8080") + "/" + suffix;
+  return "https://ctlscoreboard.herokuapp.com/" + suffix;
 }
 
 // Code snippet from
@@ -494,6 +486,5 @@ module.exports = {
   compareSimulated,
   getPlayerData,
   getMatchSchedule,
-  getApiUrl,
-  getAdminPassword
+  getApiUrl
 };

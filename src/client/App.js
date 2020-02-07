@@ -26,12 +26,24 @@ class App extends Component {
   }
 
   authenticateAdmin() {
-    console.log("Inside of app.js, process.env =", process.env);
-    if (this.state.currentTypedAdminPassword == util.getAdminPassword()) {
-      this.setState({ ...this.state, isAdmin: true });
-    } else {
-      alert("Incorrect admin password");
-    }
+    var request = new XMLHttpRequest();
+    request.open("POST", util.getApiUrl("authenticate"), true);
+    request.setRequestHeader("Content-type", "application/json");
+
+    // Callback for result
+    request.onload = function() {
+      console.log("Received data:", request.response);
+      const response = JSON.parse(request.response);
+      if (response.didSucceed) {
+        this.setState({ ...this.state, isAdmin: true });
+      } else {
+        alert("Incorrect admin password");
+      }
+    }.bind(this);
+
+    request.send(
+      JSON.stringify({ password: this.state.currentTypedAdminPassword })
+    );
   }
 
   toggleAdminPasswordForm() {
