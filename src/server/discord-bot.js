@@ -20,6 +20,7 @@ class BotClient {
     this.mainChannel = "the-lab";
     this.isReady = false;
     this.pendingMessages = [];
+    this.previousVodUrl = "";
   }
 
   getMatchDateFormatted(match) {
@@ -40,7 +41,13 @@ class BotClient {
     const awayGames = match.winner_home
       ? match.loser_games
       : match.winner_games;
-    return `:fire: ${formattedDate} ${homePlayer} (H) v ${awayPlayer} (A) ${homeGames}-${awayGames} ${match.vod_url}\nRestreamed by ${match.restreamer}`;
+    // Don't embed a preview if it's a repeated vod
+    const vodUrl =
+      match.vod_url === this.previousVodUrl
+        ? "<" + match.vod_url + ">"
+        : match.vod_url;
+    this.previousVodUrl = match.vod_url;
+    return `:fire: ${formattedDate} ${homePlayer} (H) v ${awayPlayer} (A) ${homeGames}-${awayGames} ${vodUrl}\nRestreamed by ${match.restreamer}`;
   }
 
   sendMessageInChannel(messageText, channelName) {
