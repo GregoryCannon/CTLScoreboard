@@ -135,7 +135,7 @@ function getMatchAlreadyExistsErrorMessage(winner, loser, winnerHome) {
 
 // Main GET standings request
 app.get("/standings", function(req, res) {
-  logger.info("--- Get standings request: ", req.body);
+  console.log("LOGGER----", "--- Get standings request: ", req.body);
   if (cachedFinalStandings != null) {
     console.log("Sending response with cached standings");
     return res.send(cachedFinalStandings);
@@ -154,7 +154,7 @@ app.get("/standings", function(req, res) {
 
 // Main GET match data request
 app.get("/match-data", function(req, res) {
-  logger.info("--- Get match data request: ", req.body);
+  console.log("LOGGER----", "--- Get match data request: ", req.body);
   // Get matches from db
   getValidMatches(function(e, matches) {
     return res.send(matches);
@@ -163,7 +163,7 @@ app.get("/match-data", function(req, res) {
 
 // Main POST request to report a match
 app.post("/match-data", function(req, res) {
-  logger.info("--- Post match request: ", req.body);
+  console.log("LOGGER----", "--- Post match request: ", req.body);
   console.log("Received request: ", req.body);
 
   // Check that the match hasn't already been reported
@@ -172,7 +172,7 @@ app.post("/match-data", function(req, res) {
     const loser = req.body.loser;
     const winnerHome = req.body.winner_home;
     if (checkMatchAlreadyExists(matches, winner, loser, winnerHome)) {
-      logger.info(
+      console.log("LOGGER----", 
         "Post match failed - match already exists\nRequest: ",
         req.body
       );
@@ -189,9 +189,9 @@ app.post("/match-data", function(req, res) {
       const newMatchData = { ...req.body, valid: true, corrupted: false };
       matchListDb.insert(newMatchData, function(err, doc) {
         if (err) {
-          logger.error(err);
+          console.log("LOGGER----", err);
           // If it failed, return error
-          logger.info(
+          console.log("LOGGER----", 
             "Post match failed\nRequest: ",
             req.body,
             "\nError: ",
@@ -203,7 +203,7 @@ app.post("/match-data", function(req, res) {
           });
         } else {
           // Otherwise, notify of success and post to discord
-          logger.info("Post match succeeded\nRequest: ", req.body);
+          console.log("LOGGER----", "Post match succeeded\nRequest: ", req.body);
           invalidateCache();
           discordBot.reportMatch(req.body);
           res.send({
@@ -218,10 +218,10 @@ app.post("/match-data", function(req, res) {
 
 // Main DELETE match request
 app.delete("/match-data", function(req, res) {
-  logger.info("--- Delete match request: ", req.body);
+  console.log("LOGGER----", "--- Delete match request: ", req.body);
   console.log("Received delete request:", req.body);
   if (req.body === {}) {
-    logger.info("Delete match failed — empty body\nRequest: ", req.body);
+    console.log("LOGGER----", "Delete match failed — empty body\nRequest: ", req.body);
     res.send({
       didSucceed: false,
       errorMessage:
@@ -236,14 +236,14 @@ app.delete("/match-data", function(req, res) {
   ) {
     if (err) {
       // If it failed, return error
-      logger.info("Delete match failed\nRequest:", req.body, "\nError: ", err);
+      console.log("LOGGER----", "Delete match failed\nRequest:", req.body, "\nError: ", err);
       res.send({
         didSucceed: false,
         errorMessage: err
       });
     } else {
       // Otherwise, notify success
-      logger.info("Delete match succeeded (invalidated)\nRequest: ", req.body);
+      console.log("LOGGER----", "Delete match succeeded (invalidated)\nRequest: ", req.body);
       invalidateCache();
       res.send({
         didSucceed: true,
@@ -272,7 +272,7 @@ app.post("/authenticate", function(req, res) {
 
 // GET request for serving the frontend
 app.get("/", function(req, res) {
-  logger.info("--- Get frontend request");
+  console.log("LOGGER----", "--- Get frontend request");
   res.sendFile(path.join(__dirname, "../../build", "index.html"));
 });
 
