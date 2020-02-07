@@ -34,12 +34,23 @@ class BotClient {
     const formattedDate = this.getMatchDateFormatted(match);
     const homePlayer = match.winner_home ? match.winner : match.loser;
     const awayPlayer = match.winner_home ? match.loser : match.winner;
-    return `:fire: ${formattedDate} ${homePlayer} (H) v ${awayPlayer} (A) ${match.winner_games}-${match.loser_games} ${match.vod_url}\nRestreamed by ${match.restreamer}`;
+    const homeGames = match.winner_home
+      ? match.winner_games
+      : match.loser_games;
+    const awayGames = match.winner_home
+      ? match.loser_games
+      : match.winner_games;
+    return `:fire: ${formattedDate} ${homePlayer} (H) v ${awayPlayer} (A) ${homeGames}-${awayGames} ${match.vod_url}\nRestreamed by ${match.restreamer}`;
   }
 
   sendMessageInChannel(messageText, channelName) {
     if (this.isReady) {
-      this.client.channels.find(x => x.name === channelName).send(messageText);
+      const channel = this.client.channels.find(x => x.name === channelName);
+      try {
+        channel.send(messageText);
+      } catch (err) {
+        console.error(err);
+      }
     } else {
       this.pendingMessages.push([channelName, messageText]);
     }
