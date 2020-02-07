@@ -139,7 +139,7 @@ class ReportingPanel extends Component {
       loser_games: parseInt(this.loserGamesInput.current.value, 10),
       winner_home: this.state.winnerHome,
       match_date: moment.utc(this.datePickerInput.current.value).unix(),
-      report_date: moment().unix,
+      report_date: moment().unix(),
       restreamer: this.restreamerInput.current.value,
       vod_url: this.vodUrlInput.current.value
     };
