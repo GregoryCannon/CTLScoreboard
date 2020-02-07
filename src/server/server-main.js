@@ -23,7 +23,7 @@ const logger = require("simple-node-logger").createSimpleFileLogger(
 );
 
 // Configure the discord bot
-const token = "NjcyMzE1NzgzMzYzMTY2MjA4.XjPlkg.SR9j3zQJ5r-2z1d8nmWC_j1xjyI";
+const token = "";
 const discordBot = new BotClient(token);
 discordBot.start();
 
@@ -33,6 +33,9 @@ app.use(function(req, res, next) {
   next();
 });
 
+// For testing process.env
+console.log(util.getAdminPassword());
+
 /*
 --------------------
 Cache
@@ -40,25 +43,30 @@ Cache
 --------------------
 */
 let cachedFinalStandings = null;
+let backupStandings = null;
 
 // Whenever there is new information that hasn't been processed, clear the cache to force a refresh
 function invalidateCache() {
+  backupStandings = cachedFinalStandings;
   cachedFinalStandings = null;
 }
 
 function refreshCachedStandings(callback) {
   console.log("-- Fetching matches from database...");
   // Get matches from db
-  getMatches(function(e, matches) {
+  getValidMatches(function(e, matches) {
     console.log("-- Calculating standings...");
     // Process and save in cache
-    cachedFinalStandings = getStandings(matches);
-    console.log("Finished calculating standings");
-    callback();
-
-    // // Test sending out a discord ping
-    // const discordTestMatch = matches[0];
-    // discordBot.reportMatch(discordTestMatch);
+    backupStandings = cachedFinalStandings;
+    try {
+      cachedFinalStandings = getStandings(matches);
+      console.log("Finished calculating standings");
+      callback(true);
+    } catch (error) {
+      cachedFinalStandings = backupStandings;
+      console.log("!! Match data corrupted, restoring from backup !!");
+      callback(false);
+    }
   });
 }
 
@@ -68,8 +76,8 @@ function refreshCachedStandings(callback) {
  -------------------
  */
 
-function getMatches(callback) {
-  matchListDb.find({ valid: true }, callback);
+function getValidMatches(callback) {
+  matchListDb.find({ valid: true, corrupted: false }, callback);
 }
 
 // Process the raw DB match data into standings
@@ -136,8 +144,12 @@ app.get("/standings", function(req, res) {
     return res.send(cachedFinalStandings);
   } else {
     console.log("Invalid cache, forced to refresh");
-    refreshCachedStandings(() => {
-      console.log("Sending response with calculated standings");
+    refreshCachedStandings(succeeded => {
+      if (succeeded) {
+        console.log("Sending response with calculated standings");
+      } else {
+        console.log("Sending response with backup data");
+      }
       return res.send(cachedFinalStandings);
     });
   }
@@ -147,7 +159,7 @@ app.get("/standings", function(req, res) {
 app.get("/match-data", function(req, res) {
   logger.info("--- Get match data request: ", req.body);
   // Get matches from db
-  getMatches(function(e, matches) {
+  getValidMatches(function(e, matches) {
     return res.send(matches);
   });
 });
@@ -158,7 +170,7 @@ app.post("/match-data", function(req, res) {
   console.log("Received request: ", req.body);
 
   // Check that the match hasn't already been reported
-  getMatches(function(e, matches) {
+  getValidMatches(function(e, matches) {
     const winner = req.body.winner;
     const loser = req.body.loser;
     const winnerHome = req.body.winner_home;
@@ -177,7 +189,7 @@ app.post("/match-data", function(req, res) {
       });
     } else {
       // Continue with the post
-      const newMatchData = { ...req.body, valid: true };
+      const newMatchData = { ...req.body, valid: true, corrupted: false };
       matchListDb.insert(newMatchData, function(err, doc) {
         if (err) {
           logger.error(err);
@@ -248,13 +260,68 @@ app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "../../build", "index.html"));
 });
 
+// Start marking matches as corrupted from newest to oldest until the standings compute properly
+function invalidateCorruptedData() {
+  console.log("Starting emergency de-corruption");
+  refreshCachedStandings(succeeded => {
+    if (succeeded) {
+      console.log("Successfully de-corrupted the dataset!");
+      return true;
+    } else {
+      getValidMatches(function(e, matches) {
+        if (matches.length == 0) {
+          // The doomsday case. Lord knows what could get the db here.
+          return false;
+        }
+        const newestMatch = matches[matches.length - 1];
+        const idOnlyBody = { _id: newestMatch._id };
+        matchListDb.update(idOnlyBody, { $set: { corrupted: true } }, function(
+          err,
+          doc
+        ) {
+          if (err) {
+            console.log(
+              "Failed to mark match as corrupted:",
+              newestMatch,
+              "\nREASON:",
+              err
+            );
+          } else {
+            console.log("Marked match as corrupted:", newestMatch);
+            // Recurse
+            return invalidateCorruptedData();
+          }
+        });
+      });
+    }
+  });
+
+  getValidMatches(function(e, matches) {
+    console.log("-- Calculating standings...");
+    // Process and save in cache
+    backupStandings = cachedFinalStandings;
+    try {
+      cachedFinalStandings = getStandings(matches);
+      console.log("Finished calculating standings");
+    } catch (error) {
+      cachedFinalStandings = backupStandings;
+      console.log("!! Match data corrupted, restoring from backup !!");
+    }
+  });
+}
+
 /*
 Start script
 */
 function main() {
   console.log("Server is running");
-  refreshCachedStandings(() => {
-    console.log("Refreshed standings locally!");
+  refreshCachedStandings(succeeded => {
+    if (succeeded) {
+      console.log("Refreshed standings locally!");
+    } else {
+      console.log("!!!! Sev 0 - Data already corrupted on startup");
+      invalidateCorruptedData();
+    }
   });
 }
 main();

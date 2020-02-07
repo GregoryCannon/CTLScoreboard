@@ -19,15 +19,12 @@ class ReportingPanel extends Component {
     this.loserNameInput = React.createRef();
     this.loserGamesInput = React.createRef();
     this.winnerGamesInput = React.createRef();
-    this.winnerHomeInput = React.createRef();
-    this.loserHomeInput = React.createRef();
     this.vodUrlInput = React.createRef();
     this.restreamerInput = React.createRef();
     this.datePickerInput = React.createRef();
 
     this.changeReportingDivision = this.changeReportingDivision.bind(this);
     this.submitClicked = this.submitClicked.bind(this);
-    this.changeWinnerHome = this.changeWinnerHome.bind(this);
   }
 
   changeReportingDivision(event) {
@@ -36,8 +33,13 @@ class ReportingPanel extends Component {
       winnerName: "",
       loserName: "",
       loserGameCount: "",
-      winnerGameCount: GAMES_TO_WIN,
-      winnerHome: ""
+      winnerGameCount: GAMES_TO_WIN
+    });
+  }
+
+  changeWinnerHome(winnerHome) {
+    this.setState({
+      winnerHome: winnerHome
     });
   }
 
@@ -52,10 +54,6 @@ class ReportingPanel extends Component {
       return [];
     }
     return filteredDivisions[0].players;
-  }
-
-  changeWinnerHome(isHome) {
-    this.setState({ winnerHome: isHome });
   }
 
   // Check the form and return either 'valid' or the error to be displayed
@@ -79,6 +77,12 @@ class ReportingPanel extends Component {
     }
     if (formData.winner_home === "") {
       return "Select which player was home for this match";
+    }
+    if (formData.vod_url === "") {
+      return "Enter the VOD url";
+    }
+    if (formData.restreamer === "") {
+      return "Enter the Twitch username of the restreamer";
     }
 
     // Invalid info
@@ -127,7 +131,6 @@ class ReportingPanel extends Component {
 
   submitClicked() {
     // Check for errors
-
     const formData = {
       division: this.divisionInput.current.value,
       winner: this.winnerNameInput.current.value,
@@ -135,7 +138,8 @@ class ReportingPanel extends Component {
       winner_games: parseInt(this.winnerGamesInput.current.value, 10),
       loser_games: parseInt(this.loserGamesInput.current.value, 10),
       winner_home: this.state.winnerHome,
-      report_date: moment(this.datePickerInput.current.value).unix(),
+      match_date: moment.utc(this.datePickerInput.current.value).unix(),
+      report_date: moment().unix,
       restreamer: this.restreamerInput.current.value,
       vod_url: this.vodUrlInput.current.value
     };
@@ -157,7 +161,6 @@ class ReportingPanel extends Component {
       .utc()
       .toISOString()
       .substr(0, 16);
-    console.log("Current moment ISO:", dateDefault);
     const playerNameList = this.getPlayerList();
     return (
       <div>
@@ -211,7 +214,6 @@ class ReportingPanel extends Component {
                       id="winner-home"
                       type="radio"
                       name="home-away"
-                      ref={this.winnerHomeInput}
                       onChange={e => {
                         this.changeWinnerHome(event.target.value === "on");
                       }}

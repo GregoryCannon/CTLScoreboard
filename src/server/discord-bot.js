@@ -23,10 +23,10 @@ class BotClient {
   }
 
   getMatchDateFormatted(match) {
-    if (!match.report_date) {
+    if (!match.match_date) {
       return "unknown date";
     }
-    const matchMoment = moment.unix(match.report_date);
+    const matchMoment = moment.unix(match.match_date);
     return matchMoment.format("DD MMMM YYYY hh:mm") + " UTC";
   }
 
@@ -34,7 +34,7 @@ class BotClient {
     const formattedDate = this.getMatchDateFormatted(match);
     const homePlayer = match.winner_home ? match.winner : match.loser;
     const awayPlayer = match.winner_home ? match.loser : match.winner;
-    return `:fire: ${formattedDate} ${homePlayer} (H) v ${awayPlayer} (A) ${match.winner_games}-${match.loser_games} ${match.vod_url}`;
+    return `:fire: ${formattedDate} ${homePlayer} (H) v ${awayPlayer} (A) ${match.winner_games}-${match.loser_games} ${match.vod_url}\nRestreamed by ${match.restreamer}`;
   }
 
   sendMessageInChannel(messageText, channelName) {

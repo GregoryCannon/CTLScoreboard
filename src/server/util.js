@@ -1,5 +1,5 @@
 // Since I can't figure out environment variables in React rip
-process.env.API_URL = "https://ctlscoreboard.herokuapp.com/";
+//process.env.API_URL = "https://ctlscoreboard.herokuapp.com/";
 
 const memeDivisionData = [
   {
@@ -437,7 +437,12 @@ function getApiUrl(suffix) {
 }
 
 function getAdminPassword() {
-  return process.env.ADMIN_PASSWORD || "tameimpalajimhalpert";
+  console.log(
+    "Admin password is:",
+    process.env.REACT_APP_ADMIN_PASSWORD || "tameimpalajimhalpert"
+  );
+  console.log("Process.env:", process.env);
+  return process.env.REACT_APP_ADMIN_PASSWORD || "tameimpalajimhalpert";
 }
 
 // Code snippet from

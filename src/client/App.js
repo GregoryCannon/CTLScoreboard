@@ -26,6 +26,7 @@ class App extends Component {
   }
 
   authenticateAdmin() {
+    console.log("Inside of app.js, process.env =", process.env);
     if (this.state.currentTypedAdminPassword == util.getAdminPassword()) {
       this.setState({ ...this.state, isAdmin: true });
     } else {
@@ -68,6 +69,7 @@ class App extends Component {
 
     // Callback for result
     request.onload = function() {
+      console.log("Received data:", request.response);
       var newDivisionData = JSON.parse(request.response);
       this.setState({
         ...this.state,

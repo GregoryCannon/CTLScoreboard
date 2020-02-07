@@ -14,11 +14,11 @@ class MatchHistory extends Component {
   }
 
   getMatchDateFormatted(match) {
-    if (!match.report_date) {
+    if (!match.match_date) {
       return "unknown date";
     }
-    const matchMoment = moment.unix(match.report_date);
-    return matchMoment.format("hh:mm MMM DD, YYYY");
+    const matchMoment = moment.unix(match.match_date);
+    return matchMoment.utc().format("hh:mm MMM DD, YYYY");
   }
 
   makeDeleteRequest(matchData) {
@@ -56,7 +56,6 @@ class MatchHistory extends Component {
 
   isMatchDeletable(match) {
     const deleteButtonCutoffTime = moment()
-      .utc()
       .subtract(15, "minutes")
       .unix();
     return this.props.isAdmin || match.report_date > deleteButtonCutoffTime;
