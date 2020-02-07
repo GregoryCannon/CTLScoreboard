@@ -52,7 +52,14 @@ class Division extends Component {
     if (percentChance === undefined) {
       return "-";
     }
-    return percentChance + "%";
+    const floatPercent = parseFloat(percentChance);
+    if (floatPercent !== 0 && floatPercent < 1){
+      return "<1%";
+    }
+    if (floatPercent !== 100 && floatPercent > 99){
+      return ">99%";
+    }
+    return floatPercent.toFixed(0) + "%";
   }
 
   render() {

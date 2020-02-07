@@ -126,11 +126,11 @@ function runSimulation(division, matchSchedule) {
     player.promoChance = (
       (promoCounts[player.name] * 100) /
       NUM_ITERATIONS
-    ).toFixed(0);
+    ).toFixed(3);
     player.relegationChance = (
       (relegationCounts[player.name] * 100) /
       NUM_ITERATIONS
-    ).toFixed(0);
+    ).toFixed(3);
   }
 
   // Sort by the simulation data
