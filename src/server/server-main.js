@@ -172,7 +172,8 @@ app.post("/match-data", function(req, res) {
     const loser = req.body.loser;
     const winnerHome = req.body.winner_home;
     if (checkMatchAlreadyExists(matches, winner, loser, winnerHome)) {
-      console.log("LOGGER----", 
+      console.log(
+        "LOGGER----",
         "Post match failed - match already exists\nRequest: ",
         req.body
       );
@@ -191,7 +192,8 @@ app.post("/match-data", function(req, res) {
         if (err) {
           console.log("LOGGER----", err);
           // If it failed, return error
-          console.log("LOGGER----", 
+          console.log(
+            "LOGGER----",
             "Post match failed\nRequest: ",
             req.body,
             "\nError: ",
@@ -203,7 +205,11 @@ app.post("/match-data", function(req, res) {
           });
         } else {
           // Otherwise, notify of success and post to discord
-          console.log("LOGGER----", "Post match succeeded\nRequest: ", req.body);
+          console.log(
+            "LOGGER----",
+            "Post match succeeded\nRequest: ",
+            req.body
+          );
           invalidateCache();
           discordBot.reportMatch(req.body);
           res.send({
@@ -221,7 +227,11 @@ app.delete("/match-data", function(req, res) {
   console.log("LOGGER----", "--- Delete match request: ", req.body);
   console.log("Received delete request:", req.body);
   if (req.body === {}) {
-    console.log("LOGGER----", "Delete match failed — empty body\nRequest: ", req.body);
+    console.log(
+      "LOGGER----",
+      "Delete match failed — empty body\nRequest: ",
+      req.body
+    );
     res.send({
       didSucceed: false,
       errorMessage:
@@ -236,14 +246,24 @@ app.delete("/match-data", function(req, res) {
   ) {
     if (err) {
       // If it failed, return error
-      console.log("LOGGER----", "Delete match failed\nRequest:", req.body, "\nError: ", err);
+      console.log(
+        "LOGGER----",
+        "Delete match failed\nRequest:",
+        req.body,
+        "\nError: ",
+        err
+      );
       res.send({
         didSucceed: false,
         errorMessage: err
       });
     } else {
       // Otherwise, notify success
-      console.log("LOGGER----", "Delete match succeeded (invalidated)\nRequest: ", req.body);
+      console.log(
+        "LOGGER----",
+        "Delete match succeeded (invalidated)\nRequest: ",
+        req.body
+      );
       invalidateCache();
       res.send({
         didSucceed: true,

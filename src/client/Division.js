@@ -144,7 +144,7 @@ class Division extends Component {
                   }}
                 >
                   <td className="Extra-padding-left">{index + 1}</td>
-                  <td>{player.name}</td>
+                  <td className="No-wrap">{player.name}</td>
                   <td>{player.mp}</td>
                   <td>
                     {player.wins} - {player.losses}

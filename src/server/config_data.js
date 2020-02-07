@@ -101,7 +101,7 @@ const divisionData = [
       "gummithecat",
       "gregboomcannon",
       "kuboxxxxx",
-      "fatsam",
+      "fatsam"
     ]
   },
   {
@@ -118,7 +118,7 @@ const divisionData = [
       "ms_drop",
       "colton",
       "rory",
-      "kingsman",
+      "kingsman"
     ]
   },
   {
@@ -138,7 +138,7 @@ const divisionData = [
       "diamond",
       "samantha"
     ]
-  },
+  }
 ];
 
 module.exports = {
