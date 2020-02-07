@@ -18,7 +18,7 @@ class MatchHistory extends Component {
       return "unknown date";
     }
     const matchMoment = moment.unix(match.match_date);
-    return matchMoment.utc().format("hh:mm MMM DD, YYYY");
+    return matchMoment.utc().format("kk:mm MMM DD, YYYY");
   }
 
   makeDeleteRequest(matchData) {

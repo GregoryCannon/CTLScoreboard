@@ -12,11 +12,17 @@
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+  display: none;
 }
 
 .App-header {
   background-color: #222;
   color: white;
+}
+
+.App-header h1 {
+  padding-top: 36px;
+  margin: 0;
 }
 
 .Header-nav {

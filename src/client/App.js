@@ -136,7 +136,7 @@ class App extends Component {
         </div>
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to CTL</h2>
+          <h1>CTL Standings</h1>
           <div className="Header-nav">
             <button
               className="Admin-login-button"
