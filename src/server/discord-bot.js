@@ -17,7 +17,8 @@ class BotClient {
   constructor(token) {
     this.token = token;
     this.client = new Discord.Client();
-    this.mainChannel = "the-lab";
+    this.mainChannel = "testmainchannel";
+    this.testChannel = "the-lab";
     this.isReady = false;
     this.pendingMessages = [];
     this.previousVodUrl = "";
@@ -83,20 +84,30 @@ class BotClient {
     });
 
     this.client.on("message", msg => {
-      if (msg.channel.name !== this.mainChannel) {
-        return;
+      // Main channel only listens for the bot check command
+      if (msg.channel.name === this.mainChannel) {
+        console.log("got message in main channel aka", msg.channel.name);
+
+        if (msg.content == "!botcheck") {
+          this.sendMessage(
+            "CTL-Reporting-Bot is active and ready to report matches!"
+          );
+        }
       }
+      // Test channel supports additional commands
+      else if (msg.channel.name == this.testChannel) {
+        console.log("got message in test channel, aka", msg.channel.name);
 
-      console.log("got message in:", msg.channel.name);
+        if (msg.content == "!hi") {
+          this.sendMessageInChannel("Greetings traveler!", this.testChannel);
+        }
 
-      if (msg.content == "!hi") {
-        msg.channel.send("Greetings traveler!");
-      }
-
-      if (msg.content == "!who") {
-        msg.channel.send(
-          `The person who just pinged me is ${msg.author.username}`
-        );
+        if (msg.content == "!who") {
+          this.sendMessageInChannel(
+            `The person who just pinged me is ${msg.author.username}`,
+            this.testChannel
+          );
+        }
       }
     });
 
