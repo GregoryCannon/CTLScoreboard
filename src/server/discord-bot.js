@@ -90,7 +90,7 @@ class BotClient {
 
         if (msg.content == "!botcheck") {
           this.sendMessage(
-            "CTL-Reporting-Bot is active and ready to report matches!"
+            "I'm online and ready to report matches! Go to https://ctlscoreboard.herokuapp.com/ to report a match."
           );
         }
       }
