@@ -88,7 +88,7 @@ class BotClient {
       if (msg.channel.name === this.mainChannel) {
         console.log("got message in main channel aka", msg.channel.name);
 
-        if (msg.content == "!botcheck") {
+        if (msg.content == "!bot") {
           this.sendMessage(
             "I'm online and ready to report matches! Go to https://ctlscoreboard.herokuapp.com/ to report a match."
           );
