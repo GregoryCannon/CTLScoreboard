@@ -21,7 +21,7 @@
 }
 
 .App-header h1 {
-  padding-top: 36px;
+  padding: 18px 0;
   margin: 0;
 }
 
@@ -31,7 +31,15 @@
   position: relative;
 }
 
-.Header-nav > button {
+.Content-nav {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+}
+
+.Header-nav > button,
+.Content-nav > button {
   font-size: 1vw;
   display: inline-block;
   padding: 12px;
@@ -40,11 +48,13 @@
   border: none;
 }
 
-.Header-nav > button:hover {
+.Header-nav > button:hover,
+.Content-nav > button:hover {
   background-color: #6d6d6d;
 }
 
-.Header-nav > button:disabled {
+.Header-nav > button:disabled,
+.Content-nav > button:disabled {
   background-color: #888;
 }
 
@@ -116,7 +126,7 @@
   }
 }
 
-.Content-container {
+.Standings-container {
   display: flex;
   flex-flow: row nowrap;
 }

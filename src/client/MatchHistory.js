@@ -13,14 +13,6 @@ class MatchHistory extends Component {
     }`;
   }
 
-  getMatchDateFormatted(match) {
-    if (!match.match_date) {
-      return "unknown date";
-    }
-    const matchMoment = moment.unix(match.match_date);
-    return matchMoment.utc().format("kk:mm MMM DD, YYYY");
-  }
-
   makeDeleteRequest(matchData) {
     var request = new XMLHttpRequest();
     request.open("DELETE", util.getApiUrl("match-data", true));
@@ -76,7 +68,7 @@ class MatchHistory extends Component {
                       {this.getMatchText(match)}
                       <br />
                       <span className="Match-date">
-                        {this.getMatchDateFormatted(match)}
+                        {util.getMatchDateFormatted(match)}
                       </span>
                     </td>
                     <td>

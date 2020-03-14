@@ -1,3 +1,5 @@
+const moment = require("moment");
+
 // Since I can't figure out environment variables in React rip
 //process.env.API_URL = "https://ctlscoreboard.herokuapp.com/";
 
@@ -433,11 +435,18 @@ function getPlayerData(list, playerName) {
 }
 
 function getApiUrl(suffix) {
-  // return (process.env.API_URL || "http://localhost:8080") + "/" + suffix;
+  //return (process.env.API_URL || "http://localhost:8080") + "/" + suffix;
   return "https://ctlscoreboard.herokuapp.com/" + suffix;
 }
 
-// Code snippet from
+function getMatchDateFormatted(match) {
+  if (!match.match_date) {
+    return "unknown date";
+  }
+  const matchMoment = moment.unix(match.match_date);
+  return matchMoment.utc().format("kk:mm MMM DD, YYYY");
+}
+
 function downloadCanvasAsPng(canvas, filename) {
   /// create an "off-screen" anchor tag
   var lnk = document.createElement("a"),
@@ -486,5 +495,6 @@ module.exports = {
   compareSimulated,
   getPlayerData,
   getMatchSchedule,
-  getApiUrl
+  getApiUrl,
+  getMatchDateFormatted
 };

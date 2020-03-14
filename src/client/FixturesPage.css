@@ -1,0 +1,38 @@
+.Fixtures-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.Fixtures-table {
+  border-collapse: collapse;
+  margin: 20px auto;
+}
+
+.Fixtures-table,
+.Fixtures-table th,
+.Fixtures-table td {
+  padding: 4px 10px;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.Division-header {
+  background: #bbb;
+  padding: 10px;
+}
+
+.Secondary-header {
+  background: #ddd;
+}
+
+.Match-complete {
+  background: rgb(153, 204, 153);
+}
+
+.Match-incomplete {
+  background: rgb(255, 128, 128);
+}
+
+.Match-invalid {
+  background: "#eee";
+}

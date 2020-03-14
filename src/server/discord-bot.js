@@ -90,7 +90,7 @@ class BotClient {
 
         if (msg.content == "!bot") {
           this.sendMessage(
-            "I'm online and ready to report matches! Go to https://ctlscoreboard.herokuapp.com/ to report a match."
+            "I'm online and ready to report matches! Go to https://ctlscoreboard.herokuapp.com/ to report a match or view live standings."
           );
         }
       }

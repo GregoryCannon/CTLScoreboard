@@ -2,13 +2,6 @@ import React, { Component } from "react";
 import "./division.css";
 
 class Division extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      sortBy: "promo" // Either 'promo' for simul results, or 'points' for points
-    };
-  }
   // Get a list of the colors for the player slots, ordered first place to last
   getRowColors(divisionData) {
     const winner = "rgb(255, 204, 0)";
@@ -65,7 +58,7 @@ class Division extends Component {
   render() {
     const rowColors = this.getRowColors(this.props.data);
     const sortedPlayers = [...this.props.data.standings];
-    if (this.state.sortBy == "points") {
+    if (this.props.sortByPoints) {
       sortedPlayers.sort((player1, player2) => {
         return player2.points - player1.points;
       });
@@ -92,12 +85,12 @@ class Division extends Component {
               <th>Game Difference</th>
               <th
                 className={
-                  this.state.sortBy == "points"
+                  this.props.sortByPoints
                     ? "Header-sorted-by"
                     : "Header-sortable"
                 }
                 onClick={() => {
-                  this.setState({ sortBy: "points" });
+                  this.props.toggleSort(true);
                 }}
               >
                 <div className="Header-sortable-inner">
@@ -107,12 +100,12 @@ class Division extends Component {
               </th>
               <th
                 className={
-                  this.state.sortBy == "promo"
-                    ? "Header-sorted-by"
-                    : "Header-sortable"
+                  this.props.sortByPoints
+                    ? "Header-sortable"
+                    : "Header-sorted-by"
                 }
                 onClick={() => {
-                  this.setState({ sortBy: "promo" });
+                  this.props.toggleSort(false);
                 }}
               >
                 <div className="Header-sortable-inner">
@@ -126,12 +119,12 @@ class Division extends Component {
               </th>
               <th
                 className={
-                  this.state.sortBy == "promo"
-                    ? "Header-sorted-by"
-                    : "Header-sortable"
+                  this.props.sortByPoints
+                    ? "Header-sortable"
+                    : "Header-sorted-by"
                 }
                 onClick={() => {
-                  this.setState({ sortBy: "promo" });
+                  this.props.toggleSort(false);
                 }}
               >
                 <div className="Header-sortable-inner">

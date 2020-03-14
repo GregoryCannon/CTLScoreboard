@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Division from "./Division";
 import ReportingPanel from "./ReportingPanel";
 import MatchHistory from "./MatchHistory";
+import ResultsPage from "./ResultsPage";
+import FixturesPage from "./FixturesPage";
 import logo from "./logo.svg";
 import "./App.css";
 import html2canvas from "html2canvas";
@@ -18,7 +20,9 @@ class App extends Component {
       divisionData: util.memeDivisionData,
       matchData: util.sampleMatchData,
       showAdminPasswordForm: false,
-      currentTypedAdminPassword: ""
+      currentTypedAdminPassword: "",
+      currentPage: "standings",
+      sortByPoints: false
     };
     this.refreshData = this.refreshData.bind(this);
     this.authenticateAdmin = this.authenticateAdmin.bind(this);
@@ -32,7 +36,6 @@ class App extends Component {
 
     // Callback for result
     request.onload = function() {
-      console.log("Received data:", request.response);
       const response = JSON.parse(request.response);
       if (response.didSucceed) {
         this.setState({ ...this.state, isAdmin: true });
@@ -81,7 +84,6 @@ class App extends Component {
 
     // Callback for result
     request.onload = function() {
-      console.log("Received data:", request.response);
       var newDivisionData = JSON.parse(request.response);
       this.setState({
         ...this.state,
@@ -136,7 +138,6 @@ class App extends Component {
         </div>
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1>CTL Standings</h1>
           <div className="Header-nav">
             <button
               className="Admin-login-button"
@@ -171,34 +172,122 @@ class App extends Component {
             </div>
             <button onClick={this.saveImage}>Export Standings to Image</button>
           </div>
-        </div>
-        <div className="Content-container">
-          <div className="Left-panel">
-            <div id="Page-1">
-              {this.state.divisionData.slice(0, 4).map((division, i) => {
-                return <Division key={i} data={division} />;
-              })}
-            </div>
-            <div id="Page-2">
-              {this.state.divisionData.slice(4).map((division, i) => {
-                return <Division key={i} data={division} />;
-              })}
-            </div>
-          </div>
-          <div className="Right-panel">
-            <div className="Reporting-panel-card">
-              <ReportingPanel refreshFunction={this.refreshData} />
-            </div>
 
-            <div className="Match-history-card">
-              <MatchHistory
-                matchList={this.state.matchData}
-                refreshFunction={this.refreshData}
-                isAdmin={this.state.isAdmin}
-              />
-            </div>
+          <h1>CTL Standings</h1>
+
+          <div className="Content-nav">
+            <button
+              disabled={this.state.currentPage == "standings"}
+              onClick={() => {
+                this.setState({
+                  currentPage: "standings"
+                });
+                console.log("standings", this.state);
+              }}
+            >
+              Standings
+            </button>
+
+            <button
+              disabled={this.state.currentPage == "results"}
+              onClick={() => {
+                this.setState({
+                  currentPage: "results"
+                });
+                console.log("results", this.state);
+              }}
+            >
+              Results
+            </button>
+
+            <button
+              disabled={this.state.currentPage == "fixtures"}
+              onClick={() => {
+                this.setState({
+                  currentPage: "fixtures"
+                });
+                console.log("fixtures", this.state);
+              }}
+            >
+              Fixtures
+            </button>
           </div>
         </div>
+
+        {this.state.currentPage == "standings" ? (
+          <div
+            className="Standings-container"
+            style={{
+              visibility:
+                this.state.currentPage == "standings" ? "visible" : "hidden"
+            }}
+          >
+            <div className="Left-panel">
+              <div id="Page-1">
+                {this.state.divisionData.slice(0, 4).map((division, i) => {
+                  return (
+                    <Division
+                      key={i}
+                      data={division}
+                      sortByPoints={this.state.sortByPoints}
+                      toggleSort={val => {
+                        this.setState({
+                          sortByPoints: val
+                        });
+                      }}
+                    />
+                  );
+                })}
+              </div>
+              <div id="Page-2">
+                {this.state.divisionData.slice(4).map((division, i) => {
+                  return (
+                    <Division
+                      key={i}
+                      data={division}
+                      sortByPoints={this.state.sortByPoints}
+                      toggleSort={val => {
+                        this.setState({
+                          sortByPoints: val
+                        });
+                      }}
+                    />
+                  );
+                })}
+              </div>
+            </div>
+            <div className="Right-panel">
+              <div className="Reporting-panel-card">
+                <ReportingPanel refreshFunction={this.refreshData} />
+              </div>
+
+              <div className="Match-history-card">
+                <MatchHistory
+                  matchList={this.state.matchData}
+                  refreshFunction={this.refreshData}
+                  isAdmin={this.state.isAdmin}
+                />
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div />
+        )}
+
+        {this.state.currentPage == "results" ? (
+          <ResultsPage matches={this.state.matchData} />
+        ) : (
+          <div />
+        )}
+
+        {this.state.currentPage == "fixtures" ? (
+          <FixturesPage
+            divisionData={this.state.divisionData}
+            matchData={this.state.matchData}
+          />
+        ) : (
+          <div />
+        )}
 
         <div className="Attribution-text">
           Website developed by Greg Cannon. Source code available on{" "}
