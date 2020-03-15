@@ -90,7 +90,7 @@ class Division extends Component {
                     : "Header-sortable"
                 }
                 onClick={() => {
-                  this.props.toggleSort(true);
+                  this.props.setSortByPoints(true);
                 }}
               >
                 <div className="Header-sortable-inner">
@@ -105,7 +105,7 @@ class Division extends Component {
                     : "Header-sorted-by"
                 }
                 onClick={() => {
-                  this.props.toggleSort(false);
+                  this.props.setSortByPoints(false);
                 }}
               >
                 <div className="Header-sortable-inner">
@@ -124,7 +124,7 @@ class Division extends Component {
                     : "Header-sorted-by"
                 }
                 onClick={() => {
-                  this.props.toggleSort(false);
+                  this.props.setSortByPoints(false);
                 }}
               >
                 <div className="Header-sortable-inner">

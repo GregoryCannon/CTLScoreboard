@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import Division from "./Division";
-import ReportingPanel from "./ReportingPanel";
-import MatchHistory from "./MatchHistory";
 import ResultsPage from "./ResultsPage";
 import FixturesPage from "./FixturesPage";
+import StandingsPage from "./StandingsPage";
 import logo from "./logo.svg";
 import "./App.css";
 import html2canvas from "html2canvas";
@@ -215,61 +213,12 @@ class App extends Component {
         </div>
 
         {this.state.currentPage == "standings" ? (
-          <div
-            className="Standings-container"
-            style={{
-              visibility:
-                this.state.currentPage == "standings" ? "visible" : "hidden"
-            }}
-          >
-            <div className="Left-panel">
-              <div id="Page-1">
-                {this.state.divisionData.slice(0, 4).map((division, i) => {
-                  return (
-                    <Division
-                      key={i}
-                      data={division}
-                      sortByPoints={this.state.sortByPoints}
-                      toggleSort={val => {
-                        this.setState({
-                          sortByPoints: val
-                        });
-                      }}
-                    />
-                  );
-                })}
-              </div>
-              <div id="Page-2">
-                {this.state.divisionData.slice(4).map((division, i) => {
-                  return (
-                    <Division
-                      key={i}
-                      data={division}
-                      sortByPoints={this.state.sortByPoints}
-                      toggleSort={val => {
-                        this.setState({
-                          sortByPoints: val
-                        });
-                      }}
-                    />
-                  );
-                })}
-              </div>
-            </div>
-            <div className="Right-panel">
-              <div className="Reporting-panel-card">
-                <ReportingPanel refreshFunction={this.refreshData} />
-              </div>
-
-              <div className="Match-history-card">
-                <MatchHistory
-                  matchList={this.state.matchData}
-                  refreshFunction={this.refreshData}
-                  isAdmin={this.state.isAdmin}
-                />
-              </div>
-            </div>
-          </div>
+          <StandingsPage
+            divisionData={this.state.divisionData}
+            matchData={this.state.matchData}
+            sortByPoints={this.state.sortByPoints}
+            isAdmin={this.state.isAdmin}
+          />
         ) : (
           <div />
         )}
