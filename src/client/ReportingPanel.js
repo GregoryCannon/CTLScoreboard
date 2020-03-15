@@ -104,7 +104,7 @@ class ReportingPanel extends Component {
     var request = new XMLHttpRequest();
 
     // Open a new connection, using the POST request on the URL endpoint
-    request.open("POST", util.getApiUrl("match-data"), true);
+    request.open("POST", util.getApiUrl("api/match-data"), true);
     request.setRequestHeader("Content-type", "application/json");
 
     // Set a callback for the result
