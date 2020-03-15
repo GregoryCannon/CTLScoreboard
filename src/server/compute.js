@@ -26,7 +26,7 @@ function generateEmptyStandings() {
 
 /* Update the standings based on the matches
 (again it doesn't matter that the time complexity is trash lol) */
-function computeRawStandings(matchData) {
+function computeRawStandings(matchData, penaltyPoints) {
   const standings = generateEmptyStandings();
   for (let d = 0; d < standings.length; d++) {
     const divisionStandings = standings[d].standings;
@@ -47,6 +47,13 @@ function computeRawStandings(matchData) {
       loser["gf"] += match.loser_games;
       loser["ga"] += match.winner_games;
       loser["points"] += match.loser_games;
+    }
+
+    // Handle penalty points
+    for (let p = 0; p < divisionStandings.length; p++) {
+      player = divisionStandings[p];
+      player.penaltyPoints = penaltyPoints[player.name] || 0;
+      player.points -= player.penaltyPoints;
     }
 
     // Loop through the standings by player and update the rest of the properties

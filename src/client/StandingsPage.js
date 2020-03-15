@@ -8,7 +8,7 @@ class StandingsPage extends Component {
   constructor() {
     super();
     this.state = {
-      sortByPoints: false
+      sortByPoints: true
     };
   }
 

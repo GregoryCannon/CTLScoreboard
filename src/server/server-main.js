@@ -14,7 +14,8 @@ app.use(express.static(path.join(__dirname, "../../build")));
 // Database config
 const monk = require("monk");
 const db = monk(process.env.MONGODB_URI || "localhost:27017/ctl-matches");
-const matchListDb = db.get("matchList");
+const matchListDb = db.get("matchList"); // List of matches in JSON form
+const penaltyDb = db.get("penalty"); // List of players and their penalty points
 var ObjectID = db.helper.id.ObjectID;
 
 // Create a logger
@@ -52,18 +53,23 @@ function refreshCachedStandings(callback) {
   console.log("-- Fetching matches from database...");
   // Get matches from db
   getValidMatches(function(e, matches) {
-    console.log("-- Calculating standings...");
-    // Process and save in cache
-    backupStandings = cachedFinalStandings;
-    try {
-      cachedFinalStandings = getStandings(matches);
-      console.log("Finished calculating standings");
-      callback(true);
-    } catch (error) {
-      cachedFinalStandings = backupStandings;
-      console.log("!! Match data corrupted, restoring from backup !!");
-      callback(false);
-    }
+    console.log("-- Fetching penalty points from database...");
+    // Get penalty points from db
+    getPenaltyPointMap(function(penaltyPoints) {
+      console.log("-- Calculating standings...");
+      backupStandings = cachedFinalStandings;
+      // Process and save in cache
+      try {
+        cachedFinalStandings = getStandings(matches, penaltyPoints);
+        console.log("Finished calculating standings");
+        callback(true);
+      } catch (error) {
+        console.log(error);
+        cachedFinalStandings = backupStandings;
+        console.log("!! Match data corrupted, restoring from backup !!");
+        callback(false);
+      }
+    });
   });
 }
 
@@ -77,9 +83,25 @@ function getValidMatches(callback) {
   matchListDb.find({ valid: true, corrupted: false }, callback);
 }
 
+function getPenaltyPointMap(callback) {
+  const penaltyPointsMap = {};
+  penaltyDb.find({}, function(e, penaltyList) {
+    for (let i = 0; i < penaltyList.length; i++) {
+      console.log(
+        "Found penalty:",
+        penaltyList[i].points,
+        "for",
+        penaltyList[i].player
+      );
+      penaltyPointsMap[penaltyList[i].player] = penaltyList[i].points;
+    }
+    callback(penaltyPointsMap);
+  });
+}
+
 // Process the raw DB match data into standings
-function getStandings(matchData) {
-  const rawStandings = compute.computeRawStandings(matchData);
+function getStandings(matchData, penaltyPoints) {
+  const rawStandings = compute.computeRawStandings(matchData, penaltyPoints);
   const finalStandings = [];
   // Loop through each division and simulate many outcomes
   for (let d = 0; d < rawStandings.length; d++) {
@@ -190,7 +212,6 @@ app.post("/api/match-data", function(req, res) {
       const newMatchData = { ...req.body, valid: true, corrupted: false };
       matchListDb.insert(newMatchData, function(err, doc) {
         if (err) {
-          console.log("LOGGER----", err);
           // If it failed, return error
           console.log(
             "LOGGER----",
@@ -337,7 +358,7 @@ function invalidateCorruptedData() {
     // Process and save in cache
     backupStandings = cachedFinalStandings;
     try {
-      cachedFinalStandings = getStandings(matches);
+      cachedFinalStandings = getStandings(matches, {});
       console.log("Finished calculating standings");
     } catch (error) {
       cachedFinalStandings = backupStandings;

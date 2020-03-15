@@ -83,6 +83,7 @@ class Division extends Component {
               <th>Match Record</th>
               <th>Game Record</th>
               <th>Game Difference</th>
+              <th>Penalty Points</th>
               <th
                 className={
                   this.props.sortByPoints
@@ -153,6 +154,7 @@ class Division extends Component {
                     {player.gf} - {player.ga}
                   </td>
                   <td>{player.gd}</td>
+                  <td>{player.penaltyPoints}</td>
                   <td>{player.points}</td>
                   <td>{this.renderPercentage(player.promoChance)}</td>
                   <td>{this.renderPercentage(player.relegationChance)}</td>
