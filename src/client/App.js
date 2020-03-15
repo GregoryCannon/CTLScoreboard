@@ -5,6 +5,12 @@ import StandingsPage from "./StandingsPage";
 import logo from "./logo.svg";
 import "./App.css";
 import html2canvas from "html2canvas";
+import {
+  BrowserRouter as Router,
+  Link,
+  Route,
+  Redirect
+} from "react-router-dom";
 const moment = require("moment");
 const util = require("../server/util.js");
 
@@ -29,7 +35,7 @@ class App extends Component {
 
   authenticateAdmin() {
     var request = new XMLHttpRequest();
-    request.open("POST", util.getApiUrl("authenticate"), true);
+    request.open("POST", util.getApiUrl("api/authenticate"), true);
     request.setRequestHeader("Content-type", "application/json");
 
     // Callback for result
@@ -78,7 +84,7 @@ class App extends Component {
     this.setState({ ...this.state, isFetchingStandings: true });
 
     var request = new XMLHttpRequest();
-    request.open("GET", util.getApiUrl("standings"), true);
+    request.open("GET", util.getApiUrl("api/standings"), true);
 
     // Callback for result
     request.onload = function() {
@@ -95,7 +101,7 @@ class App extends Component {
 
   fetchMatches() {
     var request = new XMLHttpRequest();
-    request.open("GET", util.getApiUrl("match-data"), true);
+    request.open("GET", util.getApiUrl("api/match-data"), true);
 
     // Callback for result
     request.onload = function() {
@@ -121,128 +127,109 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div
-          className="Loading-display"
-          style={{
-            visibility:
-              this.state.isFetchingStandings || this.state.isFetchingMatches
-                ? "visible"
-                : "hidden"
-          }}
-        >
-          <div className="Loading-background" />
-          <div className="Loading-spinner" />
-        </div>
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <div className="Header-nav">
-            <button
-              className="Admin-login-button"
-              disabled={this.state.isAdmin}
-              onClick={this.toggleAdminPasswordForm}
-            >
-              {this.state.isAdmin ? "You're now an admin!" : "Admin login"}
-            </button>
-            <div
-              className="Password-entry-form"
-              style={{
-                visibility:
-                  this.state.showAdminPasswordForm && !this.state.isAdmin
-                    ? "visible"
-                    : "hidden"
-              }}
-            >
-              Enter the admin password
-              <br />
-              <input
-                name="myPass"
-                id="myPass"
-                type="password"
-                onChange={() => {
-                  this.setState({
-                    currentTypedAdminPassword: event.target.value
-                  });
+      <Router>
+        <div className="App">
+          <div
+            className="Loading-display"
+            style={{
+              visibility:
+                this.state.isFetchingStandings || this.state.isFetchingMatches
+                  ? "visible"
+                  : "hidden"
+            }}
+          >
+            <div className="Loading-background" />
+            <div className="Loading-spinner" />
+          </div>
+          <div className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <div className="Header-nav">
+              <button
+                className="Admin-login-button"
+                disabled={this.state.isAdmin}
+                onClick={this.toggleAdminPasswordForm}
+              >
+                {this.state.isAdmin ? "You're now an admin!" : "Admin login"}
+              </button>
+              <div
+                className="Password-entry-form"
+                style={{
+                  visibility:
+                    this.state.showAdminPasswordForm && !this.state.isAdmin
+                      ? "visible"
+                      : "hidden"
                 }}
-              />
-              <br />
-              <button onClick={this.authenticateAdmin}>Submit</button>
+              >
+                Enter the admin password
+                <br />
+                <input
+                  name="myPass"
+                  id="myPass"
+                  type="password"
+                  onChange={() => {
+                    this.setState({
+                      currentTypedAdminPassword: event.target.value
+                    });
+                  }}
+                />
+                <br />
+                <button onClick={this.authenticateAdmin}>Submit</button>
+              </div>
+              <button onClick={this.saveImage}>
+                Export Standings to Image
+              </button>
             </div>
-            <button onClick={this.saveImage}>Export Standings to Image</button>
+
+            <h1>CTL Standings</h1>
+
+            <div className="Content-nav">
+              <Link to="/standings">Standings</Link>
+
+              <Link to="/results">Results</Link>
+
+              <Link to="/fixtures">Fixtures</Link>
+            </div>
           </div>
 
-          <h1>CTL Standings</h1>
+          <Route exact path="/">
+            <Redirect to="/standings" />
+          </Route>
 
-          <div className="Content-nav">
-            <button
-              disabled={this.state.currentPage == "standings"}
-              onClick={() => {
-                this.setState({
-                  currentPage: "standings"
-                });
-                console.log("standings", this.state);
-              }}
-            >
-              Standings
-            </button>
+          <Route
+            path="/standings"
+            render={props => (
+              <StandingsPage
+                {...props}
+                divisionData={this.state.divisionData}
+                matchData={this.state.matchData}
+                sortByPoints={this.state.sortByPoints}
+                isAdmin={this.state.isAdmin}
+                refreshFunction={this.refreshData}
+              />
+            )}
+          />
 
-            <button
-              disabled={this.state.currentPage == "results"}
-              onClick={() => {
-                this.setState({
-                  currentPage: "results"
-                });
-                console.log("results", this.state);
-              }}
-            >
-              Results
-            </button>
+          <Route
+            path="/results"
+            render={props => <ResultsPage matches={this.state.matchData} />}
+          />
 
-            <button
-              disabled={this.state.currentPage == "fixtures"}
-              onClick={() => {
-                this.setState({
-                  currentPage: "fixtures"
-                });
-                console.log("fixtures", this.state);
-              }}
-            >
-              Fixtures
-            </button>
+          <Route
+            path="/fixtures"
+            render={props => (
+              <FixturesPage
+                divisionData={this.state.divisionData}
+                matchData={this.state.matchData}
+              />
+            )}
+          />
+
+          <div className="Attribution-text">
+            Website developed by Greg Cannon. Source code available on{" "}
+            <a href="https://github.com/GregoryCannon/CTLScoreboard">Github</a>.
           </div>
         </div>
-
-        {this.state.currentPage == "standings" ? (
-          <StandingsPage
-            divisionData={this.state.divisionData}
-            matchData={this.state.matchData}
-            sortByPoints={this.state.sortByPoints}
-            isAdmin={this.state.isAdmin}
-          />
-        ) : (
-          <div />
-        )}
-
-        {this.state.currentPage == "results" ? (
-          <ResultsPage matches={this.state.matchData} />
-        ) : (
-          <div />
-        )}
-
-        {this.state.currentPage == "fixtures" ? (
-          <FixturesPage
-            divisionData={this.state.divisionData}
-            matchData={this.state.matchData}
-          />
-        ) : (
-          <div />
-        )}
-
-        <div className="Attribution-text">
-          Website developed by Greg Cannon. Source code available on{" "}
-          <a href="https://github.com/GregoryCannon/CTLScoreboard">Github</a>.
-        </div>
-      </div>
+      </Router>
     );
   }
 }

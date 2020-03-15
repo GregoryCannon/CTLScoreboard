@@ -17,7 +17,7 @@ class StandingsPage extends Component {
       <div className="Standings-container">
         <div className="Left-panel">
           <div id="Page-1">
-            {this.state.divisionData.slice(0, 4).map((division, i) => {
+            {this.props.divisionData.slice(0, 4).map((division, i) => {
               return (
                 <Division
                   key={i}
@@ -33,7 +33,7 @@ class StandingsPage extends Component {
             })}
           </div>
           <div id="Page-2">
-            {this.state.divisionData.slice(4).map((division, i) => {
+            {this.props.divisionData.slice(4).map((division, i) => {
               return (
                 <Division
                   key={i}
@@ -56,9 +56,9 @@ class StandingsPage extends Component {
 
           <div className="Match-history-card">
             <MatchHistory
-              matchList={this.state.matchData}
-              refreshFunction={this.refreshData}
-              isAdmin={this.state.isAdmin}
+              matchList={this.props.matchData}
+              refreshFunction={this.props.refreshData}
+              isAdmin={this.props.isAdmin}
             />
           </div>
         </div>

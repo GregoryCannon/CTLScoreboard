@@ -134,7 +134,7 @@ function getMatchAlreadyExistsErrorMessage(winner, loser, winnerHome) {
   */
 
 // Main GET standings request
-app.get("/standings", function(req, res) {
+app.get("/api/standings", function(req, res) {
   console.log("LOGGER----", "--- Get standings request: ", req.body);
   if (cachedFinalStandings != null) {
     console.log("Sending response with cached standings");
@@ -153,7 +153,7 @@ app.get("/standings", function(req, res) {
 });
 
 // Main GET match data request
-app.get("/match-data", function(req, res) {
+app.get("/api/match-data", function(req, res) {
   console.log("LOGGER----", "--- Get match data request: ", req.body);
   // Get matches from db
   getValidMatches(function(e, matches) {
@@ -162,7 +162,7 @@ app.get("/match-data", function(req, res) {
 });
 
 // Main POST request to report a match
-app.post("/match-data", function(req, res) {
+app.post("/api/match-data", function(req, res) {
   console.log("LOGGER----", "--- Post match request: ", req.body);
   console.log("Received request: ", req.body);
 
@@ -223,7 +223,7 @@ app.post("/match-data", function(req, res) {
 });
 
 // Main DELETE match request
-app.delete("/match-data", function(req, res) {
+app.delete("/api/match-data", function(req, res) {
   console.log("LOGGER----", "--- Delete match request: ", req.body);
   console.log("Received delete request:", req.body);
   if (req.body === {}) {
@@ -273,7 +273,7 @@ app.delete("/match-data", function(req, res) {
   });
 });
 
-app.post("/authenticate", function(req, res) {
+app.post("/api/authenticate", function(req, res) {
   console.log("Auth attempt with password:", req.body.password);
   if (
     req.body.password === (process.env.ADMIN_PASSWORD || "tameimpalajimhalpert")
@@ -290,8 +290,8 @@ app.post("/authenticate", function(req, res) {
   }
 });
 
-// GET request for serving the frontend
-app.get("/", function(req, res) {
+// fallback GET request for serving the frontend
+app.get("*", function(req, res) {
   console.log("LOGGER----", "--- Get frontend request");
   res.sendFile(path.join(__dirname, "../../build", "index.html"));
 });

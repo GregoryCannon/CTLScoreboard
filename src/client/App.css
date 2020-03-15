@@ -39,7 +39,7 @@
 }
 
 .Header-nav > button,
-.Content-nav > button {
+.Content-nav > a {
   font-size: 1vw;
   display: inline-block;
   padding: 12px;
@@ -49,12 +49,12 @@
 }
 
 .Header-nav > button:hover,
-.Content-nav > button:hover {
+.Content-nav > a:hover {
   background-color: #6d6d6d;
 }
 
 .Header-nav > button:disabled,
-.Content-nav > button:disabled {
+.Content-nav > a:disabled {
   background-color: #888;
 }
 

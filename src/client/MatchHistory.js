@@ -15,7 +15,7 @@ class MatchHistory extends Component {
 
   makeDeleteRequest(matchData) {
     var request = new XMLHttpRequest();
-    request.open("DELETE", util.getApiUrl("match-data", true));
+    request.open("DELETE", util.getApiUrl("api/match-data", true));
     request.setRequestHeader("Content-type", "application/json");
 
     // Set callback for response
