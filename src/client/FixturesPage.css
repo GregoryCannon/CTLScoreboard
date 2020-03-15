@@ -27,11 +27,11 @@
 }
 
 .Match-complete {
-  background: "aae0aa";
+  background: #aae0aa;
 }
 
 .Match-incomplete {
-  background: "f9a1a1";
+  background: #f9a1a1;
 }
 
 .Match-invalid {

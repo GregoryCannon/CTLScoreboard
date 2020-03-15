@@ -435,8 +435,8 @@ function getPlayerData(list, playerName) {
 }
 
 function getApiUrl(suffix) {
-  return (process.env.API_URL || "http://localhost:8080") + "/" + suffix;
-  //return "https://ctlscoreboard.herokuapp.com/" + suffix;
+  // return (process.env.API_URL || "http://localhost:8080") + "/" + suffix;
+  return "https://ctlscoreboard.herokuapp.com/" + suffix;
 }
 
 function getMatchDateFormatted(match) {
