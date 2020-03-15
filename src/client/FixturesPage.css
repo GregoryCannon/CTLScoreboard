@@ -11,8 +11,9 @@
 .Fixtures-table,
 .Fixtures-table th,
 .Fixtures-table td {
-  padding: 4px 10px;
+  padding: 3px 10px;
   width: 100%;
+  height: 2.5vw; /* 2 lines of text @ 1.25 vw */
   table-layout: fixed;
 }
 
@@ -26,11 +27,11 @@
 }
 
 .Match-complete {
-  background: rgb(153, 204, 153);
+  background: "aae0aa";
 }
 
 .Match-incomplete {
-  background: rgb(255, 128, 128);
+  background: "f9a1a1";
 }
 
 .Match-invalid {

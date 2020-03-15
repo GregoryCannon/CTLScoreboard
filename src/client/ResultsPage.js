@@ -9,7 +9,7 @@ class ResultsPage extends Component {
       <div className="Results-container">
         <table className="Results-table">
           <tbody>
-            <tr>
+            <tr className="Results-header">
               <th>Match Time (UTC)</th>
               <th>Restreamer</th>
               <th>Home</th>

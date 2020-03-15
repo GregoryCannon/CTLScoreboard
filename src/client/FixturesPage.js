@@ -11,25 +11,38 @@ class FixturesPage extends Component {
       const match = divMatches[i];
       const homePlayer = match.winner_home ? match.winner : match.loser;
       const awayPlayer = match.winner_home ? match.loser : match.winner;
-      // const homeScore = match.winner_home
-      //   ? match.winner_games
-      //   : match.loser_games;
-      // const awayScore = match.winner_home
-      //   ? match.loser_games
-      //   : match.winner_games;
-      // // const resultString = `Complete ${homeScore} - ${awayScore}`;
-      const resultString = `${match.winner} won ${match.winner_games}-${match.loser_games}`;
+      const resultStrings = [
+        match.winner,
+        `won ${match.winner_games}-${match.loser_games}`
+      ];
 
       if (!hashMap[homePlayer]) {
         hashMap[homePlayer] = {};
       }
-      hashMap[homePlayer][awayPlayer] = resultString;
+      hashMap[homePlayer][awayPlayer] = resultStrings;
     }
     return hashMap;
   }
 
+  /* Fills one cell in the fixtures table with either the match result, incomplete, or N/A */
+  renderFixturesCellContent(homePlayer, awayPlayer, fixturesMap) {
+    if (homePlayer === awayPlayer) {
+      return <td className="Match-invalid">N/A</td>;
+    }
+    if (fixturesMap[homePlayer] && fixturesMap[homePlayer][awayPlayer]) {
+      const result = fixturesMap[homePlayer][awayPlayer];
+      return (
+        <td className="Match-complete">
+          {result[0]}
+          <br />
+          {result[1]}{" "}
+        </td>
+      );
+    }
+    return <td className="Match-incomplete">Incomplete</td>;
+  }
+
   render() {
-    console;
     return (
       <div className="Fixtures-container">
         {this.props.divisionData.map(division => {
@@ -54,7 +67,7 @@ class FixturesPage extends Component {
                   </th>
                 </tr>
 
-                {/* Away players' names */}
+                {/* Single row of away players' names */}
                 <tr>
                   <th className="Secondary-header" />
                   {division.players.map(awayPlayer => (
@@ -67,20 +80,11 @@ class FixturesPage extends Component {
                   <tr>
                     <th className="Secondary-header">{homePlayer} (H)</th>
                     {division.players.map(awayPlayer => {
-                      if (homePlayer === awayPlayer) {
-                        return <td className="Match-invalid">N/A</td>;
-                      }
-                      if (
-                        fixturesMap[homePlayer] &&
-                        fixturesMap[homePlayer][awayPlayer]
-                      ) {
-                        return (
-                          <td className="Match-complete">
-                            {fixturesMap[homePlayer][awayPlayer]}
-                          </td>
-                        );
-                      }
-                      return <td className="Match-incomplete">Incomplete</td>;
+                      return this.renderFixturesCellContent(
+                        homePlayer,
+                        awayPlayer,
+                        fixturesMap
+                      );
                     })}
                   </tr>
                 ))}
