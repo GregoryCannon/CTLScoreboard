@@ -54,21 +54,17 @@
 }
 
 .Header-nav > button:disabled,
-.Content-nav > a:disabled {
+.Content-nav > button:disabled {
   background-color: #888;
 }
 
 .Password-entry-form {
   position: absolute;
-  bottom: 35px;
+  top: 35px;
   right: 0px;
   padding: 40px;
   background-color: #6d6d6d;
   z-index: 1;
-}
-
-.Password-entry-form button {
-  background: ;
 }
 
 .App-intro {

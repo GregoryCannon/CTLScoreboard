@@ -6,8 +6,8 @@ const util = require("../server/util");
 const GAMES_TO_WIN = 3;
 
 class ReportingPanel extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       statusText: "",
       statusTextIsError: false,

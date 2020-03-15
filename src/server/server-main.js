@@ -344,10 +344,49 @@ app.delete("/api/match-data", function(req, res) {
   });
 });
 
+// POST request to report penalty points
+app.post("/api/penalty", function(req, res) {
+  console.log("Attempted report of penalty points, with body", req.body);
+  penaltyDb.update(
+    { player: req.body.player }, // Query
+    { $set: { player: req.body.player, points: req.body.points } }, // Replacement document
+    { upsert: true }, // Intelligently insert or update
+    function(err, doc) {
+      if (err) {
+        // If it failed, return error
+        console.log(
+          "LOGGER----",
+          "Post penalty points failed\nRequest:",
+          req.body,
+          "\nError: ",
+          err
+        );
+        res.send({
+          didSucceed: false,
+          errorMessage: err
+        });
+      } else {
+        // Otherwise, notify success
+        console.log(
+          "LOGGER----",
+          "Post penalty points succeeded (invalidated)\nRequest: ",
+          req.body
+        );
+        invalidateCache();
+        res.send({
+          didSucceed: true,
+          errorMessage: ""
+        });
+      }
+    }
+  );
+});
+
+// POST request to authenticate as admin
 app.post("/api/authenticate", function(req, res) {
   console.log("Auth attempt with password:", req.body.password);
   if (
-    req.body.password === (process.env.ADMIN_PASSWORD || "tameimpalajimhalpert")
+    req.body.password === (process.env.ADMIN_PASSWORD || "tameimpala")
   ) {
     console.log("Auth passed, sending response");
     res.send({
@@ -361,15 +400,11 @@ app.post("/api/authenticate", function(req, res) {
   }
 });
 
-
-
 // Main GET request for serving the frontend
 app.get("*", function(req, res) {
   console.log("LOGGER----", "--- Get frontend request");
   res.sendFile(path.join(__dirname, "../../build", "index.html"));
 });
-
-
 
 /*
 ------------------------

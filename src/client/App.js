@@ -15,8 +15,8 @@ const moment = require("moment");
 const util = require("../server/util.js");
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       isFetchingStandings: false,
       isFetchingMatches: false,
@@ -73,6 +73,15 @@ class App extends Component {
     html2canvas(document.querySelector("#Page-2")).then(function(canvas) {
       const fileName =
         "CTL Standings part 2" +
+        moment()
+          .utc()
+          .format("MM/DD/YYYY");
+      util.downloadCanvasAsPng(canvas, fileName);
+    });
+
+    html2canvas(document.querySelector("#Page-3")).then(function(canvas) {
+      const fileName =
+        "CTL Standings part 3" +
         moment()
           .utc()
           .format("MM/DD/YYYY");
