@@ -22,8 +22,9 @@
   },
   "proxy": "http://localhost:8080",
   "scripts": {
+    "go": "npm run build && npm run start",
     "start-react": "npm run format && react-scripts start",
-    "start": "npm run format && node src/server/server-main.js",
+    "start": "node src/server/server-main.js",
     "build": "npm run format && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
