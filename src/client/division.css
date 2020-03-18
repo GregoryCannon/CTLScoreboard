@@ -49,6 +49,7 @@
 
 .Division td {
   text-transform: uppercase;
+  font-weight: 500;
 }
 
 .Division .No-wrap {

@@ -14,7 +14,7 @@ class StandingsPage extends Component {
 
   render() {
     const divData = this.props.divisionData;
-    const pages = [divData.slice(0, 4), divData.slice(4, 8), divData.slice(8)];
+    const pages = [divData.slice(0, 5), divData.slice(5, 10)];
     return (
       <div className="Standings-container">
         <div className="Left-panel">

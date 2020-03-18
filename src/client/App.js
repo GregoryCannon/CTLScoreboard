@@ -108,15 +108,6 @@ class App extends Component {
           .format("MM/DD/YYYY");
       util.downloadCanvasAsPng(canvas, fileName);
     });
-
-    html2canvas(document.querySelector("#Page-3")).then(function(canvas) {
-      const fileName =
-        "CTL Standings part 3" +
-        moment()
-          .utc()
-          .format("MM/DD/YYYY");
-      util.downloadCanvasAsPng(canvas, fileName);
-    });
   }
 
   fetchStandings() {
