@@ -133,9 +133,6 @@ function runSimulation(division, matchSchedule) {
     ).toFixed(3);
   }
 
-  // Sort by the simulation data
-  division.standings.sort(util.compareSimulated);
-
   return division;
 }
 

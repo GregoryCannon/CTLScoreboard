@@ -374,7 +374,6 @@ function getMatchSchedule(division, divMatches) {
    human intervention for the rest.
 */
 function compareRaw(player1, player2) {
-  // console.log("Comparing", player1.name, player2.name);
   // Higher score first
   if (player2.points !== player1.points) {
     // console.log("points:", player1.points, player2.points);
@@ -394,28 +393,32 @@ function compareRaw(player1, player2) {
   if (player2.gf !== player1.gf) {
     return player2.gf - player1.gf;
   }
+  return player1.name.localeCompare(player2.name);
 }
 
 /* Comparison function to sort players based on their simulation data. */
 function compareSimulated(player1, player2) {
+  // Round to whole number
+  const p1Promo = parseFloat(player1.promoChance).toFixed(0);
+  const p1Rel = parseFloat(player1.relegationChance).toFixed(0);
+  const p2Promo = parseFloat(player2.promoChance).toFixed(0);
+  const p2Rel = parseFloat(player2.relegationChance).toFixed(0);
+
   // Ideally, sort based on (promo %) - (rel %)
   // If it's significantly different between the two players, sort by that
-  const diffFactor =
-    player2.promoChance -
-    player2.relegationChance -
-    (player1.promoChance - player1.relegationChance);
+  const diffFactor = p2Promo - p2Rel - (p1Promo - p1Rel);
   if (Math.abs(diffFactor) > 3) {
     return diffFactor;
   }
 
   // Otherwise, if their promo chances differ (after they were rounded to 1%), sort based on that
-  if (player2.promoChance !== player1.promoChance) {
-    return player2.promoChance - player1.promoChance;
+  if (p2Promo !== p1Promo) {
+    return p2Promo - p1Promo;
   }
 
   // Likewise with relegation (but BACKWARDS because lower is better)
-  if (player2.relegationChance !== player1.relegationChance) {
-    return player1.relegationChance - player2.relegationChance;
+  if (p2Rel !== p1Rel) {
+    return p1Rel - p2Rel;
   }
 
   // Otherwise sort by current points

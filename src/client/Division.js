@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import PenaltyPointsEditor from "./PenaltyPointsEditor";
 import "./division.css";
 
+const util = require("../server/util.js");
+
 class Division extends Component {
   // Get a list of the colors for the player slots, ordered first place to last
   getRowColors(divisionData) {
@@ -60,9 +62,10 @@ class Division extends Component {
     const rowColors = this.getRowColors(this.props.data);
     const sortedPlayers = [...this.props.data.standings];
     if (this.props.sortByPoints) {
-      sortedPlayers.sort((player1, player2) => {
-        return player2.points - player1.points;
-      });
+      sortedPlayers.sort(util.compareRaw);
+    } else {
+      // Sort by the simulation data
+      sortedPlayers.sort(util.compareSimulated);
     }
     return (
       <div className="Division">
