@@ -439,6 +439,25 @@ function getApiUrl(suffix) {
   return "https://ctlscoreboard.herokuapp.com/" + suffix;
 }
 
+function makeHttpRequest(type, localUrl, body, callback) {
+  // Configure request object properties
+  var request = new XMLHttpRequest();
+  request.open(type, getApiUrl(localUrl), true);
+  request.setRequestHeader("Content-type", "application/json");
+
+  // Set callback for response
+  request.onload = function() {
+    console.log("Received response:", request.response);
+    callback(JSON.parse(request.response));
+  };
+
+  // Send request
+  console.log(
+    `Sending ${type} request to ${localUrl} with body ${JSON.stringify(body)}`
+  );
+  request.send(JSON.stringify(body));
+}
+
 function getMatchDateFormatted(match) {
   if (!match.match_date) {
     return "unknown date";
@@ -496,5 +515,6 @@ module.exports = {
   getPlayerData,
   getMatchSchedule,
   getApiUrl,
+  makeHttpRequest,
   getMatchDateFormatted
 };

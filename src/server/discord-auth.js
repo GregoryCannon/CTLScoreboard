@@ -1,10 +1,46 @@
-// Credit for this file goes to orel- on Github: https://github.com/orels1/discord-token-generator
-
+// Credit for most of this file goes to orel- on Github: https://github.com/orels1/discord-token-generator
 const express = require("express");
 const fetch = require("node-fetch");
 const btoa = require("btoa");
+const configData = require("./config_data.js");
+const util = require("./util.js");
 
-// async/await error catcher
+/* Login flow:
+  - User clicks link on CTL site (GET /discord-api/login)
+  - User is redirected to Discord site and clicks "authorize"
+  - Discord sends a request with a code to CTL Backend (/discord-api/authenticate)
+  - CTL Backend sends a request to Discord API with the code and other things
+  - Discord API responds with an auth token
+  - CTL Backend sends a request to Discord API with the auth token
+  - Discord API responds with user data
+  - CTL Backend Hmac signs the user data and sends it to the frontend in a cookie
+  - CTL Frontend loads the identity from cookies
+  - CTL Frontend sends a request to CTL Backend (/discord-api/validate) to verify the identity
+  - CTL Backend verifies the signature and responds
+*/
+
+const router = express.Router();
+const CLIENT_ID = "672315783363166208";
+const CLIENT_SECRET = process.env.CLIENT_SECRET;
+const redirect = encodeURIComponent(util.getApiUrl("discord-api/authenticate"));
+
+/*
+-------------------------
+Helper Functions
+-------------------------
+*/
+
+// Sign a string of text with a secret key, so that the server can verify that it hasn't changed
+function hmacSign(rawText) {
+  // Crypto is *NOT* reusable, so need to require it each time
+  const cryptoHmac = require("crypto").createHmac(
+    "sha256",
+    process.env.ENCRYPTION_KEY
+  );
+  return cryptoHmac.update(rawText).digest("hex");
+}
+
+// Async/await error catcher
 const catchAsyncErrors = fn => (req, res, next) => {
   const routePromise = fn(req, res, next);
   if (routePromise.catch) {
@@ -12,29 +48,30 @@ const catchAsyncErrors = fn => (req, res, next) => {
   }
 };
 
-/* Login flow:
-  - User clicks link on CTL site (GET /discord-api/login)
-  - Redirected to Discord site
-  - Discord sends a request with a code to /discord-api/authenticate
-  - CTL Backend sends a request with the code and other things to discord API
-  - Discord API responds with an auth token
-  - CTL Backend saves the auth token to a cookie
-  - CTL Backend redirects the user to the standings page, but logged in
+// Check the access level of a discord user
+function getPrivilegeLevel(discordIdentity) {
+  if (configData.adminRole.includes(discordIdentity)) {
+    return "Admin";
+  } else if (configData.restreamerRole.includes(discordIdentity)) {
+    return "Restreamer";
+  }
+  return "Player";
+}
+
+/*
+-------------------
+Request Handlers
+-------------------
 */
 
-const router = express.Router();
-const CLIENT_ID = "672315783363166208";
-const CLIENT_SECRET = process.env.CLIENT_SECRET;
-const redirect = encodeURIComponent(
-  "http://localhost:8080/discord-api/authenticate"
-);
-
+// GET request for the initial forward of the user to Discord's site
 router.get("/login", (req, res) => {
   res.redirect(
     `https://discordapp.com/api/oauth2/authorize?client_id=${CLIENT_ID}&scope=identify&response_type=code&redirect_uri=${redirect}`
   );
 });
 
+// GET request that Discord will redirect to with a code
 router.get(
   "/authenticate",
   catchAsyncErrors(async (req, res) => {
@@ -68,47 +105,38 @@ router.get(
     const discordIdentity = userJson.username + "#" + userJson.discriminator;
 
     res.cookie("discordIdentity", discordIdentity);
+    res.cookie("discordIdentitySignature", hmacSign(discordIdentity));
     res.redirect("/standings");
   })
 );
 
-// // Create a router for discord api calls
-// var discordRouter = express.Router();
-
-// function makeAuthTokenRequest(code) {
-//   var request = new XMLHttpRequest();
-//   request.open("POST", API_ENDPOINT, true);
-//   request.setRequestHeader("Content-type", "application/json");
-
-//   const requestBody = {
-//     client_id: CLIENT_ID,
-//     client_secret: CLIENT_SECRET,
-//     grant_type: "authorization_code",
-//     code: code,
-//     redirect_uri: REDIRECT_URI,
-//     scope: "identify"
-//   };
-
-//   // Set callback for response
-//   request.onload = function() {
-//     console.log("Received response:", request.response);
-//     const response = JSON.parse(request.response);
-//     console.log("Parsed JSON", response);
-//   }.bind(this);
-
-//   console.log("Sending discord auth token request with body:", requestBody);
-//   request.send(JSON.stringify(requestBody));
-// }
-
-// discordRouter.get("/authenticate", function(req, res) {
-//   console.log("DISC - Received auth request with query:", req.query);
-//   makeAuthTokenRequest(req.query.code);
-//   res.redirect("/standings");
-// });
-
-// discordRouter.get("*", function(req, res) {
-//   console.log("DISC - Received unknown get request", req);
-// });
+// POST request for the frontend to validate identity saved in cookies
+router.post("/validate", (req, res) => {
+  console.log("Received VALIDATE request with body:", req.body);
+  const discordIdentity = req.body.discordIdentity;
+  const discordIdentitySignature = req.body.discordIdentitySignature;
+  console.log(
+    "discordIdentity:",
+    discordIdentity,
+    "discordIdentitySignature:",
+    discordIdentitySignature
+  );
+  if (hmacSign(discordIdentity) == discordIdentitySignature) {
+    // All is good
+    res.send({
+      valid: true,
+      discordIdentity: discordIdentity,
+      privilegeLevel: getPrivilegeLevel(discordIdentity)
+    });
+  } else {
+    // Signature didn't match
+    res.send({
+      valid: false,
+      discordIdentity: "",
+      privilegeLevel: ""
+    });
+  }
+});
 
 module.exports = {
   router

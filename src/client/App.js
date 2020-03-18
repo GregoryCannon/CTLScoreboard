@@ -15,13 +15,10 @@ import Cookies from "js-cookie";
 
 const moment = require("moment");
 const util = require("../server/util.js");
-const configData = require("../server/config_data.js");
 
 class App extends Component {
   constructor(props) {
     super(props);
-    const discordIdentity = Cookies.get("discordIdentity");
-    const privilegeLevel = this.getPrivilegeLevel(discordIdentity);
     this.state = {
       isFetchingStandings: false,
       isFetchingMatches: false,
@@ -32,11 +29,13 @@ class App extends Component {
       currentTypedAdminPassword: "",
       currentPage: "standings",
       sortByPoints: false,
-      discordIdentity: discordIdentity,
-      privilegeLevel: privilegeLevel
+      discordIdentity: "",
+      privilegeLevel: ""
     };
     this.refreshData = this.refreshData.bind(this);
     this.toggleEditPenaltyPoints = this.toggleEditPenaltyPoints.bind(this);
+
+    this.logInToDiscordFromCookies();
   }
 
   isAdmin() {
@@ -50,17 +49,38 @@ class App extends Component {
     );
   }
 
-  getPrivilegeLevel(discordIdentity) {
-    if (configData.adminRole.includes(discordIdentity)) {
-      return "Admin";
-    } else if (configData.restreamerRole.includes(discordIdentity)) {
-      return "Restreamer";
+  logInToDiscordFromCookies() {
+    const discordIdentity = Cookies.get("discordIdentity");
+    const discordIdentitySignature = Cookies.get("discordIdentitySignature");
+
+    if (discordIdentity && discordIdentitySignature) {
+      util.makeHttpRequest(
+        "POST",
+        "discord-api/validate",
+        {
+          discordIdentity: discordIdentity,
+          discordIdentitySignature: discordIdentitySignature
+        },
+        function(jsonResponse) {
+          if (jsonResponse.valid) {
+            this.setState({
+              discordIdentity: jsonResponse.discordIdentity,
+              privilegeLevel: jsonResponse.privilegeLevel
+            });
+          } else {
+            alert(
+              "Your saved login is invalid. Please log in with Discord again."
+            );
+            this.logOutOfDiscord();
+          }
+        }.bind(this)
+      );
     }
-    return "Player";
   }
 
   logOutOfDiscord() {
     Cookies.remove("discordIdentity");
+    Cookies.remove("discordIdentitySignature");
     window.location.reload(false);
   }
 

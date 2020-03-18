@@ -5,7 +5,7 @@ const compute = require("./compute");
 const simulate = require("./simulate");
 const util = require("./util");
 const BotClient = require("./discord-bot").BotClient;
-const discordRouter = require("./discord-auth").router;
+const discordAuthRouter = require("./discord-auth").router;
 
 // Configure express
 const app = express();
@@ -24,7 +24,7 @@ const discordBot = new BotClient(token);
 discordBot.start();
 
 // Add discord authentication router
-app.use("/discord-api", discordRouter);
+app.use("/discord-api", discordAuthRouter);
 
 /*
 --------------------
