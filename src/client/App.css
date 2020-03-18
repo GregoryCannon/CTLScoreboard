@@ -25,6 +25,10 @@
   margin: 0;
 }
 
+.App-header a {
+  text-decoration: none;
+}
+
 .Header-nav {
   display: flex;
   flex-direction: row-reverse;
@@ -38,24 +42,29 @@
   justify-content: center;
 }
 
-.Header-nav > button,
-.Content-nav > a {
-  font-size: 1vw;
+.Nav-button {
+  font-size: 1.3vw;
   display: inline-block;
   padding: 12px;
-  background-color: #222;
+  background-color: #3c3c3c;
   color: white;
   border: none;
+  font-size: 11pt;
+  margin: 5px 10px 5px 0;
 }
 
-.Header-nav > button:hover,
-.Content-nav > a:hover {
+.Nav-button:hover {
   background-color: #6d6d6d;
 }
 
-.Header-nav > button:disabled,
-.Content-nav > button:disabled {
+.Nav-button:disabled {
   background-color: #888;
+}
+
+.Discord-status-text {
+  text-align: right;
+  font-size: 11pt;
+  margin: 5px 10px 5px 0;
 }
 
 .Password-entry-form {

@@ -15,51 +15,58 @@ import Cookies from "js-cookie";
 
 const moment = require("moment");
 const util = require("../server/util.js");
+const configData = require("../server/config_data.js");
 
 class App extends Component {
   constructor(props) {
     super(props);
+    const discordIdentity = Cookies.get("discordIdentity");
+    const privilegeLevel = this.getPrivilegeLevel(discordIdentity);
     this.state = {
       isFetchingStandings: false,
       isFetchingMatches: false,
-      isAdmin: false,
+      isEditingPenaltyPoints: false,
       divisionData: util.memeDivisionData,
       matchData: util.sampleMatchData,
       showAdminPasswordForm: false,
       currentTypedAdminPassword: "",
       currentPage: "standings",
       sortByPoints: false,
-      discordIdentity: Cookies.get("discordIdentity")
+      discordIdentity: discordIdentity,
+      privilegeLevel: privilegeLevel
     };
     this.refreshData = this.refreshData.bind(this);
-    this.authenticateAdmin = this.authenticateAdmin.bind(this);
-    this.toggleAdminPasswordForm = this.toggleAdminPasswordForm.bind(this);
+    this.toggleEditPenaltyPoints = this.toggleEditPenaltyPoints.bind(this);
   }
 
-  authenticateAdmin() {
-    var request = new XMLHttpRequest();
-    request.open("POST", util.getApiUrl("api/authenticate"), true);
-    request.setRequestHeader("Content-type", "application/json");
+  isAdmin() {
+    return this.state.privilegeLevel == "Admin";
+  }
 
-    // Callback for result
-    request.onload = function() {
-      const response = JSON.parse(request.response);
-      if (response.didSucceed) {
-        this.setState({ ...this.state, isAdmin: true });
-      } else {
-        alert("Incorrect admin password");
-      }
-    }.bind(this);
-
-    request.send(
-      JSON.stringify({ password: this.state.currentTypedAdminPassword })
+  isRestreamer() {
+    return (
+      this.state.privilegeLevel == "Admin" ||
+      this.state.privilegeLevel == "Restreamer"
     );
   }
 
-  toggleAdminPasswordForm() {
+  getPrivilegeLevel(discordIdentity) {
+    if (configData.adminRole.includes(discordIdentity)) {
+      return "Admin";
+    } else if (configData.restreamerRole.includes(discordIdentity)) {
+      return "Restreamer";
+    }
+    return "Player";
+  }
+
+  logOutOfDiscord() {
+    Cookies.remove("discordIdentity");
+    window.location.reload(false);
+  }
+
+  toggleEditPenaltyPoints() {
     this.setState({
-      ...this.state,
-      showAdminPasswordForm: !this.state.showAdminPasswordForm
+      isEditingPenaltyPoints: !this.state.isEditingPenaltyPoints
     });
   }
 
@@ -156,50 +163,66 @@ class App extends Component {
           <div className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <div className="Header-nav">
+              {/* Log in/out button */}
+              {this.state.discordIdentity ? (
+                <button className="Nav-button" onClick={this.logOutOfDiscord}>
+                  Log out
+                </button>
+              ) : (
+                <a
+                  className="Nav-button"
+                  href={util.getApiUrl("discord-api/login")}
+                >
+                  Log in with Discord
+                </a>
+              )}
+
+              {/* Save standings button (admin-only) */}
               <button
-                className="Admin-login-button"
-                disabled={this.state.isAdmin}
-                onClick={this.toggleAdminPasswordForm}
+                style={{ visibility: this.isAdmin() ? "visible" : "hidden" }}
+                className="Nav-button"
+                onClick={this.saveImage}
               >
-                {this.state.isAdmin ? "You're now an admin!" : "Admin login"}
+                Export standings to images
               </button>
-              <div
-                className="Password-entry-form"
-                style={{
-                  visibility:
-                    this.state.showAdminPasswordForm && !this.state.isAdmin
-                      ? "visible"
-                      : "hidden"
-                }}
+
+              {/* Assign penalty points button (admin-only) */}
+              <button
+                style={{ visibility: this.isAdmin() ? "visible" : "hidden" }}
+                className="Nav-button"
+                onClick={this.toggleEditPenaltyPoints}
               >
-                Enter the admin password
-                <br />
-                <input
-                  name="myPass"
-                  id="myPass"
-                  type="password"
-                  onChange={() => {
-                    this.setState({
-                      currentTypedAdminPassword: event.target.value
-                    });
-                  }}
-                />
-                <br />
-                <button onClick={this.authenticateAdmin}>Submit</button>
-              </div>
-              <button onClick={this.saveImage}>
-                Export Standings to Image
+                {this.state.isEditingPenaltyPoints
+                  ? "Finish editing penalty points"
+                  : "Edit penalty points"}
               </button>
+            </div>
+
+            <div className="Discord-status-text">
+              {this.state.discordIdentity ? (
+                <div>
+                  Logged in as {this.state.discordIdentity} (
+                  {this.state.privilegeLevel})
+                </div>
+              ) : (
+                ""
+              )}
             </div>
 
             <h1>CTL Standings</h1>
 
             <div className="Content-nav">
-              <Link to="/standings">Standings</Link>
+              <Link className="Nav-button" to="/standings">
+                Standings
+              </Link>
 
-              <Link to="/results">Results</Link>
+              <Link className="Nav-button" to="/results">
+                Results
+              </Link>
 
-              <Link to="/fixtures">Fixtures</Link>
+              <Link className="Nav-button" to="/fixtures">
+                Fixtures
+              </Link>
             </div>
           </div>
 
@@ -212,11 +235,13 @@ class App extends Component {
             render={props => (
               <StandingsPage
                 {...props}
-                discordIdentity={this.state.discordIdentity}
                 divisionData={this.state.divisionData}
                 matchData={this.state.matchData}
                 sortByPoints={this.state.sortByPoints}
-                isAdmin={this.state.isAdmin}
+                isAdmin={this.isAdmin()}
+                isRestreamer={this.isRestreamer()}
+                discordIdentity={this.state.discordIdentity}
+                isEditingPenaltyPoints={this.state.isEditingPenaltyPoints}
                 refreshFunction={this.refreshData}
               />
             )}

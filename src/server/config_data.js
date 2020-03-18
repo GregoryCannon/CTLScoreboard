@@ -136,22 +136,38 @@ const divisionData = [
       "diamond",
       "samantha"
     ]
+  },
+  {
+    divisionName: "77",
+    numWinner: 0,
+    numAutoPromo: 2,
+    numSoftPromo: 2,
+    numSoftRelegate: 0,
+    numHardRelegate: 0,
+    players: [
+      "7zipley",
+      "7chris foryst",
+      "7emptyeye",
+      "7krypto nick",
+      "7boone",
+      "7golden",
+      "7diamond",
+      "7samantha"
+    ]
   }
 ];
 
-const adminRole = [
-  "GregBoomCannon#4087",
-  "moodeuce#8573",
-  "Kingsman#0364"
-]
+const adminRole = ["GregBoomCannon#4087", "moodeuce#8573", "Kingsman#0364"];
 
 const restreamerRole = [
   "moodeuce#8573",
   "Kingsman#0364",
   "Lastarot#9931",
-  "Kryptonick#4388",
-]
+  "Kryptonick#4388"
+];
 
 module.exports = {
-  divisionData
+  divisionData,
+  adminRole,
+  restreamerRole
 };

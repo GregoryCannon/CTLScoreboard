@@ -162,15 +162,35 @@ class ReportingPanel extends Component {
       .toISOString()
       .substr(0, 16);
     const playerNameList = this.getPlayerList();
+
+    // If not logged in
     if (!this.props.discordIdentity) {
       return (
-        <a href={util.getApiUrl("discord-api/login")}>Login with Discord</a>
+        <div>
+          <div className="Report-matches-title">Report a Match</div>
+          <div className="Error-message">
+            <a href={util.getApiUrl("discord-api/login")}>Login with Discord</a>{" "}
+            to report a match!
+          </div>
+        </div>
+      );
+    }
+
+    // If logged in but not a restreamer
+    else if (!this.props.isRestreamer) {
+      return (
+        <div>
+          <div className="Report-matches-title">Report a Match</div>
+          <div className="Error-message">
+            You do not have the 'Restreamer' role. Contact CTL admins to gain
+            restreamer access.
+          </div>
+        </div>
       );
     }
 
     return (
       <div>
-        <p>{this.props.discordIdentity}</p>
         <div className="Report-matches-title">Report a Match</div>
 
         <div className="Report-matches-form">

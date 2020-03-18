@@ -29,7 +29,6 @@ class PenaltyPointsEditor extends Component {
       if (response.didSucceed) {
         // Refresh data
         this.props.refreshFunction();
-        this.setState({ isEditing: false });
       } else {
         alert(
           "Failed to report penalty points. Reason:\n\n" + response.errorMessage
@@ -47,7 +46,7 @@ class PenaltyPointsEditor extends Component {
   }
 
   render() {
-    if (this.props.isAdmin) {
+    if (this.props.isAdmin && this.props.isEditingPenaltyPoints) {
       // Fixed number with 'edit' button
       return (
         <div>

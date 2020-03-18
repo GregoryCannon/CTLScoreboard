@@ -7,6 +7,10 @@
   box-shadow: 0 2px 4px -2px black;
 }
 
+.Error-message {
+  padding: 80px 10px;
+}
+
 .Report-matches-form {
   padding: 0 10px;
 }

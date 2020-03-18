@@ -31,6 +31,7 @@ class StandingsPage extends Component {
                       sortByPoints: val
                     });
                   }}
+                  isEditingPenaltyPoints={this.props.isEditingPenaltyPoints}
                   refreshFunction={this.props.refreshFunction}
                 />
               ))}
@@ -41,6 +42,7 @@ class StandingsPage extends Component {
           <div className="Reporting-panel-card">
             <ReportingPanel
               refreshFunction={this.props.refreshFunction}
+              isRestreamer={this.props.isRestreamer}
               discordIdentity={this.props.discordIdentity}
             />
           </div>

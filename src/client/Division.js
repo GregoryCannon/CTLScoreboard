@@ -3,11 +3,6 @@ import PenaltyPointsEditor from "./PenaltyPointsEditor";
 import "./division.css";
 
 class Division extends Component {
-  constructor(props) {
-    super(props);
-    console.log("Division constructor");
-  }
-
   // Get a list of the colors for the player slots, ordered first place to last
   getRowColors(divisionData) {
     const winner = "rgb(255, 204, 0)";
@@ -69,7 +64,6 @@ class Division extends Component {
         return player2.points - player1.points;
       });
     }
-    console.log("Division data:", JSON.stringify(this.props.data));
     return (
       <div className="Division">
         <table>
@@ -164,6 +158,7 @@ class Division extends Component {
                     <PenaltyPointsEditor
                       isAdmin={this.props.isAdmin}
                       existingPenaltyPoints={player.penaltyPoints}
+                      isEditingPenaltyPoints={this.props.isEditingPenaltyPoints}
                       refreshFunction={this.props.refreshFunction}
                       playerName={player.name}
                     />
