@@ -162,8 +162,15 @@ class ReportingPanel extends Component {
       .toISOString()
       .substr(0, 16);
     const playerNameList = this.getPlayerList();
+    if (!this.props.discordIdentity) {
+      return (
+        <a href={util.getApiUrl("discord-api/login")}>Login with Discord</a>
+      );
+    }
+
     return (
       <div>
+        <p>{this.props.discordIdentity}</p>
         <div className="Report-matches-title">Report a Match</div>
 
         <div className="Report-matches-form">

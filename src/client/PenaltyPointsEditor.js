@@ -47,12 +47,6 @@ class PenaltyPointsEditor extends Component {
   }
 
   render() {
-    console.log(
-      "RENDER - Penalty points data:\nthis.state",
-      this.state,
-      "\nthis.props",
-      this.props
-    );
     if (this.props.isAdmin) {
       // Fixed number with 'edit' button
       return (

@@ -2,17 +2,6 @@ const Discord = require("discord.js");
 const moment = require("moment");
 const util = require("util");
 
-/*
-
-To report the result of a match in this channel (mandatory) please use the following 
-format to include date, time (in UTC), home player (always listed first) 
-v away player (always listed second), match score, link to VOD:
-
-:fire: 13 August 2019 5:00am UTC PMYA (H) v berenyi_kft (A) 2-3 
-https://www.twitch.tv/videos/4546845465421
-
-*/
-
 class BotClient {
   constructor(token) {
     this.token = token;

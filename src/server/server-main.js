@@ -5,6 +5,7 @@ const compute = require("./compute");
 const simulate = require("./simulate");
 const util = require("./util");
 const BotClient = require("./discord-bot").BotClient;
+const discordRouter = require("./discord-auth").router;
 
 // Configure express
 const app = express();
@@ -18,21 +19,13 @@ const matchListDb = db.get("matchList"); // List of matches in JSON form
 const penaltyDb = db.get("penalty"); // List of players and their penalty points
 var ObjectID = db.helper.id.ObjectID;
 
-// Create a logger
-const logger = require("simple-node-logger").createSimpleFileLogger(
-  "project.log"
-);
-
 // Configure the discord bot
 const token = process.env.DISCORD_TOKEN;
 const discordBot = new BotClient(token);
 discordBot.start();
 
-// Make our db accessible to our router
-app.use(function(req, res, next) {
-  req.db = db;
-  next();
-});
+// Add discord authentication router
+app.use("/discord-api", discordRouter);
 
 /*
 --------------------
@@ -385,9 +378,7 @@ app.post("/api/penalty", function(req, res) {
 // POST request to authenticate as admin
 app.post("/api/authenticate", function(req, res) {
   console.log("Auth attempt with password:", req.body.password);
-  if (
-    req.body.password === (process.env.ADMIN_PASSWORD || "tameimpala")
-  ) {
+  if (req.body.password === (process.env.ADMIN_PASSWORD || "tameimpala")) {
     console.log("Auth passed, sending response");
     res.send({
       didSucceed: true

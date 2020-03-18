@@ -4,19 +4,21 @@
   "private": true,
   "dependencies": {
     "body-parser": "^1.19.0",
+    "btoa": "^1.2.1",
     "discord.js": "^11.5.1",
     "eslint": "^5.16.0",
     "express": "^4.17.1",
     "html2canvas": "^1.0.0-rc.5",
     "input-moment": "^0.4.0",
+    "js-cookie": "^2.2.1",
     "moment": "^2.24.0",
     "mongodb": "^3.4.1",
     "monk": "^7.1.1",
+    "node-fetch": "^2.6.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "0.9.x",
-    "simple-node-logger": "^18.12.24"
+    "react-scripts": "0.9.x"
   },
   "devDependencies": {
     "prettier": "^1.19.1"

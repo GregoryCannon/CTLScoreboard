@@ -14,7 +14,7 @@ class StandingsPage extends Component {
 
   render() {
     const divData = this.props.divisionData;
-    const pages = [divData.slice(0,4), divData.slice(4, 8), divData.slice(8)];
+    const pages = [divData.slice(0, 4), divData.slice(4, 8), divData.slice(8)];
     return (
       <div className="Standings-container">
         <div className="Left-panel">
@@ -39,7 +39,10 @@ class StandingsPage extends Component {
         </div>
         <div className="Right-panel">
           <div className="Reporting-panel-card">
-            <ReportingPanel refreshFunction={this.props.refreshFunction} />
+            <ReportingPanel
+              refreshFunction={this.props.refreshFunction}
+              discordIdentity={this.props.discordIdentity}
+            />
           </div>
 
           <div className="Match-history-card">

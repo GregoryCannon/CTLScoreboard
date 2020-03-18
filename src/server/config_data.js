@@ -139,6 +139,19 @@ const divisionData = [
   }
 ];
 
+const adminRole = [
+  "GregBoomCannon#4087",
+  "moodeuce#8573",
+  "Kingsman#0364"
+]
+
+const restreamerRole = [
+  "moodeuce#8573",
+  "Kingsman#0364",
+  "Lastarot#9931",
+  "Kryptonick#4388",
+]
+
 module.exports = {
   divisionData
 };

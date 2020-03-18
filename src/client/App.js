@@ -11,6 +11,8 @@ import {
   Route,
   Redirect
 } from "react-router-dom";
+import Cookies from "js-cookie";
+
 const moment = require("moment");
 const util = require("../server/util.js");
 
@@ -26,7 +28,8 @@ class App extends Component {
       showAdminPasswordForm: false,
       currentTypedAdminPassword: "",
       currentPage: "standings",
-      sortByPoints: false
+      sortByPoints: false,
+      discordIdentity: Cookies.get("discordIdentity")
     };
     this.refreshData = this.refreshData.bind(this);
     this.authenticateAdmin = this.authenticateAdmin.bind(this);
@@ -209,6 +212,7 @@ class App extends Component {
             render={props => (
               <StandingsPage
                 {...props}
+                discordIdentity={this.state.discordIdentity}
                 divisionData={this.state.divisionData}
                 matchData={this.state.matchData}
                 sortByPoints={this.state.sortByPoints}
