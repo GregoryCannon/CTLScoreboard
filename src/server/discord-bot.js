@@ -51,7 +51,7 @@ class BotClient {
     if (vodSameness === "different") {
       // New post
       return [
-        `------------------\n${match.restreamer} restreamed:\n${match.vod_url}`,
+        `--------------------------------\n${match.restreamer} restreamed:\n${match.vod_url}`,
         matchLine
       ];
     } else if (vodSameness === "new timestamp") {

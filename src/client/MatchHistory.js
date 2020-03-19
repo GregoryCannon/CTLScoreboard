@@ -47,10 +47,10 @@ class MatchHistory extends Component {
   }
 
   isMatchDeletable(match) {
-    const deleteButtonCutoffTime = moment()
-      .subtract(15, "minutes")
-      .unix();
-    return this.props.isAdmin || match.report_date > deleteButtonCutoffTime;
+    return (
+      this.props.isAdmin ||
+      this.props.discordIdentity.split("#")[0] === match.restreamer
+    );
   }
 
   render() {

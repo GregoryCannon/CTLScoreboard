@@ -52,6 +52,7 @@ class StandingsPage extends Component {
               matchList={this.props.matchData}
               refreshFunction={this.props.refreshFunction}
               isAdmin={this.props.isAdmin}
+              discordIdentity={this.props.discordIdentity}
             />
           </div>
         </div>

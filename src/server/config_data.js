@@ -64,7 +64,7 @@ const divisionData = [
       "Lastarot",
       "Alwin",
       "Ben",
-      "Nerdz/puppy-W",
+      "NerDzzzzz",
       "Jordan",
       "grape",
       "Luis"
@@ -78,7 +78,7 @@ const divisionData = [
     numSoftRelegate: 2,
     numHardRelegate: 1,
     players: [
-      "Nerdz/puppy-L",
+      "puppyball",
       "japorto",
       "Kim",
       "Scamper9",
