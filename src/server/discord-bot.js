@@ -34,7 +34,7 @@ class BotClient {
     // If new vod, introduce restreamer and include vod
     if (match.vod_url !== this.previousVodUrl) {
       this.previousVodUrl = match.vod_url;
-      return [`${match.restreamer} restreamed:\n${match.vod_url}`,`:fire: ${formattedDate} ${homePlayer} (H) v ${awayPlayer} (A) ${homeGames}-${awayGames}`];
+      return [`------------------\n${match.restreamer} restreamed:\n${match.vod_url}`,`:fire: ${formattedDate} ${homePlayer} (H) v ${awayPlayer} (A) ${homeGames}-${awayGames}`];
     } else {
       return [`:fire: ${formattedDate} ${homePlayer} (H) v ${awayPlayer} (A) ${homeGames}-${awayGames}`];
     }
