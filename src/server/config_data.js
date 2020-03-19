@@ -7,13 +7,12 @@ const divisionData = [
     numSoftRelegate: 1,
     numHardRelegate: 2,
     players: [
-      "jakegames2",
-      "ddww",
-      "adammts",
-      "cheez_fish",
-      "batfoy",
-      "tristop",
-      "digginout"
+      "Nenu Zefanya",
+      "Batfoy",
+      "CheeZ_Fish",
+      "Jakegames2",
+      "DaAsiann",
+      "AdamMts",
     ]
   },
   {
@@ -24,13 +23,14 @@ const divisionData = [
     numSoftRelegate: 2,
     numHardRelegate: 0,
     players: [
-      "hydrantdude",
-      "beastinshen",
-      "b14nk",
+      "HydrantDude",
+      "digginout",
       "galoomba",
-      "sodium",
-      "holifyre",
-      "daasiann"
+      "B14NK",
+      "Sodium",
+      "dog",
+      "XaeL",
+      "Sharky"
     ]
   },
   {
@@ -41,13 +41,14 @@ const divisionData = [
     numSoftRelegate: 1,
     numHardRelegate: 1,
     players: [
-      "dog",
-      "themistervalor",
-      "paul",
-      "myles",
+      "BeastinShen",
+      "Holifyre",
+      "TheMisterValor",
       "moodeuce",
-      "peter",
-      "hezzuli"
+      "Myles",
+      "PixelAndy",
+      "Huffulufugus",
+      "Mark"
     ]
   },
   {
@@ -58,13 +59,14 @@ const divisionData = [
     numSoftRelegate: 2,
     numHardRelegate: 0,
     players: [
-      "pixelandy",
-      "alwin",
-      "chong",
-      "japorto",
-      "lastarot",
-      "-jj",
-      "nerdzzzzz"
+      "-JJ",
+      "Lastarot",
+      "Alwin",
+      "Ben",
+      "Nerdzzzzz/puppyball winner",
+      "Jordan",
+      "grape",
+      "Luis"
     ]
   },
   {
@@ -75,14 +77,14 @@ const divisionData = [
     numSoftRelegate: 2,
     numHardRelegate: 1,
     players: [
-      "chirpingmatt",
-      "johann",
-      "puppyball",
-      "ben",
-      "scamper9",
-      "skiplogic",
-      "ditshadows",
-      "somalian"
+      "Nerdzzzzz/puppyball loser",
+      "japorto",
+      "Kim",
+      "Scamper9",
+      "GregBoomCannon",
+      "DAS_Master",
+      "tillbaks",
+      "vandweller"
     ]
   },
   {
@@ -93,14 +95,14 @@ const divisionData = [
     numSoftRelegate: 2,
     numHardRelegate: 1,
     players: [
-      "Bchirpingmatt",
-      "Bjohann",
-      "Bpuppyball",
-      "Bben",
-      "Bscamper9",
-      "Bskiplogic",
-      "Bditshadows",
-      "Bsomalian"
+      "Somalian",
+      "ChirpingMatt",
+      "Nansuchao",
+      "Johann",
+      "Resting",
+      "Benjy",
+      "Marts",
+      "skiplogic/fatsam winner"
     ]
   },
   {
@@ -111,13 +113,14 @@ const divisionData = [
     numSoftRelegate: 2,
     numHardRelegate: 1,
     players: [
-      "tetrium",
-      "mistec43",
-      "vandweller",
-      "gummithecat",
-      "gregboomcannon",
-      "kuboxxxxx",
-      "fatsam"
+      "skiplogic/fatsam loser",
+      "Tetrium",
+      "Ms_Drop",
+      "Kingsman",
+      "CharlesSparkley",
+      "Mistec43",
+      "Emptyeye",
+      "Chris Foryst"
     ]
   },
   {
@@ -128,13 +131,14 @@ const divisionData = [
     numSoftRelegate: 2,
     numHardRelegate: 1,
     players: [
-      "marts",
-      "resting",
-      "tillbaks",
-      "ms_drop",
-      "colton",
-      "rory",
-      "kingsman"
+      "Zipley",
+      "Tugi",
+      "Colton",
+      "gummithecat",
+      "Billy Mac",
+      "Kuboxxxxx/Krypto Nick winner",
+      "KAINOS",
+      "GeeForce"
     ]
   },
   {
@@ -145,14 +149,13 @@ const divisionData = [
     numSoftRelegate: 0,
     numHardRelegate: 0,
     players: [
-      "zipley",
-      "chris foryst",
-      "emptyeye",
-      "krypto nick",
-      "boone",
-      "golden",
-      "diamond",
-      "samantha"
+      "mattholland",
+      "Owen",
+      "VeloNemo",
+      "Diamond",
+      "BOONE",
+      "Zabby",
+      "shadowguy",
     ]
   },
   {
@@ -163,14 +166,13 @@ const divisionData = [
     numSoftRelegate: 0,
     numHardRelegate: 0,
     players: [
-      "7zipley",
-      "7chris foryst",
-      "7emptyeye",
-      "7krypto nick",
-      "7boone",
-      "7golden",
-      "7diamond",
-      "7samantha"
+      "Kuboxxxxx/Krypto Nick loser",
+      "Rory",
+      "eggmaster",
+      "Samantha",
+      "swinemeeper",
+      "PixelAtc",
+      "sablen",
     ]
   }
 ];
