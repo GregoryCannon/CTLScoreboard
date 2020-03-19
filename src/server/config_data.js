@@ -5,7 +5,7 @@ const divisionData = [
     numAutoPromo: 0,
     numSoftPromo: 0,
     numSoftRelegate: 1,
-    numHardRelegate: 1,
+    numHardRelegate: 2,
     players: [
       "jakegames2",
       "ddww",
@@ -21,8 +21,8 @@ const divisionData = [
     numWinner: 0,
     numAutoPromo: 1,
     numSoftPromo: 1,
-    numSoftRelegate: 1,
-    numHardRelegate: 1,
+    numSoftRelegate: 2,
+    numHardRelegate: 0,
     players: [
       "hydrantdude",
       "beastinshen",
@@ -36,8 +36,8 @@ const divisionData = [
   {
     divisionName: "3",
     numWinner: 0,
-    numAutoPromo: 1,
-    numSoftPromo: 1,
+    numAutoPromo: 3,
+    numSoftPromo: 2,
     numSoftRelegate: 1,
     numHardRelegate: 1,
     players: [
@@ -53,10 +53,10 @@ const divisionData = [
   {
     divisionName: "4",
     numWinner: 0,
-    numAutoPromo: 1,
+    numAutoPromo: 3,
     numSoftPromo: 1,
-    numSoftRelegate: 1,
-    numHardRelegate: 1,
+    numSoftRelegate: 2,
+    numHardRelegate: 0,
     players: [
       "pixelandy",
       "alwin",
@@ -68,12 +68,12 @@ const divisionData = [
     ]
   },
   {
-    divisionName: "5",
+    divisionName: "5A",
     numWinner: 0,
     numAutoPromo: 1,
     numSoftPromo: 1,
     numSoftRelegate: 2,
-    numHardRelegate: 0,
+    numHardRelegate: 1,
     players: [
       "chirpingmatt",
       "johann",
@@ -86,12 +86,30 @@ const divisionData = [
     ]
   },
   {
+    divisionName: "5B",
+    numWinner: 0,
+    numAutoPromo: 1,
+    numSoftPromo: 1,
+    numSoftRelegate: 2,
+    numHardRelegate: 1,
+    players: [
+      "Bchirpingmatt",
+      "Bjohann",
+      "Bpuppyball",
+      "Bben",
+      "Bscamper9",
+      "Bskiplogic",
+      "Bditshadows",
+      "Bsomalian"
+    ]
+  },
+  {
     divisionName: "6A",
     numWinner: 0,
-    numAutoPromo: 2,
-    numSoftPromo: 1,
-    numSoftRelegate: 1,
-    numHardRelegate: 0,
+    numAutoPromo: 1,
+    numSoftPromo: 2,
+    numSoftRelegate: 2,
+    numHardRelegate: 1,
     players: [
       "tetrium",
       "mistec43",
@@ -105,10 +123,10 @@ const divisionData = [
   {
     divisionName: "6B",
     numWinner: 0,
-    numAutoPromo: 2,
-    numSoftPromo: 1,
-    numSoftRelegate: 1,
-    numHardRelegate: 0,
+    numAutoPromo: 1,
+    numSoftPromo: 2,
+    numSoftRelegate: 2,
+    numHardRelegate: 1,
     players: [
       "marts",
       "resting",
@@ -120,9 +138,9 @@ const divisionData = [
     ]
   },
   {
-    divisionName: "7",
+    divisionName: "7A",
     numWinner: 0,
-    numAutoPromo: 2,
+    numAutoPromo: 1,
     numSoftPromo: 2,
     numSoftRelegate: 0,
     numHardRelegate: 0,
@@ -138,9 +156,9 @@ const divisionData = [
     ]
   },
   {
-    divisionName: "77",
+    divisionName: "7B",
     numWinner: 0,
-    numAutoPromo: 2,
+    numAutoPromo: 1,
     numSoftPromo: 2,
     numSoftRelegate: 0,
     numHardRelegate: 0,
@@ -163,7 +181,33 @@ const restreamerRole = [
   "moodeuce#8573",
   "Kingsman#0364",
   "Lastarot#9931",
-  "Kryptonick#4388"
+  "Kryptonick#4388",
+  "skiplogic#9125",
+  "Chris Foryst#0131",
+  "HydrantDude#2048",
+  "BeastinShen#4218",
+  "offwo#7439",
+  "japorto#5801",
+  "The1stNoel#0001",
+  "Z Wing#6720",
+  "DivCaste#6595",
+  "vandweller#4361",
+  "Tryad#0983",
+  "XaeL#6732",
+  "ChirpingMatt#0801",
+  "Rory#1709",
+  "dog#3052",
+  "Kofi#6820",
+  "roncli#1409",
+  "EricICX#6985",
+  "oktopuse#8620",
+  "DitShadows#3241",
+  "louieskouie#2469",
+  "EngJohann#1501",
+  "B14NK#3752",
+  "Opaux (Ben)#6030",
+  "Emptyeye#7326",
+  "＊Chong#8809"
 ];
 
 module.exports = {
