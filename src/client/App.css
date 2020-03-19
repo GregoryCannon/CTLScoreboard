@@ -1,12 +1,12 @@
 .App {
   text-align: center;
   font-color: black;
-  font-size: 1.25vw;
+  font-size: 1.15vw;
   position: relative;
 }
 
 .App .Report-matches-form * {
-  font-size: 1.25vw;
+  font-size: 1.15vw;
 }
 
 .App-logo {

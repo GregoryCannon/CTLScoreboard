@@ -4,8 +4,8 @@
 }
 
 .Left-panel {
-  width: 70%;
-  padding: 8px 30px 0;
+  width: 65%;
+  padding: 8px 20px 0;
 }
 
 .Right-panel {
@@ -14,7 +14,7 @@
   position: sticky;
   top: 20px;
   margin-top: 20px;
-  margin-right: 20px;
+  margin-right: 12px;
 }
 
 .Reporting-panel-card,

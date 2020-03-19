@@ -63,7 +63,7 @@ const divisionData = [
       "Lastarot",
       "Alwin",
       "Ben",
-      "Nerdzzzzz/puppyball winner",
+      "Nerdzzzzz/puppyball-W",
       "Jordan",
       "grape",
       "Luis"
@@ -77,7 +77,7 @@ const divisionData = [
     numSoftRelegate: 2,
     numHardRelegate: 1,
     players: [
-      "Nerdzzzzz/puppyball loser",
+      "Nerdzzzzz/puppyball-L",
       "japorto",
       "Kim",
       "Scamper9",
@@ -102,7 +102,7 @@ const divisionData = [
       "Resting",
       "Benjy",
       "Marts",
-      "skiplogic/fatsam winner"
+      "skiplogic/fatsam-W"
     ]
   },
   {
@@ -113,7 +113,7 @@ const divisionData = [
     numSoftRelegate: 2,
     numHardRelegate: 1,
     players: [
-      "skiplogic/fatsam loser",
+      "skiplogic/fatsam-L",
       "Tetrium",
       "Ms_Drop",
       "Kingsman",
@@ -136,7 +136,7 @@ const divisionData = [
       "Colton",
       "gummithecat",
       "Billy Mac",
-      "Kuboxxxxx/Krypto Nick winner",
+      "Kuboxxxxx/Krypto Nick-W",
       "KAINOS",
       "GeeForce"
     ]
@@ -166,7 +166,7 @@ const divisionData = [
     numSoftRelegate: 0,
     numHardRelegate: 0,
     players: [
-      "Kuboxxxxx/Krypto Nick loser",
+      "Kuboxxxxx/Krypto Nick-L",
       "Rory",
       "eggmaster",
       "Samantha",
