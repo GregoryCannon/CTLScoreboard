@@ -18,7 +18,7 @@ class BotClient {
       return "unknown date";
     }
     const matchMoment = moment.unix(match.match_date);
-    return matchMoment.format("DD MMMM YYYY kk:mm") + " UTC";
+    return matchMoment.utc().format("DD MMMM YYYY hh:mm") + " UTC";
   }
 
   formatMatch(match) {
@@ -31,13 +31,13 @@ class BotClient {
     const awayGames = match.winner_home
       ? match.loser_games
       : match.winner_games;
-    // Don't embed a preview if it's a repeated vod
-    const vodUrl =
-      match.vod_url === this.previousVodUrl
-        ? "<" + match.vod_url + ">"
-        : match.vod_url;
-    this.previousVodUrl = match.vod_url;
-    return `:fire: ${formattedDate} ${homePlayer} (H) v ${awayPlayer} (A) ${homeGames}-${awayGames} ${vodUrl}\nRestreamed by ${match.restreamer}`;
+    // If new vod, introduce restreamer and include vod
+    if (match.vod_url !== this.previousVodUrl) {
+      this.previousVodUrl = match.vod_url;
+      return [`${match.restreamer} restreamed:\n${match.vod_url}`,`:fire: ${formattedDate} ${homePlayer} (H) v ${awayPlayer} (A) ${homeGames}-${awayGames}`];
+    } else {
+      return [`:fire: ${formattedDate} ${homePlayer} (H) v ${awayPlayer} (A) ${homeGames}-${awayGames}`];
+    }
   }
 
   sendMessageInChannel(messageText, channelName) {
@@ -58,7 +58,10 @@ class BotClient {
   }
 
   reportMatch(match) {
-    this.sendMessage(this.formatMatch(match));
+    const messagesToSend = this.formatMatch(match)
+    for (let i = 0; i < messagesToSend.length; i++){
+      this.sendMessage(messagesToSend[i]);
+    }
   }
 
   start() {

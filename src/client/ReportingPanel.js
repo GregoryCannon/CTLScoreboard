@@ -20,7 +20,6 @@ class ReportingPanel extends Component {
     this.loserGamesInput = React.createRef();
     this.winnerGamesInput = React.createRef();
     this.vodUrlInput = React.createRef();
-    this.restreamerInput = React.createRef();
     this.datePickerInput = React.createRef();
 
     this.changeReportingDivision = this.changeReportingDivision.bind(this);
@@ -81,8 +80,8 @@ class ReportingPanel extends Component {
     if (formData.vod_url === "") {
       return "Enter the VOD url";
     }
-    if (formData.restreamer === "") {
-      return "Enter the Twitch username of the restreamer";
+    if (!formData.restreamer) {
+      return "Failed to get Discord identity of restreamer.";
     }
 
     // Invalid info
@@ -140,7 +139,7 @@ class ReportingPanel extends Component {
       winner_home: this.state.winnerHome,
       match_date: moment.utc(this.datePickerInput.current.value).unix(),
       report_date: moment().unix(),
-      restreamer: this.restreamerInput.current.value,
+      restreamer: this.props.discordIdentity.split("#")[0],
       vod_url: this.vodUrlInput.current.value
     };
 
@@ -306,17 +305,6 @@ class ReportingPanel extends Component {
                         type="text"
                         placeholder="Twitch URL"
                         ref={this.vodUrlInput}
-                      />
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td>Restreamer</td>
-                    <td>
-                      <input
-                        type="text"
-                        placeholder="Twitch username"
-                        ref={this.restreamerInput}
                       />
                     </td>
                   </tr>

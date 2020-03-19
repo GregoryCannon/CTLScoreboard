@@ -10,9 +10,10 @@ const divisionData = [
       "Nenu Zefanya",
       "Batfoy",
       "CheeZ_Fish",
+      "Tristop",
       "Jakegames2",
       "DaAsiann",
-      "AdamMts",
+      "AdamMts"
     ]
   },
   {
@@ -155,7 +156,7 @@ const divisionData = [
       "Diamond",
       "BOONE",
       "Zabby",
-      "shadowguy",
+      "shadowguy"
     ]
   },
   {
@@ -172,7 +173,7 @@ const divisionData = [
       "Samantha",
       "swinemeeper",
       "PixelAtc",
-      "sablen",
+      "sablen"
     ]
   }
 ];
