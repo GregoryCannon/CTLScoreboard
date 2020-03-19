@@ -6,7 +6,7 @@ class BotClient {
   constructor(token) {
     this.token = token;
     this.client = new Discord.Client();
-    this.mainChannel = "the-lab";
+    this.mainChannel = "reporting";
     this.testChannel = "the-lab";
     this.isReady = false;
     this.pendingMessages = [];
