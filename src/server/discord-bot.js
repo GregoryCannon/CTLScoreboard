@@ -21,6 +21,15 @@ class BotClient {
     return matchMoment.utc().format("DD MMMM YYYY hh:mm") + " UTC";
   }
 
+  checkVodSameness(vodUrl, previousVodUrl) {
+    if (vodUrl === previousVodUrl) {
+      return "identical";
+    } else if (vodUrl.split("?")[0] === previousVodUrl.split("?")[0]) {
+      return "new timestamp";
+    }
+    return "different";
+  }
+
   formatMatch(match) {
     const formattedDate = this.getMatchDateFormatted(match);
     const homePlayer = match.winner_home ? match.winner : match.loser;
@@ -31,12 +40,27 @@ class BotClient {
     const awayGames = match.winner_home
       ? match.loser_games
       : match.winner_games;
-    // If new vod, introduce restreamer and include vod
-    if (match.vod_url !== this.previousVodUrl) {
-      this.previousVodUrl = match.vod_url;
-      return [`------------------\n${match.restreamer} restreamed:\n${match.vod_url}`,`:fire: ${formattedDate} ${homePlayer} (H) v ${awayPlayer} (A) ${homeGames}-${awayGames}`];
-    } else {
-      return [`:fire: ${formattedDate} ${homePlayer} (H) v ${awayPlayer} (A) ${homeGames}-${awayGames}`];
+
+    const vodSameness = this.checkVodSameness(
+      match.vod_url,
+      this.previousVodUrl
+    );
+    this.previousVodUrl = match.vod_url;
+    const matchLine = `:fire: ${formattedDate} ${homePlayer} (H) v ${awayPlayer} (A) ${homeGames}-${awayGames}`;
+
+    if (vodSameness === "different") {
+      // New post
+      return [
+        `------------------\n${match.restreamer} restreamed:\n${match.vod_url}`,
+        matchLine
+      ];
+    } else if (vodSameness === "new timestamp") {
+      // Post the VOD with no preview and the match results
+      const vodUrlNoPreview = "<" + match.vod_url + ">";
+      return [`${vodUrlNoPreview}\n${matchLine}`];
+    } else if (vodSameness === "identical") {
+      // Post just the match results
+      return [matchLine];
     }
   }
 
@@ -58,8 +82,8 @@ class BotClient {
   }
 
   reportMatch(match) {
-    const messagesToSend = this.formatMatch(match)
-    for (let i = 0; i < messagesToSend.length; i++){
+    const messagesToSend = this.formatMatch(match);
+    for (let i = 0; i < messagesToSend.length; i++) {
       this.sendMessage(messagesToSend[i]);
     }
   }
