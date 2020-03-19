@@ -137,7 +137,7 @@ const divisionData = [
       "Colton",
       "gummithecat",
       "Billy Mac",
-      "Kubox/KryptoNick-W",
+      "Kuboxxxxx",
       "KAINOS",
       "GeeForce"
     ]
@@ -167,7 +167,7 @@ const divisionData = [
     numSoftRelegate: 0,
     numHardRelegate: 0,
     players: [
-      "Kubox/KryptoNick-L",
+      "Krypto Nick",
       "Rory",
       "eggmaster",
       "Samantha",
