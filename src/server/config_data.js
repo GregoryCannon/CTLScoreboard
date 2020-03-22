@@ -103,7 +103,7 @@ const divisionData = [
       "Resting",
       "Benjy",
       "Marts",
-      "skip/fatsam-W"
+      "fatsam"
     ]
   },
   {
@@ -114,7 +114,7 @@ const divisionData = [
     numSoftRelegate: 2,
     numHardRelegate: 1,
     players: [
-      "skip/fatsam-L",
+      "skiplogic",
       "Tetrium",
       "Ms_Drop",
       "Kingsman",
