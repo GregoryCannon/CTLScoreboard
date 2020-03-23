@@ -461,14 +461,13 @@ function makeHttpRequest(type, localUrl, body, callback) {
   request.send(JSON.stringify(body));
 }
 
-getMatchDateFormatted(match) {
-    if (!match.match_date) {
-      return "unknown date";
-    }
-    const matchMoment = moment.unix(match.match_date);
-    return matchMoment.utc().format("DD MMMM YYYY hh:mm A") + " UTC";
+function getMatchDateFormatted(match) {
+  if (!match.match_date) {
+    return "unknown date";
   }
-
+  const matchMoment = moment.unix(match.match_date);
+  return matchMoment.utc().format("DD MMMM YYYY hh:mm A") + " UTC";
+}
 
 function downloadCanvasAsPng(canvas, filename) {
   /// create an "off-screen" anchor tag
