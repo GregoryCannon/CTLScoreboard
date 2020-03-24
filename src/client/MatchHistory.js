@@ -60,7 +60,7 @@ class MatchHistory extends Component {
         <div className="Scrollable-list">
           <table>
             <tbody>
-              {[...this.props.matchList].reverse().map((match, i) => {
+              {this.props.matchList.map((match, i) => {
                 return (
                   <tr key={this.getMatchText(match)} className="Reported-match">
                     <td className="Match-division">D{match.division}</td>
