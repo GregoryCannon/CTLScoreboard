@@ -24,7 +24,7 @@ class App extends Component {
       isFetchingMatches: false,
       isEditingPenaltyPoints: false,
       divisionData: util.memeDivisionData,
-      matchData: util.sampleMatchData,
+      matchList: util.sampleMatchData,
       showAdminPasswordForm: false,
       currentTypedAdminPassword: "",
       currentPage: "standings",
@@ -135,10 +135,12 @@ class App extends Component {
 
     // Callback for result
     request.onload = function() {
-      var newMatchData = JSON.parse(request.response);
+      var newMatchList = JSON.parse(request.response);
+      // Sort matches by match date
+      newMatchList.sort((a, b) => b.match_date - a.match_date);
       this.setState({
         ...this.state,
-        matchData: newMatchData,
+        matchList: newMatchList,
         isFetchingMatches: false
       });
     }.bind(this);
@@ -247,7 +249,7 @@ class App extends Component {
               <StandingsPage
                 {...props}
                 divisionData={this.state.divisionData}
-                matchData={this.state.matchData}
+                matchList={this.state.matchList}
                 sortByPoints={this.state.sortByPoints}
                 isAdmin={this.isAdmin()}
                 isRestreamer={this.isRestreamer()}
@@ -260,7 +262,7 @@ class App extends Component {
 
           <Route
             path="/results"
-            render={props => <ResultsPage matches={this.state.matchData} />}
+            render={props => <ResultsPage matchList={this.state.matchList} />}
           />
 
           <Route
@@ -268,7 +270,7 @@ class App extends Component {
             render={props => (
               <FixturesPage
                 divisionData={this.state.divisionData}
-                matchData={this.state.matchData}
+                matchList={this.state.matchList}
               />
             )}
           />

@@ -49,7 +49,7 @@ class StandingsPage extends Component {
 
           <div className="Match-history-card">
             <MatchHistory
-              matchList={this.props.matchData}
+              matchList={this.props.matchList}
               refreshFunction={this.props.refreshFunction}
               isAdmin={this.props.isAdmin}
               discordIdentity={this.props.discordIdentity}

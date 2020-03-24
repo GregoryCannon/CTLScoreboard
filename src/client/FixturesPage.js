@@ -46,8 +46,7 @@ class FixturesPage extends Component {
     return (
       <div className="Fixtures-container">
         {this.props.divisionData.map(division => {
-          console.log("matches", this.props.matchData);
-          const divMatches = this.props.matchData.filter(
+          const divMatches = this.props.matchList.filter(
             match => match.division == division.divisionName
           );
           console.log("divMatches", divMatches);

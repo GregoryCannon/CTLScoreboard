@@ -5,8 +5,6 @@ const util = require("../server/util");
 
 class ResultsPage extends Component {
   render() {
-    const matchList = this.props.matches;
-    matchList.sort((a, b) => b.match_date - a.match_date);
     return (
       <div className="Results-container">
         <table className="Results-table">
@@ -20,7 +18,7 @@ class ResultsPage extends Component {
               <th>Away</th>
               <th>Division</th>
             </tr>
-            {matchList.map(match => {
+            {this.props.matchList.map(match => {
               const homePlayer = match.winner_home ? match.winner : match.loser;
               const awayPlayer = match.winner_home ? match.loser : match.winner;
               const homeScore = match.winner_home
