@@ -36,8 +36,7 @@ class MatchHistory extends Component {
     request.send(JSON.stringify(requestBody));
   }
 
-  deleteMatchClicked(matchIndex) {
-    const matchData = this.props.matchList[matchIndex];
+  deleteMatchClicked(matchData) {
     console.log("matchdata to delete:", matchData);
     const confirmMessage = `Are you sure you want to delete this match between ${matchData.winner} and ${matchData.loser}?`;
     var result = confirm(confirmMessage);
@@ -80,9 +79,7 @@ class MatchHistory extends Component {
                             : "hidden"
                         }}
                         onClick={() => {
-                          this.deleteMatchClicked(
-                            this.props.matchList.length - 1 - i
-                          );
+                          this.deleteMatchClicked(match);
                         }}
                       >
                         <i className="fas fa-trash"></i>
