@@ -137,7 +137,7 @@ class App extends Component {
     request.onload = function() {
       var newMatchList = JSON.parse(request.response);
       // Sort matches by match date
-      newMatchList.sort((a, b) => b.match_date - a.match_date);
+      newMatchList.sort((a, b) => b.report_date - a.report_date);
       this.setState({
         ...this.state,
         matchList: newMatchList,

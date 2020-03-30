@@ -1,24 +1,15 @@
 const Discord = require("discord.js");
-const moment = require("moment");
-const util = require("util");
+const util = require("./util");
 
 class BotClient {
   constructor(token) {
     this.token = token;
     this.client = new Discord.Client();
-    this.mainChannel = "reporting";
+    this.mainChannel = util.getDiscordMainChannel();
     this.testChannel = "the-lab";
     this.isReady = false;
     this.pendingMessages = [];
     this.previousVodUrl = "";
-  }
-
-  getMatchDateFormatted(match) {
-    if (!match.match_date) {
-      return "unknown date";
-    }
-    const matchMoment = moment.unix(match.match_date);
-    return matchMoment.utc().format("DD MMMM YYYY hh:mm A") + " UTC";
   }
 
   checkVodSameness(vodUrl, previousVodUrl) {
@@ -31,7 +22,7 @@ class BotClient {
   }
 
   formatMatch(match) {
-    const formattedDate = this.getMatchDateFormatted(match);
+    const formattedDate = util.getMatchDateFormatted(match);
     const homePlayer = match.winner_home ? match.winner : match.loser;
     const awayPlayer = match.winner_home ? match.loser : match.winner;
     const homeGames = match.winner_home
@@ -73,7 +64,7 @@ class BotClient {
         console.error(err);
       }
     } else {
-      this.pendingMessages.push([channelName, messageText]);
+      this.pendingMessages.push([messageText, channelName]);
     }
   }
 
@@ -81,6 +72,7 @@ class BotClient {
     this.sendMessageInChannel(messageText, this.mainChannel);
   }
 
+  // Main entry point for using the bot from server-main.js
   reportMatch(match) {
     const messagesToSend = this.formatMatch(match);
     for (let i = 0; i < messagesToSend.length; i++) {
@@ -95,7 +87,7 @@ class BotClient {
 
       while (this.pendingMessages.length > 0) {
         const pendingMessage = this.pendingMessages.shift();
-        this.sendMessage(pendingMessage[0], pendingMessage[1]);
+        this.sendMessageInChannel(pendingMessage[0], pendingMessage[1]);
       }
     });
 

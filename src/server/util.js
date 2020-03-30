@@ -1,7 +1,7 @@
 const moment = require("moment");
 
-// Since I can't figure out environment variables in React rip
-//process.env.API_URL = "https://ctlscoreboard.herokuapp.com/";
+// CHANGE THIS WHEN DEBUGGING
+const IS_PRODUCTION = true;
 
 const memeDivisionData = [
   {
@@ -438,8 +438,19 @@ function getPlayerData(list, playerName) {
 }
 
 function getApiUrl(suffix) {
-  // return (process.env.API_URL || "http://localhost:8080") + "/" + suffix;
-  return "https://ctlscoreboard.herokuapp.com/" + suffix;
+  if (IS_PRODUCTION) {
+    return "https://ctlscoreboard.herokuapp.com/" + suffix;
+  } else {
+    return (process.env.API_URL || "http://localhost:8080") + "/" + suffix;
+  }
+}
+
+function getDiscordMainChannel() {
+  if (IS_PRODUCTION) {
+    return "reporting";
+  } else {
+    return "the-lab";
+  }
 }
 
 function makeHttpRequest(type, localUrl, body, callback) {
@@ -466,7 +477,7 @@ function getMatchDateFormatted(match) {
     return "unknown date";
   }
   const matchMoment = moment.unix(match.match_date);
-  return matchMoment.utc().format("MMM DD YYYY, HH:mm A");
+  return matchMoment.utc().format("MMM DD YYYY, HH:mm");
 }
 
 function downloadCanvasAsPng(canvas, filename) {
@@ -518,6 +529,7 @@ module.exports = {
   getPlayerData,
   getMatchSchedule,
   getApiUrl,
+  getDiscordMainChannel,
   makeHttpRequest,
   getMatchDateFormatted
 };
