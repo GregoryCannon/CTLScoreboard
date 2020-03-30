@@ -218,9 +218,8 @@ const restreamerRole = [
   "ITZsharky#2353",
   "LuisZabby#2618",
   "Zipley#7137",
-  "Kibi Byte#4065",
-  "GregBoomCannon#4087"
-];
+  "Kibi Byte#4065"
+ ];
 
 module.exports = {
   divisionData,
