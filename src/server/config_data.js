@@ -65,7 +65,6 @@ const divisionData = [
       "Alwin",
       "Ben",
       "NerDzzzzz",
-      "Jordan",
       "grape",
       "Luis"
     ]
