@@ -219,7 +219,8 @@ const restreamerRole = [
   "Zipley#7137",
   "Kibi Byte#4065",
   "tugi#7004",
-  "leaurax#0455"
+  "leaurax#0455",
+  "SodiumOverdose#8425"
  ];
 
 module.exports = {
