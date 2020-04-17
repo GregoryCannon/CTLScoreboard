@@ -65,7 +65,6 @@ const divisionData = [
       "Alwin",
       "Ben",
       "NerDzzzzz",
-      "Jordan",
       "grape",
       "Luis"
     ]
@@ -199,7 +198,7 @@ const restreamerRole = [
   "XaeL#6732",
   "ChirpingMatt#0801",
   "Rory#1709",
-  "dog#3052",
+  "dog#1988",
   "Kofi#6820",
   "roncli#1409",
   "EricICX#6985",
@@ -218,8 +217,13 @@ const restreamerRole = [
   "ITZsharky#2353",
   "LuisZabby#2618",
   "Zipley#7137",
-  "Kibi Byte#4065"
-];
+  "Kibi Byte#4065",
+  "tugi#7004",
+  "leaurax#0455",
+  "SodiumOverdose#8425",
+  "c-dubs#2871",
+  "NerDzzzzz#8658"
+ ];
 
 module.exports = {
   divisionData,
