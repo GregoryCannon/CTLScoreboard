@@ -5,11 +5,10 @@ const divisionData = [
     numAutoPromo: 0,
     numSoftPromo: 0,
     numSoftRelegate: 1,
-    numHardRelegate: 2,
+    numHardRelegate: 1,
     players: [
       "Nenu Zefanya",
       "Batfoy",
-      "CheeZ_Fish",
       "Tristop",
       "Jakegames2",
       "DaAsiann",
