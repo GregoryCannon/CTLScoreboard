@@ -12,13 +12,13 @@ const memeDivisionData = [
     numSoftRelegate: 1,
     numHardRelegate: 1,
     players: [
-      "adammts",
-      "mohammad",
-      "batfoy",
-      "hydrantdude",
-      "brodin",
-      "beastinshen",
-      "cheez_fish"
+      "greg",
+      "jdmfx_",
+      "jonas",
+      "vst_koryan",
+      "greentea",
+      "boom_jeff",
+      "buuuuuuuuco"
     ],
     standings: [
       {
@@ -101,13 +101,13 @@ const memeDivisionData = [
     numSoftRelegate: 1,
     numHardRelegate: 1,
     players: [
-      "adammts",
-      "mohammad",
-      "batfoy",
-      "hydrantdude",
-      "brodin",
-      "beastinshen",
-      "cheez_fish"
+      "greg",
+      "jdmfx_",
+      "jonas",
+      "vst_koryan",
+      "greentea",
+      "boom_jeff",
+      "buuuuuuuuco"
     ],
     standings: [
       {
