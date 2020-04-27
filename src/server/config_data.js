@@ -182,7 +182,7 @@ const restreamerRole = [
   "moodeuce#8573",
   "Kingsman#0364",
   "Lastarot#9931",
-  "Kryptonick#4388",
+  "Krypto#4388",
   "skiplogic#9125",
   "Chris Foryst#0131",
   "HydrantDude#2048",
