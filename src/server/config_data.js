@@ -222,7 +222,8 @@ const restreamerRole = [
   "SodiumOverdose#8425",
   "c-dubs#2871",
   "NerDzzzzz#8658",
-  "KAINOS#8036"
+  "KAINOS#8036",
+  "Vernieboi#0857"
  ];
 
 module.exports = {
