@@ -23,21 +23,15 @@ class BotClient {
 
   formatMatch(match) {
     const formattedDate = util.getMatchDateFormatted(match);
-    const homePlayer = match.winner_home ? match.winner : match.loser;
-    const awayPlayer = match.winner_home ? match.loser : match.winner;
-    const homeGames = match.winner_home
-      ? match.winner_games
-      : match.loser_games;
-    const awayGames = match.winner_home
-      ? match.loser_games
-      : match.winner_games;
+    const winnerHomeAwayLabel = match.winner_home ? "(H)" : "(A)";
+    const loserHomeAwayLabel = match.winner_home ? "(A)" : "(H)";
 
     const vodSameness = this.checkVodSameness(
       match.vod_url,
       this.previousVodUrl
     );
     this.previousVodUrl = match.vod_url;
-    const matchLine = `:fire: ${formattedDate} ${homePlayer} (H) v ${awayPlayer} (A) ${homeGames}-${awayGames}`;
+    const matchLine = `:fire: ${formattedDate} ${match.winner} ${winnerHomeAwayLabel} def. ${match.loser} ${loserHomeAwayLabel} ${match.winner_games}-${match.loser_games}`;
 
     if (vodSameness === "different") {
       // New post
