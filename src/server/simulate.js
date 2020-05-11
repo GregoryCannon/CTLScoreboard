@@ -210,7 +210,6 @@ function didClinchNonRelegation(player, division) {
 function didClinchRelegation(player, division) {
   const divisionStandings = simulateBestSeasonForPlayer(division, player);
   let relegated = false;
-  console.log("Best:", divisionStandings);
 
   // Auto relegate only
   const end = division.players.length - 1;
@@ -241,11 +240,26 @@ function didClinchNonPromo(player, division) {
   return !promoed;
 }
 
-// const memeDivision = util.memeDivisionData[0]
-// console.log("clinchedPromo:", didClinchPromo(memeDivision.standings[0], memeDivision))
-// console.log("clinchedRelegation:", didClinchRelegation(memeDivision.standings[0], memeDivision))
-// console.log("clinchedNonPromo:", didClinchNonPromo(memeDivision.standings[0], memeDivision))
-// console.log("clinchedNonRelegation:", didClinchNonRelegation(memeDivision.standings[0], memeDivision))
+// Function for manual testing of clinching methods. Unused currently.
+function testClinchingCalculationMethods() {
+  const memeDivision = util.memeDivisionData[0];
+  console.log(
+    "clinchedPromo:",
+    didClinchPromo(memeDivision.standings[0], memeDivision)
+  );
+  console.log(
+    "clinchedRelegation:",
+    didClinchRelegation(memeDivision.standings[0], memeDivision)
+  );
+  console.log(
+    "clinchedNonPromo:",
+    didClinchNonPromo(memeDivision.standings[0], memeDivision)
+  );
+  console.log(
+    "clinchedNonRelegation:",
+    didClinchNonRelegation(memeDivision.standings[0], memeDivision)
+  );
+}
 
 /* 
 Main method to:

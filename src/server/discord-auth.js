@@ -116,9 +116,9 @@ router.post("/validate", (req, res) => {
   const discordIdentity = req.body.discordIdentity;
   const discordIdentitySignature = req.body.discordIdentitySignature;
   console.log(
-    "discordIdentity:",
+    "Parsed discordIdentity:",
     discordIdentity,
-    "discordIdentitySignature:",
+    "\nParsed discordIdentitySignature:",
     discordIdentitySignature
   );
   if (hmacSign(discordIdentity) == discordIdentitySignature) {

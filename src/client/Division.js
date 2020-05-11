@@ -164,6 +164,7 @@ class Division extends Component {
                       isEditingPenaltyPoints={this.props.isEditingPenaltyPoints}
                       refreshFunction={this.props.refreshFunction}
                       playerName={player.name}
+                      divisionName={this.props.data.divisionName}
                     />
                   </td>
                   <td>{player.points}</td>

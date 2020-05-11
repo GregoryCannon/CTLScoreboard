@@ -6,6 +6,7 @@ const simulate = require("./simulate");
 const util = require("./util");
 const BotClient = require("./discord-bot").BotClient;
 const discordAuthRouter = require("./discord-auth").router;
+const configData = require("./config_data");
 
 // Configure express
 const app = express();
@@ -34,13 +35,45 @@ Cache
 */
 let cachedFinalStandings = null;
 let backupStandings = null;
+let invalidDivisions = []; // Source of truth for whether the cache is valid. If empty, cache is valid.
 
-// Whenever there is new information that hasn't been processed, clear the cache to force a refresh
-function invalidateCache() {
+/** Marks all divisions as being invalid in the cache. After calling this, callers should call refreshCachedStandings(). */
+function invalidateCacheForAllDivisions() {
+  console.log("Invalidating cache for all divisions");
+  // Move the now-invalid cache to backup before calculating the new cache
   backupStandings = cachedFinalStandings;
-  cachedFinalStandings = null;
+
+  // Mark all divisions as invalid
+  let allDivisionsList = configData.divisionData.map(function(division) {
+    return division.divisionName;
+  });
+  invalidDivisions = allDivisionsList;
 }
 
+/** Marks a particular division as being invalid in the cache. After calling this, callers should call refreshCachedStandings(). */
+function invalidateCacheForDivision(divisionName) {
+  console.log("Invalidating cache for division:", divisionName);
+  // Move the now-invalid cache to backup before calculating the new cache
+  backupStandings = cachedFinalStandings;
+
+  // Mark the supplied division as invalid
+  invalidDivisions.push(divisionName);
+}
+
+function isCacheValid() {
+  return invalidDivisions.length === 0;
+}
+
+/** Updates the cache with a fully calculated set of standings, and marks the cache as valid. */
+function setCachedStandings(newStandings) {
+  cachedFinalStandings = newStandings;
+  invalidDivisions = []; // Marking the cache as valid
+}
+
+/**
+ * Refreshes the cached standings, re-calculating only the divisions marked as invalid in the cache.
+ * @param callback - callback function when refresh is complete. Takes one boolean parameter which is true iff. the refresh succeeded.
+ */
 function refreshCachedStandings(callback) {
   console.log("-- Fetching matches from database...");
   // Get matches from db
@@ -49,19 +82,109 @@ function refreshCachedStandings(callback) {
     // Get penalty points from db
     getPenaltyPointMap(function(penaltyPoints) {
       console.log("-- Calculating standings...");
+      // Back up the standings before messing with anything
       backupStandings = cachedFinalStandings;
-      // Process and save in cache
       try {
-        cachedFinalStandings = getStandings(matches, penaltyPoints);
+        // Attempt to calculate new standings
+        const newStandings = calculateStandingsForInvalidDivisions(
+          matches,
+          penaltyPoints,
+          cachedFinalStandings,
+          invalidDivisions
+        );
         console.log("Finished calculating standings");
+
+        // If calculation success, save the result to cache
+        setCachedStandings(newStandings);
+        console.log("Updated standings in cache");
         callback(true);
       } catch (error) {
+        // If calculation fails, restore from backup
         console.log(error);
-        cachedFinalStandings = backupStandings;
+        setCachedStandings(backupStandings);
         console.log("!! Match data corrupted, restoring from backup !!");
         callback(false);
       }
     });
+  });
+}
+
+/** Generate up-to-date standings by recalculating the standings for all invalid divisions, and reusing the rest. */
+function calculateStandingsForInvalidDivisions(
+  matches,
+  penaltyPoints,
+  existingCache,
+  invalidDivisions
+) {
+  console.log("Calculating standings for invalid divisions:", invalidDivisions);
+  const rawStandings = compute.computeRawStandings(matches, penaltyPoints);
+  const finalStandings = [];
+
+  // Loop through the divisions
+  for (let d = 0; d < rawStandings.length; d++) {
+    const division = rawStandings[d];
+
+    // If the division is invalid in cache, recalculate it
+    if (invalidDivisions.includes(division.divisionName)) {
+      const divMatches = matches.filter(match => {
+        return match.division == division.divisionName;
+      });
+      const divMatchSchedule = util.getMatchSchedule(division, divMatches);
+      const simulationResults = simulate.runSimulation(
+        division,
+        divMatchSchedule
+      );
+      finalStandings.push(simulationResults);
+    }
+
+    // Otherwise use the cached one
+    else {
+      const cachedDivisionStandings = existingCache[d];
+      finalStandings.push(cachedDivisionStandings);
+    }
+  }
+
+  return finalStandings;
+}
+
+/** Start marking matches as corrupted from newest to oldest until the standings compute properly */
+function invalidateCorruptedData() {
+  console.log("Starting emergency de-corruption");
+  invalidateCacheForAllDivisions();
+  refreshCachedStandings(succeeded => {
+    if (succeeded) {
+      // On success, quit
+      console.log("Successfully de-corrupted the dataset!");
+      return true;
+    } else {
+      getValidMatches(function(e, matches) {
+        if (matches.length == 0) {
+          // On fail and no valid matches, this is the doomsday case. Lord knows what could get the db here.
+          return false;
+        }
+
+        // On fail and some matches left, mark the first as corrupted and recurse
+        const newestMatch = matches[matches.length - 1];
+        const idOnlyBody = { _id: newestMatch._id };
+        matchListDb.update(idOnlyBody, { $set: { corrupted: true } }, function(
+          err,
+          doc
+        ) {
+          if (err) {
+            console.log(
+              "Failed to mark match as corrupted:",
+              newestMatch,
+              "\nREASON:",
+              err
+            );
+          } else {
+            console.log("Marked match as corrupted:", newestMatch);
+            // Recurse
+            return invalidateCorruptedData();
+          }
+        });
+      });
+    }
   });
 }
 
@@ -79,33 +202,10 @@ function getPenaltyPointMap(callback) {
   const penaltyPointsMap = {};
   penaltyDb.find({}, function(e, penaltyList) {
     for (let i = 0; i < penaltyList.length; i++) {
-      console.log(
-        "Found penalty:",
-        penaltyList[i].points,
-        "for",
-        penaltyList[i].player
-      );
       penaltyPointsMap[penaltyList[i].player] = penaltyList[i].points;
     }
     callback(penaltyPointsMap);
   });
-}
-
-// Process the raw DB match data into standings
-function getStandings(matchData, penaltyPoints) {
-  const rawStandings = compute.computeRawStandings(matchData, penaltyPoints);
-  const finalStandings = [];
-  // Loop through each division and simulate many outcomes
-  for (let d = 0; d < rawStandings.length; d++) {
-    const division = rawStandings[d];
-    const divMatches = matchData.filter(match => {
-      return match.division == division.divisionName;
-    });
-    const matchSchedule = util.getMatchSchedule(division, divMatches);
-    const simulationResults = simulate.runSimulation(division, matchSchedule);
-    finalStandings.push(simulationResults);
-  }
-  return finalStandings;
 }
 
 function checkMatchAlreadyExists(matches, winner, loser, winnerHome) {
@@ -141,56 +241,6 @@ function getMatchAlreadyExistsErrorMessage(winner, loser, winnerHome) {
   );
 }
 
-// Start marking matches as corrupted from newest to oldest until the standings compute properly
-function invalidateCorruptedData() {
-  console.log("Starting emergency de-corruption");
-  refreshCachedStandings(succeeded => {
-    if (succeeded) {
-      console.log("Successfully de-corrupted the dataset!");
-      return true;
-    } else {
-      getValidMatches(function(e, matches) {
-        if (matches.length == 0) {
-          // The doomsday case. Lord knows what could get the db here.
-          return false;
-        }
-        const newestMatch = matches[matches.length - 1];
-        const idOnlyBody = { _id: newestMatch._id };
-        matchListDb.update(idOnlyBody, { $set: { corrupted: true } }, function(
-          err,
-          doc
-        ) {
-          if (err) {
-            console.log(
-              "Failed to mark match as corrupted:",
-              newestMatch,
-              "\nREASON:",
-              err
-            );
-          } else {
-            console.log("Marked match as corrupted:", newestMatch);
-            // Recurse
-            return invalidateCorruptedData();
-          }
-        });
-      });
-    }
-  });
-
-  getValidMatches(function(e, matches) {
-    console.log("-- Calculating standings...");
-    // Process and save in cache
-    backupStandings = cachedFinalStandings;
-    try {
-      cachedFinalStandings = getStandings(matches, {});
-      console.log("Finished calculating standings");
-    } catch (error) {
-      cachedFinalStandings = backupStandings;
-      console.log("!! Match data corrupted, restoring from backup !!");
-    }
-  });
-}
-
 /* 
   ----------
   Main request handlers
@@ -200,16 +250,18 @@ function invalidateCorruptedData() {
 // Main GET standings request
 app.get("/api/standings", function(req, res) {
   console.log("LOGGER----", "--- Get standings request: ", req.body);
-  if (cachedFinalStandings != null) {
+  if (isCacheValid()) {
     console.log("Sending response with cached standings");
     return res.send(cachedFinalStandings);
   } else {
     console.log("Invalid cache, forced to refresh");
     refreshCachedStandings(succeeded => {
       if (succeeded) {
-        console.log("Sending response with calculated standings");
+        console.log(
+          "Refresh succeeded - sending response with calculated standings"
+        );
       } else {
-        console.log("Sending response with backup data");
+        console.log("Refresh failed - sending response with backup data");
       }
       return res.send(cachedFinalStandings);
     });
@@ -227,19 +279,20 @@ app.get("/api/match-data", function(req, res) {
 
 // Main POST request to report a match
 app.post("/api/match-data", function(req, res) {
-  console.log("LOGGER----", "--- Post match request: ", req.body);
-  console.log("Received request: ", req.body);
+  const newMatch = req.body;
+  console.log("LOGGER----", "--- Post match request: ", newMatch);
+  console.log("Received request: ", newMatch);
 
   // Check that the match hasn't already been reported
   getValidMatches(function(e, matches) {
-    const winner = req.body.winner;
-    const loser = req.body.loser;
-    const winnerHome = req.body.winner_home;
+    const winner = newMatch.winner;
+    const loser = newMatch.loser;
+    const winnerHome = newMatch.winner_home;
     if (checkMatchAlreadyExists(matches, winner, loser, winnerHome)) {
       console.log(
         "LOGGER----",
         "Post match failed - match already exists\nRequest: ",
-        req.body
+        newMatch
       );
       res.send({
         didSucceed: false,
@@ -251,14 +304,14 @@ app.post("/api/match-data", function(req, res) {
       });
     } else {
       // Continue with the post
-      const newMatchData = { ...req.body, valid: true, corrupted: false };
+      const newMatchData = { ...newMatch, valid: true, corrupted: false };
       matchListDb.insert(newMatchData, function(err, doc) {
         if (err) {
           // If it failed, return error
           console.log(
             "LOGGER----",
             "Post match failed\nRequest: ",
-            req.body,
+            newMatch,
             "\nError: ",
             err
           );
@@ -271,10 +324,10 @@ app.post("/api/match-data", function(req, res) {
           console.log(
             "LOGGER----",
             "Post match succeeded\nRequest: ",
-            req.body
+            newMatch
           );
-          invalidateCache();
-          discordBot.reportMatch(req.body);
+          invalidateCacheForDivision(newMatch.division);
+          discordBot.reportMatch(newMatch);
           res.send({
             didSucceed: true,
             errorMessage: ""
@@ -287,13 +340,14 @@ app.post("/api/match-data", function(req, res) {
 
 // Main DELETE match request
 app.delete("/api/match-data", function(req, res) {
-  console.log("LOGGER----", "--- Delete match request: ", req.body);
-  console.log("Received delete request:", req.body);
-  if (req.body === {}) {
+  const matchToDelete = req.body;
+  console.log("LOGGER----", "--- Delete match request: ", matchToDelete);
+  console.log("Received delete request:", matchToDelete);
+  if (matchToDelete === {}) {
     console.log(
       "LOGGER----",
       "Delete match failed — empty body\nRequest: ",
-      req.body
+      matchToDelete
     );
     res.send({
       didSucceed: false,
@@ -302,7 +356,7 @@ app.delete("/api/match-data", function(req, res) {
     });
   }
 
-  const idOnlyBody = { _id: req.body._id };
+  const idOnlyBody = { _id: matchToDelete._id };
   matchListDb.update(idOnlyBody, { $set: { valid: false } }, function(
     err,
     doc
@@ -312,7 +366,7 @@ app.delete("/api/match-data", function(req, res) {
       console.log(
         "LOGGER----",
         "Delete match failed\nRequest:",
-        req.body,
+        matchToDelete,
         "\nError: ",
         err
       );
@@ -325,9 +379,9 @@ app.delete("/api/match-data", function(req, res) {
       console.log(
         "LOGGER----",
         "Delete match succeeded (invalidated)\nRequest: ",
-        req.body
+        matchToDelete
       );
-      invalidateCache();
+      invalidateCacheForDivision(matchToDelete.division);
       res.send({
         didSucceed: true,
         errorMessage: ""
@@ -339,13 +393,18 @@ app.delete("/api/match-data", function(req, res) {
 // POST request to report penalty points
 app.post("/api/penalty", function(req, res) {
   console.log("Attempted report of penalty points, with body", req.body);
+  const penalizedPlayer = req.body.player;
+  const penaltyAmount = req.body.points;
+  const playerDivision = req.body.divisionName;
+
+  // Update the penalty database
   penaltyDb.update(
-    { player: req.body.player }, // Query
-    { $set: { player: req.body.player, points: req.body.points } }, // Replacement document
+    { player: penalizedPlayer }, // Query
+    { $set: { player: penalizedPlayer, points: penaltyAmount } }, // Document to add or replace
     { upsert: true }, // Intelligently insert or update
     function(err, doc) {
       if (err) {
-        // If it failed, return error
+        // If DB operation failed, return error
         console.log(
           "LOGGER----",
           "Post penalty points failed\nRequest:",
@@ -358,13 +417,13 @@ app.post("/api/penalty", function(req, res) {
           errorMessage: err
         });
       } else {
-        // Otherwise, notify success
+        // If DB operation succeeded, invalidate the cache and send success
         console.log(
           "LOGGER----",
           "Post penalty points succeeded (invalidated)\nRequest: ",
           req.body
         );
-        invalidateCache();
+        invalidateCacheForDivision(playerDivision);
         res.send({
           didSucceed: true,
           errorMessage: ""
@@ -401,8 +460,9 @@ app.get("*", function(req, res) {
 Start script
 ------------------------
 */
-function main() {
+function initialSetup() {
   console.log("Server is running");
+  invalidateCacheForAllDivisions();
   refreshCachedStandings(succeeded => {
     if (succeeded) {
       console.log("Refreshed standings locally!");
@@ -412,6 +472,7 @@ function main() {
     }
   });
 }
-main();
+
+initialSetup();
 
 app.listen(process.env.PORT || 8080);

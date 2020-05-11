@@ -39,7 +39,8 @@ class PenaltyPointsEditor extends Component {
     // Send request to report penalty points
     const requestBody = {
       player: this.props.playerName,
-      points: numPoints
+      points: numPoints,
+      divisionName: this.props.divisionName
     };
     console.log("Sending penalty points request with body:", requestBody);
     request.send(JSON.stringify(requestBody));

@@ -58,15 +58,7 @@ const divisionData = [
     numSoftPromo: 1,
     numSoftRelegate: 2,
     numHardRelegate: 0,
-    players: [
-      "-JJ",
-      "Lastarot",
-      "Alwin",
-      "Ben",
-      "NerDzzzzz",
-      "grape",
-      "Luis"
-    ]
+    players: ["-JJ", "Lastarot", "Alwin", "Ben", "NerDzzzzz", "grape", "Luis"]
   },
   {
     divisionName: "5A",
@@ -224,7 +216,7 @@ const restreamerRole = [
   "NerDzzzzz#8658",
   "KAINOS#8036",
   "Vernieboi#0857"
- ];
+];
 
 module.exports = {
   divisionData,
