@@ -109,14 +109,13 @@ const divisionData = [
     numSoftRelegate: 2,
     numHardRelegate: 1,
     players: [
-      "Somalian",
-      "ChirpingMatt",
-      "Nansuchao",
-      "Johann",
       "Resting",
-      "Benjy",
-      "Marts",
-      "fatsam"
+      "Zipley",
+      "SpoopyDoops",
+      "Morelando",
+      "Johann",
+      "Night",
+      "TetrisTime"
     ]
   },
   {
