@@ -376,17 +376,14 @@ function getMatchSchedule(division, divMatches) {
 function compareRaw(player1, player2) {
   // Higher score first
   if (player2.points !== player1.points) {
-    // console.log("points:", player1.points, player2.points);
     return player2.points - player1.points;
   }
   // Higher GD first
   if (player2.gd !== player1.gd) {
-    // console.log("gd:", player1.gd, player2.gd);
     return player2.gd - player1.gd;
   }
   // Higher Matches Won first
   if (player2.wins !== player1.wins) {
-    // console.log("wins:", player1.wins, player2.wins);
     return player2.wins - player1.wins;
   }
   // Higher GF first
@@ -480,20 +477,23 @@ function getMatchDateFormatted(match) {
   return matchMoment.utc().format("MMM DD YYYY, HH:mm");
 }
 
+// Determines how the divisions are grouped when downloading the standings to images
+const divisionsPerPage = 4;
+
 function downloadCanvasAsPng(canvas, filename) {
-  /// create an "off-screen" anchor tag
+  // create an "off-screen" anchor tag
   var lnk = document.createElement("a"),
     e;
 
-  /// the key here is to set the download attribute of the a tag
+  // the key here is to set the download attribute of the a tag
   lnk.download = filename;
 
-  /// convert canvas content to data-uri for link. When download
-  /// attribute is set the content pointed to by link will be
-  /// pushed as "download" in HTML5 capable browsers
+  // convert canvas content to data-uri for link. When download
+  // attribute is set the content pointed to by link will be
+  // pushed as "download" in HTML5 capable browsers
   lnk.href = canvas.toDataURL();
 
-  /// create a "fake" click-event to trigger the download
+  // create a "fake" click-event to trigger the download
   if (document.createEvent) {
     e = document.createEvent("MouseEvents");
     e.initMouseEvent(
@@ -522,6 +522,7 @@ function downloadCanvasAsPng(canvas, filename) {
 
 module.exports = {
   memeDivisionData,
+  divisionsPerPage,
   downloadCanvasAsPng,
   sampleMatchData,
   compareRaw,

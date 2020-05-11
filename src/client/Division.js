@@ -99,7 +99,7 @@ class Division extends Component {
               >
                 <div className="Header-sortable-inner">
                   <div>Points</div>
-                  <i class="fas fa-angle-down"></i>
+                  <div className="Sort-arrow">▼</div>
                 </div>
               </th>
               <th
@@ -118,7 +118,7 @@ class Division extends Component {
                       ? "Win Chance"
                       : "Promo Chance"}
                   </div>
-                  <i class="fas fa-angle-down"></i>
+                  <div className="Sort-arrow">▼</div>
                 </div>
               </th>
               <th
@@ -133,7 +133,7 @@ class Division extends Component {
               >
                 <div className="Header-sortable-inner">
                   <div>Relegation Chance</div>
-                  <i class="fas fa-angle-down"></i>
+                  <div className="Sort-arrow">▼</div>
                 </div>
               </th>
             </tr>

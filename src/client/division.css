@@ -18,17 +18,15 @@
   height: 100%;
 }
 
-.fa-angle-down {
-  padding-top: 2px;
-  padding-left: 2px;
+.Sort-arrow {
   margin: auto;
 }
 
-.Division .Header-sorted-by .fa-angle-down {
+.Division .Header-sorted-by .Sort-arrow {
   visibility: visible;
 }
 
-.Division .Header-sortable .fa-angle-down {
+.Division .Header-sortable .Sort-arrow {
   visibility: hidden;
 }
 

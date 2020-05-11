@@ -3,6 +3,7 @@ import ReportingPanel from "./ReportingPanel";
 import MatchHistory from "./MatchHistory";
 import Division from "./Division";
 import "./StandingsPage.css";
+const util = require("../server/util");
 
 class StandingsPage extends Component {
   constructor(props) {
@@ -12,13 +13,22 @@ class StandingsPage extends Component {
     };
   }
 
-  render() {
+  getPages() {
+    let pages = [];
+    const PAGE_SIZE = util.divisionsPerPage;
     const divData = this.props.divisionData;
-    const pages = [divData.slice(0, 5), divData.slice(5, 10)];
+
+    for (let i = 0; i < divData.length; i += PAGE_SIZE) {
+      pages.push(divData.slice(i, i + PAGE_SIZE));
+    }
+    return pages;
+  }
+
+  render() {
     return (
       <div className="Standings-container">
         <div className="Left-panel">
-          {pages.map((divisionDataSlice, index) => (
+          {this.getPages().map((divisionDataSlice, index) => (
             <div id={"Page-" + (index + 1)}>
               {divisionDataSlice.map((division, i) => (
                 <Division
