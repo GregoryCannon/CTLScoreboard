@@ -4,84 +4,107 @@ const divisionData = [
     numWinner: 1,
     numAutoPromo: 0,
     numSoftPromo: 0,
-    numSoftRelegate: 1,
-    numHardRelegate: 1,
+    numSoftRelegate: 2,
+    numHardRelegate: 2,
     players: [
       "Nenu Zefanya",
+      "AdamMts",
       "Batfoy",
+      "Mohammad",
+      "dog",
       "Tristop",
-      "Jakegames2",
-      "DaAsiann",
-      "AdamMts"
+      "Quaid"
     ]
   },
   {
-    divisionName: "2",
+    divisionName: "2A",
     numWinner: 0,
     numAutoPromo: 1,
     numSoftPromo: 1,
-    numSoftRelegate: 2,
-    numHardRelegate: 0,
+    numSoftRelegate: 1,
+    numHardRelegate: 1,
     players: [
-      "HydrantDude",
       "digginout",
-      "galoomba",
-      "B14NK",
-      "Sodium",
-      "dog",
-      "XaeL",
-      "Sharky"
+      "PixelAndy",
+      "Josh",
+      "Huffulufugus",
+      "TheMisterValor",
+      "Paul"
     ]
+  },
+  {
+    divisionName: "2B",
+    numWinner: 0,
+    numAutoPromo: 1,
+    numSoftPromo: 1,
+    numSoftRelegate: 1,
+    numHardRelegate: 1,
+    players: ["Sharky", "HydrantDude", "Matt", "B14NK", "galoomba", "Phamtom"]
   },
   {
     divisionName: "3",
     numWinner: 0,
-    numAutoPromo: 3,
+    numAutoPromo: 2,
     numSoftPromo: 2,
-    numSoftRelegate: 1,
-    numHardRelegate: 1,
+    numSoftRelegate: 2,
+    numHardRelegate: 0,
     players: [
-      "BeastinShen",
-      "Holifyre",
-      "TheMisterValor",
+      "Sodium",
+      "OeufMeansEgg",
+      "Mark",
+      "Chong",
+      "NerDzzzzz",
       "moodeuce",
-      "Myles",
-      "PixelAndy",
-      "Huffulufugus",
-      "Mark"
+      "Phillip"
     ]
   },
   {
-    divisionName: "4",
+    divisionName: "4A",
     numWinner: 0,
-    numAutoPromo: 3,
+    numAutoPromo: 2,
     numSoftPromo: 1,
-    numSoftRelegate: 2,
+    numSoftRelegate: 1,
     numHardRelegate: 0,
-    players: ["-JJ", "Lastarot", "Alwin", "Ben", "NerDzzzzz", "grape", "Luis"]
+    players: ["Louie", "Luis", "Smooth", "Peter", "japorto", "Somalian", "Sofa"]
+  },
+  {
+    divisionName: "4B",
+    numWinner: 0,
+    numAutoPromo: 2,
+    numSoftPromo: 1,
+    numSoftRelegate: 1,
+    numHardRelegate: 0,
+    players: [
+      "Ben",
+      "Jerpidude",
+      "AlexRFX",
+      "Benjy",
+      "ChirpingMatt",
+      "Alwin",
+      "Doge"
+    ]
   },
   {
     divisionName: "5A",
     numWinner: 0,
-    numAutoPromo: 1,
+    numAutoPromo: 2,
     numSoftPromo: 1,
     numSoftRelegate: 2,
-    numHardRelegate: 1,
+    numHardRelegate: 0,
     players: [
-      "puppyball",
-      "japorto",
-      "Kim",
       "Scamper9",
-      "GregBoomCannon",
-      "DAS_Master",
-      "tillbaks",
-      "vandweller"
+      "Kim",
+      "MörköS",
+      "Torzsa",
+      "CharlesSparkley",
+      "skiplogic",
+      "Gerzi"
     ]
   },
   {
     divisionName: "5B",
     numWinner: 0,
-    numAutoPromo: 1,
+    numAutoPromo: 2,
     numSoftPromo: 1,
     numSoftRelegate: 2,
     numHardRelegate: 1,
@@ -99,71 +122,139 @@ const divisionData = [
   {
     divisionName: "6A",
     numWinner: 0,
-    numAutoPromo: 1,
-    numSoftPromo: 2,
-    numSoftRelegate: 2,
+    numAutoPromo: 2,
+    numSoftPromo: 1,
+    numSoftRelegate: 1,
     numHardRelegate: 1,
     players: [
-      "skiplogic",
-      "Tetrium",
-      "Ms_Drop",
-      "Kingsman",
-      "CharlesSparkley",
-      "Mistec43",
-      "Emptyeye",
-      "Chris Foryst"
+      "GregBoomCannon",
+      "Luke",
+      "fatsam",
+      "vandweller",
+      "Cwiiis",
+      "Tankimus",
+      "Remmy"
     ]
   },
   {
     divisionName: "6B",
     numWinner: 0,
-    numAutoPromo: 1,
-    numSoftPromo: 2,
-    numSoftRelegate: 2,
+    numAutoPromo: 2,
+    numSoftPromo: 1,
+    numSoftRelegate: 1,
     numHardRelegate: 1,
     players: [
-      "Zipley",
-      "Tugi",
+      "Wild",
+      "Xerxos",
+      "Emptyeye",
+      "Kingsman",
       "Colton",
-      "gummithecat",
-      "Billy Mac",
-      "Kuboxxxxx",
-      "KAINOS",
-      "GeeForce"
+      "VeloNemo",
+      "Felinho"
     ]
   },
   {
+    divisionName: "6C",
+    numWinner: 0,
+    numAutoPromo: 2,
+    numSoftPromo: 1,
+    numSoftRelegate: 1,
+    numHardRelegate: 1,
+    players: [
+      "gizmo4487",
+      "Redshurt",
+      "Tetrium",
+      "Marts",
+      "Rory",
+      "GeeForce",
+      "sixfour"
+    ]
+  },
+  {
+    divisionName: "6D",
+    numWinner: 0,
+    numAutoPromo: 2,
+    numSoftPromo: 1,
+    numSoftRelegate: 1,
+    numHardRelegate: 1,
+    players: [
+      "Trent",
+      "boxie",
+      "gummithecat",
+      "Billy Mac",
+      "Owen",
+      "KAINOS",
+      "hunn14"
+    ]
+  },
+
+  {
     divisionName: "7A",
     numWinner: 0,
-    numAutoPromo: 1,
-    numSoftPromo: 2,
+    numAutoPromo: 2,
+    numSoftPromo: 1,
     numSoftRelegate: 0,
     numHardRelegate: 0,
     players: [
       "mattholland",
-      "Owen",
-      "VeloNemo",
+      "MT",
       "Diamond",
-      "BOONE",
-      "Zabby",
-      "shadowguy"
+      "mutigion26",
+      "Iceblade73",
+      "Golden",
+      "al",
+      "oh_no"
     ]
   },
   {
     divisionName: "7B",
     numWinner: 0,
-    numAutoPromo: 1,
-    numSoftPromo: 2,
+    numAutoPromo: 2,
+    numSoftPromo: 1,
     numSoftRelegate: 0,
     numHardRelegate: 0,
     players: [
-      "Krypto Nick",
-      "Rory",
       "eggmaster",
-      "Samantha",
+      "sablen",
       "swinemeeper",
       "PixelAtc",
-      "sablen"
+      "vernie",
+      "Samantha",
+      "snowgolfgal"
+    ]
+  },
+  {
+    divisionName: "7C",
+    numWinner: 0,
+    numAutoPromo: 2,
+    numSoftPromo: 1,
+    numSoftRelegate: 0,
+    numHardRelegate: 0,
+    players: [
+      "Mistec43",
+      "Sump",
+      "c-dubs",
+      "GDudge",
+      "TotalRadNES",
+      "Dylan",
+      "leaurax"
+    ]
+  },
+  {
+    divisionName: "7D",
+    numWinner: 0,
+    numAutoPromo: 2,
+    numSoftPromo: 1,
+    numSoftRelegate: 0,
+    numHardRelegate: 0,
+    players: [
+      "Chris Foryst",
+      "gio",
+      "Krypto Nick",
+      "Balbar",
+      "Maedhros",
+      "BOONE",
+      "Fritz"
     ]
   }
 ];
