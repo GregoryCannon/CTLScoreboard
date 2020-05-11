@@ -5,11 +5,10 @@ const divisionData = [
     numAutoPromo: 0,
     numSoftPromo: 0,
     numSoftRelegate: 1,
-    numHardRelegate: 2,
+    numHardRelegate: 1,
     players: [
       "Nenu Zefanya",
       "Batfoy",
-      "CheeZ_Fish",
       "Tristop",
       "Jakegames2",
       "DaAsiann",
@@ -183,7 +182,7 @@ const restreamerRole = [
   "moodeuce#8573",
   "Kingsman#0364",
   "Lastarot#9931",
-  "Kryptonick#4388",
+  "Krypto#4388",
   "skiplogic#9125",
   "Chris Foryst#0131",
   "HydrantDude#2048",
@@ -222,7 +221,9 @@ const restreamerRole = [
   "leaurax#0455",
   "SodiumOverdose#8425",
   "c-dubs#2871",
-  "NerDzzzzz#8658"
+  "NerDzzzzz#8658",
+  "KAINOS#8036",
+  "Vernieboi#0857"
  ];
 
 module.exports = {
