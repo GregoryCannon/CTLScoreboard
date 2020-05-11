@@ -107,7 +107,7 @@ const divisionData = [
     numAutoPromo: 2,
     numSoftPromo: 1,
     numSoftRelegate: 2,
-    numHardRelegate: 1,
+    numHardRelegate: 0,
     players: [
       "Resting",
       "Zipley",
