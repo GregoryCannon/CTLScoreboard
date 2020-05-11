@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const util = require("./util");
+const logger = require("./logger");
 
 class BotClient {
   constructor(token) {
@@ -76,7 +77,7 @@ class BotClient {
 
   start() {
     this.client.on("ready", () => {
-      console.log("CTL-Reporting-Bot is ready");
+      logger.log("CTL-Reporting-Bot is ready");
       this.isReady = true;
 
       while (this.pendingMessages.length > 0) {
@@ -88,7 +89,7 @@ class BotClient {
     this.client.on("message", msg => {
       // Main channel only listens for the bot check command
       if (msg.channel.name === this.mainChannel) {
-        console.log("got message in main channel aka", msg.channel.name);
+        logger.log("got message in main channel aka", msg.channel.name);
 
         if (msg.content == "!bot") {
           this.sendMessage(
@@ -98,7 +99,7 @@ class BotClient {
       }
       // Test channel supports additional commands
       else if (msg.channel.name == this.testChannel) {
-        console.log("got message in test channel, aka", msg.channel.name);
+        logger.log("got message in test channel, aka", msg.channel.name);
 
         if (msg.content == "!hi") {
           this.sendMessageInChannel("Greetings traveler!", this.testChannel);

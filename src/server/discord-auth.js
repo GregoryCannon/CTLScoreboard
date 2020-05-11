@@ -2,8 +2,9 @@
 const express = require("express");
 const fetch = require("node-fetch");
 const btoa = require("btoa");
-const configData = require("./config_data.js");
-const util = require("./util.js");
+const configData = require("./config_data");
+const util = require("./util");
+const logger = require("./logger");
 
 /* Login flow:
   - User clicks link on CTL site (GET /discord-api/login)
@@ -66,6 +67,8 @@ Request Handlers
 
 // GET request for the initial forward of the user to Discord's site
 router.get("/login", (req, res) => {
+  logger.logRequest("Log in to Discord", req.body);
+  logger.logResponseDescription("Redirecting to Oauth");
   res.redirect(
     `https://discordapp.com/api/oauth2/authorize?client_id=${CLIENT_ID}&scope=identify&response_type=code&redirect_uri=${redirect}`
   );
@@ -75,6 +78,7 @@ router.get("/login", (req, res) => {
 router.get(
   "/authenticate",
   catchAsyncErrors(async (req, res) => {
+    logger.logRequest("Authenticate (from Discord redirect)", req.body);
     if (!req.query.code) throw new Error("NoCodeProvided");
 
     // Get an auth token from Discord
@@ -91,7 +95,7 @@ router.get(
     );
     const authJson = await response.json();
     const token = authJson.access_token;
-    console.log("TOKEN:", token);
+    logger.log("TOKEN:", token);
 
     // Get the USER object
     const userResponse = await fetch("https://discordapp.com/api/users/@me", {
@@ -101,9 +105,12 @@ router.get(
       }
     });
     const userJson = await userResponse.json();
-    console.log("USER JSON:", userJson);
+    logger.log("USER JSON:", userJson);
     const discordIdentity = userJson.username + "#" + userJson.discriminator;
 
+    logger.logResponseDescription(
+      "Sending discord identity and signature in cookies, and redirecting to standings"
+    );
     res.cookie("discordIdentity", discordIdentity);
     res.cookie("discordIdentitySignature", hmacSign(discordIdentity));
     res.redirect("/standings");
@@ -112,29 +119,28 @@ router.get(
 
 // POST request for the frontend to validate identity saved in cookies
 router.post("/validate", (req, res) => {
-  console.log("Received VALIDATE request with body:", req.body);
+  logger.logRequest("Validate discord identity", req.body);
   const discordIdentity = req.body.discordIdentity;
   const discordIdentitySignature = req.body.discordIdentitySignature;
-  console.log(
-    "Parsed discordIdentity:",
-    discordIdentity,
-    "\nParsed discordIdentitySignature:",
-    discordIdentitySignature
-  );
+
   if (hmacSign(discordIdentity) == discordIdentitySignature) {
     // All is good
-    res.send({
+    const responseBody = {
       valid: true,
       discordIdentity: discordIdentity,
       privilegeLevel: getPrivilegeLevel(discordIdentity)
-    });
+    };
+    logger.logResponse("Validate discord identity", responseBody);
+    res.send(responseBody);
   } else {
     // Signature didn't match
-    res.send({
+    const responseBody = {
       valid: false,
       discordIdentity: "",
       privilegeLevel: ""
-    });
+    };
+    logger.logResponse("Validate discord identity", responseBody);
+    res.send(responseBody);
   }
 });
 
