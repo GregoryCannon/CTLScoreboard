@@ -42,7 +42,7 @@ let invalidDivisions = []; // Source of truth for whether the cache is valid. If
 function invalidateCacheForAllDivisions() {
   logger.log("Invalidating cache for all divisions");
   // Move the now-invalid cache to backup before calculating the new cache
-  backupStandings = cachedFinalStandings;
+  moveCacheToBackup();
 
   // Mark all divisions as invalid
   let allDivisionsList = configData.divisionData.map(function(division) {
@@ -55,10 +55,14 @@ function invalidateCacheForAllDivisions() {
 function invalidateCacheForDivision(divisionName) {
   logger.log("Invalidating cache for division:", divisionName);
   // Move the now-invalid cache to backup before calculating the new cache
-  backupStandings = cachedFinalStandings;
+  moveCacheToBackup();
 
   // Mark the supplied division as invalid
   invalidDivisions.push(divisionName);
+}
+
+function moveCacheToBackup() {
+  backupStandings = JSON.parse(JSON.stringify(cachedFinalStandings));
 }
 
 function isCacheValid() {
@@ -67,8 +71,10 @@ function isCacheValid() {
 
 /** Updates the cache with a fully calculated set of standings, and marks the cache as valid. */
 function setCachedStandings(newStandings) {
-  cachedFinalStandings = newStandings;
-  invalidDivisions = []; // Marking the cache as valid
+  // It's ESSENTIAL to use a copy instead of the original reference or weird stuff happens.
+  cachedFinalStandings = JSON.parse(JSON.stringify(newStandings));
+  // Mark the cache as valid
+  invalidDivisions = [];
 }
 
 /**
@@ -84,14 +90,12 @@ function refreshCachedStandings(callback) {
     getPenaltyPointMap(function(penaltyPoints) {
       logger.log("Calculating standings");
       // Back up the standings before messing with anything
-      backupStandings = cachedFinalStandings;
+      moveCacheToBackup();
       try {
         // Attempt to calculate new standings
         const newStandings = calculateStandingsForInvalidDivisions(
           matches,
-          penaltyPoints,
-          cachedFinalStandings,
-          invalidDivisions
+          penaltyPoints
         );
         logger.log("Finished calculating standings");
 
@@ -111,12 +115,7 @@ function refreshCachedStandings(callback) {
 }
 
 /** Generate up-to-date standings by recalculating the standings for all invalid divisions, and reusing the rest. */
-function calculateStandingsForInvalidDivisions(
-  matches,
-  penaltyPoints,
-  existingCache,
-  invalidDivisions
-) {
+function calculateStandingsForInvalidDivisions(matches, penaltyPoints) {
   logger.log("Calculating standings for invalid divisions:", invalidDivisions);
   const rawStandings = compute.computeRawStandings(matches, penaltyPoints);
   const finalStandings = [];
@@ -140,7 +139,7 @@ function calculateStandingsForInvalidDivisions(
 
     // Otherwise use the cached one
     else {
-      const cachedDivisionStandings = existingCache[d];
+      const cachedDivisionStandings = cachedFinalStandings[d];
       finalStandings.push(cachedDivisionStandings);
     }
   }
