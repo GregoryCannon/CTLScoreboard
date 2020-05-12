@@ -20,7 +20,7 @@ function logResponse(description, responseBody) {
 
 /** Logs a description of what the server is sending in an outgoing response, without logging the request body. (Used for large responses). */
 function logResponseDescription(description) {
-  console.log("(RESPONSE):", description, "\n", "(body omitted)");
+  console.log("(RESPONSE):", description);
 }
 
 module.exports = {
