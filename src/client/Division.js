@@ -60,21 +60,33 @@ class Division extends Component {
 
   render() {
     const rowColors = this.getRowColors(this.props.data);
+    // Sort the players either by points or by simulation data
     const sortedPlayers = [...this.props.data.standings];
     if (this.props.sortByPoints) {
       sortedPlayers.sort(util.compareRaw);
     } else {
-      // Sort by the simulation data
       sortedPlayers.sort(util.compareSimulated);
     }
+    const totalMatchesInSeason = (sortedPlayers.length - 1) * 2;
+    const divName = this.props.data.divisionName;
+    // The division is at the start of the tier block if either:
+    //    - the name is a single number (e.g. "3")
+    //    - the name ends in A (e.g. "6A")
+    const divAtStartOfTier =
+      !isNaN(divName) || divName[1] === "A" || divName[1] === "a";
+
     return (
-      <div className="Division">
+      <div
+        className={`Division ${
+          divAtStartOfTier ? "Division-at-start-of-tier" : ""
+        }`}
+      >
         <table>
           <tbody>
             {/* Title row */}
             <tr>
               <th className="Division-title" colSpan="10">
-                CTL Division {this.props.data.divisionName} League Standings
+                Division {this.props.data.divisionName}
               </th>
             </tr>
 
@@ -149,7 +161,9 @@ class Division extends Component {
                 >
                   <td className="Extra-padding-left">{index + 1}</td>
                   <td className="No-wrap">{player.name}</td>
-                  <td>{player.mp}</td>
+                  <td>
+                    {player.mp} / {totalMatchesInSeason}
+                  </td>
                   <td>
                     {player.wins} - {player.losses}
                   </td>

@@ -1,3 +1,11 @@
+.Division {
+  margin: 6px 0;
+}
+
+.Division-at-start-of-tier {
+  margin: 40px 0 6x;
+}
+
 .Division table {
   background: lightblue;
   border-spacing: 0px;
@@ -56,6 +64,7 @@
 
 .Division-title {
   text-align: center;
+  font-size: 1.5vw;
 }
 
 .Extra-padding-left {

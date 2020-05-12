@@ -5,6 +5,7 @@
 }
 
 .Match-history-title {
+  font-size: 1.4vw;
   height: 30px;
   line-height: 30px;
   padding: 10px;
@@ -53,7 +54,7 @@
 
 .Scrollable-list {
   overflow-y: scroll;
-  height: 280px;
+  height: 300px;
 }
 
 .Scrollable-list table {
