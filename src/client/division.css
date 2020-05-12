@@ -1,9 +1,9 @@
 .Division {
-  margin: 6px 0;
+  margin: .6vw 0;
 }
 
 .Division-at-start-of-tier {
-  margin: 40px 0 6px;
+  margin: 3.5vw 0 .6vw;
 }
 
 .Division table {
