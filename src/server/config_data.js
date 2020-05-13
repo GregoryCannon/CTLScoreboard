@@ -307,7 +307,8 @@ const restreamerRole = [
   "KAINOS#8036",
   "Vernieboi#0857",
   "TetrisTime#8026",
-  "sablen#2241"
+  "sablen#2241",
+  "eggmaster#5046"
 ];
 
 module.exports = {
