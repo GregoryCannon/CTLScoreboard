@@ -308,7 +308,8 @@ const restreamerRole = [
   "Vernieboi#0857",
   "TetrisTime#8026",
   "sablen#2241",
-  "eggmaster#5046"
+  "eggmaster#5046",
+  "og_readmore#6535"
 ];
 
 module.exports = {
