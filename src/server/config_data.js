@@ -310,7 +310,7 @@ const restreamerRole = [
   "sablen#2241",
   "eggmaster#5046",
   "og_readmore#6535",
-  "AGameScout#3745",
+  "aGameScout#3745",
   "gummithecat#6363",
   "PukPow#6394"
 ];
