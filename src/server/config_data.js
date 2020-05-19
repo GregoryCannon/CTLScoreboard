@@ -312,7 +312,8 @@ const restreamerRole = [
   "og_readmore#6535",
   "aGameScout#3745",
   "gummithecat#6363",
-  "PukPow#6394"
+  "PukPow#6394",
+  "GregBoomCannon#4087"
 ];
 
 module.exports = {
