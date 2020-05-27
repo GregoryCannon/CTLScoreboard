@@ -305,7 +305,17 @@ const restreamerRole = [
   "c-dubs#2871",
   "NerDzzzzz#8658",
   "KAINOS#8036",
-  "Vernieboi#0857"
+  "Vernieboi#0857",
+  "TetrisTime#8026",
+  "sablen#2241",
+  "eggmaster#5046",
+  "og_readmore#6535",
+  "aGameScout#3745",
+  "gummithecat#6363",
+  "PukPow#6394",
+  "GregBoomCannon#4087",
+  "Benjy#5752",
+  "Paul 楊#5532"
 ];
 
 module.exports = {

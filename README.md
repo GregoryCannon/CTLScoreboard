@@ -1,1 +1,1 @@
-This React webapp is a scoreboard for Classic Tetris League matches
+This React webapp is a scoreboard for Classic Tetris League matches. Players and Restreamers authenticate with their Discord accounts, and can officially report matches into the match database. The CTL Reporting Bot will post a report in `#reporting` for each match played, and keep live standings, match history, and fixtures online.
