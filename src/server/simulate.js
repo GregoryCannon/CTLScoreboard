@@ -136,7 +136,7 @@ function simulateWorstSeasonForPlayer(division, targetPlayer) {
 }
 
 /*
-Simulate the worst possible season for a player (naively, not following match schedule)
+Simulate the best possible season for a player (naively, not following match schedule)
 */
 function simulateBestSeasonForPlayer(division, targetPlayer) {
   const cloneDivision = JSON.parse(JSON.stringify(division));
