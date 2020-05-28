@@ -175,14 +175,13 @@ const divisionData = [
     numAutoPromo: 2,
     numSoftPromo: 1,
     numSoftRelegate: 1,
-    numHardRelegate: 1,
+    numHardRelegate: 0,
     players: [
       "Trent",
       "boxie",
       "gummithecat",
       "Billy Mac",
       "Owen",
-      "KAINOS",
       "hunn14"
     ]
   },
