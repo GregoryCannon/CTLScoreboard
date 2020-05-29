@@ -1,6 +1,7 @@
 // Credit for most of this file goes to orel- on Github: https://github.com/orels1/discord-token-generator
 const express = require("express");
 const fetch = require("node-fetch");
+const FormData = require("form-data");
 const btoa = require("btoa");
 const configData = require("./config_data");
 const util = require("./util");
@@ -23,7 +24,8 @@ const logger = require("./logger");
 const router = express.Router();
 const CLIENT_ID = "672315783363166208";
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
-const redirect = encodeURIComponent(util.getApiUrl("discord-api/authenticate"));
+// const REDIRECT_URL = encodeURIComponent(util.getApiUrl("discord-api/authenticate"));
+const REDIRECT_URL = util.getApiUrl("discord-api/authenticate");
 
 /*
 -------------------------
@@ -70,7 +72,7 @@ router.get("/login", (req, res) => {
   logger.logRequest("Log in to Discord", req.body);
   logger.logResponseDescription("Redirecting to Oauth");
   res.redirect(
-    `https://discordapp.com/api/oauth2/authorize?client_id=${CLIENT_ID}&scope=identify&response_type=code&redirect_uri=${redirect}`
+    `https://discordapp.com/api/oauth2/authorize?client_id=${CLIENT_ID}&scope=identify&response_type=code&redirect_uri=${REDIRECT_URL}`
   );
 });
 
@@ -81,23 +83,35 @@ router.get(
     logger.logRequest("Authenticate (from Discord redirect)", req.body);
     if (!req.query.code) throw new Error("NoCodeProvided");
 
-    // Get an auth token from Discord
+    // STAGE 0 - Get an auth code from the request
     const code = req.query.code;
-    const creds = btoa(`${CLIENT_ID}:${CLIENT_SECRET}`);
-    const response = await fetch(
-      `https://discordapp.com/api/oauth2/token?grant_type=authorization_code&code=${code}&redirect_uri=${redirect}`,
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Basic ${creds}`
-        }
-      }
-    );
-    const authJson = await response.json();
-    const token = authJson.access_token;
-    logger.log("TOKEN:", token);
+    logger.log("Auth code:", code);
 
-    // Get the USER object
+
+    // STAGE 1 - Use the auth code to obtain a token
+    const data = new FormData();
+    data.append('client_id', CLIENT_ID);
+    data.append('client_secret', CLIENT_SECRET);
+    data.append('grant_type', 'authorization_code');
+    data.append('redirect_uri', REDIRECT_URL);
+    data.append('scope', 'identify');
+    data.append('code', code);
+    const tokenResult = await fetch('https://discordapp.com/api/oauth2/token', {
+      method: 'POST',
+      body: data,
+    })
+    const tokenJson = await tokenResult.json();
+    const token = tokenJson.access_token;
+  
+    // If it fails to get a token
+    if (token == undefined){
+      logger.log("Failed to get access token");
+      logger.log("tokenJson", tokenJson);
+      logger.log("TokenResult:", tokenResult);
+      return res.redirect("/standings");
+    }
+
+    // STAGE 2 - Use the token to get the User object
     const userResponse = await fetch("https://discordapp.com/api/users/@me", {
       method: "GET",
       headers: {
