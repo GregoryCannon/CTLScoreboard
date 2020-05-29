@@ -138,7 +138,7 @@ router.post("/validate", (req, res) => {
 
   if (
     hmacSign(discordIdentity) != discordIdentitySignature ||
-    discordIdentity == undefined
+    discordIdentity == "undefined#undefined"
   ) {
     // Signature didn't match
     const responseBody = {
