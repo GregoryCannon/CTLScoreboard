@@ -176,14 +176,7 @@ const divisionData = [
     numSoftPromo: 1,
     numSoftRelegate: 1,
     numHardRelegate: 1,
-    players: [
-      "Trent",
-      "boxie",
-      "gummithecat",
-      "Billy Mac",
-      "Owen",
-      "hunn14"
-    ]
+    players: ["Trent", "boxie", "gummithecat", "Billy Mac", "Owen", "hunn14"]
   },
 
   {
@@ -316,7 +309,7 @@ const restreamerRole = [
   "Benjy#5752",
   "Paul 楊#5532",
   "Boxie3210#3078",
-  "Muunas#4096",
+  "Muunas#4096"
 ];
 
 module.exports = {

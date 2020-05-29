@@ -87,24 +87,23 @@ router.get(
     const code = req.query.code;
     logger.log("Auth code:", code);
 
-
     // STAGE 1 - Use the auth code to obtain a token
     const data = new FormData();
-    data.append('client_id', CLIENT_ID);
-    data.append('client_secret', CLIENT_SECRET);
-    data.append('grant_type', 'authorization_code');
-    data.append('redirect_uri', REDIRECT_URL);
-    data.append('scope', 'identify');
-    data.append('code', code);
-    const tokenResult = await fetch('https://discordapp.com/api/oauth2/token', {
-      method: 'POST',
-      body: data,
-    })
+    data.append("client_id", CLIENT_ID);
+    data.append("client_secret", CLIENT_SECRET);
+    data.append("grant_type", "authorization_code");
+    data.append("redirect_uri", REDIRECT_URL);
+    data.append("scope", "identify");
+    data.append("code", code);
+    const tokenResult = await fetch("https://discordapp.com/api/oauth2/token", {
+      method: "POST",
+      body: data
+    });
     const tokenJson = await tokenResult.json();
     const token = tokenJson.access_token;
-  
+
     // If it fails to get a token
-    if (token == undefined){
+    if (token == undefined) {
       logger.log("Failed to get access token");
       logger.log("tokenJson", tokenJson);
       logger.log("TokenResult:", tokenResult);
@@ -137,21 +136,24 @@ router.post("/validate", (req, res) => {
   const discordIdentity = req.body.discordIdentity;
   const discordIdentitySignature = req.body.discordIdentitySignature;
 
-  if (hmacSign(discordIdentity) == discordIdentitySignature) {
-    // All is good
-    const responseBody = {
-      valid: true,
-      discordIdentity: discordIdentity,
-      privilegeLevel: getPrivilegeLevel(discordIdentity)
-    };
-    logger.logResponse("Validate discord identity", responseBody);
-    res.send(responseBody);
-  } else {
+  if (
+    hmacSign(discordIdentity) != discordIdentitySignature ||
+    discordIdentity == undefined
+  ) {
     // Signature didn't match
     const responseBody = {
       valid: false,
       discordIdentity: "",
       privilegeLevel: ""
+    };
+    logger.logResponse("Validate discord identity", responseBody);
+    res.send(responseBody);
+  } else {
+    // All is good
+    const responseBody = {
+      valid: true,
+      discordIdentity: discordIdentity,
+      privilegeLevel: getPrivilegeLevel(discordIdentity)
     };
     logger.logResponse("Validate discord identity", responseBody);
     res.send(responseBody);
