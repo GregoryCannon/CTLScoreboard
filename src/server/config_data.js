@@ -193,8 +193,7 @@ const divisionData = [
       "mutigion26",
       "Iceblade73",
       "Golden",
-      "al",
-      "oh_no"
+      "al"
     ]
   },
   {
