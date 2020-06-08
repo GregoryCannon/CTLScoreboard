@@ -193,8 +193,7 @@ const divisionData = [
       "mutigion26",
       "Iceblade73",
       "Golden",
-      "al",
-      "oh_no"
+      "al"
     ]
   },
   {
@@ -308,8 +307,10 @@ const restreamerRole = [
   "GregBoomCannon#4087",
   "Benjy#5752",
   "Paul 楊#5532",
-  "Boxie3210#3078",
-  "Muunas#4096"
+  "boxie3210#3078",
+  "Muunas#4096",
+  "ITGBalbar#2408",
+  "night#4546"
 ];
 
 module.exports = {
