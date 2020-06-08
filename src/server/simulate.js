@@ -1,4 +1,4 @@
-const NUM_ITERATIONS = process.env.NUM_ITERATIONS || 20000;
+const NUM_ITERATIONS = process.env.NUM_ITERATIONS || 1000;
 
 const util = require("./util");
 
@@ -261,6 +261,55 @@ function testClinchingCalculationMethods() {
   );
 }
 
+function playerFullyTied(player1, player2) {
+  return (
+    player1.wins == player2.wins &&
+    player1.losses == player2.losses &&
+    player1.gd == player2.gd &&
+    player1.points == player2.points
+  );
+}
+
+/** Find all clusters of players with the same states, and make them have the same simulation stats. */
+function correctForVariance(division) {
+  const playerList = division.standings;
+
+  // Get clusters
+  let clusters = [];
+  for (const currentPlayer of playerList) {
+    let foundCluster = false;
+    // Check if it matches any of the clusters
+    for (let c = 0; c < clusters.length; c++) {
+      const clusterFirstPlayer = clusters[c][0];
+      if (playerFullyTied(currentPlayer, clusterFirstPlayer)) {
+        foundCluster = 1;
+        clusters[c].push(currentPlayer);
+      }
+    }
+
+    if (!foundCluster) {
+      // Make new cluster
+      clusters.push([currentPlayer]);
+    }
+  }
+
+  // Normalize across each cluster
+  for (const cluster of clusters) {
+    let promoTotal = 0;
+    let relTotal = 0;
+    for (player of cluster) {
+      promoTotal += parseFloat(player.promoChance);
+      relTotal += parseFloat(player.relegationChance);
+    }
+    const normalizedPromo = promoTotal / cluster.length;
+    const normalizedRel = relTotal / cluster.length;
+    for (player of cluster) {
+      player.promoChance = normalizedPromo;
+      player.relegationChance = normalizedRel;
+    }
+  }
+}
+
 /* 
 Main method to:
 - Simulate many games
@@ -318,6 +367,8 @@ function runSimulation(division, matchSchedule) {
       player.relegationChance = 0.01;
     }
   }
+
+  correctForVariance(division);
 
   return division;
 }

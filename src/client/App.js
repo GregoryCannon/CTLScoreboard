@@ -11,6 +11,7 @@ import {
   Route,
   Redirect
 } from "react-router-dom";
+import { SortBy } from "../server/util.js";
 import Cookies from "js-cookie";
 
 const moment = require("moment");
@@ -19,23 +20,29 @@ const util = require("../server/util.js");
 class App extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       isFetchingStandings: false,
       isFetchingMatches: false,
       isEditingPenaltyPoints: false,
       divisionData: util.memeDivisionData,
       matchList: util.sampleMatchData,
-      showAdminPasswordForm: false,
-      currentTypedAdminPassword: "",
       currentPage: "standings",
-      sortByPoints: false,
+      sortBy: SortBy.simulation,
       discordIdentity: "",
       privilegeLevel: ""
     };
+
+    this.logInToDiscordFromCookies().then(discordInfo => {
+      this.updateSortByState(discordInfo);
+    });
+
     this.refreshData = this.refreshData.bind(this);
     this.toggleEditPenaltyPoints = this.toggleEditPenaltyPoints.bind(this);
+  }
 
-    this.logInToDiscordFromCookies();
+  componentDidMount() {
+    this.refreshData();
   }
 
   isAdmin() {
@@ -49,38 +56,58 @@ class App extends Component {
     );
   }
 
-  logInToDiscordFromCookies() {
+  async logInToDiscordFromCookies() {
     const discordIdentity = Cookies.get("discordIdentity");
     const discordIdentitySignature = Cookies.get("discordIdentitySignature");
 
     if (discordIdentity && discordIdentitySignature) {
-      util.makeHttpRequest(
+      const jsonResponse = await util.makeHttpRequest(
         "POST",
         "discord-api/validate",
         {
           discordIdentity: discordIdentity,
           discordIdentitySignature: discordIdentitySignature
-        },
-        function(jsonResponse) {
-          if (jsonResponse.valid) {
-            this.setState({
-              discordIdentity: jsonResponse.discordIdentity,
-              privilegeLevel: jsonResponse.privilegeLevel
-            });
-          } else {
-            alert(
-              "Your saved login is invalid. Please log in with Discord again."
-            );
-            this.logOutOfDiscord();
-          }
-        }.bind(this)
+        }
       );
+
+      if (jsonResponse.valid) {
+        return {
+          discordIdentity: jsonResponse.discordIdentity,
+          privilegeLevel: jsonResponse.privilegeLevel
+        };
+      } else {
+        alert("Your saved login is invalid. Please log in with Discord again.");
+        this.logOutOfDiscord();
+      }
     }
+    return {
+      discordIdentity: "",
+      privilegeLevel: ""
+    };
+  }
+
+  updateSortByState(discordInfo) {
+    // Get "sort by" state from cookies
+    let sortBy = Cookies.get("sortBy");
+    if (sortBy === undefined) {
+      // Sort by % chance by default, unless you're moo (he likes sorting by points)
+      sortBy =
+        discordInfo.discordIdentity == "moodeuce#8573" ||
+        discordInfo.discordIdentity == "GregBoomCannon#4087"
+          ? SortBy.points
+          : SortBy.simulation;
+    }
+    this.setState({
+      sortBy: sortBy,
+      discordIdentity: discordInfo.discordIdentity,
+      privilegeLevel: discordInfo.privilegeLevel
+    });
   }
 
   logOutOfDiscord() {
     Cookies.remove("discordIdentity");
     Cookies.remove("discordIdentitySignature");
+    Cookies.remove("sortBy");
     window.location.reload(false);
   }
 
@@ -170,10 +197,6 @@ class App extends Component {
   refreshData() {
     this.fetchMatches();
     this.fetchStandings();
-  }
-
-  componentDidMount() {
-    this.refreshData();
   }
 
   render() {
@@ -269,7 +292,13 @@ class App extends Component {
                 {...props}
                 divisionData={this.state.divisionData}
                 matchList={this.state.matchList}
-                sortByPoints={this.state.sortByPoints}
+                sortBy={this.state.sortBy}
+                setSortBy={val => {
+                  this.setState({
+                    sortBy: val
+                  });
+                  Cookies.set("sortBy", val);
+                }}
                 isAdmin={this.isAdmin()}
                 isRestreamer={this.isRestreamer()}
                 discordIdentity={this.state.discordIdentity}

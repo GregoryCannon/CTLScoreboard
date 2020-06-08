@@ -1,7 +1,7 @@
 const moment = require("moment");
 
 // CHANGE THIS WHEN DEBUGGING
-const IS_PRODUCTION = true;
+const IS_PRODUCTION = false;
 
 const memeDivisionData = [
   {
@@ -431,7 +431,7 @@ function getPlayerData(list, playerName) {
       return player;
     }
   }
-  console.log("Unable to find player ", playerName, "in list:\n", list);
+  // console.log("Unable to find player ", playerName, "in list:\n", list);
 }
 
 function getApiUrl(suffix) {
@@ -450,23 +450,34 @@ function getDiscordMainChannel() {
   }
 }
 
-function makeHttpRequest(type, localUrl, body, callback) {
-  // Configure request object properties
-  var request = new XMLHttpRequest();
-  request.open(type, getApiUrl(localUrl), true);
-  request.setRequestHeader("Content-type", "application/json");
+// function makeHttpRequest(type, localUrl, body, callback) {
+//   // Configure request object properties
+//   var request = new XMLHttpRequest();
+//   request.open(type, getApiUrl(localUrl), true);
+//   request.setRequestHeader("Content-type", "application/json");
 
-  // Set callback for response
-  request.onload = function() {
-    console.log("Received response:", request.response);
-    callback(JSON.parse(request.response));
-  };
+//   // Set callback for response
+//   request.onload = function() {
+//     console.log("Received response:", request.response);
+//     callback(JSON.parse(request.response));
+//   };
 
-  // Send request
-  console.log(
-    `Sending ${type} request to ${localUrl} with body ${JSON.stringify(body)}`
-  );
-  request.send(JSON.stringify(body));
+//   // Send request
+//   console.log(
+//     `Sending ${type} request to ${localUrl} with body ${JSON.stringify(body)}`
+//   );
+//   request.send(JSON.stringify(body));
+// }
+
+async function makeHttpRequest(methodStr, localUrl, body) {
+  const response = await fetch(getApiUrl(localUrl), {
+    method: methodStr,
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(body)
+  });
+  return response.json();
 }
 
 function getMatchDateFormatted(match) {
@@ -520,6 +531,8 @@ function downloadCanvasAsPng(canvas, filename) {
   }
 }
 
+const SortBy = Object.freeze({ points: "points", simulation: "simulation" });
+
 module.exports = {
   memeDivisionData,
   divisionsPerPage,
@@ -532,5 +545,6 @@ module.exports = {
   getApiUrl,
   getDiscordMainChannel,
   makeHttpRequest,
-  getMatchDateFormatted
+  getMatchDateFormatted,
+  SortBy
 };

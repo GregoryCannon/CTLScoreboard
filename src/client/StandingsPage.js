@@ -8,9 +8,6 @@ const util = require("../server/util");
 class StandingsPage extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      sortByPoints: true
-    };
   }
 
   getPages() {
@@ -34,13 +31,9 @@ class StandingsPage extends Component {
                 <Division
                   key={division.name}
                   data={division}
-                  sortByPoints={this.state.sortByPoints}
+                  sortBy={this.props.sortBy}
                   isAdmin={this.props.isAdmin}
-                  setSortByPoints={val => {
-                    this.setState({
-                      sortByPoints: val
-                    });
-                  }}
+                  setSortBy={this.props.setSortBy}
                   isEditingPenaltyPoints={this.props.isEditingPenaltyPoints}
                   refreshFunction={this.props.refreshFunction}
                 />

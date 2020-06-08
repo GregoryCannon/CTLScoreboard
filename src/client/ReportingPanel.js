@@ -57,7 +57,6 @@ class ReportingPanel extends Component {
 
   // Check the form and return either 'valid' or the error to be displayed
   validateFormData(formData) {
-    console.log(formData);
     // Missing info
     if (!formData.division) {
       return "Select a division for the match";

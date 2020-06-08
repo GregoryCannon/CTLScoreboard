@@ -49,10 +49,8 @@ class FixturesPage extends Component {
           const divMatches = this.props.matchList.filter(
             match => match.division == division.divisionName
           );
-          console.log("divMatches", divMatches);
 
           const fixturesMap = this.getFixturesMap(division, divMatches);
-          console.log("fixturesMap", fixturesMap);
 
           return (
             <table className="Fixtures-table">

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PenaltyPointsEditor from "./PenaltyPointsEditor";
 import "./division.css";
+import { SortBy } from "../server/util.js";
 
 const util = require("../server/util.js");
 
@@ -58,16 +59,83 @@ class Division extends Component {
     return floatPercent.toFixed(0) + "%";
   }
 
-  render() {
-    const rowColors = this.getRowColors(this.props.data);
-    // Sort the players either by points or by simulation data
-    const sortedPlayers = [...this.props.data.standings];
-    if (this.props.sortByPoints) {
-      sortedPlayers.sort(util.compareRaw);
-    } else {
-      sortedPlayers.sort(util.compareSimulated);
+  reorderColorsByPromoChance(originalColorList, sortedRaw, sortedSimulated) {
+    let newColorList = [];
+    for (let i = 0; i < originalColorList.length; i++) {
+      // Get the color than they would've been if sorted by simulated
+      const sortedPosition = sortedSimulated.findIndex(
+        x => x.name == sortedRaw[i].name
+      );
+      newColorList.push(originalColorList[sortedPosition]);
     }
-    const totalMatchesInSeason = (sortedPlayers.length - 1) * 2;
+    return newColorList;
+  }
+
+  getWinGradientColor(percentChance) {
+    const defaultColorRGB = [207, 231, 245];
+    const winColorRGB = [255, 204, 0];
+    return this.getGradientColor(
+      defaultColorRGB,
+      winColorRGB,
+      percentChance / 100
+    );
+  }
+
+  getPromoGradientColor(percentChance) {
+    const defaultColorRGB = [207, 231, 245];
+    const promoColorRGB = [102, 153, 0];
+    return this.getGradientColor(
+      defaultColorRGB,
+      promoColorRGB,
+      percentChance / 100
+    );
+  }
+
+  getRelegationGradientColor(percentChance) {
+    const defaultColorRGB = [207, 231, 245];
+    const relegationColorRGB = [255, 51, 51];
+    return this.getGradientColor(
+      defaultColorRGB,
+      relegationColorRGB,
+      percentChance / 100
+    );
+  }
+
+  getGradientColor(startColorRGB, endColorRGB, ratio) {
+    const adjustedRatio = Math.sqrt(ratio);
+    const delta = endColorRGB.map((item, index) => item - startColorRGB[index]);
+    const finalRGB = startColorRGB.map(
+      (item, index) => item + adjustedRatio * delta[index]
+    );
+    return `rgb(${finalRGB[0]}, ${finalRGB[1]}, ${finalRGB[2]}`;
+  }
+
+  render() {
+    const REORDER_COLORS = false;
+
+    let rowColors = this.getRowColors(this.props.data);
+    const playerList = [...this.props.data.standings];
+    const sortedSimulated = JSON.parse(
+      JSON.stringify(playerList.sort(util.compareSimulated))
+    );
+    const sortedRaw = JSON.parse(
+      JSON.stringify(playerList.sort(util.compareRaw))
+    );
+
+    let sortedPlayerList;
+    if (this.props.sortBy === SortBy.points) {
+      if (REORDER_COLORS) {
+        rowColors = this.reorderColorsByPromoChance(
+          rowColors,
+          sortedRaw,
+          sortedSimulated
+        );
+      }
+      sortedPlayerList = sortedRaw;
+    } else {
+      sortedPlayerList = sortedSimulated;
+    }
+    const totalMatchesInSeason = (playerList.length - 1) * 2;
     const divName = this.props.data.divisionName;
     // The division is at the start of the tier block if either:
     //    - the name is a single number (e.g. "3")
@@ -101,12 +169,12 @@ class Division extends Component {
               <th>Penalty Points</th>
               <th
                 className={
-                  this.props.sortByPoints
+                  this.props.sortBy === SortBy.points
                     ? "Header-sorted-by"
                     : "Header-sortable"
                 }
                 onClick={() => {
-                  this.props.setSortByPoints(true);
+                  this.props.setSortBy(SortBy.points);
                 }}
               >
                 <div className="Header-sortable-inner">
@@ -116,12 +184,12 @@ class Division extends Component {
               </th>
               <th
                 className={
-                  this.props.sortByPoints
-                    ? "Header-sortable"
-                    : "Header-sorted-by"
+                  this.props.sortBy === SortBy.simulation
+                    ? "Header-sorted-by"
+                    : "Header-sortable"
                 }
                 onClick={() => {
-                  this.props.setSortByPoints(false);
+                  this.props.setSortBy(SortBy.simulation);
                 }}
               >
                 <div className="Header-sortable-inner">
@@ -135,12 +203,12 @@ class Division extends Component {
               </th>
               <th
                 className={
-                  this.props.sortByPoints
-                    ? "Header-sortable"
-                    : "Header-sorted-by"
+                  this.props.sortBy === SortBy.simulation
+                    ? "Header-sorted-by"
+                    : "Header-sortable"
                 }
                 onClick={() => {
-                  this.props.setSortByPoints(false);
+                  this.props.setSortBy(SortBy.simulation);
                 }}
               >
                 <div className="Header-sortable-inner">
@@ -151,7 +219,7 @@ class Division extends Component {
             </tr>
 
             {/* Make a row for each player, looping through the data */}
-            {sortedPlayers.map((player, index) => {
+            {sortedPlayerList.map((player, index) => {
               return (
                 <tr
                   key={index}
@@ -182,8 +250,27 @@ class Division extends Component {
                     />
                   </td>
                   <td>{player.points}</td>
-                  <td>{this.renderPercentage(player.promoChance)}</td>
-                  <td>{this.renderPercentage(player.relegationChance)}</td>
+                  <td
+                    className="Simulation-data-cell"
+                    style={{
+                      backgroundColor:
+                        this.props.data.divisionName === "1"
+                          ? this.getWinGradientColor(player.promoChance)
+                          : this.getPromoGradientColor(player.promoChance)
+                    }}
+                  >
+                    {this.renderPercentage(player.promoChance)}
+                  </td>
+                  <td
+                    className="Simulation-data-cell"
+                    style={{
+                      backgroundColor: this.getRelegationGradientColor(
+                        player.relegationChance
+                      )
+                    }}
+                  >
+                    {this.renderPercentage(player.relegationChance)}
+                  </td>
                 </tr>
               );
             })}

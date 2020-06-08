@@ -35,7 +35,7 @@
 }
 
 .Division .Header-sortable .Sort-arrow {
-  visibility: hidden;
+  visibility: visible;
 }
 
 .Division .Header-sorted-by {
@@ -51,6 +51,10 @@
 .Division th,
 .Division td {
   padding: 0.6vw 0.3vw;
+}
+
+.Simulation-data-cell {
+  border-bottom: 0.005vw solid rgb(207, 231, 245);
 }
 
 .Division td {

@@ -20,7 +20,6 @@ class MatchHistory extends Component {
 
     // Set callback for response
     request.onload = function() {
-      console.log(request.response);
       const response = JSON.parse(request.response);
       if (response.didSucceed) {
         // Refresh data
@@ -32,12 +31,10 @@ class MatchHistory extends Component {
 
     // Send request with the id of the match to delete
     const requestBody = matchData;
-    console.log("Sending request with body:", requestBody);
     request.send(JSON.stringify(requestBody));
   }
 
   deleteMatchClicked(matchData) {
-    console.log("matchdata to delete:", matchData);
     const confirmMessage = `Are you sure you want to delete this match between ${matchData.winner} and ${matchData.loser}?`;
     var result = confirm(confirmMessage);
     if (result) {

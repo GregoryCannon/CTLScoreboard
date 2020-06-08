@@ -24,7 +24,6 @@ class PenaltyPointsEditor extends Component {
 
     // Set callback for response
     request.onload = function() {
-      console.log(request.response);
       const response = JSON.parse(request.response);
       if (response.didSucceed) {
         // Refresh data
@@ -42,7 +41,6 @@ class PenaltyPointsEditor extends Component {
       points: numPoints,
       divisionName: this.props.divisionName
     };
-    console.log("Sending penalty points request with body:", requestBody);
     request.send(JSON.stringify(requestBody));
   }
 
