@@ -54,7 +54,7 @@
 }
 
 .Simulation-data-cell {
-  border-bottom: 0.005vw solid rgb(207, 231, 245);
+  border-bottom: 0px solid rgb(207, 231, 245);
 }
 
 .Division td {
