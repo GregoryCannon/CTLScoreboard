@@ -1,20 +1,22 @@
 import React, { Component } from "react";
 import PenaltyPointsEditor from "./PenaltyPointsEditor";
-import "./division.css";
+import "./Division.css";
 import { SortBy } from "../server/util.js";
 
 const util = require("../server/util.js");
+const divisionColorUtil = require("./divison-color-util");
+import {
+  BACKGROUND_COLOR_STR,
+  WINNER_COLOR_STR,
+  PROMO_COLOR_STR,
+  RELEGATE_COLOR_STR,
+  SOFT_PROMO_COLOR_STR,
+  SOFT_RELEGATE_COLOR_STR
+} from "./divison-color-util";
 
 class Division extends Component {
   // Get a list of the colors for the player slots, ordered first place to last
   getRowColors(divisionData) {
-    const winner = "rgb(255, 204, 0)";
-    const autopromo = "rgb(102, 153, 0)";
-    const softpromo = "rgb(153, 204, 153)";
-    const softrelegate = "rgb(255, 128, 128)";
-    const hardrelegate = "rgb(255, 51, 51)";
-    const unchanged = "rgb(207, 231, 245)";
-
     const numTotal = divisionData.standings.length;
     const numUnchanged =
       numTotal -
@@ -25,22 +27,22 @@ class Division extends Component {
       divisionData.numHardRelegate;
     let colors = [];
     for (let i = 0; i < divisionData.numWinner; i++) {
-      colors.push(winner);
+      colors.push(WINNER_COLOR_STR);
     }
     for (let i = 0; i < divisionData.numAutoPromo; i++) {
-      colors.push(autopromo);
+      colors.push(PROMO_COLOR_STR);
     }
     for (let i = 0; i < divisionData.numSoftPromo; i++) {
-      colors.push(softpromo);
+      colors.push(SOFT_PROMO_COLOR_STR);
     }
     for (let i = 0; i < numUnchanged; i++) {
-      colors.push(unchanged);
+      colors.push(BACKGROUND_COLOR_STR);
     }
     for (let i = 0; i < divisionData.numSoftRelegate; i++) {
-      colors.push(softrelegate);
+      colors.push(SOFT_RELEGATE_COLOR_STR);
     }
     for (let i = 0; i < divisionData.numHardRelegate; i++) {
-      colors.push(hardrelegate);
+      colors.push(RELEGATE_COLOR_STR);
     }
     return colors;
   }
@@ -69,45 +71,6 @@ class Division extends Component {
       newColorList.push(originalColorList[sortedPosition]);
     }
     return newColorList;
-  }
-
-  getWinGradientColor(percentChance) {
-    const defaultColorRGB = [207, 231, 245];
-    const winColorRGB = [255, 204, 0];
-    return this.getGradientColor(
-      defaultColorRGB,
-      winColorRGB,
-      percentChance / 100
-    );
-  }
-
-  getPromoGradientColor(percentChance) {
-    const defaultColorRGB = [207, 231, 245];
-    const promoColorRGB = [102, 153, 0];
-    return this.getGradientColor(
-      defaultColorRGB,
-      promoColorRGB,
-      percentChance / 100
-    );
-  }
-
-  getRelegationGradientColor(percentChance) {
-    const defaultColorRGB = [207, 231, 245];
-    const relegationColorRGB = [255, 51, 51];
-    return this.getGradientColor(
-      defaultColorRGB,
-      relegationColorRGB,
-      percentChance / 100
-    );
-  }
-
-  getGradientColor(startColorRGB, endColorRGB, ratio) {
-    const adjustedRatio = Math.sqrt(ratio);
-    const delta = endColorRGB.map((item, index) => item - startColorRGB[index]);
-    const finalRGB = startColorRGB.map(
-      (item, index) => item + adjustedRatio * delta[index]
-    );
-    return `rgb(${finalRGB[0]}, ${finalRGB[1]}, ${finalRGB[2]}`;
   }
 
   render() {
@@ -255,8 +218,12 @@ class Division extends Component {
                     style={{
                       backgroundColor:
                         this.props.data.divisionName === "1"
-                          ? this.getWinGradientColor(player.promoChance)
-                          : this.getPromoGradientColor(player.promoChance)
+                          ? divisionColorUtil.getWinGradientColor(
+                              player.promoChance
+                            )
+                          : divisionColorUtil.getPromoGradientColor(
+                              player.promoChance
+                            )
                     }}
                   >
                     {this.renderPercentage(player.promoChance)}
@@ -264,7 +231,7 @@ class Division extends Component {
                   <td
                     className="Simulation-data-cell"
                     style={{
-                      backgroundColor: this.getRelegationGradientColor(
+                      backgroundColor: divisionColorUtil.getRelegationGradientColor(
                         player.relegationChance
                       )
                     }}
