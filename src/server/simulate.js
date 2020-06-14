@@ -1,4 +1,4 @@
-const NUM_ITERATIONS = process.env.NUM_ITERATIONS || 1000;
+const NUM_ITERATIONS = process.env.NUM_ITERATIONS || 20000;
 
 const util = require("./util");
 
