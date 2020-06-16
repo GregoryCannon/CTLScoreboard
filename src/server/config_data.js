@@ -226,7 +226,6 @@ const divisionData = [
       "c-dubs",
       "GDudge",
       "TotalRadNES",
-      "Dylan",
       "leaurax"
     ]
   },
