@@ -239,8 +239,7 @@ const divisionData = [
       "Krypto Nick",
       "Balbar",
       "Maedhros",
-      "BOONE",
-      "Fritz"
+      "BOONE"
     ]
   }
 ];
