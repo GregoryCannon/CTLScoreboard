@@ -70,7 +70,7 @@ function simulateOneIteration(
   // Soft promo gets .5 of a promo (since they have a 50% chance)
   for (let i = division.numAutoPromo; i < numPromo; i++) {
     const maybePromoedName = divisionStandings[i].name;
-    promoCounts[maybePromoedName] += .5;
+    promoCounts[maybePromoedName] += 0.5;
   }
 
   // Auto relegate
@@ -84,7 +84,7 @@ function simulateOneIteration(
   // Soft relegate gets .5 of a relegation (since they have a 50% chance)
   for (let j = end - division.numHardRelegate; j > end - numRelegate; j--) {
     const maybeRelegatedName = divisionStandings[j].name;
-    relegationCounts[maybeRelegatedName] += .5;
+    relegationCounts[maybeRelegatedName] += 0.5;
   }
 }
 
