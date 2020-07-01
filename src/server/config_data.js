@@ -341,7 +341,8 @@ const restreamerRole = [
   "Opaux (Ben)#6969",
   "BlargMeister#1337",
   "digginout#1394",
-  "GDudge(UTC+2)#9821"
+  "GDudge(UTC+2)#9821",
+  "opaux#6969"
 ];
 
 module.exports = {
