@@ -6,15 +6,18 @@ const PROMO_20PERCENT = [167, 230, 178];
 const RELEGATE_RGB = [255, 51, 51];
 const RELEGATE_20PERCENT = [255, 195, 195];
 
+/** Convert a color array to a CSS string */
 function formatRgbString(rgbArray) {
   return `rgb(${rgbArray[0]}, ${rgbArray[1]}, ${rgbArray[2]}`;
 }
 
+/** Apply a custom function to adjust the curve of the gradient */
 function getAdjustedRatio(percentChance) {
   const intermediateRatio = percentChance / 100;
   return Math.pow(intermediateRatio, 0.9);
 }
 
+/** Gets the color at a specified location in a two-color gradient */
 function getGradientColor(startColorRGB, endColorRGB, ratio) {
   const adjustedRatio = ratio;
   const delta = endColorRGB.map((item, index) => item - startColorRGB[index]);
@@ -23,6 +26,7 @@ function getGradientColor(startColorRGB, endColorRGB, ratio) {
   );
 }
 
+/** Gets the color at a specific location in a three-color gradient */
 function getTricolorGradientColor(
   startColorRGB,
   middleColorRGB,
@@ -44,6 +48,7 @@ function getTricolorGradientColor(
   }
 }
 
+/** Gets the color for a player's "win chance" cell based on their percent chance of winning */
 export function getWinGradientColor(percentChance) {
   return formatRgbString(
     getTricolorGradientColor(
@@ -56,6 +61,7 @@ export function getWinGradientColor(percentChance) {
   );
 }
 
+/** Gets the color for a player's "promo chance" cell based on their percent chance of promotion */
 export function getPromoGradientColor(percentChance) {
   return formatRgbString(
     getTricolorGradientColor(
@@ -68,6 +74,7 @@ export function getPromoGradientColor(percentChance) {
   );
 }
 
+/** Gets the color for a player's "relegation chance" cell based on their chance of demoting */
 export function getRelegationGradientColor(percentChance) {
   return formatRgbString(
     getTricolorGradientColor(
