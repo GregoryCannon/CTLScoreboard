@@ -345,7 +345,8 @@ const restreamerRole = [
   "opaux#6969",
   "TotallyCalculatingPoet#8979",
   "semilogo777#0302",
-  "TotalRadNES#2445"
+  "TotalRadNES#2445",
+  "Trapzone707#2614"
 ];
 
 module.exports = {
