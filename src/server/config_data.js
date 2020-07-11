@@ -348,7 +348,8 @@ const restreamerRole = [
   "TotalRadNES#2445",
   "Trapzone707#2614",
   "ちどり#2119",
-  "Slayer69#3183"
+  "Slayer69#3183",
+  "opaux#5052"
 ];
 
 module.exports = {
