@@ -349,7 +349,8 @@ const restreamerRole = [
   "Trapzone707#2614",
   "ちどり#2119",
   "Slayer69#3183",
-  "opaux#5052"
+  "opaux#5052",
+  "CombatSlayer#1987"
 ];
 
 module.exports = {
