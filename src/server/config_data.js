@@ -350,7 +350,7 @@ const restreamerRole = [
   "ちどり#2119",
   "Slayer69#3183",
   "opaux#5052",
-  "CombatSlayer#1987"
+  "CombatSlayer#1987",
   "Shuram Gudatetris#4111"
 ];
 
