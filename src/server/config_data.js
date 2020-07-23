@@ -60,8 +60,8 @@ const divisionData = [
   {
     divisionName: "4A",
     numWinner: 0,
-    numAutoPromo: 2,
-    numSoftPromo: 1,
+    numAutoPromo: 1,
+    numSoftPromo: 2,
     numSoftRelegate: 2,
     numHardRelegate: 0,
     players: [
