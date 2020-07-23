@@ -37,9 +37,9 @@ const divisionData = [
     numWinner: 0,
     numAutoPromo: 1,
     numSoftPromo: 1,
-    numSoftRelegate: 2,
+    numSoftRelegate: 1,
     numHardRelegate: 0,
-    players: ["OeufMeansEgg", "NerDzzzzz", "Phillip", "Ben", "Luis", "DLo"]
+    players: ["OeufMeansEgg", "NerDzzzzz", "Phillip", "Ben", "DLo"]
   },
   {
     divisionName: "3B",
@@ -60,8 +60,8 @@ const divisionData = [
   {
     divisionName: "4A",
     numWinner: 0,
-    numAutoPromo: 1,
-    numSoftPromo: 2,
+    numAutoPromo: 2,
+    numSoftPromo: 1,
     numSoftRelegate: 2,
     numHardRelegate: 0,
     players: [
