@@ -264,7 +264,6 @@ const divisionData = [
     numHardRelegate: 0,
     players: [
       "BOONE",
-      "Diamond",
       "Chidori",
       "Slayer",
       "Shame",
