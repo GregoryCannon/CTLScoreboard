@@ -351,7 +351,8 @@ const restreamerRole = [
   "opaux#5052",
   "CombatSlayer#1987",
   "Shuram Gudatetris (UTC -5)#4111",
-  "timmykim915#7525"
+  "timmykim915#7525",
+  "Reykon3817"
 ];
 
 module.exports = {
