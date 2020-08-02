@@ -98,7 +98,7 @@ const divisionData = [
     numSoftPromo: 1,
     numSoftRelegate: 1,
     numHardRelegate: 0,
-    players: ["Benjy", "Kim", "Xerxos", "sixfour", "OBD", "Luco107", "JxZ"]
+    players: ["Benjy", "Kim", "Xerxos", "sixfour", "OBD", "JxZ"]
   },
   {
     divisionName: "5B",
@@ -202,7 +202,6 @@ const divisionData = [
     numSoftRelegate: 1,
     numHardRelegate: 0,
     players: [
-      "GeeForce",
       "Balbar",
       "mattholland",
       "GDudge",
@@ -244,7 +243,7 @@ const divisionData = [
     numSoftPromo: 1,
     numSoftRelegate: 1,
     numHardRelegate: 0,
-    players: ["Owen", "Maedhros", "leaurax", "Samantha", "Ferrow", "scoopman"]
+    players: ["Owen", "Maedhros", "leaurax", "Ferrow", "scoopman"]
   },
   {
     divisionName: "7D",
