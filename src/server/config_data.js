@@ -190,8 +190,7 @@ const divisionData = [
       "c-dubs",
       "Mleczak",
       "VachetBeasty",
-      "SamoanGerman",
-      "Felipe"
+      "SamoanGerman"
     ]
   },
   {
