@@ -351,7 +351,8 @@ const restreamerRole = [
   "CombatSlayer#1987",
   "Shuram Gudatetris (UTC -5)#4111",
   "timmykim915#7525",
-  "Reykon#3817"
+  "Reykon#3817",
+  "Ipiecevibes#6809",
 ];
 
 module.exports = {
