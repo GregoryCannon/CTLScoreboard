@@ -351,12 +351,12 @@ function runSimulation(division, matchSchedule) {
       player.relegationChance == 100 &&
       !didClinchRelegation(player, division)
     ) {
-      player.relegationChance = 99.99;
+      player.relegationChance = 99.999;
     } else if (
       player.relegationChance == 0 &&
       !didClinchNonRelegation(player, division)
     ) {
-      player.relegationChance = 0.01;
+      player.relegationChance = 0.001;
     }
   }
 

@@ -52,10 +52,18 @@ class Division extends Component {
       return "-";
     }
     const floatPercent = parseFloat(percentChance);
-    if (floatPercent !== 0 && floatPercent < 1) {
+    // Quasi-clinch
+    if (floatPercent !== 0 && floatPercent < 0.01) {
+      return "<0.01%";
+    }
+    if (floatPercent !== 100 && floatPercent > 99.99){
+      return ">99.99%";
+    }
+    // Small chance but not clinched
+    if (floatPercent !== 0 && floatPercent < 0.5) {
       return "<1%";
     }
-    if (floatPercent !== 100 && floatPercent > 99) {
+    if (floatPercent !== 100 && floatPercent > 99.5) {
       return ">99%";
     }
     return floatPercent.toFixed(0) + "%";
