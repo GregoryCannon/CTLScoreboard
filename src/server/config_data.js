@@ -217,7 +217,7 @@ const divisionData = [
     numSoftPromo: 1,
     numSoftRelegate: 1,
     numHardRelegate: 0,
-    players: ["Wild", "sablen", "MT", "GrannyPanPan", "Haven", "mil0-"]
+    players: ["sablen", "MT", "GrannyPanPan", "Haven", "mil0-"]
   },
   {
     divisionName: "7B",
