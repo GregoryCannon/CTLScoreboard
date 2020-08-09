@@ -251,7 +251,7 @@ const divisionData = [
     numSoftPromo: 1,
     numSoftRelegate: 1,
     numHardRelegate: 0,
-    players: ["Marts", "Chris Foryst", "PixelAtc", "Zabby", "Świdr", "jatloe"]
+    players: ["Marts", "Chris Foryst", "PixelAtc", "Zabby", "Świdr"]
   },
   {
     divisionName: "8",
