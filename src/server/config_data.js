@@ -351,6 +351,7 @@ const restreamerRole = [
   "timmykim915#7525",
   "Reykon#3817",
   "Ipiecevibes#6809",
+  "Frank (SirMaser🌳)#7316"
 ];
 
 module.exports = {
