@@ -138,7 +138,6 @@ const divisionData = [
       "JxZ",
       "Rory",
       "Reykon",
-      ,
     ]
   },
   {
