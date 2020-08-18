@@ -12,6 +12,15 @@
   background: #85878c;
   color: white;
   box-shadow: 0 2px 4px -2px black;
+  position: relative;
+}
+
+.Division-select {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  height: 30px;
+  font-size: 1.1vw;
 }
 
 .Reported-match {
@@ -55,6 +64,11 @@
 .Scrollable-list {
   overflow-y: scroll;
   height: 300px;
+}
+
+.No-matches-found {
+  height: 300px;
+  line-height: 300px;
 }
 
 .Scrollable-list table {

@@ -12,12 +12,15 @@ class StandingsPage extends Component {
 
   getPages() {
     let pages = [];
-    const PAGE_SIZE = util.divisionsPerPage;
+    const PAGE_SIZES = [3, 3, 4, 4, 3];
     const divData = this.props.divisionData;
 
-    for (let i = 0; i < divData.length; i += PAGE_SIZE) {
-      pages.push(divData.slice(i, i + PAGE_SIZE));
+    let i = 0;
+    for (const pageSize of PAGE_SIZES) {
+      pages.push(divData.slice(i, i + pageSize));
+      i += pageSize;
     }
+
     return pages;
   }
 
@@ -53,6 +56,9 @@ class StandingsPage extends Component {
           <div className="Match-history-card">
             <MatchHistory
               matchList={this.props.matchList}
+              divisionList={this.props.divisionData.map(
+                division => division.divisionName
+              )}
               refreshFunction={this.props.refreshFunction}
               isAdmin={this.props.isAdmin}
               discordIdentity={this.props.discordIdentity}

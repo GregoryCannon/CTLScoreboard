@@ -1,10 +1,19 @@
 import React, { Component } from "react";
 import "./MatchHistory.css";
-const moment = require("moment");
 
 const util = require("../server/util");
+const ALL_DIVISIONS = "(All)";
 
 class MatchHistory extends Component {
+  constructor() {
+    super();
+    this.state = {
+      selectedDivison: ALL_DIVISIONS
+    };
+    this.onDivisonChanged = this.onDivisonChanged.bind(this);
+    this.getFilteredMatchList = this.getFilteredMatchList.bind(this);
+  }
+
   getMatchText(match) {
     return `${match.winner} ${match.winner_home ? "(H)" : "(A)"} def. ${
       match.loser
@@ -42,6 +51,15 @@ class MatchHistory extends Component {
     }
   }
 
+  getFilteredMatchList() {
+    if (this.state.selectedDivison === ALL_DIVISIONS) {
+      return this.props.matchList;
+    }
+    return this.props.matchList.filter(
+      match => match.division === this.state.selectedDivison
+    );
+  }
+
   isMatchDeletable(match) {
     return (
       this.props.isAdmin ||
@@ -49,45 +67,68 @@ class MatchHistory extends Component {
     );
   }
 
+  onDivisonChanged(event) {
+    this.setState({
+      selectedDivison: event.target.value
+    });
+  }
+
   render() {
+    const filteredMatchList = this.getFilteredMatchList();
+    console.log("divisionList", this.props.divisionList);
     return (
       <div className="Match-history">
-        <div className="Match-history-title">Match History</div>
-        <div className="Scrollable-list">
-          <table>
-            <tbody>
-              {this.props.matchList.map((match, i) => {
-                return (
-                  <tr key={this.getMatchText(match)} className="Reported-match">
-                    <td className="Match-division">D{match.division}</td>
-                    <td className="Match-text">
-                      {this.getMatchText(match)}
-                      <br />
-                      <span className="Match-date">
-                        {util.getMatchDateFormatted(match)}
-                      </span>
-                    </td>
-                    <td>
-                      <a
-                        className="Delete-match-button"
-                        style={{
-                          visibility: this.isMatchDeletable(match)
-                            ? "visible"
-                            : "hidden"
-                        }}
-                        onClick={() => {
-                          this.deleteMatchClicked(match);
-                        }}
-                      >
-                        <i className="fas fa-trash"></i>
-                      </a>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+        <div className="Match-history-title">
+          <span>Match History</span>
+          <select className="Division-select" onChange={this.onDivisonChanged}>
+            <option>{ALL_DIVISIONS}</option>
+            {this.props.divisionList.map(divisionName => {
+              return <option>{divisionName}</option>;
+            })}
+          </select>
         </div>
+        {filteredMatchList.length === 0 ? (
+          <div className="No-matches-found">No matches found</div>
+        ) : (
+          <div className="Scrollable-list">
+            <table>
+              <tbody>
+                {filteredMatchList.map(match => {
+                  return (
+                    <tr
+                      key={this.getMatchText(match)}
+                      className="Reported-match"
+                    >
+                      <td className="Match-division">D{match.division}</td>
+                      <td className="Match-text">
+                        {this.getMatchText(match)}
+                        <br />
+                        <span className="Match-date">
+                          {util.getMatchDateFormatted(match)}
+                        </span>
+                      </td>
+                      <td>
+                        <a
+                          className="Delete-match-button"
+                          style={{
+                            visibility: this.isMatchDeletable(match)
+                              ? "visible"
+                              : "hidden"
+                          }}
+                          onClick={() => {
+                            this.deleteMatchClicked(match);
+                          }}
+                        >
+                          <i className="fas fa-trash"></i>
+                        </a>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        )}
       </div>
     );
   }

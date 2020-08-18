@@ -488,9 +488,6 @@ function getMatchDateFormatted(match) {
   return matchMoment.utc().format("MMM DD YYYY, HH:mm");
 }
 
-// Determines how the divisions are grouped when downloading the standings to images
-const divisionsPerPage = 4;
-
 function downloadCanvasAsPng(canvas, filename) {
   // create an "off-screen" anchor tag
   var lnk = document.createElement("a"),
@@ -535,7 +532,6 @@ const SortBy = Object.freeze({ points: "points", simulation: "simulation" });
 
 module.exports = {
   memeDivisionData,
-  divisionsPerPage,
   downloadCanvasAsPng,
   sampleMatchData,
   compareRaw,
