@@ -56,7 +56,7 @@ class Division extends Component {
     if (floatPercent !== 0 && floatPercent < 0.01) {
       return "<0.01%";
     }
-    if (floatPercent !== 100 && floatPercent > 99.99){
+    if (floatPercent !== 100 && floatPercent > 99.99) {
       return ">99.99%";
     }
     // Small chance but not clinched

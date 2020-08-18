@@ -163,7 +163,6 @@ class App extends Component {
           .format("MM/DD/YYYY");
       util.downloadCanvasAsPng(canvas, fileName);
     });
-
   }
 
   fetchStandings() {
