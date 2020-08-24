@@ -165,7 +165,7 @@ const divisionData = [
     numSoftRelegate: 1,
     numHardRelegate: 1,
     players: [
-      "SamoanGerman",
+      "Big Sippy",
       "Billy Mac",
       "Koolio",
       "Świdr",
