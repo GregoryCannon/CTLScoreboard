@@ -4,3 +4,11 @@ body {
   font-color: black;
   background: green;
 }
+
+body, #root, .App, .Loading-display{
+  width: 100% !important;
+}
+
+.Fixtures-container{
+  width: calc(100% - 40px) !important;
+}
