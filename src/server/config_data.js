@@ -149,7 +149,6 @@ const divisionData = [
     numHardRelegate: 1,
     players: [
       "Scamper9",
-      "Gerzi",
       "GDudge",
       "Mleczak",
       "panquequeque",
