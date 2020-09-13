@@ -110,7 +110,6 @@ const divisionData = [
       "TheCalculatingPoet",
       "DAS_Master",
       "Michu",
-      "Yuri",
       "Bill"
     ]
   },
