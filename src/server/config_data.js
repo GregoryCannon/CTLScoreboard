@@ -237,7 +237,6 @@ const divisionData = [
       "Balbar",
       "Chris Foryst",
       "scoopman",
-      "BOONE",
       "Cameel",
       "empty",
       "jedipeyton"
