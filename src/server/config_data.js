@@ -269,11 +269,9 @@ const divisionData = [
     players: [
       "Slayer",
       "Shame",
-      "BlackCat",
       "Elpailtem",
       "SirMaser",
       "Ard",
-      "Cole",
       "DSS"
     ]
   }
