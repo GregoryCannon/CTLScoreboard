@@ -46,7 +46,6 @@ const divisionData = [
       "galoomba",
       "Doge",
       "ChirpingMatt",
-      "OeufMeansEgg",
       "TheMisterValor",
       "Benjy",
       "dmsy"
