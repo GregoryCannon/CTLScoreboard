@@ -83,7 +83,7 @@ const divisionData = [
     numWinner: 0,
     numAutoPromo: 1,
     numSoftPromo: 2,
-    numSoftRelegate: 2,
+    numSoftRelegate: 1,
     numHardRelegate: 0,
     players: [
       "Alwin",
@@ -92,7 +92,6 @@ const divisionData = [
       "MörköS",
       "TetrisTime",
       "Kim",
-      "Holifyre",
       "Noel"
     ]
   },
