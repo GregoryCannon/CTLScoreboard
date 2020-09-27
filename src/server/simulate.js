@@ -1,6 +1,9 @@
-const NUM_ITERATIONS = process.env.NUM_ITERATIONS || 20000;
-
 const util = require("./util");
+const adjustedProbability = require("./adjusted-probability");
+
+const NUM_ITERATIONS = 20000;
+// Whether or not to adjust players' simulated winrates based on their performance so far
+const USE_ADJUSTED_PROBABILITIES = true;
 
 /*
 Simulate one run through from the current moment in time to the end of the season.
@@ -17,28 +20,44 @@ function simulateOneIteration(
   const divisionStandings = cloneDivision.standings;
 
   // Loop through the match schedule and pick random winners
-  for (let i = 0; i < matchSchedule.length; i++) {
-    const playerName1 = matchSchedule[i].playerName1;
-    const playerName2 = matchSchedule[i].playerName2;
+  for (const match of matchSchedule) {
+    const playerName1 = match.playerName1;
+    const playerName2 = match.playerName2;
+    const playerData1 = util.getPlayerData(divisionStandings, playerName1);
+    const playerData2 = util.getPlayerData(divisionStandings, playerName2);
 
-    const randWinIndex = Math.floor(Math.random() * 2);
-    const winnerName = [playerName1, playerName2][randWinIndex];
-    const loserName = [playerName1, playerName2][1 - randWinIndex];
-    const winner = util.getPlayerData(divisionStandings, winnerName);
-    const loser = util.getPlayerData(divisionStandings, loserName);
-    const randLoserGames = Math.floor(Math.random() * 3);
+    // Pick a match result
+    let winner, loser, loserGames;
+    if (USE_ADJUSTED_PROBABILITIES) {
+      // Use statistical analysis for more accurate simulation
+      const result = adjustedProbability.getMatchResult(
+        playerData1,
+        playerData2
+      );
+      winner = result.player1Win ? playerData1 : playerData2;
+      loser = result.player1Win ? playerData2 : playerData1;
+      loserGames = result.loserGames;
+    } else {
+      // Old method
+      const randWinIndex = Math.floor(Math.random() * 2);
+      const winnerName = [playerName1, playerName2][randWinIndex];
+      const loserName = [playerName1, playerName2][1 - randWinIndex];
+      winner = util.getPlayerData(divisionStandings, winnerName);
+      loser = util.getPlayerData(divisionStandings, loserName);
+      loserGames = Math.floor(Math.random() * 3);
+    }
 
     // Update the four key source of truth properties (W,L,GF,GA) for each match
     // console.log("winner:", winnerName, "current points:", winner.points)
     // console.log("loser:", loserName, "current points:", loser.points)
     winner["wins"] += 1;
     winner["gf"] += 3;
-    winner["ga"] += randLoserGames;
+    winner["ga"] += loserGames;
     winner["points"] += 4;
     loser["losses"] += 1;
-    loser["gf"] += randLoserGames;
+    loser["gf"] += loserGames;
     loser["ga"] += 3;
-    loser["points"] += randLoserGames;
+    loser["points"] += loserGames;
     // console.log("new winner points:", winner.points)
     // console.log("new loser points:", loser.points)
   }
@@ -254,12 +273,23 @@ function testClinchingCalculationMethods() {
 }
 
 function playerFullyTied(player1, player2) {
-  return (
-    player1.wins == player2.wins &&
-    player1.losses == player2.losses &&
-    player1.gd == player2.gd &&
-    player1.points == player2.points
-  );
+  if (USE_ADJUSTED_PROBABILITIES) {
+    // If the simulations account for player strength, players cannot be fully tied unless
+    // they have the same opponent schedule (which we can't tell here)
+    return (
+      player1.wins == 0 &&
+      player1.losses == 0 &&
+      player2.wins == 0 &&
+      player2.losses == 0
+    );
+  } else {
+    return (
+      player1.wins == player2.wins &&
+      player1.losses == player2.losses &&
+      player1.gd == player2.gd &&
+      player1.points == player2.points
+    );
+  }
 }
 
 /** Find all clusters of players with the same states, and make them have the same simulation stats. */

@@ -143,14 +143,7 @@ const divisionData = [
     numSoftPromo: 1,
     numSoftRelegate: 1,
     numHardRelegate: 1,
-    players: [
-      "Scamper9",
-      "GDudge",
-      "Mleczak",
-      "panquequeque",
-      "boxie",
-      "Tugi"
-    ]
+    players: ["Scamper9", "GDudge", "Mleczak", "panquequeque", "boxie", "Tugi"]
   },
   {
     divisionName: "6A",
@@ -263,14 +256,7 @@ const divisionData = [
     numSoftPromo: 2,
     numSoftRelegate: 0,
     numHardRelegate: 0,
-    players: [
-      "Slayer",
-      "Shame",
-      "Elpailtem",
-      "SirMaser",
-      "Ard",
-      "DSS"
-    ]
+    players: ["Slayer", "Shame", "Elpailtem", "SirMaser", "Ard", "DSS"]
   }
 ];
 
@@ -365,7 +351,7 @@ const restreamerRole = [
   "mleczak#8676",
   "Huffulufugus#9207",
   "sixfour#0130",
-  "kooliooolio#1009",
+  "kooliooolio#1009"
 ];
 
 module.exports = {
