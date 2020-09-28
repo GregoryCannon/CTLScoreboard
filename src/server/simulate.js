@@ -11,9 +11,11 @@ Simulate one run through from the current moment in time to the end of the seaso
 Code is similar to `computeRawStandings` in compute.js
 */
 function simulateOneIteration(division, matchSchedule, resultCounts) {
-  const cloneDivision = JSON.parse(JSON.stringify(division));
+  const simulationCloneDivision = JSON.parse(JSON.stringify(division));
+  const startOfSeasonCloneDivision = JSON.parse(JSON.stringify(division));
 
-  const divisionStandings = cloneDivision.standings;
+  const divisionStandings = simulationCloneDivision.standings;
+  const startOfSimPlayerLookup = util.getPlayerLookupMap(startOfSeasonCloneDivision);
 
   // Loop through the match schedule and pick random winners
   for (const match of matchSchedule) {
@@ -27,8 +29,9 @@ function simulateOneIteration(division, matchSchedule, resultCounts) {
     if (USE_ADJUSTED_PROBABILITIES) {
       // Use statistical analysis for more accurate simulation
       const result = adjustedProbability.getMatchResult(
-        playerData1,
-        playerData2
+        playerName1,
+        playerName2,
+        startOfSimPlayerLookup
       );
       winner = result.player1Win ? playerData1 : playerData2;
       loser = result.player1Win ? playerData2 : playerData1;
@@ -84,7 +87,7 @@ function simulateOneIteration(division, matchSchedule, resultCounts) {
   }
 
   // Playoff relegation
-  const end = cloneDivision.players.length - 1;
+  const end = simulationCloneDivision.players.length - 1;
   for (let j = end - division.numAutoRelegate; j > end - numRelegate; j--) {
     resultCounts.playoffRelegation[divisionStandings[j].name] += 1;
   }

@@ -368,6 +368,17 @@ function getMatchSchedule(division, divMatches) {
   return matchSchedule;
 }
 
+/**
+ * Convert a list of player objects to a map from playerName -> player object
+ */
+function getPlayerLookupMap(division){
+  const map = {};
+  for (const player of division.standings){
+    map[player.name] = player;
+  }
+  return map;
+}
+
 /* Comparison function for sorting the players 
    Official ordering according to moodeuce is "GD>MW>GF>H2H>some other thing"
    This function will sort according to Points > GD > MW > GF, then there has to be
@@ -538,6 +549,7 @@ module.exports = {
   compareSimulated,
   getPlayerData,
   getMatchSchedule,
+  getPlayerLookupMap,
   getApiUrl,
   getDiscordMainChannel,
   makeHttpRequest,

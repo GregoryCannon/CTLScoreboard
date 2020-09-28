@@ -86,8 +86,10 @@ function makeProbabilitiesCumulative(probabilities) {
  * Takes two players' data and gets a match result for them in accordance with statistical research.
  * Returns an object { player1win :bool, loserGames :number }
  */
-function getMatchResult(playerData1, playerData2) {
+function getMatchResult(playerName1, playerName2, startOfSimPlayerLookup) {
   // Match win difference from player 1 perspective
+  const playerData1 = startOfSimPlayerLookup[playerName1];
+  const playerData2 = startOfSimPlayerLookup[playerName2];
   const matchWinDiff =
     playerData1.wins -
     playerData1.losses -
