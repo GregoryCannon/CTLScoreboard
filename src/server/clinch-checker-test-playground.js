@@ -19,13 +19,13 @@ const testDivision = {
   standings: [
     {
       name: "greg",
-      mp: 4,
-      wins: 2,
-      losses: 2,
+      mp: 6,
+      wins: 6,
+      losses: 0,
       gf: 18,
       ga: 0,
       gd: 18,
-      points: 10
+      points: 24
     },
     {
       name: "jdmfx_",

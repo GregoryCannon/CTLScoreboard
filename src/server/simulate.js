@@ -95,15 +95,49 @@ function simulateOneIteration(division, matchSchedule, resultCounts) {
   }
 }
 
-function playerFullyTied(player1, player2) {
+function playersHaveEquivalentUpcomingMatches(
+  player1,
+  player2,
+  division,
+  matchSchedule
+) {
+  const player1Schedule = matchSchedule.filter(
+    x => x.playerName1 === player1.name || x.playerName2 === player1.name
+  );
+  const player2Schedule = matchSchedule.filter(
+    x => x.playerName1 === player2.name || x.playerName2 === player2.name
+  );
+  const mwdList1 = player1Schedule.map(x => {
+    const opponentName =
+      x.playerName1 === player1.name ? x.playerName2 : x.playerName1;
+    const opponent = util.getPlayerData(division.standings, opponentName);
+    return player1.wins - player1.losses - (opponent.wins - opponent.losses);
+  });
+  const mwdList2 = player2Schedule.map(x => {
+    const opponentName =
+      x.playerName1 === player2.name ? x.playerName2 : x.playerName1;
+    const opponent = util.getPlayerData(division.standings, opponentName);
+    return player2.wins - player2.losses - (opponent.wins - opponent.losses);
+  });
+  mwdList1.sort();
+  mwdList2.sort();
+  return JSON.stringify(mwdList1) === JSON.stringify(mwdList2);
+}
+
+function playerFullyTied(player1, player2, division, matchSchedule) {
   if (USE_ADJUSTED_PROBABILITIES) {
     // If the simulations account for player strength, players cannot be fully tied unless
-    // they have the same opponent schedule (which we can't tell here)
+    // they have no games played or the same opponent schedule
     return (
-      player1.wins == 0 &&
-      player1.losses == 0 &&
-      player2.wins == 0 &&
-      player2.losses == 0
+      player1.wins + player1.losses + player2.wins + player2.losses == 0 ||
+      (player1.wins === player2.wins &&
+        player1.losses === player2.losses &&
+        playersHaveEquivalentUpcomingMatches(
+          player1,
+          player2,
+          division,
+          matchSchedule
+        ))
     );
   } else {
     return (
@@ -116,7 +150,7 @@ function playerFullyTied(player1, player2) {
 }
 
 /** Find all clusters of players with the same states, and make them have the same simulation stats. */
-function correctForVariance(division) {
+function correctForVariance(division, matchSchedule) {
   const playerList = division.standings;
 
   // Get clusters
@@ -126,7 +160,14 @@ function correctForVariance(division) {
     // Check if it matches any of the clusters
     for (let c = 0; c < clusters.length; c++) {
       const clusterFirstPlayer = clusters[c][0];
-      if (playerFullyTied(currentPlayer, clusterFirstPlayer)) {
+      if (
+        playerFullyTied(
+          currentPlayer,
+          clusterFirstPlayer,
+          division,
+          matchSchedule
+        )
+      ) {
         foundCluster = 1;
         clusters[c].push(currentPlayer);
       }
@@ -140,17 +181,26 @@ function correctForVariance(division) {
 
   // Normalize across each cluster
   for (const cluster of clusters) {
-    let promoTotal = 0;
-    let relTotal = 0;
+    let autoPromoTotal = 0;
+    let playoffPromoTotal = 0;
+    let autoRelTotal = 0;
+    let playoffRelTotal = 0;
     for (player of cluster) {
-      promoTotal += parseFloat(player.promoChance);
-      relTotal += parseFloat(player.relegationChance);
+      autoPromoTotal += parseFloat(player.autoPromoChance);
+      playoffPromoTotal += parseFloat(player.playoffPromoChance);
+      autoRelTotal += parseFloat(player.autoRelegationChance);
+      playoffRelTotal += parseFloat(player.playoffRelegationChance);
     }
-    const normalizedPromo = promoTotal / cluster.length;
-    const normalizedRel = relTotal / cluster.length;
+    const normalizedAutoPromo = autoPromoTotal / cluster.length;
+    const normalizedPlayoffPromo = playoffPromoTotal / cluster.length;
+    const normalizedAutoRel = autoRelTotal / cluster.length;
+    const normalizedPlayoffRel = playoffRelTotal / cluster.length;
+
     for (player of cluster) {
-      player.promoChance = normalizedPromo;
-      player.relegationChance = normalizedRel;
+      player.autoPromoChance = normalizedAutoPromo;
+      player.playoffPromoChance = normalizedPlayoffPromo;
+      player.autoRelegationChance = normalizedAutoRel;
+      player.playoffRelegationChance = normalizedPlayoffRel;
     }
   }
 }
@@ -211,7 +261,7 @@ function runSimulation(division, matchSchedule) {
 
   assignChancesToPlayers(resultCounts, division);
   clinchChecker.checkClinchesForDivision(division);
-  correctForVariance(division);
+  correctForVariance(division, matchSchedule);
 
   return division;
 }
