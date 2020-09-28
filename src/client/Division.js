@@ -10,8 +10,8 @@ import {
   WINNER_COLOR_STR,
   PROMO_COLOR_STR,
   RELEGATE_COLOR_STR,
-  SOFT_PROMO_COLOR_STR,
-  SOFT_RELEGATE_COLOR_STR
+  PLAYOFF_PROMO_COLOR_STR,
+  PLAYOFF_RELEGATE_COLOR_STR
 } from "./divison-color-util";
 
 class Division extends Component {
@@ -22,9 +22,9 @@ class Division extends Component {
       numTotal -
       divisionData.numWinner -
       divisionData.numAutoPromo -
-      divisionData.numSoftPromo -
-      divisionData.numSoftRelegate -
-      divisionData.numHardRelegate;
+      divisionData.numPlayoffPromo -
+      divisionData.numPlayoffRelegate -
+      divisionData.numAutoRelegate;
     let colors = [];
     for (let i = 0; i < divisionData.numWinner; i++) {
       colors.push(WINNER_COLOR_STR);
@@ -32,16 +32,16 @@ class Division extends Component {
     for (let i = 0; i < divisionData.numAutoPromo; i++) {
       colors.push(PROMO_COLOR_STR);
     }
-    for (let i = 0; i < divisionData.numSoftPromo; i++) {
-      colors.push(SOFT_PROMO_COLOR_STR);
+    for (let i = 0; i < divisionData.numPlayoffPromo; i++) {
+      colors.push(PLAYOFF_PROMO_COLOR_STR);
     }
     for (let i = 0; i < numUnchanged; i++) {
       colors.push(BACKGROUND_COLOR_STR);
     }
-    for (let i = 0; i < divisionData.numSoftRelegate; i++) {
-      colors.push(SOFT_RELEGATE_COLOR_STR);
+    for (let i = 0; i < divisionData.numPlayoffRelegate; i++) {
+      colors.push(PLAYOFF_RELEGATE_COLOR_STR);
     }
-    for (let i = 0; i < divisionData.numHardRelegate; i++) {
+    for (let i = 0; i < divisionData.numAutoRelegate; i++) {
       colors.push(RELEGATE_COLOR_STR);
     }
     return colors;
@@ -69,48 +69,26 @@ class Division extends Component {
     return floatPercent.toFixed(0) + "%";
   }
 
-  reorderColorsByPromoChance(originalColorList, sortedRaw, sortedSimulated) {
-    let newColorList = [];
-    for (let i = 0; i < originalColorList.length; i++) {
-      // Get the color than they would've been if sorted by simulated
-      const sortedPosition = sortedSimulated.findIndex(
-        x => x.name == sortedRaw[i].name
-      );
-      newColorList.push(originalColorList[sortedPosition]);
-    }
-    return newColorList;
-  }
-
   render() {
-    const REORDER_COLORS = false;
-
-    let rowColors = this.getRowColors(this.props.data);
+    // Get a sorted list of players
     const playerList = [...this.props.data.standings];
-    const sortedSimulated = JSON.parse(
-      JSON.stringify(playerList.sort(util.compareSimulated))
-    );
-    const sortedRaw = JSON.parse(
-      JSON.stringify(playerList.sort(util.compareRaw))
-    );
-
-    let sortedPlayerList;
     if (this.props.sortBy === SortBy.points) {
-      if (REORDER_COLORS) {
-        rowColors = this.reorderColorsByPromoChance(
-          rowColors,
-          sortedRaw,
-          sortedSimulated
-        );
-      }
-      sortedPlayerList = sortedRaw;
+      playerList.sort(util.compareRaw);
     } else {
-      sortedPlayerList = sortedSimulated;
+      playerList.sort(util.compareSimulated);
     }
-    const totalMatchesInSeason = (playerList.length - 1) * 2;
+
+    // Calculate other constants
     const divName = this.props.data.divisionName;
-    // The division is at the start of the tier block if either:
-    //    - the name is a single number (e.g. "3")
-    //    - the name ends in A (e.g. "6A")
+    let rowColors = this.getRowColors(this.props.data);
+    const totalMatchesInSeason = (playerList.length - 1) * 2;
+
+    /*
+    Divide the divisions into blocks by number.
+    This division is at the start of the tier block if either:
+        - the name is a single number (e.g. "3")
+        - the name ends in A (e.g. "6A")
+    */
     const divAtStartOfTier =
       !isNaN(divName) || divName[1] === "A" || divName[1] === "a";
 
@@ -190,7 +168,12 @@ class Division extends Component {
             </tr>
 
             {/* Make a row for each player, looping through the data */}
-            {sortedPlayerList.map((player, index) => {
+            {playerList.map((player, index) => {
+              const overallPromoChance =
+                player.autoPromoChance + 0.5 * player.playoffRelegationChance;
+              const overallRelegationChance =
+                player.autoRelegationChance +
+                0.5 * player.playoffRelegationChance;
               return (
                 <tr
                   key={index}
@@ -227,24 +210,24 @@ class Division extends Component {
                       backgroundColor:
                         this.props.data.divisionName === "1"
                           ? divisionColorUtil.getWinGradientColor(
-                              player.promoChance
+                              overallPromoChance
                             )
                           : divisionColorUtil.getPromoGradientColor(
-                              player.promoChance
+                              overallPromoChance
                             )
                     }}
                   >
-                    {this.renderPercentage(player.promoChance)}
+                    {this.renderPercentage(overallPromoChance)}
                   </td>
                   <td
                     className="Simulation-data-cell"
                     style={{
                       backgroundColor: divisionColorUtil.getRelegationGradientColor(
-                        player.relegationChance
+                        overallRelegationChance
                       )
                     }}
                   >
-                    {this.renderPercentage(player.relegationChance)}
+                    {this.renderPercentage(overallRelegationChance)}
                   </td>
                 </tr>
               );

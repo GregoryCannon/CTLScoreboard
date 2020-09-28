@@ -1,16 +1,16 @@
 const moment = require("moment");
 
 // CHANGE THIS WHEN DEBUGGING
-const IS_PRODUCTION = true;
+const IS_PRODUCTION = false;
 
 const memeDivisionData = [
   {
     divisionName: "1.3m",
     numWinner: 1,
     numAutoPromo: 0,
-    numSoftPromo: 0,
-    numSoftRelegate: 1,
-    numHardRelegate: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 1,
     players: [
       "greg",
       "jdmfx_",
@@ -29,7 +29,7 @@ const memeDivisionData = [
         gf: 36,
         ga: 1,
         gd: 36,
-        points: 48
+        points: 0
       },
       {
         name: "jdmfx_",
@@ -97,9 +97,9 @@ const memeDivisionData = [
     divisionName: "1.3m",
     numWinner: 1,
     numAutoPromo: 0,
-    numSoftPromo: 0,
-    numSoftRelegate: 1,
-    numHardRelegate: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 1,
     players: [
       "greg",
       "jdmfx_",

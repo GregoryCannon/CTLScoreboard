@@ -87,8 +87,8 @@ export function getRelegationGradientColor(percentChance) {
   );
 }
 
-export const SOFT_PROMO_COLOR_STR = getPromoGradientColor(50);
-export const SOFT_RELEGATE_COLOR_STR = getRelegationGradientColor(50);
+export const PLAYOFF_PROMO_COLOR_STR = getPromoGradientColor(50);
+export const PLAYOFF_RELEGATE_COLOR_STR = getRelegationGradientColor(50);
 export const WINNER_COLOR_STR = formatRgbString(WINNER_RGB);
 export const PROMO_COLOR_STR = formatRgbString(PROMO_RGB);
 export const RELEGATE_COLOR_STR = formatRgbString(RELEGATE_RGB);
