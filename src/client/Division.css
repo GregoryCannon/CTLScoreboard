@@ -7,16 +7,18 @@
 }
 
 .Division table {
-  background: lightblue;
   border-spacing: 0px;
-  margin: 0px auto;
-  text-align: center;
 }
 
 .Division th {
   font-weight: 500;
   background-color: #20325a;
   color: white !important;
+}
+
+.Division th,
+.Division td {
+  padding: 0.6vw 0.3vw;
 }
 
 /* A div container to allow the header to be split horizontally into text and sort arrow */
@@ -48,16 +50,11 @@
   height: 100%;
 }
 
-.Division th,
-.Division td {
-  padding: 0.6vw 0.3vw;
-}
-
 .Simulation-data-cell {
   border-bottom: 0px solid rgb(207, 231, 245);
 }
 
-.Division td {
+.Division .Player-main-row {
   text-transform: uppercase;
   font-weight: 500;
 }
@@ -69,6 +66,7 @@
 .Division-title {
   text-align: center;
   font-size: 1.5vw;
+  font-weight: 500;
 }
 
 .Extra-padding-left {

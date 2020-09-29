@@ -268,10 +268,10 @@ function checkClinchesForDivision(division) {
     ) {
       player.autoPromoChance = 100 - CORRECTION_MARGIN;
     }
-    // To have 0% auto-promo, must have clinched not-auto-promo
+    // To have 0% auto-promo, must have clinched not-auto-promo (or have 0 autopromo spots)
     if (
       player.autoPromoChance === 0 &&
-      !didClinchNonAutoPromo(player, division)
+      !(division.numAutoPromo === 0 || !didClinchNonAutoPromo(player, division))
     ) {
       player.autoPromoChance = CORRECTION_MARGIN;
     }
@@ -286,9 +286,11 @@ function checkClinchesForDivision(division) {
       player.playoffPromoChance = 100 - CORRECTION_MARGIN;
     }
     // To have 0% playoff promo, must have clinched auto-promo or not-playoff-promo
+    // (or have no playoff promo spots)
     if (
       player.playoffPromoChance === 0 &&
       !(
+        division.numPlayoffPromo === 0 ||
         didClinchAutoPromo(player, division) ||
         didClinchNonPlayoffPromo(player, division)
       )
@@ -306,7 +308,10 @@ function checkClinchesForDivision(division) {
     // To have 0% auto-relegation, must have clinched not-auto-relegation
     if (
       player.autoRelegationChance === 0 &&
-      !didClinchNonAutoRelegation(player, division)
+      !(
+        division.numAutoRelegate === 0 ||
+        didClinchNonAutoRelegation(player, division)
+      )
     ) {
       player.autoRelegationChance = CORRECTION_MARGIN;
     }
@@ -324,6 +329,7 @@ function checkClinchesForDivision(division) {
     if (
       player.playoffRelegationChance === 0 &&
       !(
+        division.numPlayoffRelegate === 0 ||
         didClinchAutoRelegation(player, division) ||
         didClinchNonPlayoffRelegation(player, division)
       )

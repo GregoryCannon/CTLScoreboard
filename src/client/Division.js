@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PenaltyPointsEditor from "./PenaltyPointsEditor";
+import PlayerAdvancedStats from "./PlayerAdvancedStats";
 import "./Division.css";
 import { SortBy } from "../server/util.js";
 
@@ -16,32 +17,32 @@ import {
 
 class Division extends Component {
   // Get a list of the colors for the player slots, ordered first place to last
-  getRowColors(divisionData) {
-    const numTotal = divisionData.standings.length;
+  getRowColors(division) {
+    const numTotal = division.standings.length;
     const numUnchanged =
       numTotal -
-      divisionData.numWinner -
-      divisionData.numAutoPromo -
-      divisionData.numPlayoffPromo -
-      divisionData.numPlayoffRelegate -
-      divisionData.numAutoRelegate;
+      division.numWinner -
+      division.numAutoPromo -
+      division.numPlayoffPromo -
+      division.numPlayoffRelegate -
+      division.numAutoRelegate;
     let colors = [];
-    for (let i = 0; i < divisionData.numWinner; i++) {
+    for (let i = 0; i < division.numWinner; i++) {
       colors.push(WINNER_COLOR_STR);
     }
-    for (let i = 0; i < divisionData.numAutoPromo; i++) {
+    for (let i = 0; i < division.numAutoPromo; i++) {
       colors.push(PROMO_COLOR_STR);
     }
-    for (let i = 0; i < divisionData.numPlayoffPromo; i++) {
+    for (let i = 0; i < division.numPlayoffPromo; i++) {
       colors.push(PLAYOFF_PROMO_COLOR_STR);
     }
     for (let i = 0; i < numUnchanged; i++) {
       colors.push(BACKGROUND_COLOR_STR);
     }
-    for (let i = 0; i < divisionData.numPlayoffRelegate; i++) {
+    for (let i = 0; i < division.numPlayoffRelegate; i++) {
       colors.push(PLAYOFF_RELEGATE_COLOR_STR);
     }
-    for (let i = 0; i < divisionData.numAutoRelegate; i++) {
+    for (let i = 0; i < division.numAutoRelegate; i++) {
       colors.push(RELEGATE_COLOR_STR);
     }
     return colors;
@@ -102,7 +103,7 @@ class Division extends Component {
           <tbody>
             {/* Title row */}
             <tr>
-              <th className="Division-title" colSpan="10">
+              <th className="Division-title" colSpan={10}>
                 Division {this.props.data.divisionName}
               </th>
             </tr>
@@ -170,66 +171,90 @@ class Division extends Component {
             {/* Make a row for each player, looping through the data */}
             {playerList.map((player, index) => {
               const overallPromoChance =
-                player.autoPromoChance + 0.5 * player.playoffRelegationChance;
+                player.autoPromoChance + 0.5 * player.playoffPromoChance;
               const overallRelegationChance =
                 player.autoRelegationChance +
                 0.5 * player.playoffRelegationChance;
               return (
-                <tr
-                  key={index}
-                  style={{
-                    backgroundColor: rowColors[index]
-                  }}
-                >
-                  <td className="Extra-padding-left">{index + 1}</td>
-                  <td className="No-wrap">{player.name}</td>
-                  <td>
-                    {player.mp} / {totalMatchesInSeason}
-                  </td>
-                  <td>
-                    {player.wins} - {player.losses}
-                  </td>
-                  <td>
-                    {player.gf} - {player.ga}
-                  </td>
-                  <td>{player.gd}</td>
-                  <td>
-                    <PenaltyPointsEditor
-                      isAdmin={this.props.isAdmin}
-                      existingPenaltyPoints={player.penaltyPoints}
-                      isEditingPenaltyPoints={this.props.isEditingPenaltyPoints}
-                      refreshFunction={this.props.refreshFunction}
-                      playerName={player.name}
-                      divisionName={this.props.data.divisionName}
-                    />
-                  </td>
-                  <td>{player.points}</td>
-                  <td
-                    className="Simulation-data-cell"
+                <React.Fragment>
+                  <tr
+                    key={index}
+                    className="Player-main-row"
                     style={{
-                      backgroundColor:
-                        this.props.data.divisionName === "1"
-                          ? divisionColorUtil.getWinGradientColor(
-                              overallPromoChance
-                            )
-                          : divisionColorUtil.getPromoGradientColor(
-                              overallPromoChance
-                            )
+                      backgroundColor: rowColors[index]
                     }}
                   >
-                    {this.renderPercentage(overallPromoChance)}
-                  </td>
-                  <td
-                    className="Simulation-data-cell"
+                    <td className="Extra-padding-left">{index + 1}</td>
+                    <td className="No-wrap">{player.name}</td>
+                    <td>
+                      {player.mp} / {totalMatchesInSeason}
+                    </td>
+                    <td>
+                      {player.wins} - {player.losses}
+                    </td>
+                    <td>
+                      {player.gf} - {player.ga}
+                    </td>
+                    <td>{player.gd}</td>
+                    <td>
+                      <PenaltyPointsEditor
+                        isAdmin={this.props.isAdmin}
+                        existingPenaltyPoints={player.penaltyPoints}
+                        isEditingPenaltyPoints={
+                          this.props.isEditingPenaltyPoints
+                        }
+                        refreshFunction={this.props.refreshFunction}
+                        playerName={player.name}
+                        divisionName={this.props.data.divisionName}
+                      />
+                    </td>
+                    <td>{player.points}</td>
+                    <td
+                      className="Simulation-data-cell"
+                      style={{
+                        backgroundColor:
+                          this.props.data.divisionName === "1"
+                            ? divisionColorUtil.getWinGradientColor(
+                                overallPromoChance
+                              )
+                            : divisionColorUtil.getPromoGradientColor(
+                                overallPromoChance
+                              )
+                      }}
+                    >
+                      {this.renderPercentage(overallPromoChance)}
+                    </td>
+                    <td
+                      className="Simulation-data-cell"
+                      style={{
+                        backgroundColor: divisionColorUtil.getRelegationGradientColor(
+                          overallRelegationChance
+                        )
+                      }}
+                    >
+                      {this.renderPercentage(overallRelegationChance)}
+                    </td>
+                  </tr>
+
+                  {/* Expandible row with additional stats and info */}
+                  <tr
+                    key={index}
                     style={{
-                      backgroundColor: divisionColorUtil.getRelegationGradientColor(
-                        overallRelegationChance
-                      )
+                      backgroundColor: "#ddd"
                     }}
                   >
-                    {this.renderPercentage(overallRelegationChance)}
-                  </td>
-                </tr>
+                    <td className="Player-opponents-left" colSpan={5}>
+                      This is where upcoming opponents go
+                    </td>
+                    <td className="Player-advanced-stats" colSpan={5}>
+                      <PlayerAdvancedStats
+                        playerData={player}
+                        renderPercentageFunc={this.renderPercentage}
+                        division={this.props.data}
+                      />
+                    </td>
+                  </tr>
+                </React.Fragment>
               );
             })}
           </tbody>
