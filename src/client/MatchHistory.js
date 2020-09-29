@@ -8,9 +8,9 @@ class MatchHistory extends Component {
   constructor() {
     super();
     this.state = {
-      selectedDivison: ALL_DIVISIONS
+      selecteddivision: ALL_DIVISIONS
     };
-    this.onDivisonChanged = this.onDivisonChanged.bind(this);
+    this.ondivisionChanged = this.ondivisionChanged.bind(this);
     this.getFilteredMatchList = this.getFilteredMatchList.bind(this);
   }
 
@@ -52,11 +52,11 @@ class MatchHistory extends Component {
   }
 
   getFilteredMatchList() {
-    if (this.state.selectedDivison === ALL_DIVISIONS) {
+    if (this.state.selecteddivision === ALL_DIVISIONS) {
       return this.props.matchList;
     }
     return this.props.matchList.filter(
-      match => match.division === this.state.selectedDivison
+      match => match.division === this.state.selecteddivision
     );
   }
 
@@ -67,9 +67,9 @@ class MatchHistory extends Component {
     );
   }
 
-  onDivisonChanged(event) {
+  ondivisionChanged(event) {
     this.setState({
-      selectedDivison: event.target.value
+      selecteddivision: event.target.value
     });
   }
 
@@ -80,7 +80,7 @@ class MatchHistory extends Component {
       <div className="Match-history">
         <div className="Match-history-title">
           <span>Match History</span>
-          <select className="Division-select" onChange={this.onDivisonChanged}>
+          <select className="Division-select" onChange={this.ondivisionChanged}>
             <option>{ALL_DIVISIONS}</option>
             {this.props.divisionList.map(divisionName => {
               return <option>{divisionName}</option>;

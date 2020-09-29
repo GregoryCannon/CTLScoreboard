@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./PenaltyPointsEditor.css";
-const util = require("../server/util");
+const util = require("../../server/util");
 
 class PenaltyPointsEditor extends Component {
   constructor(props) {

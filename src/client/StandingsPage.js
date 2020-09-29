@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReportingPanel from "./ReportingPanel";
 import MatchHistory from "./MatchHistory";
-import Division from "./Division";
+import Division from "./division/Division";
 import "./StandingsPage.css";
 const util = require("../server/util");
 

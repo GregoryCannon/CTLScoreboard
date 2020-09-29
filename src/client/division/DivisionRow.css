@@ -1,0 +1,6 @@
+.Expandible-content {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  transition: max-height 0.5s;
+}

@@ -5,7 +5,7 @@ function PlayerAdvancedStats(props) {
   return (
     <React.Fragment>
       <h4>Advanced Stats</h4>
-      Division Win Chance: {props.renderPercentageFunc(0)}
+      Division Win Chance: IMPLEMENT ME PLSSSSSSSSS
       <br />
       <br />
       Placement Odds:

@@ -16,8 +16,9 @@
   color: white !important;
 }
 
-.Division th,
-.Division td {
+.Division-row-headings th,
+.Division-title,
+.Player-main-row td {
   padding: 0.6vw 0.3vw;
 }
 
