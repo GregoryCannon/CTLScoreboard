@@ -1,6 +1,10 @@
 .Expandible-content {
   display: flex;
   flex-direction: row;
-  align-items: stretch;
-  transition: max-height 0.5s;
+  align-items: center;
+  transition: max-height 0.5s ease-out;
+}
+
+.Expandible-content > * {
+  flex-grow: 1;
 }

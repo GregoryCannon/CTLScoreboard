@@ -117,7 +117,7 @@ class DivisionRow extends Component {
             <div
               className="Expandible-content"
               style={{
-                maxHeight: this.state.isOpen ? "none" : "0",
+                maxHeight: this.state.isOpen ? "30vh" : "0",
                 overflow: "hidden"
               }}
             >
