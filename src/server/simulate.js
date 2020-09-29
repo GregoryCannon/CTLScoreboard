@@ -2,7 +2,7 @@ const util = require("./util");
 const adjustedProbability = require("./adjusted-probability");
 const clinchChecker = require("./clinch-checker");
 
-const NUM_ITERATIONS = 20000;
+const NUM_ITERATIONS = 200;
 // Whether or not to adjust players' simulated winrates based on their performance so far
 const USE_ADJUSTED_PROBABILITIES = true;
 
@@ -15,22 +15,24 @@ function simulateOneIteration(division, matchSchedule, resultCounts) {
   const startOfSeasonCloneDivision = JSON.parse(JSON.stringify(division));
 
   const divisionStandings = simulationCloneDivision.standings;
-  const startOfSimPlayerLookup = util.getPlayerLookupMap(startOfSeasonCloneDivision);
+  const startOfSimPlayerLookup = util.getPlayerLookupMap(
+    startOfSeasonCloneDivision
+  );
 
   // Loop through the match schedule and pick random winners
   for (const match of matchSchedule) {
-    const playerName1 = match.playerName1;
-    const playerName2 = match.playerName2;
-    const playerData1 = util.getPlayerData(divisionStandings, playerName1);
-    const playerData2 = util.getPlayerData(divisionStandings, playerName2);
+    const homePlayerName = match.homePlayerName;
+    const awayPlayerName = match.awayPlayerName;
+    const playerData1 = util.getPlayerData(divisionStandings, homePlayerName);
+    const playerData2 = util.getPlayerData(divisionStandings, awayPlayerName);
 
     // Pick a match result
     let winner, loser, loserGames;
     if (USE_ADJUSTED_PROBABILITIES) {
       // Use statistical analysis for more accurate simulation
       const result = adjustedProbability.getMatchResult(
-        playerName1,
-        playerName2,
+        homePlayerName,
+        awayPlayerName,
         startOfSimPlayerLookup
       );
       winner = result.player1Win ? playerData1 : playerData2;
@@ -39,8 +41,8 @@ function simulateOneIteration(division, matchSchedule, resultCounts) {
     } else {
       // Old method (all matches 50/50)
       const randWinIndex = Math.floor(Math.random() * 2);
-      const winnerName = [playerName1, playerName2][randWinIndex];
-      const loserName = [playerName1, playerName2][1 - randWinIndex];
+      const winnerName = [homePlayerName, awayPlayerName][randWinIndex];
+      const loserName = [homePlayerName, awayPlayerName][1 - randWinIndex];
       winner = util.getPlayerData(divisionStandings, winnerName);
       loser = util.getPlayerData(divisionStandings, loserName);
       loserGames = Math.floor(Math.random() * 3);
@@ -105,20 +107,20 @@ function playersHaveEquivalentUpcomingMatches(
   matchSchedule
 ) {
   const player1Schedule = matchSchedule.filter(
-    x => x.playerName1 === player1.name || x.playerName2 === player1.name
+    x => x.homePlayerName === player1.name || x.awayPlayerName === player1.name
   );
   const player2Schedule = matchSchedule.filter(
-    x => x.playerName1 === player2.name || x.playerName2 === player2.name
+    x => x.homePlayerName === player2.name || x.awayPlayerName === player2.name
   );
   const mwdList1 = player1Schedule.map(x => {
     const opponentName =
-      x.playerName1 === player1.name ? x.playerName2 : x.playerName1;
+      x.homePlayerName === player1.name ? x.awayPlayerName : x.homePlayerName;
     const opponent = util.getPlayerData(division.standings, opponentName);
     return player1.wins - player1.losses - (opponent.wins - opponent.losses);
   });
   const mwdList2 = player2Schedule.map(x => {
     const opponentName =
-      x.playerName1 === player2.name ? x.playerName2 : x.playerName1;
+      x.homePlayerName === player2.name ? x.awayPlayerName : x.homePlayerName;
     const opponent = util.getPlayerData(division.standings, opponentName);
     return player2.wins - player2.losses - (opponent.wins - opponent.losses);
   });

@@ -329,54 +329,42 @@ const sampleMatchData = [
   }
 ];
 
-function countMatchesPlayed(playerName1, playerName2, divMatches) {
-  let count = 0;
-  for (let i = 0; i < divMatches.length; i++) {
-    const match = divMatches[i];
-    if (
-      (match.winner === playerName1 && match.loser === playerName2) ||
-      (match.loser === playerName1 && match.winner === playerName2)
-    ) {
-      count += 1;
-    }
-  }
-  return count;
-}
-
+/**
+ * Get a schedule of unplayed matches for the current season.
+ * @param {division Object} division
+ * @param {List<match object>} divMatches
+ * @returns {List<{homePlayerName, awayPlayerName}}
+ */
 function getMatchSchedule(division, divMatches) {
   const matchSchedule = [];
+  const playedMatchSet = new Set();
 
-  // Get all matchups
+  // Convert the list of played matches to a set
+  for (const match of divMatches) {
+    const homePlayer = match.winner_home ? match.winner : match.loser;
+    const awayPlayer = match.winner_home ? match.loser : match.winner;
+    playedMatchSet.add(homePlayer + awayPlayer); // Make the key by concatting the two players
+  }
+
   for (let i = 0; i < division.players.length; i++) {
     for (let j = 0; j < division.players.length; j++) {
-      const playerName1 = division.players[i];
-      const playerName2 = division.players[j];
-      // Toss out matches vs. yourself or not in alphabetical order (to not double count)
-      if (playerName1 >= playerName2) {
+      const homePlayerName = division.players[i];
+      const awayPlayerName = division.players[j];
+      // Ignore pairings vs. yourself
+      if (homePlayerName == awayPlayerName) {
         continue;
       }
 
-      // Check how many matches that pair has played
-      const numLeftToPlay =
-        2 - countMatchesPlayed(playerName1, playerName2, divMatches);
-      for (let k = 0; k < numLeftToPlay; k++) {
-        matchSchedule.push({ playerName1, playerName2 });
+      if (!playedMatchSet.has(homePlayerName + awayPlayerName)) {
+        matchSchedule.push({
+          homePlayerName,
+          awayPlayerName
+        });
       }
     }
   }
 
   return matchSchedule;
-}
-
-/**
- * Convert a list of player objects to a map from playerName -> player object
- */
-function getPlayerLookupMap(division){
-  const map = {};
-  for (const player of division.standings){
-    map[player.name] = player;
-  }
-  return map;
 }
 
 /* Comparison function for sorting the players 
@@ -443,6 +431,24 @@ function getPlayerData(list, playerName) {
     }
   }
   // console.log("Unable to find player ", playerName, "in list:\n", list);
+}
+
+/**
+ * Convert a list of player objects to a map from playerName -> player object
+ */
+function getPlayerLookupMap(division) {
+  const map = {};
+  for (const player of division.standings) {
+    map[player.name] = player;
+  }
+  return map;
+}
+
+/**
+ * Get the upcoming schedules for every player in the division
+ */
+function getUpcomingSchedules(division) {
+  const map = {};
 }
 
 function getApiUrl(suffix) {
