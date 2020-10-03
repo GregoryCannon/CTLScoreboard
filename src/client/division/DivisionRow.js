@@ -1,6 +1,7 @@
+import React, { Component } from "react";
 import PenaltyPointsEditor from "./PenaltyPointsEditor";
 import PlayerAdvancedStats from "./PlayerAdvancedStats";
-import React, { Component } from "react";
+import PlayerOpponents from "./PlayerOpponents";
 const divisionColorUtil = require("./division-color-util");
 import "./DivisionRow.css";
 
@@ -9,7 +10,6 @@ class DivisionRow extends Component {
     super(props);
 
     this.state = {
-      isOpen: false,
       isHovered: false
     };
 
@@ -40,7 +40,11 @@ class DivisionRow extends Component {
   }
 
   toggleOpen() {
-    this.setState({ isOpen: !this.state.isOpen });
+    // Set the currently open row in the parent to this row
+    this.props.setExpandedPlayerFunc(
+      this.props.player.name,
+      this.props.data.divisionName
+    );
   }
 
   setIsHovered(isHovered) {
@@ -54,6 +58,11 @@ class DivisionRow extends Component {
     const overallRelegationChance =
       this.props.player.autoRelegationChance +
       0.5 * this.props.player.playoffRelegationChance;
+
+    const isOpen =
+      this.props.expandedPlayerRow.divisionName ===
+        this.props.data.divisionName &&
+      this.props.expandedPlayerRow.playerName === this.props.player.name;
 
     return (
       <React.Fragment>
@@ -125,13 +134,17 @@ class DivisionRow extends Component {
             <div
               className="Expandible-content"
               style={{
-                maxHeight: this.state.isOpen ? "30vh" : "0",
-                borderWidth: this.state.isOpen ? "1px" : "0",
-                borderColor: this.state.isOpen ? "#888f" : "#8880"
+                maxHeight: isOpen ? "30vh" : "0",
+                borderWidth: isOpen ? "1px" : "0",
+                borderColor: isOpen ? "#888f" : "#8880"
               }}
             >
               <div className="Player-opponents-left">
-                This is where upcoming opponents go
+                <PlayerOpponents
+                  scheduleInfo={
+                    this.props.divisionScheduleInfo[this.props.player.name]
+                  }
+                />
               </div>
               <div className="Player-advanced-stats">
                 <PlayerAdvancedStats

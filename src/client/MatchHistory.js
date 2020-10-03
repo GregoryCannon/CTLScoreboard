@@ -75,7 +75,6 @@ class MatchHistory extends Component {
 
   render() {
     const filteredMatchList = this.getFilteredMatchList();
-    console.log("divisionList", this.props.divisionList);
     return (
       <div className="Match-history">
         <div className="Match-history-title">

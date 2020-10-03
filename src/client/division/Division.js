@@ -54,6 +54,9 @@ class Division extends Component {
     } else {
       playerList.sort(util.compareSimulated);
     }
+    if (this.props.data.divisionName == "2") {
+      console.log(playerList.map(x => x.name));
+    }
 
     // Calculate other constants
     const divName = this.props.data.divisionName;
@@ -68,6 +71,12 @@ class Division extends Component {
     */
     const divAtStartOfTier =
       !isNaN(divName) || divName[1] === "A" || divName[1] === "a";
+
+    // Calculate lists of players played and upcoming matches for each player
+    const divisionScheduleInfo = util.getPlayerScheduleInfo(
+      this.props.data,
+      this.props.matchList
+    );
 
     return (
       <div
@@ -94,6 +103,7 @@ class Division extends Component {
                   {...this.props}
                   index={index}
                   player={player}
+                  divisionScheduleInfo={divisionScheduleInfo}
                   bgColor={rowColors[index]}
                   totalMatchesInSeason={totalMatchesInSeason}
                 />

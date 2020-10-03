@@ -8,6 +8,15 @@ const util = require("../server/util");
 class StandingsPage extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      expandedPlayerRow: {
+        divisionName: "",
+        playerName: ""
+      }
+    };
+
+    this.setExpandedPlayer = this.setExpandedPlayer.bind(this);
   }
 
   getPages() {
@@ -24,6 +33,15 @@ class StandingsPage extends Component {
     return pages;
   }
 
+  setExpandedPlayer(playerName, divisionName) {
+    this.setState({
+      expandedPlayerRow: {
+        divisionName,
+        playerName
+      }
+    });
+  }
+
   render() {
     return (
       <div className="Standings-container">
@@ -37,8 +55,11 @@ class StandingsPage extends Component {
                   sortBy={this.props.sortBy}
                   isAdmin={this.props.isAdmin}
                   setSortBy={this.props.setSortBy}
+                  expandedPlayerRow={this.state.expandedPlayerRow}
                   isEditingPenaltyPoints={this.props.isEditingPenaltyPoints}
                   refreshFunction={this.props.refreshFunction}
+                  setExpandedPlayerFunc={this.setExpandedPlayer}
+                  matchList={this.props.matchList}
                 />
               ))}
             </div>

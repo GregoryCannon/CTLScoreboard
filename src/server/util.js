@@ -367,6 +367,81 @@ function getMatchSchedule(division, divMatches) {
   return matchSchedule;
 }
 
+function formatMatchResultForPlayer(match, playerName) {
+  return match.winner === playerName
+    ? match.winner_games + "-" + match.loser_games
+    : match.loser_games + "-" + match.winner_games;
+}
+
+/**
+ * Get the upcoming schedules for every player in the division
+ */
+function getPlayerScheduleInfo(division, matchList) {
+  const resultsMap = {};
+
+  // A map from homePlayer -> awayPlayer -> match data object
+  const playedMatchMap = new Map();
+  // Use string concatenation to make the keys
+  const getKey = (player1Name, player2Name) => player1Name + "," + player2Name;
+
+  // Convert the list of played matches to a set
+  const divMatches = matchList.filter(match => {
+    return match.division == division.divisionName;
+  });
+  for (const match of divMatches) {
+    const homePlayerName = match.winner_home ? match.winner : match.loser;
+    const awayPlayerName = match.winner_home ? match.loser : match.winner;
+    playedMatchMap.set(getKey(homePlayerName, awayPlayerName), match);
+  }
+
+  // Create the played/schedule lists
+  const sortedPlayerList = [...division.players];
+  sortedPlayerList.sort();
+  for (const player of sortedPlayerList) {
+    const playedList = [];
+    const unplayedList = [];
+
+    for (const opponent of sortedPlayerList) {
+      if (opponent === player) {
+        continue;
+      }
+
+      const homeKey = getKey(player, opponent);
+      const awayKey = getKey(opponent, player);
+      const playedAtHome = playedMatchMap.has(homeKey);
+      const playedAway = playedMatchMap.has(awayKey);
+      const homeResult =
+        playedAtHome &&
+        formatMatchResultForPlayer(playedMatchMap.get(homeKey), player);
+      const awayResult =
+        playedAway &&
+        formatMatchResultForPlayer(playedMatchMap.get(awayKey), player);
+
+      if (playedAtHome && playedAway) {
+        playedList.push({
+          opponent,
+          extraInfo: " (" + homeResult + ", " + awayResult + ")"
+        });
+      } else if (playedAtHome && !playedAway) {
+        playedList.push({ opponent, extraInfo: " (" + homeResult + ")" });
+        unplayedList.push({ opponent, extraInfo: " (Away)" });
+      } else if (playedAway && !playedAtHome) {
+        playedList.push({ opponent, extraInfo: " (" + awayResult + ")" });
+        unplayedList.push({ opponent, extraInfo: " (Home)" });
+      } else {
+        unplayedList.push({ opponent, extraInfo: " (2 sets)" });
+      }
+    }
+
+    resultsMap[player] = {
+      playedList,
+      unplayedList
+    };
+  }
+
+  return resultsMap;
+}
+
 /* Comparison function for sorting the players 
    Official ordering according to moodeuce is "GD>MW>GF>H2H>some other thing"
    This function will sort according to Points > GD > MW > GF, then there has to be
@@ -395,10 +470,22 @@ function compareRaw(player1, player2) {
 /* Comparison function to sort players based on their simulation data. */
 function compareSimulated(player1, player2) {
   // Round to whole number
-  const p1Promo = parseFloat(player1.promoChance).toFixed(0);
-  const p1Rel = parseFloat(player1.relegationChance).toFixed(0);
-  const p2Promo = parseFloat(player2.promoChance).toFixed(0);
-  const p2Rel = parseFloat(player2.relegationChance).toFixed(0);
+  const p1Promo = (
+    player1.autoPromoChance +
+    0.5 * player1.playoffPromoChance
+  ).toFixed(0);
+  const p1Rel = (
+    player1.autoRelegationChance +
+    0.5 * player1.playoffRelegationChance
+  ).toFixed(0);
+  const p2Promo = (
+    player2.autoPromoChance +
+    0.5 * player2.playoffPromoChance
+  ).toFixed(0);
+  const p2Rel = (
+    player2.autoRelegationChance +
+    0.5 * player2.playoffRelegationChance
+  ).toFixed(0);
 
   // Ideally, sort based on (promo %) - (rel %)
   // If it's significantly different between the two players, sort by that
@@ -442,15 +529,6 @@ function getPlayerLookupMap(division) {
     map[player.name] = player;
   }
   return map;
-}
-
-/**
- * Get the upcoming schedules for every player in the division
- */
-function getUpcomingSchedules(division) {
-  const map = {};
-  for (const player of division.standings) {
-  }
 }
 
 function getApiUrl(suffix) {
@@ -557,6 +635,7 @@ module.exports = {
   compareSimulated,
   getPlayerData,
   getMatchSchedule,
+  getPlayerScheduleInfo,
   getPlayerLookupMap,
   getApiUrl,
   getDiscordMainChannel,
