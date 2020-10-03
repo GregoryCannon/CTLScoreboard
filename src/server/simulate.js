@@ -78,6 +78,9 @@ function simulateOneIteration(division, matchSchedule, resultCounts) {
   const numPromo = division.numAutoPromo + division.numPlayoffPromo;
   const numRelegate = division.numPlayoffRelegate + division.numAutoRelegate;
 
+  // Division title
+  resultCounts.divisionWin[divisionStandings[0].name] += 1;
+
   // Auto promo or win
   for (let i = 0; i < division.numAutoPromo + division.numWinner; i++) {
     resultCounts.autoPromo[divisionStandings[i].name] += 1;
@@ -154,7 +157,8 @@ function playerFullyTied(player1, player2, division, matchSchedule) {
   }
 }
 
-/** Find all clusters of players with the same states, and make them have the same simulation stats. */
+/** Find all clusters of players with the same states, and make them have the same
+ * simulation stats. */
 function correctForVariance(division, matchSchedule) {
   const playerList = division.standings;
 
@@ -163,8 +167,8 @@ function correctForVariance(division, matchSchedule) {
   for (const currentPlayer of playerList) {
     let foundCluster = false;
     // Check if it matches any of the clusters
-    for (let c = 0; c < clusters.length; c++) {
-      const clusterFirstPlayer = clusters[c][0];
+    for (const cluster of clusters) {
+      const clusterFirstPlayer = cluster[0];
       if (
         playerFullyTied(
           currentPlayer,
@@ -174,7 +178,7 @@ function correctForVariance(division, matchSchedule) {
         )
       ) {
         foundCluster = 1;
-        clusters[c].push(currentPlayer);
+        cluster.push(currentPlayer);
       }
     }
 
@@ -190,22 +194,26 @@ function correctForVariance(division, matchSchedule) {
     let playoffPromoTotal = 0;
     let autoRelTotal = 0;
     let playoffRelTotal = 0;
+    let divisionWinTotal = 0;
     for (player of cluster) {
       autoPromoTotal += parseFloat(player.autoPromoChance);
       playoffPromoTotal += parseFloat(player.playoffPromoChance);
       autoRelTotal += parseFloat(player.autoRelegationChance);
       playoffRelTotal += parseFloat(player.playoffRelegationChance);
+      divisionWinTotal += parseFloat(player.divisionWinChance);
     }
     const normalizedAutoPromo = autoPromoTotal / cluster.length;
     const normalizedPlayoffPromo = playoffPromoTotal / cluster.length;
     const normalizedAutoRel = autoRelTotal / cluster.length;
     const normalizedPlayoffRel = playoffRelTotal / cluster.length;
+    const normalizedDivisionWin = divisionWinTotal / cluster.length;
 
     for (player of cluster) {
       player.autoPromoChance = normalizedAutoPromo;
       player.playoffPromoChance = normalizedPlayoffPromo;
       player.autoRelegationChance = normalizedAutoRel;
       player.playoffRelegationChance = normalizedPlayoffRel;
+      player.divisionWinChance = normalizedDivisionWin;
     }
   }
 }
@@ -232,6 +240,7 @@ function assignChancesToPlayers(resultCounts, division) {
       resultCounts,
       player
     );
+    player.divisionWinChance = getChance("divisionWin", resultCounts, player);
   }
 }
 

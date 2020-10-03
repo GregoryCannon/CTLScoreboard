@@ -252,6 +252,26 @@ function didClinchNonPlayoffRelegation(player, division) {
   );
 }
 
+function didClinchDivisionWin(player, division) {
+  return checkClinch(
+    StandingsSpot.TOP,
+    GuaranteeType.GUARANTEE_TRUE,
+    1,
+    player,
+    division
+  );
+}
+
+function didClinchNonDivisionWin(player, division) {
+  return checkClinch(
+    StandingsSpot.TOP,
+    GuaranteeType.GUARANTEE_FALSE,
+    1,
+    player,
+    division
+  );
+}
+
 /**
  * (Main function used externally)
  *
@@ -271,7 +291,7 @@ function checkClinchesForDivision(division) {
     // To have 0% auto-promo, must have clinched not-auto-promo (or have 0 autopromo spots)
     if (
       player.autoPromoChance === 0 &&
-      !(division.numAutoPromo === 0 || !didClinchNonAutoPromo(player, division))
+      !(division.numAutoPromo === 0 || didClinchNonAutoPromo(player, division))
     ) {
       player.autoPromoChance = CORRECTION_MARGIN;
     }
@@ -336,6 +356,21 @@ function checkClinchesForDivision(division) {
     ) {
       player.playoffRelegationChance = CORRECTION_MARGIN;
     }
+
+    // To have 100% division win, must have clinched division win
+    if (
+      player.divisionWinChance === 100 &&
+      !didClinchDivisionWin(player, division)
+    ) {
+      player.divisionWinChance = 100 - CORRECTION_MARGIN;
+    }
+    // To have 0% division win, must have clinched not-division-win
+    if (
+      player.divisionWinChance === 0 &&
+      !didClinchNonDivisionWin(player, division)
+    ) {
+      player.divisionWinChance = CORRECTION_MARGIN;
+    }
   }
 }
 
@@ -350,5 +385,7 @@ module.exports = {
   didClinchAutoRelegation,
   didClinchPlayoffRelegation,
   didClinchNonAutoRelegation,
-  didClinchNonPlayoffRelegation
+  didClinchNonPlayoffRelegation,
+  didClinchDivisionWin,
+  didClinchNonDivisionWin
 };

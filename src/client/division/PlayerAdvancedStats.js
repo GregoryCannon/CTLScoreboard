@@ -5,13 +5,16 @@ function PlayerAdvancedStats(props) {
   return (
     <React.Fragment>
       <h4>Advanced Stats</h4>
-      Division Win Chance: AAAAAA%
-      <br />
-      <br />
+      {props.division.numWinner === 0 && (
+        <div className="Stats-win-chance">
+          Division Win Chance:{" "}
+          {props.renderPercentageFunc(props.playerData.autoPromoChance)}
+        </div>
+      )}
       Placement Odds:
       <table>
         {props.division.numAutoPromo + props.division.numWinner > 0 && (
-          <tr>
+          <tr className="Stats-auto-promo">
             <td>
               {props.division.divisionName === "1" ? "Winner" : "Auto-Promo"}
             </td>
@@ -22,7 +25,7 @@ function PlayerAdvancedStats(props) {
         )}
 
         {props.division.numPlayoffPromo > 0 && (
-          <tr>
+          <tr className="Stats-playoff-promo">
             <td>Playoff Promo</td>
             <td>
               {props.renderPercentageFunc(props.playerData.playoffPromoChance)}
@@ -30,7 +33,7 @@ function PlayerAdvancedStats(props) {
           </tr>
         )}
 
-        <tr>
+        <tr className="Stats-unchanged">
           <td>Unchanged</td>
           <td>
             {props.renderPercentageFunc(
@@ -44,7 +47,7 @@ function PlayerAdvancedStats(props) {
         </tr>
 
         {props.division.numPlayoffRelegate > 0 && (
-          <tr>
+          <tr className="Stats-playoff-relegation">
             <td>Playoff Relegation</td>
             <td>
               {props.renderPercentageFunc(
@@ -55,7 +58,7 @@ function PlayerAdvancedStats(props) {
         )}
 
         {props.division.numAutoRelegate > 0 && (
-          <tr>
+          <tr className="Stats-auto-relegation">
             <td>Auto-Relegation</td>
             <td>
               {props.renderPercentageFunc(

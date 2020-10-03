@@ -1,8 +1,20 @@
+.Player-main-row:hover {
+  cursor: pointer;
+  position: relative;
+}
+
+.Expandible-container {
+  background: rgb(239 250 255);
+}
+
 .Expandible-content {
   display: flex;
   flex-direction: row;
   align-items: center;
-  transition: max-height 0.5s ease-out;
+  overflow: hidden;
+  transition: max-height 0.35s ease-out, border-color 0.35s ease-out;
+  border-top: 1px solid rgb(136, 136, 136);
+  border-bottom: 1px solid rgb(136, 136, 136);
 }
 
 .Expandible-content > * {

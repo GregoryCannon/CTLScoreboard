@@ -449,6 +449,8 @@ function getPlayerLookupMap(division) {
  */
 function getUpcomingSchedules(division) {
   const map = {};
+  for (const player of division.standings) {
+  }
 }
 
 function getApiUrl(suffix) {

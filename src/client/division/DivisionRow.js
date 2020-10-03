@@ -9,10 +9,12 @@ class DivisionRow extends Component {
     super(props);
 
     this.state = {
-      isOpen: false
+      isOpen: false,
+      isHovered: false
     };
 
     this.toggleOpen = this.toggleOpen.bind(this);
+    this.setIsHovered = this.setIsHovered.bind(this);
   }
 
   renderPercentage(percentChance) {
@@ -41,6 +43,10 @@ class DivisionRow extends Component {
     this.setState({ isOpen: !this.state.isOpen });
   }
 
+  setIsHovered(isHovered) {
+    this.setState({ isHovered: isHovered });
+  }
+
   render() {
     const overallPromoChance =
       this.props.player.autoPromoChance +
@@ -56,9 +62,13 @@ class DivisionRow extends Component {
           key={this.props.index}
           className="Player-main-row"
           style={{
-            backgroundColor: this.props.bgColor
+            backgroundColor: this.state.isHovered
+              ? "rgb(239 250 255)"
+              : this.props.bgColor
           }}
           onClick={this.toggleOpen}
+          onMouseEnter={() => this.setIsHovered(true)}
+          onMouseLeave={() => this.setIsHovered(false)}
         >
           <td className="Extra-padding-left">{this.props.index + 1}</td>
           <td className="No-wrap">{this.props.player.name}</td>
@@ -86,10 +96,11 @@ class DivisionRow extends Component {
           <td
             className="Simulation-data-cell"
             style={{
-              backgroundColor:
-                this.props.data.divisionName === "1"
-                  ? divisionColorUtil.getWinGradientColor(overallPromoChance)
-                  : divisionColorUtil.getPromoGradientColor(overallPromoChance)
+              backgroundColor: this.state.isHovered
+                ? "rgb(239 250 255)"
+                : this.props.data.divisionName === "1"
+                ? divisionColorUtil.getWinGradientColor(overallPromoChance)
+                : divisionColorUtil.getPromoGradientColor(overallPromoChance)
             }}
           >
             {this.renderPercentage(overallPromoChance)}
@@ -97,9 +108,11 @@ class DivisionRow extends Component {
           <td
             className="Simulation-data-cell"
             style={{
-              backgroundColor: divisionColorUtil.getRelegationGradientColor(
-                overallRelegationChance
-              )
+              backgroundColor: this.state.isHovered
+                ? "rgb(239 250 255)"
+                : divisionColorUtil.getRelegationGradientColor(
+                    overallRelegationChance
+                  )
             }}
           >
             {this.renderPercentage(overallRelegationChance)}
@@ -107,18 +120,14 @@ class DivisionRow extends Component {
         </tr>
 
         {/* Expandible row with additional stats and info */}
-        <tr
-          key={this.props.index}
-          style={{
-            backgroundColor: "#ddd"
-          }}
-        >
+        <tr className="Expandible-container" key={this.props.index}>
           <td colSpan={10} style={{ padding: "0" }}>
             <div
               className="Expandible-content"
               style={{
                 maxHeight: this.state.isOpen ? "30vh" : "0",
-                overflow: "hidden"
+                borderWidth: this.state.isOpen ? "1px" : "0",
+                borderColor: this.state.isOpen ? "#888f" : "#8880"
               }}
             >
               <div className="Player-opponents-left">
