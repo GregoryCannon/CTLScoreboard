@@ -10,13 +10,9 @@
 .Expandible-content {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   overflow: hidden;
   transition: max-height 0.35s ease-out, border-color 0.35s ease-out;
   border-top: 1px solid rgb(136, 136, 136);
   border-bottom: 1px solid rgb(136, 136, 136);
-}
-
-.Expandible-content > * {
-  flex-grow: 1;
 }

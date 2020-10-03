@@ -3,7 +3,7 @@ import React from "react";
 
 function PlayerOpponents(props) {
   return (
-    <div className="Opponents-root">
+    <div className="Player-opponents">
       <div className="Flex-panel">
         <h4>Played Matches</h4>
         {props.scheduleInfo.playedList.map(entry => (

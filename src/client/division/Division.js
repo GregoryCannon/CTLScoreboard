@@ -98,9 +98,14 @@ class Division extends Component {
 
             {/* Make a row for each player, looping through the data */}
             {playerList.map((player, index) => {
+              const isOpen =
+                this.props.expandedPlayerRow.divisionName ===
+                  this.props.data.divisionName &&
+                this.props.expandedPlayerRow.playerName === player.name;
               return (
                 <DivisionRow
                   {...this.props}
+                  isOpen={isOpen}
                   index={index}
                   player={player}
                   divisionScheduleInfo={divisionScheduleInfo}

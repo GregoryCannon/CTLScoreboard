@@ -1,11 +1,13 @@
-.Opponents-root {
-  padding: 10px;
+.Player-opponents {
   display: flex;
   flex-direction: row;
+  padding: 0.5em 2em;
+  flex: 3;
 }
 
 .Flex-panel {
   padding: 0 2em;
+  flex-grow: 1;
 }
 
 h4 {

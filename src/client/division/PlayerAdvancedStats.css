@@ -1,6 +1,7 @@
 .Player-advanced-stats {
   text-align: left;
-  padding: 0.7vw 4vw 1.2vw !important;
+  padding: 0.5em 2em !important;
+  flex: 2;
 }
 
 .Player-advanced-stats h4 {
@@ -17,7 +18,7 @@
   margin-left: 3vw;
 }
 
-.Stats-win-chance {
+.Stats-winner {
   background: #ffec34;
 }
 .Stats-auto-promo {

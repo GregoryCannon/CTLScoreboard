@@ -3,10 +3,10 @@ import React from "react";
 
 function PlayerAdvancedStats(props) {
   return (
-    <React.Fragment>
+    <div className="Player-advanced-stats">
       <h4>Advanced Stats</h4>
       {props.division.numWinner === 0 && (
-        <div className="Stats-win-chance">
+        <div className="Stats-winner">
           Division Win Chance:{" "}
           {props.renderPercentageFunc(props.playerData.autoPromoChance)}
         </div>
@@ -14,7 +14,7 @@ function PlayerAdvancedStats(props) {
       Placement Odds:
       <table>
         {props.division.numAutoPromo + props.division.numWinner > 0 && (
-          <tr className="Stats-auto-promo">
+          <tr className={props.division.divisionName === "1" ? "Stats-winner" : "Stats-auto-promo"}>
             <td>
               {props.division.divisionName === "1" ? "Winner" : "Auto-Promo"}
             </td>
@@ -68,7 +68,7 @@ function PlayerAdvancedStats(props) {
           </tr>
         )}
       </table>
-    </React.Fragment>
+    </div>
   );
 }
 
