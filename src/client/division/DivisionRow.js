@@ -134,9 +134,7 @@ class DivisionRow extends Component {
             <div
               className="Expandible-content"
               style={{
-                maxHeight: this.props.isOpen ? "30vh" : "0",
-                borderWidth: this.props.isOpen ? "1px" : "0",
-                borderColor: this.props.isOpen ? "#888f" : "#8880"
+                maxHeight: this.props.isOpen ? "30vh" : "0"
               }}
             >
               <PlayerOpponents
