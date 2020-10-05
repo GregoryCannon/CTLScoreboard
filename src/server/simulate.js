@@ -54,11 +54,11 @@ function simulateOneIteration(division, matchSchedule, resultCounts) {
     winner["wins"] += 1;
     winner["gf"] += 3;
     winner["ga"] += loserGames;
-    winner["points"] += 4;
+    winner["points"] += util.calculatePointsWon(true, loserGames);
     loser["losses"] += 1;
     loser["gf"] += loserGames;
     loser["ga"] += 3;
-    loser["points"] += loserGames;
+    loser["points"] += util.calculatePointsWon(false, loserGames);
     // console.log("new winner points:", winner.points)
     // console.log("new loser points:", loser.points)
   }

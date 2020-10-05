@@ -42,11 +42,11 @@ function computeRawStandings(matchData, penaltyPoints) {
       winner["wins"] += 1;
       winner["gf"] += match.winner_games;
       winner["ga"] += match.loser_games;
-      winner["points"] += 4;
+      winner["points"] += util.calculatePointsWon(true, match.loser_games);
       loser["losses"] += 1;
       loser["gf"] += match.loser_games;
       loser["ga"] += match.winner_games;
-      loser["points"] += match.loser_games;
+      loser["points"] += util.calculatePointsWon(false, match.loser_games);
     }
 
     // Handle penalty points

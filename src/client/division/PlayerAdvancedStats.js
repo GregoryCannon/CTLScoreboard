@@ -14,7 +14,13 @@ function PlayerAdvancedStats(props) {
       Placement Odds:
       <table>
         {props.division.numAutoPromo + props.division.numWinner > 0 && (
-          <tr className={props.division.divisionName === "1" ? "Stats-winner" : "Stats-auto-promo"}>
+          <tr
+            className={
+              props.division.divisionName === "1"
+                ? "Stats-winner"
+                : "Stats-auto-promo"
+            }
+          >
             <td>
               {props.division.divisionName === "1" ? "Winner" : "Auto-Promo"}
             </td>
