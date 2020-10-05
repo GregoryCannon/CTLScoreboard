@@ -138,7 +138,9 @@ function playerFullyTied(player1, player2, division, matchSchedule) {
     // they have no games played or the same opponent schedule
     return (
       player1.wins + player1.losses + player2.wins + player2.losses == 0 ||
-      (player1.points === player2.points && player1.gd === player2.gd && player1.wins === player2.wins &&
+      (player1.points === player2.points &&
+        player1.gd === player2.gd &&
+        player1.wins === player2.wins &&
         player1.losses === player2.losses &&
         playersHaveEquivalentUpcomingMatches(
           player1,

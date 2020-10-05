@@ -8,7 +8,7 @@ function PlayerAdvancedStats(props) {
       {props.division.numWinner === 0 && (
         <div className="Stats-winner">
           Division Win Chance:{" "}
-          {props.renderPercentageFunc(props.playerData.autoPromoChance)}
+          {props.renderPercentageFunc(props.playerData.divisionWinChance)}
         </div>
       )}
       Placement Odds:
