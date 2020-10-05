@@ -2,7 +2,7 @@ const util = require("./util");
 const adjustedProbability = require("./adjusted-probability");
 const clinchChecker = require("./clinch-checker");
 
-const NUM_ITERATIONS = 200;
+const NUM_ITERATIONS = 20000;
 // Whether or not to adjust players' simulated winrates based on their performance so far
 const USE_ADJUSTED_PROBABILITIES = true;
 
