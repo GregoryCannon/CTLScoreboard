@@ -72,7 +72,7 @@ const divisionData = [
     numWinner: 0,
     numAutoPromo: 2,
     numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
+    numPlayoffRelegate: 2,
     numAutoRelegate: 0,
     players: [
       "Noel",
@@ -139,7 +139,7 @@ const divisionData = [
     numWinner: 0,
     numAutoPromo: 1,
     numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
+    numPlayoffRelegate: 2,
     numAutoRelegate: 0,
     players: [
       "fatsam",
@@ -270,7 +270,7 @@ const divisionData = [
     numPlayoffPromo: 2,
     numPlayoffRelegate: 0,
     numAutoRelegate: 0,
-    players: ["Slayer", "Shame", "Elpailtem", "SirMaser", "Ard", "DSS"]
+    players: ["Chris Foryst", "SirMaser", "DSS", "Fluffy", "Ard", "Diamond", "VLXX", "PlutoCrashed"]
   }
 ];
 
