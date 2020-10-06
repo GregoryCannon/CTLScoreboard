@@ -21,7 +21,7 @@ class StandingsPage extends Component {
 
   getPages() {
     let pages = [];
-    const PAGE_SIZES = [3, 3, 4, 4, 3];
+    const PAGE_SIZES = [3, 4, 4, 4, 3];
     const divData = this.props.divisionData;
 
     let i = 0;
