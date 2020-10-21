@@ -80,8 +80,7 @@ const divisionData = [
       "Alwin",
       "TetrisTime",
       "Micetro",
-      "Tugi",
-      "Louie"
+      "Tugi"
     ]
   },
   {
@@ -223,7 +222,6 @@ const divisionData = [
       "c-dubs",
       "Peyton",
       "swinemeeper",
-      "Slayer",
       "jack13berry",
       "Harry",
       "wide"
