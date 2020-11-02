@@ -110,7 +110,6 @@ const divisionData = [
     numAutoRelegate: 0,
     players: [
       "Resting",
-      "GrannyPanPan",
       "Mleczak",
       "timmykim915",
       "Longboy",
