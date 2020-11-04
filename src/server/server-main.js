@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 
 // Database config
 const monk = require("monk");
-const db = monk(process.env.MONGODB_URI || "localhost:27017/ctl-matches");
+const db = monk(process.env.DB_URI || "localhost:27017/ctl-matches");
 const matchListDb = db.get("matchList"); // List of matches in JSON form
 const penaltyDb = db.get("penalty"); // List of players and their penalty points
 
