@@ -452,13 +452,13 @@ function compareRaw(player1, player2) {
   if (player2.points !== player1.points) {
     return player2.points - player1.points;
   }
-  // Higher GD first
-  if (player2.gd !== player1.gd) {
-    return player2.gd - player1.gd;
-  }
   // Higher Matches Won first
   if (player2.wins !== player1.wins) {
     return player2.wins - player1.wins;
+  }
+  // Higher GD first
+  if (player2.gd !== player1.gd) {
+    return player2.gd - player1.gd;
   }
   // Higher GF first
   if (player2.gf !== player1.gf) {
