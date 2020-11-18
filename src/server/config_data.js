@@ -271,7 +271,7 @@ const divisionData = [
   }
 ];
 
-const adminRole = ["GregBoomCannon#4087", "moodeuce#8573", "Kingsman#0364"];
+const adminRole = ["GregBoomCannon#4087", "moodeuce#8573", "Kingsman#0364", "Tugi#7004"];
 
 const restreamerRole = [
   "moodeuce#8573",
