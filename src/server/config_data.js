@@ -373,7 +373,8 @@ const restreamerRole = [
   "wike#3985",
   "peyton#1996",
   "Vernie#0857",
-  "odinn cube horse#1009"
+  "odinn cube horse#1009",
+  "odinn group masturbator#1009"
 ];
 
 module.exports = {
