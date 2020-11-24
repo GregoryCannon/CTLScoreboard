@@ -69,7 +69,7 @@ const divisionData = [
   {
     divisionName: "4B",
     numWinner: 0,
-    numAutoPromo: 2,
+    numAutoPromo: 1,
     numPlayoffPromo: 1,
     numPlayoffRelegate: 2,
     numAutoRelegate: 0,
