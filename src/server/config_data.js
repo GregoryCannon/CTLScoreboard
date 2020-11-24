@@ -7,7 +7,6 @@ const divisionData = [
     numPlayoffRelegate: 1,
     numAutoRelegate: 1,
     players: [
-      "CheeZ_Fish",
       "HydrantDude",
       "Benjy",
       "Bubble",
