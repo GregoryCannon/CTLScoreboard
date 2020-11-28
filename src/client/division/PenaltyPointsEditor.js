@@ -39,7 +39,7 @@ class PenaltyPointsEditor extends Component {
     const requestBody = {
       player: this.props.playerName,
       points: numPoints,
-      divisionName: this.props.divisionName
+      divisionName: this.props.divisionName,
     };
     request.send(JSON.stringify(requestBody));
   }
@@ -55,7 +55,7 @@ class PenaltyPointsEditor extends Component {
       );
     } else {
       // Standard view for non-admins
-      return <div>{this.props.existingPenaltyPoints}</div>;
+      return <div>{Math.round(this.props.existingPenaltyPoints)}</div>;
     }
   }
 }
