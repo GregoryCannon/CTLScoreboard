@@ -12,8 +12,8 @@ class StandingsPage extends Component {
     this.state = {
       expandedPlayerRow: {
         divisionName: "",
-        playerName: ""
-      }
+        playerName: "",
+      },
     };
 
     this.setExpandedPlayer = this.setExpandedPlayer.bind(this);
@@ -21,7 +21,7 @@ class StandingsPage extends Component {
 
   getPages() {
     let pages = [];
-    const PAGE_SIZES = [3, 4, 4, 4, 3];
+    const PAGE_SIZES = [4, 4, 4, 4, 4, 2];
     const divData = this.props.divisionData;
 
     let i = 0;
@@ -37,8 +37,8 @@ class StandingsPage extends Component {
     this.setState({
       expandedPlayerRow: {
         divisionName,
-        playerName
-      }
+        playerName,
+      },
     });
   }
 
@@ -78,7 +78,7 @@ class StandingsPage extends Component {
             <MatchHistory
               matchList={this.props.matchList}
               divisionList={this.props.divisionData.map(
-                division => division.divisionName
+                (division) => division.divisionName
               )}
               refreshFunction={this.props.refreshFunction}
               isAdmin={this.props.isAdmin}
