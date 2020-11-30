@@ -353,7 +353,7 @@ const divisionData = [
     ],
   },
   {
-    divisionName: "8A",
+    divisionName: "8B",
     numWinner: 0,
     numAutoPromo: 0,
     numPlayoffPromo: 2,
