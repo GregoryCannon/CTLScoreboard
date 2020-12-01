@@ -474,7 +474,8 @@ const restreamerRole = [
   "odinn group masturbator#1009",
   "💖FLUFFY!💖#5443",
   "Sleepy Samantha#0639",
-  "shane#9017"
+  "shane#9017",
+  "BirbWizard#9396",
 ];
 
 module.exports = {
