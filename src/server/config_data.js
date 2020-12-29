@@ -106,7 +106,6 @@ const divisionData = [
       "Night",
       "Felinho",
       "remmedy",
-      "Giovanni",
       "ETFruitNinja",
       "Dillan",
     ],
