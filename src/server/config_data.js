@@ -346,7 +346,6 @@ const divisionData = [
       "DSS",
       "Chris Foryst",
       "PlutoCrashed",
-      "Parcheesi",
       "xile",
       "niiwo",
     ],
@@ -358,7 +357,7 @@ const divisionData = [
     numPlayoffPromo: 2,
     numPlayoffRelegate: 0,
     numAutoRelegate: 0,
-    players: ["Ard", "Diamond", "VLXX", "TimeLocked", "Fouad Z", "gbrm8"],
+    players: ["Ard", "Diamond", "TimeLocked", "Fouad Z", "gbrm8"],
   },
 ];
 
