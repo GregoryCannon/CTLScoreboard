@@ -471,7 +471,6 @@ const restreamerRole = [
   "odinn cube horse#1009",
   "odinn group masturbator#1009",
   "💖FLUFFY!💖#5443",
-  "Sleepy Samantha#0639",
   "shane#9017",
   "BirbWizard#9396",
   "ard1998#1561",
@@ -482,7 +481,8 @@ const restreamerRole = [
   "MörköS#1433",
   "Scamper9#6772",
   "Iceblade73#7051",
-  "Damian-GDudge(UTC+1)#9821"
+  "Damian-GDudge(UTC+1)#9821",
+  "Spooky Samantha#1111"
 ];
 
 module.exports = {
