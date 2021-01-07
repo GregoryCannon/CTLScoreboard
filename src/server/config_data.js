@@ -69,7 +69,6 @@ const divisionData = [
     numAutoRelegate: 0,
     players: [
       "Alex",
-      "Nolan",
       "666_tim",
       "Alejo",
       "GregBoomCannon",
@@ -459,7 +458,6 @@ const restreamerRole = [
   "sixfour#0130",
   "kooliooolio#1009",
   "poopyoldhag#7229",
-  "eggmaster#3750",
   "Oscar._#6774",
   "Heist#9462",
   "Cwiiis#7703",
