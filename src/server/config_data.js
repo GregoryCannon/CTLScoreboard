@@ -133,12 +133,10 @@ const divisionData = [
     numAutoPromo: 1,
     numPlayoffPromo: 2,
     numPlayoffRelegate: 1,
-    numAutoRelegate: 1,
+    numAutoRelegate: 0,
     players: [
       "Michu",
-      "Future",
       "Longboy",
-      "Vischer",
       "Jordan",
       "Steven598",
       "Skib",
