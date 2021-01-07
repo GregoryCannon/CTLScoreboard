@@ -354,7 +354,7 @@ const divisionData = [
     numPlayoffPromo: 2,
     numPlayoffRelegate: 0,
     numAutoRelegate: 0,
-    players: ["Ard", "Diamond", "TimeLocked", "Fouad Z", "gbrm8"],
+    players: ["Ard", "Diamond", "TimeLocked", "Fouad Z"],
   },
 ];
 
