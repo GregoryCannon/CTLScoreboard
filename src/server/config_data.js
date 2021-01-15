@@ -5,10 +5,9 @@ const divisionData = [
     numAutoPromo: 0,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 1,
-    numAutoRelegate: 2,
+    numAutoRelegate: 1,
     players: [
-      "Richard",
-      "Jakegames2",
+      "Richard",  
       "HydrantDude",
       "Phamtom",
       "Ben",
