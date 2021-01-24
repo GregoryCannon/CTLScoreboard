@@ -357,7 +357,7 @@ const divisionData = [
     ],
   },
   {
-    divisionName: "8A",
+    divisionName: "8B",
     numWinner: 0,
     numAutoPromo: 0,
     numPlayoffPromo: 2,
@@ -473,7 +473,6 @@ const restreamerRole = [
   "sixfour#0130",
   "kooliooolio#1009",
   "poopyoldhag#7229",
-  "eggmaster#3750",
   "Oscar._#6774",
   "Heist#9462",
   "Cwiiis#7703",
@@ -485,6 +484,19 @@ const restreamerRole = [
   "odinn cube horse#1009",
   "odinn group masturbator#1009",
   "💖FLUFFY!💖#5443",
+  "shane#9017",
+  "BirbWizard#9396",
+  "ard1998#1561",
+  "Zabby#2618",
+  "Mr.Faq#3684",
+  "Mecex#6833",
+  "Apparently Glont#7898",
+  "MörköS#1433",
+  "Scamper9#6772",
+  "Iceblade73#7051",
+  "Damian-GDudge(UTC+1)#9821",
+  "Spooky Samantha#8502",
+  "dhks0915#7525",
 ];
 
 module.exports = {
