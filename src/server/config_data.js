@@ -380,6 +380,7 @@ const adminRole = [
   "moodeuce#8573",
   "Kingsman#0364",
   "Tugi#7004",
+  "BlargMeister#1337",
 ];
 
 const restreamerRole = [
@@ -444,7 +445,6 @@ const restreamerRole = [
   "night#4546",
   "SaltedSofa12#8996",
   "Opaux (Ben)#6969",
-  "BlargMeister#1337",
   "digginout#1394",
   "GDudge(UTC+2)#9821",
   "opaux#6969",
