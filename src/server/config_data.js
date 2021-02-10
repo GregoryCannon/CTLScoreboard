@@ -103,7 +103,7 @@ const divisionData = [
     numPlayoffPromo: 1,
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
-    players: ["Redshurt", "moodeuce", "Resting", "Aki", "Skib", "Mack"],
+    players: ["Redshurt", "moodeuce", "Resting", "Skib", "Mack"],
   },
 
   {
