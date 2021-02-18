@@ -43,7 +43,7 @@ const divisionData = [
     numPlayoffPromo: 1,
     numPlayoffRelegate: 2,
     numAutoRelegate: 0,
-    players: ["Eren", "Doge", "noodle", "Micetro", "Alex", "Aurora"],
+    players: ["Eren", "Doge", "noodle", "Micetro", "Alex"],
   },
   {
     divisionName: "3B",
