@@ -363,8 +363,7 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 3,
     players: [
-      "PrinceFluffy",
-      "Luminia",
+      "PrinceFluffy",     
       "mingo",
       "PlutoCrashed",
       "Dobry Czlowiek",
