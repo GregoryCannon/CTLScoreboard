@@ -67,8 +67,7 @@ const divisionData = [
       "Nevanator",
       "Rapta",
       "Trapzone",
-      "Longboy",
-      "oldtapp3r",
+      "Longboy",      
     ],
   },
   {
