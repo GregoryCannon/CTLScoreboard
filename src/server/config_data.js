@@ -455,7 +455,7 @@ const restreamerRole = [
   "timmykim915#7525",
   "Reykon#3817",
   "Ipiecevibes#6809",
-  "Frank (SirMaser🌳)#1453",
+  "SirMaser#1453",
   "Hepps#2169",
   "Nevanator2005#7984",
   "mil0-#1281",
