@@ -499,7 +499,8 @@ const restreamerRole = [
   "odinn group maxouter#1009",
   "scoopman#0111",
   "wide#8069",
-  "Grand Designs#3638"
+  "Grand Designs#3638",
+  "TetrisMasterRafał#0598"
 ];
 
 module.exports = {
