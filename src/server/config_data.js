@@ -501,7 +501,8 @@ const restreamerRole = [
   "wide#8069",
   "Grand Designs#3638",
   "TetrisMasterRafał#0598",
-  "NDDK#8648"
+  "NDDK#8648",
+  "Marle#4641"
 ];
 
 module.exports = {
