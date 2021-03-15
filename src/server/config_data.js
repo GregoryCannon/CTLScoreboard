@@ -375,7 +375,7 @@ const divisionData = [
     numWinner: 0,
     numAutoPromo: 2,
     numPlayoffPromo: 2,
-    numPlayoffRelegate: 2,
+    numPlayoffRelegate: 0,
     numAutoRelegate: 0,
     players: [
       "saymyname",
