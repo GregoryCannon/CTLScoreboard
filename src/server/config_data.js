@@ -395,6 +395,7 @@ const adminRole = [
   "moodeuce#8573",
   "Kingsman#0364",
   "Tugi#7004",
+  "BlargMeister#1337",
 ];
 
 const restreamerRole = [
@@ -459,7 +460,6 @@ const restreamerRole = [
   "night#4546",
   "SaltedSofa12#8996",
   "Opaux (Ben)#6969",
-  "BlargMeister#1337",
   "digginout#1394",
   "GDudge(UTC+2)#9821",
   "opaux#6969",
@@ -475,7 +475,7 @@ const restreamerRole = [
   "timmykim915#7525",
   "Reykon#3817",
   "Ipiecevibes#6809",
-  "Frank (SirMaser🌳)#7316",
+  "SirMaser#1453",
   "Hepps#2169",
   "Nevanator2005#7984",
   "mil0-#1281",
@@ -498,7 +498,7 @@ const restreamerRole = [
   "Vernie#0857",
   "odinn cube horse#1009",
   "odinn group masturbator#1009",
-  "💖FLUFFY!💖#5443",
+  "💖La Madeline💖#5443",
   "shane#9017",
   "BirbWizard#9396",
   "ard1998#1561",
@@ -512,6 +512,17 @@ const restreamerRole = [
   "Damian-GDudge(UTC+1)#9821",
   "Spooky Samantha#8502",
   "dhks0915#7525",
+  "Rhubarb#1508",
+  "20Dan03#4783",
+  "Jakub#4491",
+  "thatguywearingblue#7417",
+  "odinn group maxouter#1009",
+  "scoopman#0111",
+  "wide#8069",
+  "Grand Designs#3638",
+  "TetrisMasterRafał#0598",
+  "NDDK#8648",
+  "Marle#4641",
 ];
 
 module.exports = {
