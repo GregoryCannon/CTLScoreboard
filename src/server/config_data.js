@@ -501,7 +501,7 @@ const restreamerRole = [
   "💖La Madeline💖#5443",
   "shane#9017",
   "BirbWizard#9396",
-  "ard1998#1561",
+  "RIVAL | Ard#1561",
   "Zabby#2618",
   "Mr.Faq#3684",
   "Mecex#6833",
