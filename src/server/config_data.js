@@ -384,7 +384,6 @@ const divisionData = [
       "Freeman",
       "Sakurion",
       "Edward D",
-      "Zubats",
     ],
   },
 ];
