@@ -36,7 +36,7 @@ function simulateWorstSeasonForPlayer(division, targetPlayer) {
     } else {
       // Best case for all others
       const toPlay = matchesPerSeason - loopPlayer.mp;
-      loopPlayer.points += toPlay * 4;
+      loopPlayer.points += toPlay * 7;
       loopPlayer.gd += toPlay * 3;
       loopPlayer.gf += toPlay * 3;
       loopPlayer.ga += 0; // for clarity
@@ -75,7 +75,7 @@ function simulateBestSeasonForPlayer(division, targetPlayer) {
     } else {
       // Best case for target player
       const toPlay = matchesPerSeason - loopPlayer.mp;
-      loopPlayer.points += toPlay * 4;
+      loopPlayer.points += toPlay * 7;
       loopPlayer.gd += toPlay * 3;
       loopPlayer.gf += toPlay * 3;
       loopPlayer.ga += 0; // for clarity
