@@ -515,7 +515,7 @@ const restreamerRole = [
   "20Dan03#4783",
   "Jakub#4491",
   "thatguywearingblue#7417",
-  "odinn group maxouter#1009",
+  "odinn group mastubator#1009",
   "scoopman#0111",
   "wide#8069",
   "Grand Designs#3638",
