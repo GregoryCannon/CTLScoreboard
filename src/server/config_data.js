@@ -365,7 +365,6 @@ const divisionData = [
       "penguinpanic",
       "Kirbyrulz",
       "Cardek",
-      "Shulphuric",
       "TimeLocked",
       "Samantha",
     ],
