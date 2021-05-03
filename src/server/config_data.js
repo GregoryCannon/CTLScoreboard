@@ -86,14 +86,7 @@ const divisionData = [
     numPlayoffPromo: 1,
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
-    players: [
-      "Vischer",
-      "moodeuce",
-      "poopyoldhag",
-      "Mao Shizhong",
-      "666_tim",
-      "Bill"
-    ]
+    players: ["Mleczak", "Scamper9", "ALEX_H", "Johann", "J", "Heist"]
   },
   {
     divisionName: "4C",
@@ -360,9 +353,7 @@ const divisionData = [
       "Freeman",
       "Richard Wolf VI",
       "MrShadow",
-      "Ryososto",
-      "Fluffy",
-      "Vacuus"
+      "Ryososto"
     ]
   }
 ];
