@@ -9,7 +9,7 @@ import {
   BrowserRouter as Router,
   Link,
   Route,
-  Redirect,
+  Redirect
 } from "react-router-dom";
 import { SortBy } from "../server/util.js";
 import Cookies from "js-cookie";
@@ -30,10 +30,10 @@ class App extends Component {
       currentPage: "standings",
       sortBy: SortBy.simulation,
       discordIdentity: "",
-      privilegeLevel: "",
+      privilegeLevel: ""
     };
 
-    this.logInToDiscordFromCookies().then((discordInfo) => {
+    this.logInToDiscordFromCookies().then(discordInfo => {
       this.updateSortByState(discordInfo);
     });
 
@@ -66,14 +66,14 @@ class App extends Component {
         "discord-api/validate",
         {
           discordIdentity: discordIdentity,
-          discordIdentitySignature: discordIdentitySignature,
+          discordIdentitySignature: discordIdentitySignature
         }
       );
 
       if (jsonResponse.valid) {
         return {
           discordIdentity: jsonResponse.discordIdentity,
-          privilegeLevel: jsonResponse.privilegeLevel,
+          privilegeLevel: jsonResponse.privilegeLevel
         };
       } else {
         alert("Your saved login is invalid. Please log in with Discord again.");
@@ -82,7 +82,7 @@ class App extends Component {
     }
     return {
       discordIdentity: "",
-      privilegeLevel: "",
+      privilegeLevel: ""
     };
   }
 
@@ -100,7 +100,7 @@ class App extends Component {
     this.setState({
       sortBy: sortBy,
       discordIdentity: discordInfo.discordIdentity,
-      privilegeLevel: discordInfo.privilegeLevel,
+      privilegeLevel: discordInfo.privilegeLevel
     });
   }
 
@@ -113,7 +113,7 @@ class App extends Component {
 
   toggleEditPenaltyPoints() {
     this.setState({
-      isEditingPenaltyPoints: !this.state.isEditingPenaltyPoints,
+      isEditingPenaltyPoints: !this.state.isEditingPenaltyPoints
     });
   }
 
@@ -186,7 +186,7 @@ class App extends Component {
       this.setState({
         ...this.state,
         divisionData: newDivisionData,
-        isFetchingStandings: false,
+        isFetchingStandings: false
       });
     }.bind(this);
 
@@ -205,7 +205,7 @@ class App extends Component {
       this.setState({
         ...this.state,
         matchList: newMatchList,
-        isFetchingMatches: false,
+        isFetchingMatches: false
       });
     }.bind(this);
 
@@ -227,7 +227,7 @@ class App extends Component {
               visibility:
                 this.state.isFetchingStandings || this.state.isFetchingMatches
                   ? "visible"
-                  : "hidden",
+                  : "hidden"
             }}
           >
             <div className="Loading-background" />
@@ -305,15 +305,15 @@ class App extends Component {
 
           <Route
             path="/standings"
-            render={(props) => (
+            render={props => (
               <StandingsPage
                 {...props}
                 divisionData={this.state.divisionData}
                 matchList={this.state.matchList}
                 sortBy={this.state.sortBy}
-                setSortBy={(val) => {
+                setSortBy={val => {
                   this.setState({
-                    sortBy: val,
+                    sortBy: val
                   });
                   Cookies.set("sortBy", val);
                 }}
@@ -328,12 +328,12 @@ class App extends Component {
 
           <Route
             path="/results"
-            render={(props) => <ResultsPage matchList={this.state.matchList} />}
+            render={props => <ResultsPage matchList={this.state.matchList} />}
           />
 
           <Route
             path="/fixtures"
-            render={(props) => (
+            render={props => (
               <FixturesPage
                 divisionData={this.state.divisionData}
                 matchList={this.state.matchList}

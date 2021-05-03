@@ -39,7 +39,7 @@ class PenaltyPointsEditor extends Component {
     const requestBody = {
       player: this.props.playerName,
       points: numPoints,
-      divisionName: this.props.divisionName,
+      divisionName: this.props.divisionName
     };
     request.send(JSON.stringify(requestBody));
   }
