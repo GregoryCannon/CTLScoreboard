@@ -86,7 +86,14 @@ const divisionData = [
     numPlayoffPromo: 1,
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
-    players: ["Mleczak", "Scamper9", "ALEX_H", "Johann", "J", "Heist"]
+    players: [
+      "Mleczak",
+      "Scamper9",
+      "ALEX_H",
+      "Johann",
+      "J",
+      "Heist"
+    ]
   },
   {
     divisionName: "4C",
