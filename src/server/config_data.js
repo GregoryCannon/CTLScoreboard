@@ -87,12 +87,12 @@ const divisionData = [
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
-      "Vischer",
-      "moodeuce",
-      "poopyoldhag",
-      "Mao Shizhong",
-      "666_tim",
-      "Bill"
+      "Mleczak",
+      "Scamper9",
+      "ALEX_H",
+      "Johann",
+      "J",
+      "Heist"
     ]
   },
   {
