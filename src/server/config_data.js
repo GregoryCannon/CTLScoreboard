@@ -360,9 +360,7 @@ const divisionData = [
       "Freeman",
       "Richard Wolf VI",
       "MrShadow",
-      "Ryososto",
-      "Fluffy",
-      "Vacuus"
+      "Ryososto"
     ]
   }
 ];
