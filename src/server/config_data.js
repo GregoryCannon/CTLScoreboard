@@ -493,7 +493,7 @@ const restreamerRole = [
   "thatguywearingblue#7417",
   "odinn group mastubator#1009",
   "scoopman#0111",
-  "wide#8069",
+  "wide#5258",
   "Grand Designs#3638",
   "TetrisMasterRafał#0598",
   "NDDK#8648",
