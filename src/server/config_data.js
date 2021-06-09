@@ -255,8 +255,7 @@ const divisionData = [
       "Justus",
       "pissarse",
       "LilSquibbles",
-      "sablen",
-      "poulfa"
+      "sablen"
     ]
   },
   {
