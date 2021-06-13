@@ -518,7 +518,8 @@ const restreamerRole = [
   "Bowser Tb#2424",
   "ian.capalot#0008",
   "🇦🇷Joacozep#0518",
-  "yeehawmckickass#4099"
+  "yeehawmckickass#4099",
+  "Dobry_Czlowiek#6510"
 ];
 
 module.exports = {
