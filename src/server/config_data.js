@@ -437,7 +437,7 @@ const restreamerRole = [
   "GDudge(UTC+2)#9821",
   "opaux#6969",
   "TotallyCalculatingPoet#8979",
-  "semilogo777#0302",
+  "Semilogo777#0302",
   "TotalRadNES#2445",
   "Trapzone707#2614",
   "ちどり#2119",
