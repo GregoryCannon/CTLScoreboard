@@ -54,14 +54,12 @@ class Division extends Component {
     } else {
       playerList.sort(util.compareSimulated);
     }
-    if (this.props.data.divisionName == "2") {
-      console.log(playerList.map(x => x.name));
-    }
 
     // Calculate other constants
     const divName = this.props.data.divisionName;
     let rowColors = this.getRowColors(this.props.data);
-    const totalMatchesInSeason = (playerList.length - 1) * 2;
+    const totalMatchesInSeason =
+      (playerList.length - 1) * (this.props.data.oneMatchPerPair ? 1 : 2);
 
     /*
     Divide the divisions into blocks by number.

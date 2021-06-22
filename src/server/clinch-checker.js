@@ -19,7 +19,8 @@ function simulateWorstSeasonForPlayer(division, targetPlayer) {
   const cloneDivision = JSON.parse(JSON.stringify(division));
   const divisionStandings = cloneDivision.standings;
 
-  const matchesPerSeason = (divisionStandings.length - 1) * 2;
+  const matchesPerSeason =
+    (divisionStandings.length - 1) * (division.oneMatchPerPair ? 1 : 2);
 
   for (let p = 0; p < divisionStandings.length; p++) {
     loopPlayer = divisionStandings[p];
@@ -58,7 +59,8 @@ function simulateBestSeasonForPlayer(division, targetPlayer) {
   const cloneDivision = JSON.parse(JSON.stringify(division));
   const divisionStandings = cloneDivision.standings;
 
-  const matchesPerSeason = (divisionStandings.length - 1) * 2;
+  const matchesPerSeason =
+    (divisionStandings.length - 1) * (division.oneMatchPerPair ? 1 : 2);
 
   for (let p = 0; p < divisionStandings.length; p++) {
     loopPlayer = divisionStandings[p];

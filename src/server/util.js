@@ -1,7 +1,7 @@
 const moment = require("moment");
 
 // CHANGE THIS WHEN DEBUGGING
-const IS_PRODUCTION = true;
+const IS_PRODUCTION = false;
 
 const memeDivisionData = [
   {
@@ -329,6 +329,12 @@ const sampleMatchData = [
   }
 ];
 
+/** Checks if player names are in alphabetical order.
+ * Used to pick which of the two matches to do for a pairing of players in divisions where each pair plays only once. */
+function matchShouldHappen(name1, name2) {
+  return name1 < name2;
+}
+
 /**
  * Get a schedule of unplayed matches for the current season.
  * @param {division Object} division
@@ -355,7 +361,12 @@ function getMatchSchedule(division, divMatches) {
         continue;
       }
 
-      if (!playedMatchSet.has(homePlayerName + awayPlayerName)) {
+      if (
+        !playedMatchSet.has(homePlayerName + awayPlayerName) &&
+        (!division.oneMatchPerPair ||
+          (matchShouldHappen(homePlayerName, awayPlayerName) &&
+            !playedMatchSet.has(awayPlayerName + homePlayerName)))
+      ) {
         matchSchedule.push({
           homePlayerName,
           awayPlayerName
@@ -417,19 +428,32 @@ function getPlayerScheduleInfo(division, matchList) {
         playedAway &&
         formatMatchResultForPlayer(playedMatchMap.get(awayKey), player);
 
-      if (playedAtHome && playedAway) {
-        playedList.push({
-          opponent,
-          extraInfo: " (" + homeResult + ", " + awayResult + ")"
-        });
-      } else if (playedAtHome && !playedAway) {
-        playedList.push({ opponent, extraInfo: " (" + homeResult + ")" });
-        unplayedList.push({ opponent, extraInfo: " (Away)" });
-      } else if (playedAway && !playedAtHome) {
-        playedList.push({ opponent, extraInfo: " (" + awayResult + ")" });
-        unplayedList.push({ opponent, extraInfo: " (Home)" });
+      if (division.oneMatchPerPair) {
+        // Division where each pair plays only once, home/away not relevant
+        if (playedAtHome || playedAway) {
+          playedList.push({
+            opponent,
+            extraInfo: " (" + (homeResult || awayResult) + ")"
+          });
+        } else {
+          unplayedList.push({ opponent, extraInfo: " (1 set)" });
+        }
       } else {
-        unplayedList.push({ opponent, extraInfo: " (2 sets)" });
+        // Division where each pair plays twice, with home/away
+        if (playedAtHome && playedAway) {
+          playedList.push({
+            opponent,
+            extraInfo: " (" + homeResult + ", " + awayResult + ")"
+          });
+        } else if (playedAtHome && !playedAway) {
+          playedList.push({ opponent, extraInfo: " (" + homeResult + ")" });
+          unplayedList.push({ opponent, extraInfo: " (Away)" });
+        } else if (playedAway && !playedAtHome) {
+          playedList.push({ opponent, extraInfo: " (" + awayResult + ")" });
+          unplayedList.push({ opponent, extraInfo: " (Home)" });
+        } else {
+          unplayedList.push({ opponent, extraInfo: " (2 sets)" });
+        }
       }
     }
 
