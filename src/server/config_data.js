@@ -351,7 +351,7 @@ const divisionData = [
       "jack13berry",
       "mistec43",
       "Billy Mac",
-      "mil0",
+      "mil0-",
       "Cwiekoszczak",
       "Insaniso",
       "tourist106"
