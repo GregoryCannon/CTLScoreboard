@@ -21,7 +21,7 @@ class Division extends Component {
     const numUnchanged =
       numTotal -
       division.numWinner -
-      division.numPrizeMoney -
+      (division.numPrizeMoney || 0) -
       division.numAutoPromo -
       division.numPlayoffPromo -
       division.numPlayoffRelegate -
