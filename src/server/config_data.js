@@ -6,7 +6,7 @@ const divisionData = [
     numAutoPromo: 0,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
+    numAutoRelegate: 2,
     players: [
       "Huffulufugus",
       "dog",
@@ -27,10 +27,10 @@ const divisionData = [
     divisionName: "2",
     oneMatchPerPair: true,
     numWinner: 0,
-    numAutoPromo: 1,
+    numAutoPromo: 2,
     numPlayoffPromo: 1,
     numPlayoffRelegate: 2,
-    numAutoRelegate: 0,
+    numAutoRelegate: 2,
     players: [
       "Sidnev",
       "Sofa",
@@ -50,10 +50,10 @@ const divisionData = [
   {
     divisionName: "3A",
     numWinner: 0,
-    numAutoPromo: 2,
+    numAutoPromo: 1,
     numPlayoffPromo: 1,
     numPlayoffRelegate: 2,
-    numAutoRelegate: 1,
+    numAutoRelegate: 0,
     players: [
       "Scamper9",
       "Guerrero",
@@ -68,10 +68,10 @@ const divisionData = [
   {
     divisionName: "3B",
     numWinner: 0,
-    numAutoPromo: 2,
+    numAutoPromo: 1,
     numPlayoffPromo: 1,
     numPlayoffRelegate: 2,
-    numAutoRelegate: 1,
+    numAutoRelegate: 0,
     players: [
       "Tetra",
       "Mleczak",
@@ -87,7 +87,7 @@ const divisionData = [
   {
     divisionName: "4A",
     numWinner: 0,
-    numAutoPromo: 1,
+    numAutoPromo: 2,
     numPlayoffPromo: 1,
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
@@ -104,7 +104,7 @@ const divisionData = [
   {
     divisionName: "4B",
     numWinner: 0,
-    numAutoPromo: 1,
+    numAutoPromo: 2,
     numPlayoffPromo: 1,
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
@@ -121,7 +121,7 @@ const divisionData = [
   {
     divisionName: "4C",
     numWinner: 0,
-    numAutoPromo: 1,
+    numAutoPromo: 2,
     numPlayoffPromo: 1,
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
@@ -130,7 +130,7 @@ const divisionData = [
   {
     divisionName: "4D",
     numWinner: 0,
-    numAutoPromo: 1,
+    numAutoPromo: 2,
     numPlayoffPromo: 1,
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
@@ -148,10 +148,10 @@ const divisionData = [
   {
     divisionName: "5A",
     numWinner: 0,
-    numAutoPromo: 1,
+    numAutoPromo: 2,
     numPlayoffPromo: 1,
     numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
+    numAutoRelegate: 1,
     players: [
       "Remmy",
       "jeo",
@@ -166,10 +166,10 @@ const divisionData = [
   {
     divisionName: "5B",
     numWinner: 0,
-    numAutoPromo: 1,
+    numAutoPromo: 2,
     numPlayoffPromo: 1,
     numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
+    numAutoRelegate: 1,
     players: [
       "Maddy",
       "Peyton",
@@ -183,10 +183,10 @@ const divisionData = [
   {
     divisionName: "5C",
     numWinner: 0,
-    numAutoPromo: 1,
+    numAutoPromo: 2,
     numPlayoffPromo: 1,
     numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
+    numAutoRelegate: 1,
     players: [
       "Bowser",
       "PixelAtc",
@@ -200,10 +200,10 @@ const divisionData = [
   {
     divisionName: "5D",
     numWinner: 0,
-    numAutoPromo: 1,
+    numAutoPromo: 2,
     numPlayoffPromo: 1,
     numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
+    numAutoRelegate: 1,
     players: [
       "Mendion",
       "20Dan03",
@@ -220,8 +220,8 @@ const divisionData = [
     numWinner: 0,
     numAutoPromo: 2,
     numPlayoffPromo: 1,
-    numPlayoffRelegate: 2,
-    numAutoRelegate: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 1,
     players: [
       "Świdr",
       "al",
@@ -238,8 +238,8 @@ const divisionData = [
     numWinner: 0,
     numAutoPromo: 2,
     numPlayoffPromo: 1,
-    numPlayoffRelegate: 2,
-    numAutoRelegate: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 1,
     players: [
       "scoopman",
       "Marts",
@@ -256,8 +256,8 @@ const divisionData = [
     numWinner: 0,
     numAutoPromo: 2,
     numPlayoffPromo: 1,
-    numPlayoffRelegate: 2,
-    numAutoRelegate: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 1,
     players: [
       "Kitten",
       "sixfour",
@@ -274,8 +274,8 @@ const divisionData = [
     numWinner: 0,
     numAutoPromo: 2,
     numPlayoffPromo: 1,
-    numPlayoffRelegate: 2,
-    numAutoRelegate: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 1,
     players: [
       "Marle",
       "wide",
@@ -292,9 +292,9 @@ const divisionData = [
     divisionName: "7A",
     numWinner: 0,
     numAutoPromo: 1,
-    numPlayoffPromo: 2,
+    numPlayoffPromo: 1,
     numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
+    numAutoRelegate: 1,
     players: [
       "Diggs",
       "Shuichi",
@@ -309,9 +309,9 @@ const divisionData = [
     divisionName: "7B",
     numWinner: 0,
     numAutoPromo: 1,
-    numPlayoffPromo: 2,
+    numPlayoffPromo: 1,
     numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
+    numAutoRelegate: 1,
     players: [
       "vandweller",
       "Krypto Nick",
@@ -326,9 +326,9 @@ const divisionData = [
     divisionName: "7C",
     numWinner: 0,
     numAutoPromo: 1,
-    numPlayoffPromo: 2,
+    numPlayoffPromo: 1,
     numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
+    numAutoRelegate: 1,
     players: [
       "Rib",
       "shqdwnight",
@@ -343,9 +343,9 @@ const divisionData = [
     divisionName: "7D",
     numWinner: 0,
     numAutoPromo: 1,
-    numPlayoffPromo: 2,
+    numPlayoffPromo: 1,
     numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
+    numAutoRelegate: 1,
     players: [
       "jack13berry",
       "mistec43",
@@ -363,7 +363,7 @@ const divisionData = [
     numAutoPromo: 1,
     numPlayoffPromo: 2,
     numPlayoffRelegate: 1,
-    numAutoRelegate: 1,
+    numAutoRelegate: 0,
     players: [
       "PrinceFluffy",
       "Lukideluxe",
@@ -380,7 +380,7 @@ const divisionData = [
     numAutoPromo: 1,
     numPlayoffPromo: 2,
     numPlayoffRelegate: 1,
-    numAutoRelegate: 1,
+    numAutoRelegate: 0,
     players: [
       "kolja_koala",
       "Diamond",
