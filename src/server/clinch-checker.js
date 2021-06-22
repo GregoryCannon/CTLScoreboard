@@ -164,6 +164,28 @@ function checkClinch(
   return isInSpot === desiredValue;
 }
 
+function didClinchPrizeMoney(player, division) {
+  const numSpots = division.numPrizeMoney + division.numWinner;
+  return checkClinch(
+    StandingsSpot.TOP,
+    GuaranteeType.GUARANTEE_TRUE,
+    numSpots,
+    player,
+    division
+  );
+}
+
+function didClinchNonPrizeMoney(player, division) {
+  const numSpots = division.numPrizeMoney + division.numWinner;
+  return checkClinch(
+    StandingsSpot.TOP,
+    GuaranteeType.GUARANTEE_FALSE,
+    numSpots,
+    player,
+    division
+  );
+}
+
 function didClinchAutoPromo(player, division) {
   const numSpots = division.numAutoPromo + division.numWinner;
   return checkClinch(

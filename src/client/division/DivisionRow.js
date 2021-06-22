@@ -59,7 +59,8 @@ class DivisionRow extends Component {
   render() {
     const overallPromoChance =
       this.props.player.autoPromoChance +
-      0.5 * this.props.player.playoffPromoChance;
+      (this.props.player.prizeMoneyChance || 0);
+    0.5 * this.props.player.playoffPromoChance;
     const overallRelegationChance =
       this.props.player.autoRelegationChance +
       0.5 * this.props.player.playoffRelegationChance;

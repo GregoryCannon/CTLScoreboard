@@ -10,7 +10,8 @@ import {
   PROMO_COLOR_STR,
   RELEGATE_COLOR_STR,
   PLAYOFF_PROMO_COLOR_STR,
-  PLAYOFF_RELEGATE_COLOR_STR
+  PLAYOFF_RELEGATE_COLOR_STR,
+  PRIZE_COLOR_STR
 } from "./division-color-util";
 
 class Division extends Component {
@@ -20,6 +21,7 @@ class Division extends Component {
     const numUnchanged =
       numTotal -
       division.numWinner -
+      division.numPrizeMoney -
       division.numAutoPromo -
       division.numPlayoffPromo -
       division.numPlayoffRelegate -
@@ -27,6 +29,9 @@ class Division extends Component {
     let colors = [];
     for (let i = 0; i < division.numWinner; i++) {
       colors.push(WINNER_COLOR_STR);
+    }
+    for (let i = 0; i < division.numPrizeMoney; i++) {
+      colors.push(PRIZE_COLOR_STR);
     }
     for (let i = 0; i < division.numAutoPromo; i++) {
       colors.push(PROMO_COLOR_STR);
@@ -54,6 +59,8 @@ class Division extends Component {
     } else {
       playerList.sort(util.compareSimulated);
     }
+
+    console.log(this.props.data.standings);
 
     // Calculate other constants
     const divName = this.props.data.divisionName;

@@ -1,6 +1,8 @@
 const BACKGROUND_RGB = [207, 231, 245];
 const WINNER_RGB = [255, 204, 0];
 const WINNER_10PERCENT = [255, 250, 225];
+const PRIZE_RGB = [255, 227, 115];
+const PRIZE_10PERCENT = [255, 250, 225];
 const PROMO_RGB = [69, 153, 0];
 const PROMO_20PERCENT = [167, 230, 178];
 const RELEGATE_RGB = [255, 51, 51];
@@ -53,9 +55,9 @@ export function getWinGradientColor(percentChance) {
   return formatRgbString(
     getTricolorGradientColor(
       BACKGROUND_RGB,
-      WINNER_10PERCENT,
+      PRIZE_10PERCENT,
       0.1,
-      WINNER_RGB,
+      PRIZE_RGB,
       getAdjustedRatio(percentChance)
     )
   );
@@ -90,6 +92,7 @@ export function getRelegationGradientColor(percentChance) {
 export const PLAYOFF_PROMO_COLOR_STR = getPromoGradientColor(50);
 export const PLAYOFF_RELEGATE_COLOR_STR = getRelegationGradientColor(50);
 export const WINNER_COLOR_STR = formatRgbString(WINNER_RGB);
+export const PRIZE_COLOR_STR = formatRgbString(PRIZE_RGB);
 export const PROMO_COLOR_STR = formatRgbString(PROMO_RGB);
 export const RELEGATE_COLOR_STR = formatRgbString(RELEGATE_RGB);
 export const BACKGROUND_COLOR_STR = formatRgbString(BACKGROUND_RGB);

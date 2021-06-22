@@ -3,6 +3,7 @@ const divisionData = [
     divisionName: "1",
     oneMatchPerPair: true,
     numWinner: 1,
+    numPrizeMoney: 3,
     numAutoPromo: 0,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 1,

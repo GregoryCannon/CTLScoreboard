@@ -11,6 +11,12 @@ function PlayerAdvancedStats(props) {
           {props.renderPercentageFunc(props.playerData.divisionWinChance)}
         </div>
       )}
+      {/* {props.division.numPrizeMoney && (
+        <div className="Stats-winner">
+          Prize Money Chance:{" "}
+          {props.renderPercentageFunc(props.playerData.prizeMoneyChance)}
+        </div>
+      )} */}
       Placement Odds:
       <table>
         {props.division.numAutoPromo + props.division.numWinner > 0 && (
@@ -26,6 +32,18 @@ function PlayerAdvancedStats(props) {
             </td>
             <td>
               {props.renderPercentageFunc(props.playerData.autoPromoChance)}
+            </td>
+          </tr>
+        )}
+
+        {props.division.numPrizeMoney > 0 && (
+          <tr className={"Stats-prize-money"}>
+            <td>Prize Money</td>
+            <td>
+              {props.renderPercentageFunc(
+                props.playerData.prizeMoneyChance -
+                  props.playerData.autoPromoChance
+              )}
             </td>
           </tr>
         )}

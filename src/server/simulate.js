@@ -76,10 +76,16 @@ function simulateOneIteration(division, matchSchedule, resultCounts) {
 
   // Determine who gets promoted
   const numPromo = division.numAutoPromo + division.numPlayoffPromo;
+  const numPrizeMoney = (division.numPrizeMoney || 0) + division.numWinner;
   const numRelegate = division.numPlayoffRelegate + division.numAutoRelegate;
 
   // Division title
   resultCounts.divisionWin[divisionStandings[0].name] += 1;
+
+  // Prize money
+  for (let i = 0; i < numPrizeMoney; i++) {
+    resultCounts.prizeMoney[divisionStandings[i].name] += 1;
+  }
 
   // Auto promo or win
   for (let i = 0; i < division.numAutoPromo + division.numWinner; i++) {
@@ -137,7 +143,13 @@ function playerFullyTied(player1, player2, division, matchSchedule) {
     // If the simulations account for player strength, players cannot be fully tied unless
     // they have no games played or the same opponent schedule
     return (
-      player1.wins + player1.losses + player2.wins + player2.losses == 0 ||
+      player1.wins +
+        player1.losses +
+        player2.wins +
+        player2.losses +
+        player1.points +
+        player2.points ==
+        0 ||
       (player1.points === player2.points &&
         player1.gd === player2.gd &&
         player1.wins === player2.wins &&
@@ -197,18 +209,21 @@ function correctForVariance(division, matchSchedule) {
     let autoRelTotal = 0;
     let playoffRelTotal = 0;
     let divisionWinTotal = 0;
+    let prizeMoneyTotal = 0;
     for (player of cluster) {
       autoPromoTotal += parseFloat(player.autoPromoChance);
       playoffPromoTotal += parseFloat(player.playoffPromoChance);
       autoRelTotal += parseFloat(player.autoRelegationChance);
       playoffRelTotal += parseFloat(player.playoffRelegationChance);
       divisionWinTotal += parseFloat(player.divisionWinChance);
+      prizeMoneyTotal += parseFloat(player.prizeMoneyChance);
     }
     const normalizedAutoPromo = autoPromoTotal / cluster.length;
     const normalizedPlayoffPromo = playoffPromoTotal / cluster.length;
     const normalizedAutoRel = autoRelTotal / cluster.length;
     const normalizedPlayoffRel = playoffRelTotal / cluster.length;
     const normalizedDivisionWin = divisionWinTotal / cluster.length;
+    const normalizedPrizeMoney = prizeMoneyTotal / cluster.length;
 
     for (player of cluster) {
       player.autoPromoChance = normalizedAutoPromo;
@@ -216,6 +231,7 @@ function correctForVariance(division, matchSchedule) {
       player.autoRelegationChance = normalizedAutoRel;
       player.playoffRelegationChance = normalizedPlayoffRel;
       player.divisionWinChance = normalizedDivisionWin;
+      player.prizeMoneyChance = normalizedPrizeMoney;
     }
   }
 }
@@ -243,6 +259,7 @@ function assignChancesToPlayers(resultCounts, division) {
       player
     );
     player.divisionWinChance = getChance("divisionWin", resultCounts, player);
+    player.prizeMoneyChance = getChance("prizeMoney", resultCounts, player);
   }
 }
 
@@ -258,7 +275,8 @@ function runSimulation(division, matchSchedule) {
     autoRelegation: {},
     playoffPromo: {},
     playoffRelegation: {},
-    divisionWin: {}
+    divisionWin: {},
+    prizeMoney: {}
   };
 
   for (let p = 0; p < division.players.length; p++) {
@@ -268,6 +286,7 @@ function runSimulation(division, matchSchedule) {
     resultCounts.playoffPromo[playerName] = 0;
     resultCounts.playoffRelegation[playerName] = 0;
     resultCounts.divisionWin[playerName] = 0;
+    resultCounts.prizeMoney[playerName] = 0;
   }
 
   // Simulate all the iterations
