@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import ResultsPage from "./ResultsPage";
-import FixturesPage from "./FixturesPage";
 import StandingsPage from "./StandingsPage";
 import logo from "./logo.svg";
 import "./App.css";
@@ -292,10 +291,6 @@ class App extends Component {
               <Link className="Nav-button" to="/results">
                 Results
               </Link>
-
-              <Link className="Nav-button" to="/fixtures">
-                Fixtures
-              </Link>
             </div>
           </div>
 
@@ -329,16 +324,6 @@ class App extends Component {
           <Route
             path="/results"
             render={props => <ResultsPage matchList={this.state.matchList} />}
-          />
-
-          <Route
-            path="/fixtures"
-            render={props => (
-              <FixturesPage
-                divisionData={this.state.divisionData}
-                matchList={this.state.matchList}
-              />
-            )}
           />
 
           <div className="Attribution-text">
