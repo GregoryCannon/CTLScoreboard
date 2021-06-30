@@ -603,7 +603,8 @@ const restreamerRole = [
   "🇦🇷Joacozep#0518",
   "yeehawmckickass#4099",
   "Dobry_Czlowiek#6510",
-  "Lukideluxe#4491"
+  "Lukideluxe#4491",
+  "Mickaël M.#2479"
 ];
 
 module.exports = {
