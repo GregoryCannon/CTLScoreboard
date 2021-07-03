@@ -604,7 +604,8 @@ const restreamerRole = [
   "yeehawmckickass#4099",
   "Dobry_Czlowiek#6510",
   "Lukideluxe#4491",
-  "Mickaël M.#2479"
+  "Mickaël M.#2479",
+  "Burritodad#0854"
 ];
 
 module.exports = {
