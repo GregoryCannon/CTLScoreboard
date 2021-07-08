@@ -62,8 +62,10 @@ function PlayerAdvancedStats(props) {
           <td>
             {props.renderPercentageFunc(
               100 -
-                props.playerData.autoPromoChance -
-                props.playerData.playoffPromoChance -
+                (props.division.numPrizeMoney > 0
+                  ? props.playerData.prizeMoneyChance
+                  : props.playerData.autoPromoChance +
+                    props.playerData.playoffPromoChance) -
                 props.playerData.autoRelegationChance -
                 props.playerData.playoffRelegationChance
             )}
