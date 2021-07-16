@@ -193,7 +193,6 @@ const divisionData = [
       "PixelAtc",
       "Colton",
       "Michu",
-      "Gerzi",
       "Blazier",
       "Armstrong"
     ]
