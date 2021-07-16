@@ -405,8 +405,7 @@ const divisionData = [
       "Yeehaw",
       "BigLewwi",
       "Chris Foryst",
-      "Golden",
-      "PlutoCrashed"
+      "Golden"
     ]
   },
   {
