@@ -402,7 +402,6 @@ const divisionData = [
       "Limen_Lavender",
       "Tate",
       "Yeehaw",
-      "BigLewwi",
       "Chris Foryst",
       "Golden"
     ]
