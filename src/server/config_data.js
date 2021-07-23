@@ -224,7 +224,6 @@ const divisionData = [
     numAutoRelegate: 1,
     players: [
       "Świdr",
-      "al",
       "LDinos",
       "Kirbyrulz",
       "Balbar",
