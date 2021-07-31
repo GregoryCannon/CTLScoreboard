@@ -246,7 +246,6 @@ const divisionData = [
       "axis",
       "Ulforce",
       "Jarosław",
-      "Fouad Z",
       "n0mori"
     ]
   },
