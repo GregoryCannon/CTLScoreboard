@@ -110,7 +110,6 @@ const divisionData = [
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
-      "Timothy Kim",
       "seungoh1",
       "odinn",
       "Yusif",
