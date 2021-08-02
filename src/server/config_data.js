@@ -296,7 +296,6 @@ const divisionData = [
       "Diggs",
       "Shuichi",
       "Cwiiis",
-      "Skuci",
       "Maedhros",
       "Rory",
       "Justus"
