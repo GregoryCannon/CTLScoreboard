@@ -291,7 +291,7 @@ const divisionData = [
     numAutoPromo: 1,
     numPlayoffPromo: 1,
     numPlayoffRelegate: 1,
-    numAutoRelegate: 1,
+    numAutoRelegate: 0,
     players: [
       "Diggs",
       "Shuichi",
