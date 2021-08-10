@@ -17,8 +17,8 @@ const divisionData = [
       "Jerpidude",
       "Myles",
       "Doge",
-      "playoffwinner1",
-      "playoffwinner2",
+      "<playoffwinner1>",
+      "<playoffwinner2>",
     ],
   },
 
@@ -48,7 +48,7 @@ const divisionData = [
     numPlayoffPromo: 1,
     numPlayoffRelegate: 1,
     numAutoRelegate: 1,
-    players: ["Luís", "Sofa", "Tugi", "Tobi", "Peek", "Tris", "playoffloser"],
+    players: ["Luís", "Sofa", "Tugi", "Tobi", "Peek", "Tris", "<playoffloser>"],
   },
 
   {
@@ -388,9 +388,6 @@ const divisionData = [
       "Threes",
       "DBS",
       "Kurri",
-      "Dobry Czlowiek",
-      "Gerhard Adler",
-      "Cardek",
     ],
   },
 ];
