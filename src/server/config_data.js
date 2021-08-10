@@ -24,7 +24,6 @@ const divisionData = [
 
   {
     divisionName: "2A",
-    oneMatchPerPair: true,
     numWinner: 0,
     numAutoPromo: 1,
     numPlayoffPromo: 1,
@@ -42,7 +41,6 @@ const divisionData = [
   },
   {
     divisionName: "2B",
-    oneMatchPerPair: true,
     numWinner: 0,
     numAutoPromo: 1,
     numPlayoffPromo: 1,
@@ -369,6 +367,7 @@ const divisionData = [
 
   {
     divisionName: "9",
+    oneMatchPerPair: true,
     numWinner: 0,
     numAutoPromo: 3,
     numPlayoffPromo: 3,
