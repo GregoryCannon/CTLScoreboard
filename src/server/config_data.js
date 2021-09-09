@@ -358,7 +358,6 @@ const divisionData = [
       "Ard",
       "WallBant",
       "Samantha",
-      "rickferd",
       "TheC",
       "NOOM",
       "Sakurion",
