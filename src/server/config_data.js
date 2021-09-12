@@ -320,7 +320,6 @@ const divisionData = [
     players: [
       "PrinceFluffy",
       "Freeman",
-      "Limen_Lavender",
       "SaveCatz",
       "Lukideluxe",
       "Alfalfa",
