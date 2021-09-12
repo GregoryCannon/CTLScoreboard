@@ -348,7 +348,7 @@ const divisionData = [
   {
     divisionName: "8C",
     numWinner: 0,
-    numAutoPromo: 2,
+    numAutoPromo: 1,
     numPlayoffPromo: 1,
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
@@ -357,7 +357,6 @@ const divisionData = [
       "Ard",
       "WallBant",
       "Samantha",
-      "TheC",
       "NOOM",
       "Sakurion",
     ],
