@@ -209,7 +209,6 @@ const divisionData = [
     numAutoRelegate: 0,
     players: [
       "PiW",
-      "pummyzoi",
       "Cwiiis",
       "Marle",
       "Kirbyrulz",
