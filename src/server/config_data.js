@@ -60,7 +60,6 @@ const divisionData = [
       "poopyoldhag",
       "Mecex",
       "Giovanni",
-      "TheMisterValor",
       "Mleczak",
       "Vischer",
       "Longboy",
