@@ -339,7 +339,6 @@ const divisionData = [
       "Dobry Czlowiek",
       "Krypto Nick",
       "Cardek",
-      "TimeLocked",
     ],
   },
   {
