@@ -153,7 +153,6 @@ const divisionData = [
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
-      "Max",
       "Gunter",
       "Resting",
       "Mickaël",
