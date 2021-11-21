@@ -1,7 +1,7 @@
 const moment = require("moment");
 
 // CHANGE THIS WHEN DEBUGGING
-const IS_PRODUCTION = true;
+const IS_PRODUCTION = !!process.env.PRODUCTION;
 
 const memeDivisionData = [
   {
@@ -689,5 +689,6 @@ module.exports = {
   calculatePointsWon,
   makeHttpRequest,
   getMatchDateFormatted,
-  SortBy
+  SortBy,
+  IS_PRODUCTION,
 };

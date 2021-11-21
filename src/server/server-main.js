@@ -5,6 +5,7 @@ const compute = require("./compute");
 const simulate = require("./simulate");
 const util = require("./util");
 const BotClient = require("./discord-bot").BotClient;
+const RegistrationClient = require("./registration-bot");
 const discordAuthRouter = require("./discord-auth").router;
 const configData = require("./config_data");
 const logger = require("./logger");
@@ -30,6 +31,9 @@ const penaltyDb = db.get("penalty"); // List of players and their penalty points
 const token = process.env.DISCORD_TOKEN;
 const discordBot = new BotClient(token);
 discordBot.start();
+
+// Configure the second discord bot
+// RegistrationClient.startRegistrationBot();
 
 // Add discord authentication router
 app.use("/discord-api", discordAuthRouter);
