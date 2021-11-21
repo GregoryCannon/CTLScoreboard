@@ -1,7 +1,7 @@
 const moment = require("moment");
 
 // CHANGE THIS WHEN DEBUGGING
-const IS_PRODUCTION = !!process.env.PRODUCTION;
+const IS_PRODUCTION = TRUE;
 
 const memeDivisionData = [
   {
