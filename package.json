@@ -24,6 +24,9 @@
   "devDependencies": {
     "prettier": "^1.19.1"
   },
+  "engines": {
+    "node": "16.13.0"
+  },
   "proxy": "http://localhost:8080",
   "scripts": {
     "go": "npm run build && npm run start",
