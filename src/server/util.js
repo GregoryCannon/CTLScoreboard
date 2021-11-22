@@ -624,6 +624,14 @@ async function makeHttpRequest(methodStr, localUrl, body) {
   return response.json();
 }
 
+function getMatchDateFormatted(match) {
+  if (!match.match_date) {
+    return "unknown date";
+  }
+  const matchMoment = moment.unix(match.match_date);
+  return matchMoment.utc().format("MMM DD YYYY, HH:mm");
+}
+
 function downloadCanvasAsPng(canvas, filename) {
   // create an "off-screen" anchor tag
   var lnk = document.createElement("a"),

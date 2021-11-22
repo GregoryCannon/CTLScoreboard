@@ -1,6 +1,6 @@
 const { Client, Intents } = require("discord.js");
 const logger = require("./logger");
-const { IS_PRODUCTION } = require("./util");
+const { IS_PRODUCTION, getMatchDateFormatted } = require("./util");
 const dataStoreId = IS_PRODUCTION ? "909993522780844062" : "908287705803280404";
 const signUpChannelId = IS_PRODUCTION
   ? "911873148591431730"
@@ -81,14 +81,6 @@ function checkVodSameness(vodUrl, previousVodUrl) {
     return "new timestamp";
   }
   return "different";
-}
-
-function getMatchDateFormatted(match) {
-  if (!match.match_date) {
-    return "unknown date";
-  }
-  const matchMoment = moment.unix(match.match_date);
-  return matchMoment.utc().format("MMM DD YYYY, HH:mm");
 }
 
 function formatMatch(match) {
