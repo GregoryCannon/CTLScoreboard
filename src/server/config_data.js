@@ -48,7 +48,7 @@ const divisionData = [
     numAutoPromo: 2,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
-    numPlayoffRelegate: 1,
+    numAutoRelegate: 1,
     players: [
       "anicomi",
       "Mel",
@@ -66,7 +66,7 @@ const divisionData = [
     numAutoPromo: 2,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
-    numPlayoffRelegate: 1,
+    numAutoRelegate: 1,
     players: [
       "poopyoldhag",
       "Vince",
@@ -84,7 +84,7 @@ const divisionData = [
     numAutoPromo: 1,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
-    numPlayoffRelegate: 1,
+    numAutoRelegate: 1,
     players: ["Micetro", "Yusif", "Mleczak", "odinn", "Nevanator", "remmedy"]
   },
 
@@ -95,7 +95,7 @@ const divisionData = [
     numAutoPromo: 1,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
-    numPlayoffRelegate: 1,
+    numAutoRelegate: 1,
     players: ["Grand Designs", "Heist", "Blazier", "Melon", "Felinho", "Mack"]
   },
   {
@@ -105,7 +105,7 @@ const divisionData = [
     numAutoPromo: 1,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
-    numPlayoffRelegate: 1,
+    numAutoRelegate: 1,
     players: ["MNPL Poke", "20Dan03", "xile", "Mickaël", "Reykon", "Koolio"]
   },
   {
@@ -115,7 +115,7 @@ const divisionData = [
     numAutoPromo: 1,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
-    numPlayoffRelegate: 1,
+    numAutoRelegate: 1,
     players: ["Peter", "zydras", "Mr. Faq", "Jordan", "IanKeith", "TStorm"]
   },
 
@@ -126,7 +126,7 @@ const divisionData = [
     numAutoPromo: 1,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
-    numPlayoffRelegate: 1,
+    numAutoRelegate: 1,
     players: ["AvGeekW159", "Gunter", "flashboy", "Hana", "Santtu", "Atalito"]
   },
   {
@@ -136,7 +136,7 @@ const divisionData = [
     numAutoPromo: 1,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
-    numPlayoffRelegate: 1,
+    numAutoRelegate: 1,
     players: [
       "Iceblade73",
       "Future",
@@ -153,7 +153,7 @@ const divisionData = [
     numAutoPromo: 1,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
-    numPlayoffRelegate: 1,
+    numAutoRelegate: 1,
     players: [
       "VachetBeasty",
       "OutCast",
@@ -170,7 +170,7 @@ const divisionData = [
     numAutoPromo: 1,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
-    numPlayoffRelegate: 1,
+    numAutoRelegate: 1,
     players: ["GDudge", "Bard", "Remmy", "Morelando", "Peyton", "moodeuce"]
   },
 
@@ -181,7 +181,7 @@ const divisionData = [
     numAutoPromo: 2,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
-    numPlayoffRelegate: 1,
+    numAutoRelegate: 1,
     players: [
       "tourist106",
       "Kingsman",
@@ -199,7 +199,7 @@ const divisionData = [
     numAutoPromo: 2,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
-    numPlayoffRelegate: 1,
+    numAutoRelegate: 1,
     players: [
       "Wolflord",
       "PixelAtc",
@@ -217,7 +217,7 @@ const divisionData = [
     numAutoPromo: 2,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
-    numPlayoffRelegate: 1,
+    numAutoRelegate: 1,
     players: [
       "sixfour",
       "Maedhros",
@@ -236,7 +236,7 @@ const divisionData = [
     numAutoPromo: 2,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
-    numPlayoffRelegate: 1,
+    numAutoRelegate: 1,
     players: [
       "Sebastian",
       "Cardek",
@@ -254,7 +254,7 @@ const divisionData = [
     numAutoPromo: 2,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
-    numPlayoffRelegate: 1,
+    numAutoRelegate: 1,
     players: [
       "Sakurion",
       "Riogreywind",
@@ -272,7 +272,7 @@ const divisionData = [
     numAutoPromo: 2,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
-    numPlayoffRelegate: 1,
+    numAutoRelegate: 1,
     players: [
       "Uno",
       "SirMaser",
@@ -291,7 +291,7 @@ const divisionData = [
     numAutoPromo: 1,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
-    numPlayoffRelegate: 1,
+    numAutoRelegate: 1,
     players: [
       "arbaro",
       "Diamond",
@@ -309,7 +309,7 @@ const divisionData = [
     numAutoPromo: 1,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
-    numPlayoffRelegate: 1,
+    numAutoRelegate: 1,
     players: [
       "Schtoikle",
       "Twifty",
@@ -327,7 +327,7 @@ const divisionData = [
     numAutoPromo: 1,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
-    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
     players: [
       "DBS",
       "MrShadow",
@@ -344,7 +344,7 @@ const divisionData = [
     numAutoPromo: 1,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
-    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
     players: [
       "Bakadrian",
       "Benfamir",
