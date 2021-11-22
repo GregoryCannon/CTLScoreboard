@@ -450,6 +450,6 @@ function initialSetup() {
   });
 }
 
-// initialSetup();
+initialSetup();
 
 app.listen(process.env.PORT || 8080);
