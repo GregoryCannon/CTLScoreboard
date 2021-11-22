@@ -17,8 +17,8 @@ const MAIN_EMOJI = "👍";
 const CANCEL_EMOJI = "❌";
 const INFO_EMOJI = "ℹ️";
 const LINE_ASCII = "—————————————————————————";
-const DELAY_MS = 3000;
-const HIDE_REACTION_DELAY_MS = 3000;
+const DELAY_MS = 4000;
+const HIDE_REACTION_DELAY_MS = 4000;
 let DIVISIONS = {
   "1": [],
   "2": [],
@@ -192,7 +192,7 @@ async function configureSignUpMessages(channel) {
 
   // Main registration section
   await channel.send(
-    "React on your assigned division below! Your reaction will be hidden after 3 seconds.\n" + LINE_ASCII
+    "React to sign up for a new division below! Your reaction will be hidden after 3 seconds. \n\nMake sure your registration is for the correct tier and is current at 23:59 UTC each Sunday. New divisions will be created shortly thereafter and withdrawal after this point may be penalised. For full details, refer to #rules-and-standings.\n" + LINE_ASCII
   );
   for (const divisionName of Object.keys(DIVISIONS)) {
     const message = await channel.send(`Sign up for Divison ${divisionName}`);
