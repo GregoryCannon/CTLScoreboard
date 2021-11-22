@@ -12,8 +12,8 @@ const testDivision = {
   divisionName: "1.3m",
   numWinner: 0,
   numAutoPromo: 1,
-  numPlayoffPromo: 1,
-  numPlayoffRelegate: 1,
+  numPlayoffPromo: 0,
+  numPlayoffRelegate: 0,
   numAutoRelegate: 1,
   players: ["greg", "jdmfx_", "jonas", "larry"],
   standings: [

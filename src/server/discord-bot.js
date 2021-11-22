@@ -1,11 +1,13 @@
-const { Client, Intents } = require('discord.js');
+const { Client, Intents } = require("discord.js");
 const util = require("./util");
 const logger = require("./logger");
 
 class BotClient {
   constructor(token) {
     this.token = token;
-    this.client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
+    this.client = new Client({
+      intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]
+    });
     this.mainChannel = util.getDiscordMainChannel();
     this.testChannel = "the-lab";
     this.isReady = false;

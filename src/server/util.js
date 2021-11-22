@@ -7,9 +7,9 @@ const memeDivisionData = [
   {
     divisionName: "1.3m",
     numWinner: 1,
-    numAutoPromo: 0,
+    numAutoPromo: 1,
     numPlayoffPromo: 0,
-    numPlayoffRelegate: 1,
+    numPlayoffRelegate: 0,
     numAutoRelegate: 1,
     players: [
       "greg",
@@ -96,9 +96,9 @@ const memeDivisionData = [
   {
     divisionName: "1.3m",
     numWinner: 1,
-    numAutoPromo: 0,
+    numAutoPromo: 1,
     numPlayoffPromo: 0,
-    numPlayoffRelegate: 1,
+    numPlayoffRelegate: 0,
     numAutoRelegate: 1,
     players: [
       "greg",
@@ -690,5 +690,5 @@ module.exports = {
   makeHttpRequest,
   getMatchDateFormatted,
   SortBy,
-  IS_PRODUCTION,
+  IS_PRODUCTION
 };
