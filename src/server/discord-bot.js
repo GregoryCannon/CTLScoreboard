@@ -1,6 +1,8 @@
 const { Client, Intents } = require("discord.js");
 const util = require("./util");
 const logger = require("./logger");
+const mainChannelId = util.IS_PRODUCTION ? 609133593289293835 : 672333164978372608;
+const testChannelId = 672333164978372608;
 
 class BotClient {
   constructor(token) {
@@ -8,8 +10,6 @@ class BotClient {
     this.client = new Client({
       intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]
     });
-    this.mainChannel = util.getDiscordMainChannel();
-    this.testChannel = "the-lab";
     this.isReady = false;
     this.pendingMessages = [];
     this.previousVodUrl = "";
@@ -52,21 +52,22 @@ class BotClient {
     }
   }
 
-  sendMessageInChannel(messageText, channelName) {
+  sendMessageInChannel(messageText, channelId) {
     if (this.isReady) {
-      const channel = this.client.channels.find(x => x.name === channelName);
-      try {
-        channel.send(messageText);
-      } catch (err) {
-        console.error(err);
-      }
+      registrationBot.channels.fetch(channelId).then((channel) => {
+        try {
+          channel.send(messageText);
+        } catch (err) {
+          console.error(err);
+        }
+      })
     } else {
       this.pendingMessages.push([messageText, channelName]);
     }
   }
 
   sendMessage(messageText) {
-    this.sendMessageInChannel(messageText, this.mainChannel);
+    this.sendMessageInChannel(messageText, mainChannelId);
   }
 
   // Main entry point for using the bot from server-main.js
@@ -90,7 +91,7 @@ class BotClient {
 
     this.client.on("message", msg => {
       // Main channel only listens for the bot check command
-      if (msg.channel.name === this.mainChannel) {
+      if (msg.channel.id === mainChannelId) {
         logger.log("got message in main channel aka", msg.channel.name);
 
         if (msg.content == "!bot") {
@@ -100,17 +101,17 @@ class BotClient {
         }
       }
       // Test channel supports additional commands
-      else if (msg.channel.name == this.testChannel) {
+      else if (msg.channel.id == testChannelId) {
         logger.log("got message in test channel, aka", msg.channel.name);
 
         if (msg.content == "!hi") {
-          this.sendMessageInChannel("Greetings traveler!", this.testChannel);
+          this.sendMessageInChannel("Greetings traveler!", testChannelId);
         }
 
         if (msg.content == "!who") {
           this.sendMessageInChannel(
             `The person who just pinged me is ${msg.author.username}`,
-            this.testChannel
+            testChannelId
           );
         }
       }
