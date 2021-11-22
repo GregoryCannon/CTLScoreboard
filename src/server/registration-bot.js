@@ -83,8 +83,16 @@ function checkVodSameness(vodUrl, previousVodUrl) {
   return "different";
 }
 
+function getMatchDateFormatted(match) {
+  if (!match.match_date) {
+    return "unknown date";
+  }
+  const matchMoment = moment.unix(match.match_date);
+  return matchMoment.utc().format("MMM DD YYYY, HH:mm");
+}
+
 function formatMatch(match) {
-  const formattedDate = util.getMatchDateFormatted(match);
+  const formattedDate = getMatchDateFormatted(match);
   const winnerHomeAwayLabel = match.winner_home ? "(H)" : "(A)";
   const loserHomeAwayLabel = match.winner_home ? "(A)" : "(H)";
 

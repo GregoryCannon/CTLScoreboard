@@ -334,11 +334,7 @@ app.post("/api/match-data", function(req, res) {
         } else {
           // If succeeded, invalidate cache, report the match to discord, and send success response
           invalidateCacheForDivision(newMatch.division);
-          try {
-            MainBot.reportMatch(newMatch);
-          } catch (err){
-            console.error(err);
-          }
+          MainBot.reportMatch(newMatch);
 
           const responseBody = {
             didSucceed: true,
