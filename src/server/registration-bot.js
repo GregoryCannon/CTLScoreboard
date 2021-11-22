@@ -54,11 +54,12 @@ async function sleep(ms) {
 }
 
 async function clearChannel(channel) {
-  let fetched;
+  let toDelete;
   do {
-    fetched = await channel.messages.fetch({ limit: 100 });
-    channel.bulkDelete(fetched);
-  } while (fetched.size >= 2);
+    toDelete = await channel.messages.fetch({ limit: 100 });
+    toDelete = toDelete.filter(msg => msg.author.bot);
+    channel.bulkDelete(toDelete);
+  } while (toDelete.size >= 2);
 }
 
 function removeItemAll(arr, value) {
