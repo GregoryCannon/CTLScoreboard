@@ -5,7 +5,7 @@ const compute = require("./compute");
 const simulate = require("./simulate");
 const util = require("./util");
 // const BotClient = require("./discord-bot").BotClient;
-const RegistrationClient = require("./registration-bot");
+const MainBot = require("./registration-bot");
 const discordAuthRouter = require("./discord-auth").router;
 const configData = require("./config_data");
 const logger = require("./logger");
@@ -33,7 +33,7 @@ const penaltyDb = db.get("penalty"); // List of players and their penalty points
 // discordBot.start();
 
 // Configure the second discord bot
-RegistrationClient.startRegistrationBot();
+MainBot.startRegistrationBot();
 
 // Add discord authentication router
 app.use("/discord-api", discordAuthRouter);
@@ -334,7 +334,11 @@ app.post("/api/match-data", function(req, res) {
         } else {
           // If succeeded, invalidate cache, report the match to discord, and send success response
           invalidateCacheForDivision(newMatch.division);
-          discordBot.reportMatch(newMatch);
+          try {
+            MainBot.reportMatch(newMatch);
+          } catch (err){
+            console.error(err);
+          }
 
           const responseBody = {
             didSucceed: true,
