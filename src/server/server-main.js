@@ -33,7 +33,7 @@ const discordBot = new BotClient(token);
 discordBot.start();
 
 // Configure the second discord bot
-// RegistrationClient.startRegistrationBot();
+RegistrationClient.startRegistrationBot();
 
 // Add discord authentication router
 app.use("/discord-api", discordAuthRouter);
