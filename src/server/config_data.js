@@ -26,7 +26,7 @@ const divisionData = [
     divisionName: "2A",
     oneMatchPerPair: true,
     numWinner: 0,
-    numAutoPromo: 1,
+    numAutoPromo: 2,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
