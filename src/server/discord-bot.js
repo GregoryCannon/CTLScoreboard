@@ -54,7 +54,7 @@ class BotClient {
 
   sendMessageInChannel(messageText, channelId) {
     if (this.isReady) {
-      registrationBot.channels.fetch(channelId).then((channel) => {
+      this.client.channels.fetch(channelId).then((channel) => {
         try {
           channel.send(messageText);
         } catch (err) {
