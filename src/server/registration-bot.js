@@ -11,6 +11,7 @@ const commandChannelId = IS_PRODUCTION
 const reportingChannelId = IS_PRODUCTION
   ? "609133593289293835"
   : "912317693162577981";
+let previousVodUrl = "";
 let dataStoreChannel;
 const MAIN_EMOJI = "👍";
 const CANCEL_EMOJI = "❌";
@@ -85,12 +86,10 @@ function checkVodSameness(vodUrl, previousVodUrl) {
 
 function formatMatch(match) {
   const formattedDate = getMatchDateFormatted(match);
-  const winnerHomeAwayLabel = match.winner_home ? "(H)" : "(A)";
-  const loserHomeAwayLabel = match.winner_home ? "(A)" : "(H)";
 
   const vodSameness = checkVodSameness(match.vod_url, previousVodUrl);
   previousVodUrl = match.vod_url;
-  const matchLine = `:fire: ${formattedDate} ${match.winner} ${winnerHomeAwayLabel} def. ${match.loser} ${loserHomeAwayLabel} ${match.winner_games}-${match.loser_games}`;
+  const matchLine = `:fire: ${formattedDate} ${match.winner} def. ${match.loser} ${match.winner_games}-${match.loser_games}`;
 
   if (vodSameness === "different") {
     // New post
