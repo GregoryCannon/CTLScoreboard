@@ -8,11 +8,16 @@ const signUpChannelId = IS_PRODUCTION
 const commandChannelId = IS_PRODUCTION
   ? "672333164978372608"
   : "908284602173513731";
+const reportingChannelId = IS_PRODUCTION
+  ? "609133593289293835"
+  : "912317693162577981";
 let dataStoreChannel;
 const MAIN_EMOJI = "👍";
 const CANCEL_EMOJI = "❌";
-const DELAY_MS = 5000;
-const HIDE_REACTION_DELAY_MS = 5000;
+const INFO_EMOJI = "ℹ️";
+const LINE_ASCII = "—————————————————————————";
+const DELAY_MS = 3000;
+const HIDE_REACTION_DELAY_MS = 3000;
 let DIVISIONS = {
   "1": [],
   "2": [],
@@ -25,7 +30,7 @@ let DIVISIONS = {
   "9": []
 };
 
-const token2 = process.env.DISCORD_TOKEN_2;
+const token2 = process.env.DISCORD_TOKEN;
 const registrationBot = new Client({
   intents: [
     Intents.FLAGS.GUILDS,
@@ -65,6 +70,42 @@ function removeItemAll(arr, value) {
     }
   }
   return arr;
+}
+
+/* ------------- Reporting-related helpers ---------------- */
+
+function checkVodSameness(vodUrl, previousVodUrl) {
+  if (vodUrl === previousVodUrl) {
+    return "identical";
+  } else if (vodUrl.split("?")[0] === previousVodUrl.split("?")[0]) {
+    return "new timestamp";
+  }
+  return "different";
+}
+
+function formatMatch(match) {
+  const formattedDate = util.getMatchDateFormatted(match);
+  const winnerHomeAwayLabel = match.winner_home ? "(H)" : "(A)";
+  const loserHomeAwayLabel = match.winner_home ? "(A)" : "(H)";
+
+  const vodSameness = checkVodSameness(match.vod_url, previousVodUrl);
+  previousVodUrl = match.vod_url;
+  const matchLine = `:fire: ${formattedDate} ${match.winner} ${winnerHomeAwayLabel} def. ${match.loser} ${loserHomeAwayLabel} ${match.winner_games}-${match.loser_games}`;
+
+  if (vodSameness === "different") {
+    // New post
+    return [
+      `--------------------------------\n${match.restreamer} restreamed:\n${match.vod_url}`,
+      matchLine
+    ];
+  } else if (vodSameness === "new timestamp") {
+    // Post the VOD with no preview and the match results
+    const vodUrlNoPreview = "<" + match.vod_url + ">";
+    return [`${vodUrlNoPreview}\n${matchLine}`];
+  } else if (vodSameness === "identical") {
+    // Post just the match results
+    return [matchLine];
+  }
 }
 
 /* ------------- Data-related operations ------------ */
@@ -149,14 +190,13 @@ async function configureSignUpMessages(channel) {
   // Reset the channel and send sign-up messages
   await clearChannel(channel);
 
+  // Main registration section
   await channel.send(
-    "React on your assigned division below! Your reaction will be hidden after 5 seconds."
+    "React on your assigned division below! Your reaction will be hidden after 3 seconds.\n" + LINE_ASCII
   );
   for (const divisionName of Object.keys(DIVISIONS)) {
     const message = await channel.send(`Sign up for Divison ${divisionName}`);
     await message.react(MAIN_EMOJI);
-
-    // Add react listener
     const collector = message.createReactionCollector();
     collector.on("collect", () => {
       checkForReactions(divisionName, message);
@@ -164,9 +204,22 @@ async function configureSignUpMessages(channel) {
 
     await sleep(100);
   }
-  const cancelMsg = await channel.send(
-    "==================\nReact here to cancel your registration"
+
+  // Check registration button
+  const infoMsg = await channel.send(
+    LINE_ASCII + "\nReact here to confirm whether you're registered"
   );
+  infoMsg.react(INFO_EMOJI);
+  const infoCollector = infoMsg.createReactionCollector();
+  infoCollector.on("collect", () => {
+    checkForInfoReacts(infoMsg);
+  });
+
+  // Cancel registration button
+  const cancelMsg = await channel.send(
+    "React here to cancel your registration"
+  );
+  await channel.send(LINE_ASCII);
   cancelMsg.react(CANCEL_EMOJI);
   const cancelCollector = cancelMsg.createReactionCollector();
   cancelCollector.on("collect", () => {
@@ -194,6 +247,13 @@ async function forEachReactionUser(message, consumerFunction) {
   }
 }
 
+async function sendTemporaryMessage(channel, messageText){
+  const confirmationMessage = await channel.send(messageText);
+  setTimeout(() => {
+    confirmationMessage.delete();
+  }, DELAY_MS);
+}
+
 async function checkForReactions(divisionName, message) {
   console.log("Checking for reactions");
 
@@ -204,22 +264,14 @@ async function checkForReactions(divisionName, message) {
       await registerUser(divisionName, formattedUser);
 
       // Send a temporary confirmation message
-      const confirmationMessage = await message.channel.send(
-        `${formatUser(user)} is now signed up for Division ${divisionName}.`
-      );
-      setTimeout(() => {
-        confirmationMessage.delete();
-      }, DELAY_MS);
+      sendTemporaryMessage(message.channel, `${formatUser(user)} is now signed up for Division ${divisionName}.`);
     } else {
       // Send a temporary error message
-      const confirmationMessage = await message.channel.send(
+      sendTemporaryMessage(message.channel, 
         `${formatUser(
           user
         )} is already signed up. If you need to change divisions, cancel your registration and try again.`
       );
-      setTimeout(() => {
-        confirmationMessage.delete();
-      }, DELAY_MS);
     }
   });
 }
@@ -233,14 +285,19 @@ async function checkForCancelReacts(cancelMsg) {
     await updateRegistrationData();
 
     // Send a confirmation message
-    const confirmationMessage = await cancelMsg.channel.send(
-      `${formatUser(user)} is no longer registered.`
-    );
+    sendTemporaryMessage(cancelMsg.channel, `${formatUser(user)} is no longer registered.`);
+  });
+}
 
-    // Schedule the confirmation to be deleted
-    setTimeout(() => {
-      confirmationMessage.delete();
-    }, DELAY_MS);
+async function checkForInfoReacts(infoMsg) {
+  forEachReactionUser(infoMsg, async user => {
+    const formattedUser = formatUser(user);
+    const existingDivision = getExistingDivision(formattedUser);
+    if (existingDivision == null) {
+      sendTemporaryMessage(infoMsg.channel, `${formattedUser} is not currently registered.`);
+    } else {
+      sendTemporaryMessage(infoMsg.channel, `${formattedUser} is currently registered for Division ${existingDivision}`);
+    }
   });
 }
 
@@ -305,10 +362,20 @@ registrationBot.on("messageCreate", async msg => {
   }
 });
 
-const startRegistrationBot = () => {
+function startRegistrationBot() {
   registrationBot.login(token2);
-};
+}
+
+// Main entry point for using the bot from server-main.js
+async function reportMatch(match) {
+  const messagesToSend = formatMatch(match);
+  const reportingChannel = await registrationBot.channels.fetch(reportingChannelId);
+  for (let i = 0; i < messagesToSend.length; i++) {
+    reportingChannel.send(messagesToSend[i]);
+  }
+}
 
 module.exports = {
-  startRegistrationBot
+  startRegistrationBot,
+  reportMatch
 };

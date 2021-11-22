@@ -1,8 +1,10 @@
 const { Client, Intents } = require("discord.js");
 const util = require("./util");
 const logger = require("./logger");
-const mainChannelId = util.IS_PRODUCTION ? 609133593289293835 : 672333164978372608;
-const testChannelId = 672333164978372608;
+const mainChannelId = util.IS_PRODUCTION
+  ? "609133593289293835"
+  : "672333164978372608";
+const testChannelId = "672333164978372608";
 
 class BotClient {
   constructor(token) {
@@ -54,13 +56,13 @@ class BotClient {
 
   sendMessageInChannel(messageText, channelId) {
     if (this.isReady) {
-      this.client.channels.fetch(channelId).then((channel) => {
+      this.client.channels.fetch(channelId).then(channel => {
         try {
           channel.send(messageText);
         } catch (err) {
           console.error(err);
         }
-      })
+      });
     } else {
       this.pendingMessages.push([messageText, channelName]);
     }
