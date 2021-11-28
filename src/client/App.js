@@ -45,7 +45,7 @@ class App extends Component {
   }
 
   isAdmin() {
-    return this.state.privilegeLevel == "Admin";
+    return !util.IS_PRODUCTION || this.state.privilegeLevel == "Admin";
   }
 
   isRestreamer() {

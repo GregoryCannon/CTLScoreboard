@@ -3,6 +3,8 @@ import "./Division.css";
 import { SortBy } from "../../server/util.js";
 import DivisionHeadings from "./DivisionHeadings";
 import DivisionRow from "./DivisionRow";
+import html2canvas from "html2canvas";
+const moment = require("moment");
 const util = require("../../server/util.js");
 import {
   BACKGROUND_COLOR_STR,
@@ -11,10 +13,16 @@ import {
   RELEGATE_COLOR_STR,
   PLAYOFF_PROMO_COLOR_STR,
   PLAYOFF_RELEGATE_COLOR_STR,
-  PRIZE_COLOR_STR
+  PRIZE_COLOR_STR,
 } from "./division-color-util";
 
 class Division extends Component {
+  constructor(props) {
+    super(props);
+
+    this.downloadToImage = this.downloadToImage.bind(this);
+  }
+
   // Get a list of the colors for the player slots, ordered first place to last
   getRowColors(division) {
     const numTotal = division.standings.length;
@@ -51,6 +59,22 @@ class Division extends Component {
     return colors;
   }
 
+  downloadToImage() {
+    const name = this.props.data.divisionName;
+    console.log("Querying:", "Division" + name);
+    html2canvas(document.querySelector("#Division" + name)).then(function(
+      canvas
+    ) {
+      const fileName =
+        "CTL Division " +
+        name +
+        moment()
+          .utc()
+          .format("MM/DD/YYYY");
+      util.downloadCanvasAsPng(canvas, fileName);
+    });
+  }
+
   render() {
     // Get a sorted list of players
     const playerList = [...this.props.data.standings];
@@ -85,6 +109,7 @@ class Division extends Component {
 
     return (
       <div
+        id={"Division" + this.props.data.divisionName}
         className={`Division ${
           divAtStartOfTier ? "Division-at-start-of-tier" : ""
         }`}
@@ -93,9 +118,17 @@ class Division extends Component {
           <tbody>
             {/* Title row */}
             <tr>
-              <th className="Division-title" colSpan={10}>
+              <th
+                className="Division-title"
+                colSpan={this.props.isAdmin ? 9 : 10}
+              >
                 Division {this.props.data.divisionName}
               </th>
+              {this.props.isAdmin && (
+                <th className="Division-export-button">
+                  <button onClick={this.downloadToImage}>Export PNG</button>
+                </th>
+              )}
             </tr>
 
             {/* Row headings */}

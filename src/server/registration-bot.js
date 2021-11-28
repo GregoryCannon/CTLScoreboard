@@ -28,7 +28,7 @@ let DIVISIONS = {
   "6": [],
   "7": [],
   "8": [],
-  "9": [],
+  "9": []
 };
 
 const token2 = process.env.DISCORD_TOKEN;
@@ -36,8 +36,8 @@ const registrationBot = new Client({
   intents: [
     Intents.FLAGS.GUILDS,
     Intents.FLAGS.GUILD_MESSAGES,
-    Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
-  ],
+    Intents.FLAGS.GUILD_MESSAGE_REACTIONS
+  ]
 });
 
 /* ------------ Helper methods ------------- */
@@ -57,7 +57,7 @@ async function clearChannel(channel) {
   let toDelete;
   do {
     toDelete = await channel.messages.fetch({ limit: 100 });
-    toDelete = toDelete.filter((msg) => msg.author.bot);
+    toDelete = toDelete.filter(msg => msg.author.bot);
     channel.bulkDelete(toDelete);
   } while (toDelete.size >= 2);
 }
@@ -96,7 +96,7 @@ function formatMatch(match) {
     // New post
     return [
       `--------------------------------\n${match.restreamer} restreamed:\n${match.vod_url}`,
-      matchLine,
+      matchLine
     ];
   } else if (vodSameness === "new timestamp") {
     // Post the VOD with no preview and the match results
@@ -258,7 +258,7 @@ async function sendTemporaryMessage(channel, messageText) {
 async function checkForReactions(divisionName, message) {
   console.log("Checking for reactions");
 
-  forEachReactionUser(message, async (user) => {
+  forEachReactionUser(message, async user => {
     const formattedUser = formatUser(user);
     if (getExistingDivision(formattedUser) == null) {
       // Register the player
@@ -282,7 +282,7 @@ async function checkForReactions(divisionName, message) {
 }
 
 async function checkForCancelReacts(cancelMsg) {
-  forEachReactionUser(cancelMsg, async (user) => {
+  forEachReactionUser(cancelMsg, async user => {
     const formattedUser = formatUser(user);
 
     // Wipe the player from registration lists
@@ -298,7 +298,7 @@ async function checkForCancelReacts(cancelMsg) {
 }
 
 async function checkForInfoReacts(infoMsg) {
-  forEachReactionUser(infoMsg, async (user) => {
+  forEachReactionUser(infoMsg, async user => {
     const formattedUser = formatUser(user);
     const existingDivision = getExistingDivision(formattedUser);
     if (existingDivision == null) {
@@ -322,13 +322,13 @@ registrationBot.once("ready", async () => {
   dataStoreChannel = await registrationBot.channels.fetch(dataStoreId);
   loadRegistrationData(dataStoreChannel);
 
-  registrationBot.channels.fetch(signUpChannelId).then((channel) => {
+  registrationBot.channels.fetch(signUpChannelId).then(channel => {
     configureSignUpMessages(channel);
   });
 });
 
 // Incoming message handler
-registrationBot.on("messageCreate", async (msg) => {
+registrationBot.on("messageCreate", async msg => {
   if (msg.channel.id !== commandChannelId) {
     return;
   }
@@ -377,6 +377,9 @@ registrationBot.on("messageCreate", async (msg) => {
 });
 
 function startRegistrationBot() {
+  if (!IS_PRODUCTION) {
+    return;
+  }
   registrationBot.login(token2);
 }
 
@@ -393,5 +396,5 @@ async function reportMatch(match) {
 
 module.exports = {
   startRegistrationBot,
-  reportMatch,
+  reportMatch
 };

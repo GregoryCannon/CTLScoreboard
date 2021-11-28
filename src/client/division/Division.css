@@ -10,6 +10,15 @@
   border-spacing: 0px;
 }
 
+.Division-export-button button {
+  background: white;
+  border: none;
+  color: #1f325a;
+  margin: 0px 5px;
+  border-radius: 5 px;
+  padding: 4px;
+}
+
 .Division th {
   font-weight: 500;
   background-color: #20325a;
