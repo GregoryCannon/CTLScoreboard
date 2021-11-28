@@ -28,7 +28,7 @@ let DIVISIONS = {
   "6": [],
   "7": [],
   "8": [],
-  "9": []
+  "9": [],
 };
 
 const token2 = process.env.DISCORD_TOKEN;
@@ -36,8 +36,8 @@ const registrationBot = new Client({
   intents: [
     Intents.FLAGS.GUILDS,
     Intents.FLAGS.GUILD_MESSAGES,
-    Intents.FLAGS.GUILD_MESSAGE_REACTIONS
-  ]
+    Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
+  ],
 });
 
 /* ------------ Helper methods ------------- */
@@ -57,7 +57,7 @@ async function clearChannel(channel) {
   let toDelete;
   do {
     toDelete = await channel.messages.fetch({ limit: 100 });
-    toDelete = toDelete.filter(msg => msg.author.bot);
+    toDelete = toDelete.filter((msg) => msg.author.bot);
     channel.bulkDelete(toDelete);
   } while (toDelete.size >= 2);
 }
@@ -96,7 +96,7 @@ function formatMatch(match) {
     // New post
     return [
       `--------------------------------\n${match.restreamer} restreamed:\n${match.vod_url}`,
-      matchLine
+      matchLine,
     ];
   } else if (vodSameness === "new timestamp") {
     // Post the VOD with no preview and the match results
@@ -192,10 +192,11 @@ async function configureSignUpMessages(channel) {
 
   // Main registration section
   await channel.send(
-    "React to sign up for a new division below! Your reaction will be hidden after 3 seconds. \n\nMake sure your registration is for the correct tier and is current at 23:59 UTC each Sunday. New divisions will be created shortly thereafter and withdrawal after this point may be penalised. For full details, refer to #rules-and-standings.\n" + LINE_ASCII
+    "React to sign up for a new division below! Your reaction will be hidden after 3 seconds.\n\nIf you are currently in a division, do not sign up here until 100% of everyone's matches in your division have been completed. Make sure your registration is for the correct tier and is current at 23:59 UTC each Sunday. New divisions will be created shortly thereafter and withdrawal after this point may be penalised. For full details, refer to #rules-and-standings.\n" +
+      LINE_ASCII
   );
   for (const divisionName of Object.keys(DIVISIONS)) {
-    const message = await channel.send(`Sign up for Divison ${divisionName}`);
+    const message = await channel.send(`Sign up for Division ${divisionName}`);
     await message.react(MAIN_EMOJI);
     const collector = message.createReactionCollector();
     collector.on("collect", () => {
@@ -247,7 +248,7 @@ async function forEachReactionUser(message, consumerFunction) {
   }
 }
 
-async function sendTemporaryMessage(channel, messageText){
+async function sendTemporaryMessage(channel, messageText) {
   const confirmationMessage = await channel.send(messageText);
   setTimeout(() => {
     confirmationMessage.delete();
@@ -257,17 +258,21 @@ async function sendTemporaryMessage(channel, messageText){
 async function checkForReactions(divisionName, message) {
   console.log("Checking for reactions");
 
-  forEachReactionUser(message, async user => {
+  forEachReactionUser(message, async (user) => {
     const formattedUser = formatUser(user);
     if (getExistingDivision(formattedUser) == null) {
       // Register the player
       await registerUser(divisionName, formattedUser);
 
       // Send a temporary confirmation message
-      sendTemporaryMessage(message.channel, `${formatUser(user)} is now signed up for Division ${divisionName}.`);
+      sendTemporaryMessage(
+        message.channel,
+        `${formatUser(user)} is now signed up for Division ${divisionName}.`
+      );
     } else {
       // Send a temporary error message
-      sendTemporaryMessage(message.channel, 
+      sendTemporaryMessage(
+        message.channel,
         `${formatUser(
           user
         )} is already signed up. If you need to change divisions, cancel your registration and try again.`
@@ -277,7 +282,7 @@ async function checkForReactions(divisionName, message) {
 }
 
 async function checkForCancelReacts(cancelMsg) {
-  forEachReactionUser(cancelMsg, async user => {
+  forEachReactionUser(cancelMsg, async (user) => {
     const formattedUser = formatUser(user);
 
     // Wipe the player from registration lists
@@ -285,18 +290,27 @@ async function checkForCancelReacts(cancelMsg) {
     await updateRegistrationData();
 
     // Send a confirmation message
-    sendTemporaryMessage(cancelMsg.channel, `${formatUser(user)} is no longer registered.`);
+    sendTemporaryMessage(
+      cancelMsg.channel,
+      `${formatUser(user)} is no longer registered.`
+    );
   });
 }
 
 async function checkForInfoReacts(infoMsg) {
-  forEachReactionUser(infoMsg, async user => {
+  forEachReactionUser(infoMsg, async (user) => {
     const formattedUser = formatUser(user);
     const existingDivision = getExistingDivision(formattedUser);
     if (existingDivision == null) {
-      sendTemporaryMessage(infoMsg.channel, `${formattedUser} is not currently registered.`);
+      sendTemporaryMessage(
+        infoMsg.channel,
+        `${formattedUser} is not currently registered.`
+      );
     } else {
-      sendTemporaryMessage(infoMsg.channel, `${formattedUser} is currently registered for Division ${existingDivision}`);
+      sendTemporaryMessage(
+        infoMsg.channel,
+        `${formattedUser} is currently registered for Division ${existingDivision}`
+      );
     }
   });
 }
@@ -308,13 +322,13 @@ registrationBot.once("ready", async () => {
   dataStoreChannel = await registrationBot.channels.fetch(dataStoreId);
   loadRegistrationData(dataStoreChannel);
 
-  registrationBot.channels.fetch(signUpChannelId).then(channel => {
+  registrationBot.channels.fetch(signUpChannelId).then((channel) => {
     configureSignUpMessages(channel);
   });
 });
 
 // Incoming message handler
-registrationBot.on("messageCreate", async msg => {
+registrationBot.on("messageCreate", async (msg) => {
   if (msg.channel.id !== commandChannelId) {
     return;
   }
@@ -369,7 +383,9 @@ function startRegistrationBot() {
 // Main entry point for using the bot from server-main.js
 async function reportMatch(match) {
   const messagesToSend = formatMatch(match);
-  const reportingChannel = await registrationBot.channels.fetch(reportingChannelId);
+  const reportingChannel = await registrationBot.channels.fetch(
+    reportingChannelId
+  );
   for (let i = 0; i < messagesToSend.length; i++) {
     reportingChannel.send(messagesToSend[i]);
   }
@@ -377,5 +393,5 @@ async function reportMatch(match) {
 
 module.exports = {
   startRegistrationBot,
-  reportMatch
+  reportMatch,
 };
