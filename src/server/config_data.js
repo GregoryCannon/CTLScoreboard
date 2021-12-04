@@ -96,7 +96,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
-    players: ["Grand Designs", "Heist", "Blazier", "Melon", "Felinho", "Mack"]
+    players: ["Grand Designs", "boxie", "Blazier", "Melon", "Felinho", "Mack"]
   },
   {
     divisionName: "4B",
