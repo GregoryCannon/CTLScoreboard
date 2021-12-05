@@ -438,7 +438,7 @@ const restreamerRole = [
   "opaux#5052",
   "CombatSlayer#1987",
   "Shuram Gudatetris (UTC -5)#4111",
-  "timothykk.24#2514",
+  "TKK24#2514",
   "Reykon#3817",
   "Ipiecevibes#6809",
   "SirMaser#1453",
