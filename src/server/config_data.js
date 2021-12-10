@@ -159,7 +159,6 @@ const divisionData = [
       "OutCast",
       "Kaptan",
       "BirbWizard",
-      "Is1x",
       "Sargin"
     ]
   },
