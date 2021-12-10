@@ -549,7 +549,8 @@ const restreamerRole = [
   "KunfusingPoke#6098",
   "Twifty#3688",
   "UnOr1ginalName#8655",
-  "minertyler100#0369"
+  "minertyler100#0369",
+  "Akideemus#0151"
 ];
 
 module.exports = {
