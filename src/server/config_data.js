@@ -153,7 +153,7 @@ const divisionData = [
     numAutoPromo: 1,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
+    numAutoRelegate: 0,
     players: [
       "VachetBeasty",
       "OutCast",
