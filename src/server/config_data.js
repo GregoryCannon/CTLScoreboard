@@ -544,7 +544,8 @@ const restreamerRole = [
   "UnOr1ginalName#8655",
   "minertyler100#0369",
   "Akideemus#0151",
-  "Bakadrian#0601"
+  "Bakadrian#0601",
+  "Damian-GDudge(UTC+2)#9821"
 ];
 
 module.exports = {
