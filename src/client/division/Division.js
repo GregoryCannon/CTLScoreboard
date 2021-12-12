@@ -63,7 +63,7 @@ class Division extends Component {
   downloadToImage() {
     const name = this.props.data.divisionName;
     console.log("Querying:", "Division" + name);
-    html2canvas(document.querySelector("#Division" + name)).then(function(
+    html2canvas(document.querySelector("#DivisionTable" + name)).then(function(
       canvas
     ) {
       const fileName =
@@ -150,7 +150,7 @@ class Division extends Component {
             <button onClick={this.purgeDivisionClicked}>Purge Division</button>
           </div>
         )}
-        <table>
+        <table id={"DivisionTable" + this.props.data.divisionName}>
           <tbody>
             {/* Title row */}
             <tr>
