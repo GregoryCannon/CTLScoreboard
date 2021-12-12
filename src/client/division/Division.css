@@ -10,13 +10,14 @@
   border-spacing: 0px;
 }
 
-.Division-export-button button {
+.Divison-actions button {
   background: white;
-  border: none;
+  border: 1px solid black;
   color: #1f325a;
   margin: 0px 5px;
-  border-radius: 5 px;
+  border-radius: 4px;
   padding: 4px;
+  float: right;
 }
 
 .Division th {

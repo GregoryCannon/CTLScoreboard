@@ -13,7 +13,7 @@ import {
   RELEGATE_COLOR_STR,
   PLAYOFF_PROMO_COLOR_STR,
   PLAYOFF_RELEGATE_COLOR_STR,
-  PRIZE_COLOR_STR,
+  PRIZE_COLOR_STR
 } from "./division-color-util";
 
 class Division extends Component {
@@ -21,6 +21,7 @@ class Division extends Component {
     super(props);
 
     this.downloadToImage = this.downloadToImage.bind(this);
+    this.purgeDivisionClicked = this.purgeDivisionClicked.bind(this);
   }
 
   // Get a list of the colors for the player slots, ordered first place to last
@@ -75,6 +76,35 @@ class Division extends Component {
     });
   }
 
+  makePurgeDivisionRequest() {
+    var request = new XMLHttpRequest();
+    request.open("DELETE", util.getApiUrl("api/match-data/purge", true));
+    request.setRequestHeader("Content-type", "application/json");
+
+    // Set callback for response
+    request.onload = function() {
+      const response = JSON.parse(request.response);
+      if (response.didSucceed) {
+        // Refresh data
+        this.props.refreshFunction();
+      } else {
+        alert("Failed to purge division. Reason:\n\n" + response.errorMessage);
+      }
+    }.bind(this);
+
+    // Send request with the id of the match to delete
+    const requestBody = { divisionName: this.props.data.divisionName };
+    request.send(JSON.stringify(requestBody));
+  }
+
+  purgeDivisionClicked() {
+    const confirmMessage = `Are you sure you want to purge division ${this.props.data.divisionName}?`;
+    var result = confirm(confirmMessage);
+    if (result) {
+      this.makePurgeDivisionRequest();
+    }
+  }
+
   render() {
     // Get a sorted list of players
     const playerList = [...this.props.data.standings];
@@ -114,21 +144,19 @@ class Division extends Component {
           divAtStartOfTier ? "Division-at-start-of-tier" : ""
         }`}
       >
+        {this.props.isAdmin && (
+          <div className="Divison-actions">
+            <button onClick={this.downloadToImage}>Export PNG</button>
+            <button onClick={this.purgeDivisionClicked}>Purge Division</button>
+          </div>
+        )}
         <table>
           <tbody>
             {/* Title row */}
             <tr>
-              <th
-                className="Division-title"
-                colSpan={this.props.isAdmin ? 9 : 10}
-              >
+              <th className="Division-title" colSpan={10}>
                 Division {this.props.data.divisionName}
               </th>
-              {this.props.isAdmin && (
-                <th className="Division-export-button">
-                  <button onClick={this.downloadToImage}>Export PNG</button>
-                </th>
-              )}
             </tr>
 
             {/* Row headings */}

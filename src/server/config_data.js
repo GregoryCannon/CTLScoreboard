@@ -154,13 +154,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 0,
-    players: [
-      "VachetBeasty",
-      "OutCast",
-      "Kaptan",
-      "BirbWizard",
-      "Sargin"
-    ]
+    players: ["VachetBeasty", "OutCast", "Kaptan", "BirbWizard", "Sargin"]
   },
   {
     divisionName: "5D",

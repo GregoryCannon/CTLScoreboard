@@ -348,6 +348,46 @@ app.post("/api/match-data", function(req, res) {
   });
 });
 
+/** DELETE all matches from a division */
+app.delete("/api/match-data/purge", function(req, res) {
+  logger.logRequest("Purge division", req.body);
+  if (req.body === {}) {
+    const responseBody = {
+      didSucceed: false,
+      errorMessage:
+        "The server didn't receive any data on which division to purge"
+    };
+    logger.logResponse("Purge division", responseBody);
+    res.send(responseBody);
+  }
+
+  const divisionName = req.body.divisionName;
+  const divisionQuery = { division: divisionName };
+  matchListDb.update(divisionQuery, { $set: { valid: false } }, function(
+    err,
+    doc
+  ) {
+    if (err) {
+      // If it failed, return error
+      const responseBody = {
+        didSucceed: false,
+        errorMessage: err
+      };
+      logger.logResponse("Purge division", responseBody);
+      res.send(responseBody);
+    } else {
+      // Otherwise, return success
+      invalidateCacheForDivision(divisionName);
+      const responseBody = {
+        didSucceed: true,
+        errorMessage: ""
+      };
+      logger.logResponse("Purge division", responseBody);
+      res.send(responseBody);
+    }
+  });
+});
+
 /** DELETE match request */
 app.delete("/api/match-data", function(req, res) {
   logger.logRequest("Delete match", req.body);
