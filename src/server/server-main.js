@@ -363,29 +363,31 @@ app.delete("/api/match-data/purge", function(req, res) {
 
   const divisionName = req.body.divisionName;
   const divisionQuery = { division: divisionName };
-  matchListDb.update(divisionQuery, { $set: { valid: false } }, function(
-    err,
-    doc
-  ) {
-    if (err) {
-      // If it failed, return error
-      const responseBody = {
-        didSucceed: false,
-        errorMessage: err
-      };
-      logger.logResponse("Purge division", responseBody);
-      res.send(responseBody);
-    } else {
-      // Otherwise, return success
-      invalidateCacheForDivision(divisionName);
-      const responseBody = {
-        didSucceed: true,
-        errorMessage: ""
-      };
-      logger.logResponse("Purge division", responseBody);
-      res.send(responseBody);
+  matchListDb.update(
+    divisionQuery,
+    { $set: { valid: false } },
+    { multi: true },
+    function(err, doc) {
+      if (err) {
+        // If it failed, return error
+        const responseBody = {
+          didSucceed: false,
+          errorMessage: err
+        };
+        logger.logResponse("Purge division", responseBody);
+        res.send(responseBody);
+      } else {
+        // Otherwise, return success
+        invalidateCacheForDivision(divisionName);
+        const responseBody = {
+          didSucceed: true,
+          errorMessage: ""
+        };
+        logger.logResponse("Purge division", responseBody);
+        res.send(responseBody);
+      }
     }
-  });
+  );
 });
 
 /** DELETE match request */
