@@ -21,7 +21,7 @@ const divisionData = [
       "Cheez",
       "Tris",
       "Ben"
-    ],
+    ]
   },
 
   {
@@ -52,14 +52,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
-    players: [
-      "Andrey",
-      "SV",
-      "odinn",
-      "nddk",
-      "Xenophilius",
-      "Chiller"
-    ]
+    players: ["Andrey", "SV", "odinn", "nddk", "Xenophilius", "Chiller"]
   },
   {
     divisionName: "3B",
@@ -69,14 +62,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
-    players: [
-      "xile",
-      "Yusif",
-      "Mel",
-      "zydras",
-      "Eliwa",
-      "Night"
-    ]
+    players: ["xile", "Yusif", "Mel", "zydras", "Eliwa", "Night"]
   },
 
   {
@@ -87,14 +73,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
-    players: [
-      "Grand Designs",
-      "boxie",
-      "Blazier",
-      "Melon",
-      "Felinho",
-      "Mack"
-    ]
+    players: ["Grand Designs", "boxie", "Blazier", "Melon", "Felinho", "Mack"]
   },
   {
     divisionName: "4B",
@@ -104,14 +83,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
-    players: [
-      "BirbWizard",
-      "Hana",
-      "TStorm",
-      "Torzsa",
-      "anicomi",
-      "Reykon"
-    ]
+    players: ["BirbWizard", "Hana", "TStorm", "Torzsa", "anicomi", "Reykon"]
   },
   {
     divisionName: "4C",
@@ -156,14 +128,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
-    players: [
-      "flashboy",
-      "al",
-      "Iceblade73",
-      "Timothy Kim",
-      "Roman",
-      "Kaptan"
-    ]
+    players: ["flashboy", "al", "Iceblade73", "Timothy Kim", "Roman", "Kaptan"]
   },
   {
     divisionName: "5C",
@@ -191,14 +156,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
-    players: [
-      "Maddy",
-      "Atalito",
-      "Insaniso",
-      "Jeez",
-      "Gerhard Adler",
-      "mil0-"
-    ]
+    players: ["Maddy", "Atalito", "Insaniso", "Jeez", "Gerhard Adler", "mil0-"]
   },
   {
     divisionName: "6B",
@@ -208,14 +166,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
-    players: [
-      "Ryen",
-      "skiplogic",
-      "wide",
-      "Cwiiis",
-      "Bendy1",
-      "tourist106"
-    ]
+    players: ["Ryen", "skiplogic", "wide", "Cwiiis", "Bendy1", "tourist106"]
   },
 
   {

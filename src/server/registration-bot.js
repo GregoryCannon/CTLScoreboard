@@ -31,7 +31,7 @@ let DIVISIONS = {
   "9": []
 };
 
-const token2 = process.env.DISCORD_TOKEN;
+const token = process.env.DISCORD_TOKEN;
 const registrationBot = new Client({
   intents: [
     Intents.FLAGS.GUILDS,
@@ -58,7 +58,7 @@ async function clearChannel(channel) {
   do {
     toDelete = await channel.messages.fetch({ limit: 100 });
     toDelete = toDelete.filter(msg => msg.author.bot);
-    channel.bulkDelete(toDelete);
+    await channel.bulkDelete(toDelete);
   } while (toDelete.size >= 2);
 }
 
@@ -159,12 +159,29 @@ function deregisterUsers(divisionName, formattedUserList) {
 
 async function loadRegistrationData(channel) {
   const messages = await channel.messages.fetch();
+  let msgArray = [];
+  for (const [_, msg] of messages) {
+    if (msg.author.bot){
+      msgArray.push({
+        content: msg.content,
+        createdTimestamp: msg.createdTimestamp
+      });
+    }
+  }
+  msgArray = msgArray.sort((a, b) => a.createdTimestamp - b.createdTimestamp);
+  console.log(msgArray);
+
   if (messages.size >= 1) {
-    for (const [_, message] of messages) {
-      if (message.author.bot) {
-        DIVISIONS = JSON.parse(message);
-        return;
-      }
+    let dataString = "";
+    for (const message of msgArray) {
+      dataString += message.content;
+    }
+    console.log("Loading from data string", dataString);
+
+    try {
+      DIVISIONS = JSON.parse(dataString);
+    } catch (error) {
+      console.error("Failed to parse player list JSON");
     }
   }
 }
@@ -172,23 +189,32 @@ async function loadRegistrationData(channel) {
 async function updateRegistrationData() {
   let msgString = JSON.stringify(DIVISIONS);
   msgString = msgString.replace(/,/g, ",\n");
-  const messages = await dataStoreChannel.messages.fetch();
+  let splitMessages = msgString.match(/(.|[\r\n]){1,1000}/g); // Replace n with the size of the substring
 
-  for (const [_, message] of messages) {
-    if (message.author.bot) {
-      await message.edit(msgString);
-      return;
+  // Clear existing messages
+  await dataStoreChannel.messages.fetch().then(msgs => {
+    msgs.sort((a, b) => b.createdAt > a.createdAt);
+    for (const [_, message] of msgs) {
+      if (message.author.bot) {
+        message.delete();
+      }
     }
-  }
+  });
 
-  await dataStoreChannel.send(msgString);
+  for (const msgContent of splitMessages) {
+    await dataStoreChannel.send(msgContent);
+  }
 }
 
 /* ------------- Message management ------------ */
 
 async function configureSignUpMessages(channel) {
   // Reset the channel and send sign-up messages
-  await clearChannel(channel);
+  try {
+    await clearChannel(channel);
+  } catch (error) {
+    console.error(error);
+  }
 
   // Main registration section
   await channel.send(
@@ -377,10 +403,10 @@ registrationBot.on("messageCreate", async msg => {
 });
 
 function startRegistrationBot() {
-  if (!IS_PRODUCTION) {
-    return;
-  }
-  registrationBot.login(token2);
+  // if (!IS_PRODUCTION) {
+  //   return;
+  // }
+  registrationBot.login(token);
 }
 
 // Main entry point for using the bot from server-main.js
