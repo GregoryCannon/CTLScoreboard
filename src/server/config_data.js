@@ -143,7 +143,7 @@ const divisionData = [
       "Morelando",
       "AvGeekW159",
       "moodeuce",
-      "thatguywearingblue",
+      "Allenbot",
       "Sargin"
     ]
   },
