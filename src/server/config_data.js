@@ -25,26 +25,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "2A",
-    oneMatchPerPair: true,
-    numWinner: 0,
-    numAutoPromo: 2,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    players: [
-      "Cheez",
-      "Myles",
-      "Somalian",
-      "TegaMech",
-      "Trapzone",
-      "Tugi",
-      "Vischer",
-      "moja"
-    ]
-  },
-
-  {
     divisionName: "3A",
     oneMatchPerPair: true,
     numWinner: 0,
@@ -65,16 +45,6 @@ const divisionData = [
     players: ["xile", "Yusif", "Mel", "zydras", "Eliwa", "Night"]
   },
 
-  {
-    divisionName: "4A",
-    oneMatchPerPair: true,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: ["Grand Designs", "boxie", "Melon", "Felinho", "Mack"]
-  },
   {
     divisionName: "4B",
     oneMatchPerPair: true,
@@ -167,6 +137,23 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
     players: ["Ryen", "skiplogic", "wide", "Cwiiis", "Bendy1", "tourist106"]
+  },
+  {
+    divisionName: "6C",
+    oneMatchPerPair: true,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    players: [
+      "Roavin",
+      "Malaya",
+      "sixfour",
+      "Bard",
+      "Cwiekoszczak",
+      "mattholland",
+    ]
   },
 
   {
