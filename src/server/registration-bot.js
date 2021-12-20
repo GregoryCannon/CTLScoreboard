@@ -218,7 +218,7 @@ async function configureSignUpMessages(channel) {
 
   // Main registration section
   await channel.send(
-    "React to sign up for a new division below! Your reaction will be hidden after 3 seconds.\n\nIf you are currently in a division, do not sign up here until both (1) 100% of your own matches have been completed, and (2) your division deadline is at the end of the current week or 100% of your division's matches have already been scheduled to happen by the end of the current week. Make sure your registration is for the correct tier and is current at 23:59 UTC each Sunday. New divisions will be created shortly thereafter and withdrawal after this point may be penalised. For full details, refer to #rules-and-standings.\n" +
+    "React to sign up for a new division below! Your reaction will be hidden after 3 seconds.\n\nIf you are currently in a division, do not sign up here until both (1) 100% of your own matches have been completed, and (2) your division deadline is at the end of the current week or your tier for the next season is already a 100% certainty. Make sure your registration is for the correct tier and is current at 23:59 UTC each Sunday. New divisions will be created shortly thereafter and withdrawal after this point may be penalised. For full details, refer to #rules-and-standings.\n\n" +
       LINE_ASCII
   );
   for (const divisionName of Object.keys(DIVISIONS)) {
