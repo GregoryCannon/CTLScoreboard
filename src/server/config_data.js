@@ -219,7 +219,7 @@ const divisionData = [
     players: [
       "Sebastian",
       "Mario Lafleur",
-      "Owen",
+      "Yeehaw",
       "Lukideluxe",
       "burritodad",
       "Dobry Czlowiek"
