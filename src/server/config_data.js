@@ -217,7 +217,7 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
     players: [
-      "Sebastian",
+      "Diamond",
       "Mario Lafleur",
       "Yeehaw",
       "Lukideluxe",
