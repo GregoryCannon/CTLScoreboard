@@ -182,12 +182,29 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
     players: [
-      "Kingsman",
       "Billy Mac",
-      "Cal",
-      "Elpailtem",
+      "Kebab",
+      "Kingsman",
+      "DrKnockers",
+      "LilSquibbles",
+      "Oofie"
+    ]
+  },
+  {
+    divisionName: "7C",
+    oneMatchPerPair: true,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    players: [
       "Tyler",
-      "Sideshow Bob"
+      "Mario Lafleur",
+      "pissarse",
+      "Marts",
+      "Cal",
+      "Uno"
     ]
   },
 
@@ -241,6 +258,23 @@ const divisionData = [
       "Richard Wolf VI",
       "Schtoikle",
       "DBS"
+    ]
+  },
+   {
+    divisionName: "9B",
+    oneMatchPerPair: true,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "MrShadow",
+      "slackynessa",
+      "Junior",
+      "arbaro",
+      "Benfamir",
+      "mfrerck",
     ]
   }
 ];
