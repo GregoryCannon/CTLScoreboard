@@ -72,24 +72,7 @@ const divisionData = [
       "IanKeith"
     ]
   },
-
-  {
-    divisionName: "5A",
-    oneMatchPerPair: true,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    players: [
-      "Gunter",
-      "OutCast",
-      "Santtu",
-      "VachetBeasty",
-      "Peyton",
-      "PixelAtc"
-    ]
-  },
+ 
   {
     divisionName: "5B",
     oneMatchPerPair: true,
