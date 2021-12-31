@@ -461,7 +461,8 @@ const restreamerRole = [
   "Damian-GDudge(UTC+2)#9821",
   "SARGIN#9722",
   "DavidMichaelJ#5419",
-  "Alex Thach#0648"
+  "Alex Thach#0648",
+  "zydras#9476"
 ];
 
 module.exports = {
