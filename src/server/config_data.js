@@ -87,7 +87,7 @@ const divisionData = [
     numAutoRelegate: 1,
     players: [
       "GDudge",
-      "ash_",
+      "Hana",
       "Grand Designs",
       "Haven",
       "20Dan03",
