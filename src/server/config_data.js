@@ -190,12 +190,12 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
     players: [
-      "Roavin",
-      "Malaya",
-      "sixfour",
-      "Bard",
-      "Cwiekoszczak",
-      "mattholland",
+      "AvGeekW159",
+      "scoopman",
+      "DrKnockers",
+      "WallBant",
+      "Maedhros",
+      "pummyzoi",
     ]
   },
 
@@ -217,23 +217,6 @@ const divisionData = [
     ]
   },
   {
-    divisionName: "7B",
-    oneMatchPerPair: true,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    players: [
-      "Billy Mac",
-      "Kebab",
-      "Kingsman",
-      "DrKnockers",
-      "LilSquibbles",
-      "Oofie"
-    ]
-  },
-  {
     divisionName: "7C",
     oneMatchPerPair: true,
     numWinner: 0,
@@ -248,6 +231,24 @@ const divisionData = [
       "Marts",
       "Cal",
       "Uno"
+    ]
+  },
+
+  {
+    divisionName: "8A",
+    oneMatchPerPair: true,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    players: [
+      "SzymenL0K0",
+      "WhiteMonster",
+      "Sideshow Bob",
+      "PrinceFluffy",
+      "Lukideluxe",
+      "Yeehaw",
     ]
   },
 
