@@ -392,8 +392,9 @@ registrationBot.on("messageCreate", async (msg) => {
     await updateRegistrationData();
     msg.channel.send(
       `Removed ${removedPlayers.length -
-        notFound.length} players from division ${divisionName}.${notFound.length >
-        0 && " Unable to remove: " + notFound.join(", ")}`
+        notFound.length} players from division ${divisionName}.${
+        notFound.length > 0 ? " Unable to remove: " + notFound.join(", ") : ""
+      }`
     );
   }
 
