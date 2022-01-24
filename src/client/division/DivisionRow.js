@@ -4,13 +4,14 @@ import PlayerAdvancedStats from "./PlayerAdvancedStats";
 import PlayerOpponents from "./PlayerOpponents";
 const divisionColorUtil = require("./division-color-util");
 import "./DivisionRow.css";
+import { USE_PLAYOFFS_FOR_HYBRID_DIVISIONS } from "../../server/util";
 
 class DivisionRow extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      isHovered: false
+      isHovered: false,
     };
 
     this.toggleOpen = this.toggleOpen.bind(this);
@@ -60,8 +61,15 @@ class DivisionRow extends Component {
     const overallPromoChance =
       this.props.data.numPrizeMoney > 0
         ? this.props.player.prizeMoneyChance
-        : this.props.player.autoPromoChance; // formerly,   ...  + 0.5 * this.props.player.playoffPromoChance;
-    const overallRelegationChance = this.props.player.autoRelegationChance; // formerly,    ... + 0.5 * this.props.player.playoffRelegationChance;
+        : this.props.player.autoPromoChance +
+          (USE_PLAYOFFS_FOR_HYBRID_DIVISIONS
+            ? 0
+            : 0.5 * this.props.player.playoffPromoChance); // Maybe include the playoff promo chance as well
+    const overallRelegationChance =
+      this.props.player.autoRelegationChance +
+      (USE_PLAYOFFS_FOR_HYBRID_DIVISIONS
+        ? 0
+        : 0.5 * this.props.player.playoffRelegationChance); // Maybe include the playoff promo chance as well
 
     return (
       <React.Fragment>
@@ -72,7 +80,7 @@ class DivisionRow extends Component {
           style={{
             backgroundColor: this.state.isHovered
               ? "rgb(239 250 255)"
-              : this.props.bgColor
+              : this.props.bgColor,
           }}
           onClick={this.toggleOpen}
           onMouseEnter={() => this.setIsHovered(true)}
@@ -108,7 +116,7 @@ class DivisionRow extends Component {
                 ? "rgb(239 250 255)"
                 : this.props.data.divisionName === "1"
                 ? divisionColorUtil.getWinGradientColor(overallPromoChance)
-                : divisionColorUtil.getPromoGradientColor(overallPromoChance)
+                : divisionColorUtil.getPromoGradientColor(overallPromoChance),
             }}
           >
             {this.renderPercentage(overallPromoChance)}
@@ -120,7 +128,7 @@ class DivisionRow extends Component {
                 ? "rgb(239 250 255)"
                 : divisionColorUtil.getRelegationGradientColor(
                     overallRelegationChance
-                  )
+                  ),
             }}
           >
             {this.renderPercentage(overallRelegationChance)}
@@ -135,7 +143,7 @@ class DivisionRow extends Component {
               style={{
                 maxHeight: this.props.isOpen ? "30vh" : "0",
                 borderWidth: 0,
-                borderColor: this.props.isOpen ? "#888f" : "#8880"
+                borderColor: this.props.isOpen ? "#888f" : "#8880",
               }}
             >
               <PlayerOpponents

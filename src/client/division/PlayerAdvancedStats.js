@@ -1,7 +1,13 @@
 import "./PlayerAdvancedStats.css";
 import React from "react";
+import { USE_PLAYOFFS_FOR_HYBRID_DIVISIONS } from "../../server/util";
 
 function PlayerAdvancedStats(props) {
+  const shouldShowUnchangedRow =
+    !USE_PLAYOFFS_FOR_HYBRID_DIVISIONS ||
+    (props.division.numPlayoffPromo == 0 &&
+      props.division.numPlayoffRelegate == 0);
+
   return (
     <div className="Player-advanced-stats">
       <h4>Advanced Stats</h4>
@@ -50,31 +56,41 @@ function PlayerAdvancedStats(props) {
 
         {props.division.numPlayoffPromo > 0 && (
           <tr className="Stats-playoff-promo">
-            <td>Upper Tier</td>
+            <td>
+              {USE_PLAYOFFS_FOR_HYBRID_DIVISIONS
+                ? "Upper Tier"
+                : "Playoff Promotion"}
+            </td>
             <td>
               {props.renderPercentageFunc(props.playerData.playoffPromoChance)}
             </td>
           </tr>
         )}
 
-        <tr className="Stats-unchanged">
-          <td>Unchanged</td>
-          <td>
-            {props.renderPercentageFunc(
-              100 -
-                (props.division.numPrizeMoney > 0
-                  ? props.playerData.prizeMoneyChance
-                  : props.playerData.autoPromoChance +
-                    props.playerData.playoffPromoChance) -
-                props.playerData.autoRelegationChance -
-                props.playerData.playoffRelegationChance
-            )}
-          </td>
-        </tr>
+        {shouldShowUnchangedRow && (
+          <tr className="Stats-unchanged">
+            <td>Unchanged</td>
+            <td>
+              {props.renderPercentageFunc(
+                100 -
+                  (props.division.numPrizeMoney > 0
+                    ? props.playerData.prizeMoneyChance
+                    : props.playerData.autoPromoChance +
+                      props.playerData.playoffPromoChance) -
+                  props.playerData.autoRelegationChance -
+                  props.playerData.playoffRelegationChance
+              )}
+            </td>
+          </tr>
+        )}
 
         {props.division.numPlayoffRelegate > 0 && (
           <tr className="Stats-playoff-relegation">
-            <td>Lower Tier</td>
+            <td>
+              {USE_PLAYOFFS_FOR_HYBRID_DIVISIONS
+                ? "Lower Tier"
+                : "Playoff Relegation"}
+            </td>
             <td>
               {props.renderPercentageFunc(
                 props.playerData.playoffRelegationChance
