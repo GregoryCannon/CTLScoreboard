@@ -60,11 +60,8 @@ class DivisionRow extends Component {
     const overallPromoChance =
       this.props.data.numPrizeMoney > 0
         ? this.props.player.prizeMoneyChance
-        : this.props.player.autoPromoChance +
-          0.5 * this.props.player.playoffPromoChance;
-    const overallRelegationChance =
-      this.props.player.autoRelegationChance +
-      0.5 * this.props.player.playoffRelegationChance;
+        : this.props.player.autoPromoChance; // formerly,   ...  + 0.5 * this.props.player.playoffPromoChance;
+    const overallRelegationChance = this.props.player.autoRelegationChance; // formerly,    ... + 0.5 * this.props.player.playoffRelegationChance;
 
     return (
       <React.Fragment>

@@ -28,7 +28,7 @@ function PlayerAdvancedStats(props) {
             }
           >
             <td>
-              {props.division.divisionName === "1" ? "Winner" : "Auto-Promo"}
+              {props.division.divisionName === "1" ? "Winner" : "Promotion"}
             </td>
             <td>
               {props.renderPercentageFunc(props.playerData.autoPromoChance)}
@@ -50,7 +50,7 @@ function PlayerAdvancedStats(props) {
 
         {props.division.numPlayoffPromo > 0 && (
           <tr className="Stats-playoff-promo">
-            <td>Playoff Promo</td>
+            <td>Upper Tier</td>
             <td>
               {props.renderPercentageFunc(props.playerData.playoffPromoChance)}
             </td>
@@ -74,7 +74,7 @@ function PlayerAdvancedStats(props) {
 
         {props.division.numPlayoffRelegate > 0 && (
           <tr className="Stats-playoff-relegation">
-            <td>Playoff Relegation</td>
+            <td>Lower Tier</td>
             <td>
               {props.renderPercentageFunc(
                 props.playerData.playoffRelegationChance
@@ -85,7 +85,7 @@ function PlayerAdvancedStats(props) {
 
         {props.division.numAutoRelegate > 0 && (
           <tr className="Stats-auto-relegation">
-            <td>Auto-Relegation</td>
+            <td>Relegation</td>
             <td>
               {props.renderPercentageFunc(
                 props.playerData.autoRelegationChance
