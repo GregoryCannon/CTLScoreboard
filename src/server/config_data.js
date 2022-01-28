@@ -285,7 +285,7 @@ const divisionData = [
     players: [
       "Rei",
       "doodle",
-      "burritodad",
+      "Yasin",
       "DocPi",
       "Sebastian",
       "Riogreywind"
