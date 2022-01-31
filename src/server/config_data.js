@@ -489,7 +489,8 @@ const restreamerRole = [
   "Noriko#0030",
   "Sleepy Samantha#8502",
   "PolloSalazar#1503",
-  "rens#5484"
+  "rens#5484",
+  "NNNNNNNNNNNNNN#2430"
 ];
 
 module.exports = {
