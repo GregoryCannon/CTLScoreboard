@@ -492,7 +492,7 @@ const restreamerRole = [
   "rens#5484",
   "NNNNNNNNNNNNNN#2430",
   "AkumaLuxray#4503",
-  "cmg444\#4652",
+  "cmg444\\#4652",
   "Dorukkaptan95#0404"
 ];
 
