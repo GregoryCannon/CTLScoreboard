@@ -289,7 +289,8 @@ const adminRole = [
   "moodeuce#8573",
   "Kingsman#0364",
   "Tugi#7004",
-  "BlargMeister#1337"
+  "BlargMeister#1337",
+  "nikvo#1021"
 ];
 
 const restreamerRole = [
