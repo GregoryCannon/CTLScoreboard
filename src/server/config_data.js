@@ -262,7 +262,7 @@ const divisionData = [
     numAutoRelegate: 0,
     players: [
       "mfrerck",
-      "Zyild",
+      "Valid",
       "Frenchie",
       "MrShadow",
       "Junior",
