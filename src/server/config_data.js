@@ -257,7 +257,7 @@ const divisionData = [
   },
 
   {
-    divisionName: "8/9A",
+    divisionName: "8-9A",
     oneMatchPerPair: true,
     numWinner: 0,
     numAutoPromo: 1,
