@@ -67,7 +67,7 @@ const divisionData = [
       "Andrey",
       "Kaptan",
       "SV",
-      "Felinho/Santtu",
+      "Felinho",
     ]
   },
 
@@ -107,7 +107,7 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
     players: [
-      "Felinho/Santtu",
+      "Santtu",
       "Timothy Kim",
       "Draco",
       "Mecex",
