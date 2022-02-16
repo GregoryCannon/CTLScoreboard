@@ -402,7 +402,7 @@ const restreamerRole = [
   "Vernie#0857",
   "odinn cube horse#1009",
   "odinn group masturbator#1009",
-  "💖La Madeline💖#5443",
+  "Sleepy Maddy#5443",
   "shane#9017",
   "BirbWizard#9396",
   "RIVAL | Ard#1561",
