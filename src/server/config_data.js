@@ -214,7 +214,6 @@ const divisionData = [
     players: [
       "sixfour",
       "Ivory",
-      "scoopman",
       "Mario Lafleur",
       "Wolflord",
       "Świdr",
