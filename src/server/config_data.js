@@ -469,7 +469,7 @@ const restreamerRole = [
   "Świdr#0486",
   "doodle#3414",
   "Allenbot#1138",
-  "liolio1230#9656"
+  "liolio1230#9656",
   "Benfamir#0001"
 ];
 
