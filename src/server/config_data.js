@@ -234,6 +234,23 @@ const divisionData = [
       "Mickaël",
     ]
   },
+  {
+    divisionName: "7C",
+    oneMatchPerPair: true,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    players: [
+      "Billy Mac",
+      "Kingsman",
+      "sixfour",
+      "Diggs",
+      "Bergtroll",
+      "mil0-",
+    ]
+  },
 
   {
     divisionName: "8-9A",
