@@ -79,6 +79,23 @@ const divisionData = [
   },
 
   {
+    divisionName: "4A",
+    oneMatchPerPair: true,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    players: [
+      "xile",
+      "boxie",
+      "Night",
+      "Mr. Faq",
+      "Armstrong",
+      "Peyton",
+    ]
+  },
+  {
     divisionName: "4C",
     oneMatchPerPair: true,
     numWinner: 0,
@@ -113,6 +130,23 @@ const divisionData = [
     ]
   },
 
+  {
+    divisionName: "5A",
+    oneMatchPerPair: true,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    players: [
+      "Roman",
+      "VachetBeasty",
+      "Tweak Beacon",
+      "Grand Designs",
+      "Koolio",
+      "OutCast",
+    ]
+  },
   {
     divisionName: "5B",
     oneMatchPerPair: true,
@@ -200,23 +234,6 @@ const divisionData = [
       "Mickaël",
     ]
   },
-  {
-    divisionName: "7C",
-    oneMatchPerPair: true,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    players: [
-      "sixfour",
-      "Cardek",
-      "sauce",
-      "mil0-",
-      "Lukideluxe",
-      "Kingsman",
-    ]
-  },
 
   {
     divisionName: "8-9A",
@@ -250,6 +267,40 @@ const divisionData = [
       "MrShadow",
       "Benfamir",
       "SnowLilyx",
+    ]
+  },
+  {
+    divisionName: "8-9C",
+    oneMatchPerPair: true,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 2,
+    numPlayoffRelegate: 3,
+    numAutoRelegate: 0,
+    players: [
+      "burritodad",
+      "Junior",
+      "Frodo",
+      "Lukideluxe",
+      "Owen",
+      "Marts",
+    ]
+  },
+  {
+    divisionName: "8-9D",
+    oneMatchPerPair: true,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 3,
+    numPlayoffRelegate: 2,
+    numAutoRelegate: 0,
+    players: [
+      "Schtoikle",
+      "Riogreywind",
+      "Yeehaw",
+      "mfrerck",
+      "doodle",
+      "Snowtris",
     ]
   }
 ];
