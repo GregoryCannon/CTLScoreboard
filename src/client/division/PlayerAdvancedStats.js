@@ -61,7 +61,7 @@ function PlayerAdvancedStats(props) {
             <td>
               {USE_PLAYOFFS_FOR_HYBRID_DIVISIONS
                 ? "Upper Tier"
-                : "Playoff Promotion"}
+                : "Promotion Playoff"}
             </td>
             <td>
               {props.renderPercentageFunc(props.playerData.playoffPromoChance)}
@@ -91,7 +91,7 @@ function PlayerAdvancedStats(props) {
             <td>
               {USE_PLAYOFFS_FOR_HYBRID_DIVISIONS
                 ? "Lower Tier"
-                : "Playoff Relegation"}
+                : "Relegation Playoff"}
             </td>
             <td>
               {props.renderPercentageFunc(
