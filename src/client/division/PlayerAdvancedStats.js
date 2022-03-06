@@ -35,7 +35,7 @@ function PlayerAdvancedStats(props) {
           >
             <td>
               {props.division.divisionName.includes("1")
-                ? "Winner"
+                ? "Winner's Bracket"
                 : "Promotion"}
             </td>
             <td>
@@ -46,7 +46,7 @@ function PlayerAdvancedStats(props) {
 
         {props.division.numPrizeMoney > 0 && (
           <tr className={"Stats-prize-money"}>
-            <td>Prize Money</td>
+            <td>Loser's Bracket</td>
             <td>
               {props.renderPercentageFunc(
                 props.playerData.prizeMoneyChance -
