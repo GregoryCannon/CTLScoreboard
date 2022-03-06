@@ -13,7 +13,7 @@ import {
   RELEGATE_COLOR_STR,
   PLAYOFF_PROMO_COLOR_STR,
   PLAYOFF_RELEGATE_COLOR_STR,
-  PRIZE_COLOR_STR
+  PRIZE_COLOR_STR,
 } from "./division-color-util";
 
 class Division extends Component {
@@ -113,8 +113,6 @@ class Division extends Component {
     } else {
       playerList.sort(util.compareSimulated);
     }
-
-    console.log(this.props.data.standings);
 
     // Calculate other constants
     const divName = this.props.data.divisionName;

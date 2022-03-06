@@ -28,13 +28,15 @@ function PlayerAdvancedStats(props) {
         {props.division.numAutoPromo + props.division.numWinner > 0 && (
           <tr
             className={
-              props.division.divisionName === "1"
+              props.division.divisionName.includes("1")
                 ? "Stats-winner"
                 : "Stats-auto-promo"
             }
           >
             <td>
-              {props.division.divisionName === "1" ? "Winner" : "Promotion"}
+              {props.division.divisionName.includes("1")
+                ? "Winner"
+                : "Promotion"}
             </td>
             <td>
               {props.renderPercentageFunc(props.playerData.autoPromoChance)}

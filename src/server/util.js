@@ -3,7 +3,7 @@ const moment = require("moment");
 // CHANGE THIS WHEN DEBUGGING
 const IS_PRODUCTION = true;
 
-const USE_PLAYOFFS_FOR_HYBRID_DIVISIONS = true;
+const USE_PLAYOFFS_FOR_HYBRID_DIVISIONS = false;
 
 const memeDivisionData = [
   {

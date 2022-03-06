@@ -38,7 +38,9 @@ function DivisionHeadings(props) {
       >
         <div className="Header-sortable-inner">
           <div>
-            {props.data.divisionName === "1" ? "Prize Chance" : "Promo Chance"}
+            {props.data.divisionName.includes("1")
+              ? "Prize Chance"
+              : "Promo Chance"}
           </div>
           <div className="Sort-arrow">▼</div>
         </div>
