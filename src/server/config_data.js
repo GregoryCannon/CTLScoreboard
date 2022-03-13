@@ -55,23 +55,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "3A",
-    oneMatchPerPair: true,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    players: [
-      "anicomi",
-      "nddk",
-      "Melon",
-      "odinn",
-      "NGC Man",
-      "Jeez",
-    ]
-  },
-  {
     divisionName: "3B",
     oneMatchPerPair: true,
     numWinner: 0,
@@ -177,23 +160,6 @@ const divisionData = [
     ]
   },
   {
-    divisionName: "6B",
-    oneMatchPerPair: true,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    players: [
-      "Moulis64",
-      "Roavin",
-      "Heist",
-      "mattholland",
-      "TNISaint",
-      "Wolflord",
-    ]
-  },
-  {
     divisionName: "6C",
     oneMatchPerPair: true,
     numWinner: 0,
@@ -220,12 +186,12 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
     players: [
+      "Mickaël",
+      "Cal",
+      "srb",
       "Ivory",
-      "Mario Lafleur",
-      "Ryen",
-      "Sebastian",
-      "Rib",
-      "Cwiiis",
+      "Diggs",
+      "WhiteMonster",
     ]
   },
   {
@@ -245,21 +211,22 @@ const divisionData = [
       "Kingsman",
     ]
   },
+
   {
-    divisionName: "7C",
+    divisionName: "8A",
     oneMatchPerPair: true,
     numWinner: 0,
     numAutoPromo: 1,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
+    numAutoRelegate: 0,
     players: [
-      "Billy Mac",
-      "Kingsman",
-      "sixfour",
-      "Diggs",
-      "Bergtroll",
-      "mil0-",
+      "Tacomom",
+      "burritodad",
+      "Owen",
+      "arbaro",
+      "SirMaser",
+      "Mario Lafleur",
     ]
   },
 
@@ -296,6 +263,23 @@ const divisionData = [
       "Frodo",
       "SnowLilyx",
       "Nemesis",
+    ]
+  },
+  {
+    divisionName: "9B",
+    oneMatchPerPair: true,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "Junior",
+      "Benfamir",
+      "Richard Wolf VI",
+      "SzymenL0K0",
+      "Valid",
+      "mfrerck",
     ]
   }
 ];
