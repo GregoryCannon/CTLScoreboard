@@ -505,7 +505,8 @@ const restreamerRole = [
   "Bendy1#6609",
   "Chris_Moulistanos#3251",
   "Klystyr (UTC -6)#9595",
-  "mistec43#9728"
+  "mistec43#9728",
+  "Tweak_Beacon#2045"
 ];
 
 module.exports = {
