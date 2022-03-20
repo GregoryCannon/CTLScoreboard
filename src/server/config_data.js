@@ -55,6 +55,23 @@ const divisionData = [
   },
 
   {
+    divisionName: "3A",
+    oneMatchPerPair: true,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    players: [
+      "anicomi",
+      "odinn",
+      "Santtu",
+      "liolio1230",
+      "Louie",
+      "boxie",
+    ]
+  },
+  {
     divisionName: "3B",
     oneMatchPerPair: true,
     numWinner: 0,
@@ -81,12 +98,12 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
     players: [
-      "xile",
-      "boxie",
+      "TyDominoGuy",
+      "Mecex",
+      "Rens",
       "Night",
-      "Mr. Faq",
-      "Armstrong",
-      "Peyton",
+      "Koolio",
+      "MNPL Poke",
     ]
   },
   {
@@ -116,12 +133,12 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
     players: [
-      "Roman",
+      "Gunter",
+      "Draco",
+      "Insaniso",
+      "foiledthrice",
       "VachetBeasty",
       "Tweak Beacon",
-      "Grand Designs",
-      "Koolio",
-      "OutCast",
     ]
   },
   {
@@ -151,16 +168,16 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
     players: [
-      "DrKnockers",
-      "Elpailtem",
-      "Resting",
-      "Insaniso",
+      "WallBant",
       "Sebastian",
-      "WhiteMonster",
+      "Moulis64",
+      "Malaya",
+      "Wolflord",
+      "moodeuce",
     ]
   },
   {
-    divisionName: "6C",
+    divisionName: "6B",
     oneMatchPerPair: true,
     numWinner: 0,
     numAutoPromo: 1,
@@ -168,12 +185,12 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
     players: [
+      "Ryen",
+      "DrKnockers",
+      "Fouad Z",
       "PiW",
-      "Rory",
-      "sauce",
-      "Maedhros",
-      "c-dubs",
-      "moodeuce",
+      "Mickaël",
+      "Billy Mac",
     ]
   },
 
@@ -211,6 +228,23 @@ const divisionData = [
       "Kingsman",
     ]
   },
+  {
+    divisionName: "7C",
+    oneMatchPerPair: true,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    players: [
+      "Bergtroll",
+      "Kingsman",
+      "mil0-",
+      "WhiteMonster",
+      "Diggs",
+      "Ivory",
+    ]
+  },
 
   {
     divisionName: "8A",
@@ -231,24 +265,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "8-9D",
-    oneMatchPerPair: true,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 3,
-    numPlayoffRelegate: 2,
-    numAutoRelegate: 0,
-    players: [
-      "Schtoikle",
-      "Riogreywind",
-      "Yeehaw",
-      "mfrerck",
-      "doodle",
-      "Snowtris",
-    ]
-  },
-
-  {
     divisionName: "9A",
     oneMatchPerPair: true,
     numWinner: 0,
@@ -257,12 +273,12 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 0,
     players: [
-      "Rei",
-      "Klystyr",
-      "Marts",
-      "Frodo",
       "SnowLilyx",
-      "Nemesis",
+      "Frodo",
+      "Ellery Stacks",
+      "Rei",
+      "Riogreywind",
+      "laurenjesson",
     ]
   },
   {
