@@ -263,6 +263,23 @@ const divisionData = [
       "Mario Lafleur",
     ]
   },
+  {
+    divisionName: "8B",
+    oneMatchPerPair: true,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "sixfour",
+      "Elpailtem",
+      "doodle",
+      "Marts",
+      "Yeehaw",
+      "mistec43",
+    ]
+  },
 
   {
     divisionName: "9A",
