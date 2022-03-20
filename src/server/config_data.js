@@ -234,8 +234,8 @@ const divisionData = [
     numWinner: 0,
     numAutoPromo: 1,
     numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
     players: [
       "Bergtroll",
       "Kingsman",
