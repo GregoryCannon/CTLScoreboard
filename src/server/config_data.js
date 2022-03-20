@@ -507,7 +507,8 @@ const restreamerRole = [
   "Klystyr (UTC -6)#9595",
   "mistec43#9728",
   "Tweak_Beacon#2045",
-  "Micetro#8032"
+  "Micetro#8032",
+  "Noriko#0001"
 ];
 
 module.exports = {
