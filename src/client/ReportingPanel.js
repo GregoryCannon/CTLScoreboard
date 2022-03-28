@@ -42,7 +42,7 @@ class ReportingPanel extends Component {
     });
   }
 
-  getPlayerList() {
+  getDivision() {
     if (this.state.reportingDivision === "") {
       return [];
     }
@@ -52,7 +52,15 @@ class ReportingPanel extends Component {
     if (filteredDivisions.length !== 1) {
       return [];
     }
-    return filteredDivisions[0].players;
+    return filteredDivisions;
+  }
+
+  getPlayerList() {
+    return this.getDivision().players;
+  }
+
+  getOneMatchPerPair() {
+    return this.getDivision().oneMatchPerPair;
   }
 
   // Check the form and return either 'valid' or the error to be displayed
@@ -233,17 +241,21 @@ class ReportingPanel extends Component {
                     defaultValue={GAMES_TO_WIN}
                     ref={this.winnerGamesInput}
                   ></input>
-                  <div>
-                    <label htmlFor="winner-home">Home</label>
-                    <input
-                      id="winner-home"
-                      type="radio"
-                      name="home-away"
-                      onChange={e => {
-                        this.changeWinnerHome(event.target.value === "on");
-                      }}
-                    ></input>
-                  </div>
+                  {this.getOneMatchPerPair() ? (
+                    this.changeWinnerHome(true)
+                  ) : (
+                    <div>
+                      <label htmlFor="winner-home">Home</label>
+                      <input
+                        id="winner-home"
+                        type="radio"
+                        name="home-away"
+                        onChange={e => {
+                          this.changeWinnerHome(event.target.value === "on");
+                        }}
+                      ></input>
+                    </div>
+                  )}
                 </div>
 
                 <div className="Defeated-text">defeated</div>
@@ -270,17 +282,21 @@ class ReportingPanel extends Component {
                     ref={this.loserGamesInput}
                   ></input>
 
-                  <div>
-                    <label htmlFor="loser-home">Home</label>
-                    <input
-                      id="loser-home"
-                      type="radio"
-                      name="home-away"
-                      onChange={e => {
-                        this.changeWinnerHome(event.target.value === "off");
-                      }}
-                    ></input>
-                  </div>
+                  {this.getOneMatchPerPair() ? (
+                    this.changeWinnerHome(true)
+                  ) : (
+                    <div>
+                      <label htmlFor="loser-home">Home</label>
+                      <input
+                        id="loser-home"
+                        type="radio"
+                        name="home-away"
+                        onChange={e => {
+                          this.changeWinnerHome(event.target.value === "off");
+                        }}
+                      ></input>
+                    </div>
+                  )}
                 </div>
               </div>
 
