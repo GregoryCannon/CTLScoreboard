@@ -542,7 +542,8 @@ const restreamerRole = [
   "Tweak_Beacon#2045",
   "Micetro#8032",
   "Noriko#0001",
-  "frodododo#8283"
+  "frodododo#8283",
+  "Muffyio#8946"
 ];
 
 module.exports = {
