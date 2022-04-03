@@ -71,6 +71,23 @@ const divisionData = [
       "boxie",
     ]
   },
+  {
+    divisionName: "3B",
+    oneMatchPerPair: true,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    players: [
+      "Chiller",
+      "SV",
+      "Yusif",
+      "Rahmations",
+      "NGC Man",
+      "Josh",
+    ]
+  },
 
   {
     divisionName: "4A",
@@ -106,6 +123,23 @@ const divisionData = [
       "BirbWizard",
     ]
   },
+  {
+    divisionName: "4C",
+    oneMatchPerPair: true,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    players: [
+      "Kaptan",
+      "Timothy Kim",
+      "IanKeith",
+      "Torzsa",
+      "Blue Scuti",
+      "Armstrong",
+    ]
+  },
 
   {
     divisionName: "5A",
@@ -139,6 +173,23 @@ const divisionData = [
       "Kirbyrulz",
       "Vince",
       "Mleczak",
+    ]
+  },
+  {
+    divisionName: "5C",
+    oneMatchPerPair: true,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    players: [
+      "Bendy1",
+      "romik",
+      "AvGeekW159",
+      "Pollo",
+      "Tyler",
+      "Rurczak",
     ]
   },
 
@@ -195,7 +246,7 @@ const divisionData = [
     ]
   },
   {
-    divisionName: "7C",
+    divisionName: "7B",
     oneMatchPerPair: true,
     numWinner: 0,
     numAutoPromo: 1,
@@ -203,12 +254,12 @@ const divisionData = [
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
-      "Bergtroll",
       "Kingsman",
       "mil0-",
-      "WhiteMonster",
+      "sixfour",
+      "burritodad",
       "Diggs",
-      "Ivory",
+      "Threes",
     ]
   },
 
@@ -218,15 +269,15 @@ const divisionData = [
     numWinner: 0,
     numAutoPromo: 1,
     numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
+    numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
-      "Tacomom",
-      "burritodad",
-      "Owen",
-      "arbaro",
-      "SirMaser",
       "Mario Lafleur",
+      "SirMaser",
+      "Tacomom",
+      "Yeehaw",
+      "mistec43",
+      "Hunn",
     ]
   },
   {
@@ -235,15 +286,15 @@ const divisionData = [
     numWinner: 0,
     numAutoPromo: 1,
     numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
+    numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
-      "sixfour",
-      "Elpailtem",
+      "Owen",
+      "arbaro",
       "doodle",
       "Marts",
-      "Yeehaw",
-      "mistec43",
+      "Twifty",
+      "Riogreywind",
     ]
   },
   {
@@ -290,12 +341,12 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 0,
     players: [
+      "SnowLilyx",
+      "Lapis Lazuli",
+      "Frenchie",
+      "claw",
       "Junior",
-      "Benfamir",
       "Richard Wolf VI",
-      "SzymenL0K0",
-      "Valid",
-      "mfrerck",
     ]
   },
   {
