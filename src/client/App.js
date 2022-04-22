@@ -290,7 +290,7 @@ class App extends Component {
               )}
             </div>
 
-            <h1>CTL Standings</h1>
+            <h1>TNP Standings</h1>
 
             <div className="Content-nav">
               <Link className="Nav-button" to="/standings">
