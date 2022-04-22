@@ -98,7 +98,7 @@ class MatchHistory extends Component {
                       key={this.getMatchText(match)}
                       className="Reported-match"
                     >
-                      <td className="Match-division">D{match.division}</td>
+                      <td className="Match-division">{match.division}</td>
                       <td className="Match-text">
                         {this.getMatchText(match)}
                         <br />
