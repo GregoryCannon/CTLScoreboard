@@ -42,7 +42,8 @@ const adminRole = [
 ];
 
 const restreamerRole = [
-  "Richard Wolf VI#3522"
+  "Richard Wolf VI#3522",
+  "Benfamir#0001"
 ];
 
 module.exports = {
