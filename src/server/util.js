@@ -582,7 +582,7 @@ function getPlayerLookupMap(division) {
 
 function getApiUrl(suffix) {
   if (IS_PRODUCTION) {
-    return "https://ctlscoreboard.herokuapp.com/" + suffix;
+    return "https://tnpscoreboard.herokuapp.com/" + suffix;
   } else {
     return (process.env.API_URL || "http://localhost:8080") + "/" + suffix;
   }
