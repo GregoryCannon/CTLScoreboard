@@ -180,7 +180,7 @@ class ReportingPanel extends Component {
         <div>
           <div className="Report-matches-title">Report a Match</div>
           <div className="Error-message">
-            You do not have the 'Restreamer' role. Contact CTL admins to gain
+            You do not have the 'Restreamer' role. Contact TNP admins to gain
             restreamer access.
           </div>
         </div>

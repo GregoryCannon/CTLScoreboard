@@ -14,11 +14,11 @@ const { IS_PRODUCTION, getMatchDateFormatted } = require("./util");
 // const reportingChannelId = IS_PRODUCTION
 //   ? "609133593289293835"
 //   : "912317693162577981";
-const dataStoreId = "966568539064508436";
-const dataStoreBackupId = "966581333843394560";
-const signUpChannelId = "966568574468640778";
-const commandChannelId = "966568605024145438";
-const reportingChannelId = "966568634988265472";
+const dataStoreId = process.env.DATA_STORE_CHANNEL;
+const dataStoreBackupId = process.env.DATA_STORE_BACKUP_CHANNEL;
+const signUpChannelId = process.env.SIGNUP_CHANNEL;
+const commandChannelId = process.env.COMMAND_CHANNEL;
+const reportingChannelId = process.env.REPORTING_CHANNEL;
 let previousVodUrl = "";
 let dataStoreChannel;
 const MAIN_EMOJI = "👍";
