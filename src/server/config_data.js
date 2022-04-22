@@ -14,7 +14,7 @@ const divisionData = [
       "Somalian",
       "PixelAndy",
       "dog",
-      "Alex Thach",
+      "Alex Thach"
     ]
   },
   {
@@ -32,7 +32,7 @@ const divisionData = [
       "TegaMech",
       "Cheez",
       "Nenu Zefanya",
-      "fractal",
+      "fractal"
     ]
   },
 
@@ -44,14 +44,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
-    players: [
-      "nddk",
-      "Longboy",
-      "iBall",
-      "Gerald Freeman",
-      "Scamper9",
-      "Tugi",
-    ]
+    players: ["nddk", "Longboy", "iBall", "Gerald Freeman", "Scamper9", "Tugi"]
   },
 
   {
@@ -62,14 +55,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
-    players: [
-      "anicomi",
-      "odinn",
-      "Santtu",
-      "liolio1230",
-      "Louie",
-      "boxie",
-    ]
+    players: ["anicomi", "odinn", "Santtu", "liolio1230", "Louie", "boxie"]
   },
 
   {
@@ -80,14 +66,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
-    players: [
-      "TyDominoGuy",
-      "Mecex",
-      "Rens",
-      "Night",
-      "Koolio",
-      "MNPL Poke",
-    ]
+    players: ["TyDominoGuy", "Mecex", "Rens", "Night", "Koolio", "MNPL Poke"]
   },
   {
     divisionName: "4B",
@@ -97,14 +76,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
-    players: [
-      "Mr. Faq",
-      "xile",
-      "Eliwa",
-      "Jeez",
-      "20Dan03",
-      "BirbWizard",
-    ]
+    players: ["Mr. Faq", "xile", "Eliwa", "Jeez", "20Dan03", "BirbWizard"]
   },
 
   {
@@ -121,7 +93,7 @@ const divisionData = [
       "Insaniso",
       "foiledthrice",
       "VachetBeasty",
-      "Tweak Beacon",
+      "Tweak Beacon"
     ]
   },
   {
@@ -138,7 +110,7 @@ const divisionData = [
       "Morelando",
       "Kirbyrulz",
       "Vince",
-      "Mleczak",
+      "Mleczak"
     ]
   },
 
@@ -156,7 +128,7 @@ const divisionData = [
       "Moulis64",
       "Malaya",
       "Wolflord",
-      "moodeuce",
+      "moodeuce"
     ]
   },
   {
@@ -167,14 +139,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
-    players: [
-      "Ryen",
-      "DrKnockers",
-      "Fouad Z",
-      "PiW",
-      "Mickaël",
-      "Billy Mac",
-    ]
+    players: ["Ryen", "DrKnockers", "Fouad Z", "PiW", "Mickaël", "Billy Mac"]
   },
 
   {
@@ -191,7 +156,7 @@ const divisionData = [
       "Maedhros",
       "WhiteMonster",
       "Diggs",
-      "Portalll",
+      "Portalll"
     ]
   },
   {
@@ -208,7 +173,7 @@ const divisionData = [
       "mil0-",
       "WhiteMonster",
       "Diggs",
-      "Ivory",
+      "Ivory"
     ]
   },
 
@@ -226,7 +191,7 @@ const divisionData = [
       "Owen",
       "arbaro",
       "SirMaser",
-      "Mario Lafleur",
+      "Mario Lafleur"
     ]
   },
   {
@@ -237,14 +202,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 0,
-    players: [
-      "sixfour",
-      "Elpailtem",
-      "doodle",
-      "Marts",
-      "Yeehaw",
-      "mistec43",
-    ]
+    players: ["sixfour", "Elpailtem", "doodle", "Marts", "Yeehaw", "mistec43"]
   },
   {
     divisionName: "8C",
@@ -260,7 +218,7 @@ const divisionData = [
       "Marts",
       "Careless",
       "Bergtroll",
-      "Elpailtem",
+      "Elpailtem"
     ]
   },
 
@@ -278,7 +236,7 @@ const divisionData = [
       "Ellery Stacks",
       "Rei",
       "Riogreywind",
-      "laurenjesson",
+      "laurenjesson"
     ]
   },
   {
@@ -295,7 +253,7 @@ const divisionData = [
       "Richard Wolf VI",
       "SzymenL0K0",
       "Valid",
-      "mfrerck",
+      "mfrerck"
     ]
   },
   {
@@ -306,14 +264,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 0,
-    players: [
-      "Klystyr",
-      "mfrerck",
-      "Dawson",
-      "Odrarik",
-      "wdsubia",
-      "Frodo",
-    ]
+    players: ["Klystyr", "mfrerck", "Dawson", "Odrarik", "wdsubia", "Frodo"]
   }
 ];
 

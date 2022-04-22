@@ -11,7 +11,7 @@ class DivisionRow extends Component {
     super(props);
 
     this.state = {
-      isHovered: false,
+      isHovered: false
     };
 
     this.toggleOpen = this.toggleOpen.bind(this);
@@ -80,7 +80,7 @@ class DivisionRow extends Component {
           style={{
             backgroundColor: this.state.isHovered
               ? "rgb(239 250 255)"
-              : this.props.bgColor,
+              : this.props.bgColor
           }}
           onClick={this.toggleOpen}
           onMouseEnter={() => this.setIsHovered(true)}
@@ -116,7 +116,7 @@ class DivisionRow extends Component {
                 ? "rgb(239 250 255)"
                 : this.props.data.divisionName.includes("1")
                 ? divisionColorUtil.getWinGradientColor(overallPromoChance)
-                : divisionColorUtil.getPromoGradientColor(overallPromoChance),
+                : divisionColorUtil.getPromoGradientColor(overallPromoChance)
             }}
           >
             {this.renderPercentage(overallPromoChance)}
@@ -128,7 +128,7 @@ class DivisionRow extends Component {
                 ? "rgb(239 250 255)"
                 : divisionColorUtil.getRelegationGradientColor(
                     overallRelegationChance
-                  ),
+                  )
             }}
           >
             {this.renderPercentage(overallRelegationChance)}
@@ -143,7 +143,7 @@ class DivisionRow extends Component {
               style={{
                 maxHeight: this.props.isOpen ? "30vh" : "0",
                 borderWidth: 0,
-                borderColor: this.props.isOpen ? "#888f" : "#8880",
+                borderColor: this.props.isOpen ? "#888f" : "#8880"
               }}
             >
               <PlayerOpponents

@@ -13,7 +13,7 @@ import {
   RELEGATE_COLOR_STR,
   PLAYOFF_PROMO_COLOR_STR,
   PLAYOFF_RELEGATE_COLOR_STR,
-  PRIZE_COLOR_STR,
+  PRIZE_COLOR_STR
 } from "./division-color-util";
 
 class Division extends Component {
