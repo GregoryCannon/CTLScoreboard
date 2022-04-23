@@ -4,7 +4,7 @@ const clinchChecker = require("./clinch-checker");
 
 const NUM_ITERATIONS = 20000;
 // Whether or not to adjust players' simulated winrates based on their performance so far
-const USE_ADJUSTED_PROBABILITIES = true;
+const USE_ADJUSTED_PROBABILITIES = false;
 
 /*
 Simulate one run through from the current moment in time to the end of the season.

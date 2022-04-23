@@ -534,16 +534,16 @@ function compareSimulated(player1, player2) {
   return compareRaw(player1, player2);
 }
 
-// Compute the number of points earned for a game under the new 7/0 6/1 5/2 system
+// Compute the number of points earned for a game under the new 8/0 7/1 6/2 system
 function calculatePointsWon(isWinner, loserGames) {
   if (isWinner) {
     switch (loserGames) {
       case 0:
-        return 7;
+        return 8;
       case 1:
-        return 6;
+        return 7;
       case 2:
-        return 5;
+        return 6;
     }
   } else {
     switch (loserGames) {
