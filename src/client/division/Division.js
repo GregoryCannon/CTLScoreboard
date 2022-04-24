@@ -153,7 +153,7 @@ class Division extends Component {
             {/* Title row */}
             <tr>
               <th className="Division-title" colSpan={10}>
-                {this.props.data.divisionName} Division
+                {this.props.data.divisionName}
               </th>
             </tr>
 
