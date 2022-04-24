@@ -28,14 +28,14 @@ function PlayerAdvancedStats(props) {
         {props.division.numAutoPromo + props.division.numWinner > 0 && (
           <tr
             className={
-              props.division.divisionName.includes("1")
+              props.division.divisionName.includes("Gold")
                 ? "Stats-winner"
                 : "Stats-auto-promo"
             }
           >
             <td>
-              {props.division.divisionName.includes("1")
-                ? "Winner's Bracket"
+              {props.division.divisionName.includes("Gold")
+                ? "Winner"
                 : "Promotion"}
             </td>
             <td>
