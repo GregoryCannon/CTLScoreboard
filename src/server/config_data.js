@@ -1,37 +1,130 @@
 const divisionData = [
   {
-    divisionName: "Gold",
-    oneMatchPerPair: true,
+    divisionName: "Gold 1",
+    oneMatchPerPair: false,
     numWinner: 1,
-    numPrizeMoney: 1,
+    numPrizeMoney: 0,
     numAutoPromo: 0,
     numPlayoffPromo: 0,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
     players: [
-      "Sunny",
-      "Lily",
-      "Frenchie",
-      "Peyton",
+      "Charlie",
+      "Diggs",
+      "doodle",
+      "Gerhard",
       "Grand Designs",
-      "PeeStorm"
+      "mil0-",
+      "Roman",
+      "WhiteMonster"
     ]
   },
   {
-    divisionName: "Not Gold",
-    oneMatchPerPair: true,
-    numWinner: 1,
-    numPrizeMoney: 1,
-    numAutoPromo: 0,
+    divisionName: "Silver 1",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numPrizeMoney: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    players: [
+      "BillyMac",
+      "Maedhros",
+      "Benfamir",
+      "Peyton",
+      "Flashmonger",
+      "TomelloSoulMan"
+    ]
+  },
+  {
+    divisionName: "Silver 2",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numPrizeMoney: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    players: [
+      "Marts",
+      "Burritodad",
+      "Hunn",
+      "Frenchie",
+      "Sleepy Samantha",
+      "Lily"
+    ]
+  },
+  {
+    divisionName: "Bronze 1",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numPrizeMoney: 0,
+    numAutoPromo: 1,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
-      "Galois",
-      "Loois",
-      "Pepe Gato",
-      "La Bestia",
-      "Nick the Ferret"
+      "Junior",
+      "arbaro",
+      "Mario Lafleur",
+      "mfrerck",
+      "Richard Wolf VI",
+      "Valid"
+    ]
+  },
+  {
+    divisionName: "Bronze 2",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numPrizeMoney: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "Schtoikle",
+      "SirMaser",
+      "Tacomom18",
+      "DocPi",
+      "YeehawMcKickass",
+      "wdsubia"
+    ]
+  },
+  {
+    divisionName: "Beginner 1",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numPrizeMoney: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "Moon",
+      "MrShadow",
+      "Skai",
+      "TEMPHUiBIS",
+      "Dawson",
+      "ElleryStacks"
+    ]
+  },
+  {
+    divisionName: "Beginner 2",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numPrizeMoney: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "Odrachess",
+      "Lapis Lazuli",
+      "Merle",
+      "Alphabet",
+      "Chef",
+      "Zyxia"
     ]
   }
 ];
