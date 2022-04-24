@@ -91,7 +91,7 @@ function PlayerAdvancedStats(props) {
             <td>
               {USE_PLAYOFFS_FOR_HYBRID_DIVISIONS
                 ? "Lower Tier"
-                : "Conditional Relegation"}
+                : "Relegation Playoff"}
             </td>
             <td>
               {props.renderPercentageFunc(
