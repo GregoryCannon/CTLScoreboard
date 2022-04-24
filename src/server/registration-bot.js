@@ -28,10 +28,10 @@ const LINE_ASCII = "————————————————————
 const DELAY_MS = 4000;
 const HIDE_REACTION_DELAY_MS = 4000;
 let DIVISIONS = {
-  "Gold": [],
-  "Silver": [],
-  "Bronze": [],
-  "Beginner": []
+  Gold: [],
+  Silver: [],
+  Bronze: [],
+  Beginner: []
 };
 
 const token = process.env.DISCORD_TOKEN;
@@ -226,7 +226,9 @@ async function configureSignUpMessages(channel) {
       LINE_ASCII
   );
   for (const divisionName of Object.keys(DIVISIONS)) {
-    const message = await channel.send(`Sign up for the ${divisionName} Division`);
+    const message = await channel.send(
+      `Sign up for the ${divisionName} Division`
+    );
     await message.react(MAIN_EMOJI);
     const collector = message.createReactionCollector();
     collector.on("collect", () => {
