@@ -151,7 +151,10 @@ const restreamerRole = [
   "Xenophilius#9730",
   "SirMaser#1453",
   "Deewee#7730",
-  "NDDK#8648"
+  "NDDK#8648",
+  "PolloSalazar#1503",
+  "yeehawmckickass#4099",
+  "lame mii#2430"
 ];
 
 module.exports = {
