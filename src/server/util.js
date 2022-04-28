@@ -631,7 +631,7 @@ function getMatchDateFormatted(match) {
     return "unknown date";
   }
   const matchMoment = moment.unix(match.match_date);
-  return matchMoment.utc().format("MMM DD YYYY, HH:mm");
+  return matchMoment.utc().format("DD/MM/YYYY HH:mm:ss");
 }
 
 function downloadCanvasAsPng(canvas, filename) {
