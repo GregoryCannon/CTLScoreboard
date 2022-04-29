@@ -3,6 +3,54 @@ import "./ResultsPage.css";
 
 const util = require("../server/util");
 
+// TODO move this to backend
+const eloNames = {
+  Charlie: "PASTELCHARLIE",
+  Diggs: "DIGGS",
+  doodle: "DOODLE",
+  Gerhard: "GERHARD_ADLER",
+  "Grand Designs": "GRANDDESIGNS",
+  "mil0-": "MILO",
+  Roman: "ANGRYRORO",
+  WhiteMonster: "WHITE MONSTER",
+  BillyMac: "BMAC",
+  Maedhros: "MAEDHROS",
+  Benfamir: "BENFAMIR",
+  Peyton: "PEYTON",
+  Flashmonger: "FLASHMONGER",
+  TomelloSoulMan: "TOMELLO",
+  Marts: "MARTS",
+  Burritodad: "BURRITODAD",
+  Hunn: "HUNN14",
+  Frenchie: "FRENCHIESTFRIE",
+  "Sleepy Samantha": "SAMANTHA",
+  Lily: "SNOWLILYX",
+  Junior: "JUNIOR",
+  arbaro: "ARBARO",
+  "Mario Lafleur": "MARIO LAFLEUR",
+  mfrerck: "MFRERCK",
+  "Richard Wolf VI": "RICHARD WOLF VI",
+  Valid: "VALID",
+  Schtoikle: "SCHTOIKLE",
+  SirMaser: "SIRMASER",
+  Tacomom18: "TACOMOM",
+  DocPi: "DOC PI",
+  YeehawMcKickass: "MCKICKASS",
+  wdsubia: "WDSUBIA",
+  Moon: "MOON",
+  MrShadow: "MRSHADOW",
+  Skai: "FRODO",
+  TEMPHUiBIS: "TEMPHUIBIS",
+  Dawson: "DAWSON",
+  ElleryStacks: "ELLERYSTACKS",
+  Odrachess: "ODRACHESS",
+  "Lapis Lazuli": "LAPISLAZULI",
+  Merle: "MERLE",
+  Alphabet: "ALPHABETH",
+  Chef: "CHEFGOBES",
+  Zyxia: "ZYXIA"
+};
+
 class ResultsPage extends Component {
   render() {
     return (
@@ -32,10 +80,10 @@ class ResultsPage extends Component {
                 <tr>
                   <td>{util.getMatchDateFormatted(match)}</td>
                   <td>{match.restreamer}</td>
-                  <td>{homePlayer}</td>
+                  <td>{eloNames[homePlayer]}</td>
                   <td>{homeScore}</td>
                   <td>{awayScore}</td>
-                  <td>{awayPlayer}</td>
+                  <td>{eloNames[awayPlayer]}</td>
                   <td>{match.division}</td>
                 </tr>
               );
