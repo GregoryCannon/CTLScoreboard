@@ -67,7 +67,7 @@ const divisionData = [
       "Sofa",
       "Santtu",
       "boxie",
-      "Koolio",
+      "Koolio"
     ]
   },
   {
