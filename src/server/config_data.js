@@ -114,7 +114,6 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
     players: [
-      "Kaptan",
       "Timothy Kim",
       "IanKeith",
       "Torzsa",
