@@ -205,7 +205,8 @@ const restreamerRole = [
   "wide#5258",
   "og_readmore#6535",
   "romanplaysgames#8168",
-  "Grand Designs#3638"
+  "Grand Designs#3638",
+  "Elpailtem#2506"
 ];
 
 module.exports = {
