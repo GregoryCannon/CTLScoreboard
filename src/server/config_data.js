@@ -208,7 +208,8 @@ const restreamerRole = [
   "Grand Designs#3638",
   "Elpailtem#2506",
   "Gabriel B#0072",
-  "Micetro#8032"
+  "Micetro#8032",
+  "cchristm#6938"
 ];
 
 module.exports = {
