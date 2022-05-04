@@ -210,7 +210,8 @@ const restreamerRole = [
   "Gabriel B#0072",
   "Micetro#8032",
   "cchristm#6938",
-  "King Choke(Klystyr)(UTC -5)#9595"
+  "King Choke(Klystyr)(UTC -5)#9595",
+  "BillyMac#8194"
 ];
 
 module.exports = {
