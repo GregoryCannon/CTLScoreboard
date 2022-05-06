@@ -26,6 +26,30 @@
   color: white !important;
 }
 
+.Division-Gold th {
+  font-weight: 500;
+  background-color: #d4af37;
+  color: white !important;
+}
+
+.Division-Silver th {
+  font-weight: 500;
+  background-color: #a0a0a0;
+  color: white !important;
+}
+
+.Division-Bronze th {
+  font-weight: 500;
+  background-color: #cd7f32;
+  color: white !important;
+}
+
+.Division-Beginner th {
+  font-weight: 500;
+  background-color: #009d94;
+  color: white !important;
+}
+
 .Division-row-headings th,
 .Division-title,
 .Player-main-row td {
@@ -53,6 +77,26 @@
 
 .Division .Header-sorted-by {
   background-color: #65769a;
+  height: 100%;
+}
+
+.Division-Gold .Header-sorted-by {
+  background-color: #d8cf97;
+  height: 100%;
+}
+
+.Division-Silver .Header-sorted-by {
+  background-color: #c0c0c0;
+  height: 100%;
+}
+
+.Division-Bronze .Header-sorted-by {
+  background-color: #da7;
+  height: 100%;
+}
+
+.Division-Beginner .Header-sorted-by {
+  background-color: #3bb;
   height: 100%;
 }
 

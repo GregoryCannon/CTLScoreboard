@@ -129,6 +129,8 @@ class Division extends Component {
     const divAtStartOfTier =
       !isNaN(divName) || divName[1] === "A" || divName[1] === "a";
 
+    const divisionLevel = divName.split(' ')[0];
+
     // Calculate lists of players played and upcoming matches for each player
     const divisionScheduleInfo = util.getPlayerScheduleInfo(
       this.props.data,
@@ -138,7 +140,7 @@ class Division extends Component {
     return (
       <div
         id={"Division" + this.props.data.divisionName}
-        className={`Division ${
+        className={`Division Division-${divisionLevel} ${
           divAtStartOfTier ? "Division-at-start-of-tier" : ""
         }`}
       >
