@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PenaltyPointsEditor from "./PenaltyPointsEditor";
 import PlayerAdvancedStats from "./PlayerAdvancedStats";
 import PlayerOpponents from "./PlayerOpponents";
 const divisionColorUtil = require("./division-color-util");
@@ -98,16 +97,6 @@ class DivisionRow extends Component {
             {this.props.player.gf} - {this.props.player.ga}
           </td>
           <td>{this.props.player.gd}</td>
-          <td>
-            <PenaltyPointsEditor
-              isAdmin={this.props.isAdmin}
-              existingPenaltyPoints={this.props.player.penaltyPoints}
-              isEditingPenaltyPoints={this.props.isEditingPenaltyPoints}
-              refreshFunction={this.props.refreshFunction}
-              playerName={this.props.player.name}
-              divisionName={this.props.data.divisionName}
-            />
-          </td>
           <td>{Math.round(this.props.player.points)}</td>
           <td
             className="Simulation-data-cell"

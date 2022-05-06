@@ -10,7 +10,6 @@ function DivisionHeadings(props) {
       <th>Match Record</th>
       <th>Game Record</th>
       <th>Game Difference</th>
-      <th>Penalty Points</th>
       <th
         className={
           props.sortBy === SortBy.points
