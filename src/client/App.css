@@ -1,8 +1,9 @@
 .App {
   text-align: center;
-  font-color: black;
+  color: black;
   font-size: 1.15vw;
   position: relative;
+  background-color: #f9f9fc;
 }
 
 .App .Report-matches-form * {

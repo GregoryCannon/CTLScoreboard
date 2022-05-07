@@ -1,11 +1,11 @@
-const BACKGROUND_RGB = [207, 231, 245];
+const BACKGROUND_RGB = [218, 225, 229];
 const WINNER_RGB = [255, 204, 0];
 const WINNER_10PERCENT = [255, 250, 225];
 const PRIZE_RGB = [255, 227, 115];
 const PRIZE_10PERCENT = [255, 250, 225];
-const PROMO_RGB = [69, 153, 0];
+const PROMO_RGB = [65, 153, 69];
 const PROMO_20PERCENT = [167, 230, 178];
-const RELEGATE_RGB = [255, 51, 51];
+const RELEGATE_RGB = [255, 87, 87];
 const RELEGATE_20PERCENT = [255, 195, 195];
 
 /** Convert a color array to a CSS string */

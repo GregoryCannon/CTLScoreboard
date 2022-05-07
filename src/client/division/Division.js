@@ -129,7 +129,7 @@ class Division extends Component {
     const divAtStartOfTier =
       !isNaN(divName) || divName[1] === "A" || divName[1] === "a";
 
-    const divisionLevel = divName.split(' ')[0];
+    const divisionLevel = divName.split(" ")[0];
 
     // Calculate lists of players played and upcoming matches for each player
     const divisionScheduleInfo = util.getPlayerScheduleInfo(
