@@ -118,7 +118,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 0,
-    players: ["Odrachess", "Lapis Lazuli", "Merle", "Alphabet", "Chef", "Zyxia"]
+    players: ["Odrachess", "Lapis Lazuli", "Merle", "Alphabet", "Chef"]
   }
 ];
 
@@ -211,7 +211,9 @@ const restreamerRole = [
   "Micetro#8032",
   "cchristm#6938",
   "King Choke(Klystyr)(UTC -5)#9595",
-  "BillyMac#8194"
+  "BillyMac#8194",
+  "peyton#1996",
+  "Allenbot#1138"
 ];
 
 module.exports = {
