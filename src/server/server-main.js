@@ -204,7 +204,8 @@ function invalidateCorruptedData() {
  */
 
 function getValidMatches(callback) {
-  matchListDb.find({ valid: true, corrupted: false }, callback);
+  // matchListDb.find({ valid: true, corrupted: false }, callback);
+  matchListDb.find({ valid: true }, callback);
 }
 
 function getPenaltyPointMap(callback) {
