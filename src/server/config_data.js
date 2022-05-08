@@ -118,7 +118,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 0,
-    players: ["Odrachess", "Lapis Lazuli", "Merle", "Alphabet", "Chef"]
+    players: ["Odrachess", "Lapis Lazuli", "Merle", "Alphabet", "Chef", "Zyxia"]
   }
 ];
 
