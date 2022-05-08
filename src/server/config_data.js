@@ -20,6 +20,26 @@ const divisionData = [
     ]
   },
   {
+    divisionName: "Gold 2",
+    oneMatchPerPair: false,
+    numWinner: 1,
+    numPrizeMoney: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    players: [
+      "Cwiekoszczak",
+      "og readmore",
+      "doodle",
+      "Zxvye",
+      "Bergtroll",
+      "sixfour",
+      "TapHeist",
+      "WhiteMonster"
+    ]
+  },
+  {
     divisionName: "Silver 1",
     oneMatchPerPair: false,
     numWinner: 0,
@@ -89,6 +109,25 @@ const divisionData = [
       "DocPi",
       "YeehawMcKickass",
       "wdsubia"
+    ]
+  },
+  {
+    divisionName: "Bronze 3",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numPrizeMoney: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "Junior",
+      "Muffyio",
+      "careless",
+      "Kanto",
+      "shulphuric",
+      "Tobs",
+      "Archie"
     ]
   },
   {
@@ -166,7 +205,19 @@ const eloNames = {
   Merle: "MERLE",
   Alphabet: "ALPHABETH",
   Chef: "CHEFGOBES",
-  Zyxia: "ZYXIA"
+  Zyxia: "ZYXIA",
+  "Cwiekoszczak": "CWIEKOSZCZAK",
+  "og readmore": "OWEN",
+  "Zxvye": "ZXVYE",
+  "Bergtroll": "BERGTROLL",
+  "sixfour": "SIXFOUR",
+  "TapHeist": "HEIST",
+  "Muffyio": "MUFFYIO",
+  "careless": "CARELESS",
+  "Kanto": "KANTO",
+  "shulphuric": "SHULPHURIC",
+  "Tobs": "NOTOBIII",
+  "Archie": "ARCHIE"
 };
 
 const adminRole = [
