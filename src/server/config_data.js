@@ -126,7 +126,6 @@ const divisionData = [
       "careless",
       "Kanto",
       "shulphuric",
-      "Tobs",
       "Archie"
     ]
   },
