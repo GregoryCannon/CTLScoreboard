@@ -127,14 +127,7 @@ const divisionData = [
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     endDate: "June 22, 2022",
-    players: [
-      "Junior",
-      "Muffyio",
-      "careless",
-      "Kanto",
-      "shulphuric",
-      "Archie"
-    ]
+    players: ["Junior", "Muffyio", "careless", "Kanto", "shulphuric", "Archie"]
   },
   {
     divisionName: "Beginner 1",
@@ -214,18 +207,18 @@ const eloNames = {
   Alphabet: "ALPHABETH",
   Chef: "CHEFGOBES",
   Zyxia: "ZYXIA",
-  "Cwiekoszczak": "CWIEKOSZCZAK",
+  Cwiekoszczak: "CWIEKOSZCZAK",
   "og readmore": "OWEN",
-  "Zxvye": "ZXVYE",
-  "Bergtroll": "BERGTROLL",
-  "sixfour": "SIXFOUR",
-  "TapHeist": "HEIST",
-  "Muffyio": "MUFFYIO",
-  "careless": "CARELESS",
-  "Kanto": "KANTO",
-  "shulphuric": "SHULPHURIC",
-  "Tobs": "NOTOBIII",
-  "Archie": "ARCHIE"
+  Zxvye: "ZXVYE",
+  Bergtroll: "BERGTROLL",
+  sixfour: "SIXFOUR",
+  TapHeist: "HEIST",
+  Muffyio: "MUFFYIO",
+  careless: "CARELESS",
+  Kanto: "KANTO",
+  shulphuric: "SHULPHURIC",
+  Tobs: "NOTOBIII",
+  Archie: "ARCHIE"
 };
 
 const adminRole = [

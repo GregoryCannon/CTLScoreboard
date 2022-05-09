@@ -155,7 +155,8 @@ class Division extends Component {
             {/* Title row */}
             <tr>
               <th className="Division-title" colSpan={10}>
-                {this.props.data.divisionName}
+                {this.props.data.divisionName} <br></br>
+                <div class="endDate">End date: {this.props.data.endDate}</div>
               </th>
             </tr>
 

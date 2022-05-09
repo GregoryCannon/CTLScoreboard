@@ -124,6 +124,12 @@
   font-weight: 500;
 }
 
+.endDate {
+  font-style: italic;
+  font-size: 1vw;
+  padding-top: 4px;
+}
+
 .Extra-padding-left {
   padding-left: 10px !important;
 }

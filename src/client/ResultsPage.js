@@ -49,18 +49,18 @@ const eloNames = {
   Alphabet: "ALPHABETH",
   Chef: "CHEFGOBES",
   Zyxia: "ZYXIA",
-  "Cwiekoszczak": "CWIEKOSZCZAK",
+  Cwiekoszczak: "CWIEKOSZCZAK",
   "og readmore": "OWEN",
-  "Zxvye": "ZXVYE",
-  "Bergtroll": "BERGTROLL",
-  "sixfour": "SIXFOUR",
-  "TapHeist": "HEIST",
-  "Muffyio": "MUFFYIO",
-  "careless": "CARELESS",
-  "Kanto": "KANTO",
-  "shulphuric": "SHULPHURIC",
-  "Tobs": "NOTOBIII",
-  "Archie": "ARCHIE"
+  Zxvye: "ZXVYE",
+  Bergtroll: "BERGTROLL",
+  sixfour: "SIXFOUR",
+  TapHeist: "HEIST",
+  Muffyio: "MUFFYIO",
+  careless: "CARELESS",
+  Kanto: "KANTO",
+  shulphuric: "SHULPHURIC",
+  Tobs: "NOTOBIII",
+  Archie: "ARCHIE"
 };
 
 class ResultsPage extends Component {
