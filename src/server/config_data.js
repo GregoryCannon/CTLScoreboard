@@ -8,6 +8,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
+    endDate: "May 22, 2022",
     players: [
       "Charlie",
       "Diggs",
@@ -28,6 +29,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
+    endDate: "June 22, 2022",
     players: [
       "Cwiekoszczak",
       "og readmore",
@@ -48,6 +50,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
+    endDate: "May 22, 2022",
     players: [
       "BillyMac",
       "Maedhros",
@@ -66,6 +69,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
+    endDate: "May 22, 2022",
     players: [
       "Marts",
       "Burritodad",
@@ -84,6 +88,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
+    endDate: "May 22, 2022",
     players: [
       "Junior",
       "arbaro",
@@ -102,6 +107,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
+    endDate: "May 22, 2022",
     players: [
       "Schtoikle",
       "SirMaser",
@@ -120,6 +126,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
+    endDate: "June 22, 2022",
     players: [
       "Junior",
       "Muffyio",
@@ -138,6 +145,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 0,
+    endDate: "May 22, 2022",
     players: [
       "Moon",
       "MrShadow",
@@ -156,6 +164,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 0,
+    endDate: "May 22, 2022",
     players: ["Odrachess", "Lapis Lazuli", "Merle", "Alphabet", "Chef", "Zyxia"]
   }
 ];
