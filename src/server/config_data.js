@@ -265,7 +265,8 @@ const restreamerRole = [
   "King Choke(Klystyr)(UTC -5)#9595",
   "BillyMac#8194",
   "peyton#1996",
-  "Allenbot#1138"
+  "Allenbot#1138",
+  "Xenophilius#6969"
 ];
 
 module.exports = {
