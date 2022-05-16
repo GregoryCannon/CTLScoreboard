@@ -159,7 +159,25 @@ const divisionData = [
     numAutoRelegate: 0,
     endDate: "May 22, 2022",
     players: ["Odrachess", "Lapis Lazuli", "Merle", "Alphabet", "Chef", "Zyxia"]
-  }
+  },
+  {
+    divisionName: "Beginner 3",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numPrizeMoney: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    endDate: "May 22, 2022",
+    players: [
+      "Chef",
+      "weisbrot",
+      "Bendelson",
+      "Bxnshy",
+      "tetristimer"
+    ]
+  },
 ];
 
 const eloNames = {
@@ -218,7 +236,11 @@ const eloNames = {
   Kanto: "KANTO",
   shulphuric: "SHULPHURIC",
   Tobs: "NOTOBIII",
-  Archie: "ARCHIE"
+  Archie: "ARCHIE",
+  weisbrot: "WEISBROT",
+  Bendelson: "BENDELSON",
+  Bxnshy: "BXNSHY",
+  tetristimer: "TETRISTIMER2000"
 };
 
 const adminRole = [

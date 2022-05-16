@@ -60,7 +60,11 @@ const eloNames = {
   Kanto: "KANTO",
   shulphuric: "SHULPHURIC",
   Tobs: "NOTOBIII",
-  Archie: "ARCHIE"
+  Archie: "ARCHIE",
+  weisbrot: "WEISBROT",
+  Bendelson: "BENDELSON",
+  Bxnshy: "BXNSHY",
+  tetristimer: "TETRISTIMER2000"
 };
 
 class ResultsPage extends Component {
