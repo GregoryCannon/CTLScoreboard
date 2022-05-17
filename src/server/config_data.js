@@ -29,7 +29,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
-    endDate: "June 22, 2022",
+    endDate: "June 5, 2022",
     players: [
       "Cwiekoszczak",
       "og readmore",
@@ -126,7 +126,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
-    endDate: "June 22, 2022",
+    endDate: "June 5, 2022",
     players: ["Junior", "Muffyio", "careless", "Kanto", "shulphuric", "Archie"]
   },
   {
@@ -169,7 +169,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 0,
-    endDate: "June 22, 2022",
+    endDate: "June 12, 2022",
     players: [
       "Chef",
       "weisbrot",
