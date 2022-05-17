@@ -158,7 +158,7 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 0,
     endDate: "May 22, 2022",
-    players: ["Odrachess", "Lapis Lazuli", "Alphabet", "Chef", "Zyxia"]
+    players: ["Odrachess", "Lapis Lazuli", "Alphabet", "Chef"]
   },
   {
     divisionName: "Beginner 3",
@@ -169,7 +169,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 0,
-    endDate: "May 22, 2022",
+    endDate: "June 22, 2022",
     players: [
       "Chef",
       "weisbrot",
