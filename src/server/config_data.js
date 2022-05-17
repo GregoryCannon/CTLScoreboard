@@ -158,7 +158,7 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 0,
     endDate: "May 22, 2022",
-    players: ["Odrachess", "Lapis Lazuli", "Merle", "Alphabet", "Chef", "Zyxia"]
+    players: ["Odrachess", "Lapis Lazuli", "Alphabet", "Chef", "Zyxia"]
   },
   {
     divisionName: "Beginner 3",
@@ -236,7 +236,7 @@ const eloNames = {
   Kanto: "KANTO",
   shulphuric: "SHULPHURIC",
   Tobs: "NOTOBIII",
-  Archie: "ARCHIE",
+  Archie: "ARCHNASH",
   weisbrot: "WEISBROT",
   Bendelson: "BENDELSON",
   Bxnshy: "BXNSHY",

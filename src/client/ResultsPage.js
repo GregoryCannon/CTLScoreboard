@@ -60,7 +60,7 @@ const eloNames = {
   Kanto: "KANTO",
   shulphuric: "SHULPHURIC",
   Tobs: "NOTOBIII",
-  Archie: "ARCHIE",
+  Archie: "ARCHNASH",
   weisbrot: "WEISBROT",
   Bendelson: "BENDELSON",
   Bxnshy: "BXNSHY",
