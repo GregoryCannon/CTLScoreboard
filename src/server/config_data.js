@@ -238,7 +238,7 @@ const eloNames = {
   Tobs: "NOTOBIII",
   Archie: "ARCHNASH",
   weisbrot: "WEISBROT",
-  Bendelson: "BENDELSON",
+  Bendelson: "BENDY1",
   Bxnshy: "BXNSHY",
   tetristimer: "TETRISTIMER2000"
 };
