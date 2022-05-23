@@ -170,14 +170,8 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 0,
     endDate: "June 12, 2022",
-    players: [
-      "Chef",
-      "weisbrot",
-      "Bendelson",
-      "Bxnshy",
-      "tetristimer"
-    ]
-  },
+    players: ["Chef", "weisbrot", "Bendelson", "Bxnshy", "tetristimer"]
+  }
 ];
 
 const eloNames = {
