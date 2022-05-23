@@ -1,26 +1,5 @@
 const divisionData = [
   {
-    divisionName: "Gold 1",
-    oneMatchPerPair: false,
-    numWinner: 1,
-    numPrizeMoney: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    endDate: "May 22, 2022",
-    players: [
-      "Charlie",
-      "Diggs",
-      "doodle",
-      "Gerhard",
-      "Grand Designs",
-      "mil0-",
-      "Roman",
-      "WhiteMonster"
-    ]
-  },
-  {
     divisionName: "Gold 2",
     oneMatchPerPair: false,
     numWinner: 1,
@@ -42,7 +21,7 @@ const divisionData = [
     ]
   },
   {
-    divisionName: "Silver 1",
+    divisionName: "Silver 3",
     oneMatchPerPair: false,
     numWinner: 0,
     numPrizeMoney: 0,
@@ -50,71 +29,13 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
-    endDate: "May 22, 2022",
+    endDate: "June 19, 2022",
     players: [
-      "BillyMac",
-      "Maedhros",
-      "Benfamir",
-      "Peyton",
-      "Flashmonger",
-      "TomelloSoulMan"
-    ]
-  },
-  {
-    divisionName: "Silver 2",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numPrizeMoney: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    endDate: "May 22, 2022",
-    players: [
-      "Marts",
-      "Burritodad",
-      "Hunn",
-      "Frenchie",
-      "Sleepy Samantha",
-      "Lily"
-    ]
-  },
-  {
-    divisionName: "Bronze 1",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numPrizeMoney: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    endDate: "May 22, 2022",
-    players: [
-      "Junior",
-      "arbaro",
+      "TomelloSoulMan",
       "Mario Lafleur",
-      "mfrerck",
-      "Richard Wolf VI",
-      "Valid"
-    ]
-  },
-  {
-    divisionName: "Bronze 2",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numPrizeMoney: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    endDate: "May 22, 2022",
-    players: [
-      "Schtoikle",
-      "SirMaser",
-      "Tacomom18",
       "DocPi",
-      "YeehawMcKickass",
-      "wdsubia"
+      "DobREEE",
+      "LovenRazu"
     ]
   },
   {
@@ -128,6 +49,24 @@ const divisionData = [
     numAutoRelegate: 0,
     endDate: "June 5, 2022",
     players: ["Junior", "Muffyio", "careless", "Kanto", "shulphuric", "Archie"]
+  },
+  {
+    divisionName: "Bronze 4",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numPrizeMoney: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    endDate: "June 19, 2022",
+    players: [
+      "arbaro",
+      "Moon",
+      "Tacomom18",
+      "Richard Wolf VI",
+      "pumpyheart"
+    ]
   },
   {
     divisionName: "Beginner 1",
@@ -170,7 +109,7 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 0,
     endDate: "June 12, 2022",
-    players: ["Chef", "weisbrot", "Bendelson", "Bxnshy", "tetristimer"]
+    players: ["Chef", "weisbrot", "Bendelson", "Bxnshy"]
   }
 ];
 
@@ -234,7 +173,9 @@ const eloNames = {
   weisbrot: "WEISBROT",
   Bendelson: "BENDY1",
   Bxnshy: "BXNSHY",
-  tetristimer: "TETRISTIMER2000"
+  tetristimer: "TETRISTIMER2000",
+  LovenRazu: "LOVENRAZU",
+  pumpyheart: "PUMPYHEART"
 };
 
 const adminRole = [
@@ -287,7 +228,8 @@ const restreamerRole = [
   "DocPi314#1592",
   "sixfour#0130",
   "pumpyheart#9864",
-  "MrShadow#0900"
+  "MrShadow#0900",
+  "Flashmonger#7095"
 ];
 
 module.exports = {
