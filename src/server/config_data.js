@@ -69,37 +69,6 @@ const divisionData = [
     ]
   },
   {
-    divisionName: "Beginner 1",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numPrizeMoney: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    endDate: "May 22, 2022",
-    players: [
-      "Moon",
-      "MrShadow",
-      "Skai",
-      "TEMPHUiBIS",
-      "Dawson",
-      "ElleryStacks"
-    ]
-  },
-  {
-    divisionName: "Beginner 2",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numPrizeMoney: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    endDate: "May 22, 2022",
-    players: ["Odrachess", "Lapis Lazuli", "Alphabet", "Chef"]
-  },
-  {
     divisionName: "Beginner 3",
     oneMatchPerPair: false,
     numWinner: 0,
