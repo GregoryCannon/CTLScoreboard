@@ -21,6 +21,24 @@ const divisionData = [
     ]
   },
   {
+    divisionName: "Gold 3",
+    oneMatchPerPair: false,
+    numWinner: 1,
+    numPrizeMoney: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    endDate: "June 26, 2022",
+    players: [
+      "Marts",
+      "Flashmonger",
+      "Diggs",
+      "Grand Designs",
+      "Gerhard"
+    ]
+  },
+  {
     divisionName: "Silver 3",
     oneMatchPerPair: false,
     numWinner: 0,
@@ -79,6 +97,25 @@ const divisionData = [
     numAutoRelegate: 0,
     endDate: "June 12, 2022",
     players: ["Chef", "weisbrot", "Bendelson", "Bxnshy", "tetristimer"]
+  },
+  {
+    divisionName: "Beginner 4",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numPrizeMoney: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    endDate: "June 26, 2022",
+    players: [
+      "Odrachess",
+      "Dawson",
+      "Alphabet",
+      "Skai",
+      "TEMPHUiBIS",
+      "ElleryStacks"
+    ]
   }
 ];
 
