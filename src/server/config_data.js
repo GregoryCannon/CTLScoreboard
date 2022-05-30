@@ -35,7 +35,8 @@ const divisionData = [
       "Flashmonger",
       "Diggs",
       "Grand Designs",
-      "Gerhard"
+      "Gerhard",
+      "Charlie"
     ]
   },
   {
