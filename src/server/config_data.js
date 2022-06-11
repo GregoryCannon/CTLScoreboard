@@ -58,6 +58,25 @@ const divisionData = [
     ]
   },
   {
+    divisionName: "Silver 4",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numPrizeMoney: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    endDate: "July 22, 2022",
+    players: [
+      "Lily",
+      "Maedhros",
+      "Junior",
+      "Frenchie",
+      "BillyMac",
+      "Kyira"
+    ]
+  },
+  {
     divisionName: "Bronze 3",
     oneMatchPerPair: false,
     numWinner: 0,
@@ -183,7 +202,8 @@ const eloNames = {
   tetristimer: "TETRISTIMER2000",
   LovenRazu: "LOVENRAZU",
   pumpyheart: "PUMPYHEART",
-  DobREEE: "DOBRYCZLEK"
+  DobREEE: "DOBRYCZLEK",
+  Kyira: "KYIRA"
 };
 
 const adminRole = [

@@ -67,7 +67,8 @@ const eloNames = {
   tetristimer: "TETRISTIMER2000",
   LovenRazu: "LOVENRAZU",
   pumpyheart: "PUMPYHEART",
-  DobREEE: "DOBRYCZLEK"
+  DobREEE: "DOBRYCZLEK",
+  Kyira: "KYIRA"
 };
 
 class ResultsPage extends Component {
