@@ -66,7 +66,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
-    endDate: "July 22, 2022",
+    endDate: "July 3, 2022",
     players: [
       "Lily",
       "Maedhros",
