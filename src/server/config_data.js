@@ -77,6 +77,24 @@ const divisionData = [
     ]
   },
   {
+    divisionName: "Silver 5",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numPrizeMoney: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    endDate: "July 17, 2022",
+    players: [
+      "sixfour",
+      "TomelloSoulMan",
+      "Mario Lafleur",
+      "LovenRazu",
+      "arbaro"
+    ]
+  },
+  {
     divisionName: "Bronze 3",
     oneMatchPerPair: false,
     numWinner: 0,
@@ -104,6 +122,26 @@ const divisionData = [
       "Tacomom18",
       "Richard Wolf VI",
       "pumpyheart"
+    ]
+  },
+  {
+    divisionName: "Bronze 5",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numPrizeMoney: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    endDate: "July 17, 2022",
+    players: [
+      "Burritodad",
+      "mfrerck",
+      "Kanto",
+      "Sulfato",
+      "MrHaatz",
+      "ElleryStacks",
+      "DobREEE"
     ]
   },
   {
@@ -135,6 +173,26 @@ const divisionData = [
       "Skai",
       "TEMPHUiBIS",
       "ElleryStacks"
+    ]
+  },
+  {
+    divisionName: "Beginner 5",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numPrizeMoney: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    endDate: "July 17, 2022",
+    players: [
+      "careless",
+      "Chef",
+      "Vlad",
+      "soapcandy",
+      "MKIII Mileena",
+      "Skai",
+      "TEMPHUiBIS"
     ]
   }
 ];
@@ -193,7 +251,7 @@ const eloNames = {
   Muffyio: "MUFFYIO",
   careless: "CARELESS",
   Kanto: "KANTO",
-  shulphuric: "SHULPHURIC",
+  Sulfato: "SHULPHURIC",
   Tobs: "NOTOBIII",
   Archie: "ARCHNASH",
   weisbrot: "WEISBROT",
@@ -203,7 +261,11 @@ const eloNames = {
   LovenRazu: "LOVENRAZU",
   pumpyheart: "PUMPYHEART",
   DobREEE: "DOBRYCZLEK",
-  Kyira: "KYIRA"
+  Kyira: "KYIRA",
+  MrHaatz: "321MRHAATZ",
+  Vlad: "VLAD",
+  soapcandy: "SOAPCANDY",
+  "MKIII Mileena": "MKIII MILEENA",
 };
 
 const adminRole = [

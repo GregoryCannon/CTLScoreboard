@@ -58,7 +58,7 @@ const eloNames = {
   Muffyio: "MUFFYIO",
   careless: "CARELESS",
   Kanto: "KANTO",
-  shulphuric: "SHULPHURIC",
+  Sulfato: "SHULPHURIC",
   Tobs: "NOTOBIII",
   Archie: "ARCHNASH",
   weisbrot: "WEISBROT",
@@ -68,7 +68,11 @@ const eloNames = {
   LovenRazu: "LOVENRAZU",
   pumpyheart: "PUMPYHEART",
   DobREEE: "DOBRYCZLEK",
-  Kyira: "KYIRA"
+  Kyira: "KYIRA",
+  MrHaatz: "321MRHAATZ",
+  Vlad: "VLAD",
+  soapcandy: "SOAPCANDY",
+  "MKIII Mileena": "MKIII MILEENA",
 };
 
 class ResultsPage extends Component {
