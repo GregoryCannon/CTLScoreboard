@@ -73,6 +73,10 @@ const eloNames = {
   Vlad: "VLAD",
   soapcandy: "SOAPCANDY",
   "MKIII Mileena": "MKIII MILEENA",
+  Rory: "RORY",
+  Cwiiis: "CWIIIS",
+  tourist106: "TOURIST",
+  Kingsman: "KINGSMAN"
 };
 
 class ResultsPage extends Component {

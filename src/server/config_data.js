@@ -40,6 +40,28 @@ const divisionData = [
     ]
   },
   {
+    divisionName: "Gold 4",
+    oneMatchPerPair: false,
+    numWinner: 1,
+    numPrizeMoney: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    endDate: "June 26, 2022",
+    players: [
+      "Rory",
+      "Cwiiis",
+      "Zxvye",
+      "Charlie",
+      "Lily",
+      "tourist106",
+      "Kingsman",
+      "Grand Designs",
+      "doodle"
+    ]
+  },
+  {
     divisionName: "Silver 3",
     oneMatchPerPair: false,
     numWinner: 0,
@@ -266,6 +288,10 @@ const eloNames = {
   Vlad: "VLAD",
   soapcandy: "SOAPCANDY",
   "MKIII Mileena": "MKIII MILEENA",
+  Rory: "RORY",
+  Cwiiis: "CWIIIS",
+  tourist106: "TOURIST",
+  Kingsman: "KINGSMAN"
 };
 
 const adminRole = [
