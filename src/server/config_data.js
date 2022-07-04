@@ -167,6 +167,25 @@ const divisionData = [
     ]
   },
   {
+    divisionName: "Bronze 6",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numPrizeMoney: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    endDate: "July 31, 2022",
+    players: [
+      "Burritodad",
+      "Richard Wolf VI",
+      "Tacomom18",
+      "Junior",
+      "cchristm",
+      "wdsubia"
+    ]
+  },
+  {
     divisionName: "Beginner 3",
     oneMatchPerPair: false,
     numWinner: 0,
@@ -291,7 +310,8 @@ const eloNames = {
   Rory: "RORY",
   Cwiiis: "CWIIIS",
   tourist106: "TOURIST",
-  Kingsman: "KINGSMAN"
+  Kingsman: "KINGSMAN",
+  cchristm: "CCHRISTM"
 };
 
 const adminRole = [

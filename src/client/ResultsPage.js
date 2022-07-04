@@ -76,7 +76,8 @@ const eloNames = {
   Rory: "RORY",
   Cwiiis: "CWIIIS",
   tourist106: "TOURIST",
-  Kingsman: "KINGSMAN"
+  Kingsman: "KINGSMAN",
+  cchristm: "CCHRISTM"
 };
 
 class ResultsPage extends Component {
