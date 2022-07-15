@@ -1,45 +1,5 @@
 const divisionData = [
   {
-    divisionName: "Gold 2",
-    oneMatchPerPair: false,
-    numWinner: 1,
-    numPrizeMoney: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    endDate: "June 5, 2022",
-    players: [
-      "Cwiekoszczak",
-      "og readmore",
-      "doodle",
-      "Zxvye",
-      "Bergtroll",
-      "sixfour",
-      "TapHeist",
-      "WhiteMonster"
-    ]
-  },
-  {
-    divisionName: "Gold 3",
-    oneMatchPerPair: false,
-    numWinner: 1,
-    numPrizeMoney: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    endDate: "June 26, 2022",
-    players: [
-      "Marts",
-      "Flashmonger",
-      "Diggs",
-      "Grand Designs",
-      "Gerhard",
-      "Charlie"
-    ]
-  },
-  {
     divisionName: "Gold 4",
     oneMatchPerPair: false,
     numWinner: 1,
@@ -48,7 +8,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
-    endDate: "June 26, 2022",
+    endDate: "July 31, 2022",
     players: [
       "Rory",
       "Cwiiis",
@@ -59,43 +19,6 @@ const divisionData = [
       "Kingsman",
       "Grand Designs",
       "doodle"
-    ]
-  },
-  {
-    divisionName: "Silver 3",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numPrizeMoney: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    endDate: "June 19, 2022",
-    players: [
-      "TomelloSoulMan",
-      "Mario Lafleur",
-      "DocPi",
-      "DobREEE",
-      "LovenRazu"
-    ]
-  },
-  {
-    divisionName: "Silver 4",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numPrizeMoney: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    endDate: "July 3, 2022",
-    players: [
-      "Lily",
-      "Maedhros",
-      "Junior",
-      "Frenchie",
-      "BillyMac",
-      "Kyira"
     ]
   },
   {
@@ -114,36 +37,6 @@ const divisionData = [
       "Mario Lafleur",
       "LovenRazu",
       "arbaro"
-    ]
-  },
-  {
-    divisionName: "Bronze 3",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numPrizeMoney: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    endDate: "June 5, 2022",
-    players: ["Junior", "Muffyio", "careless", "Kanto", "shulphuric", "Archie"]
-  },
-  {
-    divisionName: "Bronze 4",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numPrizeMoney: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    endDate: "June 19, 2022",
-    players: [
-      "arbaro",
-      "Moon",
-      "Tacomom18",
-      "Richard Wolf VI",
-      "pumpyheart"
     ]
   },
   {
@@ -183,37 +76,6 @@ const divisionData = [
       "Junior",
       "cchristm",
       "wdsubia"
-    ]
-  },
-  {
-    divisionName: "Beginner 3",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numPrizeMoney: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    endDate: "June 12, 2022",
-    players: ["Chef", "weisbrot", "Bendelson", "Bxnshy", "tetristimer"]
-  },
-  {
-    divisionName: "Beginner 4",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numPrizeMoney: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    endDate: "June 26, 2022",
-    players: [
-      "Odrachess",
-      "Dawson",
-      "Alphabet",
-      "Skai",
-      "TEMPHUiBIS",
-      "ElleryStacks"
     ]
   },
   {
