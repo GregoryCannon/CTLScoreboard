@@ -13,7 +13,6 @@ const divisionData = [
       "Rory",
       "Cwiiis",
       "Zxvye",
-      "Charlie",
       "Lily",
       "tourist106",
       "Kingsman",
