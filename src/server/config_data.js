@@ -39,6 +39,25 @@ const divisionData = [
     ]
   },
   {
+    divisionName: "Silver 6",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numPrizeMoney: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    endDate: "August 14, 2022",
+    players: [
+      "Frenchie",
+      "Eumeli",
+      "Maedhros",
+      "sixfour",
+      "Mario Lafleur",
+      "BillyMac"
+    ]
+  },
+  {
     divisionName: "Bronze 5",
     oneMatchPerPair: false,
     numWinner: 0,
@@ -78,6 +97,26 @@ const divisionData = [
     ]
   },
   {
+    divisionName: "Bronze 7",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numPrizeMoney: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    endDate: "August 14, 2022",
+    players: [
+      "Bendelson",
+      "YeehawMcKickass",
+      "Benfamir",
+      "arbaro",
+      "TEMPHUiBIS",
+      "Roytheredpanda",
+      "Sulfato"
+    ]
+  },
+  {
     divisionName: "Beginner 5",
     oneMatchPerPair: false,
     numWinner: 0,
@@ -95,6 +134,27 @@ const divisionData = [
       "MKIII Mileena",
       "Skai",
       "TEMPHUiBIS"
+    ]
+  },
+  {
+    divisionName: "Beginner 6",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numPrizeMoney: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    endDate: "August 14, 2022",
+    players: [
+      "TeaBoneJones",
+      "Chef",
+      "Nack323",
+      "Calibrate",
+      "Skai",
+      "Vlad",
+      "careless",
+      "Lapis Lazuli"
     ]
   }
 ];
@@ -172,7 +232,12 @@ const eloNames = {
   Cwiiis: "CWIIIS",
   tourist106: "TOURIST",
   Kingsman: "KINGSMAN",
-  cchristm: "CCHRISTM"
+  cchristm: "CCHRISTM",
+  "Eumeli": "EUMELI",
+  "Roytheredpanda": "ROYTHEREDPANDA",
+  "TeaBoneJones": "TEABONEJONES",
+  "Nack323": "NACK323",
+  "Calibrate": "CALIBRATE"
 };
 
 const adminRole = [

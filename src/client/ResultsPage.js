@@ -77,7 +77,12 @@ const eloNames = {
   Cwiiis: "CWIIIS",
   tourist106: "TOURIST",
   Kingsman: "KINGSMAN",
-  cchristm: "CCHRISTM"
+  cchristm: "CCHRISTM",
+  "Eumeli": "EUMELI",
+  "Roytheredpanda": "ROYTHEREDPANDA",
+  "TeaBoneJones": "TEABONEJONES",
+  "Nack323": "NACK323",
+  "Calibrate": "CALIBRATE"
 };
 
 class ResultsPage extends Component {
