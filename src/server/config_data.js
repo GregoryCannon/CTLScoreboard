@@ -29,7 +29,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
-    endDate: "July 31, 2022",
+    endDate: "August 28, 2022",
     players: [
       "Zxvye",
       "Rory",
