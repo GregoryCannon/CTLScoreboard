@@ -21,6 +21,27 @@ const divisionData = [
     ]
   },
   {
+    divisionName: "Gold 5",
+    oneMatchPerPair: false,
+    numWinner: 1,
+    numPrizeMoney: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    endDate: "July 31, 2022",
+    players: [
+      "Zxvye",
+      "Rory",
+      "Kingsman",
+      "Uno",
+      "zempro",
+      "minertyler",
+      "snowy",
+      "Lily"
+    ]
+  },
+  {
     divisionName: "Silver 5",
     oneMatchPerPair: false,
     numWinner: 0,
@@ -237,7 +258,11 @@ const eloNames = {
   "Roytheredpanda": "ROYTHEREDPANDA",
   "TeaBoneJones": "TEABONEJONES",
   "Nack323": "NACK323",
-  "Calibrate": "CALIBRATE"
+  "Calibrate": "CALIBRATE",
+  Uno: "UNOR1GINALNAME",
+  zempro: "ZEMPRO",
+  minertyler: "MINERTYLER",
+  snowy: "SNOWTRIS"
 };
 
 const adminRole = [

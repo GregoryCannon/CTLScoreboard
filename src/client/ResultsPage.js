@@ -82,7 +82,11 @@ const eloNames = {
   "Roytheredpanda": "ROYTHEREDPANDA",
   "TeaBoneJones": "TEABONEJONES",
   "Nack323": "NACK323",
-  "Calibrate": "CALIBRATE"
+  "Calibrate": "CALIBRATE",
+  Uno: "UNOR1GINALNAME",
+  zempro: "ZEMPRO",
+  minertyler: "MINERTYLER",
+  snowy: "SNOWTRIS"
 };
 
 class ResultsPage extends Component {
