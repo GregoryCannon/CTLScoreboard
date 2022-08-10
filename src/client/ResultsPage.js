@@ -87,7 +87,13 @@ const eloNames = {
   zempro: "ZEMPRO",
   minertyler: "MINERTYLER",
   snowy: "SNOWTRIS",
-  Claw: "CLAW"
+  Claw: "CLAW",
+  Coal: "COALBUCKET",
+  b0rkedbear: "B0RKEDBEAR",
+  NeutrisicAcid: "NEUTRISICACID",
+  SlickIvy: "SLICKIVY",
+  xxbalt: "XXBALT", 
+  princessanna: "PRINCESSANNA" 
 };
 
 class ResultsPage extends Component {

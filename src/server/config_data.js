@@ -195,6 +195,27 @@ const divisionData = [
       "careless",
       "Lapis Lazuli"
     ]
+  },
+  {
+    divisionName: "Beginner 7",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numPrizeMoney: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    endDate: "September 4, 2022",
+    players: [
+      "NeutrisicAcid", //add me
+      "SlickIvy", //add me
+      "Coal",
+      "Alphabet",
+      "soapcandy",
+      "xxbalt", //add me
+      "b0rkedbear",
+      "princessanna" //add me
+    ]
   }
 ];
 
@@ -281,7 +302,13 @@ const eloNames = {
   zempro: "ZEMPRO",
   minertyler: "MINERTYLER",
   snowy: "SNOWTRIS",
-  Claw: "CLAW"
+  Claw: "CLAW",
+  Coal: "COALBUCKET",
+  b0rkedbear: "B0RKEDBEAR",
+  NeutrisicAcid: "NEUTRISICACID",
+  SlickIvy: "SLICKIVY",
+  xxbalt: "XXBALT", 
+  princessanna: "PRINCESSANNA" 
 };
 
 const adminRole = [
