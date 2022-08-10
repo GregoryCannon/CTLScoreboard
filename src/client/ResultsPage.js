@@ -86,7 +86,8 @@ const eloNames = {
   Uno: "UNOR1GINALNAME",
   zempro: "ZEMPRO",
   minertyler: "MINERTYLER",
-  snowy: "SNOWTRIS"
+  snowy: "SNOWTRIS",
+  Claw: "CLAW"
 };
 
 class ResultsPage extends Component {

@@ -138,6 +138,24 @@ const divisionData = [
     ]
   },
   {
+    divisionName: "Bronze 8",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numPrizeMoney: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    endDate: "September 4, 2022",
+    players: [
+      "Tacomom18",
+      "Richard Wolf VI",
+      "Claw",
+      "Schtoikle",
+      "Archie"
+    ]
+  },
+  {
     divisionName: "Beginner 5",
     oneMatchPerPair: false,
     numWinner: 0,
@@ -262,7 +280,8 @@ const eloNames = {
   Uno: "UNOR1GINALNAME",
   zempro: "ZEMPRO",
   minertyler: "MINERTYLER",
-  snowy: "SNOWTRIS"
+  snowy: "SNOWTRIS",
+  Claw: "CLAW"
 };
 
 const adminRole = [
