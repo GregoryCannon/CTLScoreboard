@@ -371,7 +371,8 @@ const restreamerRole = [
   "DanV#0061",
   "UnOr1ginalName#8655",
   "TomelloSoulMan#7863",
-  "ChefGobes#6796"
+  "ChefGobes#6796",
+  "nack323#5273"
 ];
 
 module.exports = {
