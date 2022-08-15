@@ -1,26 +1,5 @@
 const divisionData = [
   {
-    divisionName: "Gold 4",
-    oneMatchPerPair: false,
-    numWinner: 1,
-    numPrizeMoney: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    endDate: "July 31, 2022",
-    players: [
-      "Rory",
-      "Cwiiis",
-      "Zxvye",
-      "Lily",
-      "tourist106",
-      "Kingsman",
-      "Grand Designs",
-      "doodle"
-    ]
-  },
-  {
     divisionName: "Gold 5",
     oneMatchPerPair: false,
     numWinner: 1,
@@ -42,24 +21,6 @@ const divisionData = [
     ]
   },
   {
-    divisionName: "Silver 5",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numPrizeMoney: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    endDate: "July 17, 2022",
-    players: [
-      "sixfour",
-      "TomelloSoulMan",
-      "Mario Lafleur",
-      "LovenRazu",
-      "arbaro"
-    ]
-  },
-  {
     divisionName: "Silver 6",
     oneMatchPerPair: false,
     numWinner: 0,
@@ -76,26 +37,6 @@ const divisionData = [
       "sixfour",
       "Mario Lafleur",
       "BillyMac"
-    ]
-  },
-  {
-    divisionName: "Bronze 5",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numPrizeMoney: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    endDate: "July 17, 2022",
-    players: [
-      "Burritodad",
-      "mfrerck",
-      "Kanto",
-      "Sulfato",
-      "MrHaatz",
-      "ElleryStacks",
-      "DobREEE"
     ]
   },
   {
@@ -153,26 +94,6 @@ const divisionData = [
       "Claw",
       "Schtoikle",
       "Archie"
-    ]
-  },
-  {
-    divisionName: "Beginner 5",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numPrizeMoney: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    endDate: "July 17, 2022",
-    players: [
-      "careless",
-      "Chef",
-      "Vlad",
-      "soapcandy",
-      "MKIII Mileena",
-      "Skai",
-      "TEMPHUiBIS"
     ]
   },
   {
@@ -373,7 +294,8 @@ const restreamerRole = [
   "TomelloSoulMan#7863",
   "ChefGobes#6796",
   "nack323#5273",
-  "Zxvye#5501"
+  "Zxvye#5501",
+  "TEMPHUiBIS#3382"
 ];
 
 module.exports = {
