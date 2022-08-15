@@ -40,25 +40,6 @@ const divisionData = [
     ]
   },
   {
-    divisionName: "Bronze 6",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numPrizeMoney: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    endDate: "July 31, 2022",
-    players: [
-      "Burritodad",
-      "Richard Wolf VI",
-      "Tacomom18",
-      "Junior",
-      "cchristm",
-      "wdsubia"
-    ]
-  },
-  {
     divisionName: "Bronze 7",
     oneMatchPerPair: false,
     numWinner: 0,
