@@ -86,7 +86,7 @@ const eloNames = {
   Uno: "UNOR1GINALNAME",
   zempro: "ZEMPRO",
   minertyler: "MINERTYLER",
-  snowy: "SNOWTRIS",
+  snowy: "PRINCE FLUFFY",
   Claw: "CLAW",
   Coal: "COALBUCKET",
   b0rkedbear: "B0RKEDBEAR",
