@@ -209,6 +209,5 @@ const restreamerRole = [
 module.exports = {
   divisionData,
   adminRole,
-  restreamerRole,
-  eloNames
+  restreamerRole
 };
