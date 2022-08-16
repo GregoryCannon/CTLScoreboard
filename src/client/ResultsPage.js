@@ -93,7 +93,10 @@ const eloNames = {
   NeutrisicAcid: "NEUTRISICACID",
   SlickIvy: "SLICKIVY",
   xxbalt: "XXBALT", 
-  princessanna: "PRINCESSANNA" 
+  princessanna: "PRINCESSANNA",
+  Aptiz: "APTIZ",
+  eee_inn: "EEE_INN",
+  Tytris: "TYTRIS"
 };
 
 class ResultsPage extends Component {
