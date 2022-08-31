@@ -96,7 +96,8 @@ const eloNames = {
   princessanna: "PRINCESSANNA",
   Aptiz: "APTIZ",
   eee_inn: "EEE_INN",
-  Tytris: "TYTRIS"
+  Tytris: "TYTRIS",
+  Firedox: "FIREDOX"
 };
 
 class ResultsPage extends Component {

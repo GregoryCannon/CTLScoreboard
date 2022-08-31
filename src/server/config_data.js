@@ -21,6 +21,24 @@ const divisionData = [
     ]
   },
   {
+    divisionName: "Gold 6",
+    oneMatchPerPair: false,
+    numWinner: 1,
+    numPrizeMoney: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    endDate: "September 25, 2022",
+    players: [
+      "Gerhard",
+      "Grand Designs",
+      "Kingsman",
+      "Zxvye",
+      "Bergtroll",
+    ]
+  },
+  {
     divisionName: "Silver 6",
     oneMatchPerPair: false,
     numWinner: 0,
@@ -56,6 +74,25 @@ const divisionData = [
       "eee_inn",
       "Tytris",
       "Roytheredpanda"
+    ]
+  },
+  {
+    divisionName: "Silver 8",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numPrizeMoney: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    endDate: "September 25, 2022",
+    players: [
+      "Maedhros",
+      "ElleryStacks",
+      "Burritodad",
+      "Tytris",
+      "Aptiz",
+      "zempro",
     ]
   },
   {
@@ -96,6 +133,30 @@ const divisionData = [
       "Archie"
     ]
   },
+  {
+    divisionName: "Bronze 9",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numPrizeMoney: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    endDate: "October 2, 2022",
+    players: [
+      "TEMPHUiBIS",
+      "Frenchie",
+      "Firedox",
+      "arbaro",
+      "Skai",
+      "Tacomom18",
+      "SirMaser",
+      "Moon",
+      "Junior",
+    ]
+  },
+  //Bronze 9 is beginning with one promotion spot and one demotion spot, running until 22/10/02 with 
+  //@TEMPHUiBIS @FrenchiestFrie @Firedox  @arbaro @Skai @Tacomom @SirMaser @MoonManCrew @jrgagne99
   {
     divisionName: "Beginner 6",
     oneMatchPerPair: false,
