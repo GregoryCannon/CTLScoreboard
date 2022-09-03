@@ -260,221 +260,222 @@ function getMatchAlreadyExistsErrorMessage(winner, loser, winnerHome) {
   */
 
 /** GET standings request */
-app.get("/api/standings", function(req, res) {
-  logger.logRequest("Get standings", req.body);
+// app.get("/api/standings", function(req, res) {
+//   logger.logRequest("Get standings", req.body);
 
-  if (isCacheValid()) {
-    logger.logResponseDescription("Sending cached standings");
-    return res.send(cachedFinalStandings);
-  } else {
-    logger.log("Invalid cache, forced to refresh");
-    return refreshCachedStandings(succeeded => {
-      if (succeeded) {
-        logger.log("Refresh succeeded");
-        logger.logResponseDescription(
-          "Sending cached standings (= newly calculated standings)"
-        );
-      } else {
-        logger.log("Refresh failed");
-        logger.logResponseDescription(
-          "Sending cached standings (= backup data)"
-        );
-      }
-      return res.send(cachedFinalStandings);
-    });
-  }
-});
+//   if (isCacheValid()) {
+//     logger.logResponseDescription("Sending cached standings");
+//     return res.send(cachedFinalStandings);
+//   } else {
+//     logger.log("Invalid cache, forced to refresh");
+//     return refreshCachedStandings(succeeded => {
+//       if (succeeded) {
+//         logger.log("Refresh succeeded");
+//         logger.logResponseDescription(
+//           "Sending cached standings (= newly calculated standings)"
+//         );
+//       } else {
+//         logger.log("Refresh failed");
+//         logger.logResponseDescription(
+//           "Sending cached standings (= backup data)"
+//         );
+//       }
+//       return res.send(cachedFinalStandings);
+//     });
+//   }
+// });
 
 /** GET match data request */
-app.get("/api/match-data", function(req, res) {
-  logger.logRequest("Get match data", req.body);
+// app.get("/api/match-data", function(req, res) {
+//   logger.logRequest("Get match data", req.body);
 
-  // Get matches from db
-  getValidMatches(function(e, matches) {
-    logger.logResponseDescription("Sending match data");
-    return res.send(matches);
-  });
-});
+//   // Get matches from db
+//   getValidMatches(function(e, matches) {
+//     logger.logResponseDescription("Sending match data");
+//     return res.send(matches);
+//   });
+// });
 
 /** POST request to report a match */
-app.post("/api/match-data", function(req, res) {
-  logger.logRequest("Report match", req.body);
-  const newMatch = req.body;
+// app.post("/api/match-data", function(req, res) {
+//   logger.logRequest("Report match", req.body);
+//   const newMatch = req.body;
 
-  // Check that the match hasn't already been reported
-  getValidMatches(function(e, matches) {
-    if (
-      checkMatchAlreadyExists(
-        matches,
-        newMatch.division,
-        newMatch.winner,
-        newMatch.loser,
-        newMatch.winner_home
-      )
-    ) {
-      const responseBody = {
-        didSucceed: false,
-        errorMessage: getMatchAlreadyExistsErrorMessage(
-          newMatch.winner,
-          newMatch.loser,
-          newMatch.winner_home
-        )
-      };
-      logger.logResponse("Report match", responseBody);
-      res.send(responseBody);
-    } else {
-      // Continue with the post
-      const newMatchData = { ...newMatch, valid: true, corrupted: false };
-      matchListDb.insert(newMatchData, function(err, doc) {
-        if (err) {
-          // If it failed, return error
-          const responseBody = {
-            didSucceed: false,
-            errorMessage: err
-          };
-          logger.logResponse("Report match", responseBody);
-          res.send(responseBody);
-        } else {
-          // If succeeded, invalidate cache, report the match to discord, and send success response
-          invalidateCacheForDivision(newMatch.division);
-          MainBot.reportMatch(newMatch);
+//   // Check that the match hasn't already been reported
+//   getValidMatches(function(e, matches) {
+//     if (
+//       checkMatchAlreadyExists(
+//         matches,
+//         newMatch.division,
+//         newMatch.winner,
+//         newMatch.loser,
+//         newMatch.winner_home
+//       )
+//     ) {
+//       const responseBody = {
+//         didSucceed: false,
+//         errorMessage: getMatchAlreadyExistsErrorMessage(
+//           newMatch.winner,
+//           newMatch.loser,
+//           newMatch.winner_home
+//         )
+//       };
+//       logger.logResponse("Report match", responseBody);
+//       res.send(responseBody);
+//     } else {
+//       // Continue with the post
+//       const newMatchData = { ...newMatch, valid: true, corrupted: false };
+//       matchListDb.insert(newMatchData, function(err, doc) {
+//         if (err) {
+//           // If it failed, return error
+//           const responseBody = {
+//             didSucceed: false,
+//             errorMessage: err
+//           };
+//           logger.logResponse("Report match", responseBody);
+//           res.send(responseBody);
+//         } else {
+//           // If succeeded, invalidate cache, report the match to discord, and send success response
+//           invalidateCacheForDivision(newMatch.division);
+//           MainBot.reportMatch(newMatch);
 
-          const responseBody = {
-            didSucceed: true,
-            errorMessage: ""
-          };
-          logger.logResponse("Report match", responseBody);
-          res.send(responseBody);
-        }
-      });
-    }
-  });
-});
+//           const responseBody = {
+//             didSucceed: true,
+//             errorMessage: ""
+//           };
+//           logger.logResponse("Report match", responseBody);
+//           res.send(responseBody);
+//         }
+//       });
+//     }
+//   });
+// });
 
 /** DELETE all matches from a division */
-app.delete("/api/match-data/purge", function(req, res) {
-  logger.logRequest("Purge division", req.body);
-  if (req.body === {}) {
-    const responseBody = {
-      didSucceed: false,
-      errorMessage:
-        "The server didn't receive any data on which division to purge"
-    };
-    logger.logResponse("Purge division", responseBody);
-    res.send(responseBody);
-  }
+// app.delete("/api/match-data/purge", function(req, res) {
+//   logger.logRequest("Purge division", req.body);
+//   if (req.body === {}) {
+//     const responseBody = {
+//       didSucceed: false,
+//       errorMessage:
+//         "The server didn't receive any data on which division to purge"
+//     };
+//     logger.logResponse("Purge division", responseBody);
+//     res.send(responseBody);
+//   }
 
-  const divisionName = req.body.divisionName;
-  const divisionQuery = { division: divisionName };
-  matchListDb.update(
-    divisionQuery,
-    { $set: { valid: false } },
-    { multi: true },
-    function(err, doc) {
-      if (err) {
-        // If it failed, return error
-        const responseBody = {
-          didSucceed: false,
-          errorMessage: err
-        };
-        logger.logResponse("Purge division", responseBody);
-        res.send(responseBody);
-      } else {
-        // Otherwise, return success
-        invalidateCacheForDivision(divisionName);
-        const responseBody = {
-          didSucceed: true,
-          errorMessage: ""
-        };
-        logger.logResponse("Purge division", responseBody);
-        res.send(responseBody);
-      }
-    }
-  );
-});
+//   const divisionName = req.body.divisionName;
+//   const divisionQuery = { division: divisionName };
+//   matchListDb.update(
+//     divisionQuery,
+//     { $set: { valid: false } },
+//     { multi: true },
+//     function(err, doc) {
+//       if (err) {
+//         // If it failed, return error
+//         const responseBody = {
+//           didSucceed: false,
+//           errorMessage: err
+//         };
+//         logger.logResponse("Purge division", responseBody);
+//         res.send(responseBody);
+//       } else {
+//         // Otherwise, return success
+//         invalidateCacheForDivision(divisionName);
+//         const responseBody = {
+//           didSucceed: true,
+//           errorMessage: ""
+//         };
+//         logger.logResponse("Purge division", responseBody);
+//         res.send(responseBody);
+//       }
+//     }
+//   );
+// });
 
 /** DELETE match request */
-app.delete("/api/match-data", function(req, res) {
-  logger.logRequest("Delete match", req.body);
-  const matchToDelete = req.body;
+// app.delete("/api/match-data", function(req, res) {
+//   logger.logRequest("Delete match", req.body);
+//   const matchToDelete = req.body;
 
-  if (matchToDelete === {}) {
-    const responseBody = {
-      didSucceed: false,
-      errorMessage:
-        "The server didn't receive any data on which match to delete"
-    };
-    logger.logResponse("Delete match", responseBody);
-    res.send(responseBody);
-  }
+//   if (matchToDelete === {}) {
+//     const responseBody = {
+//       didSucceed: false,
+//       errorMessage:
+//         "The server didn't receive any data on which match to delete"
+//     };
+//     logger.logResponse("Delete match", responseBody);
+//     res.send(responseBody);
+//   }
 
-  const idOnlyBody = { _id: matchToDelete._id };
-  matchListDb.update(idOnlyBody, { $set: { valid: false } }, function(
-    err,
-    doc
-  ) {
-    if (err) {
-      // If it failed, return error
-      const responseBody = {
-        didSucceed: false,
-        errorMessage: err
-      };
-      logger.logResponse("Delete match", responseBody);
-      res.send(responseBody);
-    } else {
-      // Otherwise, return success
-      invalidateCacheForDivision(matchToDelete.division);
-      const responseBody = {
-        didSucceed: true,
-        errorMessage: ""
-      };
-      logger.logResponse("Delete match", responseBody);
-      res.send(responseBody);
-    }
-  });
-});
+//   const idOnlyBody = { _id: matchToDelete._id };
+//   matchListDb.update(idOnlyBody, { $set: { valid: false } }, function(
+//     err,
+//     doc
+//   ) {
+//     if (err) {
+//       // If it failed, return error
+//       const responseBody = {
+//         didSucceed: false,
+//         errorMessage: err
+//       };
+//       logger.logResponse("Delete match", responseBody);
+//       res.send(responseBody);
+//     } else {
+//       // Otherwise, return success
+//       invalidateCacheForDivision(matchToDelete.division);
+//       const responseBody = {
+//         didSucceed: true,
+//         errorMessage: ""
+//       };
+//       logger.logResponse("Delete match", responseBody);
+//       res.send(responseBody);
+//     }
+//   });
+// });
 
 /** POST request to report penalty points */
-app.post("/api/penalty", function(req, res) {
-  logger.logRequest("Report penalty", req.body);
-  const penalizedPlayer = req.body.player;
-  const penaltyAmount = req.body.points;
-  const playerDivision = req.body.divisionName;
+// app.post("/api/penalty", function(req, res) {
+//   logger.logRequest("Report penalty", req.body);
+//   const penalizedPlayer = req.body.player;
+//   const penaltyAmount = req.body.points;
+//   const playerDivision = req.body.divisionName;
 
-  // Update the penalty database
-  penaltyDb.update(
-    { player: penalizedPlayer }, // Query
-    { $set: { player: penalizedPlayer, points: penaltyAmount } }, // Document to add or replace
-    { upsert: true }, // Intelligently insert or update
-    function(err, doc) {
-      if (err) {
-        // If DB operation failed, return error
-        const responseBody = {
-          didSucceed: false,
-          errorMessage: err
-        };
-        logger.logResponse("Report penalty", responseBody);
-        res.send(responseBody);
-      } else {
-        // If DB operation succeeded, invalidate the cache and send success
-        invalidateCacheForDivision(playerDivision);
+//   // Update the penalty database
+//   penaltyDb.update(
+//     { player: penalizedPlayer }, // Query
+//     { $set: { player: penalizedPlayer, points: penaltyAmount } }, // Document to add or replace
+//     { upsert: true }, // Intelligently insert or update
+//     function(err, doc) {
+//       if (err) {
+//         // If DB operation failed, return error
+//         const responseBody = {
+//           didSucceed: false,
+//           errorMessage: err
+//         };
+//         logger.logResponse("Report penalty", responseBody);
+//         res.send(responseBody);
+//       } else {
+//         // If DB operation succeeded, invalidate the cache and send success
+//         invalidateCacheForDivision(playerDivision);
 
-        const responseBody = {
-          didSucceed: true,
-          errorMessage: ""
-        };
-        logger.logResponse("Report penalty", responseBody);
-        res.send(responseBody);
-      }
-    }
-  );
-});
+//         const responseBody = {
+//           didSucceed: true,
+//           errorMessage: ""
+//         };
+//         logger.logResponse("Report penalty", responseBody);
+//         res.send(responseBody);
+//       }
+//     }
+//   );
+// });
 
 /** GET request for serving the frontend */
 app.get("*", function(req, res) {
-  logger.logRequest("Get frontend", req.body);
-  logger.logResponseDescription("Sending frontend");
-  res.sendFile(path.join(__dirname, "../../build", "index.html"));
+  res.redirect(301, "https://tnp.tetris.lol");
+  // logger.logRequest("Get frontend", req.body);
+  // logger.logResponseDescription("Sending frontend");
+  // res.sendFile(path.join(__dirname, "../../build", "index.html"));
 });
 
 /*
@@ -482,19 +483,19 @@ app.get("*", function(req, res) {
 Start script
 ------------------------
 */
-function initialSetup() {
-  logger.log("Server is running");
-  invalidateCacheForAllDivisions();
-  refreshCachedStandings(succeeded => {
-    if (succeeded) {
-      logger.log("Refreshed standings locally!");
-    } else {
-      logger.log("!!!! Sev 0 - Data already corrupted on startup");
-      invalidateCorruptedData();
-    }
-  });
-}
+// function initialSetup() {
+//   logger.log("Server is running");
+//   invalidateCacheForAllDivisions();
+//   refreshCachedStandings(succeeded => {
+//     if (succeeded) {
+//       logger.log("Refreshed standings locally!");
+//     } else {
+//       logger.log("!!!! Sev 0 - Data already corrupted on startup");
+//       invalidateCorruptedData();
+//     }
+//   });
+// }
 
-initialSetup();
+// initialSetup();
 
 app.listen(process.env.PORT || 8080);
