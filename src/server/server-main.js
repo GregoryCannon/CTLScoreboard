@@ -474,7 +474,6 @@ app.post("/api/penalty", function(req, res) {
 app.get("*", function(req, res) {
   logger.logRequest("Get frontend", req.body);
   logger.logResponseDescription("Sending frontend");
-  res.redirect(301, "https://tnp.tetris.lol");
   res.sendFile(path.join(__dirname, "../../build", "index.html"));
 });
 
