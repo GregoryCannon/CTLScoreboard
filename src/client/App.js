@@ -336,8 +336,8 @@ class App extends Component {
           />
 
           <div className="Attribution-text">
-            Website developed by Greg Cannon. Source code available on{" "}
-            <a href="https://github.com/GregoryCannon/CTLScoreboard">Github</a>.
+            Website developed by Greg Cannon and Nick Woods. Source code available on{" "}
+            <a href="https://github.com/nawoods/CTLScoreboard">Github</a>.
           </div>
         </div>
       </Router>

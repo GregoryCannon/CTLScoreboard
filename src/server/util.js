@@ -581,11 +581,9 @@ function getPlayerLookupMap(division) {
 }
 
 function getApiUrl(suffix) {
-  if (IS_PRODUCTION) {
-    return "https://tnpscoreboard.herokuapp.com/" + suffix;
-  } else {
-    return (process.env.API_URL || "http://localhost:8080") + "/" + suffix;
-  }
+  const defaultApiBase = IS_PRODUCTION 
+    ? "https://tnpscoreboard.herokuapp.com" : "http://localhost:8080";
+  return (process.env.API_URL || defaultApiBase) + "/" + suffix;
 }
 
 function getDiscordMainChannel() {
