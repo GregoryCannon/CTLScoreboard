@@ -30,13 +30,7 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
     endDate: "September 25, 2022",
-    players: [
-      "Gerhard",
-      "Grand Designs",
-      "Kingsman",
-      "Zxvye",
-      "Bergtroll",
-    ]
+    players: ["Gerhard", "Grand Designs", "Kingsman", "Zxvye", "Bergtroll"]
   },
   {
     divisionName: "Silver 6",
@@ -92,7 +86,7 @@ const divisionData = [
       "Burritodad",
       "Tytris",
       "Aptiz",
-      "zempro",
+      "zempro"
     ]
   },
   {
@@ -125,13 +119,7 @@ const divisionData = [
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     endDate: "September 4, 2022",
-    players: [
-      "Tacomom18",
-      "Richard Wolf VI",
-      "Claw",
-      "Schtoikle",
-      "Archie"
-    ]
+    players: ["Tacomom18", "Richard Wolf VI", "Claw", "Schtoikle", "Archie"]
   },
   {
     divisionName: "Bronze 9",
@@ -152,11 +140,9 @@ const divisionData = [
       "Tacomom18",
       "SirMaser",
       "Moon",
-      "Junior",
+      "Junior"
     ]
   },
-  //Bronze 9 is beginning with one promotion spot and one demotion spot, running until 22/10/02 with 
-  //@TEMPHUiBIS @FrenchiestFrie @Firedox  @arbaro @Skai @Tacomom @SirMaser @MoonManCrew @jrgagne99
   {
     divisionName: "Beginner 6",
     oneMatchPerPair: false,
