@@ -582,7 +582,7 @@ function getPlayerLookupMap(division) {
 
 function getApiUrl(suffix) {
   const defaultApiBase = IS_PRODUCTION 
-    ? "https://tnpscoreboard.herokuapp.com" : "http://localhost:8080";
+    ? "https://tnp.tetris.lol" : "http://localhost:8080";
   return (process.env.API_URL || defaultApiBase) + "/" + suffix;
 }
 
