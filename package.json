@@ -33,7 +33,7 @@
     "go": "npm run build && npm run start",
     "start-react": "npm run format && react-scripts start",
     "start": "node src/server/server-main.js",
-    "build": "npm i && npm run format && react-scripts build",
+    "build": "pm run format && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "format": "prettier --write \"src/**/*.+(js|jsx|json|css|md)\""
