@@ -89,15 +89,16 @@ const eloNames = {
   snowy: "PRINCE FLUFFY",
   Claw: "CLAW",
   Coal: "COALBUCKET",
-  b0rkedbear: "B0RKEDBEAR",
-  NeutrisicAcid: "NEUTRISICACID",
+  b0rkedbear: "BORKEDBEAR",
+  NeutrisicAcid: "NEUTRISACID",
   SlickIvy: "SLICKIVY",
   xxbalt: "XXBALT",
   princessanna: "PRINCESSANNA",
   Aptiz: "APTIZ",
   eee_inn: "EEE_INN",
   Tytris: "TYTRIS",
-  Firedox: "FIREDOX"
+  Firedox: "FIREDOX",
+  Nossi: "NOSSI"
 };
 
 class ResultsPage extends Component {

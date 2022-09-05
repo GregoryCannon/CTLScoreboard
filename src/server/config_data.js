@@ -175,14 +175,32 @@ const divisionData = [
     numAutoRelegate: 0,
     endDate: "September 4, 2022",
     players: [
-      "NeutrisicAcid", //add me
-      "SlickIvy", //add me
+      "NeutrisicAcid",
+      "SlickIvy", 
       "Coal",
       "Alphabet",
       "soapcandy",
-      "xxbalt", //add me
+      "xxbalt",
       "b0rkedbear",
-      "princessanna" //add me
+      "princessanna"
+    ]
+  },
+  {
+    divisionName: "Beginner 8",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numPrizeMoney: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    endDate: "October 22, 2022",
+    players: [
+      "TeaBoneJones",
+      "Lapis Lazuli",
+      "Chef",
+      "Odrachess",
+      "Nossi"
     ]
   }
 ];
