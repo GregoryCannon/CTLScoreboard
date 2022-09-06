@@ -1,26 +1,5 @@
 const divisionData = [
   {
-    divisionName: "Gold 5",
-    oneMatchPerPair: false,
-    numWinner: 1,
-    numPrizeMoney: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    endDate: "August 28, 2022",
-    players: [
-      "Zxvye",
-      "Rory",
-      "Kingsman",
-      "Uno",
-      "zempro",
-      "minertyler",
-      "snowy",
-      "Lily"
-    ]
-  },
-  {
     divisionName: "Gold 6",
     oneMatchPerPair: false,
     numWinner: 1,
@@ -31,25 +10,6 @@ const divisionData = [
     numAutoRelegate: 1,
     endDate: "September 25, 2022",
     players: ["Gerhard", "Grand Designs", "Kingsman", "Zxvye", "Bergtroll"]
-  },
-  {
-    divisionName: "Silver 6",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numPrizeMoney: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    endDate: "August 14, 2022",
-    players: [
-      "Frenchie",
-      "Eumeli",
-      "Maedhros",
-      "sixfour",
-      "Mario Lafleur",
-      "BillyMac"
-    ]
   },
   {
     divisionName: "Silver 7",
@@ -90,38 +50,6 @@ const divisionData = [
     ]
   },
   {
-    divisionName: "Bronze 7",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numPrizeMoney: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    endDate: "August 14, 2022",
-    players: [
-      "Bendelson",
-      "YeehawMcKickass",
-      "Benfamir",
-      "arbaro",
-      "TEMPHUiBIS",
-      "Roytheredpanda",
-      "Sulfato"
-    ]
-  },
-  {
-    divisionName: "Bronze 8",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numPrizeMoney: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    endDate: "September 4, 2022",
-    players: ["Tacomom18", "Richard Wolf VI", "Claw", "Schtoikle", "Archie"]
-  },
-  {
     divisionName: "Bronze 9",
     oneMatchPerPair: false,
     numWinner: 0,
@@ -141,27 +69,6 @@ const divisionData = [
       "SirMaser",
       "Moon",
       "Junior"
-    ]
-  },
-  {
-    divisionName: "Beginner 6",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numPrizeMoney: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    endDate: "August 14, 2022",
-    players: [
-      "TeaBoneJones",
-      "Chef",
-      "Nack323",
-      "Calibrate",
-      "Skai",
-      "Vlad",
-      "careless",
-      "Lapis Lazuli"
     ]
   },
   {
