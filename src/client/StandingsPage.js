@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReportingPanel from "./ReportingPanel";
+import BegForMoney from "./BegForMoney";
 import MatchHistory from "./MatchHistory";
 import Division from "./division/Division";
 import "./StandingsPage.css";
@@ -72,6 +73,10 @@ class StandingsPage extends Component {
               isRestreamer={this.props.isRestreamer}
               discordIdentity={this.props.discordIdentity}
             />
+          </div>
+
+          <div className="Beg-for-money-card">
+            <BegForMoney />
           </div>
 
           <div className="Match-history-card">

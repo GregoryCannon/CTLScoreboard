@@ -18,12 +18,18 @@
 }
 
 .Reporting-panel-card,
+.Beg-for-money-card,
 .Match-history-card {
   background: #efefef;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.Beg-for-money-card,
 .Match-history-card {
   margin-top: 20px;
   margin-bottom: 10px;
+}
+
+.Beg-for-money-card {
+  padding: 30px 10px;
 }

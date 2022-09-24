@@ -581,8 +581,9 @@ function getPlayerLookupMap(division) {
 }
 
 function getApiUrl(suffix) {
-  const defaultApiBase = IS_PRODUCTION 
-    ? "https://tnp.tetris.lol" : "http://localhost:8080";
+  const defaultApiBase = IS_PRODUCTION
+    ? "https://tnp.tetris.lol"
+    : "http://localhost:8080";
   return (process.env.API_URL || defaultApiBase) + "/" + suffix;
 }
 

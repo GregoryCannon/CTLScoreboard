@@ -83,7 +83,7 @@ const divisionData = [
     endDate: "September 4, 2022",
     players: [
       "NeutrisicAcid",
-      "SlickIvy", 
+      "SlickIvy",
       "Coal",
       "Alphabet",
       "soapcandy",
@@ -102,13 +102,7 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 0,
     endDate: "October 22, 2022",
-    players: [
-      "TeaBoneJones",
-      "Lapis Lazuli",
-      "Chef",
-      "Odrachess",
-      "Nossi"
-    ]
+    players: ["TeaBoneJones", "Lapis Lazuli", "Chef", "Odrachess", "Nossi"]
   }
 ];
 
