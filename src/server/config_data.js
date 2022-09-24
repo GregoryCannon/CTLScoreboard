@@ -101,7 +101,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 0,
-    endDate: "October 22, 2022",
+    endDate: "October 2, 2022",
     players: ["TeaBoneJones", "Lapis Lazuli", "Chef", "Odrachess", "Nossi"]
   }
 ];
