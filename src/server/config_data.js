@@ -12,6 +12,18 @@ const divisionData = [
     players: ["Gerhard", "Grand Designs", "Kingsman", "Zxvye", "Bergtroll"]
   },
   {
+    divisionName: "Gold 7",
+    oneMatchPerPair: false,
+    numWinner: 1,
+    numPrizeMoney: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    endDate: "October 23, 2022",
+    players: ["sixfour", "Uno", "minertyler", "Bergtroll", "zempro"]
+  },
+  {
     divisionName: "Silver 7",
     oneMatchPerPair: false,
     numWinner: 0,
@@ -50,6 +62,26 @@ const divisionData = [
     ]
   },
   {
+    divisionName: "Silver 9",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numPrizeMoney: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    endDate: "October 23, 2022",
+    players: [
+      "Marts",
+      "roncli",
+      "Burritodad",
+      "Kingsman",
+      "Elpailtem",
+      "Tytris",
+      "Aptiz"
+    ]
+  },
+  {
     divisionName: "Bronze 9",
     oneMatchPerPair: false,
     numWinner: 0,
@@ -69,6 +101,27 @@ const divisionData = [
       "SirMaser",
       "Moon",
       "Junior"
+    ]
+  },
+  {
+    divisionName: "Bronze 10",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numPrizeMoney: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    endDate: "October 23, 2022",
+    players: [
+      "Junior",
+      "Richard Wolf VI",
+      "Coal",
+      "cchristm",
+      "cobra",
+      "Firedox",
+      "Skai",
+      "mfrerck"
     ]
   },
   {

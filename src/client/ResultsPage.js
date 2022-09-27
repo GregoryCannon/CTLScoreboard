@@ -98,7 +98,10 @@ const eloNames = {
   eee_inn: "EEE_INN",
   Tytris: "TYTRIS",
   Firedox: "FIREDOX",
-  Nossi: "NOSSI"
+  Nossi: "NOSSI",
+  roncli: "RONCLI",
+  Elpailtem: "ELPAILTEM",
+  cobra: "COBRA"
 };
 
 class ResultsPage extends Component {
