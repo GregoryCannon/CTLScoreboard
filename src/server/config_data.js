@@ -114,7 +114,6 @@ const divisionData = [
     numAutoRelegate: 0,
     endDate: "October 23, 2022",
     players: [
-      "Junior",
       "Richard Wolf VI",
       "Coal",
       "cchristm",
