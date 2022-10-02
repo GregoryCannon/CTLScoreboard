@@ -1,17 +1,5 @@
 const divisionData = [
   {
-    divisionName: "Gold 6",
-    oneMatchPerPair: false,
-    numWinner: 1,
-    numPrizeMoney: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    endDate: "September 25, 2022",
-    players: ["Gerhard", "Grand Designs", "Kingsman", "Zxvye", "Bergtroll"]
-  },
-  {
     divisionName: "Gold 7",
     oneMatchPerPair: false,
     numWinner: 1,
@@ -22,44 +10,6 @@ const divisionData = [
     numAutoRelegate: 1,
     endDate: "October 23, 2022",
     players: ["sixfour", "Uno", "minertyler", "Bergtroll", "zempro"]
-  },
-  {
-    divisionName: "Silver 7",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numPrizeMoney: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    endDate: "September 11, 2022",
-    players: [
-      "Burritodad",
-      "Aptiz",
-      "Marts",
-      "eee_inn",
-      "Tytris",
-      "Roytheredpanda"
-    ]
-  },
-  {
-    divisionName: "Silver 8",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numPrizeMoney: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    endDate: "September 25, 2022",
-    players: [
-      "Maedhros",
-      "ElleryStacks",
-      "Burritodad",
-      "Tytris",
-      "Aptiz",
-      "zempro"
-    ]
   },
   {
     divisionName: "Silver 9",
@@ -121,27 +71,6 @@ const divisionData = [
       "Firedox",
       "Skai",
       "mfrerck"
-    ]
-  },
-  {
-    divisionName: "Beginner 7",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numPrizeMoney: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    endDate: "September 4, 2022",
-    players: [
-      "NeutrisicAcid",
-      "SlickIvy",
-      "Coal",
-      "Alphabet",
-      "soapcandy",
-      "xxbalt",
-      "b0rkedbear",
-      "princessanna"
     ]
   },
   {
