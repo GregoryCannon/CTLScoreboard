@@ -32,7 +32,7 @@ const divisionData = [
     ]
   },
   {
-    divisionName: "Bronze 9",
+    divisionName: "Silver 10",
     oneMatchPerPair: false,
     numWinner: 0,
     numPrizeMoney: 0,
@@ -40,17 +40,15 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
-    endDate: "October 2, 2022",
+    endDate: "November 6, 2022",
     players: [
-      "TEMPHUiBIS",
-      "Frenchie",
-      "Firedox",
-      "arbaro",
-      "Skai",
-      "Tacomom18",
-      "SirMaser",
-      "Moon",
-      "Junior"
+      "Maedhros",
+      "Junior",
+      "mfrerck",
+      "TomelloSoulMan",
+      "Burritodad",
+      "Tytris",
+      "Twifty"
     ]
   },
   {
@@ -72,18 +70,6 @@ const divisionData = [
       "Skai",
       "mfrerck"
     ]
-  },
-  {
-    divisionName: "Beginner 8",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numPrizeMoney: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    endDate: "October 2, 2022",
-    players: ["TeaBoneJones", "Lapis Lazuli", "Chef", "Odrachess", "Nossi"]
   }
 ];
 

@@ -101,7 +101,8 @@ const eloNames = {
   Nossi: "NOSSI",
   roncli: "RONCLI",
   Elpailtem: "ELPAILTEM",
-  cobra: "COBRA"
+  cobra: "COBRA",
+  Twifty: "TWIFTY"
 };
 
 class ResultsPage extends Component {
