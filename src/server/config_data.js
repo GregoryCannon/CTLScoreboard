@@ -321,7 +321,11 @@ const adminRole = [
   "Kingsman#0364",
   "Tugi#7004",
   "BlargMeister#1337",
-  "nikvo#1021"
+  "nikvo#1021",
+  "Chobge#7764",
+  "Chillalla#0001",
+  "FrenchiestFrie#9778",
+  "SnowLilyx#0365"
 ];
 
 const restreamerRole = [
@@ -462,7 +466,6 @@ const restreamerRole = [
   "MegaSkuci#3636",
   "Thunderstorm281#7715",
   "vanshtanwani#9639",
-  "Mleczak#8676",
   "Felinho#7027",
   "Sakurion#6289",
   "Chobge#7764",
@@ -536,7 +539,6 @@ const restreamerRole = [
   "Bendy1#6609",
   "Chris_Moulistanos#3251",
   "Klystyr (UTC -6)#9595",
-  "mistec43#9728",
   "Tweak_Beacon#2045",
   "Micetro#8032",
   "Noriko#0001",
@@ -546,7 +548,31 @@ const restreamerRole = [
   "Alphabeth#2194",
   "BillyMac#8194",
   "Chillalla#0001",
-  "ChefGobes#6796"
+  "ChefGobes#6796",
+  "ElleryStacks#4747",
+  "lame mii#2430",
+  "romanplaysgames#8168",
+  "cchristm#6938",
+  "King Choke(Klystyr)(UTC -5)#9595",
+  "Xenophilius#6969",
+  "Mario Lafleur#9804",
+  "DocPi314#1592",
+  "MrShadow#0900",
+  "Flashmonger#7095",
+  "mfrerck#1934",
+  "Malaya#2617",
+  "BlargMeister#1337",
+  "TomelloSoulMan#7863",
+  "nack323#5273",
+  "Zxvye#5501",
+  "TEMPHUiBIS#3382",
+  "B0rkedbear#0718",
+  "Bergtroll#3090",
+  "NeutrisicAcid#9557",
+  "Careless#3403",
+  "tyIer#8067",
+  "WhiteMonster#3552",
+  "Allenbot#8296"
 ];
 
 module.exports = {
