@@ -24,17 +24,18 @@ function PlayerAdvancedStats(props) {
         </div>
       )} */}
       Placement Odds:
+      {console.log(props.division.divisionName)}
       <table>
         {props.division.numAutoPromo + props.division.numWinner > 0 && (
           <tr
             className={
-              props.division.divisionName.includes("1")
+              props.division.divisionName.match(/^1[^0-9]/) || props.data.divisionName === "1"
                 ? "Stats-winner"
                 : "Stats-auto-promo"
             }
           >
             <td>
-              {props.division.divisionName.includes("1")
+              {props.division.divisionName.match(/^1[^0-9]/) || props.data.divisionName === "1"
                 ? "Winner's Bracket"
                 : "Promotion"}
             </td>
