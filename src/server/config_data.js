@@ -1,6 +1,7 @@
 const divisionData = [
   {
     divisionName: "1A",
+    competition: "ctl",
     oneMatchPerPair: true,
     numWinner: 1,
     numPrizeMoney: 1,
@@ -19,6 +20,7 @@ const divisionData = [
   },
   {
     divisionName: "1B",
+    competition: "ctl",
     oneMatchPerPair: true,
     numWinner: 1,
     numPrizeMoney: 1,
@@ -38,6 +40,7 @@ const divisionData = [
 
   {
     divisionName: "2A",
+    competition: "ctl",
     oneMatchPerPair: true,
     numWinner: 0,
     numAutoPromo: 1,
@@ -49,6 +52,7 @@ const divisionData = [
 
   {
     divisionName: "3A",
+    competition: "ctl",
     oneMatchPerPair: true,
     numWinner: 0,
     numAutoPromo: 1,
@@ -59,6 +63,7 @@ const divisionData = [
   },
   {
     divisionName: "3B",
+    competition: "ctl",
     oneMatchPerPair: true,
     numWinner: 0,
     numAutoPromo: 1,
@@ -70,6 +75,7 @@ const divisionData = [
 
   {
     divisionName: "4B",
+    competition: "ctl",
     oneMatchPerPair: true,
     numWinner: 0,
     numAutoPromo: 1,
@@ -80,6 +86,7 @@ const divisionData = [
   },
   {
     divisionName: "4C",
+    competition: "ctl",
     oneMatchPerPair: true,
     numWinner: 0,
     numAutoPromo: 1,
@@ -91,6 +98,7 @@ const divisionData = [
 
   {
     divisionName: "5A",
+    competition: "ctl",
     oneMatchPerPair: true,
     numWinner: 0,
     numAutoPromo: 1,
@@ -108,6 +116,7 @@ const divisionData = [
   },
   {
     divisionName: "5B",
+    competition: "ctl",
     oneMatchPerPair: true,
     numWinner: 0,
     numAutoPromo: 1,
@@ -125,6 +134,7 @@ const divisionData = [
   },
   {
     divisionName: "5C",
+    competition: "ctl",
     oneMatchPerPair: true,
     numWinner: 0,
     numAutoPromo: 1,
@@ -136,6 +146,7 @@ const divisionData = [
 
   {
     divisionName: "Gold 9",
+    competition: "tnp",
     oneMatchPerPair: false,
     numWinner: 0,
     numAutoPromo: 1,
@@ -146,6 +157,7 @@ const divisionData = [
   },
   {
     divisionName: "Gold 10",
+    competition: "tnp",
     oneMatchPerPair: false,
     numWinner: 0,
     numAutoPromo: 1,
@@ -157,6 +169,7 @@ const divisionData = [
 
   {
     divisionName: "Silver 9",
+    competition: "tnp",
     oneMatchPerPair: false,
     numWinner: 0,
     numAutoPromo: 1,

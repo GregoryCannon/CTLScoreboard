@@ -14,6 +14,12 @@ class MatchHistory extends Component {
     this.getFilteredMatchList = this.getFilteredMatchList.bind(this);
   }
 
+  getMatchDivision(match) {
+    return match.division.match(/^[1-9]/)
+      ? `D${match.division}`
+      : match.division;
+  }
+
   getMatchText(match) {
     return `${match.winner} ${match.winner_home ? "(H)" : "(A)"} def. ${
       match.loser
@@ -98,7 +104,9 @@ class MatchHistory extends Component {
                       key={this.getMatchText(match)}
                       className="Reported-match"
                     >
-                      <td className="Match-division">D{match.division}</td>
+                      <td className="Match-division">
+                        {this.getMatchDivision(match)}
+                      </td>
                       <td className="Match-text">
                         {this.getMatchText(match)}
                         <br />

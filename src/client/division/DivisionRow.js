@@ -114,8 +114,8 @@ class DivisionRow extends Component {
             style={{
               backgroundColor: this.state.isHovered
                 ? "rgb(239 250 255)"
-                : this.props.data.divisionName.match(/^1[^0-9]/)
-                    || this.props.data.divisionName === "1"
+                : this.props.data.divisionName.match(/^1[^0-9]/) ||
+                  this.props.data.divisionName === "1"
                 ? divisionColorUtil.getWinGradientColor(overallPromoChance)
                 : divisionColorUtil.getPromoGradientColor(overallPromoChance)
             }}
