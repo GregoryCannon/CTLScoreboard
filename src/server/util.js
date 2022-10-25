@@ -1,7 +1,7 @@
 const moment = require("moment");
 
 // CHANGE THIS WHEN DEBUGGING
-const IS_PRODUCTION = true;
+const IS_PRODUCTION = false;
 
 const USE_PLAYOFFS_FOR_HYBRID_DIVISIONS = false;
 
@@ -20,7 +20,7 @@ const memeDivisionData = [
       "vst_koryan",
       "greentea",
       "boom_jeff",
-      "buuuuuuuuco",
+      "buuuuuuuuco"
     ],
     standings: [
       {
@@ -31,7 +31,7 @@ const memeDivisionData = [
         gf: 36,
         ga: 1,
         gd: 36,
-        points: 0,
+        points: 0
       },
       {
         name: "jdmfx_",
@@ -41,7 +41,7 @@ const memeDivisionData = [
         gf: 1,
         ga: 6,
         gd: -5,
-        points: 1,
+        points: 1
       },
       {
         name: "jonas",
@@ -51,7 +51,7 @@ const memeDivisionData = [
         gf: 0,
         ga: 6,
         gd: -6,
-        points: 0,
+        points: 0
       },
       {
         name: "vst_koryan",
@@ -61,7 +61,7 @@ const memeDivisionData = [
         gf: 0,
         ga: 6,
         gd: -6,
-        points: 0,
+        points: 0
       },
       {
         name: "greentea",
@@ -71,7 +71,7 @@ const memeDivisionData = [
         gf: 0,
         ga: 6,
         gd: -6,
-        points: 0,
+        points: 0
       },
       {
         name: "boom_jeff",
@@ -81,7 +81,7 @@ const memeDivisionData = [
         gf: 0,
         ga: 6,
         gd: -6,
-        points: 0,
+        points: 0
       },
       {
         name: "buuuuuuuuco",
@@ -91,9 +91,9 @@ const memeDivisionData = [
         gf: 0,
         ga: 6,
         gd: -6,
-        points: 0,
-      },
-    ],
+        points: 0
+      }
+    ]
   },
   {
     divisionName: "1.3m",
@@ -109,7 +109,7 @@ const memeDivisionData = [
       "vst_koryan",
       "greentea",
       "boom_jeff",
-      "buuuuuuuuco",
+      "buuuuuuuuco"
     ],
     standings: [
       {
@@ -120,7 +120,7 @@ const memeDivisionData = [
         gf: 36,
         ga: 1,
         gd: 36,
-        points: 48,
+        points: 48
       },
       {
         name: "jdmfx_",
@@ -130,7 +130,7 @@ const memeDivisionData = [
         gf: 1,
         ga: 6,
         gd: -5,
-        points: 1,
+        points: 1
       },
       {
         name: "jonas",
@@ -140,7 +140,7 @@ const memeDivisionData = [
         gf: 0,
         ga: 6,
         gd: -6,
-        points: 0,
+        points: 0
       },
       {
         name: "vst_koryan",
@@ -150,7 +150,7 @@ const memeDivisionData = [
         gf: 0,
         ga: 6,
         gd: -6,
-        points: 0,
+        points: 0
       },
       {
         name: "greentea",
@@ -160,7 +160,7 @@ const memeDivisionData = [
         gf: 0,
         ga: 6,
         gd: -6,
-        points: 0,
+        points: 0
       },
       {
         name: "boom_jeff",
@@ -170,7 +170,7 @@ const memeDivisionData = [
         gf: 0,
         ga: 6,
         gd: -6,
-        points: 0,
+        points: 0
       },
       {
         name: "buuuuuuuuco",
@@ -180,10 +180,10 @@ const memeDivisionData = [
         gf: 0,
         ga: 6,
         gd: -6,
-        points: 0,
-      },
-    ],
-  },
+        points: 0
+      }
+    ]
+  }
 ];
 
 const sampleMatchData = [
@@ -193,7 +193,7 @@ const sampleMatchData = [
     loser: "moodeuce",
     winner_games: 3,
     loser_games: 0,
-    winner_home: true,
+    winner_home: true
   },
   {
     division: "2",
@@ -201,7 +201,7 @@ const sampleMatchData = [
     loser: "phamtom",
     winner_games: 3,
     loser_games: 2,
-    winner_home: false,
+    winner_home: false
   },
   {
     division: "2",
@@ -209,7 +209,7 @@ const sampleMatchData = [
     loser: "galoomba",
     winner_games: 3,
     loser_games: 1,
-    winner_home: true,
+    winner_home: true
   },
   {
     division: "2",
@@ -217,7 +217,7 @@ const sampleMatchData = [
     loser: "b14nk",
     winner_games: 3,
     loser_games: 0,
-    winner_home: true,
+    winner_home: true
   },
   {
     division: "2",
@@ -225,7 +225,7 @@ const sampleMatchData = [
     loser: "b14nk",
     winner_games: 3,
     loser_games: 0,
-    winner_home: false,
+    winner_home: false
   },
   {
     division: "2",
@@ -233,7 +233,7 @@ const sampleMatchData = [
     loser: "b14nk",
     winner_games: 3,
     loser_games: 0,
-    winner_home: false,
+    winner_home: false
   },
   {
     division: "2",
@@ -241,7 +241,7 @@ const sampleMatchData = [
     loser: "b14nk",
     winner_games: 3,
     loser_games: 0,
-    winner_home: true,
+    winner_home: true
   },
   {
     division: "2",
@@ -249,7 +249,7 @@ const sampleMatchData = [
     loser: "b14nk",
     winner_games: 3,
     loser_games: 0,
-    winner_home: false,
+    winner_home: false
   },
   /* Artificial example to confirm GD can break ties
     adammts - 4 pts, GD 1
@@ -260,14 +260,14 @@ const sampleMatchData = [
     winner: "adammts",
     loser: "cheez_fish",
     winner_games: 3,
-    loser_games: 2,
+    loser_games: 2
   },
   {
     division: "1",
     winner: "mohammad",
     loser: "cheez_fish",
     winner_games: 3,
-    loser_games: 1,
+    loser_games: 1
   },
   /* Artificial example to confirm MW can break ties
      batfoy: 3-0 2-3 2-3 3-2,  12 pts, GD 2, 2 MW
@@ -278,57 +278,57 @@ const sampleMatchData = [
     winner: "batfoy",
     loser: "cheez_fish",
     winner_games: 3,
-    loser_games: 0,
+    loser_games: 0
   },
   {
     division: "1",
     winner: "beastinshen",
     loser: "batfoy",
     winner_games: 3,
-    loser_games: 2,
+    loser_games: 2
   },
   {
     division: "1",
     winner: "brodin",
     loser: "batfoy",
     winner_games: 3,
-    loser_games: 2,
+    loser_games: 2
   },
   {
     division: "1",
     winner: "batfoy",
     loser: "cheez_fish",
     winner_games: 3,
-    loser_games: 2,
+    loser_games: 2
   },
   {
     division: "1",
     winner: "hydrantdude",
     loser: "cheez_fish",
     winner_games: 3,
-    loser_games: 2,
+    loser_games: 2
   },
   {
     division: "1",
     winner: "hydrantdude",
     loser: "beastinshen",
     winner_games: 3,
-    loser_games: 2,
+    loser_games: 2
   },
   {
     division: "1",
     winner: "brodin",
     loser: "hydrantdude",
     winner_games: 3,
-    loser_games: 0,
+    loser_games: 0
   },
   {
     division: "1",
     winner: "hydrantdude",
     loser: "cheez_fish",
     winner_games: 3,
-    loser_games: 0,
-  },
+    loser_games: 0
+  }
 ];
 
 /** Checks if player names are in alphabetical order.
@@ -371,7 +371,7 @@ function getMatchSchedule(division, divMatches) {
       ) {
         matchSchedule.push({
           homePlayerName,
-          awayPlayerName,
+          awayPlayerName
         });
       }
     }
@@ -398,7 +398,7 @@ function getPlayerScheduleInfo(division, matchList) {
   const getKey = (player1Name, player2Name) => player1Name + "," + player2Name;
 
   // Convert the list of played matches to a set
-  const divMatches = matchList.filter((match) => {
+  const divMatches = matchList.filter(match => {
     return match.division == division.divisionName;
   });
   for (const match of divMatches) {
@@ -435,7 +435,7 @@ function getPlayerScheduleInfo(division, matchList) {
         if (playedAtHome || playedAway) {
           playedList.push({
             opponent,
-            extraInfo: " (" + (homeResult || awayResult) + ")",
+            extraInfo: " (" + (homeResult || awayResult) + ")"
           });
         } else {
           unplayedList.push({ opponent, extraInfo: " (1 set)" });
@@ -445,7 +445,7 @@ function getPlayerScheduleInfo(division, matchList) {
         if (playedAtHome && playedAway) {
           playedList.push({
             opponent,
-            extraInfo: " (" + homeResult + ", " + awayResult + ")",
+            extraInfo: " (" + homeResult + ", " + awayResult + ")"
           });
         } else if (playedAtHome && !playedAway) {
           playedList.push({ opponent, extraInfo: " (" + homeResult + ")" });
@@ -461,7 +461,7 @@ function getPlayerScheduleInfo(division, matchList) {
 
     resultsMap[player] = {
       playedList,
-      unplayedList,
+      unplayedList
     };
   }
 
@@ -619,9 +619,9 @@ async function makeHttpRequest(methodStr, localUrl, body) {
   const response = await fetch(getApiUrl(localUrl), {
     method: methodStr,
     headers: {
-      "Content-Type": "application/json",
+      "Content-Type": "application/json"
     },
-    body: JSON.stringify(body),
+    body: JSON.stringify(body)
   });
   return response.json();
 }
@@ -693,5 +693,5 @@ module.exports = {
   getMatchDateFormatted,
   SortBy,
   IS_PRODUCTION,
-  USE_PLAYOFFS_FOR_HYBRID_DIVISIONS,
+  USE_PLAYOFFS_FOR_HYBRID_DIVISIONS
 };
