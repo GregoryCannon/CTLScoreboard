@@ -13,7 +13,8 @@ class StandingsPage extends Component {
       expandedPlayerRow: {
         divisionName: "",
         playerName: ""
-      }
+      },
+      showCompeition: ""
     };
 
     this.setExpandedPlayer = this.setExpandedPlayer.bind(this);
@@ -22,7 +23,9 @@ class StandingsPage extends Component {
   getPages() {
     let pages = [];
     const PAGE_SIZES = [2, 3, 3, 4, 4, 4, 5];
-    const divData = this.props.divisionData;
+    const divData = this.state.showCompeition === ""
+      ? this.props.divisionData
+      : this.props.divisionData.filter(div => div.competition === this.state.showCompeition);
 
     let i = 0;
     for (const pageSize of PAGE_SIZES) {
@@ -35,6 +38,7 @@ class StandingsPage extends Component {
 
   setExpandedPlayer(playerName, divisionName) {
     this.setState({
+      ...this.state,
       expandedPlayerRow: {
         divisionName,
         playerName
@@ -42,10 +46,19 @@ class StandingsPage extends Component {
     });
   }
 
+  setShowCompetition(competition) {
+    this.setState({
+      ...this.state,
+      showCompeition: competition
+    })
+  }
+
   render() {
     return (
       <div className="Standings-container">
         <div className="Left-panel">
+          <button className="Nav-button" onClick={() => this.setShowCompetition("ctl")}>CTL</button>
+          <button className="Nav-button" onClick={() => this.setShowCompetition("tnp")}>TNP</button>
           {this.getPages().map((divisionDataSlice, index) => (
             <div id={"Page-" + (index + 1)}>
               {divisionDataSlice.map((division, i) => (
