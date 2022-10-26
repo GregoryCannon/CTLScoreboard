@@ -33,7 +33,7 @@ class RegistrationAndMatchBot {
     let dataStoreChannel = null;
     let dataStoreBackupChannel = null;
     let reportingChannel = null;
-    
+
     const dataStoreId = isTNP
       ? process.env.DATA_STORE_CHANNEL_TNP
       : process.env.DATA_STORE_CHANNEL_CTL;
@@ -381,7 +381,9 @@ class RegistrationAndMatchBot {
       );
       loadRegistrationData(dataStoreChannel);
 
-      const signUpChannel = await registrationBot.channels.cache.get(signUpChannelId)
+      const signUpChannel = await registrationBot.channels.cache.get(
+        signUpChannelId
+      );
       configureSignUpMessages(signUpChannel);
     });
 
@@ -437,19 +439,19 @@ class RegistrationAndMatchBot {
     });
 
     // Define the one public function to this()
-    this.reportMatchImpl = (match) => {
+    this.reportMatchImpl = match => {
       const messagesToSend = formatMatch(match);
       for (let i = 0; i < messagesToSend.length; i++) {
         reportingChannel.send(messagesToSend[i]);
       }
-    }
+    };
 
     // Start the bot!
     registrationBot.login(token);
   }
 
   reportMatch(match) {
-    this.reportMatchImpl(match)
+    this.reportMatchImpl(match);
   }
 }
 
