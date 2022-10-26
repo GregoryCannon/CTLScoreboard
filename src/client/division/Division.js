@@ -63,9 +63,9 @@ class Division extends Component {
   downloadToImage() {
     const name = this.props.data.divisionName;
     console.log("Querying:", "Division" + name);
-    html2canvas(document.querySelector("#DivisionTable" + name)).then(function(
-      canvas
-    ) {
+    html2canvas(
+      document.querySelector("#DivisionTable" + name.replace(/ /g, ""))
+    ).then(function(canvas) {
       const fileName =
         "CTL Division " +
         name +
@@ -137,7 +137,7 @@ class Division extends Component {
 
     return (
       <div
-        id={"Division" + this.props.data.divisionName}
+        id={"Division" + this.props.data.divisionName.replace(/ /g, "")}
         className={`Division ${
           divAtStartOfTier ? "Division-at-start-of-tier" : ""
         }`}
@@ -148,7 +148,9 @@ class Division extends Component {
             <button onClick={this.purgeDivisionClicked}>Purge Division</button>
           </div>
         )}
-        <table id={"DivisionTable" + this.props.data.divisionName}>
+        <table
+          id={"DivisionTable" + this.props.data.divisionName.replace(/ /g, "")}
+        >
           <tbody>
             {/* Title row */}
             <tr>
