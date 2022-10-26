@@ -23,9 +23,12 @@ class StandingsPage extends Component {
   getPages() {
     let pages = [];
     const PAGE_SIZES = [2, 3, 3, 4, 4, 4, 5];
-    const divData = this.state.showCompeition === ""
-      ? this.props.divisionData
-      : this.props.divisionData.filter(div => div.competition === this.state.showCompeition);
+    const divData =
+      this.state.showCompeition === ""
+        ? this.props.divisionData
+        : this.props.divisionData.filter(
+            div => div.competition === this.state.showCompeition
+          );
 
     let i = 0;
     for (const pageSize of PAGE_SIZES) {
@@ -50,16 +53,31 @@ class StandingsPage extends Component {
     this.setState({
       ...this.state,
       showCompeition: competition
-    })
+    });
   }
 
   render() {
     return (
       <div className="Standings-container">
         <div className="Left-panel">
-          <button className="Nav-button" onClick={() => this.setShowCompetition("ctl")}>CTL</button>
-          <button className="Nav-button" onClick={() => this.setShowCompetition("tnp")}>TNP</button>
-          <button className="Nav-button" onClick={() => this.setShowCompetition("")}>Show all</button>
+          <button
+            className="Nav-button"
+            onClick={() => this.setShowCompetition("ctl")}
+          >
+            CTL
+          </button>
+          <button
+            className="Nav-button"
+            onClick={() => this.setShowCompetition("tnp")}
+          >
+            TNP
+          </button>
+          <button
+            className="Nav-button"
+            onClick={() => this.setShowCompetition("")}
+          >
+            Show all
+          </button>
           {this.getPages().map((divisionDataSlice, index) => (
             <div id={"Page-" + (index + 1)}>
               {divisionDataSlice.map((division, i) => (

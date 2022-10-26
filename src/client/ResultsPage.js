@@ -8,7 +8,7 @@ class ResultsPage extends Component {
     super(props);
     this.state = {
       showCompetition: ""
-    }
+    };
   }
 
   setShowCompetition(competition) {
@@ -32,9 +32,24 @@ class ResultsPage extends Component {
   render() {
     return (
       <div className="Results-container">
-        <button className="Nav-button" onClick={() => this.setShowCompetition("ctl")}>CTL</button>
-        <button className="Nav-button" onClick={() => this.setShowCompetition("tnp")}>TNP</button>
-        <button className="Nav-button" onClick={() => this.setShowCompetition("")}>Show all</button>
+        <button
+          className="Nav-button"
+          onClick={() => this.setShowCompetition("ctl")}
+        >
+          CTL
+        </button>
+        <button
+          className="Nav-button"
+          onClick={() => this.setShowCompetition("tnp")}
+        >
+          TNP
+        </button>
+        <button
+          className="Nav-button"
+          onClick={() => this.setShowCompetition("")}
+        >
+          Show all
+        </button>
         <table className="Results-table">
           <tbody>
             <tr className="Results-header">
@@ -51,11 +66,17 @@ class ResultsPage extends Component {
               .filter(match => {
                 console.log(match);
                 if (this.state.showCompetition === "") return true;
-                return this.state.showCompetition === this.getCompetition(match);
+                return (
+                  this.state.showCompetition === this.getCompetition(match)
+                );
               })
               .map(match => {
-                const homePlayer = match.winner_home ? match.winner : match.loser;
-                const awayPlayer = match.winner_home ? match.loser : match.winner;
+                const homePlayer = match.winner_home
+                  ? match.winner
+                  : match.loser;
+                const awayPlayer = match.winner_home
+                  ? match.loser
+                  : match.winner;
                 const homeScore = match.winner_home
                   ? match.winner_games
                   : match.loser_games;
@@ -73,15 +94,13 @@ class ResultsPage extends Component {
                     <td>{awayPlayer}</td>
                     <td>{match.division}</td>
                     <td>
-                      {
-                        this.getCompetition(match) === "ctl" 
-                          ? "CT League" 
-                          : "TNP"
-                      }
+                      {this.getCompetition(match) === "ctl"
+                        ? "CT League"
+                        : "TNP"}
                     </td>
                   </tr>
                 );
-            })}
+              })}
           </tbody>
         </table>
       </div>

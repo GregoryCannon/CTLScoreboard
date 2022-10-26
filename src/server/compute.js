@@ -30,6 +30,7 @@ function computeRawStandings(matchData, penaltyPoints) {
   const standings = generateEmptyStandings();
   for (let d = 0; d < standings.length; d++) {
     const divisionStandings = standings[d].standings;
+    const maxPointsPerMatch = standings[d].competition === "tnp" ? 8 : 7;
 
     // Update the four key source of truth properties (W,L,GF,GA) for each match
     for (let i = 0; i < matchData.length; i++) {
@@ -42,11 +43,19 @@ function computeRawStandings(matchData, penaltyPoints) {
       winner["wins"] += 1;
       winner["gf"] += match.winner_games;
       winner["ga"] += match.loser_games;
-      winner["points"] += util.calculatePointsWon(true, match.loser_games);
+      winner["points"] += util.calculatePointsWon(
+        true,
+        match.loser_games,
+        maxPointsPerMatch
+      );
       loser["losses"] += 1;
       loser["gf"] += match.loser_games;
       loser["ga"] += match.winner_games;
-      loser["points"] += util.calculatePointsWon(false, match.loser_games);
+      loser["points"] += util.calculatePointsWon(
+        false,
+        match.loser_games,
+        maxPointsPerMatch
+      );
     }
 
     // Handle penalty points

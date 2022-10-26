@@ -4,13 +4,14 @@ const clinchChecker = require("./clinch-checker");
 
 const NUM_ITERATIONS = 20000;
 // Whether or not to adjust players' simulated winrates based on their performance so far
-const USE_ADJUSTED_PROBABILITIES = true;
+const USE_ADJUSTED_PROBABILITIES = false;
 
 /*
 Simulate one run through from the current moment in time to the end of the season.
 Code is similar to `computeRawStandings` in compute.js
 */
 function simulateOneIteration(division, matchSchedule, resultCounts) {
+  const maxPointsPerMatch = division.competition === "tnp" ? 8 : 7;
   const simulationCloneDivision = JSON.parse(JSON.stringify(division));
   const startOfSeasonCloneDivision = JSON.parse(JSON.stringify(division));
 
@@ -54,11 +55,19 @@ function simulateOneIteration(division, matchSchedule, resultCounts) {
     winner["wins"] += 1;
     winner["gf"] += 3;
     winner["ga"] += loserGames;
-    winner["points"] += util.calculatePointsWon(true, loserGames);
+    winner["points"] += util.calculatePointsWon(
+      true,
+      loserGames,
+      maxPointsPerMatch
+    );
     loser["losses"] += 1;
     loser["gf"] += loserGames;
     loser["ga"] += 3;
-    loser["points"] += util.calculatePointsWon(false, loserGames);
+    loser["points"] += util.calculatePointsWon(
+      false,
+      loserGames,
+      maxPointsPerMatch
+    );
     // console.log("new winner points:", winner.points)
     // console.log("new loser points:", loser.points)
   }
