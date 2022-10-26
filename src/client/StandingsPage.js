@@ -59,6 +59,7 @@ class StandingsPage extends Component {
         <div className="Left-panel">
           <button className="Nav-button" onClick={() => this.setShowCompetition("ctl")}>CTL</button>
           <button className="Nav-button" onClick={() => this.setShowCompetition("tnp")}>TNP</button>
+          <button className="Nav-button" onClick={() => this.setShowCompetition("")}>Show all</button>
           {this.getPages().map((divisionDataSlice, index) => (
             <div id={"Page-" + (index + 1)}>
               {divisionDataSlice.map((division, i) => (
