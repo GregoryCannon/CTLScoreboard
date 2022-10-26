@@ -4,18 +4,37 @@ import "./ResultsPage.css";
 const util = require("../server/util");
 
 class ResultsPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showCompetition: ""
+    }
+  }
+
+  setShowCompetition(competition) {
+    this.setState({
+      ...this.state,
+      showCompetition: competition
+    });
+  }
+
   getCompetition(match) {
+    console.log(match.division);
     const div = this.props.divisionData.find(
       div => div.divisionName === match.division
     );
-    return div.competition === "ctl"
-      ? "CT League"
-      : div.competition.toUpperCase();
+
+    if (!div) return null;
+
+    return div.competition;
   }
 
   render() {
     return (
       <div className="Results-container">
+        <button className="Nav-button" onClick={() => this.setShowCompetition("ctl")}>CTL</button>
+        <button className="Nav-button" onClick={() => this.setShowCompetition("tnp")}>TNP</button>
+        <button className="Nav-button" onClick={() => this.setShowCompetition("")}>Show all</button>
         <table className="Results-table">
           <tbody>
             <tr className="Results-header">
@@ -28,28 +47,40 @@ class ResultsPage extends Component {
               <th>Division</th>
               <th>Compeition</th>
             </tr>
-            {this.props.matchList.map(match => {
-              const homePlayer = match.winner_home ? match.winner : match.loser;
-              const awayPlayer = match.winner_home ? match.loser : match.winner;
-              const homeScore = match.winner_home
-                ? match.winner_games
-                : match.loser_games;
-              const awayScore = match.winner_home
-                ? match.loser_games
-                : match.winner_games;
+            {this.props.matchList
+              .filter(match => {
+                console.log(match);
+                if (this.state.showCompetition === "") return true;
+                return this.state.showCompetition === this.getCompetition(match);
+              })
+              .map(match => {
+                const homePlayer = match.winner_home ? match.winner : match.loser;
+                const awayPlayer = match.winner_home ? match.loser : match.winner;
+                const homeScore = match.winner_home
+                  ? match.winner_games
+                  : match.loser_games;
+                const awayScore = match.winner_home
+                  ? match.loser_games
+                  : match.winner_games;
 
-              return (
-                <tr>
-                  <td>{util.getMatchDateFormatted(match)}</td>
-                  <td>{match.restreamer}</td>
-                  <td>{homePlayer}</td>
-                  <td>{homeScore}</td>
-                  <td>{awayScore}</td>
-                  <td>{awayPlayer}</td>
-                  <td>{match.division}</td>
-                  <td>{this.getCompetition(match)}</td>
-                </tr>
-              );
+                return (
+                  <tr>
+                    <td>{util.getMatchDateFormatted(match)}</td>
+                    <td>{match.restreamer}</td>
+                    <td>{homePlayer}</td>
+                    <td>{homeScore}</td>
+                    <td>{awayScore}</td>
+                    <td>{awayPlayer}</td>
+                    <td>{match.division}</td>
+                    <td>
+                      {
+                        this.getCompetition(match) === "ctl" 
+                          ? "CT League" 
+                          : "TNP"
+                      }
+                    </td>
+                  </tr>
+                );
             })}
           </tbody>
         </table>
