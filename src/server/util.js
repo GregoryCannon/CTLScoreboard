@@ -584,15 +584,7 @@ function getApiUrl(suffix) {
   if (IS_PRODUCTION) {
     return "https://ctlscoreboard.herokuapp.com/" + suffix;
   } else {
-    return (process.env.API_URL || "http://localhost:8080") + "/" + suffix;
-  }
-}
-
-function getDiscordMainChannel() {
-  if (IS_PRODUCTION) {
-    return "reporting";
-  } else {
-    return "the-lab";
+    return "http://localhost:8080/" + suffix;
   }
 }
 
@@ -687,7 +679,6 @@ module.exports = {
   getPlayerScheduleInfo,
   getPlayerLookupMap,
   getApiUrl,
-  getDiscordMainChannel,
   calculatePointsWon,
   makeHttpRequest,
   getMatchDateFormatted,
