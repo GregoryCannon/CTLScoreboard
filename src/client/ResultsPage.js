@@ -4,6 +4,15 @@ import "./ResultsPage.css";
 const util = require("../server/util");
 
 class ResultsPage extends Component {
+  getCompetition(match) {
+    const div = this.props.divisionData.find(
+      div => div.divisionName === match.division
+    );
+    return div.competition === "ctl"
+      ? "CT League"
+      : div.competition.toUpperCase();
+  }
+
   render() {
     return (
       <div className="Results-container">
@@ -17,6 +26,7 @@ class ResultsPage extends Component {
               <th>Away Score</th>
               <th>Away</th>
               <th>Division</th>
+              <th>Compeition</th>
             </tr>
             {this.props.matchList.map(match => {
               const homePlayer = match.winner_home ? match.winner : match.loser;
@@ -37,6 +47,7 @@ class ResultsPage extends Component {
                   <td>{awayScore}</td>
                   <td>{awayPlayer}</td>
                   <td>{match.division}</td>
+                  <td>{this.getCompetition(match)}</td>
                 </tr>
               );
             })}

@@ -332,7 +332,12 @@ class App extends Component {
 
           <Route
             path="/results"
-            render={props => <ResultsPage matchList={this.state.matchList} />}
+            render={props => (
+              <ResultsPage
+                matchList={this.state.matchList}
+                divisionData={this.state.divisionData}
+              />
+            )}
           />
 
           <div className="Attribution-text">
