@@ -262,7 +262,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
-    players: ["arbaro", "Yeeahw", "TEMPHUiBIS", "cobra", "Coal", "BigBoi"]
+    players: ["arbaro", "Yeehaw", "TEMPHUiBIS", "cobra", "Coal", "BigBoi"]
   },
 
   {
