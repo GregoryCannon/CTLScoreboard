@@ -273,11 +273,11 @@ const divisionData = [
     numAutoPromo: 1,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
+    numAutoRelegate: 0,
     players: [
       "NeutrisicAcid",
       "B0rkedbear",
-      "Lapis Laxuli",
+      "Lapis Lazuli",
       "XXBALT",
       "Vlad Maksimum"
     ]
