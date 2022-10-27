@@ -11,7 +11,7 @@ const divisionData = [
     numAutoRelegate: 0,
     players: [
       "Doge",
-      "LazerMonkey",
+      "Lazer",
       "O",
       "Hydrant",
       "Sidnev",
