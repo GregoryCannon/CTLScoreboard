@@ -1,5 +1,7 @@
 const moment = require("moment");
 
+const { divisionData } = require("../server/config_data");
+
 // CHANGE THIS WHEN DEBUGGING
 const IS_PRODUCTION = true;
 
@@ -628,13 +630,11 @@ function getMatchDateFormatted(match) {
 
 function getCompetition(match) {
   console.log(match.division);
-  const div = this.props.divisionData.find(
+  const div = divisionData.find(
     div => div.divisionName === match.division
   );
-
-  if (!div) return null;
-
-  return div.competition;
+  
+  return div ? div.competition : null;
 }
 
 function downloadCanvasAsPng(canvas, filename) {
