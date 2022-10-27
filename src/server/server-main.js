@@ -331,8 +331,9 @@ app.post("/api/match-data", function(req, res) {
         } else {
           // If succeeded, invalidate cache, report the match to discord, and send success response
           invalidateCacheForDivision(newMatch.division);
-          console.log("Reporting new match, competition =", newMatch.division.competition);
-          if (newMatch.division.competition === "tnp") {
+          const comp = util.getCompetition(newMatch);
+          console.log("Reporting new match, competition =", comp);
+          if (comp === "tnp") {
             TNPBot.reportMatch(newMatch);
           } else {
             CTLBot.reportMatch(newMatch);

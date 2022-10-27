@@ -18,17 +18,6 @@ class ResultsPage extends Component {
     });
   }
 
-  getCompetition(match) {
-    console.log(match.division);
-    const div = this.props.divisionData.find(
-      div => div.divisionName === match.division
-    );
-
-    if (!div) return null;
-
-    return div.competition;
-  }
-
   render() {
     return (
       <div className="Results-container">
@@ -67,7 +56,7 @@ class ResultsPage extends Component {
                 console.log(match);
                 if (this.state.showCompetition === "") return true;
                 return (
-                  this.state.showCompetition === this.getCompetition(match)
+                  this.state.showCompetition === util.getCompetition(match)
                 );
               })
               .map(match => {
@@ -94,7 +83,7 @@ class ResultsPage extends Component {
                     <td>{awayPlayer}</td>
                     <td>{match.division}</td>
                     <td>
-                      {this.getCompetition(match) === "ctl"
+                      {util.getCompetition(match) === "ctl"
                         ? "CT League"
                         : "TNP"}
                     </td>

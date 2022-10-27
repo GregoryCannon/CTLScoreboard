@@ -626,6 +626,17 @@ function getMatchDateFormatted(match) {
   return matchMoment.utc().format("MMM DD YYYY, HH:mm");
 }
 
+function getCompetition(match) {
+  console.log(match.division);
+  const div = this.props.divisionData.find(
+    div => div.divisionName === match.division
+  );
+
+  if (!div) return null;
+
+  return div.competition;
+}
+
 function downloadCanvasAsPng(canvas, filename) {
   // create an "off-screen" anchor tag
   var lnk = document.createElement("a"),
@@ -683,6 +694,7 @@ module.exports = {
   makeHttpRequest,
   getMatchDateFormatted,
   SortBy,
+  getCompetition,
   IS_PRODUCTION,
   USE_PLAYOFFS_FOR_HYBRID_DIVISIONS
 };
