@@ -113,7 +113,7 @@ const divisionData = [
     numPlayoffRelegate: 2,
     numAutoRelegate: 0,
     players: [
-      "TKK24",
+      "timmykim915",
       "Jeez",
       "Sargin",
       "Smooth",
