@@ -30,8 +30,7 @@ const penaltyDb = db.get("penalty"); // List of players and their penalty points
 
 // Configure the second discord bot
 const CTLBot = new RegistrationAndMatchBot(/* isTNP= */ false);
-// const TNPBot = new RegistrationAndMatchBot(/* isTNP= */ true);
-const TNP = null;
+const TNPBot = new RegistrationAndMatchBot(/* isTNP= */ true);
 
 // Add discord authentication router
 app.use("/discord-api", discordAuthRouter);
@@ -332,6 +331,7 @@ app.post("/api/match-data", function(req, res) {
         } else {
           // If succeeded, invalidate cache, report the match to discord, and send success response
           invalidateCacheForDivision(newMatch.division);
+          console.log("Reporting new match, competition =", newMatch.division.competition);
           if (newMatch.division.competition === "tnp") {
             TNPBot.reportMatch(newMatch);
           } else {
