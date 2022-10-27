@@ -47,7 +47,7 @@ const divisionData = [
     competition: "ctl",
     oneMatchPerPair: true,
     numWinner: 0,
-    numAutoPromo: 1,
+    numAutoPromo: 2,
     numPlayoffPromo: 1,
     numPlayoffRelegate: 2,
     numAutoRelegate: 0,
@@ -59,7 +59,8 @@ const divisionData = [
       "Birb Wizard",
       "Sodium",
       "NGC Man",
-      "Scamper"
+      "Scamper",
+      "Nowi"
     ]
   },
 
@@ -95,7 +96,7 @@ const divisionData = [
       "Poopyoldhag",
       "Melhk",
       "Boxie",
-      "Salted Sofa",
+      "Curiosity",
       "Chobge",
       "Hana",
       "20Dan03"
@@ -137,7 +138,7 @@ const divisionData = [
       "Blazier",
       "Ryan Amburgy",
       "White Monster",
-      "Curiosity",
+      "Koolio",
       "ID Kirby",
       "AVGeek"
     ]
