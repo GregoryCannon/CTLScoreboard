@@ -31,7 +31,7 @@ const divisionData = [
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
-      "DMJ",
+      "Allenbot",
       "Jerpidude",
       "Somalian",
       "Myles",
@@ -52,7 +52,6 @@ const divisionData = [
     numPlayoffRelegate: 2,
     numAutoRelegate: 0,
     players: [
-      "Allenbot",
       "Deewee",
       "iBall",
       "Marq",
