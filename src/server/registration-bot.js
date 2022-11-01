@@ -397,7 +397,8 @@ class RegistrationAndMatchBot {
       if (msg.content == "!who") {
         msg.channel.send(msg.author.username + "#" + msg.author.discriminator);
       }
-      if (msg.content.includes("!add")) {
+
+      if (msg.content.match(/^!add /)) {
         const args = msg.content.split("!add ")[1];
         const divisionName = args.split(/ (.+)/)[0];
         const rest = args.split(/ (.+)/)[1];
@@ -409,7 +410,7 @@ class RegistrationAndMatchBot {
         );
       }
 
-      if (msg.content.includes("!remove")) {
+      if (msg.content.match(/^!remove /)) {
         const args = msg.content.split("!remove ")[1];
         const divisionName = args.split(/ (.+)/)[0];
         const rest = args.split(/ (.+)/)[1];
@@ -427,7 +428,22 @@ class RegistrationAndMatchBot {
         );
       }
 
-      if (msg.content.includes("!count")) {
+      if (msg.content.match(/^!removeall /)) {
+        const divisionName = msg.content.split(" ")[1];
+        const existingDivisions = Object.keys(DIVISIONS);
+        if (existingDivisions.includes(divisionName)) {
+          const removedPlayers = DIVISIONS[divisionName];
+          DIVISIONS[divisionName] = [];
+          msg.channel.send(
+            `Removed ${removedPlayers.length} players from division ${divisionName}`
+          );
+          await updateRegistrationData();
+        } else {
+          msg.channel.send(`Unable to find division: ${divisionName}`);
+        }
+      }
+
+      if (msg.content.match(/^!count /)) {
         let response = "Counts of registered players:";
         for (const divisionName of Object.keys(DIVISIONS)) {
           response += `\n Division ${divisionName}:\t${
