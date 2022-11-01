@@ -443,7 +443,7 @@ class RegistrationAndMatchBot {
         }
       }
 
-      if (msg.content.match(/^!count /)) {
+      if (msg.content.match(/^!count/)) {
         let response = "Counts of registered players:";
         for (const divisionName of Object.keys(DIVISIONS)) {
           response += `\n Division ${divisionName}:\t${
