@@ -630,10 +630,8 @@ function getMatchDateFormatted(match) {
 
 function getCompetition(match) {
   console.log(match.division);
-  const div = divisionData.find(
-    div => div.divisionName === match.division
-  );
-  
+  const div = divisionData.find(div => div.divisionName === match.division);
+
   return div ? div.competition : null;
 }
 
