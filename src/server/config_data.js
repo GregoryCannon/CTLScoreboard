@@ -234,7 +234,6 @@ const divisionData = [
       "drfuzzman",
       "sixfour",
       "zempro",
-      "DocPi",
       "skiplogic",
       "cardek87",
       "drjules13"
