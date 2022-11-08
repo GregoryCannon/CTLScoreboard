@@ -265,6 +265,18 @@ const divisionData = [
   },
 
   {
+    divisionName: "Bronze 12",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    players: ["Tacomom", "mistec43", "Skai", "Burritodad", "Javantea", "Odrachess", "Colin", "Firedox"]
+  },
+
+  {
     divisionName: "Beginner 9",
     competition: "tnp",
     oneMatchPerPair: false,
