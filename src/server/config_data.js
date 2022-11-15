@@ -251,6 +251,17 @@ const divisionData = [
     numAutoRelegate: 1,
     players: ["Kingsman", "Mari", "Ellery", "Tytris", "Marts"]
   },
+  {
+    divisionName: "Silver 12",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    players: ["Maedhros", "Junior", "Tomello", "Marts", "osero", "afMirror"]
+  },
 
   {
     divisionName: "Bronze 11",
