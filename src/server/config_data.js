@@ -570,7 +570,8 @@ const restreamerRole = [
   "NinjaOfNinjas5#4697",
   "roncli#1409",
   "Javantea#1157",
-  "Id_korone#1070"
+  "Id_korone#1070",
+  "20Dan03#7322"
 ];
 
 module.exports = {
