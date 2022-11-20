@@ -73,7 +73,6 @@ const divisionData = [
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
-      "Alice",
       "Masy",
       "IanKeith",
       "Alejo",
@@ -570,7 +569,9 @@ const restreamerRole = [
   "NinjaOfNinjas5#4697",
   "roncli#1409",
   "Javantea#1157",
-  "jrgagne99#2016"
+  "jrgagne99#2016",
+  "Id_korone#1070",
+  "20Dan03#7322"
 ];
 
 module.exports = {
