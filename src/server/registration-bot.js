@@ -13,11 +13,7 @@ let DIVISIONS_CTL = {
   "2": [],
   "3": [],
   "4": [],
-  "5": [],
-  "6": [],
-  "7": [],
-  "8": [],
-  "9": []
+  "5": []
 };
 let DIVISIONS_TNP = {
   Gold: [],
@@ -25,10 +21,13 @@ let DIVISIONS_TNP = {
   Bronze: [],
   Beginner: []
 };
+const SIGN_UP_MESSAGE_TNP = "React to sign up for a new division below! Your reaction will be hidden after 3 seconds.\n\nIf you are currently in a division, do not sign up here until both (1) 100% of your own matches have been completed, and (2) your division deadline is at the end of the current week or your tier for the next season is already a 100% certainty. Make sure your registration is for the correct tier and is current at 7:00 UTC each Sunday. New divisions will be created shortly thereafter and withdrawal after this point may be penalised. For full details, refer to #rules-and-standings.\n\n"
+const SIGN_UP_MESSAGE_CTL = "React to sign up for a new division below! Your reaction will be hidden after 3 seconds.\n\nIf you are currently in a division, do not sign up here until both (1) 100% of your own matches have been completed, and (2) your division deadline is at the end of the current week or your tier for the next season is already a 100% certainty. Make sure your registration is for the correct tier. Deadline to join CTL Season 19 is December 23 23:59 UTC. If you need to withdraw after this point, DM the King before December 26 to be removed. For full details, refer to #rules-and-standings.\n\n"
 
 class RegistrationAndMatchBot {
   constructor(isTNP) {
     let DIVISIONS = isTNP ? DIVISIONS_TNP : DIVISIONS_CTL;
+    let SIGN_UP_MESSAGE = isTNP ? SIGN_UP_MESSAGE_TNP : SIGN_UP_MESSAGE_CTL;
     let previousVodUrl = "";
     let dataStoreChannel = null;
     let dataStoreBackupChannel = null;
@@ -202,7 +201,14 @@ class RegistrationAndMatchBot {
         console.log("Loading from data string", dataString);
 
         try {
+          const oldDivKeys = Object.keys(DIVISIONS);
           DIVISIONS = JSON.parse(dataString);
+          // Delete any divisions that used to exist but have been removed from the config set
+          for (const key of Object.keys(DIVISIONS)) {
+            if (!oldDivKeys.includes(key)) {
+              delete DIVISIONS[key]
+            }
+          }
         } catch (error) {
           console.log(error);
           console.error("Failed to parse player list JSON");
@@ -242,10 +248,7 @@ class RegistrationAndMatchBot {
       }
 
       // Main registration section
-      await channel.send(
-        "React to sign up for a new division below! Your reaction will be hidden after 3 seconds.\n\nIf you are currently in a division, do not sign up here until both (1) 100% of your own matches have been completed, and (2) your division deadline is at the end of the current week or your tier for the next season is already a 100% certainty. Make sure your registration is for the correct tier and is current at 7:00 UTC each Sunday. New divisions will be created shortly thereafter and withdrawal after this point may be penalised. For full details, refer to #rules-and-standings.\n\n" +
-          LINE_ASCII
-      );
+      await channel.send(SIGN_UP_MESSAGE + LINE_ASCII);
       for (const divisionName of Object.keys(DIVISIONS)) {
         const message = await channel.send(
           `Sign up for Division ${divisionName}`
