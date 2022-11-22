@@ -312,7 +312,7 @@ const adminRole = [
   "Tugi#7004",
   "BlargMeister#1337",
   "nikvo#1021",
-  "Chobge#7764",
+  "Chobge#4976",
   "Chillalla#0001",
   "FrenchiestFrie#9778",
   "SnowLilyx#0365"
@@ -458,7 +458,7 @@ const restreamerRole = [
   "vanshtanwani#9639",
   "Felinho#7027",
   "Sakurion#6289",
-  "Chobge#7764",
+  "Chobge#4976",
   "nikvo#1021",
   "jayp33#6638",
   "Bowser Tb#2424",
