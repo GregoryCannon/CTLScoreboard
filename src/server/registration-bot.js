@@ -202,7 +202,14 @@ class RegistrationAndMatchBot {
         console.log("Loading from data string", dataString);
 
         try {
+          const oldDivKeys = Object.keys(DIVISIONS);
           DIVISIONS = JSON.parse(dataString);
+          // Delete any divisions that used to exist but have been removed from the config set
+          for (const key of Object.keys(DIVISIONS)) {
+            if (!oldDivKeys.includes(key)) {
+              delete DIVISIONS[key]
+            }
+          }
         } catch (error) {
           console.log(error);
           console.error("Failed to parse player list JSON");
