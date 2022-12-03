@@ -134,7 +134,6 @@ const divisionData = [
       "Grand Designs",
       "Hezzuli",
       "Blazier",
-      "Ryan Amburgy",
       "White Monster",
       "Koolio",
       "ID Kirby",
