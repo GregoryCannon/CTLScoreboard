@@ -284,6 +284,18 @@ const divisionData = [
     numAutoRelegate: 1,
     players: ["Tacomom", "mistec43", "Skai", "Burritodad", "Javantea", "Odrachess", "Colin", "Firedox"]
   },
+  {
+    divisionName: "Bronze 13",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    // @cobra (UTC-6) @Torbith  @miendiem @Burritodad @TEMPHUiBIS @Tytris @mistec43 @drfuzzman
+    players: ["Cobra", "Torbith", "miendiem", "Burritodad", "TEMPHUiBIS", "Tytris", "mistec43", "drfuzzman"]
+  },
 
   {
     divisionName: "Beginner 9",
