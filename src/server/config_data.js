@@ -260,6 +260,17 @@ const divisionData = [
     numAutoRelegate: 1,
     players: ["Maedhros", "Junior", "Tomello", "Marts", "osero", "afMirror"]
   },
+  {
+    divisionName: "Silver 13",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    players: ["arbaro", "Junior", "Marts", "Mari", "Odrachess"]
+  },
 
   {
     divisionName: "Bronze 11",
@@ -312,6 +323,23 @@ const divisionData = [
       "Lapis Lazuli",
       "XXBALT",
       "Vlad Maksimum"
+    ]
+  },
+  {
+    divisionName: "Beginner 10",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "Coal",
+      "Aelina",
+      "Lapis Lazuli",
+      "XXBALT",
+      "SlickIvy"
     ]
   }
 ];
