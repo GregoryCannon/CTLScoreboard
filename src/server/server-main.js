@@ -215,10 +215,11 @@ function getPenaltyPointMap(callback) {
   });
 }
 
-function checkMatchAlreadyExists(matches, winner, loser, winnerHome) {
+function checkMatchAlreadyExists(matches, division, winner, loser, winnerHome) {
   for (let i = 0; i < matches.length; i++) {
     const match = matches[i];
     if (
+      match.division === division &&
       match.winner === winner &&
       match.loser === loser &&
       match.winner_home === winnerHome
@@ -226,6 +227,7 @@ function checkMatchAlreadyExists(matches, winner, loser, winnerHome) {
       return true;
     }
     if (
+      match.division === division &&
       match.winner === loser &&
       match.loser === winner &&
       match.winner_home !== winnerHome
@@ -301,6 +303,7 @@ app.post("/api/match-data", function(req, res) {
     if (
       checkMatchAlreadyExists(
         matches,
+        newMatch.division,
         newMatch.winner,
         newMatch.loser,
         newMatch.winner_home
