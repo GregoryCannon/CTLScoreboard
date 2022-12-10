@@ -239,17 +239,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Silver 11",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    players: ["Kingsman", "Mari", "Ellery", "Tytris", "Marts"]
-  },
-  {
     divisionName: "Silver 12",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -270,18 +259,6 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
     players: ["arbaro", "Junior", "Marts", "Mari", "Odrachess"]
-  },
-
-  {
-    divisionName: "Bronze 11",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    players: ["arbaro", "Yeehaw", "TEMPHUiBIS", "cobra", "Coal", "BigBoi"]
   },
 
   {
