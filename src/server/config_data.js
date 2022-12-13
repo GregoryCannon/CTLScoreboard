@@ -237,6 +237,27 @@ const divisionData = [
       "drjules13"
     ]
   },
+  {
+    divisionName: "Gold 9",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    ///22 with @roncli @Kyira @skiplogic @Elpailtem @mattholland @mfrerck (UTC -6) @gerhard_adler @Kingsman 
+    players: [
+      "roncli",
+      "Kyira",
+      "skiplogic",
+      "Elpailtem",
+      "Matt Holland",
+      "mfrerck",
+      "Gerhard Adler",
+      "Kingsman"
+    ]
+  },
 
   {
     divisionName: "Silver 12",
