@@ -241,40 +241,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Silver 12",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    players: ["Maedhros", "Junior", "Tomello", "Marts", "osero", "afMirror"]
-  },
-  {
-    divisionName: "Silver 13",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    players: ["arbaro", "Junior", "Marts", "Mari", "Odrachess"]
-  },
-
-  {
-    divisionName: "Bronze 12",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    players: ["Tacomom", "mistec43", "Skai", "Burritodad", "Javantea", "Odrachess", "Colin", "Firedox"]
-  },
-  {
     divisionName: "Bronze 13",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -287,23 +253,6 @@ const divisionData = [
     players: ["Cobra", "Torbith", "miendiem", "Burritodad", "TEMPHUiBIS", "Tytris", "mistec43", "drfuzzman"]
   },
 
-  {
-    divisionName: "Beginner 9",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "NeutrisicAcid",
-      "B0rkedbear",
-      "Lapis Lazuli",
-      "XXBALT",
-      "Vlad Maksimum"
-    ]
-  },
   {
     divisionName: "Beginner 10",
     competition: "tnp",
