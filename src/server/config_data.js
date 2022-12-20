@@ -241,6 +241,19 @@ const divisionData = [
   },
 
   {
+    divisionName: "Silver 14",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    // @drjules13 @maedhros1978 @Mari (UTC-6) @arbaro @Odrachess (UTC +1) @UnOr1ginalName (utc+8)
+    players: ["drjules13", "Maedhros", "Mari", "arbaro", "odrachess", "unor1ginalname"]
+  },
+
+  {
     divisionName: "Bronze 13",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -251,6 +264,18 @@ const divisionData = [
     numAutoRelegate: 1,
     // @cobra (UTC-6) @Torbith  @miendiem @Burritodad @TEMPHUiBIS @Tytris @mistec43 @drfuzzman
     players: ["Cobra", "Torbith", "miendiem", "Burritodad", "TEMPHUiBIS", "Tytris", "mistec43", "drfuzzman"]
+  },
+  {
+    divisionName: "Bronze 14",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    // @Tacomom @Skai @NeutrisicAcid @oserottoNeko @Marts @Richard Wolf VI - PLEASE PING ME
+    players: ["Tacomom", "Skai", "NeutrisicAcid", "Osero", "Marts", "Richard Wolf VI"]
   },
 
   {
