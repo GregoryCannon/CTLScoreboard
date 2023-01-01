@@ -6,7 +6,7 @@ const divisionData = [
     numWinner: 1,
     numPrizeMoney: 1,
     numAutoPromo: 0,
-    numPlayoffPromo: 0,
+    numPlayoffPromo: 2,
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
@@ -27,7 +27,7 @@ const divisionData = [
     numWinner: 1,
     numPrizeMoney: 1,
     numAutoPromo: 0,
-    numPlayoffPromo: 0,
+    numPlayoffPromo: 2,
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
@@ -47,7 +47,7 @@ const divisionData = [
     competition: "ctl",
     oneMatchPerPair: true,
     numWinner: 0,
-    numAutoPromo: 2,
+    numAutoPromo: 1,
     numPlayoffPromo: 1,
     numPlayoffRelegate: 2,
     numAutoRelegate: 0,
@@ -67,7 +67,7 @@ const divisionData = [
     competition: "ctl",
     oneMatchPerPair: true,
     numWinner: 0,
-    numAutoPromo: 2,
+    numAutoPromo: 1,
     numPlayoffPromo: 1,
     numPlayoffRelegate: 2,
     numAutoRelegate: 0,
@@ -147,7 +147,7 @@ const divisionData = [
     numWinner: 0,
     numAutoPromo: 1,
     numPlayoffPromo: 1,
-    numPlayoffRelegate: 2,
+    numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
       "Johann",
@@ -166,7 +166,7 @@ const divisionData = [
     numWinner: 0,
     numAutoPromo: 1,
     numPlayoffPromo: 1,
-    numPlayoffRelegate: 2,
+    numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
       "peyton",
@@ -185,7 +185,7 @@ const divisionData = [
     numWinner: 0,
     numAutoPromo: 1,
     numPlayoffPromo: 1,
-    numPlayoffRelegate: 2,
+    numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
       "Morelando",
