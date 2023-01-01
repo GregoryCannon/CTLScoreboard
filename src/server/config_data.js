@@ -169,7 +169,7 @@ const divisionData = [
     numAutoRelegate: 0,
     players: [
       "peyton",
-      "Muunas",
+      "Peter",
       "Blazier",
       "AVGeek",
       "Torzsa",
