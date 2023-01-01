@@ -226,7 +226,7 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
     players: [
-      "lowecase",
+      "lowercase",
       "pissarse",
       "Heist",
       "Tourist106",
