@@ -6,7 +6,7 @@ const divisionData = [
     numWinner: 1,
     numPrizeMoney: 1,
     numAutoPromo: 0,
-    numPlayoffPromo: 2,
+    numPlayoffPromo: 0,
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
@@ -27,7 +27,7 @@ const divisionData = [
     numWinner: 1,
     numPrizeMoney: 1,
     numAutoPromo: 0,
-    numPlayoffPromo: 2,
+    numPlayoffPromo: 0,
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
