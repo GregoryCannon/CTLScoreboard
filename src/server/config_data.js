@@ -146,7 +146,7 @@ const divisionData = [
     numWinner: 0,
     numAutoPromo: 1,
     numPlayoffPromo: 1,
-    numPlayoffRelegate: 2,
+    numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
       "Johann",
@@ -165,7 +165,7 @@ const divisionData = [
     numWinner: 0,
     numAutoPromo: 1,
     numPlayoffPromo: 1,
-    numPlayoffRelegate: 2,
+    numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
       "peyton",
@@ -184,7 +184,7 @@ const divisionData = [
     numWinner: 0,
     numAutoPromo: 1,
     numPlayoffPromo: 1,
-    numPlayoffRelegate: 2,
+    numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
       "Morelando",
