@@ -153,7 +153,7 @@ const divisionData = [
       "PolloSalazar",
       "Hezzuli",
       "Draco",
-      "TKK24",
+      "Timmy Kim",
       "Jeez007bd",
       "Xile",
     ],
