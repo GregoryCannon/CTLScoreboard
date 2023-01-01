@@ -56,7 +56,7 @@ const divisionData = [
       "liolio1230",
       "Wallbant",
       "Birb Wizard",
-      "NDDL",
+      "NDDK",
       "Tobe",
       "Redshurt",
     ],
