@@ -298,19 +298,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Beginner-Bronze 1",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 4,
-    numPlayoffRelegate: 3,
-    numAutoRelegate: 0,
-    // @Coal (UTC -5) @mistec43 @Torbith @Burritodad @Firedox @vlad_maksimum @XXBALT (UTC) @Lapis Lazuli
-    players: ["Coal", "mistec43", "Torbith", "Burritodad", "Firedox", "vlad_maksimum", "XXBALT", "Lapis Lazuli"]
-  },
-
-  {
     divisionName: "Bronze 13",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -349,6 +336,19 @@ const divisionData = [
       "Marts",
       "Richard Wolf VI",
     ],
+  },
+
+  {
+    divisionName: "Beginner-Bronze 1",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 4,
+    numPlayoffRelegate: 3,
+    numAutoRelegate: 0,
+    // @Coal (UTC -5) @mistec43 @Torbith @Burritodad @Firedox @vlad_maksimum @XXBALT (UTC) @Lapis Lazuli
+    players: ["Coal", "mistec43", "Torbith", "Burritodad", "Firedox", "vlad_maksimum", "XXBALT", "Lapis Lazuli"]
   },
 
   {
