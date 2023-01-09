@@ -276,6 +276,25 @@ const divisionData = [
       "Kingsman",
     ],
   },
+  {
+    divisionName: "Gold 10",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    // @suds1821 @afMirror [UTC+0] @Junior (UTC-5) @DrKn0ckers @Snowtris @Cardek87
+    players: [
+      "suds1821",
+      "afmirror",
+      "Junior",
+      "DrKn0ckers",
+      "Snowtris",
+      "cardek87"
+    ],
+  },
 
   {
     divisionName: "Silver 14",
