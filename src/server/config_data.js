@@ -298,27 +298,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Bronze 13",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    // @cobra (UTC-6) @Torbith  @miendiem @Burritodad @TEMPHUiBIS @Tytris @mistec43 @drfuzzman
-    players: [
-      "Cobra",
-      "Torbith",
-      "miendiem",
-      "Burritodad",
-      "TEMPHUiBIS",
-      "Tytris",
-      "mistec43",
-      "drfuzzman",
-    ],
-  },
-  {
     divisionName: "Bronze 14",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -349,24 +328,6 @@ const divisionData = [
     numAutoRelegate: 0,
     // @Coal (UTC -5) @mistec43 @Torbith @Burritodad @Firedox @vlad_maksimum @XXBALT (UTC) @Lapis Lazuli
     players: ["Coal", "mistec43", "Torbith", "Burritodad", "Firedox", "vlad_maksimum", "XXBALT", "Lapis Lazuli"]
-  },
-
-  {
-    divisionName: "Beginner 10",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "Coal",
-      "Aelina",
-      "Lapis Lazuli",
-      "XXBALT",
-      "SlickIvy"
-    ]
   },
 
   {
