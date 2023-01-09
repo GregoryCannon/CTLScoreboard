@@ -249,8 +249,20 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
-    // @drjules13 @maedhros1978 @Mari (UTC-6) @arbaro @Odrachess (UTC +1) @UnOr1ginalName (utc+8)
     players: ["drjules13", "Maedhros", "Mari", "arbaro", "odrachess", "unor1ginalname"]
+  },
+
+  {
+    divisionName: "Beginner-Bronze 1",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 4,
+    numPlayoffRelegate: 3,
+    numAutoRelegate: 0,
+    // @Coal (UTC -5) @mistec43 @Torbith @Burritodad @Firedox @vlad_maksimum @XXBALT (UTC) @Lapis Lazuli
+    players: ["Coal", "mistec43", "Torbith", "Burritodad", "Firedox", "vlad_maksimum", "XXBALT", "Lapis Lazuli"]
   },
 
   {
@@ -293,6 +305,25 @@ const divisionData = [
       "Lapis Lazuli",
       "XXBALT",
       "SlickIvy"
+    ]
+  },
+  {
+    divisionName: "Beginner 11",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "SawdethTernius",
+      "Just_wobert",
+      "temphuibis",
+      "Stijn",
+      "Aelina",
+      "BIGW33D420",
+      "darkgod_hpfrunner"
     ]
   }
 ];
