@@ -256,27 +256,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Gold 9",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    ///22 with @roncli @Kyira @skiplogic @Elpailtem @mattholland @mfrerck (UTC -6) @gerhard_adler @Kingsman
-    players: [
-      "roncli",
-      "Kyira",
-      "skiplogic",
-      "Elpailtem",
-      "Matt Holland",
-      "mfrerck",
-      "Gerhard Adler",
-      "Kingsman",
-    ],
-  },
-  {
     divisionName: "Gold 10",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -295,9 +274,8 @@ const divisionData = [
       "cardek87"
     ],
   },
-
   {
-    divisionName: "Silver 14",
+    divisionName: "Gold 11",
     competition: "tnp",
     oneMatchPerPair: false,
     numWinner: 0,
@@ -305,19 +283,18 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
-    // @drjules13 @maedhros1978 @Mari (UTC-6) @arbaro @Odrachess (UTC +1) @UnOr1ginalName (utc+8)
+    // @Kingsman @Elpailtem @roncli @mattholland @UnOr1ginalName (utc+8)
     players: [
-      "drjules13",
-      "Maedhros",
-      "Mari",
-      "arbaro",
-      "odrachess",
-      "unor1ginalname",
+      "Kingsman",
+      "Elpailtem",
+      "roncli",
+      "mattholland",
+      "unor1ginalname"
     ],
   },
 
   {
-    divisionName: "Bronze 14",
+    divisionName: "Silver 15",
     competition: "tnp",
     oneMatchPerPair: false,
     numWinner: 0,
@@ -325,14 +302,34 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
-    // @Tacomom @Skai @NeutrisicAcid @oserottoNeko @Marts @Richard Wolf VI - PLEASE PING ME
+    // @cobra (UTC-6) @Mari (UTC-6) @Ignis @drjules13 @arbaro @maedhros1978
     players: [
-      "Tacomom",
-      "Skai",
-      "NeutrisicAcid",
-      "Osero",
+      "Cobra",
+      "Mari",
+      "Ignis",
+      "drjules13",
+      "arbaro",
+      "maedhros"
+    ],
+  },
+
+  {
+    divisionName: "Bronze 15",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    // @Marts @FrenchiestFrie @TEMPHUiBIS @Nyakozame @Skai @Tacomom
+    players: [
       "Marts",
-      "Richard Wolf VI",
+      "frenchiestfrie223",
+      "temphuibis",
+      "Nyakozame",
+      "Skai",
+      "tacomom"
     ],
   },
 
