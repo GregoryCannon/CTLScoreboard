@@ -471,7 +471,7 @@ const restreamerRole = [
   "kooliooolio#1009",
   "poopyoldhag#7229",
   "Oscar._#6774",
-  "Heist#9462",
+  "Heist#6969",
   "Cwiiis#7703",
   "Elpailtem#2506",
   "SamoanGerman#2947",
@@ -637,7 +637,8 @@ const restreamerRole = [
   "AvGeekW159#9270",
   "notzempro#6616",
   "Insaniso#8478",
-  "XXBALT#9718"
+  "XXBALT#9718",
+  "Eliwa#6540"
 ];
 
 module.exports = {
