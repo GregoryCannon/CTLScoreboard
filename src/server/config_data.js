@@ -17,8 +17,8 @@ const divisionData = [
       "Tristop",
       "Sidnev",
       "Gerald Freeman",
-      "SV",
-    ],
+      "SV"
+    ]
   },
   {
     divisionName: "1B",
@@ -38,8 +38,8 @@ const divisionData = [
       "MylesTheGreat",
       "Dog",
       "Andy",
-      "DaAsiann",
-    ],
+      "DaAsiann"
+    ]
   },
 
   {
@@ -58,8 +58,8 @@ const divisionData = [
       "Birb Wizard",
       "NDDK",
       "Tobe",
-      "Redshurt",
-    ],
+      "Redshurt"
+    ]
   },
   {
     divisionName: "2B",
@@ -77,8 +77,8 @@ const divisionData = [
       "NGC Man",
       "Nowi",
       "Chiller",
-      "Atkoster",
-    ],
+      "Atkoster"
+    ]
   },
 
   {
@@ -97,8 +97,8 @@ const divisionData = [
       "Ansel",
       "NoahDENG",
       "Masy",
-      "Oscar Godinez",
-    ],
+      "Oscar Godinez"
+    ]
   },
   {
     divisionName: "3B",
@@ -116,8 +116,8 @@ const divisionData = [
       "Scamper9",
       "Mecex",
       "Dylan Armstrong",
-      "Deewee",
-    ],
+      "Deewee"
+    ]
   },
   {
     divisionName: "3C",
@@ -135,8 +135,8 @@ const divisionData = [
       "Mark Migas",
       "ID Kirby",
       "Chobge",
-      "Alice",
-    ],
+      "Alice"
+    ]
   },
 
   {
@@ -155,8 +155,8 @@ const divisionData = [
       "Draco",
       "Timmy Kim",
       "Jeez007bd",
-      "Xile",
-    ],
+      "Xile"
+    ]
   },
   {
     divisionName: "4B",
@@ -174,8 +174,8 @@ const divisionData = [
       "AVGeek",
       "Torzsa",
       "Rurczak Kurczak",
-      "Zxvye",
-    ],
+      "Zxvye"
+    ]
   },
   {
     divisionName: "4C",
@@ -193,8 +193,8 @@ const divisionData = [
       "Koolio",
       "Grand Designs",
       "Insaniso",
-      "TNISaint",
-    ],
+      "TNISaint"
+    ]
   },
 
   {
@@ -213,8 +213,8 @@ const divisionData = [
       "Wolflord2005",
       "SnowLily",
       "Mendion",
-      "Sargin",
-    ],
+      "Sargin"
+    ]
   },
   {
     divisionName: "5B",
@@ -232,8 +232,8 @@ const divisionData = [
       "Tourist106",
       "mil0-",
       "Gerzi",
-      "Red_309",
-    ],
+      "Red_309"
+    ]
   },
   {
     divisionName: "5C",
@@ -251,8 +251,8 @@ const divisionData = [
       "CTWC Vince",
       "Gunter",
       "Roman",
-      "Tweak Beacon",
-    ],
+      "Tweak Beacon"
+    ]
   },
 
   {
@@ -272,7 +272,7 @@ const divisionData = [
       "DrKn0ckers",
       "Snowtris",
       "cardek87"
-    ],
+    ]
   },
   {
     divisionName: "Gold 11",
@@ -290,7 +290,7 @@ const divisionData = [
       "roncli",
       "mattholland",
       "unor1ginalname"
-    ],
+    ]
   },
 
   {
@@ -303,14 +303,7 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
     // @cobra (UTC-6) @Mari (UTC-6) @Ignis @drjules13 @arbaro @maedhros1978
-    players: [
-      "Cobra",
-      "Mari",
-      "Ignis",
-      "drjules13",
-      "arbaro",
-      "maedhros"
-    ],
+    players: ["Cobra", "Mari", "Ignis", "drjules13", "arbaro", "maedhros"]
   },
 
   {
@@ -330,7 +323,7 @@ const divisionData = [
       "Nyakozame",
       "Skai",
       "tacomom"
-    ],
+    ]
   },
 
   {
@@ -343,7 +336,16 @@ const divisionData = [
     numPlayoffRelegate: 3,
     numAutoRelegate: 0,
     // @Coal (UTC -5) @mistec43 @Torbith @Burritodad @Firedox @vlad_maksimum @XXBALT (UTC) @Lapis Lazuli
-    players: ["Coal", "mistec43", "Torbith", "Burritodad", "Firedox", "vlad_maksimum", "XXBALT", "Lapis Lazuli"]
+    players: [
+      "Coal",
+      "mistec43",
+      "Torbith",
+      "Burritodad",
+      "Firedox",
+      "vlad_maksimum",
+      "XXBALT",
+      "Lapis Lazuli"
+    ]
   },
 
   {
@@ -394,7 +396,7 @@ const adminRole = [
   "Chobge#4976",
   "Chillalla#0001",
   "FrenchiestFrie#9778",
-  "SnowLilyx#0365",
+  "SnowLilyx#0365"
 ];
 
 const restreamerRole = [
@@ -662,5 +664,5 @@ const restreamerRole = [
 module.exports = {
   divisionData,
   adminRole,
-  restreamerRole,
+  restreamerRole
 };
