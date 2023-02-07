@@ -325,6 +325,24 @@ const divisionData = [
       "tacomom"
     ]
   },
+  {
+    divisionName: "Bronze 16",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    players: [
+      "cchristm",
+      "burritodad",
+      "drfuzzman",
+      "mojomonkey",
+      "tytris",
+      "temphuibis"
+    ]
+  },
 
   {
     divisionName: "Beginner-Bronze 1",
