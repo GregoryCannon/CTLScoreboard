@@ -351,7 +351,7 @@ const divisionData = [
     numWinner: 0,
     numAutoPromo: 1,
     numPlayoffPromo: 4,
-    numPlayoffRelegate: 3,
+    numPlayoffRelegate: 2,
     numAutoRelegate: 0,
     // @Coal (UTC -5) @mistec43 @Torbith @Burritodad @Firedox @vlad_maksimum @XXBALT (UTC) @Lapis Lazuli
     players: [
@@ -361,8 +361,7 @@ const divisionData = [
       "Burritodad",
       "Firedox",
       "vlad_maksimum",
-      "XXBALT",
-      "Lapis Lazuli"
+      "XXBALT"
     ]
   },
 
