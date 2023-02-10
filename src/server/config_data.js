@@ -397,7 +397,7 @@ const divisionData = [
     players: [
       "Mansion",
       "Richard Wolf VI",
-      "Stijn",
+      "just_wobert",
       "Grant Culverston",
       "Milkman"
     ]
