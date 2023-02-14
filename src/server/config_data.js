@@ -305,6 +305,18 @@ const divisionData = [
     // @cobra (UTC-6) @Mari (UTC-6) @Ignis @drjules13 @arbaro @maedhros1978
     players: ["Cobra", "Mari", "Ignis", "drjules13", "arbaro", "maedhros"]
   },
+  {
+    divisionName: "Silver 16",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    // NeutrisicAcid#3988", "nikvo#1021", "Nyakozame#9823", "ignis02#1336", "drjules13#9641"
+    players: ["NeutrisicAcid", "arbaro", "Nyakozame", "Ignis", "drjules13"]
+  },
 
   {
     divisionName: "Bronze 15",
@@ -341,6 +353,23 @@ const divisionData = [
       "mojomonkey",
       "tytris",
       "temphuibis"
+    ]
+  },
+  {
+    divisionName: "Bronze 17",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    players: [
+      "Nao",
+      "Odrachess",
+      "Coal",
+      "Marts",
+      "maedhros"
     ]
   },
 
