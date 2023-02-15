@@ -292,6 +292,23 @@ const divisionData = [
       "unor1ginalname"
     ]
   },
+  {
+    divisionName: "Gold 12",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    players: [
+      "Lukideluxe",
+      "roncli",
+      "Kingsman",
+      "Elpailtem",
+      "CTWC Vince"
+    ]
+  },
 
   {
     divisionName: "Silver 15",
@@ -315,7 +332,7 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
     // NeutrisicAcid#3988", "nikvo#1021", "Nyakozame#9823", "ignis02#1336", "drjules13#9641"
-    players: ["NeutrisicAcid", "arbaro", "Nyakozame", "Ignis", "drjules13"]
+    players: ["NeutrisicAcid", "arbaro", "Nyakozame", "Ignis"]
   },
 
   {
