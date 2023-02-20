@@ -256,43 +256,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Gold 10",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    // @suds1821 @afMirror [UTC+0] @Junior (UTC-5) @DrKn0ckers @Snowtris @Cardek87
-    players: [
-      "suds1821",
-      "afmirror",
-      "Junior",
-      "DrKn0ckers",
-      "Snowtris",
-      "cardek87"
-    ]
-  },
-  {
-    divisionName: "Gold 11",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    // @Kingsman @Elpailtem @roncli @mattholland @UnOr1ginalName (utc+8)
-    players: [
-      "Kingsman",
-      "Elpailtem",
-      "roncli",
-      "mattholland",
-      "unor1ginalname"
-    ]
-  },
-  {
     divisionName: "Gold 12",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -336,25 +299,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Bronze 15",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    // @Marts @FrenchiestFrie @TEMPHUiBIS @Nyakozame @Skai @Tacomom
-    players: [
-      "Marts",
-      "frenchiestfrie223",
-      "temphuibis",
-      "Nyakozame",
-      "Skai",
-      "tacomom"
-    ]
-  },
-  {
     divisionName: "Bronze 16",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -391,45 +335,6 @@ const divisionData = [
     ]
   },
 
-  {
-    divisionName: "Beginner-Bronze 1",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 4,
-    numPlayoffRelegate: 2,
-    numAutoRelegate: 0,
-    // @Coal (UTC -5) @mistec43 @Torbith @Burritodad @Firedox @vlad_maksimum @XXBALT (UTC) @Lapis Lazuli
-    players: [
-      "Coal",
-      "mistec43",
-      "Torbith",
-      "Burritodad",
-      "Firedox",
-      "vlad_maksimum",
-      "XXBALT"
-    ]
-  },
-
-  {
-    divisionName: "Beginner 11",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "Just_wobert",
-      "temphuibis",
-      "Stijn",
-      "Aelina",
-      "BIGW33D420",
-      "darkgod_hpfrunner"
-    ]
-  },
   {
     divisionName: "Beginner 12",
     competition: "tnp",
