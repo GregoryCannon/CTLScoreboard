@@ -295,7 +295,7 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
     // NeutrisicAcid#3988", "nikvo#1021", "Nyakozame#9823", "ignis02#1336", "drjules13#9641"
-    players: ["NeutrisicAcid", "arbaro", "Nyakozame", "Ignis"]
+    players: ["NeutrisicAcid", "arbaro", "Nyakozame", "Ignis", "Mari", "Torbith"]
   },
 
   {
@@ -351,6 +351,27 @@ const divisionData = [
       "just_wobert",
       "Grant Culverston",
       "Milkman"
+    ]
+  },
+  {
+    divisionName: "Beginner 13",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 2,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    // Bacon382#0425","Aelina#2772","Lapis Lazuli#1769","vlad_maksimum#4572",
+    // "ChefGobes#6796","<just_wobert>#8844","frodododo#8283
+    players: [
+      "Bacon382ttv",
+      "Aelina",
+      "Lapis Lazuli",
+      "vlad_maksimum",
+      "ChefGobes",
+      "just_wobert",
+      "Skai"
     ]
   }
 ];
