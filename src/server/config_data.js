@@ -272,19 +272,29 @@ const divisionData = [
       "CTWC Vince"
     ]
   },
-
   {
-    divisionName: "Silver 15",
+    divisionName: "Gold 13",
     competition: "tnp",
     oneMatchPerPair: false,
     numWinner: 0,
     numAutoPromo: 1,
     numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    // @cobra (UTC-6) @Mari (UTC-6) @Ignis @drjules13 @arbaro @maedhros1978
-    players: ["Cobra", "Mari", "Ignis", "drjules13", "arbaro", "maedhros"]
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    // ["DrKn0ckers#9860",
+// "jrgagne99#2016",
+// "cobra#0331",
+// "suds1821#6280",
+// "Zarza#9336"],
+    players: [
+      "DrKn0ckers",
+      "Junior",
+      "Cobra",
+      "suds1821",
+      "Zarza"
+    ]
   },
+
   {
     divisionName: "Silver 16",
     competition: "tnp",
