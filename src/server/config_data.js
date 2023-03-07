@@ -344,6 +344,25 @@ const divisionData = [
       "Frenchiest Frie"
     ]
   },
+  {
+    divisionName: "Bronze 18",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    players: [
+      "Foryst",
+      "Firedox",
+      "Richard Wolf VI",
+      "Tacomom",
+      "Burritodad",
+      "temphuibis",
+      "Marts"
+    ]
+  },
 
   {
     divisionName: "Beginner 12",
