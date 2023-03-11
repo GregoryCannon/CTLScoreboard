@@ -88,7 +88,7 @@ const divisionData = [
     numPlayoffPromo: 1,
     numPlayoffRelegate: 2,
     numAutoRelegate: 0,
-    players: ["Micetro", "Eliwa", "20Dan03", "Xile", "Marq", "Curi"],
+    players: ["Micetro", "Eliwa", "20Dan03", "Xile", "Marq", "Curi", "Alice"],
   },
   {
     divisionName: "3B",
@@ -106,6 +106,7 @@ const divisionData = [
       "Scamper",
       "Mecex",
       "ID Kirby",
+      "Kitten",
     ],
   },
 
