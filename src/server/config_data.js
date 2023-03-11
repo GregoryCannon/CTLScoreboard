@@ -256,7 +256,7 @@ const divisionData = [
   },
 
   {
-    divisionName: "Gold 10",
+    divisionName: "Gold 12",
     competition: "tnp",
     oneMatchPerPair: false,
     numWinner: 0,
@@ -264,108 +264,106 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
-    // @suds1821 @afMirror [UTC+0] @Junior (UTC-5) @DrKn0ckers @Snowtris @Cardek87
     players: [
-      "suds1821",
-      "afmirror",
-      "Junior",
-      "DrKn0ckers",
-      "Snowtris",
-      "cardek87"
-    ]
-  },
-  {
-    divisionName: "Gold 11",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    // @Kingsman @Elpailtem @roncli @mattholland @UnOr1ginalName (utc+8)
-    players: [
+      "Lukideluxe",
+      "roncli",
       "Kingsman",
       "Elpailtem",
-      "roncli",
-      "mattholland",
-      "unor1ginalname"
+      "CTWC Vince"
     ]
   },
-
   {
-    divisionName: "Silver 15",
+    divisionName: "Gold 13",
     competition: "tnp",
     oneMatchPerPair: false,
     numWinner: 0,
     numAutoPromo: 1,
     numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    // @cobra (UTC-6) @Mari (UTC-6) @Ignis @drjules13 @arbaro @maedhros1978
-    players: ["Cobra", "Mari", "Ignis", "drjules13", "arbaro", "maedhros"]
-  },
-
-  {
-    divisionName: "Bronze 15",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    // @Marts @FrenchiestFrie @TEMPHUiBIS @Nyakozame @Skai @Tacomom
-    players: [
-      "Marts",
-      "frenchiestfrie223",
-      "temphuibis",
-      "Nyakozame",
-      "Skai",
-      "tacomom"
-    ]
-  },
-
-  {
-    divisionName: "Beginner-Bronze 1",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 4,
-    numPlayoffRelegate: 3,
+    numPlayoffRelegate: 1,
     numAutoRelegate: 0,
-    // @Coal (UTC -5) @mistec43 @Torbith @Burritodad @Firedox @vlad_maksimum @XXBALT (UTC) @Lapis Lazuli
+    // ["DrKn0ckers#9860",
+// "jrgagne99#2016",
+// "cobra#0331",
+// "suds1821#6280",
+// "Zarza#9336"],
     players: [
+      "DrKn0ckers",
+      "Junior",
+      "Cobra",
+      "suds1821",
+      "Zarza"
+    ]
+  },
+
+  {
+    divisionName: "Silver 16",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    // NeutrisicAcid#3988", "nikvo#1021", "Nyakozame#9823", "ignis02#1336", "drjules13#9641"
+    players: ["NeutrisicAcid", "arbaro", "Nyakozame", "Ignis", "Mari", "Torbith"]
+  },
+
+  {
+    divisionName: "Bronze 16",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    players: [
+      "cchristm",
+      "burritodad",
+      "drfuzzman",
+      "mojomonkey",
+      "tytris",
+      "temphuibis"
+    ]
+  },
+  {
+    divisionName: "Bronze 17",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 2,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    players: [
+      "Nao",
+      "Odrachess",
       "Coal",
-      "mistec43",
-      "Torbith",
-      "Burritodad",
-      "Firedox",
-      "vlad_maksimum",
-      "XXBALT",
-      "Lapis Lazuli"
+      "Marts",
+      "maedhros",
+      "Frenchiest Frie"
     ]
   },
-
   {
-    divisionName: "Beginner 11",
+    divisionName: "Bronze 18",
     competition: "tnp",
     oneMatchPerPair: false,
     numWinner: 0,
     numAutoPromo: 1,
-    numPlayoffPromo: 0,
+    numPlayoffPromo: 1,
     numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
+    numAutoRelegate: 1,
     players: [
-      "Just_wobert",
+      "Foryst",
+      "Firedox",
+      "Richard Wolf VI",
+      "Tacomom",
+      "Burritodad",
       "temphuibis",
-      "Stijn",
-      "Aelina",
-      "BIGW33D420",
-      "darkgod_hpfrunner"
+      "Marts"
     ]
   },
+
   {
     divisionName: "Beginner 12",
     competition: "tnp",
@@ -379,9 +377,30 @@ const divisionData = [
     players: [
       "Mansion",
       "Richard Wolf VI",
-      "Stijn",
+      "just_wobert",
       "Grant Culverston",
       "Milkman"
+    ]
+  },
+  {
+    divisionName: "Beginner 13",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 2,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    // Bacon382#0425","Aelina#2772","Lapis Lazuli#1769","vlad_maksimum#4572",
+    // "ChefGobes#6796","<just_wobert>#8844","frodododo#8283
+    players: [
+      "Bacon382ttv",
+      "Aelina",
+      "Lapis Lazuli",
+      "vlad_maksimum",
+      "ChefGobes",
+      "just_wobert",
+      "Skai"
     ]
   }
 ];
@@ -658,7 +677,9 @@ const restreamerRole = [
   "Insaniso#8478",
   "XXBALT#9718",
   "Eliwa#6540",
-  "Red_309#2593"
+  "Red_309#2593",
+  "Mari#4091",
+  "GeoWolf77#3075"
 ];
 
 module.exports = {
