@@ -257,7 +257,7 @@ const divisionData = [
     oneMatchPerPair: false,
     numWinner: 0,
     numAutoPromo: 1,
-    numPlayoffPromo: 0,
+    numPlayoffPromo: 1,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
     players: ["Sleepy Samantha", "Ellery", "Coal", "Odrachess", "Tomello", "BillyMac"]
