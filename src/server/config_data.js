@@ -302,24 +302,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Beginner 12",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    // Beginner":["Mansion#6413", "Richard Wolf VI#3522", "Stijn#6121", "grantculverston#7801", "milkman#7224"]}
-    players: [
-      "Mansion",
-      "Richard Wolf VI",
-      "just_wobert",
-      "Grant Culverston",
-      "Milkman",
-    ],
-  },
-  {
     divisionName: "Beginner 13",
     competition: "tnp",
     oneMatchPerPair: false,
