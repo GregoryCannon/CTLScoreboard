@@ -307,9 +307,8 @@ const divisionData = [
     // NeutrisicAcid#3988", "nikvo#1021", "Nyakozame#9823", "ignis02#1336", "drjules13#9641"
     players: ["NeutrisicAcid", "arbaro", "Nyakozame", "Ignis", "Mari", "Torbith"]
   },
-
   {
-    divisionName: "Bronze 16",
+    divisionName: "Silver 17",
     competition: "tnp",
     oneMatchPerPair: false,
     numWinner: 0,
@@ -317,15 +316,15 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
-    players: [
-      "cchristm",
-      "burritodad",
-      "drfuzzman",
-      "mojomonkey",
-      "tytris",
-      "temphuibis"
-    ]
+    // ["Sleepy Samantha#8502",
+    // "Ellery#4747",
+    // "Coal#6157",
+    // "Odrachess#3704",
+    // "TomelloSoulMan#7863",
+    // "BillyMac#8194"],
+    players: ["Sleepy Samantha", "Ellery", "Coal", "Odrachess", "Tomello", "BillyMac"]
   },
+
   {
     divisionName: "Bronze 17",
     competition: "tnp",
@@ -679,7 +678,8 @@ const restreamerRole = [
   "Eliwa#6540",
   "Red_309#2593",
   "Mari#4091",
-  "GeoWolf77#3075"
+  "GeoWolf77#3075",
+  "<just_wobert>#8844"
 ];
 
 module.exports = {
