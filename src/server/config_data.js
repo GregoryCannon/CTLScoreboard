@@ -88,7 +88,7 @@ const divisionData = [
     numPlayoffPromo: 1,
     numPlayoffRelegate: 2,
     numAutoRelegate: 0,
-    players: ["Micetro", "Eliwa", "20Dan03", "Xile", "Marq", "Curi"],
+    players: ["Micetro", "Eliwa", "20Dan03", "Xile", "Marq", "Curi", "Alice"],
   },
   {
     divisionName: "3B",
@@ -106,6 +106,7 @@ const divisionData = [
       "Scamper",
       "Mecex",
       "ID Kirby",
+      "Kitten",
     ],
   },
 
@@ -250,25 +251,18 @@ const divisionData = [
       "Torbith",
     ],
   },
-
   {
-    divisionName: "Bronze 16",
+    divisionName: "Silver 17",
     competition: "tnp",
     oneMatchPerPair: false,
     numWinner: 0,
     numAutoPromo: 1,
-    numPlayoffPromo: 0,
+    numPlayoffPromo: 1,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
-    players: [
-      "cchristm",
-      "burritodad",
-      "drfuzzman",
-      "mojomonkey",
-      "tytris",
-      "temphuibis",
-    ],
+    players: ["Sleepy Samantha", "Ellery", "Coal", "Odrachess", "Tomello", "BillyMac"]
   },
+
   {
     divisionName: "Bronze 17",
     competition: "tnp",
@@ -307,24 +301,6 @@ const divisionData = [
     ],
   },
 
-  {
-    divisionName: "Beginner 12",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    // Beginner":["Mansion#6413", "Richard Wolf VI#3522", "Stijn#6121", "grantculverston#7801", "milkman#7224"]}
-    players: [
-      "Mansion",
-      "Richard Wolf VI",
-      "just_wobert",
-      "Grant Culverston",
-      "Milkman",
-    ],
-  },
   {
     divisionName: "Beginner 13",
     competition: "tnp",
@@ -606,7 +582,7 @@ const restreamerRole = [
   "tyIer#8067",
   "WhiteMonster#3552",
   "Allenbot#8296",
-  "cobra#0331",
+  "cobra#7715",
   "DrKn0ckers#9860",
   "Mendion#5259",
   "NinjaOfNinjas5#4697",
@@ -623,6 +599,7 @@ const restreamerRole = [
   "Red_309#2593",
   "Mari#4091",
   "GeoWolf77#3075",
+  "<just_wobert>#8844"
 ];
 
 module.exports = {
