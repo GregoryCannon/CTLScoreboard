@@ -256,7 +256,7 @@ class RegistrationAndMatchBot {
 
       if (
         (isTNP && REGISTRATION_OPEN_TNP) ||
-        (!isTNP && REGISTRATION_CLOSED_MESSAGE_CTL)
+        (!isTNP && REGISTRATION_OPEN_CTL)
       ) {
         // Main registration section
         await channel.send(SIGN_UP_MESSAGE + LINE_ASCII);
