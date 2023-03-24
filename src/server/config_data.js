@@ -35,7 +35,7 @@ const divisionData = [
       "Myles the Great",
       "Sodium",
       "Sidnev",
-      "Huffulfugus",
+      "Huffulufugus",
       "Alex T",
     ],
   },
