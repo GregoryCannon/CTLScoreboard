@@ -35,7 +35,7 @@ const divisionData = [
       "Myles the Great",
       "Sodium",
       "Sidnev",
-      "Huffulfugus",
+      "Huffulufugus",
       "Alex T",
     ],
   },
@@ -600,7 +600,8 @@ const restreamerRole = [
   "Mari#4091",
   "GeoWolf77#3075",
   "<just_wobert>#8844",
-  "afMirror#9896"
+  "afMirror#9896",
+  "Marfram#0685"
 ];
 
 module.exports = {
