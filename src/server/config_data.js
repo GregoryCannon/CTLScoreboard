@@ -322,6 +322,24 @@ const divisionData = [
       "Skai",
     ],
   },
+  {
+    divisionName: "Beginner 14",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    // @Mansion @Kool Koopa(UTC-5) @grantculverston @Sawdeth Ternius @XXBALT (UTC)
+    players: [
+      "Mansion",
+      "Kool Koopa",
+      "Grant Culverston",
+      "sawdethternius",
+      "XXBALT"
+    ],
+  },
 ];
 
 const adminRole = [
