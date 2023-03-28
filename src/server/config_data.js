@@ -257,8 +257,8 @@ const divisionData = [
     competition: "tnp",
     oneMatchPerPair: false,
     numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
+    numAutoPromo: 2,
+    numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
     // "maedhros1978#8918", "Nao#7169", "Marts#6845", "Richard Wolf VI#3522", 
@@ -270,7 +270,8 @@ const divisionData = [
       "Richard Wolf VI",
       "Yeeahaw",
       "Nyakozame",
-      "temphuibis"
+      "temphuibis",
+      "Yarno"
     ],
   },
 
