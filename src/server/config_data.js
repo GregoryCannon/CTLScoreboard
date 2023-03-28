@@ -205,17 +205,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Gold 12",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    players: ["Lukideluxe", "roncli", "Kingsman", "Elpailtem", "CTWC Vince"],
-  },
-  {
     divisionName: "Gold 13",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -298,6 +287,27 @@ const divisionData = [
       "Burritodad",
       "temphuibis",
       "Marts",
+    ],
+  },
+  {
+    divisionName: "Bronze 19",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    // "maedhros1978#8918", "Nao#7169", "Marts#6845", "Richard Wolf VI#3522", 
+    // "yeehawmckickass#4099", "Nyakozame#9823", "TEMPHUiBIS#3382"],
+    players: [
+      "maedhros",
+      "Nao",
+      "Marts",
+      "Richard Wolf VI",
+      "Yeeahaw",
+      "Nyakozame",
+      "temphuibis"
     ],
   },
 
