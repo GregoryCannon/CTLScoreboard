@@ -220,6 +220,19 @@ const divisionData = [
     // "Zarza#9336"],
     players: ["DrKn0ckers", "Junior", "Cobra", "suds1821", "Zarza"],
   },
+  {
+    divisionName: "Gold 14",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    // "Yelena#3867", "Kingsman#0364", "roncli#1409", 
+    // "jrgagne99#2016", "Riogreywind#4652", "Coal#6157"],
+    players: ["Yelena", "Kingsman", "roncli", "Junior", "riogreywind", "Coal"],
+  },
 
   {
     divisionName: "Silver 16",
