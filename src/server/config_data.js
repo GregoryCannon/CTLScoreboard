@@ -273,7 +273,7 @@ const divisionData = [
     numAutoPromo: 2,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
+    numAutoRelegate: 0,
     // "maedhros1978#8918", "Nao#7169", "Marts#6845", "Richard Wolf VI#3522", 
     // "yeehawmckickass#4099", "Nyakozame#9823", "TEMPHUiBIS#3382"],
     players: [
