@@ -101,7 +101,6 @@ const divisionData = [
     numAutoRelegate: 0,
     players: [
       "IanKeith",
-      "Gwafey",
       "Poopyoldhag",
       "Scamper",
       "Mecex",
