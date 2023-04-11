@@ -625,7 +625,8 @@ const restreamerRole = [
   "GeoWolf77#3075",
   "<just_wobert>#8844",
   "afMirror#9896",
-  "Marfram#0685"
+  "Marfram#0685",
+  "Joshua L. Tolles#4111"
 ];
 
 module.exports = {
