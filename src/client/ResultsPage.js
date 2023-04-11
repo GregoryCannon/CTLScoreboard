@@ -83,7 +83,7 @@ class ResultsPage extends Component {
                 return (
                   <tr>
                     <td>{util.getMatchDateFormatted(match)}</td>
-                    <td>{dewobertifyRestreamer(match.restreamer)}</td>
+                    <td>{this.dewobertifyRestreamer(match.restreamer)}</td>
                     <td>{homePlayer}</td>
                     <td>{homeScore}</td>
                     <td>{awayScore}</td>
