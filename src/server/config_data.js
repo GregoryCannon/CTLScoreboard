@@ -286,6 +286,27 @@ const divisionData = [
       "Yarno"
     ],
   },
+  {
+    divisionName: "Bronze 20",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 2,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    // "Bronze":["vlad_maksimum#4572","<just_wobert>#8844","Aelina#2772",
+    // "Lapis Lazuli#1769","BOPPY#1828","Foryst#0131","cchristm#6938"],
+    players: [
+      "vlad_maksimum",
+      "wobert",
+      "Aelina",
+      "Lapis Lazuli",
+      "Boppy",
+      "Foryst",
+      "cchristm"
+    ],
+  },
 
   {
     divisionName: "Beginner 13",
