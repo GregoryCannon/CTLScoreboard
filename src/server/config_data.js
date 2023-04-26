@@ -71,7 +71,6 @@ const divisionData = [
     players: [
       "Sunny",
       "TobiGH3",
-      "Nowi",
       "Matt Martin",
       "NDDK",
       "NoahDeng",
