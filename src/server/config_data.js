@@ -232,6 +232,18 @@ const divisionData = [
     // "jrgagne99#2016", "Riogreywind#4652", "Coal#6157"],
     players: ["Yelena", "Kingsman", "roncli", "Junior", "riogreywind", "Coal"],
   },
+  {
+    divisionName: "Gold 14",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    // "roncli#1409", "Leeand#8121", "vachetBeasty#7497", "jrgagne99#2016", "Riogreywind#4652", "mfrerck#1934", "Yelena#3867"], 
+    players: ["roncli", "Leeand", "VachetBeasty", "Junior", "riogreywind", "Yelena"],
+  },
 
   {
     divisionName: "Silver 16",
@@ -262,6 +274,19 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
     players: ["Sleepy Samantha", "Ellery", "Coal", "Odrachess", "Tomello", "BillyMac"]
+  },
+  {
+    divisionName: "Silver 18",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 2,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    // ["Mari#4091", "Firedox#9625", "tyIer#8067", "Kingsman#0364", 
+    // "NeutrisicAcid#3988", "TomelloSoulMan#7863", "BillyMac#8194"],
+    players: ["Mari", "Firedox", "Tytris", "Kingsman", "NeutrisicAcid", "TomelloSoulMan", "BillyMac"]
   },
 
   {
