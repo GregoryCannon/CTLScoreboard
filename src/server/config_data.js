@@ -232,7 +232,7 @@ const divisionData = [
     players: ["Yelena", "Kingsman", "roncli", "Junior", "riogreywind", "Coal"],
   },
   {
-    divisionName: "Gold 14",
+    divisionName: "Gold 15",
     competition: "tnp",
     oneMatchPerPair: false,
     numWinner: 0,
