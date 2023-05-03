@@ -331,6 +331,24 @@ const divisionData = [
       "cchristm"
     ],
   },
+  {
+    divisionName: "Bronze 21",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "Burritodad",
+      "Marts",
+      "3enon",
+      "Richard Wolf VI",
+      "Skai",
+      "Temphuibis"
+    ],
+  },
 
   {
     divisionName: "Beginner 13",
