@@ -241,7 +241,7 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
     // "roncli#1409", "Leeand#8121", "vachetBeasty#7497", "jrgagne99#2016", "Riogreywind#4652", "mfrerck#1934", "Yelena#3867"], 
-    players: ["roncli", "Leeand", "VachetBeasty", "Junior", "riogreywind", "Yelena"],
+    players: ["roncli", "Leeand", "VachetBeasty", "Junior", "riogreywind", "mfrerck", "Yelena"],
   },
 
   {
