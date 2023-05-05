@@ -18,6 +18,13 @@ class ResultsPage extends Component {
     });
   }
 
+  // wobert's discord name breaks the elo reporting sheet
+  dewobertifyRestreamer(restreamer) {
+    return restreamer === "<just_wobert>"
+      ? "wobert" 
+      : restreamer;
+  };
+
   render() {
     return (
       <div className="Results-container">
@@ -76,7 +83,7 @@ class ResultsPage extends Component {
                 return (
                   <tr>
                     <td>{util.getMatchDateFormatted(match)}</td>
-                    <td>{match.restreamer}</td>
+                    <td>{this.dewobertifyRestreamer(match.restreamer)}</td>
                     <td>{homePlayer}</td>
                     <td>{homeScore}</td>
                     <td>{awayScore}</td>

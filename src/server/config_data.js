@@ -35,7 +35,7 @@ const divisionData = [
       "Myles the Great",
       "Sodium",
       "Sidnev",
-      "Huffulfugus",
+      "Huffulufugus",
       "Alex T",
     ],
   },
@@ -71,7 +71,6 @@ const divisionData = [
     players: [
       "Sunny",
       "TobiGH3",
-      "Nowi",
       "Matt Martin",
       "NDDK",
       "NoahDeng",
@@ -88,7 +87,7 @@ const divisionData = [
     numPlayoffPromo: 1,
     numPlayoffRelegate: 2,
     numAutoRelegate: 0,
-    players: ["Micetro", "Eliwa", "20Dan03", "Xile", "Marq", "Curi", "Alice"],
+    players: ["Micetro", "Eliwa", "20Dan03", "Xile", "Marq", "Curi"],
   },
   {
     divisionName: "3B",
@@ -101,7 +100,6 @@ const divisionData = [
     numAutoRelegate: 0,
     players: [
       "IanKeith",
-      "Gwafey",
       "Poopyoldhag",
       "Scamper",
       "Mecex",
@@ -205,17 +203,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Gold 12",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    players: ["Lukideluxe", "roncli", "Kingsman", "Elpailtem", "CTWC Vince"],
-  },
-  {
     divisionName: "Gold 13",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -230,6 +217,31 @@ const divisionData = [
     // "suds1821#6280",
     // "Zarza#9336"],
     players: ["DrKn0ckers", "Junior", "Cobra", "suds1821", "Zarza"],
+  },
+  {
+    divisionName: "Gold 14",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    // "Yelena#3867", "Kingsman#0364", "roncli#1409", 
+    // "jrgagne99#2016", "Riogreywind#4652", "Coal#6157"],
+    players: ["Yelena", "Kingsman", "roncli", "Junior", "riogreywind", "Coal"],
+  },
+  {
+    divisionName: "Gold 15",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    // "roncli#1409", "Leeand#8121", "vachetBeasty#7497", "jrgagne99#2016", "Riogreywind#4652", "mfrerck#1934", "Yelena#3867"], 
+    players: ["roncli", "Leeand", "VachetBeasty", "Junior", "riogreywind", "mfrerck", "Yelena"],
   },
 
   {
@@ -262,42 +274,79 @@ const divisionData = [
     numAutoRelegate: 1,
     players: ["Sleepy Samantha", "Ellery", "Coal", "Odrachess", "Tomello", "BillyMac"]
   },
+  {
+    divisionName: "Silver 18",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 2,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    // ["Mari#4091", "Firedox#9625", "tyIer#8067", "Kingsman#0364", 
+    // "NeutrisicAcid#3988", "TomelloSoulMan#7863", "BillyMac#8194"],
+    players: ["Mari", "Firedox", "Tytris", "Kingsman", "NeutrisicAcid", "TomelloSoulMan", "BillyMac"]
+  },
 
   {
-    divisionName: "Bronze 17",
+    divisionName: "Bronze 19",
     competition: "tnp",
     oneMatchPerPair: false,
     numWinner: 0,
     numAutoPromo: 2,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
+    numAutoRelegate: 0,
+    // "maedhros1978#8918", "Nao#7169", "Marts#6845", "Richard Wolf VI#3522", 
+    // "yeehawmckickass#4099", "Nyakozame#9823", "TEMPHUiBIS#3382"],
     players: [
-      "Nao",
-      "Odrachess",
-      "Coal",
-      "Marts",
       "maedhros",
-      "Frenchiest Frie",
+      "Nao",
+      "Marts",
+      "Richard Wolf VI",
+      "Yeeahaw",
+      "Nyakozame",
+      "temphuibis",
+      "Yarno"
     ],
   },
   {
-    divisionName: "Bronze 18",
+    divisionName: "Bronze 20",
     competition: "tnp",
     oneMatchPerPair: false,
     numWinner: 0,
     numAutoPromo: 1,
     numPlayoffPromo: 1,
     numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
+    numAutoRelegate: 0,
+    // "Bronze":["vlad_maksimum#4572","<just_wobert>#8844","Aelina#2772",
+    // "Lapis Lazuli#1769","BOPPY#1828","Foryst#0131","cchristm#6938"],
     players: [
+      "vlad_maksimum",
+      "wobert",
+      "Aelina",
+      "Lapis Lazuli",
+      "Boppy",
       "Foryst",
-      "Firedox",
-      "Richard Wolf VI",
-      "Tacomom",
+      "cchristm"
+    ],
+  },
+  {
+    divisionName: "Bronze 21",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
       "Burritodad",
-      "temphuibis",
       "Marts",
+      "3enon",
+      "Richard Wolf VI",
+      "Skai",
+      "Temphuibis"
     ],
   },
 
@@ -322,6 +371,24 @@ const divisionData = [
       "Skai",
     ],
   },
+  {
+    divisionName: "Beginner 14",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    // @Mansion @Kool Koopa(UTC-5) @grantculverston @Sawdeth Ternius @XXBALT (UTC)
+    players: [
+      "Mansion",
+      "Kool Koopa",
+      "Grant Culverston",
+      "sawdethternius",
+      "XXBALT"
+    ],
+  },
 ];
 
 const adminRole = [
@@ -343,7 +410,7 @@ const restreamerRole = [
   "Lastarot#9931",
   "Krypto#4388",
   "skiplogic#9125",
-  "Chris Foryst#0131",
+  "Foryst#0131",
   "HydrantDude#2048",
   "BeastinShen#4218",
   "offwo#7439",
@@ -513,7 +580,6 @@ const restreamerRole = [
   "Melhk#4155",
   "AvGeekW159#0616",
   "Adrena1in#3056",
-  "Xenophilius#9730",
   "Gabriel B#0072",
   "Heist#8449",
   "FrenchiestFrie#9778",
@@ -563,7 +629,7 @@ const restreamerRole = [
   "romanplaysgames#8168",
   "cchristm#6938",
   "King Choke(Klystyr)(UTC -5)#9595",
-  "Xenophilius#6969",
+  "Xenophilius#1814",
   "Mario Lafleur#9804",
   "DocPi314#1592",
   "MrShadow#0900",
@@ -599,7 +665,11 @@ const restreamerRole = [
   "Red_309#2593",
   "Mari#4091",
   "GeoWolf77#3075",
-  "<just_wobert>#8844"
+  "<just_wobert>#8844",
+  "afMirror#9896",
+  "Marfram#0685",
+  "Joshua L. Tolles#4111",
+  "Coal#6157"
 ];
 
 module.exports = {
