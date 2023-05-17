@@ -287,6 +287,22 @@ const divisionData = [
     // "NeutrisicAcid#3988", "TomelloSoulMan#7863", "BillyMac#8194"],
     players: ["Mari", "Firedox", "Tytris", "Kingsman", "NeutrisicAcid", "TomelloSoulMan", "BillyMac"]
   },
+  {
+    divisionName: "Silver 19",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    // "cchristm#6938",
+    // "Marts#6845",
+    // "Burritodad#0854",
+    // "Nyakozame#9823",
+    // "Snowtris#4473"],
+    players: ["cchristm", "Marts", "Burritodad", "Nyakozame", "Snowtris"]
+  },
 
   {
     divisionName: "Bronze 19",
