@@ -2,7 +2,7 @@ const { Client, Intents } = require("discord.js");
 const logger = require("./logger");
 const { IS_PRODUCTION, getMatchDateFormatted } = require("./util");
 
-const REGISTRATION_OPEN_CTL = false;
+const REGISTRATION_OPEN_CTL = true;
 const REGISTRATION_OPEN_TNP = true;
 const MAIN_EMOJI = "👍";
 const CANCEL_EMOJI = "❌";
