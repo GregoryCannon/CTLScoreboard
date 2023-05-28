@@ -186,6 +186,7 @@ const divisionData = [
       'Tweak Beacon',
       'Cobra',
       'Morelando',
+      'Yelena',
     ],
   },
   {
@@ -204,6 +205,7 @@ const divisionData = [
       'NotZempro',
       'Tourist',
       'Coal',
+      'Vachetbeasty',
     ],
   },
 
