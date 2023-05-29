@@ -210,35 +210,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Gold 13",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    // ["DrKn0ckers#9860",
-    // "jrgagne99#2016",
-    // "cobra#0331",
-    // "suds1821#6280",
-    // "Zarza#9336"],
-    players: ["DrKn0ckers", "Junior", "Cobra", "suds1821", "Zarza"],
-  },
-  {
-    divisionName: "Gold 14",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    // "Yelena#3867", "Kingsman#0364", "roncli#1409", 
-    // "jrgagne99#2016", "Riogreywind#4652", "Coal#6157"],
-    players: ["Yelena", "Kingsman", "roncli", "Junior", "riogreywind", "Coal"],
-  },
-  {
     divisionName: "Gold 15",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -251,36 +222,6 @@ const divisionData = [
     players: ["roncli", "Leeand", "VachetBeasty", "Junior", "riogreywind", "mfrerck", "Yelena"],
   },
 
-  {
-    divisionName: "Silver 16",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    // NeutrisicAcid#3988", "nikvo#1021", "Nyakozame#9823", "ignis02#1336", "drjules13#9641"
-    players: [
-      "NeutrisicAcid",
-      "arbaro",
-      "Nyakozame",
-      "Ignis",
-      "Mari",
-      "Torbith",
-    ],
-  },
-  {
-    divisionName: "Silver 17",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    players: ["Sleepy Samantha", "Ellery", "Coal", "Odrachess", "Tomello", "BillyMac"]
-  },
   {
     divisionName: "Silver 18",
     competition: "tnp",
@@ -312,49 +253,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Bronze 19",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 2,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    // "maedhros1978#8918", "Nao#7169", "Marts#6845", "Richard Wolf VI#3522", 
-    // "yeehawmckickass#4099", "Nyakozame#9823", "TEMPHUiBIS#3382"],
-    players: [
-      "maedhros",
-      "Nao",
-      "Marts",
-      "Richard Wolf VI",
-      "Yeeahaw",
-      "Nyakozame",
-      "temphuibis",
-      "Yarno"
-    ],
-  },
-  {
-    divisionName: "Bronze 20",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    // "Bronze":["vlad_maksimum#4572","<just_wobert>#8844","Aelina#2772",
-    // "Lapis Lazuli#1769","BOPPY#1828","Foryst#0131","cchristm#6938"],
-    players: [
-      "vlad_maksimum",
-      "wobert",
-      "Aelina",
-      "Lapis Lazuli",
-      "Boppy",
-      "Foryst",
-      "cchristm"
-    ],
-  },
-  {
     divisionName: "Bronze 21",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -373,45 +271,6 @@ const divisionData = [
     ],
   },
 
-  {
-    divisionName: "Beginner 13",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 2,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    // Bacon382#0425","Aelina#2772","Lapis Lazuli#1769","vlad_maksimum#4572",
-    // "ChefGobes#6796","<just_wobert>#8844","frodododo#8283
-    players: [
-      "Bacon382ttv",
-      "Aelina",
-      "Lapis Lazuli",
-      "vlad_maksimum",
-      "ChefGobes",
-      "just_wobert",
-      "Skai",
-    ],
-  },
-  {
-    divisionName: "Beginner 14",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    // @Mansion @Kool Koopa(UTC-5) @grantculverston @Sawdeth Ternius @XXBALT (UTC)
-    players: [
-      "Mansion",
-      "Kool Koopa",
-      "Grant Culverston",
-      "sawdethternius",
-      "XXBALT"
-    ],
-  },
 ];
 
 const adminRole = [
