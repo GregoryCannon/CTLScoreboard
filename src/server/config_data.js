@@ -221,6 +221,28 @@ const divisionData = [
     // "roncli#1409", "Leeand#8121", "vachetBeasty#7497", "jrgagne99#2016", "Riogreywind#4652", "mfrerck#1934", "Yelena#3867"], 
     players: ["roncli", "Leeand", "VachetBeasty", "Junior", "riogreywind", "mfrerck", "Yelena"],
   },
+  {
+    divisionName: "Gold 16",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    players: ["Nyakozame", "roncli", "DocPi", "mfrerck", "suds1821", "Mari"],
+  },
+  {
+    divisionName: "Gold 17",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: ["Tytris", "CTWCVince", "AkAtu", "Berni", "Flashmonger"],
+  },
 
   {
     divisionName: "Silver 18",
