@@ -273,6 +273,22 @@ const divisionData = [
     // "Snowtris#4473"],
     players: ["cchristm", "Marts", "Burritodad", "Nyakozame", "Snowtris"]
   },
+  {
+    divisionName: "Silver 20",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 2,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    // "cchristm#6938",
+    // "Marts#6845",
+    // "Burritodad#0854",
+    // "Nyakozame#9823",
+    // "Snowtris#4473"],
+    players: ["Lapis Lazuli", "Marts", "Snowtris", "Ccchristm", "Kingsman", "Bendy", "TomelloSoulMan", "Junior"]
+  },
 
   {
     divisionName: "Bronze 21",
