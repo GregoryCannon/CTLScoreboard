@@ -287,7 +287,7 @@ const divisionData = [
     // "Burritodad#0854",
     // "Nyakozame#9823",
     // "Snowtris#4473"],
-    players: ["Lapis Lazuli", "Marts", "Snowtris", "Ccchristm", "Kingsman", "Bendy", "TomelloSoulMan", "Junior"]
+    players: ["Lapis Lazuli", "Marts", "Snowtris", "cchristm", "Kingsman", "Bendy", "TomelloSoulMan", "Junior"]
   },
 
   {
