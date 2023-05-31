@@ -238,9 +238,9 @@ const divisionData = [
     oneMatchPerPair: false,
     numWinner: 0,
     numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
     players: ["Tytris", "CTWCVince", "AkAtu", "Berni", "Flashmonger", "Rory"],
   },
 
