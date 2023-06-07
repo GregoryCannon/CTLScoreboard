@@ -308,6 +308,24 @@ const divisionData = [
       "Temphuibis"
     ],
   },
+  {
+    divisionName: "Bronze 22",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "maedhros1978",
+      "Tacomom18",
+      "Temphuibis",
+      "vlad_maksimum",
+      "3enon",
+      "Richard Wolf VI"
+    ],
+  },
 
 ];
 
