@@ -542,7 +542,7 @@ const restreamerRole = [
   "AkumaLuxray#4503",
   "cmg444\\#4652",
   "Dorukkaptan95#0404",
-  "Mleczak#2137",
+  "Mleczak#3794",
   "Świdr#0486",
   "doodle#3414",
   "Allenbot#1138",
@@ -607,7 +607,8 @@ const restreamerRole = [
   "afMirror#9896",
   "Marfram#0685",
   "Joshua L. Tolles#4111",
-  "Coal#6157"
+  "Coal#6157",
+  "TeaInRain#2072"
 ];
 
 module.exports = {
