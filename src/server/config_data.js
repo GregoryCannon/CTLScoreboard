@@ -332,7 +332,7 @@ const divisionData = [
 const adminRole = [
   "GregBoomCannon#4087",
   "moodeuce#8573",
-  "Kingsman36#0",
+  "kingsman36#0",
   "Tugi#7004",
   "BlargMeister#1337",
   "nikvo#1021",
@@ -344,7 +344,7 @@ const adminRole = [
 
 const restreamerRole = [
   "moodeuce#8573",
-  "Kingsman36#0",
+  "kingsman36#0",
   "Lastarot#9931",
   "Krypto#4388",
   "skiplogic#9125",
