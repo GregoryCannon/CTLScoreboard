@@ -332,7 +332,7 @@ const divisionData = [
 const adminRole = [
   "GregBoomCannon#4087",
   "moodeuce#8573",
-  "Kingsman#0364",
+  "Kingsman36#0",
   "Tugi#7004",
   "BlargMeister#1337",
   "nikvo#1021",
