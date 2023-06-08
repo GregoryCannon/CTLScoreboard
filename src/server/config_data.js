@@ -344,7 +344,7 @@ const adminRole = [
 
 const restreamerRole = [
   "moodeuce#8573",
-  "Kingsman#0364",
+  "Kingsman36",
   "Lastarot#9931",
   "Krypto#4388",
   "skiplogic#9125",
