@@ -337,7 +337,7 @@ const adminRole = [
   "BlargMeister#1337",
   "nikvo#1021",
   "Chobge#4976",
-  "chillalla",
+  "chillalla#0",
   "FrenchiestFrie#9778",
   "SnowLilyx#0365",
 ];
@@ -476,7 +476,7 @@ const restreamerRole = [
   "RyenwithanE#5674",
   "AL#2371",
   "AlexS#9305",
-  "chillalla",
+  "chillalla#0",
   "MegaSkuci#3636",
   "Thunderstorm281#7715",
   "vanshtanwani#9639",
@@ -604,7 +604,7 @@ const restreamerRole = [
   "GeoWolf77#3075",
   "<just_wobert>#8844",
   "afMirror#9896",
-  "Marfram",
+  "Marfram#0",
   "Joshua L. Tolles#4111",
   "Coal#6157",
   "TeaInRain#2072"
