@@ -124,7 +124,7 @@ const divisionData = [
     players: [
       'Lily',
       'Gresiu',
-      'Insansio',
+      'Insaniso',
       'Micetro',
       'Wide',
       'Evesy',
