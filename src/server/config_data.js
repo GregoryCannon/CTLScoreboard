@@ -181,7 +181,7 @@ const divisionData = [
     numAutoRelegate: 1,
     players: [
       'Pissarse',
-      'MGLCaptainVirgil',
+      'MLGCaptainVirgil',
       'Wolflord',
       'Tweak Beacon',
       'Cobra',
