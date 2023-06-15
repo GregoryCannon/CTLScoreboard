@@ -124,7 +124,7 @@ const divisionData = [
     players: [
       'Lily',
       'Gresiu',
-      'Insansio',
+      'Insaniso',
       'Micetro',
       'Wide',
       'Evesy',
@@ -181,7 +181,7 @@ const divisionData = [
     numAutoRelegate: 1,
     players: [
       'Pissarse',
-      'MGLCaptainVirgil',
+      'MLGCaptainVirgil',
       'Wolflord',
       'Tweak Beacon',
       'Cobra',
@@ -497,7 +497,7 @@ const restreamerRole = [
   "pissarse#0972",
   "mel0nsoda#1438",
   "evesy#1650",
-  "pumpyheart#9864",
+  "pumpyheart#0",
   "RyenwithanE#5674",
   "AL#2371",
   "AlexS#9305",
