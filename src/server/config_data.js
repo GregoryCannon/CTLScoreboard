@@ -357,16 +357,16 @@ const divisionData = [
 ];
 
 const adminRole = [
-  "GregBoomCannon#4087",
+  "gregboomcannon#0",
   "moodeuce#0",
   "kingsman36#0",
-  "Tugi#7004",
+  "tugi#0",
   "blargmeister#0",
   "nikvo#0",
   "chobge#0",
   "chillalla#0",
-  "FrenchiestFrie#9778",
-  "SnowLilyx#0365",
+  "frenchiestfrie#0",
+  "snowlilyx#0",
 ];
 
 const restreamerRole = [
@@ -441,7 +441,7 @@ const restreamerRole = [
 "Flashmonger#7095",
 "foiledthrice#8009",
 "Foryst#0131",
-"FrenchiestFrie#9778",
+"frenchiestfrie#0",
 "frodododo#8283",
 "Gabriel B#0072",
 "GeoWolf77#3075",
@@ -523,7 +523,7 @@ const restreamerRole = [
 "NeutrisicAcid#9557",
 "Nevanator2005#7984",
 "night#4546",
-"nikvo#1021"
+"nikvo#0"
 "NinjaOfNinjas5#4697",
 "NNNNNNNNNNNNNN#2430",
 "notzempro#0",
