@@ -370,7 +370,6 @@ const adminRole = [
 ];
 
 const restreamerRole = [
-  
 "＊Chong#8809",
 "<just_wobert>#8844",
 "1231231234#1231",
@@ -523,7 +522,7 @@ const restreamerRole = [
 "NeutrisicAcid#9557",
 "Nevanator2005#7984",
 "night#4546",
-"nikvo#0"
+"nikvo#0",
 "NinjaOfNinjas5#4697",
 "NNNNNNNNNNNNNN#2430",
 "notzempro#0",
