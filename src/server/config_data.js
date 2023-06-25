@@ -562,6 +562,7 @@ const restreamerRole = [
 "Scamper9#6772",
 "scoopman#0111",
 "Semilogo777#0302",
+"sidnev#0",
 "sirmaser#0",
 "sixfour#0130",
 "skiplogic#9125",
