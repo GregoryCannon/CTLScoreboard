@@ -441,7 +441,7 @@ const restreamerRole = [
 "foiledthrice#8009",
 "Foryst#0131",
 "frenchiestfrie#0",
-"frodododo#8283",
+"frodododo#0",
 "gabrielbondon#0",
 "GeoWolf77#3075",
 "gerhard_adler#8867",
