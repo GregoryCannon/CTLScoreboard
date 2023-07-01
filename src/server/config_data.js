@@ -400,7 +400,7 @@ const restreamerRole = [
 "blargmeister#0",
 "Bowser Tb#2424",
 "boxie3210#3078",
-"Burritodad#0854",
+"burritodad#0",
 "Careless#3403",
 "cchristm#0",
 "c-dubs#2871",
