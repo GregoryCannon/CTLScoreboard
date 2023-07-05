@@ -154,46 +154,46 @@ function calculateStandingsForInvalidDivisions(matches, penaltyPoints) {
   return finalStandings;
 }
 
-/** Start marking matches as corrupted from newest to oldest until the standings compute properly */
-function invalidateCorruptedData() {
-  logger.log("Starting emergency de-corruption");
-  invalidateCacheForAllDivisions();
-  refreshCachedStandings(succeeded => {
-    if (succeeded) {
-      // On success, quit
-      logger.log("Successfully de-corrupted the dataset!");
-      return true;
-    } else {
-      getValidMatches(function(e, matches) {
-        if (matches.length == 0) {
-          // On fail and no valid matches, this is the doomsday case. Lord knows what could get the db here.
-          return false;
-        }
+// /** Start marking matches as corrupted from newest to oldest until the standings compute properly */
+// function invalidateCorruptedData() {
+//   logger.log("Starting emergency de-corruption");
+//   invalidateCacheForAllDivisions();
+//   refreshCachedStandings(succeeded => {
+//     if (succeeded) {
+//       // On success, quit
+//       logger.log("Successfully de-corrupted the dataset!");
+//       return true;
+//     } else {
+//       getValidMatches(function(e, matches) {
+//         if (matches.length == 0) {
+//           // On fail and no valid matches, this is the doomsday case. Lord knows what could get the db here.
+//           return false;
+//         }
 
-        // On fail and some matches left, mark the first as corrupted and recurse
-        const newestMatch = matches[matches.length - 1];
-        const idOnlyBody = { _id: newestMatch._id };
-        matchListDb.update(idOnlyBody, { $set: { corrupted: true } }, function(
-          err,
-          doc
-        ) {
-          if (err) {
-            logger.log(
-              "Failed to mark match as corrupted:",
-              newestMatch,
-              "\nREASON:",
-              err
-            );
-          } else {
-            logger.log("Marked match as corrupted:", newestMatch);
-            // Recurse
-            return invalidateCorruptedData();
-          }
-        });
-      });
-    }
-  });
-}
+//         // On fail and some matches left, mark the first as corrupted and recurse
+//         const newestMatch = matches[matches.length - 1];
+//         const idOnlyBody = { _id: newestMatch._id };
+//         matchListDb.update(idOnlyBody, { $set: { corrupted: true } }, function(
+//           err,
+//           doc
+//         ) {
+//           if (err) {
+//             logger.log(
+//               "Failed to mark match as corrupted:",
+//               newestMatch,
+//               "\nREASON:",
+//               err
+//             );
+//           } else {
+//             logger.log("Marked match as corrupted:", newestMatch);
+//             // Recurse
+//             return invalidateCorruptedData();
+//           }
+//         });
+//       });
+//     }
+//   });
+// }
 
 /*
  -------------------
@@ -492,8 +492,9 @@ function initialSetup() {
     if (succeeded) {
       logger.log("Refreshed standings locally!");
     } else {
-      logger.log("!!!! Sev 0 - Data already corrupted on startup");
-      invalidateCorruptedData();
+      logger.log("!!!! Sev 0 - Data already corrupted on startup");f
+      // Don't run this routine because it causes more harm than good. Definitely better to fail-fast.
+      // invalidateCorruptedData();
     }
   });
 }
