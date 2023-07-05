@@ -625,9 +625,9 @@ function getMatchDateFormatted(match) {
     return "unknown date";
   }
   const matchMoment = moment.unix(match.match_date);
-  // 29/01/2023 18:30:00
+  // Jan 29 2023 18:30:00
   // return matchMoment.utc().format("MMM DD YYYY, HH:mm");
-  return matchMoment.utc().format("DD/MM/YYYY HH:mm:ss");
+  return matchMoment.utc().format("lll");
 }
 
 function getCompetition(match) {
