@@ -354,7 +354,7 @@ const divisionData = [
     ],
   },
   {
-    divisionName: "Bronze 22",
+    divisionName: "Bronze 23",
     competition: "tnp",
     oneMatchPerPair: false,
     numWinner: 0,
@@ -429,8 +429,7 @@ const restreamerRole = [
 "chobge#0",
 "Chris_Moulistanos#3251",
 "cmg444\\#4652",
-"Coal#6157",
-"cobra#7715",
+"coalbucket2#0",
 "CombatSlayer#1987",
 "Cwiiis#7703",
 "danvvv#0",
