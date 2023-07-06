@@ -500,6 +500,7 @@ const restreamerRole = [
 "Krypto#4388",
 "KunfusingPoke#6098",
 "lame mii#2430",
+"lanheg#0",
 "Lastarot#9931",
 "leaurax#0455",
 "liolio1230#9656",
