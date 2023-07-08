@@ -591,7 +591,7 @@ const restreamerRole = [
 "SodiumOverdose#8425",
 "Somalian#9396",
 "Świdr#0486",
-"TeaInRain#2072",
+"teainrain#0",
 "temphuibis#0",
 "TetrisMasterRafał#0598",
 "TetrisTime#8026",
@@ -626,7 +626,7 @@ const restreamerRole = [
 "Zabby#2618",
 "Zipley#7137",
 "Zxvye#5501",
-"zydras#9476",
+"zydras07#0",
 "ちどり#2119",
 "🇦🇷Joacozep#0518",
 
