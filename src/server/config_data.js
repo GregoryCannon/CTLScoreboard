@@ -254,6 +254,17 @@ const divisionData = [
     numAutoRelegate: 0,
     players: ["leeand_05", "Riogreywind", "Firedox", "Junior", "DocPi314"],
   },
+  {
+    divisionName: "Gold 19",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: ["Rory", "Berni", "Neutrisicacid", "Junior", "Elpailtem", "Firedox", "Tytris"],
+  },
 
   {
     divisionName: "Silver 18",
@@ -315,6 +326,22 @@ const divisionData = [
     // "Nyakozame#9823",
     // "Snowtris#4473"],
     players: ["LilSquibbles", "NeutrisicAcid", "Edward D", "Kingsman", "Marts"]
+  },
+  {
+    divisionName: "Silver 22",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    // "cchristm#6938",
+    // "Marts#6845",
+    // "Burritodad#0854",
+    // "Nyakozame#9823",
+    // "Snowtris#4473"],
+    players: ["Kingsman", "Marts", "Aoife", "Nao", "CTWCVince", "Suds", "Tacomom"]
   },
 
   {
