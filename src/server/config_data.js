@@ -256,6 +256,23 @@ const divisionData = [
       "XXBalt"
     ],
   },
+  {
+    divisionName: "Bronze 24",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "vlad_maksimum",
+      "stijn",
+      "3enon",
+      "meltedplague",
+      "drfuzzman"
+    ],
+  },
 
   {
     divisionName: "Beginner 15",
