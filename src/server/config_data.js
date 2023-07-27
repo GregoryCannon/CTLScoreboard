@@ -368,7 +368,7 @@ const restreamerRole = [
 "DrKn0ckers#9860",
 "eliwa#0",
 "ElleryStacks#4747",
-"Elpailtem#2506",
+"elpailtem#0",
 "Emptyeye#7326",
 "EricICX#6985",
 "evesy#1650",
