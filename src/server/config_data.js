@@ -237,6 +237,22 @@ const divisionData = [
     // "Snowtris#4473"],
     players: ["Kingsman", "Marts", "Aoife", "Nao", "CTWCVince", "Suds", "Tacomom"]
   },
+  {
+    divisionName: "Silver 23",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    // "cchristm#6938",
+    // "Marts#6845",
+    // "Burritodad#0854",
+    // "Nyakozame#9823",
+    // "Snowtris#4473"],
+    players: ["hunn14", "Odrachess", "marts", "burritodad", "Kingsman"]
+  },
 
   {
     divisionName: "Bronze 23",
@@ -288,6 +304,21 @@ const divisionData = [
       "Bacon382ttv",
       "TetroMonarch",
       "Xarexus"
+    ],
+  },
+  {
+    divisionName: "Beginner 16",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "liptoneq196",
+      "Milly",
+      "Crinkle"
     ],
   },
 
