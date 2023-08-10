@@ -487,7 +487,7 @@ const restreamerRole = [
 "nack323#5273",
 "NDDK#8648",
 "NerDzzzzz#8658",
-"NeutrisicAcid#9557",
+"neutrisicacid#0",
 "Nevanator2005#7984",
 "night#4546",
 "nikvo#0",
