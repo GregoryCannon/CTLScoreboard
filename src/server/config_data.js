@@ -7,7 +7,7 @@ const divisionData = [
     numPrizeMoney: 1,
     numAutoPromo: 0,
     numPlayoffPromo: 0,
-    numPlayoffRelegate: 2,
+    numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
       'JERPIDUDE',
@@ -26,7 +26,7 @@ const divisionData = [
     numPrizeMoney: 1,
     numAutoPromo: 0,
     numPlayoffPromo: 0,
-    numPlayoffRelegate: 2,
+    numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
       'SODIUMOVERDOSE',
@@ -45,7 +45,7 @@ const divisionData = [
     numPrizeMoney: 1,
     numAutoPromo: 0,
     numPlayoffPromo: 0,
-    numPlayoffRelegate: 2,
+    numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
       'KUNFUSINGPOKE',
