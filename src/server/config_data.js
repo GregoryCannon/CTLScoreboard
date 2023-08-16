@@ -219,10 +219,22 @@ const divisionData = [
     oneMatchPerPair: false,
     numWinner: 0,
     numAutoPromo: 1,
-    numPlayoffPromo: 0,
+    numPlayoffPromo: 1,
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: ["Rory", "Berni", "Neutrisicacid", "Junior", "Elpailtem", "Firedox", "Tytris"],
+  },
+  {
+    divisionName: "Gold 20",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    // players: ["Snowytetris", "Edward D", ""],
+    players: ["Leeand", "Tourist", "Riogreywind", "Tytris", "itgbalbar", "Firedox"],
   },
 
   {
@@ -291,6 +303,24 @@ const divisionData = [
       "3enon",
       "meltedplague",
       "drfuzzman"
+    ],
+  },
+  {
+    divisionName: "Bronze 25",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "Snowytetris",
+      "Edward D",
+      "Xarexus",
+      "willyb2213",
+      "maedhros",
+      "yeehaw"
     ],
   },
 
