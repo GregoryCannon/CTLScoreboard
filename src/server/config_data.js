@@ -269,6 +269,22 @@ const divisionData = [
     // "Snowtris#4473"],
     players: ["hunn14", "Odrachess", "marts", "burritodad", "Kingsman"]
   },
+  {
+    divisionName: "Silver 24",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    // "cchristm#6938",
+    // "Marts#6845",
+    // "Burritodad#0854",
+    // "Nyakozame#9823",
+    // "Snowtris#4473"],
+    players: ["marts", "vlad_maksimum", "hunn14", "kingsman", "pepsiman"]
+  },
 
   {
     divisionName: "Bronze 23",
