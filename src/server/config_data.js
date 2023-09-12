@@ -400,7 +400,6 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 0,
     players: [
-      "Milly",
       "snowgolfgal",
       "coverdales4",
       "liptoneq303",
