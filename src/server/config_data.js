@@ -339,6 +339,24 @@ const divisionData = [
       "yeehaw"
     ],
   },
+  {
+    divisionName: "Bronze 26",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "Tacomom",
+      "Zenon",
+      "CupOfJoe",
+      "crinkle",
+      "Wobert",
+      "Skai"
+    ],
+  },
 
   {
     divisionName: "Beginner 15",
@@ -369,6 +387,23 @@ const divisionData = [
       "liptoneq196",
       "Milly",
       "Crinkle",
+      "Sahrelli"
+    ],
+  },
+  {
+    divisionName: "Beginner 17",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "Milly",
+      "snowgolfgal",
+      "coverdales4",
+      "liptoneq303",
       "Sahrelli"
     ],
   },
