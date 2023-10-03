@@ -213,61 +213,17 @@ const divisionData = [
   },
 
   {
-    divisionName: "Gold 19",
+    divisionName: "Gold 21",
     competition: "tnp",
     oneMatchPerPair: false,
     numWinner: 0,
     numAutoPromo: 1,
     numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: ["Rory", "Berni", "Neutrisicacid", "Junior", "Elpailtem", "Firedox", "Tytris"],
-  },
-  {
-    divisionName: "Gold 20",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    // players: ["Snowytetris", "Edward D", ""],
-    players: ["Leeand", "Tourist", "Riogreywind", "Tytris", "itgbalbar", "Firedox"],
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 1,
+    players: ["zohassadar", "nyakozame", "odrachess", "leeand", "torbith", "wolflord"]
   },
 
-  {
-    divisionName: "Silver 22",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    // "cchristm#6938",
-    // "Marts#6845",
-    // "Burritodad#0854",
-    // "Nyakozame#9823",
-    // "Snowtris#4473"],
-    players: ["Kingsman", "Marts", "Aoife", "Nao", "CTWCVince", "Suds", "Tacomom"]
-  },
-  {
-    divisionName: "Silver 23",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    // "cchristm#6938",
-    // "Marts#6845",
-    // "Burritodad#0854",
-    // "Nyakozame#9823",
-    // "Snowtris#4473"],
-    players: ["hunn14", "Odrachess", "marts", "burritodad", "Kingsman"]
-  },
   {
     divisionName: "Silver 24",
     competition: "tnp",
@@ -277,67 +233,20 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
-    // "cchristm#6938",
-    // "Marts#6845",
-    // "Burritodad#0854",
-    // "Nyakozame#9823",
-    // "Snowtris#4473"],
     players: ["marts", "vlad_maksimum", "hunn14", "kingsman", "pepsiman"]
   },
+  {
+    divisionName: "Silver 25",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: ["Lapis Lazuli", "maedhros", "kingsman", "tomellosoulman", "cchristm"]
+  },
 
-  {
-    divisionName: "Bronze 23",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "Roborock",
-      "Skai",
-      "Ard",
-      "Snowtris",
-      "Burritodad",
-      "XXBalt"
-    ],
-  },
-  {
-    divisionName: "Bronze 24",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "vlad_maksimum",
-      "stijn",
-      "3enon",
-      "meltedplague",
-      "drfuzzman"
-    ],
-  },
-  {
-    divisionName: "Bronze 25",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "Snowytetris",
-      "Edward D",
-      "Xarexus",
-      "willyb2213",
-      "maedhros",
-      "yeehaw"
-    ],
-  },
   {
     divisionName: "Bronze 26",
     competition: "tnp",
@@ -358,38 +267,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Beginner 15",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "Sawdeth Ternius",
-      "Bacon382ttv",
-      "TetroMonarch",
-      "Xarexus"
-    ],
-  },
-  {
-    divisionName: "Beginner 16",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "liptoneq196",
-      "Milly",
-      "Crinkle",
-      "Sahrelli"
-    ],
-  },
-  {
     divisionName: "Beginner 17",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -403,6 +280,23 @@ const divisionData = [
       "coverdales4",
       "liptoneq303",
       "Sahrelli"
+    ],
+  },
+  {
+    divisionName: "Beginner 18",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "coverdales4",
+      "kimithewitch",
+      "ibelchi",
+      "temphuibis",
+      "krazysickgamer"
     ],
   },
 
