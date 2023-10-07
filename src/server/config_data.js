@@ -561,6 +561,7 @@ const restreamerRole = [
 "zydras07#0",
 "ちどり#2119",
 "🇦🇷Joacozep#0518",
+"bunnyboing#0"
 
 ];
 
