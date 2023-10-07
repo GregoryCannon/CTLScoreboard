@@ -384,6 +384,7 @@ const restreamerRole = [
 "evesy#1650",
 "Felinho#7580",
 "Fidhapre#9453",
+"firedox#0",
 "Flashmonger#7095",
 "foiledthrice#8009",
 "Foryst#0131",
