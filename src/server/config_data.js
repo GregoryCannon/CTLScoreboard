@@ -265,6 +265,41 @@ const divisionData = [
       "Skai"
     ],
   },
+  {
+    divisionName: "Bronze 27",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "Skai",
+      "wdsubia",
+      "Yeehaw",
+      "crinkle",
+      "b0rkedbear",
+      "Snowy"
+    ],
+  },
+  {
+    divisionName: "Bronze 28",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "Meltedplague",
+      "Wobert",
+      "Richard Wolf VI",
+      "liptoneq303",
+      "temphuibis"
+    ],
+  },
 
   {
     divisionName: "Beginner 17",
