@@ -246,6 +246,17 @@ const divisionData = [
     numAutoRelegate: 0,
     players: ["Lapis Lazuli", "maedhros", "kingsman", "tomellosoulman", "cchristm"]
   },
+  {
+    divisionName: "Silver 26",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: ["Tacomom", "Marts", "Burritodad", "Tomellosoulman", "Maedhros", "Lapis Lazuli"]
+  },
 
   {
     divisionName: "Bronze 26",
@@ -298,6 +309,25 @@ const divisionData = [
       "Richard Wolf VI",
       "liptoneq303",
       "temphuibis"
+    ],
+  },
+  {
+    divisionName: "Bronze 29",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 2,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "doom338",
+      "cupofjosiah",
+      "liptoneq",
+      "zenon",
+      "billymac",
+      "porkramen",
+      "snowytetris"
     ],
   },
 
