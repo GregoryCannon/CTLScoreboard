@@ -255,7 +255,7 @@ const divisionData = [
     numPlayoffPromo: 0,
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
-    players: ["Tacomom", "Marts", "Burritodad", "Tomellosoulman", "Maedhros", "Lapis Lazuli"]
+    players: ["zenon", "Tacomom", "Marts", "Burritodad", "Tomellosoulman", "Maedhros", "Lapis Lazuli"]
   },
 
   {
@@ -324,7 +324,6 @@ const divisionData = [
       "doom338",
       "cupofjosiah",
       "liptoneq",
-      "zenon",
       "billymac",
       "porkramen",
       "snowytetris"
