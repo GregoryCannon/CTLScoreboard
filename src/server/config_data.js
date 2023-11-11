@@ -29,7 +29,7 @@ const divisionData = [
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
-      'Chillala',
+      'Chiller',
       'MelHK',
       'iBall',
       'KunfusingPoke',
