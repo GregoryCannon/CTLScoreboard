@@ -266,7 +266,7 @@ const divisionData = [
     numAutoPromo: 2,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 1,
-    numAutoRelegate: 1,
+    numAutoRelegate: 0,
     players: ["vlad_maksimum", "eradach2006", "firedox", "kingsman", "sillyshark123", "zohassadar", "junior"]
   },
 
