@@ -258,6 +258,17 @@ const divisionData = [
     numAutoRelegate: 1,
     players: ["zohassadar", "nyakozame", "odrachess", "leeand", "torbith", "wolflord"]
   },
+  {
+    divisionName: "Gold 22",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 2,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 1,
+    players: ["vlad_maksimum", "eradach2006", "firedox", "kingsman", "sillyshark123", "zohassadar", "junior"]
+  },
 
   {
     divisionName: "Silver 24",
@@ -396,6 +407,23 @@ const divisionData = [
       "ibelchi",
       "temphuibis",
       "krazysickgamer"
+    ],
+  },
+  {
+    divisionName: "Beginner 19",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "coverdales4",
+      "floatingdogs",
+      "krazysickgamer",
+      "iplayclassictetris",
+      "winterra"
     ],
   },
 
