@@ -692,7 +692,8 @@ const restreamerRole = [
 "bunnyboing#0",
 "hunn14#0",
 "catsugiri#0",
-"meltedplague856#0"
+"meltedplague856#0",
+"cmcajaba#0"
 
 ];
 
