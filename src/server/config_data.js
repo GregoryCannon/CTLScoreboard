@@ -434,6 +434,7 @@ const adminRole = [
   "tugi#0",
   "notzempro#0",
   "pkric#0",
+  "danvvv#0",
   "nikvo#0",
   "chobge#0",
   "chillalla#0",
