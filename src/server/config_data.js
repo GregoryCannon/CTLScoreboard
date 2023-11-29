@@ -109,7 +109,6 @@ const divisionData = [
       'Anicomi',
       'Wide',
       'IanKeith',
-      'Nek0',
       'Draco',
       'Evesy',
       'Ansel',
@@ -148,7 +147,8 @@ const divisionData = [
       'RobinTetris',
       'Scamper',
       'ID Kirby',
-      'Mecex',
+      'Nek0',
+      
     ],
   },
 
