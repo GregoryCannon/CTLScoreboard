@@ -372,6 +372,23 @@ const divisionData = [
       "snowytetris"
     ],
   },
+  {
+    divisionName: "Bronze 30",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "just_wobert",
+      "Skai",
+      "winterra",
+      "cmcajaba",
+      "frenchiestfrie"
+    ],
+  },
 
   {
     divisionName: "Beginner 17",
