@@ -385,7 +385,6 @@ const divisionData = [
       "just_wobert",
       "Skai",
       "winterra",
-      "cmcajaba",
       "frenchiestfrie"
     ],
   },
