@@ -300,6 +300,39 @@ const divisionData = [
     numAutoRelegate: 0,
     players: ["zenon", "Tacomom", "Marts", "Burritodad", "Tomellosoulman", "Maedhros", "Lapis Lazuli"]
   },
+  {
+    divisionName: "Silver 27",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: ["snowytetris", "arbaro", "skai", "porkramen", "tomellosoulman"]
+  },
+  {
+    divisionName: "Silver 28",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: ["zenon", "suds1821", "tacomom", "crinkle", "temphuibis"]
+  },
+  {
+    divisionName: "Silver 29",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: ["marts", "wdsubia", "toka", "billymac", "maedhros"]
+  },
 
   {
     divisionName: "Bronze 26",
@@ -437,6 +470,22 @@ const divisionData = [
       "krazysickgamer",
       "iplayclassictetris",
       "winterra"
+    ],
+  },
+  {
+    divisionName: "Beginner 20",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "Briantheone",
+      "sahrelli",
+      "guildedlizard",
+      "coverdales4"
     ],
   },
 
