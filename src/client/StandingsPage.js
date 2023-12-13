@@ -22,7 +22,7 @@ class StandingsPage extends Component {
 
   getPages() {
     let pages = [];
-    const PAGE_SIZES = [2, 3, 3, 4, 4, 4, 5];
+    const PAGE_SIZES = [2, 3, 3, 4, 4, 4, 5, 5, 5, 5];
     const divData =
       this.state.showCompeition === ""
         ? this.props.divisionData
