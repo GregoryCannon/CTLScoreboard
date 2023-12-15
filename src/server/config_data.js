@@ -245,17 +245,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Gold 21",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    players: ["zohassadar", "nyakozame", "odrachess", "leeand", "torbith", "wolflord"]
-  },
-  {
     divisionName: "Gold 22",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -267,39 +256,6 @@ const divisionData = [
     players: ["vlad_maksimum", "eradach2006", "firedox", "kingsman", "sillyshark123", "zohassadar", "junior"]
   },
 
-  {
-    divisionName: "Silver 24",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: ["marts", "vlad_maksimum", "hunn14", "kingsman", "pepsiman"]
-  },
-  {
-    divisionName: "Silver 25",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: ["Lapis Lazuli", "maedhros", "kingsman", "tomellosoulman", "cchristm"]
-  },
-  {
-    divisionName: "Silver 26",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 2,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: ["zenon", "Tacomom", "Marts", "Burritodad", "Tomellosoulman", "Maedhros", "Lapis Lazuli"]
-  },
   {
     divisionName: "Silver 27",
     competition: "tnp",
@@ -335,77 +291,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Bronze 26",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "Tacomom",
-      "Zenon",
-      "CupOfJoe",
-      "crinkle",
-      "Wobert",
-      "Skai"
-    ],
-  },
-  {
-    divisionName: "Bronze 27",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "Skai",
-      "wdsubia",
-      "Yeehaw",
-      "crinkle",
-      "b0rkedbear",
-      "Snowy"
-    ],
-  },
-  {
-    divisionName: "Bronze 28",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "Meltedplague",
-      "Wobert",
-      "Richard Wolf VI",
-      "liptoneq303",
-      "temphuibis"
-    ],
-  },
-  {
-    divisionName: "Bronze 29",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 2,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "doom338",
-      "cupofjosiah",
-      "liptoneq",
-      "billymac",
-      "porkramen",
-      "snowytetris"
-    ],
-  },
-  {
     divisionName: "Bronze 30",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -422,56 +307,6 @@ const divisionData = [
     ],
   },
 
-  {
-    divisionName: "Beginner 17",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "snowgolfgal",
-      "coverdales4",
-      "liptoneq303",
-      "Sahrelli"
-    ],
-  },
-  {
-    divisionName: "Beginner 18",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "coverdales4",
-      "kimithewitch",
-      "ibelchi",
-      "temphuibis",
-      "krazysickgamer"
-    ],
-  },
-  {
-    divisionName: "Beginner 19",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "coverdales4",
-      "floatingdogs",
-      "krazysickgamer",
-      "iplayclassictetris",
-      "winterra"
-    ],
-  },
   {
     divisionName: "Beginner 20",
     competition: "tnp",
