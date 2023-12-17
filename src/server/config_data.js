@@ -143,7 +143,6 @@ const divisionData = [
     numAutoRelegate: 0,
     players: [
       'TimmyKim',
-      'Mleczak',
       'RobinTetris',
       'Scamper',
       'ID Kirby',
