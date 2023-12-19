@@ -254,6 +254,17 @@ const divisionData = [
     numAutoRelegate: 0,
     players: ["vlad_maksimum", "eradach2006", "firedox", "kingsman", "sillyshark123", "zohassadar", "junior"]
   },
+  {
+    divisionName: "Gold 23",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 2,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: ["burritodad", "lapis lazuli", "sauce", "kingsman", "aj", "junior"]
+  },
 
   {
     divisionName: "Silver 27",
@@ -287,6 +298,17 @@ const divisionData = [
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: ["marts", "wdsubia", "toka", "billymac", "maedhros"]
+  },
+  {
+    divisionName: "Silver 30",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: ["frenchiestfrie", "r3io4mf", "snowytetris", "marts", "eradach"]
   },
 
   {
