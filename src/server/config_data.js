@@ -256,39 +256,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Silver 27",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: ["snowytetris", "arbaro", "skai", "porkramen", "tomellosoulman"]
-  },
-  {
-    divisionName: "Silver 28",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: ["zenon", "suds1821", "tacomom", "crinkle", "temphuibis"]
-  },
-  {
-    divisionName: "Silver 29",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: ["marts", "wdsubia", "toka", "billymac", "maedhros"]
-  },
-  {
     divisionName: "Silver 30",
     competition: "tnp",
     oneMatchPerPair: false,
