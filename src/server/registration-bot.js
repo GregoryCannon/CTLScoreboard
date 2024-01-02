@@ -217,6 +217,11 @@ class RegistrationAndMatchBot {
               delete DIVISIONS[key];
             }
           }
+          for (const key of oldDivKeys) {
+            if (!Object.keys(DIVISIONS).includes(key)) {
+              DIVSIONS[key] = [];
+            }
+          }
         } catch (error) {
           console.log(error);
           console.error("Failed to parse player list JSON");
