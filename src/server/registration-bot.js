@@ -219,7 +219,7 @@ class RegistrationAndMatchBot {
           }
           for (const key of oldDivKeys) {
             if (!Object.keys(DIVISIONS).includes(key)) {
-              DIVSIONS[key] = [];
+              DIVISIONS[key] = [];
             }
           }
         } catch (error) {
