@@ -255,7 +255,7 @@ const divisionData = [
     players: ["burritodad", "lapis lazuli", "sauce", "kingsman", "aj", "junior"]
   },
   {
-    divisionName: "Gold 23",
+    divisionName: "Gold 24",
     competition: "tnp",
     oneMatchPerPair: false,
     numWinner: 0,
