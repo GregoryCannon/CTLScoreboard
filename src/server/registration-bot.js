@@ -340,7 +340,7 @@ class RegistrationAndMatchBot {
 
       forEachReactionUser(message, async (user) => {
         const formattedUser = formatUser(user);
-        if (getExistingDivision(formattedUser) == null) {
+        if (getExistingDivision(formattedUser) == null || getExistingDivision(formattedUser) == 'VeryLarge' {
           // Register the player
           await registerUser(divisionName, formattedUser);
 
