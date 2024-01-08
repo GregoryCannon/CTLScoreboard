@@ -380,7 +380,8 @@ const divisionData = [
       "zenon",
       "tacomom",
       "porkramen",
-      "gekki"
+      "gekki",
+      "toka"
     ]
   }
 
