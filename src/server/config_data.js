@@ -347,7 +347,7 @@ const divisionData = [
   },
 
   {
-    divisionName: "VeryBig",
+    divisionName: "VeryLarge",
     competition: "tnp",
     oneMatchPerPair: false,
     numWinner: 1,
@@ -357,6 +357,7 @@ const divisionData = [
     players: [
       "torbith",
       "crinkle",
+      "temphuibis",
       "wobert",
       "wolflord2005",
       "skai",
