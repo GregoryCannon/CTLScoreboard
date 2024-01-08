@@ -372,7 +372,6 @@ const divisionData = [
       "briantheone",
       "arbaro",
       "tobs",
-      "kocchira",
       "marts",
       "coverdales4",
       "sauce",
@@ -383,7 +382,8 @@ const divisionData = [
       "porkramen",
       "gekki",
       "toka",
-      "winterra"
+      "winterra",
+      "ethan1405"
     ]
   }
 
