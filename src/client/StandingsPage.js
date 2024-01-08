@@ -27,7 +27,7 @@ class StandingsPage extends Component {
       this.state.showCompetition === ""
         ? this.props.divisionData
         : this.props.divisionData.filter(
-            div => this.filterDivisions(this.state.showCompetition, div)
+            div => this.filterDivisions(this.state.showCompetition, div.competition)
           );
 
     let i = 0;
