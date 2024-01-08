@@ -346,6 +346,43 @@ const divisionData = [
     ],
   },
 
+  {
+    divisionName: "VeryBig",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    players: [
+      "torbith",
+      "crinkle",
+      "wobert",
+      "wolflord2005",
+      "skai",
+      "liptoneq196",
+      "r3io4mf",
+      "billymac",
+      "snowytetris",
+      "suds1821",
+      "chefgobes",
+      "frenchiestfrie",
+      "briantheone",
+      "arbaro",
+      "tobs",
+      "kocchira",
+      "marts",
+      "coverdales4",
+      "sauce",
+      "nyakozame",
+      "burritodad",
+      "zenon",
+      "tacomom",
+      "porkramen",
+      "gekki"
+    ]
+  }
+
 ];
 
 const adminRole = [
