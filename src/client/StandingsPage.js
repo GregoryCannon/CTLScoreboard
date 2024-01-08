@@ -14,7 +14,7 @@ class StandingsPage extends Component {
         divisionName: "",
         playerName: ""
       },
-      showCompeition: ""
+      showCompetition: ""
     };
 
     this.setExpandedPlayer = this.setExpandedPlayer.bind(this);
@@ -24,10 +24,10 @@ class StandingsPage extends Component {
     let pages = [];
     const PAGE_SIZES = [2, 3, 3, 4, 4, 4, 5, 5, 5, 5];
     const divData =
-      this.state.showCompeition === ""
+      this.state.showCompetition === ""
         ? this.props.divisionData
         : this.props.divisionData.filter(
-            div => div.competition === this.state.showCompeition
+            div => this.filterDivisions(this.state.showCompetition, div.competition)
           );
 
     let i = 0;
@@ -37,6 +37,11 @@ class StandingsPage extends Component {
     }
 
     return pages;
+  }
+
+  filterDivisions(competition, division) {
+    if (competition === "verylarge") return division.divisionName === "VeryLarge";
+    return division.competition === competition;
   }
 
   setExpandedPlayer(playerName, divisionName) {
@@ -71,6 +76,12 @@ class StandingsPage extends Component {
             onClick={() => this.setShowCompetition("tnp")}
           >
             TNP
+          </button>
+          <button
+            className="Nav-button"
+            onClick={() => this.setShowCompetition("verylarge")}
+          >
+            VeryLarge
           </button>
           <button
             className="Nav-button"
