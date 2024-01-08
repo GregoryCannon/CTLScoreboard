@@ -142,7 +142,7 @@ class DivisionRow extends Component {
             <div
               className="Expandible-content"
               style={{
-                maxHeight: this.props.isOpen ? "30vh" : "0",
+                maxHeight: this.props.isOpen ? "60vh" : "0",
                 borderWidth: 0,
                 borderColor: this.props.isOpen ? "#888f" : "#8880"
               }}
