@@ -366,6 +366,7 @@ const divisionData = [
       "billymac",
       "snowytetris",
       "suds1821",
+      "gildedlizard",
       "chefgobes",
       "frenchiestfrie",
       "briantheone",
@@ -381,7 +382,8 @@ const divisionData = [
       "tacomom",
       "porkramen",
       "gekki",
-      "toka"
+      "toka",
+      "winterra"
     ]
   }
 
