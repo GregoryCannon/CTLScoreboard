@@ -273,6 +273,24 @@ const divisionData = [
       "wolflord"
     ]
   },
+  {
+    divisionName: "Gold 25",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "skai",
+      "aj",
+      "kingsman",
+      "ryenwithane",
+      "zavier7763",
+      "burritodad"
+    ]
+  },
 
   {
     divisionName: "Silver 30",
@@ -343,6 +361,24 @@ const divisionData = [
       "sahrelli",
       "gildedlizard",
       "coverdales4"
+    ],
+  },
+  {
+    divisionName: "Beginner 21",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "jguy8675",
+      "cameron25421",
+      "gildedlizard",
+      "ian w",
+      "mrawe",
+      "hiphyemac"
     ],
   },
 
