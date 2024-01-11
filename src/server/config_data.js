@@ -418,7 +418,6 @@ const divisionData = [
       "porkramen",
       "gekki",
       "toka",
-      "winterra",
       "ethan1405"
     ]
   }
