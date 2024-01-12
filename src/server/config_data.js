@@ -386,6 +386,7 @@ const adminRole = [
   "nikvo#0",
   "chobge#0",
   "chillalla#0",
+  "richardwolfvi#0",
   "frenchiestfrie#0",
   "snowlilyx#0",
 ];
