@@ -551,7 +551,6 @@ const restreamerRole = [
 "Nevanator2005#7984",
 "night#4546",
 "nikvo#0",
-"NinjaOfNinjas5#4697",
 "NNNNNNNNNNNNNN#2430",
 "notzempro#0",
 "odinn group mastubator#1009",
@@ -653,7 +652,8 @@ const restreamerRole = [
 "coverdales4#0",
 "timmykim915#0",
 "suds1821#0",
-"ethan1405#0"
+"ethan1405#0",
+"ninjaofninjas5#0"
 ];
 
 module.exports = {
