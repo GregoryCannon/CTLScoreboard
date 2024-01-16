@@ -292,6 +292,17 @@ const divisionData = [
     numAutoRelegate: 0,
     players: ["arbaro", "billymac", "frienchiestfrie", "maedhros", "snowytetris"]
   },
+  {
+    divisionName: "Silver 33",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: ["eradach", "marts", "suds", "tacomom", "winterra", "samantha", "snowytetris"]
+  },
 
   {
     divisionName: "Bronze 31",
@@ -311,6 +322,40 @@ const divisionData = [
       "cchristm",
       "falkite",
       "temphuibis"
+    ],
+  },
+  {
+    divisionName: "Bronze 32",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "boppy",
+      "liptoneq",
+      "coverdales",
+      "dylan297",
+      "sunx2d"
+    ],
+  },
+  {
+    divisionName: "Bronze 33",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "richard wolf vi",
+      "just_wobert",
+      "PLACEHOLDER",
+      "briantheone",
+      "ethanthoughts"
     ],
   },
 
