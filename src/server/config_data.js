@@ -353,7 +353,7 @@ const divisionData = [
     players: [
       "richard wolf vi",
       "just_wobert",
-      "PLACEHOLDER",
+      "kyradev",
       "briantheone",
       "ethanthoughts"
     ],
