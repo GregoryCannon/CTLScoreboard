@@ -377,6 +377,24 @@ const divisionData = [
       "hiphyemac"
     ],
   },
+  {
+    divisionName: "Beginner 22",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "lebozo1",
+      "plasmicat",
+      "silas",
+      "uqi",
+      "a_benz",
+      "komi"
+    ],
+  },
 
   {
     divisionName: "VeryLarge",
