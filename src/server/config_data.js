@@ -305,26 +305,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Bronze 31",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 2,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "tobs",
-      "winterra",
-      "liptoneq",
-      "ethan1405",
-      "kocchira",
-      "cchristm",
-      "falkite",
-      "temphuibis"
-    ],
-  },
-  {
     divisionName: "Bronze 32",
     competition: "tnp",
     oneMatchPerPair: false,
