@@ -360,24 +360,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Beginner 21",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "jguy8675",
-      "cameron25421",
-      "gildedlizard",
-      "ian w",
-      "mrawe",
-      "hiphyemac"
-    ],
-  },
-  {
     divisionName: "Beginner 22",
     competition: "tnp",
     oneMatchPerPair: false,

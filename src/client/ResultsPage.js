@@ -56,7 +56,7 @@ class ResultsPage extends Component {
               <th>Away Score</th>
               <th>Away</th>
               <th>Division</th>
-              <th>Compeition</th>
+              <th>Competition</th>
             </tr>
             {this.props.matchList
               .filter(match => {
