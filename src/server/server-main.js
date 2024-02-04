@@ -492,7 +492,7 @@ function initialSetup() {
     if (succeeded) {
       logger.log("Refreshed standings locally!");
     } else {
-      logger.log("!!!! Sev 0 - Data already corrupted on startup");f
+      logger.log("!!!! Sev 0 - Data already corrupted on startup");
       // Don't run this routine because it causes more harm than good. Definitely better to fail-fast.
       // invalidateCorruptedData();
     }
