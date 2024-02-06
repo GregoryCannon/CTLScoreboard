@@ -230,24 +230,6 @@ const divisionData = [
       "wolflord"
     ]
   },
-  {
-    divisionName: "Gold 25",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "skai",
-      "aj",
-      "kingsman",
-      "ryenwithane",
-      "zavier7763",
-      "burritodad"
-    ]
-  },
 
   {
     divisionName: "Silver 33",
