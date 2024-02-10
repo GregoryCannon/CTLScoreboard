@@ -145,7 +145,7 @@ const divisionData = [
     players: [
       'Akatu',
       'Gresiu',
-      'Iceblade',
+      'Ivory',
       'Manta7',
       'Mr. FAQ',
       'Tebanoku',
