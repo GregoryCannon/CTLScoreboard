@@ -210,26 +210,7 @@ const divisionData = [
       'TeainRain',
     ],
   },
-
-  {
-    divisionName: "Gold 24",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "crinkle",
-      "tomellosoulman",
-      "burritodad",
-      "wdsubia",
-      "drknockers",
-      "toka",
-      "wolflord"
-    ]
-  },
+  
   {
     divisionName: "Gold 26",
     competition: "tnp",
