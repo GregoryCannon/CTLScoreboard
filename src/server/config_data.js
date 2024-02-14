@@ -232,17 +232,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Silver 33",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: ["eradach", "marts", "suds", "tacomom", "winterra", "samantha", "snowytetris"]
-  },
-  {
     divisionName: "Silver 34",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -319,24 +308,6 @@ const divisionData = [
     ],
   },
 
-  {
-    divisionName: "Beginner 22",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "lebozo1",
-      "plasmicat",
-      "silas",
-      "uqi",
-      "a_benz",
-      "komi"
-    ],
-  },
   {
     divisionName: "Beginner 23",
     competition: "tnp",
