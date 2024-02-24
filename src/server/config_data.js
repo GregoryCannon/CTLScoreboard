@@ -640,6 +640,7 @@ const restreamerRole = [
 "Slayer69#3183",
 "Sleepy Maddy#5443",
 "Sleepy Samantha#8502",
+"sleebymaddy#0",
 "SodiumOverdose#8425",
 "Somalian#9396",
 "Świdr#0486",
