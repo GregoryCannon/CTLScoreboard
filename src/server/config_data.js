@@ -485,7 +485,7 @@ const restreamerRole = [
 "cwiiis#0",
 "danvvv#0",
 "DavidMichaelJ#5419",
-"Deewee#7730",
+"deewee7#0";
 "DerJockel#2282",
 "dhks0915#7525",
 "digginout#1394",
@@ -638,7 +638,6 @@ const restreamerRole = [
 "sixfour#0130",
 "skiplogic#9125",
 "Slayer69#3183",
-"Sleepy Maddy#5443",
 "Sleepy Samantha#8502",
 "sleebymaddy#0",
 "SodiumOverdose#8425",
