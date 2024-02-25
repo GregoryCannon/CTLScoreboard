@@ -268,24 +268,6 @@ const divisionData = [
       "richard wolf vi"
     ]
   },
-
-  {
-    divisionName: "Bronze 32",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "boppy",
-      "liptoneq",
-      "coverdales",
-      "dylan297",
-      "sunx2d"
-    ],
-  },
   
   {
     divisionName: "Bronze 34",
