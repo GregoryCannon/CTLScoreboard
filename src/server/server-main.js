@@ -246,6 +246,7 @@ function checkPreviousMatchHasSameTime(matches, winner, loser, time) {
     if (match.winner === winner && match.loser === loser) return true;
     if (match.loser === winner && match.winner === loser) return true;
   }
+  return false;
 }
 
 function getMatchAlreadyExistsErrorMessage(winner, loser, winnerHome) {
