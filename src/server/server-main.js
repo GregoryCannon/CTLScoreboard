@@ -238,6 +238,16 @@ function checkMatchAlreadyExists(matches, division, winner, loser, winnerHome) {
   return false;
 }
 
+function checkPreviousMatchHasSameTime(matches, winner, loser, time) {
+  for (let i = 0; i < matches.length; i++) {
+    const match = matches[i];
+    console.log(match);
+    if (match.match_date !== time) continue;
+    if (match.winner === winner && match.loser === loser) return true;
+    if (match.loser === winner && match.winner === loser) return true;
+  }
+}
+
 function getMatchAlreadyExistsErrorMessage(winner, loser, winnerHome) {
   return (
     "A match has already been reported between " +
@@ -316,6 +326,22 @@ app.post("/api/match-data", function(req, res) {
           newMatch.loser,
           newMatch.winner_home
         )
+      };
+      logger.logResponse("Report match", responseBody);
+      res.send(responseBody);
+      // function checkPreviousMatchHasSameTime(matches, winner, loser, time) {
+    } else if (
+      checkPreviousMatchHasSameTime(
+        matches,
+        newMatch.winner,
+        newMatch.loser,
+        newMatch.match_date
+      )
+    ) {
+      const responseBody = {
+        didSucceed: false,
+        errorMessage:
+          "Please make sure matches between the same two players have different match times."
       };
       logger.logResponse("Report match", responseBody);
       res.send(responseBody);
