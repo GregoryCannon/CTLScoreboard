@@ -268,6 +268,23 @@ const divisionData = [
       "richard wolf vi"
     ]
   },
+  {
+    divisionName: "Silver 35",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "maedhros", 
+      "larvistar", 
+      "sunx2d", 
+      "boppy", 
+      "burritodad"
+    ]
+  },
   
   {
     divisionName: "Bronze 34",
@@ -322,6 +339,23 @@ const divisionData = [
       "dazmmv",
       "saymyname", 
       "mrawe"]
+  },
+  {
+    divisionName: "Bronze 37",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 2,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "violet",
+      "equi", 
+      "just_wobert",
+      "kyradev", 
+      "gildedlizard",
+      "temphuibis"]
   },
 
   {
