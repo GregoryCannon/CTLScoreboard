@@ -653,6 +653,7 @@ const restreamerRole = [
 "w___i___d___e#0",
 "WhiteMonster#3552",
 "wike#3985",
+"winterra#0",
 "XaeL#6732",
 "xenoboots#0",
 "XXBALT#9718",
