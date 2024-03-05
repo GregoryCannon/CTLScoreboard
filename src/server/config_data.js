@@ -275,7 +275,7 @@ const divisionData = [
     numWinner: 0,
     numAutoPromo: 1,
     numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
+    numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
       "maedhros", 
@@ -355,6 +355,23 @@ const divisionData = [
       "mrawe",
       "lorli",
       "plasmicat",
+    ],
+  },
+  {
+    divisionName: "Beginner 25",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "enscalight",
+      "turtlerta",
+      "treepriest",
+      "mulletscarf",
+      "mr g",
     ],
   },
   
