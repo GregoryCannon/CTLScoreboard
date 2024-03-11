@@ -268,26 +268,6 @@ const divisionData = [
   },
   
   {
-    divisionName: "Bronze 34",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "yarno",
-      "tobs",
-      "ian w",
-      "ethanthoughts",
-      "saymyname",
-      "hiphyemac",
-      "falkite",
-      "komi"
-    ],
-  },
-  {
     divisionName: "Bronze 36",
     competition: "tnp",
     oneMatchPerPair: false,
