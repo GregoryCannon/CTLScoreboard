@@ -155,7 +155,7 @@ class ReportingPanel extends Component {
       winner_games: parseInt(this.winnerGamesInput.current.value, 10),
       loser_games: parseInt(this.loserGamesInput.current.value, 10),
       winner_home: this.state.winnerHome,
-      match_date: this.state.matchDate,
+      match_date: moment.utc(this.state.matchDate).unix(),
       report_date: moment().unix(),
       restreamer: this.props.discordIdentity.split("#")[0],
       vod_url: this.vodUrlInput.current.value
