@@ -12,7 +12,11 @@ class ReportingPanel extends Component {
       statusText: "",
       statusTextIsError: false,
       reportingDivision: configData.divisionData[0].divisionName,
-      winnerHome: ""
+      winnerHome: "",
+      matchDate: moment
+        .utc()
+        .toISOString()
+        .slice(0, 16)
     };
     this.divisionInput = React.createRef();
     this.winnerNameInput = React.createRef();
@@ -39,6 +43,21 @@ class ReportingPanel extends Component {
   changeWinnerHome(winnerHome) {
     this.setState({
       winnerHome: winnerHome
+    });
+  }
+
+  changeDate(date) {
+    this.setState({
+      matchDate: date
+    });
+  }
+
+  setDateToNow() {
+    this.setState({
+      matchDate: moment
+        .utc()
+        .toISOString()
+        .slice(0, 16)
     });
   }
 
@@ -136,7 +155,7 @@ class ReportingPanel extends Component {
       winner_games: parseInt(this.winnerGamesInput.current.value, 10),
       loser_games: parseInt(this.loserGamesInput.current.value, 10),
       winner_home: this.state.winnerHome,
-      match_date: moment.utc(this.datePickerInput.current.value).unix(),
+      match_date: this.state.matchDate,
       report_date: moment().unix(),
       restreamer: this.props.discordIdentity.split("#")[0],
       vod_url: this.vodUrlInput.current.value
@@ -291,7 +310,8 @@ class ReportingPanel extends Component {
                     <td>
                       <input
                         type="datetime-local"
-                        defaultValue={dateDefault}
+                        onChange={e => this.changeDate(e.target.value)}
+                        value={this.state.matchDate}
                         ref={this.datePickerInput}
                       />
                     </td>
@@ -321,6 +341,9 @@ class ReportingPanel extends Component {
           >
             {this.state.statusText}
           </p>
+          <button onClick={() => this.setDateToNow()} id="now-button">
+            Now
+          </button>
           <button onClick={this.submitClicked} id="submit-button">
             Submit
           </button>

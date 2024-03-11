@@ -34,6 +34,17 @@ select {
   text-align: center;
 }
 
+#now-button {
+  padding: 15px 20px;
+  border-radius: 8px;
+  background: #85878c;
+  color: white;
+  margin-top: 4px;
+  margin-bottom: 24px;
+  margin-right: 10px;
+  border: none;
+}
+
 #submit-button {
   padding: 15px 20px;
   background: red;
