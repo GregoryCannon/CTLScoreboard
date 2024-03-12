@@ -280,7 +280,7 @@ const divisionData = [
       "kocchira", 
       "snowytetris", 
       "yarno", 
-      "mikeflow42",
+      "mikeflo42",
       "marts",
       "zenon",
       "arbaro"
