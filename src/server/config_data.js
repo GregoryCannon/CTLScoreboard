@@ -266,6 +266,26 @@ const divisionData = [
       "burritodad"
     ]
   },
+  {
+    divisionName: "Silver 36",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "tacomom", 
+      "kocchira", 
+      "snowytetris", 
+      "yarno", 
+      "mikeflow42",
+      "marts",
+      "zenon",
+      "arbaro"
+    ]
+  },
   
   {
     divisionName: "Bronze 36",
@@ -333,6 +353,24 @@ const divisionData = [
       "treepriest",
       "mulletscarf",
       "mr g",
+    ],
+  },
+  {
+    divisionName: "Beginner 26",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "plasmicat",
+      "avriix",
+      "dyasalure",
+      "lorli",
+      "gamerz",
+      "goose"
     ],
   },
   
