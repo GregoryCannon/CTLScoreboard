@@ -99,3 +99,24 @@ select {
 .text-input-table tr {
   padding: 3px 0;
 }
+
+.highlighted {
+  /* background-color: #6a9eec; */
+  animation-duration: 500ms;
+  animation-name: fadeInOut;
+
+}
+
+@keyframes fadeInOut {
+  0% {
+    /* transform: rotate(0); */
+    background-color: white;
+  }
+  20% {
+    background-color: #bcd;
+  }
+  100% {
+    /* transform: rotate(360deg); */
+    background-color: white;
+  }
+}

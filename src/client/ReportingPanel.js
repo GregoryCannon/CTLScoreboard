@@ -16,7 +16,8 @@ class ReportingPanel extends Component {
       matchDate: moment
         .utc()
         .toISOString()
-        .slice(0, 16)
+        .slice(0, 16),
+      animationStart: moment()
     };
     this.divisionInput = React.createRef();
     this.winnerNameInput = React.createRef();
@@ -28,6 +29,16 @@ class ReportingPanel extends Component {
 
     this.changeReportingDivision = this.changeReportingDivision.bind(this);
     this.submitClicked = this.submitClicked.bind(this);
+  }
+
+  componentDidMount() {
+    setInterval(() => {
+      const animationClassSet = this.datePickerInput.current.className === "highlighted";
+      const animationTimePassed = moment().diff(this.state.animationStart) > 500;
+      if (animationClassSet && animationTimePassed) {
+        this.datePickerInput.current.className = ""
+      }
+    }, 1000);
   }
 
   changeReportingDivision(event) {
@@ -57,8 +68,10 @@ class ReportingPanel extends Component {
       matchDate: moment
         .utc()
         .toISOString()
-        .slice(0, 16)
+        .slice(0, 16),
+      animationStart: moment()
     });
+    this.datePickerInput.current.className = "highlighted";
   }
 
   getPlayerList() {
@@ -342,7 +355,7 @@ class ReportingPanel extends Component {
             {this.state.statusText}
           </p>
           <button onClick={() => this.setDateToNow()} id="now-button">
-            Now
+            Now!
           </button>
           <button onClick={this.submitClicked} id="submit-button">
             Submit
