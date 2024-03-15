@@ -323,22 +323,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Beginner 23",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "avriix",
-      "mrawe",
-      "lorli",
-      "plasmicat",
-    ],
-  },
-  {
     divisionName: "Beginner 25",
     competition: "tnp",
     oneMatchPerPair: false,
