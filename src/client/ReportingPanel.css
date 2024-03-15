@@ -37,12 +37,16 @@ select {
 #now-button {
   padding: 15px 20px;
   border-radius: 8px;
-  background: #85878c;
+  background: #3c3c3c;
   color: white;
   margin-top: 4px;
   margin-bottom: 24px;
   margin-right: 10px;
   border: none;
+}
+
+#now-button:hover {
+  background-color: #6d6d6d;
 }
 
 #submit-button {
@@ -53,6 +57,10 @@ select {
   margin-top: 4px;
   margin-bottom: 24px;
   border: none;
+}
+
+#submit-button:hover {
+  background: #f55;
 }
 
 #submit-button :disabled {
@@ -102,8 +110,11 @@ select {
 
 .highlighted {
   /* background-color: #6a9eec; */
-  animation-duration: 500ms;
-  animation-name: fadeInOut;
+  /* animation-duration: 500ms;
+  animation-name: fadeInOut; */
+  animation: 500ms linear fadeInOut;
+  --webkit-animation: 500ms linear fadeInOut;
+  background-color: white;
 
 }
 
