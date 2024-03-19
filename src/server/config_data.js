@@ -351,7 +351,7 @@ const divisionData = [
     numAutoRelegate: 0,
     players: [
       "tomellosoulman",
-      "iuqe", 
+      "equi", 
       "temphuibis",
       "gildedlizard", 
       "just_wobert"
