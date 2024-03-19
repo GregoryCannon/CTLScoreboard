@@ -228,6 +228,25 @@ const divisionData = [
       "odrachess"
     ]
   },
+  {
+    divisionName: "Gold 28",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "skai",
+      "jedi evan",
+      "rinko shirokane",
+      "eradach", 
+      "kingsman",
+      "suds1821",
+      "r3io4mf"
+    ]
+  },
 
   {
     divisionName: "Silver 34",
@@ -320,6 +339,40 @@ const divisionData = [
       "kyradev", 
       "gildedlizard",
       "temphuibis"]
+  },
+  {
+    divisionName: "Bronze 38",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "tomellosoulman",
+      "iuqe", 
+      "temphuibis",
+      "gildedlizard", 
+      "just_wobert"
+    ]
+  },
+  {
+    divisionName: "Bronze 39",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "komi",
+      "yoreni", 
+      "skqqps",
+      "ian w", 
+      "ethanthoughts"
+    ]
   },
 
   {
