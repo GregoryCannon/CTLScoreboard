@@ -735,6 +735,7 @@ const restreamerRole = [
 "ちどり#2119",
 "🇦🇷Joacozep#0518",
 ".charsiu.#0",
+"shackman04#0"
 ];
 
 module.exports = {
