@@ -287,23 +287,6 @@ const divisionData = [
   },
   
   {
-    divisionName: "Bronze 36",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "a_benz",
-      "uqi", 
-      "liptoneq", 
-      "dazmmv",
-      "saymyname", 
-      "mrawe"]
-  },
-  {
     divisionName: "Bronze 37",
     competition: "tnp",
     oneMatchPerPair: false,
