@@ -285,24 +285,7 @@ const divisionData = [
       "arbaro"
     ]
   },
-  
-  {
-    divisionName: "Bronze 37",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "violet",
-      "equi", 
-      "just_wobert",
-      "kyradev", 
-      "gildedlizard",
-      "temphuibis"]
-  },
+ 
   {
     divisionName: "Bronze 38",
     competition: "tnp",
