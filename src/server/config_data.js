@@ -736,7 +736,8 @@ const restreamerRole = [
 "🇦🇷Joacozep#0518",
 ".charsiu.#0",
 "shackman04#0",
-"kominestris#0"
+"kominestris#0",
+"enscalight#0"
 ];
 
 module.exports = {
