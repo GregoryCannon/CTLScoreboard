@@ -356,6 +356,23 @@ const divisionData = [
       "goose"
     ],
   },
+  {
+    divisionName: "Beginner 27",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "xeopold",
+      "adamirish",
+      "m149",
+      "enscalight",
+      "croios"
+    ],
+  },
   
   {
     divisionName: "VeryLarge",
