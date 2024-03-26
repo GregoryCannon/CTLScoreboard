@@ -287,7 +287,7 @@ class RegistrationAndMatchBot {
           await sleep(100);
         }
 
-        if (!BEGINNER_REGISTRATION_OPEN_TNP) {
+        if (isTNP && !BEGINNER_REGISTRATION_OPEN_TNP) {
           await channel.send(REGISTRATION_CLOSED_MESSAGE_TNP_BEGINNER);
         }
 
