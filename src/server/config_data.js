@@ -243,7 +243,6 @@ const divisionData = [
       "rinko shirokane",
       "eradach", 
       "kingsman",
-      "suds1821",
       "r3io4mf"
     ]
   },
