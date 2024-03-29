@@ -29,13 +29,13 @@ let DIVISIONS_TNP = {
   // VeryLarge: [],
 };
 const SIGN_UP_MESSAGE_TNP =
-  "React to sign up for a new division below! Your reaction will be hidden after 3 seconds.\n\nIf you are currently in a division, do not sign up here until both (1) 100% of your own matches have been completed, and (2) your division deadline is at the end of the current week or your tier for the next season is already a 100% certainty. Make sure your registration is for the correct tier and is current at 23:59 UTC each Monday. New divisions will be created shortly thereafter and withdrawal after this point may be penalised. For full details, refer to #about.\n\n";
+  "React to sign up for a new division below! Your reaction will be hidden after 3 seconds.\n\nIf you are currently in a division, do not sign up here until both (1) 100% of your own matches have been completed, and (2) your division deadline is at the end of the current week or your tier for the next season is already a 100% certainty. Make sure you sign up for the correct tier, and if you want to withdraw, do so before 23:59 UTC on Monday. New divisions will be created shortly thereafter and withdrawal after this point may be penalised. For full details, refer to #about.\n\n";
 const SIGN_UP_MESSAGE_CTL =
   "Sign ups for upcoming CTL seasons will be announced at the end of each previous season and will be closed a week before the start of the next one. Click the appropriate reaction for the tier level you are assigned to if you wish to participate. Should you need to withdraw after the CTL draw takes place, notify the King immediately so a replacement may be found, if necessary. For full details, refer to #rules-and-standings.\n\n";
 const REGISTRATION_CLOSED_MESSAGE_CTL =
-  "Registration for the current season is now closed. Please wait for an announcement later in the season for when you may begin to react to participate for the next season starting in May 2023";
-const REGISTRATION_CLOSED_MESSAGE_TNP = "Registration is currently closed.";
-const REGISTRATION_CLOSED_MESSAGE_TNP_BEGINNER = `Registration for beginner divisions is currently closed. It will open on **${BEGINNER_REGISTRATION_OPEN_DATE}** for divisions running from **${BEGINNER_START_DATE}** until **${BEGINNER_END_DATE}**.`;
+  "Signups for the current season are now closed. Please wait for an announcement later in the season for when you may begin to react to participate for the next season starting in May 2023";
+const REGISTRATION_CLOSED_MESSAGE_TNP = "Signups are currently closed.";
+const REGISTRATION_CLOSED_MESSAGE_TNP_BEGINNER = `Signups for beginner divisions is currently closed. They will open on **${BEGINNER_REGISTRATION_OPEN_DATE}** for divisions running from **${BEGINNER_START_DATE}** until **${BEGINNER_END_DATE}**.`;
 
 class RegistrationAndMatchBot {
   constructor(isTNP) {
@@ -396,12 +396,12 @@ class RegistrationAndMatchBot {
         if (existingDivision == null) {
           sendTemporaryMessage(
             infoMsg.channel,
-            `${formattedUser} is not currently registered.`
+            `${formattedUser} is not currently signed up.`
           );
         } else {
           sendTemporaryMessage(
             infoMsg.channel,
-            `${formattedUser} is currently registered for Division ${existingDivision}`
+            `${formattedUser} is currently signed up for Division ${existingDivision}`
           );
         }
       });
