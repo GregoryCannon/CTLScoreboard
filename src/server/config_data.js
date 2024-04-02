@@ -229,6 +229,23 @@ const divisionData = [
       "r3io4mf"
     ]
   },
+  {
+    divisionName: "Gold 29",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "bmac",
+      "crinkle",
+      "odrachess",
+      "boppy", 
+      "kingsman",
+    ]
+  },
 
   {
     divisionName: "Silver 35",
@@ -267,6 +284,25 @@ const divisionData = [
       "arbaro"
     ]
   },
+  {
+    divisionName: "Silver 37",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "violet", 
+      "swedishchef", 
+      "kyradev", 
+      "richardwolfvi", 
+      "komi",
+      "marts",
+      "burritodad",
+    ]
+  },
  
   {
     divisionName: "Bronze 38",
@@ -300,6 +336,24 @@ const divisionData = [
       "skqqps",
       "ian w", 
       "ethanthoughts"
+    ]
+  },
+  {
+    divisionName: "Bronze 40",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "just_wobert",
+      "a_benz", 
+      "ethanthoughts",
+      "ianwright", 
+      "briantheone",
+      "avriix"
     ]
   },
 
