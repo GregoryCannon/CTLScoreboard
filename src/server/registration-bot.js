@@ -4,7 +4,7 @@ const { IS_PRODUCTION, getMatchDateFormatted } = require("./util");
 
 const REGISTRATION_OPEN_CTL = true;
 const REGISTRATION_OPEN_TNP = true;
-const BEGINNER_REGISTRATION_OPEN_TNP = false;
+const BEGINNER_REGISTRATION_OPEN_TNP = true;
 const BEGINNER_REGISTRATION_OPEN_DATE = "April 15";
 const BEGINNER_START_DATE = "April 22";
 const BEGINNER_END_DATE = "May 19";
@@ -275,9 +275,15 @@ class RegistrationAndMatchBot {
           if (divisionName === "Beginner" && !BEGINNER_REGISTRATION_OPEN_TNP) 
             continue;
 
-          const message = await channel.send(
-            `Sign up for Division ${divisionName}`
-          );
+          let messageString = isTNP ?
+            divisionName === "Beginner" ?
+              "Sign up for a Beginner (Oak/Elm/Birch) division" 
+              :
+              `Sign up for a ${divisionName} division`
+            :
+            `Sign up for Division ${divisionName}`;
+
+          const message = await channel.send(messageString);
           await message.react(MAIN_EMOJI);
           const collector = message.createReactionCollector();
           collector.on("collect", () => {
@@ -293,7 +299,7 @@ class RegistrationAndMatchBot {
 
         // Check registration button
         const infoMsg = await channel.send(
-          LINE_ASCII + "\nReact here to confirm whether you're registered"
+          LINE_ASCII + "\nReact here to confirm whether you're signed up"
         );
         infoMsg.react(INFO_EMOJI);
         const infoCollector = infoMsg.createReactionCollector();
@@ -303,7 +309,7 @@ class RegistrationAndMatchBot {
 
         // Cancel registration button
         const cancelMsg = await channel.send(
-          "React here to cancel your registration"
+          "React here to cancel your signup"
         );
         await channel.send(LINE_ASCII);
         cancelMsg.react(CANCEL_EMOJI);
@@ -367,7 +373,7 @@ class RegistrationAndMatchBot {
             message.channel,
             `${formatUser(
               user
-            )} is already signed up. If you need to change divisions, cancel your registration and try again.`
+            )} is already signed up. If you need to change divisions, cancel your signup and try again.`
           );
         }
       });
