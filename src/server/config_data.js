@@ -363,7 +363,6 @@ const divisionData = [
       "a_benz", 
       "ethanthoughts",
       "ianwright", 
-      "briantheone",
       "avriix"
     ]
   },
