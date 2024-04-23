@@ -274,6 +274,25 @@ const divisionData = [
       "kingsman",
     ]
   },
+  {
+    divisionName: "Gold 30",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "z3vie",
+      "snowytetris",
+      "eradach",
+      "tacomom", 
+      "junior",
+      "suds",
+      "weisbrot"
+    ]
+  },
 
   {
     divisionName: "Silver 36",
@@ -312,6 +331,40 @@ const divisionData = [
       "komi",
       "marts",
       "burritodad",
+    ]
+  },
+  {
+    divisionName: "Silver 38",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "r3io4mf", 
+      "yarno", 
+      "ianwright", 
+      "tomellosoulman", 
+      "liptoneq",
+    ]
+  },
+  {
+    divisionName: "Silver 39",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "komi", 
+      "equi", 
+      "cchristm", 
+      "arbaro", 
+      "ethanthoughts",
     ]
   },
  
@@ -366,6 +419,40 @@ const divisionData = [
       "avriix"
     ]
   },
+  {
+    divisionName: "Bronze 41",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "enscalight",
+      "coverdales", 
+      "gildedlizard",
+      "mathwiz", 
+      "just_wobert"
+    ]
+  },
+  {
+    divisionName: "Bronze 42",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "lutet",
+      "a_benz", 
+      "temphuibis",
+      "mansion", 
+      "xyro"
+    ]
+  },
 
   {
     divisionName: "Beginner 25",
@@ -417,6 +504,39 @@ const divisionData = [
       "m149",
       "enscalight",
       "croios"
+    ],
+  },
+  {
+    divisionName: "Oak 1",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "avriix",
+      "treepriest",
+      "m149",
+      "adamirish",
+      "roguepotato"
+    ],
+  },
+  {
+    divisionName: "Elm 1",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "babbons",
+      "dyasalure",
+      "thisinthat",
+      "ender",
     ],
   },
   
