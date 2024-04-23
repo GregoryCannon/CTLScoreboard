@@ -4,10 +4,10 @@ const { IS_PRODUCTION, getMatchDateFormatted } = require("./util");
 
 const REGISTRATION_OPEN_CTL = true;
 const REGISTRATION_OPEN_TNP = true;
-const BEGINNER_REGISTRATION_OPEN_TNP = true;
-const BEGINNER_REGISTRATION_OPEN_DATE = "April 15";
-const BEGINNER_START_DATE = "April 22";
-const BEGINNER_END_DATE = "May 19";
+const BEGINNER_REGISTRATION_OPEN_TNP = false;
+const BEGINNER_REGISTRATION_OPEN_DATE = "May 12";
+const BEGINNER_START_DATE = "May 20";
+const BEGINNER_END_DATE = "June 16";
 const MAIN_EMOJI = "👍";
 const CANCEL_EMOJI = "❌";
 const INFO_EMOJI = "ℹ️";
