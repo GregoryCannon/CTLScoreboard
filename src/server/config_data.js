@@ -620,6 +620,7 @@ const restreamerRole = [
 "augmenttheampwave#0",
 "aur9#9999",
 "avgeekw159#0",
+"avriix#0",
 "b0rkedbear#0",
 "B14NK#3752",
 "Bakadrian#0601",
