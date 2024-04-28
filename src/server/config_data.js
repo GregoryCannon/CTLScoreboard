@@ -867,7 +867,8 @@ const restreamerRole = [
 ".charsiu.#0",
 "shackman04#0",
 "kominestris#0",
-"enscalight#0"
+"enscalight#0",
+"m145#0"
 ];
 
 module.exports = {
