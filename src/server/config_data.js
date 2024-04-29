@@ -360,7 +360,7 @@ const divisionData = [
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
-      "komi", 
+      "marts", 
       "equi", 
       "cchristm", 
       "arbaro", 
