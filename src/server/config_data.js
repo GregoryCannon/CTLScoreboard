@@ -709,6 +709,7 @@ const restreamerRole = [
 "Ipiecevibes#6809",
 "ITGBalbar#2408",
 "itzsharky#0",
+"iuqe#0",
 "jakeywinks#7806",
 "Jakub#4491",
 "jamestomas2#7742",
