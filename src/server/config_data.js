@@ -329,24 +329,7 @@ const divisionData = [
       "ethanthoughts",
     ]
   },
- 
-  {
-    divisionName: "Bronze 39",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "komi",
-      "yoreni", 
-      "skqqps",
-      "ian w", 
-      "ethanthoughts"
-    ]
-  },
+  
   {
     divisionName: "Bronze 40",
     competition: "tnp",
