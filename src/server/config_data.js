@@ -240,24 +240,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Gold 28",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "skai",
-      "jedi evan",
-      "rinko shirokane",
-      "eradach", 
-      "kingsman",
-      "r3io4mf"
-    ]
-  },
-  {
     divisionName: "Gold 29",
     competition: "tnp",
     oneMatchPerPair: false,
