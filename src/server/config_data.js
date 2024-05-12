@@ -154,7 +154,6 @@ const divisionData = [
       'Bergtroll',
       'Lee',
       'Mel0nsoda',
-      'GalaxyBiscuit',
     ],
   },
   {
