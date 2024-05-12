@@ -154,7 +154,6 @@ const divisionData = [
       'Bergtroll',
       'Lee',
       'Mel0nsoda',
-      'GalaxyBiscuit',
     ],
   },
   {
@@ -781,7 +780,7 @@ const restreamerRole = [
 "trapzone707#0",
 "Tryad#0983",
 "tugi#0",
-"Tweak_Beacon#2045",
+"tweak_beacon#0",
 "Twifty#3688",
 "unor1ginalname#0",
 "vachetbeasty#0",
