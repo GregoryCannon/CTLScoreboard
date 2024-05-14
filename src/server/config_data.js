@@ -227,7 +227,6 @@ const divisionData = [
     numAutoRelegate: 1,
     players: [
       'DrKn0ckers',
-      'Falkite',
       'RyenwithanE',
       'Tweak Beacon',
       'TeainRain',
