@@ -8,8 +8,9 @@ const divisionData = [
     numAutoPromo: 0,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
+    numAutoRelegate: 1,
     players: [
+      'TimmyKim',
       'Peek',
       'Sunny',
       'Coal',
@@ -227,6 +228,7 @@ const divisionData = [
     numAutoRelegate: 1,
     players: [
       'DrKn0ckers',
+      'Falkite',
       'RyenwithanE',
       'Tweak Beacon',
       'TeainRain',
@@ -376,6 +378,41 @@ const divisionData = [
       "temphuibis",
       "mansion", 
       "xyro"
+    ]
+  },
+  {
+    divisionName: "Bronze 43",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "komi",
+      "avriix", 
+      "gildedlizard",
+      "croios", 
+      "adamirish",
+      "mathwiz"
+    ]
+  },
+  {
+    divisionName: "Bronze 44",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "liptoneq",
+      "coverdales", 
+      "ender",
+      "thisinthat", 
+      "m149"
     ]
   },
 
