@@ -8,8 +8,9 @@ const divisionData = [
     numAutoPromo: 0,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
+    numAutoRelegate: 1,
     players: [
+      'TimmyKim',
       'Peek',
       'Sunny',
       'Coal',
@@ -227,6 +228,7 @@ const divisionData = [
     numAutoRelegate: 1,
     players: [
       'DrKn0ckers',
+      'Falkite',
       'RyenwithanE',
       'Tweak Beacon',
       'TeainRain',
@@ -394,7 +396,7 @@ const divisionData = [
       "rory", 
       "maedhros", 
       "marts", 
-      "etozenon", 
+      "zenon", 
       "ethanthoughts",
     ]
   },
@@ -801,7 +803,6 @@ const restreamerRole = [
 "lanheg#0",
 "Lastarot#9931",
 "leaurax#0455",
-"lia_fr0st#0",
 "liolio1230#9656",
 "Lord NOOM#4736",
 "louieskouie#2469",
@@ -871,7 +872,6 @@ const restreamerRole = [
 "Rhubarb#1508",
 "richardwolfvi#0",
 "RIVAL | Ard#1561",
-"rockdtben#0",
 "romanplaysgames#8168",
 "roncli#0",
 "rory79#0",
