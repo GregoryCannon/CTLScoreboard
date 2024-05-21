@@ -291,6 +291,26 @@ const divisionData = [
       "pohonjati",
     ]
   },
+  {
+    divisionName: "Gold 32",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "tomello",
+      "violet",
+      "burritodad",
+      "kingsman", 
+      "mfrerck",
+      "diamonds",
+      "r3io4mf",
+      "skai"
+    ]
+  },
 
   {
     divisionName: "Silver 37",
@@ -342,6 +362,41 @@ const divisionData = [
       "equi", 
       "cchristm", 
       "arbaro", 
+      "ethanthoughts",
+    ]
+  },
+  {
+    divisionName: "Silver 40",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "kyradev", 
+      "8click", 
+      "sunx2d", 
+      "mirrorriker", 
+      "mikeflo",
+      "nyakozame",
+    ]
+  },
+  {
+    divisionName: "Silver 41",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "rory", 
+      "maedhros", 
+      "marts", 
+      "etozenon", 
       "ethanthoughts",
     ]
   },
@@ -486,6 +541,22 @@ const divisionData = [
     ],
   },
   {
+    divisionName: "Oak 2",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "gamerz",
+      "roguepotato",
+      "babbons",
+      "dyasalure",
+    ],
+  },
+  {
     divisionName: "Elm 1",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -499,6 +570,38 @@ const divisionData = [
       "dyasalure",
       "thisinthat",
       "ender",
+    ],
+  },
+  {
+    divisionName: "Elm 2",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "art vandelay",
+      "codecracker",
+      "plasmicat",
+      "loucy",
+    ],
+  },
+  {
+    divisionName: "Birch 1",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "perid0t",
+      "therings",
+      "spaceminer",
+      "pretz",
     ],
   },
   
