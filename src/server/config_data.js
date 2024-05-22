@@ -597,7 +597,7 @@ const divisionData = [
     numAutoRelegate: 0,
     players: [
       "perid0t",
-      "therings",
+      "vallie42",
       "spaceminer",
       "pretz",
     ],
