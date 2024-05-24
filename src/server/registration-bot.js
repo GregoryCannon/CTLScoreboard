@@ -35,7 +35,7 @@ const SIGN_UP_MESSAGE_CTL =
 const REGISTRATION_CLOSED_MESSAGE_CTL =
   "Signups for the current season are now closed. Please wait for an announcement later in the season for when you may begin to react to participate for the next season starting in May 2023";
 const REGISTRATION_CLOSED_MESSAGE_TNP = "Signups are currently closed.";
-const REGISTRATION_CLOSED_MESSAGE_TNP_BEGINNER = `Signups for beginner divisions is currently closed. They will open on **${BEGINNER_REGISTRATION_OPEN_DATE}** for divisions running from **${BEGINNER_START_DATE}** until **${BEGINNER_END_DATE}**.`;
+const REGISTRATION_CLOSED_MESSAGE_TNP_BEGINNER = `Signups for beginner divisions are currently closed. They will open on **${BEGINNER_REGISTRATION_OPEN_DATE}** for divisions running from **${BEGINNER_START_DATE}** until **${BEGINNER_END_DATE}**.`;
 
 class RegistrationAndMatchBot {
   constructor(isTNP) {
