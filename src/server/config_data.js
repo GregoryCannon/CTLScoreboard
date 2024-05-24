@@ -237,23 +237,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Gold 29",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "bmac",
-      "crinkle",
-      "odrachess",
-      "boppy", 
-      "kingsman",
-    ]
-  },
-  {
     divisionName: "Gold 30",
     competition: "tnp",
     oneMatchPerPair: false,
