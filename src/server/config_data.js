@@ -294,25 +294,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Silver 37",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "violet", 
-      "swedishchef", 
-      "kyradev", 
-      "richardwolfvi", 
-      "komi",
-      "marts",
-      "burritodad",
-    ]
-  },
-  {
     divisionName: "Silver 38",
     competition: "tnp",
     oneMatchPerPair: false,
