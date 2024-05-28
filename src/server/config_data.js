@@ -670,6 +670,7 @@ const restreamerRole = [
 "1231231234#1231",
 "20dan03#0",
 "8mansion8#0",
+"aanti#0",
 "Adrena1in#3056",
 "afmirror#0",
 "agamescout#0",
