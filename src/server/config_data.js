@@ -292,6 +292,24 @@ const divisionData = [
       "skai"
     ]
   },
+  {
+    divisionName: "Gold 33",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "unskill",
+      "restingzzz",
+      "minertyler",
+      "equi", 
+      "porkramen",
+      "eradach",
+    ]
+  },
 
   {
     divisionName: "Silver 38",
@@ -430,6 +448,24 @@ const divisionData = [
       "ender",
       "thisinthat", 
       "m149"
+    ]
+  },
+  {
+    divisionName: "Bronze 45",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "treepriest",
+      "bigk", 
+      "rsx",
+      "yoreni", 
+      "smartseller",
+      "tetristimez"
     ]
   },
 
