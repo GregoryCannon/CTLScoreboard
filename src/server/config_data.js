@@ -382,23 +382,6 @@ const divisionData = [
   },
   
   {
-    divisionName: "Bronze 41",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "enscalight",
-      "coverdales", 
-      "gildedlizard",
-      "mathwiz", 
-      "just_wobert"
-    ]
-  },
-  {
     divisionName: "Bronze 42",
     competition: "tnp",
     oneMatchPerPair: false,
