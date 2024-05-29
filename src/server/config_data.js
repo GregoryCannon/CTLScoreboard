@@ -453,58 +453,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Beginner 25",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "enscalight",
-      "turtlerta",
-      "treepriest",
-      "mulletscarf",
-      "mr g",
-    ],
-  },
-  {
-    divisionName: "Beginner 26",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "plasmicat",
-      "avriix",
-      "dyasalure",
-      "lorli",
-      "gamerz",
-      "goose"
-    ],
-  },
-  {
-    divisionName: "Beginner 27",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "xeopold",
-      "adamirish",
-      "m149",
-      "enscalight",
-      "croios"
-    ],
-  },
-  {
     divisionName: "Oak 1",
     competition: "tnp",
     oneMatchPerPair: false,
