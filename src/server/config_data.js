@@ -308,6 +308,7 @@ const divisionData = [
       "equi", 
       "porkramen",
       "eradach",
+      "junior",
     ]
   },
 
