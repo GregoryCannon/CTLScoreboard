@@ -409,7 +409,6 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 0,
     players: [
-      "komi",
       "avriix", 
       "gildedlizard",
       "croios", 
