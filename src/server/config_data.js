@@ -311,6 +311,26 @@ const divisionData = [
       "junior",
     ]
   },
+  {
+    divisionName: "Gold 34",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "itgbalbar",
+      "pohonjati",
+      "gabriel rezende",
+      "tacomom", 
+      "sixfour",
+      "skiplogic",
+      "skai",
+      "boppy"
+    ]
+  },
 
   {
     divisionName: "Silver 38",
@@ -381,6 +401,26 @@ const divisionData = [
       "ethanthoughts",
     ]
   },
+  {
+    divisionName: "Silver 42",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "enscalight", 
+      "snowytetris", 
+      "coverdales", 
+      "mathwiz", 
+      "arbaro",
+      "vasco",
+      "lutet",
+      "rory"
+    ]
+  },
   
   {
     divisionName: "Bronze 42",
@@ -449,6 +489,40 @@ const divisionData = [
       "yoreni", 
       "smartseller",
       "tetristimez"
+    ]
+  },
+  {
+    divisionName: "Bronze 46",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "briantheone",
+      "glacier", 
+      "birdnamednorah",
+      "xeopold", 
+      "just_wobert"
+    ]
+  },
+  {
+    divisionName: "Bronze 47",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "mansion",
+      "temphuibis", 
+      "letcreate",
+      "placeholder", 
+      "a_benz"
     ]
   },
 
