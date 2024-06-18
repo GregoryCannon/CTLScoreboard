@@ -571,7 +571,7 @@ const divisionData = [
     players: [
       "loucy",
       "art vandelay",
-      "codecraker",
+      "codecracker",
       "roguepotato",
     ],
   },
