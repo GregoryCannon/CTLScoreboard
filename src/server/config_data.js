@@ -573,6 +573,7 @@ const divisionData = [
       "art vandelay",
       "codecracker",
       "roguepotato",
+      "dyasalure"
     ],
   },
   {
