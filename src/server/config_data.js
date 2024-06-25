@@ -331,6 +331,40 @@ const divisionData = [
       "boppy"
     ]
   },
+  {
+    divisionName: "Gold 35",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "kyradev",
+      "toka",
+      "bmac",
+      "mfrerck", 
+      "placehodler"
+    ]
+  },
+  {
+    divisionName: "Gold 36",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "vachetbeasty",
+      "maedhros",
+      "burritodad",
+      "tomello", 
+      "nyakozame"
+    ]
+  },
 
   {
     divisionName: "Silver 38",
@@ -419,6 +453,40 @@ const divisionData = [
       "vasco",
       "lutet",
       "rory"
+    ]
+  },
+  {
+    divisionName: "Silver 43",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "ethanthoughts", 
+      "kocchira", 
+      "zenon", 
+      "briantheone", 
+      "liptoneq",
+    ]
+  },
+  {
+    divisionName: "Silver 44",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "ianwright", 
+      "just_wobert", 
+      "sunx2d", 
+      "marts", 
+      "mirrorriker",
     ]
   },
   
@@ -523,6 +591,41 @@ const divisionData = [
       "letcreate",
       "adamirish", 
       "a_benz"
+    ]
+  },
+  {
+    divisionName: "Bronze 48",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "8click",
+      "thisinthat", 
+      "visor",
+      "croios", 
+      "avriix",
+      "stevenator"
+    ]
+  },
+  {
+    divisionName: "Bronze 49",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "lucas the 3rd",
+      "gildedlizard", 
+      "gamerz",
+      "m149", 
+      "adamirish",
     ]
   },
 
