@@ -311,23 +311,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Silver 38",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "r3io4mf", 
-      "yarno", 
-      "ianwright", 
-      "tomellosoulman", 
-      "liptoneq",
-    ]
-  },
-  {
     divisionName: "Silver 39",
     competition: "tnp",
     oneMatchPerPair: false,
