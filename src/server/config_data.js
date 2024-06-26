@@ -235,26 +235,7 @@ const divisionData = [
       'Pollo',
     ],
   },
-
-  {
-    divisionName: "Gold 30",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "z3vie",
-      "snowytetris",
-      "eradach",
-      "tacomom", 
-      "junior",
-      "suds",
-      "weisbrot"
-    ]
-  },
+ 
   {
     divisionName: "Gold 31",
     competition: "tnp",
