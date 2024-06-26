@@ -364,24 +364,7 @@ const divisionData = [
       "mirrorriker",
     ]
   },
-  
-  {
-    divisionName: "Bronze 42",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "lutet",
-      "a_benz", 
-      "temphuibis",
-      "mansion", 
-      "xyro"
-    ]
-  },
+
   {
     divisionName: "Bronze 43",
     competition: "tnp",
