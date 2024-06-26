@@ -311,23 +311,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Silver 41",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "rory", 
-      "maedhros", 
-      "marts", 
-      "zenon", 
-      "ethanthoughts",
-    ]
-  },
-  {
     divisionName: "Silver 42",
     competition: "tnp",
     oneMatchPerPair: false,
