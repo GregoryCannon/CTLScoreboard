@@ -471,39 +471,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Oak 1",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "avriix",
-      "treepriest",
-      "m149",
-      "adamirish",
-      "roguepotato"
-    ],
-  },
-  {
-    divisionName: "Oak 2",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "gamerz",
-      "roguepotato",
-      "babbons",
-      "dyasalure",
-    ],
-  },
-  {
     divisionName: "Oak 3",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -536,38 +503,7 @@ const divisionData = [
       "weston"
     ],
   },
-  {
-    divisionName: "Elm 1",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "babbons",
-      "dyasalure",
-      "thisinthat",
-      "ender",
-    ],
-  },
-  {
-    divisionName: "Elm 2",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "art vandelay",
-      "codecracker",
-      "plasmicat",
-      "loucy",
-    ],
-  },
+
   {
     divisionName: "Birch 1",
     competition: "tnp",
