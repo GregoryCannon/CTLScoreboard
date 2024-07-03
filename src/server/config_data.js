@@ -596,6 +596,7 @@ const restreamerRole = [
 "🇦🇷Joacozep#0518",
 "1231231234#1231",
 "20dan03#0",
+"7pagewilson#0",
 "8mansion8#0",
 "aanti#0",
 "Adrena1in#3056",
