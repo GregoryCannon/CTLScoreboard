@@ -476,47 +476,6 @@ const divisionData = [
       "jdhcdaboi"
     ],
   },
-  
-  {
-    divisionName: "VeryLarge",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 1,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    players: [
-      "torbith",
-      "crinkle",
-      "temphuibis",
-      "wobert",
-      "wolflord2005",
-      "skai",
-      "liptoneq196",
-      "r3io4mf",
-      "billymac",
-      "snowytetris",
-      "suds1821",
-      "gildedlizard",
-      "chefgobes",
-      "frenchiestfrie",
-      "briantheone",
-      "arbaro",
-      "tobs",
-      "marts",
-      "coverdales4",
-      "sauce",
-      "nyakozame",
-      "burritodad",
-      "zenon",
-      "tacomom",
-      "porkramen",
-      "gekki",
-      "toka",
-      "ethan1405",
-      "richard wolf vi"
-    ]
-  }
 
 ];
 
