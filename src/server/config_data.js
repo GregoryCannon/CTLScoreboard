@@ -193,26 +193,7 @@ const divisionData = [
       'MinerTyler',
     ],
   },
- 
-  {
-    divisionName: "Gold 33",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "unskill",
-      "restingzzz",
-      "minertyler",
-      "equi", 
-      "porkramen",
-      "eradach",
-      "junior",
-    ]
-  },
+
   {
     divisionName: "Gold 34",
     competition: "tnp",
