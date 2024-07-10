@@ -303,6 +303,26 @@ const divisionData = [
       "mirrorriker",
     ]
   },
+  {
+    divisionName: "Silver 45",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "just_wobert", 
+      "rory", 
+      "snowytetris", 
+      "swedishchef",
+      "liptoneq",
+      "kocchria",
+      "bigk",
+      "richard wolf vi",
+    ]
+  },
 
   {
     divisionName: "Bronze 45",
