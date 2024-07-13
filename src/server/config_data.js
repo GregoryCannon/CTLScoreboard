@@ -339,7 +339,6 @@ const divisionData = [
       "rsx",
       "yoreni", 
       "smartseller",
-      "tetristimez"
     ]
   },
   {
