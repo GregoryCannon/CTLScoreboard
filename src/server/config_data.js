@@ -555,6 +555,7 @@ const restreamerRole = [
 "cmg444\\#4652",
 "coalbucket2#0",
 "cobra6731#0",
+"codecracker01#0",
 "CombatSlayer#1987",
 "coverdales4#0",
 "cwiiis#0",
