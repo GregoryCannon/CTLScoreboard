@@ -410,25 +410,6 @@ const divisionData = [
       "mads",
     ]
   },
-
-  {
-    divisionName: "Birch 2",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "perid0t",
-      "bacon382",
-      "tetristimez",
-      "david 3bof",
-      "jdhcdaboi"
-    ],
-  },
-
 ];
 
 const adminRole = [
