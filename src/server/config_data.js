@@ -412,23 +412,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Oak 3",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "loucy",
-      "art vandelay",
-      "codecracker",
-      "roguepotato",
-      "dyasalure"
-    ],
-  },
-  {
     divisionName: "Oak 4",
     competition: "tnp",
     oneMatchPerPair: false,
