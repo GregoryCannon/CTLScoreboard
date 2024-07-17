@@ -337,7 +337,6 @@ const divisionData = [
       "swedishchef",
       "liptoneq",
       "kocchria",
-      "bigk",
       "richard wolf vi",
     ]
   },
