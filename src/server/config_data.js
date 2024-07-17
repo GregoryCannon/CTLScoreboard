@@ -459,7 +459,7 @@ const divisionData = [
       "thisinthat", 
       "mansion",
       "hiwd", 
-      "placeholder",
+      "a_benz",
     ]
   },
   {
@@ -475,7 +475,7 @@ const divisionData = [
       "adamirish",
       "kaaplinluinen", 
       "codecracker",
-      "nickmcee", 
+      "nicmcee", 
       "kannplaystetris",
     ]
   },
