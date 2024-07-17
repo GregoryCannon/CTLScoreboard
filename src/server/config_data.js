@@ -412,23 +412,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Oak 4",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "plasmicat",
-      "vallie42",
-      "nicmcee",
-      "weston"
-    ],
-  },
-
-  {
     divisionName: "Birch 1",
     competition: "tnp",
     oneMatchPerPair: false,
