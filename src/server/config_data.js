@@ -412,22 +412,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Birch 1",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "perid0t",
-      "vallie42",
-      "spaceminer",
-      "pretz",
-    ],
-  },
-  {
     divisionName: "Birch 2",
     competition: "tnp",
     oneMatchPerPair: false,
