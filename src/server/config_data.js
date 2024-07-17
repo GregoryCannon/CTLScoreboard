@@ -248,6 +248,24 @@ const divisionData = [
       "nyakozame"
     ]
   },
+  {
+    divisionName: "Gold 37",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "marts",
+      "sixfour",
+      "arbaro",
+      "lutet", 
+      "torbith",
+      "skiplogic"
+    ]
+  },
 
   {
     divisionName: "Silver 42",
@@ -321,6 +339,24 @@ const divisionData = [
       "kocchria",
       "bigk",
       "richard wolf vi",
+    ]
+  },
+  {
+    divisionName: "Silver 46",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "cub_03", 
+      "ianwright", 
+      "mirrorriker", 
+      "lucas the 3rd",
+      "mikeflo",
+      "m149",
     ]
   },
 
@@ -408,6 +444,88 @@ const divisionData = [
       "thelovasman",
       "weston", 
       "mads",
+    ]
+  },
+  {
+    divisionName: "Bronze 52",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "vasco",
+      "thisinthat", 
+      "mansion",
+      "hiwd", 
+      "placeholder",
+    ]
+  },
+  {
+    divisionName: "Bronze 53",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "adamirish",
+      "kaaplinluinen", 
+      "codecracker",
+      "nickmcee", 
+      "kannplaystetris",
+    ]
+  },
+
+  {
+    divisionName: "Oak 5",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "loucy",
+      "mantaskutop", 
+      "daryldixon",
+      "art_vandelay", 
+    ]
+  },
+  {
+    divisionName: "Oak 6",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "roguepotato",
+      "orangeking", 
+      "babbons",
+      "heater", 
+    ]
+  },
+  {
+    divisionName: "Birch 3",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "almostnamedone",
+      "sevenpagewilson", 
+      "cyber741",
     ]
   },
 ];
