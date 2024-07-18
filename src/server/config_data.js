@@ -524,7 +524,7 @@ const divisionData = [
     players: [
       "almostnamedone",
       "sevenpagewilson", 
-      "cyber741",
+      "cy1er",
     ]
   },
 ];
