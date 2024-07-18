@@ -473,7 +473,7 @@ const divisionData = [
     numAutoRelegate: 0,
     players: [
       "adamirish",
-      "kaaplinluinen", 
+      "kaapinluinen", 
       "codecracker",
       "nicmcee", 
       "kannplaystetris",
