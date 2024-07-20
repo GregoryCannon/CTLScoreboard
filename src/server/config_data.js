@@ -525,6 +525,7 @@ const divisionData = [
       "almostnamedone",
       "sevenpagewilson", 
       "cy1er",
+      "the rings",
     ]
   },
 ];
