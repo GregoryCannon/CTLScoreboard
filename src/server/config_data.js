@@ -625,6 +625,7 @@ const restreamerRole = [
 "CombatSlayer#1987",
 "coverdales4#0",
 "cwiiis#0",
+"cy1ersrc#0",
 "danvvv#0",
 "DavidMichaelJ#5419",
 "deewee7#0",
