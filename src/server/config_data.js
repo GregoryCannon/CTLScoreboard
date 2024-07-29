@@ -285,23 +285,6 @@ const divisionData = [
     ]
   },
   {
-    divisionName: "Silver 44",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "ianwright", 
-      "just_wobert", 
-      "sunx2d", 
-      "marts", 
-      "mirrorriker",
-    ]
-  },
-  {
     divisionName: "Silver 45",
     competition: "tnp",
     oneMatchPerPair: false,
