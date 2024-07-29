@@ -146,7 +146,6 @@ const divisionData = [
       'DocPi',
       'AFMirror',
       'Manta7',
-      'Bug',
       'Tyler',
     ],
   },
