@@ -146,7 +146,6 @@ const divisionData = [
       'DocPi',
       'AFMirror',
       'Manta7',
-      'Bug',
       'Tyler',
     ],
   },
@@ -268,26 +267,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Silver 42",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "enscalight", 
-      "snowytetris", 
-      "coverdales", 
-      "mathwiz", 
-      "arbaro",
-      "vasco",
-      "lutet",
-      "rory"
-    ]
-  },
-  {
     divisionName: "Silver 43",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -302,23 +281,6 @@ const divisionData = [
       "zenon", 
       "briantheone", 
       "liptoneq",
-    ]
-  },
-  {
-    divisionName: "Silver 44",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "ianwright", 
-      "just_wobert", 
-      "sunx2d", 
-      "marts", 
-      "mirrorriker",
     ]
   },
   {
@@ -358,23 +320,6 @@ const divisionData = [
     ]
   },
 
-  {
-    divisionName: "Bronze 47",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "mansion",
-      "temphuibis", 
-      "letcreate",
-      "adamirish", 
-      "a_benz"
-    ]
-  },
   {
     divisionName: "Bronze 48",
     competition: "tnp",
@@ -425,23 +370,6 @@ const divisionData = [
       "treepriest",
       "glacier", 
       "rendisyongaming",
-    ]
-  },
-  {
-    divisionName: "Bronze 51",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "adamirish",
-      "orangeking", 
-      "thelovasman",
-      "weston", 
-      "mads",
     ]
   },
   {
