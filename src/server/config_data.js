@@ -333,7 +333,6 @@ const divisionData = [
     players: [
       "just_wobert", 
       "rory", 
-      "snowytetris", 
       "swedishchef",
       "liptoneq",
       "kocchria",
