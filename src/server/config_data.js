@@ -214,40 +214,6 @@ const divisionData = [
     ]
   },
   {
-    divisionName: "Gold 35",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "kyradev",
-      "toka",
-      "bmac",
-      "mfrerck", 
-      "zylos"
-    ]
-  },
-  {
-    divisionName: "Gold 36",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "vachetbeasty",
-      "maedhros",
-      "burritodad",
-      "tomello", 
-      "nyakozame"
-    ]
-  },
-  {
     divisionName: "Gold 37",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -266,23 +232,6 @@ const divisionData = [
     ]
   },
 
-  {
-    divisionName: "Silver 43",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "ethanthoughts", 
-      "kocchira", 
-      "zenon", 
-      "briantheone", 
-      "liptoneq",
-    ]
-  },
   {
     divisionName: "Silver 45",
     competition: "tnp",
@@ -337,24 +286,6 @@ const divisionData = [
       "avriix",
       "stevenator"
     ]
-  },
-  {
-    divisionName: "Bronze 49",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "lucas the 3rd",
-      "gildedlizard", 
-      "gamerz",
-      "m149", 
-      "adamirish",
-    ]
-  },
   {
     divisionName: "Bronze 50",
     competition: "tnp",
@@ -542,7 +473,7 @@ const restreamerRole = [
 "B14NK#3752",
 "Bakadrian#0601",
 "BeastinShen#4218",
-"Bendy1#6609",
+"bendy1#0",
 "Benfamir#6783",
 "Benjy#5752",
 "bergtroll#0",
@@ -617,6 +548,7 @@ const restreamerRole = [
 "Haven#0602",
 "heist#0",
 "Hepps#2169",
+"homejacob#0",
 "huffulufugus#0",
 "hunn14#0",
 "hydrantdude#0",
