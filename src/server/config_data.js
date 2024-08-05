@@ -286,6 +286,7 @@ const divisionData = [
       "avriix",
       "stevenator"
     ]
+  },
   {
     divisionName: "Bronze 50",
     competition: "tnp",
