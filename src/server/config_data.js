@@ -231,6 +231,26 @@ const divisionData = [
       "skiplogic"
     ]
   },
+  {
+    divisionName: "Gold 38",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "skai",
+      "ethanthoughts",
+      "nyakozame",
+      "rory", 
+      "kyradev",
+      "bmac",
+      "vachetbeasty",
+      "marts",
+    ]
+  },
 
   {
     divisionName: "Silver 45",
@@ -266,6 +286,24 @@ const divisionData = [
       "lucas the 3rd",
       "mikeflo",
       "m149",
+    ]
+  },
+  {
+    divisionName: "Silver 47",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "teafordinner", 
+      "avriix", 
+      "letcreate", 
+      "zylos",
+      "liptoneq",
+      "mathwiz",
     ]
   },
 
