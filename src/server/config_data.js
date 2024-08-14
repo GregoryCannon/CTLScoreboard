@@ -412,6 +412,23 @@ const divisionData = [
       "orangeking",
     ]
   },
+  {
+    divisionName: "Bronze 56",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "treepriest",
+      "heater", 
+      "temphuibis",
+      "just_wobert", 
+      "codecracker",
+    ]
+  },
 
   {
     divisionName: "Oak 5",
