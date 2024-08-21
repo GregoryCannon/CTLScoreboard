@@ -306,6 +306,25 @@ const divisionData = [
       "mathwiz",
     ]
   },
+  {
+    divisionName: "Silver 48",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "kaapinluinen", 
+      "nicmcee", 
+      "coverdales", 
+      "omenvoir",
+      "pohonjati",
+      "richard wolf vi",
+      "zenon",
+    ]
+  },
 
   {
     divisionName: "Bronze 48",
@@ -429,6 +448,26 @@ const divisionData = [
       "codecracker",
     ]
   },
+  {
+    divisionName: "Bronze 57",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "kaanplaystetris",
+      "hiwd", 
+      "thisinthat",
+      "roguepotato", 
+      "mansion",
+      "m149",
+      "croios",
+      "adamirish",
+    ]
+  },
 
   {
     divisionName: "Oak 5",
@@ -476,6 +515,24 @@ const divisionData = [
       "sevenpagewilson", 
       "cy1er",
       "the rings",
+    ]
+  },
+  {
+    divisionName: "Elm 3",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "lettuce",
+      "sevenpagewilson", 
+      "art_vandelay",
+      "cy1er",
+      "smartseller",
+      "tiffyflowr",
     ]
   },
 ];
