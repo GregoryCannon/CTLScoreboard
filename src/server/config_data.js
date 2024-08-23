@@ -337,8 +337,7 @@ const divisionData = [
       "mckickass",
       "uqi", 
       "treepriest",
-      "glacier", 
-      "rendisyongaming",
+      "glacier",
     ]
   },
   {
