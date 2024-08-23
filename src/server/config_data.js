@@ -194,26 +194,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Gold 34",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "itgbalbar",
-      "pohonjati",
-      "gabriel rezende",
-      "tacomom", 
-      "sixfour",
-      "skiplogic",
-      "skai",
-      "boppy"
-    ]
-  },
-  {
     divisionName: "Gold 37",
     competition: "tnp",
     oneMatchPerPair: false,
