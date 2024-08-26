@@ -403,7 +403,7 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 0,
     players: [
-      "kannplaystetris",
+      "kaanplaystetris",
       "hiwd", 
       "thisinthat",
       "roguepotato", 
