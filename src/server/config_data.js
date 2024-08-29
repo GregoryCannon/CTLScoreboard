@@ -787,6 +787,7 @@ const restreamerRole = [
 "TotallyCalculatingPoet#8979",
 "TotalRadNES#2445",
 "trapzone707#0",
+"treepriest#0",
 "Tryad#0983",
 "tugi#0",
 "tweak_beacon#0",
