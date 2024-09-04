@@ -341,7 +341,7 @@ const divisionData = [
       "vasco",
       "snowytetris",
       "yasmina",
-      "juravlijov",
+      "juravljov",
       "weston",
     ]
   },
