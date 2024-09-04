@@ -325,6 +325,26 @@ const divisionData = [
       "zenon",
     ]
   },
+  {
+    divisionName: "Silver 49",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "komi", 
+      "just_wobert", 
+      "junior", 
+      "vasco",
+      "snowytetris",
+      "yasmina",
+      "juravlijov",
+      "weston",
+    ]
+  },
 
   {
     divisionName: "Bronze 52",
