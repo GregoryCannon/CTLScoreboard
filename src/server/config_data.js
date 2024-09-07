@@ -291,22 +291,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Oak 5",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "loucy",
-      "mantaskutop", 
-      "daryldixon",
-      "art_vandelay", 
-    ]
-  },
-  {
     divisionName: "Oak 6",
     competition: "tnp",
     oneMatchPerPair: false,
