@@ -213,6 +213,26 @@ const divisionData = [
       "marts",
     ]
   },
+  {
+    divisionName: "Gold 39",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "arbaro",
+      "mathwiz",
+      "liptoneq",
+      "marts", 
+      "piw",
+      "rory",
+      "swedishchef",
+      "r3io4mf",
+    ]
+  },
 
   {
     divisionName: "Silver 47",
@@ -251,6 +271,26 @@ const divisionData = [
       "zenon",
     ]
   },
+  {
+    divisionName: "Silver 49",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "komi", 
+      "just_wobert", 
+      "junior", 
+      "vasco",
+      "snowytetris",
+      "yasmina",
+      "juravljov",
+      "weston",
+    ]
+  },
 
   {
     divisionName: "Bronze 56",
@@ -279,7 +319,7 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 0,
     players: [
-      "kaanplaystetris",
+      "kannplaystetris",
       "hiwd", 
       "thisinthat",
       "roguepotato", 
@@ -529,6 +569,7 @@ const restreamerRole = [
 "offwo#7439",
 "og_readmore#6535",
 "oktopuse#8620",
+"omenvoir#0",
 "Oofie#4787",
 "opaux#5052",
 "Oscar._#6774",
@@ -595,6 +636,7 @@ const restreamerRole = [
 "TotallyCalculatingPoet#8979",
 "TotalRadNES#2445",
 "trapzone707#0",
+"treepriest#0",
 "Tryad#0983",
 "tugi#0",
 "tweak_beacon#0",
