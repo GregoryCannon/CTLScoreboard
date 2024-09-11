@@ -329,6 +329,40 @@ const divisionData = [
       "adamirish",
     ]
   },
+  {
+    divisionName: "Bronze 58",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "anber",
+      "thelovasman", 
+      "lokenze",
+      "gamerz", 
+      "placeholder",
+    ]
+  },
+  {
+    divisionName: "Bronze 59",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "treepriest",
+      "gildedlizard", 
+      "mantaskutop",
+      "codecracker", 
+      "orangeking",
+    ]
+  },
 
   {
     divisionName: "Elm 3",
