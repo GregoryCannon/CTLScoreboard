@@ -4,3 +4,7 @@ body {
   font-color: black;
   background: green;
 }
+
+body, #root, .App, .Loading-display{
+  width: 100% !important;
+}
