@@ -309,6 +309,26 @@ const divisionData = [
       "weston",
     ]
   },
+  {
+    divisionName: "Silver 50",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "MIRRORRIKER",
+      "THISINTHAT",
+      "TEAFORDINNER",
+      "KANNPLAYSTETRIS",
+      "COVERDALES",
+      "OMENVOIR",
+      "LETCREATE",
+      "JUST_WOBERT",
+    ]
+  },
 
   {
     divisionName: "Bronze 56",
@@ -361,7 +381,7 @@ const divisionData = [
       "thelovasman", 
       "lokenze",
       "gamerz", 
-      "placeholder",
+      "rxs",
     ]
   },
   {
@@ -381,7 +401,59 @@ const divisionData = [
       "orangeking",
     ]
   },
+  {
+    divisionName: "Bronze 60",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "MANSION",
+      "STEVENATOR",
+      "SMARTSELLER",
+      "LOUCY",
+      "SEVENPAGEWILSON",
+      "ROGUEPOTATO",
+    ]
+  },
+  {
+    divisionName: "Bronze 61",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "AVRIIX",
+      "TEMPHUIBIS",
+      "TURTLERTA",
+      "LOPUNNY",
+      "HIWD",
+    ]
+  },
 
+  {
+    divisionName: "Oak 7",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "FURIO",
+      "CY1ER",
+      "TOPAZ",
+      "FAILMANFLO",
+      "VALLIE42",
+    ]
+  },
   {
     divisionName: "Elm 3",
     competition: "tnp",
@@ -398,6 +470,22 @@ const divisionData = [
       "cy1er",
       "smartseller",
       "tiffyflowr",
+    ]
+  },
+  {
+    divisionName: "Elm 4",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "CDOUG",
+      "ERILIONESS",
+      "TIFFYFLOWR",
+      "LILIANA",
     ]
   },
 ];
