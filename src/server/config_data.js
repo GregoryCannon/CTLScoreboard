@@ -441,9 +441,9 @@ const divisionData = [
     divisionName: "Oak 7",
     competition: "tnp",
     oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 0,
     players: [
