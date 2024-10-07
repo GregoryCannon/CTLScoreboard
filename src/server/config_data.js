@@ -413,7 +413,6 @@ const divisionData = [
     players: [
       "MANSION",
       "STEVENATOR",
-      "SMARTSELLER",
       "LOUCY",
       "SEVENPAGEWILSON",
       "ROGUEPOTATO",
