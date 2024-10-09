@@ -470,6 +470,7 @@ const divisionData = [
       "ERILIONESS",
       "ADAMIRISH",
       "GAMERZ",
+    ]
   },
 
   {
