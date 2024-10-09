@@ -251,6 +251,24 @@ const divisionData = [
       "pohonjati",
     ]
   },
+  {
+    divisionName: "Gold 41",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "ETHANTHOUGHTS",
+      "ARBARO",
+      "R3IO4MF",
+      "BMAC",
+      "LIPTONEQ",
+      "JUNIOR",
+    ]
+  },
 
   {
     divisionName: "Silver 47",
@@ -434,6 +452,24 @@ const divisionData = [
       "LOPUNNY",
       "HIWD",
     ]
+  },
+  {
+    divisionName: "Bronze 62",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "M149",
+      "LILIANA",
+      "CDOUG",
+      "ROGUEPOTATO",
+      "ERILIONESS",
+      "ADAMIRISH",
+      "GAMERZ",
   },
 
   {
