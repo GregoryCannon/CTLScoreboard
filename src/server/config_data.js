@@ -186,6 +186,7 @@ const divisionData = [
       'Shakeqc',
       'Skiplogic',
       'NotZempro',
+      'Suds',
     ],
   },
   {
@@ -200,6 +201,7 @@ const divisionData = [
     players: [
       'DrKn0ckers',
       'Kyradev',
+      'Hecate',
       'PIW',
       'Roman',
       'Swedishchef',
@@ -219,6 +221,7 @@ const divisionData = [
     numAutoRelegate: 1,
     players: [
       'Aoife',
+      'BillyMac',
       'ITGBalbar',
       'Firedox',
       'Jati',
