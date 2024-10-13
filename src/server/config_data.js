@@ -544,6 +544,7 @@ const adminRole = [
 
 const restreamerRole = [
 ".charsiu.#0",
+".hazelnutmilk.#0",
 ".yler#0",
 "＊Chong#8809",
 "🇦🇷Joacozep#0518",
@@ -629,6 +630,7 @@ const restreamerRole = [
 "elpailtem#0",
 "Emptyeye#7326",
 "enscalight#0",
+"eri_lioness#0",
 "EricICX#6985",
 "ethan1405#0",
 "evesy#1650",
