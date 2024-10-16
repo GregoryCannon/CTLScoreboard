@@ -303,9 +303,11 @@ const divisionData = [
       "ETHANTHOUGHTS",
       "ARBARO",
       "R3IO4MF",
-      "BMAC",
       "LIPTONEQ",
       "JUNIOR",
+      "WESTON",
+      "MRSWARTT",
+      "ZENON",
     ]
   },
 
@@ -384,6 +386,23 @@ const divisionData = [
       "OMENVOIR",
       "LETCREATE",
       "JUST_WOBERT",
+    ]
+  },
+  {
+    divisionName: "Silver 51",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "MARTS",
+      "SNOWYTETRIS",
+      "TOMELLO",
+      "JURAVLIJOV",
+      "ANBER",
     ]
   },
 
@@ -509,6 +528,24 @@ const divisionData = [
       "ERILIONESS",
       "ADAMIRISH",
       "GAMERZ",
+    ]
+  },
+  {
+    divisionName: "Bronze 63",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "COKI",
+      "TREEPRIEST",
+      "LOKENZE",
+      "RXS",
+      "CY1ER",
+      "VISOR",
     ]
   },
 
