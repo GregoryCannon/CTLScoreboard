@@ -403,6 +403,7 @@ const divisionData = [
       "TOMELLO",
       "JURAVLIJOV",
       "ANBER",
+      "NIA",
     ]
   },
 
