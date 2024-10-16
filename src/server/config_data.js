@@ -400,7 +400,7 @@ const divisionData = [
       "MARTS",
       "SNOWYTETRIS",
       "TOMELLO",
-      "JURAVLIJOV",
+      "JURAVLJOV",
       "ANBER",
       "NIA",
     ]
