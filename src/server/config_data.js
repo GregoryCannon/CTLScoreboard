@@ -304,7 +304,6 @@ const divisionData = [
       "ARBARO",
       "R3IO4MF",
       "LIPTONEQ",
-      "JUNIOR",
       "WESTON",
       "MRSWARTT",
       "ZENON",
