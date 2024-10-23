@@ -404,6 +404,23 @@ const divisionData = [
       "NIA",
     ]
   },
+  {
+    divisionName: "Silver 52",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "VASCO",
+      "BOPPY",
+      "M149",
+      "THISINTHAT",
+      "BRIANTHEONE",
+    ]
+  },
 
   {
     divisionName: "Bronze 56",
@@ -547,6 +564,25 @@ const divisionData = [
       "VISOR",
     ]
   },
+  {
+    divisionName: "Bronze 64",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "TOPAZ",
+      "VALLIE42",
+      "ADAMIRISH",
+      "ROGUEPOTATO",
+      "SIRMASER",
+      "BLINGUS",
+      "THELOVASMAN",
+    ]
+  },
 
   {
     divisionName: "Oak 7",
@@ -565,6 +601,39 @@ const divisionData = [
       "VALLIE42",
     ]
   },
+  {
+    divisionName: "Oak 8",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "FAILMANFLO",
+      "SEVENPAGEWILSON",
+      "DANIEL_L12",
+      "LILIANA",
+    ]
+  },
+  {
+    divisionName: "Oak 9",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "PLASMICAT",
+      "BBOT",
+      "CDOUG",
+      "ERILIONESS",
+    ]
+  },
+
   {
     divisionName: "Elm 3",
     competition: "tnp",
@@ -597,6 +666,22 @@ const divisionData = [
       "ERILIONESS",
       "TIFFYFLOWR",
       "LILIANA",
+    ]
+  },
+  {
+    divisionName: "Elm 5",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "KURDIGAMER772",
+      "TIFFYFLOWR",
+      "LADYVADER",
+      "WILLIECUBED",
     ]
   },
 ];
