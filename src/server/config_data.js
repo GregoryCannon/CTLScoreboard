@@ -60,7 +60,6 @@ const divisionData = [
       'Marq',
       'Salted Sofa',
       'Zxvye',
-      'Chiller',
     ],
   },
   {
@@ -80,7 +79,7 @@ const divisionData = [
       'Hydrant',
       'Melhk',
       'Peek',
-      'RobinTetris',
+      'Chiller',
     ],
   },
 
