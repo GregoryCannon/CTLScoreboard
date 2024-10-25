@@ -432,24 +432,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Elm 3",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "lettuce",
-      "sevenpagewilson", 
-      "art_vandelay",
-      "cy1er",
-      "smartseller",
-      "tiffyflowr",
-    ]
-  },
-  {
     divisionName: "Elm 4",
     competition: "tnp",
     oneMatchPerPair: false,
