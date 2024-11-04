@@ -221,7 +221,6 @@ const divisionData = [
     players: [
       'Aoife',
       'BillyMac',
-      'ITGBalbar',
       'Firedox',
       'Jati',
       'Nyakozame',
