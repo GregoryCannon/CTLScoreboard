@@ -323,6 +323,41 @@ const divisionData = [
       "BRIANTHEONE",
     ]
   },
+  {
+    divisionName: "Silver 53",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "MANSION",
+      "THISINTHAT",
+      "THELOVASMAN",
+      "AVRIIX",
+      "MIKOLAJ",
+      "M149",
+    ]
+  },
+  {
+    divisionName: "Silver 54",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "MANTASKUTOP",
+      "GAMERZ",
+      "GLACIER",
+      "COVERDALES",
+      "OMENVOIR",
+    ]
+  },
 
   {
     divisionName: "Bronze 60",
@@ -412,6 +447,25 @@ const divisionData = [
       "SIRMASER",
       "BLINGUS",
       "THELOVASMAN",
+    ]
+  },
+  {
+    divisionName: "Bronze 65",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "FURIO",
+      "LILIANA",
+      "TEMPHUIBIS",
+      "CY1ER",
+      "GILDEDLIZARD",
+      "BEAN",
+      "CROIOS",
     ]
   },
 
