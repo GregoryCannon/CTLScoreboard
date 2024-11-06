@@ -466,6 +466,7 @@ const divisionData = [
       "GILDEDLIZARD",
       "BEAN",
       "CROIOS",
+      "CDOUG",
     ]
   },
 
