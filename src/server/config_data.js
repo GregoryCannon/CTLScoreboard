@@ -54,7 +54,6 @@ const divisionData = [
     players: [
       'Bisby',
       'Night',
-      'Giovanni',
       'SmolJordan',
       'Somalian',
       'Marq',
