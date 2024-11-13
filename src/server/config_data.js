@@ -266,6 +266,23 @@ const divisionData = [
       "TEAFORDINNER",
     ]
   },
+  {
+    divisionName: "Gold 43",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "GUERREROASDF",
+      "LOCO_T",
+      "MADDY",
+      "JURAVLJOV",
+      "EQUI",
+    ]
+  },
 
   {
     divisionName: "Silver 50",
@@ -355,6 +372,23 @@ const divisionData = [
       "GLACIER",
       "COVERDALES",
       "OMENVOIR",
+    ]
+  },
+  {
+    divisionName: "Silver 55",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "SNOWYTETRIS",
+      "NIA",
+      "MARTS",
+      "BRIANTHEONE",
+      "VASCO",
     ]
   },
 
