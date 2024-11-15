@@ -872,7 +872,7 @@ const restreamerRole = [
 "Z Wing#6720",
 "Zabby#2618",
 "Zipley#7137",
-"Zxvye#5501",
+"zxvye.#0",
 "zydras07#0",
 "ちどり#2119",
 ];
