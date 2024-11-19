@@ -754,6 +754,7 @@ const restreamerRole = [
 "mfrerck#0",
 "micetro#0",
 "Mickaël M.#2479",
+"mikdagreat#0",
 "mil0-#1281",
 "minertyler100#0",
 "mistec43#9728",
