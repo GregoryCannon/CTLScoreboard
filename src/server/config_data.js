@@ -502,6 +502,26 @@ const divisionData = [
       "CDOUG",
     ]
   },
+  {
+    divisionName: "Bronze 66",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "FAILMANFLO",
+      "JAVANTEA",
+      "CHEFBOYARGEEBS",
+      "ADAMIRISH",
+      "BLINGUS",
+      "LILIANA",
+      "ROGUEPOTATO",
+      "LOKENZE",
+    ]
+  },
 
   {
     divisionName: "Oak 8",
@@ -535,6 +555,22 @@ const divisionData = [
       "ERILIONESS",
     ]
   },
+  {
+    divisionName: "Oak 10",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "CABLE",
+      "SEVENPAGEWILSON",
+      "ART_VANDELAY",
+      "BBOT",
+    ]
+  },
 
   {
     divisionName: "Elm 5",
@@ -549,6 +585,22 @@ const divisionData = [
       "KURDIGAMER772",
       "TIFFYFLOWR",
       "LADYVADER",
+      "WILLIECUBED",
+    ]
+  },
+  {
+    divisionName: "Elm 6",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "ERILIONESS",
+      "TIFFYFLOWR",
+      "BLUESCHIZO",
       "WILLIECUBED",
     ]
   },
