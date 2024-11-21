@@ -416,22 +416,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Oak 8",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 1,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "FAILMANFLO",
-      "SEVENPAGEWILSON",
-      "DANIEL_L12",
-      "LILIANA",
-    ]
-  },
-  {
     divisionName: "Oak 9",
     competition: "tnp",
     oneMatchPerPair: false,
