@@ -285,26 +285,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Silver 50",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "MIRRORRIKER",
-      "THISINTHAT",
-      "TEAFORDINNER",
-      "KANNPLAYSTETRIS",
-      "COVERDALES",
-      "OMENVOIR",
-      "LETCREATE",
-      "JUST_WOBERT",
-    ]
-  },
-  {
     divisionName: "Silver 51",
     competition: "tnp",
     oneMatchPerPair: false,
