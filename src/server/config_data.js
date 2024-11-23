@@ -899,6 +899,7 @@ const restreamerRole = [
 "thisinthat#0",
 "Threes > Twos#3333",
 "thunderstorm281#0",
+"thund7#0",
 "timmykim915#0",
 "TKK24#2514",
 "TomelloSoulMan#7863",
