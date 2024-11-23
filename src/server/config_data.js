@@ -296,7 +296,6 @@ const divisionData = [
     players: [
       "MANSION",
       "THISINTHAT",
-      "THELOVASMAN",
       "AVRIIX",
       "MIKOLAJ",
       "M149",
