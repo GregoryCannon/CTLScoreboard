@@ -285,61 +285,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Silver 50",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "MIRRORRIKER",
-      "THISINTHAT",
-      "TEAFORDINNER",
-      "KANNPLAYSTETRIS",
-      "COVERDALES",
-      "OMENVOIR",
-      "LETCREATE",
-      "JUST_WOBERT",
-    ]
-  },
-  {
-    divisionName: "Silver 51",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "MARTS",
-      "SNOWYTETRIS",
-      "TOMELLO",
-      "JURAVLJOV",
-      "ANBER",
-      "NIA",
-    ]
-  },
-  {
-    divisionName: "Silver 52",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "VASCO",
-      "BOPPY",
-      "M149",
-      "THISINTHAT",
-      "BRIANTHEONE",
-    ]
-  },
-  {
     divisionName: "Silver 53",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -392,59 +337,6 @@ const divisionData = [
     ]
   },
 
-  {
-    divisionName: "Bronze 60",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "MANSION",
-      "STEVENATOR",
-      "LOUCY",
-      "SEVENPAGEWILSON",
-      "ROGUEPOTATO",
-    ]
-  },
-  {
-    divisionName: "Bronze 61",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "AVRIIX",
-      "TEMPHUIBIS",
-      "TURTLERTA",
-      "LOPUNNY",
-      "HIWD",
-    ]
-  },
-  {
-    divisionName: "Bronze 62",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "M149",
-      "LILIANA",
-      "CDOUG",
-      "ROGUEPOTATO",
-      "ERILIONESS",
-      "ADAMIRISH",
-      "GAMERZ",
-    ]
-  },
   {
     divisionName: "Bronze 63",
     competition: "tnp",
@@ -524,22 +416,6 @@ const divisionData = [
   },
 
   {
-    divisionName: "Oak 8",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 1,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "FAILMANFLO",
-      "SEVENPAGEWILSON",
-      "DANIEL_L12",
-      "LILIANA",
-    ]
-  },
-  {
     divisionName: "Oak 9",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -572,22 +448,6 @@ const divisionData = [
     ]
   },
 
-  {
-    divisionName: "Elm 5",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "KURDIGAMER772",
-      "TIFFYFLOWR",
-      "LADYVADER",
-      "WILLIECUBED",
-    ]
-  },
   {
     divisionName: "Elm 6",
     competition: "tnp",
