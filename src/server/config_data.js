@@ -115,7 +115,6 @@ const divisionData = [
       'Alejo',
       'Wide',
       'Draco',
-      'Hazelnutmilk',
       'Manta7',
       'NeutrisicAcid',
       'SillyShark',
