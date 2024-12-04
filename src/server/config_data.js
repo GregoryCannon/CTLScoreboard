@@ -282,6 +282,40 @@ const divisionData = [
       "EQUI",
     ]
   },
+  {
+    divisionName: "Gold 44",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "MIKAWAY",
+      "KANNPLAYSTETRIS",
+      "MAEDHROS",
+      "SIXFOUR",
+      "MATHWIZ",
+    ]
+  },
+  {
+    divisionName: "Gold 45",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "ETHANTHOUGHTS",
+      "LOCO_T",
+      "ERADACH",
+      "ARBARO",
+      "RONCLI",
+    ]
+  },
 
   {
     divisionName: "Silver 53",
@@ -351,6 +385,24 @@ const divisionData = [
       "MCKICKASS",
       "TOMELLO",
       "COKI",
+    ]
+  },
+  {
+    divisionName: "Silver 57",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "KAT",
+      "MAYHOFFER",
+      "MARTS",
+      "DOBRYCZLEK",
+      "LETCREATE",
+      "CY1ER",
     ]
   },
 
