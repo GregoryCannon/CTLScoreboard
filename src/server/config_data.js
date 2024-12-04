@@ -173,9 +173,8 @@ const divisionData = [
     numAutoPromo: 2,
     numPlayoffPromo: 1,
     numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
+    numAutoRelegate: 0,
     players: [
-      'Burritodad',
       'Catsugiri',
       'Grand Designs',
       'Kingsman',
