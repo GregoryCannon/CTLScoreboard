@@ -73,7 +73,6 @@ const divisionData = [
     players: [
       'AvGeek',
       'Curi',
-      'GalaxyBiscuit',
       'Gwafey',
       'Hydrant',
       'Melhk',
