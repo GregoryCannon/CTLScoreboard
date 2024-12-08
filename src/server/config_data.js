@@ -474,7 +474,6 @@ const divisionData = [
       "FAILMANFLO",
       "JAVANTEA",
       "CHEFBOYARGEEBS",
-      "ADAMIRISH",
       "BLINGUS",
       "LILIANA",
       "ROGUEPOTATO",
