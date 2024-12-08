@@ -626,6 +626,7 @@ const restreamerRole = [
 "DitShadows#3241",
 "DivCaste#6595",
 "Dobry_Czlowiek#6510",
+"dobreee#0",
 "docpi314#0",
 "dogpt#0",
 "doodle#3414",
