@@ -403,6 +403,23 @@ const divisionData = [
       "CY1ER",
     ]
   },
+  {
+    divisionName: "Silver 58",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "AVRIIX",
+      "ENSCALIGHT",
+      "BRIANTHEONE",
+      "MARTS",
+      "SNOWYTETRIS",
+    ]
+  },
 
   {
     divisionName: "Bronze 63",
@@ -478,6 +495,25 @@ const divisionData = [
       "LILIANA",
       "ROGUEPOTATO",
       "LOKENZE",
+    ]
+  },
+  {
+    divisionName: "Bronze 67",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "CROIOS",
+      "TREEPRIEST",
+      "PLASMICAT",
+      "SEVENPAGEWILSON",
+      "321MRHAATZ",
+      "TOPAZ",
+      "KALIMOTXO",
     ]
   },
 
