@@ -314,6 +314,24 @@ const divisionData = [
       "RONCLI",
     ]
   },
+  {
+    divisionName: "Gold 46",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "BMAC",
+      "TACOMOM",
+      "JURAVLJOV",
+      "MADDY",
+      "ELPAILTEM",
+      "JUNIOR",
+    ]
+  },
 
   {
     divisionName: "Silver 53",
@@ -420,6 +438,25 @@ const divisionData = [
       "SNOWYTETRIS",
     ]
   },
+  {
+    divisionName: "Silver 59",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "GAMERZ",
+      "DANNYMAGE",
+      "GILDEDLIZARD",
+      "KOCCHIRA",
+      "VASCO",
+      "MANTASKUTOP",
+      "THELOVASMAN",
+    ]
+  },
 
   {
     divisionName: "Bronze 63",
@@ -516,6 +553,24 @@ const divisionData = [
       "KALIMOTXO",
     ]
   },
+  {
+    divisionName: "Bronze 68",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "LILIANA",
+      "ART_VANDELAY",
+      "SUPERJAYCODER",
+      "TEMPHUIBIS",
+      "ZYLID",
+      "BLUE SCHIZO",
+    ]
+  },
 
   {
     divisionName: "Oak 9",
@@ -549,6 +604,22 @@ const divisionData = [
       "BBOT",
     ]
   },
+  {
+    divisionName: "Oak 11",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "DANIEL_L12",
+      "BBOT",
+      "T1NY",
+      "TR3BAS",
+    ]
+  },
 
   {
     divisionName: "Elm 6",
@@ -564,6 +635,22 @@ const divisionData = [
       "TIFFYFLOWR",
       "BLUESCHIZO",
       "WILLIECUBED",
+    ]
+  },
+  {
+    divisionName: "Elm 7",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "ERILIONESS",
+      "WILLIECUBED",
+      "ANNISHARK",
+      "DEEPSHOCK",
     ]
   },
 ];
