@@ -567,7 +567,7 @@ const divisionData = [
       "ART_VANDELAY",
       "SUPERJAYCODER",
       "TEMPHUIBIS",
-      "ZYLID",
+      "ZYILDRL",
       "BLUE SCHIZO",
     ]
   },
