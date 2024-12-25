@@ -571,6 +571,24 @@ const divisionData = [
       "BLUE SCHIZO",
     ]
   },
+  {
+    divisionName: "Bronze 69",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "M149",
+      "CODECRACKER",
+      "FURIO",
+      "CROIOS",
+      "BEAN",
+      "ROGUEPOTATO",
+    ]
+  },
 
   {
     divisionName: "Oak 9",
