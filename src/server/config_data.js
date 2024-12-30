@@ -782,6 +782,7 @@ const restreamerRole = [
 "EricICX#6985",
 "ethan1405#0",
 "evesy#1650",
+"eve_d#0",
 "falkite#0",
 "Felinho#7580",
 "Fidhapre#9453",
