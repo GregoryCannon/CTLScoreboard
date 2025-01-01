@@ -226,6 +226,9 @@ const divisionData = [
     ],
   },
 
+  // END CTL
+  // BEGIN GOLD
+
   {
     divisionName: "Gold 41",
     competition: "tnp",
@@ -332,6 +335,28 @@ const divisionData = [
       "JUNIOR",
     ]
   },
+  {
+    divisionName: "Gold 47",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "ZENON",
+      "LIPTONEQ",
+      "LETCREATE",
+      "MIKAWAY",
+      "DOBRYCZLEK",
+      "KANNPLAYSTETRIS",
+      "GUSTAVOCUBISTA7",
+    ]
+  },
+
+  // END GOLD
+  // BEGIN SILVER
 
   {
     divisionName: "Silver 53",
@@ -457,6 +482,26 @@ const divisionData = [
       "THELOVASMAN",
     ]
   },
+  {
+    divisionName: "Silver 60",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "MANSION",
+      "MARTS",
+      "KAAPINLUINEN",
+      "MIRRORRIKER",
+      "SUNX2D",
+    ]
+  },
+
+  // END SILVER
+  // BEGIN BRONZE
 
   {
     divisionName: "Bronze 63",
@@ -588,6 +633,9 @@ const divisionData = [
       "ROGUEPOTATO",
     ]
   },
+
+  // END BRONZE
+  // BEGIN BEGINNER
 
   {
     divisionName: "Oak 9",
