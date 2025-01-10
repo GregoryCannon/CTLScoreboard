@@ -887,6 +887,7 @@ const restreamerRole = [
 "Grand Designs#3638",
 "gregboomcannon#0",
 "gummithecat#6363",
+"hai5772#0",
 "Haven#0602",
 ".hazelnutmilk.#0",
 "heist#0",
