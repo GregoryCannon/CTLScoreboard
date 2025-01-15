@@ -466,6 +466,25 @@ const divisionData = [
       "ROGUEPOTATO",
     ]
   },
+  {
+    divisionName: "Bronze 70",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "KALIMOTXO",
+      "BLINGUS",
+      "SEVENPAGEWILSON",
+      "ABYSS",
+      "MAYHOFFER",
+      "LILIANA",
+      "GILDEDLIZARD",
+    ]
+  },
 
   // END BRONZE
   // BEGIN BEGINNER
@@ -486,6 +505,38 @@ const divisionData = [
       "TR3BAS",
     ]
   },
+  {
+    divisionName: "Oak 12",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "ART_VANDELAY",
+      "BBOT",
+      "T1NY",
+      "TR3BAS",
+    ]
+  },
+  {
+    divisionName: "Oak 13",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "ERILIONESS",
+      "WILLIECUBED",
+      "TIFFYFLOWR",
+      "CMCAJABA",
+    ]
+  },
 
   {
     divisionName: "Elm 7",
@@ -501,6 +552,21 @@ const divisionData = [
       "WILLIECUBED",
       "ANNISHARK",
       "DEEPSHOCK",
+    ]
+  },
+  {
+    divisionName: "Elm 8",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "SUPERSTEP",
+      "DEEPSHOCK",
+      "GOTH WITCH",
     ]
   },
 ];
