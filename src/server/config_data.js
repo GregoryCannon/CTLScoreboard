@@ -173,7 +173,7 @@ const divisionData = [
     players: [
       'Roncli',
       'Skiplogic',
-      'TNP Gold 46 Placeholder',
+      'Eradach',
       'Weston',
       'Roman',
       'Hecate',
