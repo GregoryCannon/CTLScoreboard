@@ -567,6 +567,7 @@ const divisionData = [
       "SUPERSTEP",
       "DEEPSHOCK",
       "GOTH WITCH",
+      "ANNISHARK",
     ]
   },
 ];
