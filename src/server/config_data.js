@@ -206,40 +206,6 @@ const divisionData = [
   // BEGIN GOLD
 
   {
-    divisionName: "Gold 44",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "MIKAWAY",
-      "KANNPLAYSTETRIS",
-      "MAEDHROS",
-      "SIXFOUR",
-      "MATHWIZ",
-    ]
-  },
-  {
-    divisionName: "Gold 45",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "ETHANTHOUGHTS",
-      "LOCO_T",
-      "ERADACH",
-      "ARBARO",
-      "RONCLI",
-    ]
-  },
-  {
     divisionName: "Gold 46",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -298,60 +264,6 @@ const divisionData = [
   // END GOLD
   // BEGIN SILVER
 
-  {
-    divisionName: "Silver 56",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "ZYLOS",
-      "RXS",
-      "THISINTHAT",
-      "M149",
-      "MCKICKASS",
-      "TOMELLO",
-      "COKI",
-    ]
-  },
-  {
-    divisionName: "Silver 57",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "KAT",
-      "MAYHOFFER",
-      "MARTS",
-      "DOBRYCZLEK",
-      "LETCREATE",
-      "CY1ER",
-    ]
-  },
-  {
-    divisionName: "Silver 58",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "AVRIIX",
-      "ENSCALIGHT",
-      "BRIANTHEONE",
-      "MARTS",
-      "SNOWYTETRIS",
-    ]
-  },
   {
     divisionName: "Silver 59",
     competition: "tnp",
@@ -430,25 +342,6 @@ const divisionData = [
   // END SILVER
   // BEGIN BRONZE
 
-  {
-    divisionName: "Bronze 67",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "CROIOS",
-      "TREEPRIEST",
-      "PLASMICAT",
-      "SEVENPAGEWILSON",
-      "321MRHAATZ",
-      "TOPAZ",
-      "KALIMOTXO",
-    ]
-  },
   {
     divisionName: "Bronze 68",
     competition: "tnp",
