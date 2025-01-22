@@ -408,6 +408,24 @@ const divisionData = [
       "TREEPRIEST",
     ]
   },
+  {
+    divisionName: "Silver 62",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "ARBARO",
+      "THATKIDKIM",
+      "M149",
+      "ZYILDRL",
+      "ENSCALIGHT",
+      "CY1ER",
+    ]
+  },
 
   // END SILVER
   // BEGIN BRONZE
