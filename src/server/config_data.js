@@ -401,22 +401,6 @@ const divisionData = [
   // BEGIN BEGINNER
 
   {
-    divisionName: "Oak 11",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 1,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "DANIEL_L12",
-      "BBOT",
-      "T1NY",
-      "TR3BAS",
-    ]
-  },
-  {
     divisionName: "Oak 12",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -449,22 +433,6 @@ const divisionData = [
     ]
   },
 
-  {
-    divisionName: "Elm 7",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 1,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "ERILIONESS",
-      "WILLIECUBED",
-      "ANNISHARK",
-      "DEEPSHOCK",
-    ]
-  },
   {
     divisionName: "Elm 8",
     competition: "tnp",
