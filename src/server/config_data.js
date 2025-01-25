@@ -280,7 +280,6 @@ const divisionData = [
       "KOCCHIRA",
       "VASCO",
       "MANTASKUTOP",
-      "THELOVASMAN",
     ]
   },
   {
