@@ -260,6 +260,26 @@ const divisionData = [
       "RXS",
     ]
   },
+  {
+    divisionName: "Gold 49",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "ETHANTHOUGHTS",
+      "STOLENSHORTSWORD",
+      "KANNPLAYSTETRIS",
+      "MAEDHROS",
+      "UNSKILL",
+      "DANNYMAGE",
+      "BMAC",
+      "SNOWYTETRIS",
+    ]
+  },
 
   // END GOLD
   // BEGIN SILVER
@@ -337,6 +357,23 @@ const divisionData = [
       "CY1ER",
     ]
   },
+  {
+    divisionName: "Silver 63",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "MARTS",
+      "BLINGUS",
+      "MIRRORRIKER",
+      "MAYHOFFER",
+      "TACOMOM",
+    ]
+  },
 
   // END SILVER
   // BEGIN BRONZE
@@ -393,6 +430,26 @@ const divisionData = [
       "MAYHOFFER",
       "LILIANA",
       "GILDEDLIZARD",
+    ]
+  },
+  {
+    divisionName: "Bronze 71",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "HEATER",
+      "SUPERJAYCODER",
+      "TEMPHUIBIS",
+      "ROGUEPOTATO",
+      "CROIOS",
+      "JUST_WOBERT",
+      "LILIANA",
+      "ADAMIRISH",
     ]
   },
 
