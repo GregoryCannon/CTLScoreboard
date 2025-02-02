@@ -335,7 +335,6 @@ const divisionData = [
       "CY1ER",
       "LOKENZE",
       "BRIANTHEONE",
-      "AVRIIX",
       "TREEPRIEST",
     ]
   },
