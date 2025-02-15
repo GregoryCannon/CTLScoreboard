@@ -350,7 +350,6 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 0,
     players: [
-      "HEATER",
       "SUPERJAYCODER",
       "TEMPHUIBIS",
       "ROGUEPOTATO",
