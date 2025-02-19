@@ -359,6 +359,23 @@ const divisionData = [
       "ADAMIRISH",
     ]
   },
+  {
+    divisionName: "Bronze 72",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "KALIMOTXO",
+      "GILDEDLIZARD",
+      "MRSKUBADOO",
+      "CHEFBOYARGEEBS",
+      "LILIANA",
+    ]
+  },
 
   // END BRONZE
   // BEGIN BEGINNER
@@ -393,6 +410,24 @@ const divisionData = [
       "WILLIECUBED",
       "TIFFYFLOWR",
       "MRSKUBADOO",
+    ]
+  },
+  {
+    divisionName: "Oak 14",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "ERILIONESS",
+      "WILLIECUBED",
+      "SEVENPAGEWILSON",
+      "SUPERSTEP",
+      "BBOT",
+      "YAZEN",
     ]
   },
 
