@@ -317,6 +317,25 @@ const divisionData = [
       "TACOMOM",
     ]
   },
+{
+    divisionName: "Silver 64",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+        "MARTS",
+        "VASCO",
+        "TREEPRIEST",
+        "TEMPHUIBIS",
+        "LOKENZE",
+        "TOMELLO",
+        "THATKIDKIM",
+    ]
+  },
 
   // END SILVER
   // BEGIN BRONZE
