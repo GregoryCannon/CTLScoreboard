@@ -554,6 +554,7 @@ const restreamerRole = [
 "cy1ersrc#0",
 "danvvv#0",
 "DavidMichaelJ#5419",
+"deepshock#0",
 "deewee7#0",
 "dekk_cl#0",
 "DerJockel#2282",
