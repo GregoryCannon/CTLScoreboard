@@ -333,6 +333,7 @@ const divisionData = [
       "CY1ER",
       "BRIANTHEONE",
       "TREEPRIEST",
+      "LOKENZE",
     ]
   },
   {
@@ -384,7 +385,6 @@ const divisionData = [
         "VASCO",
         "TREEPRIEST",
         "TEMPHUIBIS",
-        "LOKENZE",
         "TOMELLO",
         "THATKIDKIM",
     ]
