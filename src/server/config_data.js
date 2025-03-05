@@ -259,6 +259,60 @@ const divisionData = [
       "MRSWARTT",
     ]
   },
+  {
+    divisionName: "Gold 52",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "KANNPLAYSTETRIS",
+      "DOBRYCZLEK",
+      "COVERDALES",
+      "TACOMOM",
+      "OMENVOIR",
+      "M149",
+    ]
+  },
+  {
+    divisionName: "Gold 53",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "ELPAILTEM",
+      "SUDS",
+      "LIPTONEQ",
+      "ETHANTHOUGHTS",
+      "CY1ER",
+      "MIKEFLO",
+    ]
+  },
+  {
+    divisionName: "Gold 54",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "BURRITODAD",
+      "JURAVLJOV",
+      "SNOWYTETRIS",
+      "MIKAWAY",
+      "BILLYMAC",
+      "THISINTHAT",
+    ]
+  },
 
   // END GOLD
   // BEGIN SILVER
@@ -277,7 +331,6 @@ const divisionData = [
       "THISINTHAT",
       "KAT",
       "CY1ER",
-      "LOKENZE",
       "BRIANTHEONE",
       "TREEPRIEST",
     ]
