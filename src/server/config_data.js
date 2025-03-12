@@ -389,6 +389,25 @@ const divisionData = [
         "THATKIDKIM",
     ]
   },
+{
+    divisionName: "Silver 65",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "LILIANA",
+      "MANTASKUTOP",
+      "BLINGUS",
+      "HUNN14",
+      "JUST_WOBERT",
+      "ARBARO",
+      "KAAPINLUINEN",
+    ]
+  },
 
   // END SILVER
   // BEGIN BRONZE
@@ -446,6 +465,26 @@ const divisionData = [
       "MRSKUBADOO",
       "CHEFBOYARGEEBS",
       "LILIANA",
+    ]
+  },
+  {
+    divisionName: "Bronze 73",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "SUPERJAYCODER",
+      "KALIMOTXO",
+      "GILDEDLIZARD",
+      "ANNISHARK",
+      "MOJOMONKEY",
+      "GOSCIU",
+      "T1NY",
+      "SEVENPAGEWILSON",
     ]
   },
 
