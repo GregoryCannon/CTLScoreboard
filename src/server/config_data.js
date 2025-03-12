@@ -206,43 +206,6 @@ const divisionData = [
   // BEGIN GOLD
 
   {
-    divisionName: "Gold 49",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "ETHANTHOUGHTS",
-      "STOLENSHORTSWORD",
-      "KANNPLAYSTETRIS",
-      "MAEDHROS",
-      "UNSKILL",
-      "DANNYMAGE",
-      "BMAC",
-      "SNOWYTETRIS",
-    ]
-  },
-  {
-    divisionName: "Gold 50",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "LIPTONEQ",
-      "RONCLI",
-      "DOBRYCZLEK",
-      "THISINTHAT",
-      "MIKAWAY",
-    ]
-  },
-  {
     divisionName: "Gold 51",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -317,60 +280,6 @@ const divisionData = [
   // END GOLD
   // BEGIN SILVER
 
-  {
-    divisionName: "Silver 61",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "321MRHAATZ",
-      "THISINTHAT",
-      "KAT",
-      "CY1ER",
-      "BRIANTHEONE",
-      "TREEPRIEST",
-      "LOKENZE",
-    ]
-  },
-  {
-    divisionName: "Silver 62",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "ARBARO",
-      "THATKIDKIM",
-      "M149",
-      "ZYILDRL",
-      "ENSCALIGHT",
-      "CY1ER",
-    ]
-  },
-  {
-    divisionName: "Silver 63",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "MARTS",
-      "BLINGUS",
-      "MIRRORRIKER",
-      "MAYHOFFER",
-      "TACOMOM",
-    ]
-  },
 {
     divisionName: "Silver 64",
     competition: "tnp",
@@ -413,44 +322,6 @@ const divisionData = [
   // BEGIN BRONZE
 
   {
-    divisionName: "Bronze 70",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "KALIMOTXO",
-      "BLINGUS",
-      "SEVENPAGEWILSON",
-      "ABYSS",
-      "MAYHOFFER",
-      "LILIANA",
-      "GILDEDLIZARD",
-    ]
-  },
-  {
-    divisionName: "Bronze 71",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "SUPERJAYCODER",
-      "TEMPHUIBIS",
-      "ROGUEPOTATO",
-      "CROIOS",
-      "JUST_WOBERT",
-      "LILIANA",
-      "ADAMIRISH",
-    ]
-  },
-  {
     divisionName: "Bronze 72",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -491,38 +362,6 @@ const divisionData = [
   // END BRONZE
   // BEGIN BEGINNER
 
-  {
-    divisionName: "Oak 12",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 1,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "ART_VANDELAY",
-      "BBOT",
-      "T1NY",
-      "TR3BAS",
-    ]
-  },
-  {
-    divisionName: "Oak 13",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 1,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "ERILIONESS",
-      "WILLIECUBED",
-      "TIFFYFLOWR",
-      "MRSKUBADOO",
-    ]
-  },
   {
     divisionName: "Oak 14",
     competition: "tnp",
