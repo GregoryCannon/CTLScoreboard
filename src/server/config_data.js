@@ -276,6 +276,25 @@ const divisionData = [
       "THISINTHAT",
     ]
   },
+  {
+    divisionName: "Gold 55",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "ZENON",
+      "MAEDHROS",
+      "GAMERZ",
+      "SNOWYTETRIS",
+      "SUNX2D",
+      "M149",
+      "CY1ER",
+    ]
+  },
 
   // END GOLD
   // BEGIN SILVER
