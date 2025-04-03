@@ -317,7 +317,7 @@ const divisionData = [
         "THATKIDKIM",
     ]
   },
-{
+  {
     divisionName: "Silver 65",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -334,6 +334,24 @@ const divisionData = [
       "JUST_WOBERT",
       "ARBARO",
       "KAAPINLUINEN",
+    ]
+  },
+  {
+    divisionName: "Silver 66",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "MANSION",
+      "ETHANTHOUGHTS",
+      "MARTS",
+      "DANNYMAGE",
+      "LOKENZE",
+      "TREEPRIEST",
     ]
   },
 
@@ -377,6 +395,25 @@ const divisionData = [
       "SEVENPAGEWILSON",
     ]
   },
+  {
+    divisionName: "Bronze 74",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "WEEGLOOGI",
+      "ERILIONESS",
+      "HELLO_WORLD1",
+      "BBOT",
+      "TEMPHUIBIS",
+      "MAXX",
+      "KALIMOTXO",
+    ]
+  },
 
   // END BRONZE
   // BEGIN BEGINNER
@@ -399,6 +436,22 @@ const divisionData = [
       "YAZEN",
     ]
   },
+  {
+    divisionName: "Oak 15",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "SUPERSTEP",
+      "COXDANNYJ",
+      "MS_DROP",
+      "WYATT K",
+    ]
+  },
 
   {
     divisionName: "Elm 8",
@@ -414,6 +467,22 @@ const divisionData = [
       "DEEPSHOCK",
       "GOTH WITCH",
       "ANNISHARK",
+    ]
+  },
+  {
+    divisionName: "Elm 9",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "TIFFYFLOWR",
+      "DEEPSHOCK",
+      "MOONGLOW",
+      "BRICKYJAM",
     ]
   },
 ];
