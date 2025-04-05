@@ -241,7 +241,7 @@ const divisionData = [
     numAutoRelegate: 0,
     players: [
       "BRIANTHEONE",
-      "IZOBREEN7",
+      "GAMERZ",
       "SUNX2D",
       "EZHEDEH",
       "MRSWARTT",
@@ -313,7 +313,7 @@ const divisionData = [
     players: [
       "ZENON",
       "MAEDHROS",
-      "GAMERZ",
+      "IZOBREEN7",
       "SNOWYTETRIS",
       "SUNX2D",
       "M149",
