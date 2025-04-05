@@ -7,8 +7,8 @@ const divisionData = [
     numPrizeMoney: 2,
     numAutoPromo: 0,
     numPlayoffPromo: 0,
-    numPlayoffRelegate: 2,
-    numAutoRelegate: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 1,
     players: [
       'Blue Scuti',
       'Nek0',
@@ -28,8 +28,8 @@ const divisionData = [
     numPrizeMoney: 2,
     numAutoPromo: 0,
     numPlayoffPromo: 0,
-    numPlayoffRelegate: 2,
-    numAutoRelegate: 0,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 1,
     players: [
       'Alex T',
       'Meme',
