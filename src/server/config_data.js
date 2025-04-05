@@ -216,7 +216,7 @@ const divisionData = [
     numAutoRelegate: 0,
     players: [
       "BRIANTHEONE",
-      "GAMERZ",
+      "IZOBREEN7",
       "SUNX2D",
       "EZHEDEH",
       "MRSWARTT",
@@ -651,6 +651,7 @@ const restreamerRole = [
 "just_wobert#0",
 "Justus#4320",
 "KAINOS#8036",
+"kalimotxojm#0",
 "Kibi Byte#4065",
 "King Choke(Klystyr)(UTC -5)#9595",
 "kingsman36#0",
