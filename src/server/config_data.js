@@ -231,77 +231,6 @@ const divisionData = [
   // BEGIN GOLD
 
   {
-    divisionName: "Gold 51",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "BRIANTHEONE",
-      "GAMERZ",
-      "SUNX2D",
-      "EZHEDEH",
-      "MRSWARTT",
-    ]
-  },
-  {
-    divisionName: "Gold 52",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "KANNPLAYSTETRIS",
-      "DOBRYCZLEK",
-      "COVERDALES",
-      "TACOMOM",
-      "OMENVOIR",
-      "M149",
-    ]
-  },
-  {
-    divisionName: "Gold 53",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "ELPAILTEM",
-      "SUDS",
-      "LIPTONEQ",
-      "ETHANTHOUGHTS",
-      "CY1ER",
-      "MIKEFLO",
-    ]
-  },
-  {
-    divisionName: "Gold 54",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "BURRITODAD",
-      "JURAVLJOV",
-      "SNOWYTETRIS",
-      "MIKAWAY",
-      "BILLYMAC",
-      "THISINTHAT",
-    ]
-  },
-  {
     divisionName: "Gold 55",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -324,24 +253,6 @@ const divisionData = [
   // END GOLD
   // BEGIN SILVER
 
-{
-    divisionName: "Silver 64",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-        "MARTS",
-        "VASCO",
-        "TREEPRIEST",
-        "TEMPHUIBIS",
-        "TOMELLO",
-        "THATKIDKIM",
-    ]
-  },
   {
     divisionName: "Silver 65",
     competition: "tnp",
@@ -383,23 +294,7 @@ const divisionData = [
   // END SILVER
   // BEGIN BRONZE
 
-  {
-    divisionName: "Bronze 72",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "KALIMOTXO",
-      "GILDEDLIZARD",
-      "MRSKUBADOO",
-      "CHEFBOYARGEEBS",
-      "LILIANA",
-    ]
-  },
+
   {
     divisionName: "Bronze 73",
     competition: "tnp",
@@ -478,22 +373,6 @@ const divisionData = [
     ]
   },
 
-  {
-    divisionName: "Elm 8",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 1,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "SUPERSTEP",
-      "DEEPSHOCK",
-      "GOTH WITCH",
-      "ANNISHARK",
-    ]
-  },
   {
     divisionName: "Elm 9",
     competition: "tnp",
