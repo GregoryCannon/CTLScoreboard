@@ -53,7 +53,6 @@ const divisionData = [
     numAutoRelegate: 0,
     players: [
       'Wide',
-      'Curi',
       'ID Kirby',
       'Somalian',
       'Peek',
