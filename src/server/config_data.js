@@ -361,6 +361,26 @@ const divisionData = [
       "TEMPHUIBIS",
     ]
   },
+  {
+    divisionName: "Silver 69",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "FURIO",
+      "MANTASKUTOP",
+      "JUST_WOBERT",
+      "MAXXF386",
+      "IZOBREEN7",
+      "DANIEL_L12",
+      "LILIANA",
+      "SUPERJAYCODER",
+    ]
+  },
 
   // END SILVER
   // BEGIN BRONZE
