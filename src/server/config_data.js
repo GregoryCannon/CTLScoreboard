@@ -38,7 +38,6 @@ const divisionData = [
       'SV',
       'Akatu',
       'Gwafey',
-      'Portalll',
     ],
   },
 
