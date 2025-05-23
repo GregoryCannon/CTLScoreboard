@@ -221,7 +221,6 @@ const divisionData = [
       'BriantheOne',
       'Liptoneq',
       'Mathwiz',
-      'StolenShortSword',
     ],
   },
 
