@@ -281,6 +281,25 @@ const divisionData = [
       "LUKIDELUXE",
     ]
   },
+  {
+    divisionName: "Gold 58",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "BILLYMAC",
+      "CY1ER",
+      "MIKAWAY",
+      "MFRERCK",
+      "EZHEDEH",
+      "MRSWARTT",
+      "JUNIOR",
+    ]
+  },
 
   // END GOLD
   // BEGIN SILVER
@@ -441,6 +460,24 @@ const divisionData = [
       "SUPERSTEP",
       "BBOT",
       "KALIMOTXO",
+    ]
+  },
+  {
+    divisionName: "Bronze 76",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "ADAMIRISH",
+      "SUPERNINJA9999",
+      "COXDANNYJ",
+      "DJANKOFF",
+      "WEEGLOOGI",
+      "WILSON",
     ]
   },
 
