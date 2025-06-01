@@ -622,6 +622,7 @@ const restreamerRole = [
 "Careless#3403",
 "catsugiri#0",
 "cchristm#0",
+"cdoug17#0",
 "CharlesSparkley#7969",
 "ChefGobes#6796",
 "chefboyargeebs#0",
