@@ -804,6 +804,7 @@ const restreamerRole = [
 "p1_carter#0",
 "panquequeque#7897",
 "Paul 楊#5532",
+"peterthechair#0",
 "peyton1996#0",
 "pissarse#0972",
 "pkric#0",
