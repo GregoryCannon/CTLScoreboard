@@ -300,6 +300,23 @@ const divisionData = [
       "JUNIOR",
     ]
   },
+  {
+    divisionName: "Gold 59",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "MAX WU",
+      "RORY",
+      "TOMELLO",
+      "ANJING",
+      "LOKENZE",
+    ]
+  },
 
   // END GOLD
   // BEGIN SILVER
@@ -398,6 +415,25 @@ const divisionData = [
       "SUPERJAYCODER",
     ]
   },
+  {
+    divisionName: "Silver 70",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "KALIMOTXO",
+      "SPECTRIC",
+      "MARTS",
+      "PETERTHECHAIR",
+      "MANSION",
+      "TEMPHUIBIS",
+      "GERHARDADLER",
+    ]
+  },
 
   // END SILVER
   // BEGIN BRONZE
@@ -480,6 +516,40 @@ const divisionData = [
       "WILSON",
     ]
   },
+  {
+    divisionName: "Bronze 77",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "GILDEDLIZARD",
+      "MIRRORRIKER",
+      "CDOUG",
+      "ERILIONESS",
+      "LUPHORIA",
+    ]
+  },
+  {
+    divisionName: "Bronze 78",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "SAMANTHA",
+      "ROGUEPOTATO",
+      "DEEPSHOCK",
+      "BBOT",
+      "SUPERSTEP",
+    ]
+  },
 
   // END BRONZE
   // BEGIN BEGINNER
@@ -550,6 +620,23 @@ const divisionData = [
       "COXDANNYJ",
       "WILLIECUBED",
       "MASHINGSAPPHIC",
+    ]
+  },
+  {
+    divisionName: "Elm 11",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "MOONGLOW",
+      "ARINSEALESS",
+      "MASHINGSAPPHIC",
+      "RJOHNATHAN",
+      "WILLIECUBED",
     ]
   },
 ];
