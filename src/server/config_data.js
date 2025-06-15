@@ -767,6 +767,7 @@ const restreamerRole = [
 "frenchiestfrie#0",
 "frodododo#0",
 "gabrielbondon#0",
+"gbtoast#0",
 "gekki.jb#0",
 "GeoWolf77#3075",
 "gerhard_adler#8867",
