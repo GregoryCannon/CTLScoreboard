@@ -973,6 +973,7 @@ const restreamerRole = [
 "vandweller#7214",
 "vanshtanwani#9639",
 "Vernie#9671",
+"visor702#0",
 "w___i___d___e#0",
 "wdsubia#0",
 "weston6673#0",
