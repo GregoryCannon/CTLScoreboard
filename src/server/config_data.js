@@ -434,6 +434,26 @@ const divisionData = [
       "GERHARDADLER",
     ]
   },
+  {
+    divisionName: "Silver 71",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "TREEPRIEST",
+      "VISOR",
+      "LILIANA",
+      "GBTOAST",
+      "ADAMIRISH",
+      "SUPERNINJA",
+      "SAMANTHA",
+      "ETHANTHOUGHTS",
+    ]
+  },
 
   // END SILVER
   // BEGIN BRONZE
@@ -548,6 +568,39 @@ const divisionData = [
       "DEEPSHOCK",
       "BBOT",
       "SUPERSTEP",
+    ]
+  },
+  {
+    divisionName: "Bronze 79",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "BBOT",
+      "CHEFBOYARGEEBS",
+      "WILSON",
+      "COXDANNYJ",
+    ]
+  },
+  {
+    divisionName: "Bronze 80",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "GILDEDLIZARD",
+      "WEEGLOOGI",
+      "BEIGEHUNTER",
+      "LEYMBDA",
+      "MS_DROP",
     ]
   },
 
