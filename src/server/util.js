@@ -586,7 +586,7 @@ function getApiUrl(suffix) {
   if (IS_PRODUCTION) {
     return "https://ctlscoreboard.herokuapp.com/" + suffix;
   } else {
-    return "http://localhost:8080/" + suffix;
+    return "http://localhost:" + process.env.PORT ? process.env.PORT.toString() : "8080" + "/" + suffix;
   }
 }
 
