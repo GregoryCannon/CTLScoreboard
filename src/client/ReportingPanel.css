@@ -115,7 +115,6 @@ select {
   animation: 500ms linear fadeInOut;
   --webkit-animation: 500ms linear fadeInOut;
   background-color: white;
-
 }
 
 @keyframes fadeInOut {

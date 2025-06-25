@@ -16,7 +16,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 Scoreboard.code-workspace
-package-lock.json
+#package-lock.json
 project.log
 run.txt
 yarn.lock
