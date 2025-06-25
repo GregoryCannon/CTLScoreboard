@@ -1,6 +1,6 @@
 const { Client, Intents } = require("discord.js");
 const logger = require("./logger");
-const { IS_PRODUCTION, getMatchDateFormatted } = require("./util");
+const { getMatchDateFormatted } = require("./util");
 
 const REGISTRATION_OPEN_CTL = true;
 const REGISTRATION_OPEN_TNP = true;
@@ -19,13 +19,13 @@ let DIVISIONS_CTL = {
   "2": [],
   "3": [],
   "4": [],
-  "5": [],
+  "5": []
 };
 let DIVISIONS_TNP = {
   Gold: [],
   Silver: [],
   Bronze: [],
-  Beginner: [],
+  Beginner: []
   // VeryLarge: [],
 };
 const SIGN_UP_MESSAGE_TNP =
@@ -69,8 +69,8 @@ class RegistrationAndMatchBot {
       intents: [
         Intents.FLAGS.GUILDS,
         Intents.FLAGS.GUILD_MESSAGES,
-        Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
-      ],
+        Intents.FLAGS.GUILD_MESSAGE_REACTIONS
+      ]
     });
 
     /* ------------ Helper methods ------------- */
@@ -90,7 +90,7 @@ class RegistrationAndMatchBot {
       let toDelete;
       do {
         toDelete = await channel.messages.fetch({ limit: 100 });
-        toDelete = toDelete.filter((msg) => msg.author.bot);
+        toDelete = toDelete.filter(msg => msg.author.bot);
         await channel.bulkDelete(toDelete);
       } while (toDelete.size >= 2);
     }
@@ -129,7 +129,7 @@ class RegistrationAndMatchBot {
         // New post
         return [
           `--------------------------------\n${match.restreamer} restreamed:\n${match.vod_url}`,
-          matchLine,
+          matchLine
         ];
       } else if (vodSameness === "new timestamp") {
         // Post the VOD with no preview and the match results
@@ -197,7 +197,7 @@ class RegistrationAndMatchBot {
         if (msg.author.bot) {
           msgArray.push({
             content: msg.content,
-            createdTimestamp: msg.createdTimestamp,
+            createdTimestamp: msg.createdTimestamp
           });
         }
       }
@@ -240,7 +240,7 @@ class RegistrationAndMatchBot {
       let splitMessages = msgString.match(/(.|[\r\n]){1,1000}/g); // Replace n with the size of the substring
 
       // Clear existing messages
-      await dataStoreChannel.messages.fetch().then((msgs) => {
+      await dataStoreChannel.messages.fetch().then(msgs => {
         msgs.sort((a, b) => b.createdAt > a.createdAt);
         for (const [_, message] of msgs) {
           if (message.author.bot) {
@@ -272,16 +272,14 @@ class RegistrationAndMatchBot {
         // Main registration section
         await channel.send(SIGN_UP_MESSAGE + LINE_ASCII);
         for (const divisionName of Object.keys(DIVISIONS)) {
-          if (divisionName === "Beginner" && !BEGINNER_REGISTRATION_OPEN_TNP) 
+          if (divisionName === "Beginner" && !BEGINNER_REGISTRATION_OPEN_TNP)
             continue;
 
-          let messageString = isTNP ?
-            divisionName === "Beginner" ?
-              "Sign up for a Beginner (Oak/Elm/Birch) division" 
-              :
-              `Sign up for a ${divisionName} division`
-            :
-            `Sign up for Division ${divisionName}`;
+          let messageString = isTNP
+            ? divisionName === "Beginner"
+              ? "Sign up for a Beginner (Oak/Elm/Birch) division"
+              : `Sign up for a ${divisionName} division`
+            : `Sign up for Division ${divisionName}`;
 
           const message = await channel.send(messageString);
           await message.react(MAIN_EMOJI);
@@ -356,9 +354,12 @@ class RegistrationAndMatchBot {
     async function checkForReactions(divisionName, message) {
       console.log("Checking for reactions");
 
-      forEachReactionUser(message, async (user) => {
+      forEachReactionUser(message, async user => {
         const formattedUser = formatUser(user);
-        if (getExistingDivision(formattedUser) == null || getExistingDivision(formattedUser) == 'VeryLarge') {
+        if (
+          getExistingDivision(formattedUser) == null ||
+          getExistingDivision(formattedUser) == "VeryLarge"
+        ) {
           // Register the player
           await registerUser(divisionName, formattedUser);
 
@@ -380,7 +381,7 @@ class RegistrationAndMatchBot {
     }
 
     async function checkForCancelReacts(cancelMsg) {
-      forEachReactionUser(cancelMsg, async (user) => {
+      forEachReactionUser(cancelMsg, async user => {
         const formattedUser = formatUser(user);
 
         // Wipe the player from registration lists
@@ -396,7 +397,7 @@ class RegistrationAndMatchBot {
     }
 
     async function checkForInfoReacts(infoMsg) {
-      forEachReactionUser(infoMsg, async (user) => {
+      forEachReactionUser(infoMsg, async user => {
         const formattedUser = formatUser(user);
         const existingDivision = getExistingDivision(formattedUser);
         if (existingDivision == null) {
@@ -433,7 +434,7 @@ class RegistrationAndMatchBot {
     });
 
     // Incoming message handler
-    registrationBot.on("messageCreate", async (msg) => {
+    registrationBot.on("messageCreate", async msg => {
       if (msg.channel.id !== commandChannelId) {
         return;
       }
@@ -500,7 +501,7 @@ class RegistrationAndMatchBot {
     });
 
     // Define the one public function to this()
-    this.reportMatchImpl = (match) => {
+    this.reportMatchImpl = match => {
       const messagesToSend = formatMatch(match);
       for (let i = 0; i < messagesToSend.length; i++) {
         reportingChannel.send(messagesToSend[i]);
@@ -517,5 +518,5 @@ class RegistrationAndMatchBot {
 }
 
 module.exports = {
-  RegistrationAndMatchBot,
+  RegistrationAndMatchBot
 };

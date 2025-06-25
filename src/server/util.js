@@ -3,7 +3,7 @@ const moment = require("moment");
 const { divisionData } = require("../server/config_data");
 
 // CHANGE THIS WHEN DEBUGGING
-const IS_PRODUCTION = true;
+const IS_PRODUCTION = false; // TODO: this should be in .env, but this file is exposed to the client.
 
 const USE_PLAYOFFS_FOR_HYBRID_DIVISIONS = false;
 
@@ -582,11 +582,11 @@ function getPlayerLookupMap(division) {
   return map;
 }
 
-function getApiUrl(suffix) {
+function clientGetApiUrl(suffix) {
   if (IS_PRODUCTION) {
     return "https://ctlscoreboard.herokuapp.com/" + suffix;
   } else {
-    return "http://localhost:" + process.env.PORT ? process.env.PORT.toString() : "8080" + "/" + suffix;
+    return document.location.origin + "/" + suffix;
   }
 }
 
@@ -610,7 +610,7 @@ function getApiUrl(suffix) {
 // }
 
 async function makeHttpRequest(methodStr, localUrl, body) {
-  const response = await fetch(getApiUrl(localUrl), {
+  const response = await fetch(clientGetApiUrl(localUrl), {
     method: methodStr,
     headers: {
       "Content-Type": "application/json"
@@ -689,7 +689,7 @@ module.exports = {
   getMatchSchedule,
   getPlayerScheduleInfo,
   getPlayerLookupMap,
-  getApiUrl,
+  getApiUrl: clientGetApiUrl,
   calculatePointsWon,
   makeHttpRequest,
   getMatchDateFormatted,

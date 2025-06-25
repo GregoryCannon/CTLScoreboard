@@ -33,10 +33,12 @@ class ReportingPanel extends Component {
 
   componentDidMount() {
     setInterval(() => {
-      const animationClassSet = this.datePickerInput.current.className === "highlighted";
-      const animationTimePassed = moment().diff(this.state.animationStart) > 500;
+      const animationClassSet =
+        this.datePickerInput.current.className === "highlighted";
+      const animationTimePassed =
+        moment().diff(this.state.animationStart) > 500;
       if (animationClassSet && animationTimePassed) {
-        this.datePickerInput.current.className = ""
+        this.datePickerInput.current.className = "";
       }
     }, 1000);
   }
