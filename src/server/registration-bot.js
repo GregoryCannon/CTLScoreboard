@@ -417,16 +417,16 @@ class RegistrationAndMatchBot {
       logger.log("Registration Bot is online!");
 
       // Maybe load data from data store channel
-      dataStoreChannel = await registrationBot.channels.cache.get(dataStoreId);
-      dataStoreBackupChannel = await registrationBot.channels.cache.get(
+      dataStoreChannel = await registrationBot.channels.fetch(dataStoreId);
+      dataStoreBackupChannel = await registrationBot.channels.fetch(
         dataStoreBackupId
       );
-      reportingChannel = await registrationBot.channels.cache.get(
+      reportingChannel = await registrationBot.channels.fetch(
         reportingChannelId
       );
       loadRegistrationData(dataStoreChannel);
 
-      const signUpChannel = await registrationBot.channels.cache.get(
+      const signUpChannel = await registrationBot.channels.fetch(
         signUpChannelId
       );
       configureSignUpMessages(signUpChannel);
