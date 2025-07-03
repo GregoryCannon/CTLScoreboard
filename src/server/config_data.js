@@ -317,6 +317,24 @@ const divisionData = [
       "LOKENZE",
     ]
   },
+  {
+    divisionName: "Gold 60",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "MAEDHROS",
+      "M149",
+      "TACOMOM",
+      "BILLYMAC",
+      "MFRERCK",
+      "RORY",
+    ]
+  },
 
   // END GOLD
   // BEGIN SILVER
