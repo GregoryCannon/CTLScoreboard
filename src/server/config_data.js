@@ -257,7 +257,6 @@ const divisionData = [
     numAutoRelegate: 0,
     players: [
       "BILLYMAC",
-      "BURRITODAD",
       "VASCO",
       "LUKIDELUXE",
       "HUNN14",
