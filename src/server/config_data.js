@@ -430,7 +430,6 @@ const divisionData = [
       "IZOBREEN7",
       "DANIEL_L12",
       "LILIANA",
-      "SUPERJAYCODER",
     ]
   },
   {
