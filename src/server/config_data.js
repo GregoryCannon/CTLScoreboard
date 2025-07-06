@@ -91,7 +91,6 @@ const divisionData = [
     numPlayoffRelegate: 2,
     numAutoRelegate: 0,
     players: [
-      'Div 3A',
       '20Dan03',
       'Evesy',
       'Firedox',
