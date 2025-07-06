@@ -40,7 +40,7 @@ function DivisionHeadings(props) {
           <div>
             {props.data.divisionName.match(/^1[^0-9]/) ||
             props.data.divisionName === "1"
-              ? "Prize Chance"
+              ? "Playoff Chance"
               : "Promo Chance"}
           </div>
           <div className="Sort-arrow">▼</div>
