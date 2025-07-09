@@ -275,6 +275,25 @@ const divisionData = [
       "RORY",
     ]
   },
+  {
+    divisionName: "Gold 61",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "GERHARD_ADLER",
+      "JUNIOR",
+      "EZHEDEH",
+      "MARTS",
+      "ARBARO",
+      "HUNN14",
+      "BLINGUS",
+    ]
+  },
 
   // END GOLD
   // BEGIN SILVER
@@ -316,6 +335,40 @@ const divisionData = [
       "SUPERNINJA",
       "SAMANTHA",
       "ETHANTHOUGHTS",
+    ]
+  },
+  {
+    divisionName: "Silver 72",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "COKI",
+      "PETERTHECHAIR",
+      "DIAMONDS",
+      "TEMPHUIBIS",
+      "MAXXF386",
+    ]
+  },
+  {
+    divisionName: "Silver 73",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "SPECTRIC",
+      "SUPERJAYCODER",
+      "TALVOT",
+      "KOCCHIRA",
+      "DANNYMAGE",
     ]
   },
 
@@ -428,6 +481,23 @@ const divisionData = [
       "MASHINGSAPPHIC",
       "RJOHNATHAN",
       "WILLIECUBED",
+    ]
+  },
+  {
+    divisionName: "Elm 12",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "CURTA",
+      "SIERRAE",
+      "ASTRID",
+      "NERDYFELIX",
+      "DJMRBORO",
     ]
   },
 ];
