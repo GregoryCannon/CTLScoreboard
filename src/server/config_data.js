@@ -208,7 +208,7 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
     players: [
-      'Anjin',
+      'Anjing',
       'Cyler',
       'Iceblade73',
       'Juravljov',
