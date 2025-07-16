@@ -420,7 +420,7 @@ const divisionData = [
     players: [
       "DJANKOFF",
       "GOSCIU",
-      "WILSO",
+      "WILSON",
       "LUPHORIA",
       "DEEPSHOCK",
       "ESAUNEAGLE",
