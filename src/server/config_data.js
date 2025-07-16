@@ -408,6 +408,24 @@ const divisionData = [
       "MS_DROP",
     ]
   },
+  {
+    divisionName: "Bronze 81",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "DJANKOFF",
+      "GOSCIU",
+      "WILSO",
+      "LUPHORIA",
+      "DEEPSHOCK",
+      "ESAUNEAGLE",
+    ]
+  },
 
   // END BRONZE
   // BEGIN BEGINNER
@@ -444,6 +462,23 @@ const divisionData = [
       "ASTRID",
       "NERDYFELIX",
       "DJMRBORO",
+    ]
+  },
+  {
+    divisionName: "Elm 13",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "UNNAMED USER",
+      "TPIOH",
+      "MASHINGSAPPHIC",
+      "CONDENSED_ARIN",
+      "MRBRAIN",
     ]
   },
 ];
