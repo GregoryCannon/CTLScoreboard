@@ -352,6 +352,26 @@ const divisionData = [
       "DANNYMAGE",
     ]
   },
+  {
+    divisionName: "Silver 74",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "CHEFBOYARGEEBS",
+      "BEIGEHUNTER",
+      "LILIANA",
+      "TOAST",
+      "UQI",
+      "THATKIDKIM",
+      "RACHIT",
+      "MIRRORRIKER",
+    ]
+  },
 
   // END SILVER
   // BEGIN BRONZE
@@ -426,6 +446,24 @@ const divisionData = [
       "ESAUNEAGLE",
     ]
   },
+  {
+    divisionName: "Bronze 82",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "ERILIONESS",
+      "T1NY",
+      "LEYMBDA",
+      "WEEGLOOGI",
+      "HEATER",
+      "MS_DROP",
+    ]
+  },
 
   // END BRONZE
   // BEGIN BEGINNER
@@ -479,6 +517,23 @@ const divisionData = [
       "MASHINGSAPPHIC",
       "CONDENSED_ARIN",
       "MRBRAIN",
+    ]
+  },
+  {
+    divisionNam3: "Elm 14",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "TYOW",
+      "VENT",
+      "MIZORE",
+      "SWIFTSLAYER",
+      "DBPOOFDADDY",
     ]
   },
 ];
