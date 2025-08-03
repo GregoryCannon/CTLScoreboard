@@ -520,7 +520,7 @@ const divisionData = [
     ]
   },
   {
-    divisionNam3: "Elm 14",
+    divisionName: "Elm 14",
     competition: "tnp",
     oneMatchPerPair: false,
     numWinner: 1,
