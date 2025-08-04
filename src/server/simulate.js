@@ -11,7 +11,10 @@ Simulate one run through from the current moment in time to the end of the seaso
 Code is similar to `computeRawStandings` in compute.js
 */
 function simulateOneIteration(division, matchSchedule, resultCounts) {
-  const maxPointsPerMatch = division.competition === "tnp" ? 8 : 7;
+  const bestOf = division.bestOf || 5;
+  const gamesToWin = 0.5 + (bestOf / 2);
+  const maxPointsPerMatch = bestOf == 7 ? 10 :
+    division.competition === "tnp" ? 8 : 7;
   const simulationCloneDivision = JSON.parse(JSON.stringify(division));
   const startOfSeasonCloneDivision = JSON.parse(JSON.stringify(division));
 
@@ -46,14 +49,14 @@ function simulateOneIteration(division, matchSchedule, resultCounts) {
       const loserName = [homePlayerName, awayPlayerName][1 - randWinIndex];
       winner = util.getPlayerData(divisionStandings, winnerName);
       loser = util.getPlayerData(divisionStandings, loserName);
-      loserGames = Math.floor(Math.random() * 3);
+      loserGames = Math.floor(Math.random() * gamesToWin);
     }
 
     // Update the four key source of truth properties (W,L,GF,GA) for each match
     // console.log("winner:", winnerName, "current points:", winner.points)
     // console.log("loser:", loserName, "current points:", loser.points)
     winner["wins"] += 1;
-    winner["gf"] += 3;
+    winner["gf"] += gamesToWin;
     winner["ga"] += loserGames;
     winner["points"] += util.calculatePointsWon(
       true,
@@ -62,7 +65,7 @@ function simulateOneIteration(division, matchSchedule, resultCounts) {
     );
     loser["losses"] += 1;
     loser["gf"] += loserGames;
-    loser["ga"] += 3;
+    loser["ga"] += gamesToWin;
     loser["points"] += util.calculatePointsWon(
       false,
       loserGames,

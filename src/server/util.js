@@ -538,25 +538,7 @@ function compareSimulated(player1, player2) {
 
 // Compute the number of points earned for a game under the new 7/0 6/1 5/2 system
 function calculatePointsWon(isWinner, loserGames, maxPoints) {
-  if (isWinner) {
-    switch (loserGames) {
-      case 0:
-        return maxPoints;
-      case 1:
-        return maxPoints - 1;
-      case 2:
-        return maxPoints - 2;
-    }
-  } else {
-    switch (loserGames) {
-      case 0:
-        return 0;
-      case 1:
-        return 1;
-      case 2:
-        return 2;
-    }
-  }
+  return isWinner ? maxPoints - loserGames : loserGames;
 }
 
 /* Do an O(n) filter to get a player from the list 

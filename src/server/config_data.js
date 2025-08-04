@@ -241,6 +241,25 @@ const divisionData = [
   // BEGIN GOLD
 
   {
+    divisionName: "Roentgenium 1",
+    competition: "tnp",
+    bestOf: 7,
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "GALOIS",
+      "PB",
+      "MARSHALL",
+      "UNI",
+      "FORGIE"
+    ]
+  },
+
+  {
     divisionName: "Gold 61",
     competition: "tnp",
     oneMatchPerPair: false,
