@@ -304,7 +304,6 @@ const divisionData = [
   // END SILVER
   // BEGIN BRONZE
 
-
   {
     divisionName: "Bronze 81",
     competition: "tnp",
@@ -395,7 +394,7 @@ const divisionData = [
       "SWIFTSLAYER",
       "DBPOOFDADDY",
     ]
-  },
+  }
 ];
 
 const adminRole = [
@@ -411,7 +410,7 @@ const adminRole = [
   "chillalla#0",
   "richardwolfvi#0",
   "frenchiestfrie#0",
-  "snowlilyx#0",
+  "snowlilyx#0"
 ];
 
 const restreamerRole = [
@@ -755,5 +754,5 @@ const restreamerRole = [
 module.exports = {
   divisionData,
   adminRole,
-  restreamerRole,
+  restreamerRole
 };
