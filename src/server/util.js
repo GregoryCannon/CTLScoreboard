@@ -3,7 +3,7 @@ const moment = require("moment");
 const { divisionData } = require("../server/config_data");
 
 // CHANGE THIS WHEN DEBUGGING
-const IS_PRODUCTION = false; // TODO: this should be in .env, but this file is exposed to the client.
+const IS_PRODUCTION = true; // TODO: this should be in .env, but this file is exposed to the client.
 
 const USE_PLAYOFFS_FOR_HYBRID_DIVISIONS = false;
 
