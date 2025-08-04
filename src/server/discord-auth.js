@@ -25,7 +25,9 @@ const router = express.Router();
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 // const REDIRECT_URL = encodeURIComponent(process.env.API_BASE + "discord-api/authenticate");
-const REDIRECT_URL = process.env.API_BASE + "discord-api/authenticate";
+const REDIRECT_URL = process.env.API_BASE ?
+  process.env.API_BASE + "discord-api/authenticate" :
+  "https://ctlscoreboard.herokuapp.com/discord-api/authenticate";
 
 /*
 -------------------------
