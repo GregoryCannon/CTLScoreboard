@@ -3,7 +3,13 @@ const moment = require("moment");
 const { divisionData } = require("../server/config_data");
 
 // CHANGE THIS WHEN DEBUGGING
-const IS_PRODUCTION = true; // TODO: this should be in .env, but this file is exposed to the client.
+const IS_PRODUCTION = 
+  process.env.REACT_APP_IS_PRODUCTION == undefined
+    ? true
+    : process.env.REACT_APP_IS_PRODUCTION;
+
+const API_BASE =
+  process.env.REACT_APP_API_BASE || "https://ctlscoreboard.herokuapp.com/";
 
 const USE_PLAYOFFS_FOR_HYBRID_DIVISIONS = false;
 
@@ -583,11 +589,13 @@ function getPlayerLookupMap(division) {
 }
 
 function clientGetApiUrl(suffix) {
-  if (IS_PRODUCTION) {
-    return "https://ctlscoreboard.herokuapp.com/" + suffix;
-  } else {
-    return document.location.origin + "/" + suffix;
-  }
+  // console.log(process.env.COMMAND_CHANNEL_TNP);
+  // if (process.env.API_BASE) {
+  //   return process.env.API_BASE + suffix;
+  // } else {
+  //   return "https://ctlscoreboard.herokuapp.com/" + suffix;
+  // }
+  return API_BASE + suffix;
 }
 
 // function makeHttpRequest(type, localUrl, body, callback) {
