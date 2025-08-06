@@ -259,6 +259,41 @@ const divisionData = [
       "BLINGUS",
     ]
   },
+  {
+    divisionName: "Gold 62",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "CYLER",
+      "BLINGUS",
+      "BILLYMAC",
+      "COVERDALES",
+      "SPECTRIC",
+      "BRAN",
+    ]
+  },
+  {
+    divisionName: "Gold 63",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "MAX_WU",
+      "RORY",
+      "LUKIDELUXE",
+      "VISOR",
+      "MAEDHROS",
+    ]
+  },
 
   // END GOLD
   // BEGIN SILVER
@@ -300,6 +335,25 @@ const divisionData = [
       "MIRRORRIKER",
     ]
   },
+  {
+    divisionName: "Silver 75",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "ALICE",
+      "SIRMASER",
+      "ADAMIRISH",
+      "SEBIE",
+      "PETERTHECHAIR",
+      "DANNYMAGE",
+      "TALVOT",
+    ]
+  },
 
   // END SILVER
   // BEGIN BRONZE
@@ -338,6 +392,26 @@ const divisionData = [
       "WEEGLOOGI",
       "HEATER",
       "MS_DROP",
+    ]
+  },
+  {
+    divisionName: "Bronze 83",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "ASHLEYYYY",
+      "CROIOS",
+      "ELLIOTHL1",
+      "MASHINGSAPPHIC",
+      "BBOT",
+      "GILDEDLIZARD",
+      "SUPERSTEP",
+      "NERDYFELIX ",
     ]
   },
 
