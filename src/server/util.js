@@ -3,7 +3,13 @@ const moment = require("moment");
 const { divisionData } = require("../server/config_data");
 
 // CHANGE THIS WHEN DEBUGGING
-const IS_PRODUCTION = true;
+const IS_PRODUCTION = 
+  process.env.REACT_APP_IS_PRODUCTION == undefined
+    ? true
+    : process.env.REACT_APP_IS_PRODUCTION;
+
+const API_BASE =
+  process.env.REACT_APP_API_BASE || "https://ctlscoreboard.herokuapp.com/";
 
 const USE_PLAYOFFS_FOR_HYBRID_DIVISIONS = false;
 
@@ -564,12 +570,14 @@ function getPlayerLookupMap(division) {
   return map;
 }
 
-function getApiUrl(suffix) {
-  if (IS_PRODUCTION) {
-    return "https://ctlscoreboard.herokuapp.com/" + suffix;
-  } else {
-    return "http://localhost:8080/" + suffix;
-  }
+function clientGetApiUrl(suffix) {
+  // console.log(process.env.COMMAND_CHANNEL_TNP);
+  // if (process.env.API_BASE) {
+  //   return process.env.API_BASE + suffix;
+  // } else {
+  //   return "https://ctlscoreboard.herokuapp.com/" + suffix;
+  // }
+  return API_BASE + suffix;
 }
 
 // function makeHttpRequest(type, localUrl, body, callback) {
@@ -592,7 +600,7 @@ function getApiUrl(suffix) {
 // }
 
 async function makeHttpRequest(methodStr, localUrl, body) {
-  const response = await fetch(getApiUrl(localUrl), {
+  const response = await fetch(clientGetApiUrl(localUrl), {
     method: methodStr,
     headers: {
       "Content-Type": "application/json"
@@ -671,7 +679,7 @@ module.exports = {
   getMatchSchedule,
   getPlayerScheduleInfo,
   getPlayerLookupMap,
-  getApiUrl,
+  getApiUrl: clientGetApiUrl,
   calculatePointsWon,
   makeHttpRequest,
   getMatchDateFormatted,
