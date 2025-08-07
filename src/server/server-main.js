@@ -309,6 +309,30 @@ app.post("/api/match-data", function(req, res) {
   logger.logRequest("Report match", req.body);
   const newMatch = req.body;
 
+  // Check that the winner has the correct number of games
+  const divData = configData.divisionData.find(d => d.divisionName === newMatch.division);
+  const isDivBo7 = !(divData.bestOf === undefined) && (divData.bestOf === 7);
+  if (isDivBo7 && newMatch.winner_games !== 4) {
+    const responseBody = {
+      didSucceed: false,
+      errorMessage:
+        "The winner should have won 4 games."
+    };
+    logger.logResponse("Report match", responseBody);
+    res.send(responseBody);
+    return;
+  }
+  if (!isDivBo7 && newMatch.winner_games !== 3) {
+    const responseBody = {
+      didSucceed: false,
+      errorMessage:
+        "The winner should have won 3 games."
+    };
+    logger.logResponse("Report match", responseBody);
+    res.send(responseBody);
+    return;
+  }
+
   // Check that the match hasn't already been reported
   getValidMatches(function(e, matches) {
     if (
@@ -384,7 +408,7 @@ app.post("/api/match-data", function(req, res) {
 /** DELETE all matches from a division */
 app.delete("/api/match-data/purge", function(req, res) {
   logger.logRequest("Purge division", req.body);
-  if (req.body === {}) {
+  if (Object.keys(req.body).length === 0) {
     const responseBody = {
       didSucceed: false,
       errorMessage:
@@ -428,7 +452,7 @@ app.delete("/api/match-data", function(req, res) {
   logger.logRequest("Delete match", req.body);
   const matchToDelete = req.body;
 
-  if (matchToDelete === {}) {
+  if (Object.keys(matchToDelete).length === 0) {
     const responseBody = {
       didSucceed: false,
       errorMessage:

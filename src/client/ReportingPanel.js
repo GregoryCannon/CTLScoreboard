@@ -3,7 +3,6 @@ import "./ReportingPanel.css";
 const moment = require("moment");
 const configData = require("../server/config_data");
 const util = require("../server/util");
-const GAMES_TO_WIN = 3;
 
 class ReportingPanel extends Component {
   constructor(props) {
@@ -45,11 +44,12 @@ class ReportingPanel extends Component {
 
   changeReportingDivision(event) {
     this.setState({
+      ...this.state,
       reportingDivision: event.target.value,
       winnerName: "",
       loserName: "",
       loserGameCount: "",
-      winnerGameCount: GAMES_TO_WIN
+      winnerGameCount: this.getGamesToWin(event.target.value)
     });
   }
 
@@ -67,6 +67,7 @@ class ReportingPanel extends Component {
 
   setDateToNow() {
     this.setState({
+      ...this.state,
       matchDate: moment
         .utc()
         .toISOString()
@@ -89,6 +90,19 @@ class ReportingPanel extends Component {
     return filteredDivisions[0].players;
   }
 
+  getGamesToWin(reportingDivision) {
+    if (this.state.reportingDivision === "") return 0;
+
+    const division = configData.divisionData.find(
+      div => div.divisionName === reportingDivision
+    );
+    if (division === undefined) return 0;
+
+    console.log(division);
+    const isDivBo7 = (division.bestOf !== undefined) && (division.bestOf === 7);
+    return isDivBo7 ? 4 : 3;
+  }
+
   // Check the form and return either 'valid' or the error to be displayed
   validateFormData(formData) {
     // Missing info
@@ -103,9 +117,6 @@ class ReportingPanel extends Component {
     }
     if (!Number.isInteger(formData.loser_games)) {
       return "Enter the game count of the match loser";
-    }
-    if (formData.winner_games !== GAMES_TO_WIN) {
-      return "The winner should have won 3 games.";
     }
     if (formData.winner_home === "") {
       return "Select which player was home for this match";
@@ -264,7 +275,8 @@ class ReportingPanel extends Component {
                     id="winner-game-count"
                     className="Win-count-input"
                     type="number"
-                    defaultValue={GAMES_TO_WIN}
+                    defaultValue={this.getGamesToWin()}
+                    value={this.state.winnerGameCount}
                     ref={this.winnerGamesInput}
                   ></input>
                   <div>

@@ -238,17 +238,16 @@ const divisionData = [
   },
 
   // END CTL
-  // BEGIN GOLD
 
   {
     divisionName: "Roentgenium 1",
     competition: "tnp",
     bestOf: 7,
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
+    oneMatchPerPair: true,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
     numAutoRelegate: 0,
     players: [
       "GALOIS",
@@ -258,6 +257,8 @@ const divisionData = [
       "FORGIE"
     ]
   },
+
+  // BEGIN GOLD
 
   {
     divisionName: "Gold 61",
