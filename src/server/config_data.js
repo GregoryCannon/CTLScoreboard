@@ -433,7 +433,7 @@ const divisionData = [
       "BBOT",
       "GILDEDLIZARD",
       "SUPERSTEP",
-      "NERDYFELIX ",
+      "NERDYFELIX",
     ]
   },
 
