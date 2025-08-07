@@ -239,6 +239,7 @@ const divisionData = [
 
   // END CTL
 
+  /*
   {
     divisionName: "Roentgenium 1",
     competition: "tnp",
@@ -257,6 +258,7 @@ const divisionData = [
       "FORGIE"
     ]
   },
+  */
 
   // BEGIN GOLD
 

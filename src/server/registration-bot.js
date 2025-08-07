@@ -22,14 +22,22 @@ let DIVISIONS_CTL = {
   "5": []
 };
 let DIVISIONS_TNP = {
+  Roentgenium: [],
   Gold: [],
   Silver: [],
   Bronze: [],
-  Beginner: []
+  Oak: [],
+  Elm: []
+  // Beginner: []
   // VeryLarge: [],
 };
 const SIGN_UP_MESSAGE_TNP =
-  "React to sign up for a new division below! Your reaction will be hidden after 3 seconds.\n\nIf you are currently in a division, do not sign up here until both (1) 100% of your own matches have been completed, and (2) your division deadline is at the end of the current week or your tier for the next season is already a 100% certainty. Make sure you sign up for the correct tier, and if you want to withdraw, do so before 23:59 UTC on Monday. New divisions will be created shortly thereafter and withdrawal after this point may be penalised. For full details, refer to #about.\n\n";
+  `
+ React to sign up for a new division below! Your reaction will be hidden after 3 seconds.
+
+ If you are currently in a division, do not sign up here until both (1) 100% of your own matches have been completed, and (2) your division deadline is at the end of the current week or your tier for the next season is already a 100% certainty. Make sure you sign up for the correct tier, and if you want to withdraw, do so before 23:59 UTC on Monday. New divisions will be created shortly thereafter and withdrawal after this point may be penalised. For full details, refer to #about.
+
+ **Oak** divisions are open to players with a personal best of 500,000 and below, while **Elm** divisions are open to players with a personal best of 350,000 and below.`;
 const SIGN_UP_MESSAGE_CTL =
   "Sign ups for upcoming CTL seasons will be announced at the end of each previous season and will be closed a week before the start of the next one. Click the appropriate reaction for the tier level you are assigned to if you wish to participate. Should you need to withdraw after the CTL draw takes place, notify the King immediately so a replacement may be found, if necessary. For full details, refer to #rules-and-standings.\n\n";
 const REGISTRATION_CLOSED_MESSAGE_CTL =
@@ -46,24 +54,13 @@ class RegistrationAndMatchBot {
     let dataStoreBackupChannel = null;
     let reportingChannel = null;
 
-    const dataStoreId = isTNP
-      ? process.env.DATA_STORE_CHANNEL_TNP
-      : process.env.DATA_STORE_CHANNEL_CTL;
-    const dataStoreBackupId = isTNP
-      ? process.env.DATA_STORE_BACKUP_CHANNEL_TNP
-      : process.env.DATA_STORE_BACKUP_CHANNEL_CTL;
-    const signUpChannelId = isTNP
-      ? process.env.SIGNUP_CHANNEL_TNP
-      : process.env.SIGNUP_CHANNEL_CTL;
-    const commandChannelId = isTNP
-      ? process.env.COMMAND_CHANNEL_TNP
-      : process.env.COMMAND_CHANNEL_CTL;
-    const reportingChannelId = isTNP
-      ? process.env.REPORTING_CHANNEL_TNP
-      : process.env.REPORTING_CHANNEL_CTL;
-    const token = isTNP
-      ? process.env.DISCORD_TOKEN_TNP
-      : process.env.DISCORD_TOKEN_CTL;
+    const compSuffix = isTNP ? "TNP" : "CTL";
+    const dataStoreId = process.env[`DATA_STORE_CHANNEL_${compSuffix}`];
+    const dataStoreBackupId = process.env[`DATA_STORE_BACKUP_CHANNEL_${compSuffix}`];
+    const signUpChannelId = process.env[`SIGNUP_CHANNEL_${compSuffix}`];
+    const commandChannelId = process.env[`COMMAND_CHANNEL_${compSuffix}`];
+    const reportingChannelId = process.env[`REPORTING_CHANNEL_${compSuffix}`];
+    const token = process.env[`DISCORD_TOKEN_${compSuffix}`];
 
     const registrationBot = new Client({
       intents: [
