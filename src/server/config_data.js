@@ -98,7 +98,6 @@ const divisionData = [
       'MLGCaptainVirgil',
       'SillyShark',
       'Unor1ginalname',
-      'YazenTetris',
     ],
   },
   {
