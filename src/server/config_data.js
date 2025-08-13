@@ -320,23 +320,6 @@ const divisionData = [
   // BEGIN SILVER
 
   {
-    divisionName: "Silver 72",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "COKI",
-      "PETERTHECHAIR",
-      "DIAMONDS",
-      "TEMPHUIBIS",
-      "MAXXF386",
-    ]
-  },
-  {
     divisionName: "Silver 74",
     competition: "tnp",
     oneMatchPerPair: false,
@@ -457,23 +440,6 @@ const divisionData = [
   // END BRONZE
   // BEGIN BEGINNER
 
-  {
-    divisionName: "Elm 12",
-    competition: "tnp",
-    oneMatchPerPair: false,
-    numWinner: 1,
-    numAutoPromo: 0,
-    numPlayoffPromo: 0,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 0,
-    players: [
-      "CURTA",
-      "SIERRAE",
-      "ASTRID",
-      "NERDYFELIX",
-      "DJMRBORO",
-    ]
-  },
   {
     divisionName: "Elm 13",
     competition: "tnp",
