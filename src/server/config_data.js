@@ -435,6 +435,24 @@ const divisionData = [
       "NERDYFELIX",
     ]
   },
+  {
+    divisionName: "Bronze 84",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "ASTRID",
+      "RAVIOLI",
+      "TIRED",
+      "BIRBIA",
+      "SUPERJAYCODER",
+      "T1NY",
+    ]
+  },
 
   // END BRONZE
   // BEGIN BEGINNER
