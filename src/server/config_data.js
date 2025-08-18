@@ -640,6 +640,7 @@ const restreamerRole = [
 "Johann#1501",
 "Joshua L. Tolles#4111",
 "Jounce#7391",
+"jxxojo#0",
 "jrgagne99#0",
 "just_wobert#0",
 "Justus#4320",
