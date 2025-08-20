@@ -22,7 +22,7 @@ let DIVISIONS_CTL = {
   "5": []
 };
 let DIVISIONS_TNP = {
-  Roentgenium: [],
+  // Roentgenium: [],
   Gold: [],
   Silver: [],
   Bronze: [],
