@@ -238,26 +238,65 @@ const divisionData = [
 
   // END CTL
 
-  /*
   {
     divisionName: "Roentgenium 1",
     competition: "tnp",
     bestOf: 7,
     oneMatchPerPair: true,
-    numWinner: 1,
+    numWinner: 2,
     numAutoPromo: 0,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
     numAutoRelegate: 0,
     players: [
-      "GALOIS",
-      "PB",
-      "MARSHALL",
-      "UNI",
-      "FORGIE"
+      "TEAFORDINNER",
+      "M149",
+      "LOKENZE",
+      "MIKAWAY",
+      "ANJING",
+      "MELONSODA",
+      "ICEBLADE",
     ]
   },
-  */
+  {
+    divisionName: "Roentgenium 2",
+    competition: "tnp",
+    bestOf: 7,
+    oneMatchPerPair: true,
+    numWinner: 2,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "AOIFE",
+      "JOJO",
+      "GUSTAVO",
+      "WDSUBIA",
+      "THISINTHAT",
+      "DOBRY",
+    ]
+  },
+  {
+    divisionName: "Roentgenium 3",
+    competition: "tnp",
+    bestOf: 7,
+    oneMatchPerPair: true,
+    numWinner: 2,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "JEDIEVAN",
+      "TOKA",
+      "LIPTONEQ",
+      "SNOWYTETRIS",
+      "GRANDDESIGNS",
+      "PENGUINPANIC",
+      "SERENITYINSORROW",
+    ]
+  },
 
   // BEGIN GOLD
 
@@ -315,6 +354,24 @@ const divisionData = [
       "MAEDHROS",
     ]
   },
+  {
+    divisionName: "Gold 64",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "KLOVELACE",
+      "MANTASKUTOP",
+      "SWIDR",
+      "VASCO",
+      "EZHEDEH",
+      "COKI",
+    ]
+  },
 
   // END GOLD
   // BEGIN SILVER
@@ -356,6 +413,26 @@ const divisionData = [
       "PETERTHECHAIR",
       "DANNYMAGE",
       "TALVOT",
+    ]
+  },
+  {
+    divisionName: "Silver 76",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "YASMINA",
+      "TEMPHUIBIS",
+      "DIAMONDS",
+      "GRAVEL",
+      "SUPERJAYCODER",
+      "MARTS",
+      "MAXXF386",
+      "JUST_WOBERT",
     ]
   },
 
