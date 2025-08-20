@@ -471,7 +471,6 @@ const divisionData = [
       "T1NY",
       "LEYMBDA",
       "WEEGLOOGI",
-      "HEATER",
       "MS_DROP",
     ]
   },
