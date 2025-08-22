@@ -737,6 +737,7 @@ const restreamerRole = [
 "Lastarot#9931",
 "leaurax#0455",
 "lia_fr0st#0",
+"lilhana4#0",
 "lilian7774#0",
 "liolio1230#9656",
 "liptoneq196#0",
