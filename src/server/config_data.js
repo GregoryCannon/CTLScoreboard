@@ -372,6 +372,25 @@ const divisionData = [
       "COKI",
     ]
   },
+  {
+    divisionName: "Gold 65",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "KINGSMAN",
+      "ETHANTHOUGHTS",
+      "SUPERJAYCODER",
+      "SPECTRIC",
+      "KHAM",
+      "ARBARO",
+      "RORY",
+    ]
+  },
 
   // END GOLD
   // BEGIN SILVER
@@ -510,6 +529,25 @@ const divisionData = [
       "BIRBIA",
       "SUPERJAYCODER",
     ]
+  },
+  {
+    divisionName: "Bronze 85",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "TIRED_RL",
+      "RAVIOLI",
+      "WILSON",
+      "ASTRID",
+      "VENT",
+      "MIZORE",
+      "TYOW",
+     ]
   },
 
   // END BRONZE
