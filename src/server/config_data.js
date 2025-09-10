@@ -454,6 +454,26 @@ const divisionData = [
       "JUST_WOBERT",
     ]
   },
+  {
+    divisionName: "Silver 77",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "ERILIONESS",
+      "FURIO",
+      "ENSCALIGHT",
+      "GILDEDLIZARD",
+      "THATKIDKIM",
+      "KALIMOTXO",
+      "ADAMIRISH",
+      "GBTOAST",
+    ]
+  },
 
   // END SILVER
   // BEGIN BRONZE
@@ -585,6 +605,25 @@ const divisionData = [
       "MIZORE",
       "SWIFTSLAYER",
       "DBPOOFDADDY",
+    ]
+  },
+  {
+    divisionName: "Elm 15",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "CONDENSED_ARIN",
+      "KURDIGAMER",
+      "SWIFTSLAYER",
+      "UNNAMED USER",
+      "THEONLYCEDRIC",
+      "MRBRAIN",
+      "EXITY",
     ]
   }
 ];
