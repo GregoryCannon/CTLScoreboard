@@ -405,7 +405,6 @@ const divisionData = [
     numAutoRelegate: 0,
     players: [
       "CHEFBOYARGEEBS",
-      "BEIGEHUNTER",
       "LILIANA",
       "TOAST",
       "UQI",
