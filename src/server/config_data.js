@@ -439,7 +439,7 @@ const divisionData = [
     numWinner: 0,
     numAutoPromo: 1,
     numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
+    numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
       "YASMINA",
@@ -459,7 +459,7 @@ const divisionData = [
     numWinner: 0,
     numAutoPromo: 1,
     numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
+    numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
       "ERILIONESS",
