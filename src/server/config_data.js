@@ -269,7 +269,6 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 0,
     players: [
-      "AOIFE",
       "JOJO",
       "GUSTAVO",
       "WDSUBIA",
