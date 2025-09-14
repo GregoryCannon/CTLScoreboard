@@ -369,7 +369,6 @@ const divisionData = [
       "SWIDR",
       "VASCO",
       "EZHEDEH",
-      "COKI",
     ]
   },
   {
