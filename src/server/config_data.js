@@ -687,6 +687,7 @@ const restreamerRole = [
 "birbwizard#0",
 "birbia#0",
 "blargmeister#0",
+"blingus#0",
 "Bowser Tb#2424",
 "boppyreal#0",
 "boxie3210#0",
