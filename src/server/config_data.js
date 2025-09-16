@@ -254,7 +254,6 @@ const divisionData = [
       "LOKENZE",
       "MIKAWAY",
       "ANJING",
-      "MELONSODA",
       "ICEBLADE",
     ]
   },
