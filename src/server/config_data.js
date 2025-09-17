@@ -421,6 +421,23 @@ const divisionData = [
   // BEGIN BRONZE
 
   {
+    divisionName: "Bronze 82",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "ERILIONESS",
+      "T1NY",
+      "LEYMBDA",
+      "WEEGLOOGI",
+      "MS_DROP",
+    ]
+  },
+  {
     divisionName: "Bronze 83",
     competition: "tnp",
     oneMatchPerPair: false,
