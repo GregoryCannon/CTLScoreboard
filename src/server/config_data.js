@@ -388,6 +388,25 @@ const divisionData = [
       "RORY",
     ]
   },
+  {
+    divisionName: "Gold 66",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "LILIANA",
+      "SOOSHIMANH",
+      "STOLENSHORTSWORD",
+      "KLOVELACE",
+      "RORY",
+      "CHEFBOYARGEEBS",
+      "SEBIE",
+    ]
+  },
 
   // END GOLD
   // BEGIN SILVER
