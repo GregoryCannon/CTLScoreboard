@@ -353,6 +353,26 @@ const divisionData = [
       "SEBIE",
     ]
   },
+  {
+    divisionName: "Gold 67",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "VASCO",
+      "KINGSMAN",
+      "PETERTHECHAIR",
+      "SUPERJAYCODER",
+      "RORY",
+      "LILIANA",
+      "KANNPLAYSTETRIS",
+      "ETHANTHOUGHTS",
+    ]
+  },
 
   // END GOLD
   // BEGIN SILVER
@@ -474,6 +494,26 @@ const divisionData = [
       "VENT",
       "MIZORE",
       "TYOW",
+     ]
+  },
+  {
+    divisionName: "Bronze 86",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "GRAVEL1492",
+      "ASHLEYYYY",
+      "TIFFYFLOWR",
+      "ELLIOT",
+      "LEYMBDA",
+      "SUPERSTEP",
+      "BIRBIA",
+      "WEEGLOOGI",
      ]
   },
 
