@@ -80,7 +80,7 @@ const divisionData = [
   },
 
   {
-    divisionName: "3A",
+    divisionName: "3",
     competition: "ctl",
     oneMatchPerPair: true,
     numWinner: 0,
