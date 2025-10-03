@@ -84,9 +84,9 @@ const divisionData = [
     competition: "ctl",
     oneMatchPerPair: true,
     numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 2,
+    numAutoPromo: 2,
+    numPlayoffPromo: 2,
+    numPlayoffRelegate: 3,
     numAutoRelegate: 0,
     players: [
       '20Dan03',
