@@ -72,7 +72,7 @@ const divisionData = [
     players: [
       'Dengler',
       'Doodle',
-      'DuzyK',
+      'Gwafey',
       'Oscar Godinez',
       'TobiGH3',
       'Winterra',
