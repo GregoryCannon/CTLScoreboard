@@ -436,6 +436,25 @@ const divisionData = [
       "GBTOAST",
     ]
   },
+  {
+    divisionName: "Silver 78",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "ARBARO",
+      "IZOBREEN7",
+      "TIRED_RL",
+      "GRAVEL1492",
+      "DIAMONDS",
+      "SUPERNINJA",
+      "GILDEDLIZARD",
+    ]
+  },
 
   // END SILVER
   // BEGIN BRONZE
