@@ -116,7 +116,6 @@ const divisionData = [
       'Da3mon1420',
       'Gresiu',
       'IanKeith',
-      'Lokenze',
       'Toka',
     ],
   },
