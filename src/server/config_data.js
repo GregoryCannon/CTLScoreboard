@@ -513,6 +513,24 @@ const divisionData = [
       "WEEGLOOGI",
      ]
   },
+  {
+    divisionName: "Bronze 87",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "LOUCY",
+      "WILSON",
+      "CONDENSED_ARIN",
+      "RAVIOLI",
+      "TYOW",
+      "SIERRAE",
+     ]
+  },
 
   // END BRONZE
   // BEGIN BEGINNER
