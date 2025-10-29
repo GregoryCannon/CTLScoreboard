@@ -351,6 +351,25 @@ const divisionData = [
       "ETHANTHOUGHTS",
     ]
   },
+  {
+    divisionName: "Gold 68",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "MARTS",
+      "STOLENSHORTSWORD",
+      "LILIANA",
+      "TIRED_RL",
+      "COVERDALES",
+      "BRANGUY",
+      "KLOVELACE",
+    ]
+  },
 
   // END GOLD
   // BEGIN SILVER
