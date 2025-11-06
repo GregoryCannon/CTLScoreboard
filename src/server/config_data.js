@@ -215,6 +215,65 @@ const divisionData = [
   },
 
   // END CTL
+
+  {
+    divisionName: "Roentgenium 1",
+    competition: "tnp",
+    bestOf: 7,
+    oneMatchPerPair: true,
+    numWinner: 2,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "TEAFORDINNER",
+      "M149",
+      "LOKENZE",
+      "MIKAWAY",
+      "ANJING",
+      "ICEBLADE",
+    ]
+  },
+  {
+    divisionName: "Roentgenium 2",
+    competition: "tnp",
+    bestOf: 7,
+    oneMatchPerPair: true,
+    numWinner: 2,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "JOJO",
+      "GUSTAVO",
+      "WDSUBIA",
+      "THISINTHAT",
+      "DOBRY",
+    ]
+  },
+  {
+    divisionName: "Roentgenium 3",
+    competition: "tnp",
+    bestOf: 7,
+    oneMatchPerPair: true,
+    numWinner: 2,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "JEDIEVAN",
+      "TOKA",
+      "LIPTONEQ",
+      "SNOWYTETRIS",
+      "GRANDDESIGNS",
+      "PENGUINPANIC",
+      "SERENITYINSORROW",
+    ]
+  },
+
   // BEGIN GOLD
 
   {
