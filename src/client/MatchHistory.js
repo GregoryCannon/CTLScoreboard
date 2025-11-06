@@ -1,34 +1,35 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import "./MatchHistory.css";
 
 const util = require("../server/util");
 const ALL_DIVISIONS = "(All)";
 
-class MatchHistory extends Component {
-  constructor() {
-    super();
-    this.state = {
-      selecteddivision: ALL_DIVISIONS
-    };
-    this.ondivisionChanged = this.ondivisionChanged.bind(this);
-    this.getFilteredMatchList = this.getFilteredMatchList.bind(this);
-  }
+function MatchHistory(props) {
+  const [selectedDivision, setSelectedDivision] = useState(ALL_DIVISIONS);
+  const [filteredMatchList, setFilteredMatchList] = useState(props.matchList);
 
-  getMatchDivision(match) {
+  const getDivisionDisplayName = match => {
     return match.division.match(/^[1-9]/)
       ? `D${match.division}`
       : match.division;
-  }
+  };
 
-  getMatchText(match) {
+  const getMatchText = match => {
     return `${match.winner} ${match.winner_home ? "(H)" : "(A)"} def. ${
       match.loser
     } ${match.winner_home ? "(A)" : "(H)"}, ${match.winner_games}-${
       match.loser_games
     }`;
+  };
+
+  const updateSelectedDivision = selectedDivision => {
+    setSelectedDivision(selectedDivision);
+    setFilteredMatchList(props.matchList.filter(
+      match => match.divsion === selectedDivision
+    ));
   }
 
-  makeDeleteRequest(matchData) {
+  const makeDeleteRequest = matchData => {
     var request = new XMLHttpRequest();
     request.open("DELETE", util.getApiUrl("api/match-data", true));
     request.setRequestHeader("Content-type", "application/json");
@@ -42,50 +43,33 @@ class MatchHistory extends Component {
       } else {
         alert("Failed to delete match. Reason:\n\n" + response.errorMessage);
       }
-    }.bind(this);
+    };
 
     // Send request with the id of the match to delete
     const requestBody = matchData;
     request.send(JSON.stringify(requestBody));
-  }
+  };
 
-  deleteMatchClicked(matchData) {
+  const deleteMatchClicked = matchData => {
     const confirmMessage = `Are you sure you want to delete this match between ${matchData.winner} and ${matchData.loser}?`;
     var result = confirm(confirmMessage);
     if (result) {
-      this.makeDeleteRequest(matchData);
-    }
+      makeDeleteRequest(matchData);
+    };
   }
 
-  getFilteredMatchList() {
-    if (this.state.selecteddivision === ALL_DIVISIONS) {
-      return this.props.matchList;
-    }
-    return this.props.matchList.filter(
-      match => match.division === this.state.selecteddivision
-    );
-  }
-
-  isMatchDeletable(match) {
+  const isMatchDeletable = match => {
     return (
-      this.props.isAdmin ||
-      this.props.discordIdentity.split("#")[0] === match.restreamer
+      props.isAdmin ||
+      props.discordIdentity.split("#")[0] === match.restreamer
     );
-  }
+  };
 
-  ondivisionChanged(event) {
-    this.setState({
-      selecteddivision: event.target.value
-    });
-  }
-
-  render() {
-    const filteredMatchList = this.getFilteredMatchList();
-    return (
-      <div className="Match-history">
+  return (
+    <div>
         <div className="Match-history-title">
           <span>Match History</span>
-          <select className="Division-select" onChange={this.ondivisionChanged}>
+          <select className="Division-select" onChange={e => updateSelectedDivision(e.target.value)}>
             <option>{ALL_DIVISIONS}</option>
             {this.props.divisionList.map(divisionName => {
               return <option>{divisionName}</option>;
@@ -101,14 +85,14 @@ class MatchHistory extends Component {
                 {filteredMatchList.map(match => {
                   return (
                     <tr
-                      key={this.getMatchText(match)}
+                      key={getMatchText(match)}
                       className="Reported-match"
                     >
                       <td className="Match-division">
-                        {this.getMatchDivision(match)}
+                        {getDivisionDisplayName(match)}
                       </td>
                       <td className="Match-text">
-                        {this.getMatchText(match)}
+                        {getMatchText(match)}
                         <br />
                         <span className="Match-date">
                           {util.getMatchDateFormatted(match)}
@@ -118,12 +102,12 @@ class MatchHistory extends Component {
                         <a
                           className="Delete-match-button"
                           style={{
-                            visibility: this.isMatchDeletable(match)
+                            visibility: isMatchDeletable(match)
                               ? "visible"
                               : "hidden"
                           }}
                           onClick={() => {
-                            this.deleteMatchClicked(match);
+                            deleteMatchClicked(match);
                           }}
                         >
                           <i className="fas fa-trash"></i>
@@ -137,8 +121,7 @@ class MatchHistory extends Component {
           </div>
         )}
       </div>
-    );
-  }
+  );
 }
 
 export default MatchHistory;
