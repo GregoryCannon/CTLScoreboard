@@ -1,9 +1,9 @@
 const moment = require("moment");
 
-const { divisionData } = require("../server/config_data");
+const configData = require("../server/config_data");
 
 // CHANGE THIS WHEN DEBUGGING
-const IS_PRODUCTION = 
+const IS_PRODUCTION =
   process.env.REACT_APP_IS_PRODUCTION == undefined
     ? true
     : process.env.REACT_APP_IS_PRODUCTION;
@@ -622,9 +622,16 @@ function getMatchDateFormatted(match) {
 
 function getCompetition(match) {
   console.log(match.division);
-  const div = divisionData.find(div => div.divisionName === match.division);
+  const div = configData.divisionData.find(div => div.divisionName === match.division);
 
   return div ? div.competition : null;
+}
+
+function getCompetitionEloName(match) {
+  const abbreviation = getCompetition(match);
+  if (!abbreviation) return null;
+
+  return configData.competitions.find(comp => comp.abbreviation === abbreviation).eloName;
 }
 
 function downloadCanvasAsPng(canvas, filename) {
@@ -685,6 +692,7 @@ module.exports = {
   getMatchDateFormatted,
   SortBy,
   getCompetition,
+  getCompetitionEloName,
   IS_PRODUCTION,
   USE_PLAYOFFS_FOR_HYBRID_DIVISIONS
 };

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./ResultsPage.css";
 
 const util = require("../server/util");
+const configData = require("../server/config_data");
 
 class ResultsPage extends Component {
   constructor(props) {
@@ -26,18 +27,14 @@ class ResultsPage extends Component {
   render() {
     return (
       <div className="Results-container">
-        <button
-          className="Nav-button"
-          onClick={() => this.setShowCompetition("ctl")}
-        >
-          CTL
-        </button>
-        <button
-          className="Nav-button"
-          onClick={() => this.setShowCompetition("tnp")}
-        >
-          TNP
-        </button>
+        {configData.competitions.map(competition => (
+          <button 
+            className="Nav-button"
+            onClick={() => this.setShowCompetition(competition.abbreviation)}
+          >
+            {competition.buttonName}
+          </button>
+        ))}
         <button
           className="Nav-button"
           onClick={() => this.setShowCompetition("")}
@@ -88,9 +85,7 @@ class ResultsPage extends Component {
                     <td>{awayPlayer}</td>
                     <td>{match.division}</td>
                     <td>
-                      {util.getCompetition(match) === "ctl"
-                        ? "CT League"
-                        : "TNP"}
+                      {util.getCompetitionEloName(match)}
                     </td>
                   </tr>
                 );

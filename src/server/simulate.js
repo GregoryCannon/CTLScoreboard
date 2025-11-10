@@ -12,9 +12,9 @@ Code is similar to `computeRawStandings` in compute.js
 */
 function simulateOneIteration(division, matchSchedule, resultCounts) {
   const bestOf = division.bestOf || 5;
-  const gamesToWin = 0.5 + (bestOf / 2);
-  const maxPointsPerMatch = bestOf == 7 ? 10 :
-    division.competition === "tnp" ? 8 : 7;
+  const gamesToWin = 0.5 + bestOf / 2;
+  const maxPointsPerMatch =
+    bestOf == 7 ? 10 : division.competition === "tnp" ? 8 : 7;
   const simulationCloneDivision = JSON.parse(JSON.stringify(division));
   const startOfSeasonCloneDivision = JSON.parse(JSON.stringify(division));
 

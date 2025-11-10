@@ -31,8 +31,7 @@ let DIVISIONS_TNP = {
   // Beginner: []
   // VeryLarge: [],
 };
-const SIGN_UP_MESSAGE_TNP =
-  `
+const SIGN_UP_MESSAGE_TNP = `
  React to sign up for a new division below! Your reaction will be hidden after 3 seconds.
 
  If you are currently in a division, do not sign up here until both (1) 100% of your own matches have been completed, and (2) your division deadline is at the end of the current week or your tier for the next season is already a 100% certainty. Make sure you sign up for the correct tier, and if you want to withdraw, do so before 23:59 UTC on Monday. New divisions will be created shortly thereafter and withdrawal after this point may be penalised. For full details, refer to #about.
@@ -56,7 +55,8 @@ class RegistrationAndMatchBot {
 
     const compSuffix = isTNP ? "TNP" : "CTL";
     const dataStoreId = process.env[`DATA_STORE_CHANNEL_${compSuffix}`];
-    const dataStoreBackupId = process.env[`DATA_STORE_BACKUP_CHANNEL_${compSuffix}`];
+    const dataStoreBackupId =
+      process.env[`DATA_STORE_BACKUP_CHANNEL_${compSuffix}`];
     const signUpChannelId = process.env[`SIGNUP_CHANNEL_${compSuffix}`];
     const commandChannelId = process.env[`COMMAND_CHANNEL_${compSuffix}`];
     const reportingChannelId = process.env[`REPORTING_CHANNEL_${compSuffix}`];

@@ -273,7 +273,7 @@ app.get("/api/standings", function(req, res) {
 
   if (isCacheValid()) {
     logger.logResponseDescription("Sending cached standings");
-    return res.send(cachedFinalStandings);
+    return res.send(cachedFinalStandings || {});
   } else {
     logger.log("Invalid cache, forced to refresh");
     return refreshCachedStandings(succeeded => {
@@ -288,7 +288,7 @@ app.get("/api/standings", function(req, res) {
           "Sending cached standings (= backup data)"
         );
       }
-      return res.send(cachedFinalStandings);
+      return res.send(cachedFinalStandings || {});
     });
   }
 });
@@ -310,13 +310,14 @@ app.post("/api/match-data", function(req, res) {
   const newMatch = req.body;
 
   // Check that the winner has the correct number of games
-  const divData = configData.divisionData.find(d => d.divisionName === newMatch.division);
-  const isDivBo7 = !(divData.bestOf === undefined) && (divData.bestOf === 7);
+  const divData = configData.divisionData.find(
+    d => d.divisionName === newMatch.division
+  );
+  const isDivBo7 = !(divData.bestOf === undefined) && divData.bestOf === 7;
   if (isDivBo7 && newMatch.winner_games !== 4) {
     const responseBody = {
       didSucceed: false,
-      errorMessage:
-        "The winner should have won 4 games."
+      errorMessage: "The winner should have won 4 games."
     };
     logger.logResponse("Report match", responseBody);
     res.send(responseBody);
@@ -325,8 +326,7 @@ app.post("/api/match-data", function(req, res) {
   if (!isDivBo7 && newMatch.winner_games !== 3) {
     const responseBody = {
       didSucceed: false,
-      errorMessage:
-        "The winner should have won 3 games."
+      errorMessage: "The winner should have won 3 games."
     };
     logger.logResponse("Report match", responseBody);
     res.send(responseBody);
@@ -389,7 +389,7 @@ app.post("/api/match-data", function(req, res) {
           console.log("Reporting new match, competition =", comp);
           if (comp === "tnp") {
             TNPBot.reportMatch(newMatch);
-          } else {
+          } else if (comp == "ctl") {
             CTLBot.reportMatch(newMatch);
           }
 

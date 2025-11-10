@@ -4,6 +4,7 @@ import MatchHistory from "./MatchHistory";
 import Division from "./division/Division";
 import "./StandingsPage.css";
 const util = require("../server/util");
+const configData = require("../server/config_data");
 
 class StandingsPage extends Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class StandingsPage extends Component {
         divisionName: "",
         playerName: ""
       },
-      showCompeition: ""
+      showCompetition: ""
     };
 
     this.setExpandedPlayer = this.setExpandedPlayer.bind(this);
@@ -23,12 +24,11 @@ class StandingsPage extends Component {
   getPages() {
     let pages = [];
     const PAGE_SIZES = [2, 3, 3, 4, 4, 4, 5, 5, 5, 5];
-    const divData =
-      this.state.showCompeition === ""
-        ? this.props.divisionData
-        : this.props.divisionData.filter(
-            div => div.competition === this.state.showCompeition
-          );
+    const divData = this.props.divisionData.filter(div => {
+      const competition = this.state.showCompetition;
+      const isCorrectCompetition = (competition === "") || (div.competition === competition);
+      return (!div.completed && isCorrectCompetition);
+    });
 
     let i = 0;
     for (const pageSize of PAGE_SIZES) {
@@ -52,7 +52,7 @@ class StandingsPage extends Component {
   setShowCompetition(competition) {
     this.setState({
       ...this.state,
-      showCompeition: competition
+      showCompetition: competition
     });
   }
 
@@ -60,18 +60,14 @@ class StandingsPage extends Component {
     return (
       <div className="Standings-container">
         <div className="Left-panel">
-          <button
-            className="Nav-button"
-            onClick={() => this.setShowCompetition("ctl")}
-          >
-            CTL
-          </button>
-          <button
-            className="Nav-button"
-            onClick={() => this.setShowCompetition("tnp")}
-          >
-            TNP
-          </button>
+          {configData.competitions.map(competition => (
+            <button 
+              className="Nav-button"
+              onClick={() => this.setShowCompetition(competition.abbreviation)}
+            >
+              {competition.buttonName}
+            </button>
+          ))}
           <button
             className="Nav-button"
             onClick={() => this.setShowCompetition("")}

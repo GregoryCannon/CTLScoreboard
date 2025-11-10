@@ -99,7 +99,7 @@ class ReportingPanel extends Component {
     if (division === undefined) return 0;
 
     console.log(division);
-    const isDivBo7 = (division.bestOf !== undefined) && (division.bestOf === 7);
+    const isDivBo7 = division.bestOf !== undefined && division.bestOf === 7;
     return isDivBo7 ? 4 : 3;
   }
 
@@ -244,7 +244,9 @@ class ReportingPanel extends Component {
               ref={this.divisionInput}
               onChange={this.changeReportingDivision}
             >
-              {configData.divisionData.map((division, i) => {
+              {configData.divisionData
+                .filter(division => !division.completed)
+                .map((division) => {
                 return (
                   <option key={division.divisionName}>
                     {division.divisionName}

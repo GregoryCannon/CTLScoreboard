@@ -30,12 +30,7 @@ function computeRawStandings(matchData, penaltyPoints) {
   const standings = generateEmptyStandings();
   for (let d = 0; d < standings.length; d++) {
     const divisionStandings = standings[d].standings;
-    const bestOf = standings[d].bestOf || 5;
-    let maxPointsPerMatch = 10;
-    if (standings[d].bestOf == 7)
-      maxPointsPerMatch = 10;
-    else
-      maxPointsPerMatch = standings[d].competition === "tnp" ? 8 : 7;
+    const maxPointsPerMatch = standings[d].maxPointsPerMatch;
 
     // Update the four key source of truth properties (W,L,GF,GA) for each match
     for (let i = 0; i < matchData.length; i++) {
