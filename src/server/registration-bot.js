@@ -4,10 +4,6 @@ const { getMatchDateFormatted } = require("./util");
 
 const REGISTRATION_OPEN_CTL = true;
 const REGISTRATION_OPEN_TNP = true;
-const BEGINNER_REGISTRATION_OPEN_TNP = true;
-const BEGINNER_REGISTRATION_OPEN_DATE = "August 4";
-const BEGINNER_START_DATE = "August 14";
-const BEGINNER_END_DATE = "September 8";
 const MAIN_EMOJI = "👍";
 const CANCEL_EMOJI = "❌";
 const INFO_EMOJI = "ℹ️";
@@ -26,9 +22,9 @@ let DIVISIONS_TNP = {
   Gold: [],
   Silver: [],
   Bronze: [],
-  Oak: [],
-  Elm: []
-  // Beginner: []
+  // Oak: [],
+  // Elm: []
+  Beginner: []
   // VeryLarge: [],
 };
 const SIGN_UP_MESSAGE_TNP = `
@@ -42,7 +38,6 @@ const SIGN_UP_MESSAGE_CTL =
 const REGISTRATION_CLOSED_MESSAGE_CTL =
   "Signups for the current season are now closed. Please wait for an announcement later in the season for when you may begin to react to participate for the next season starting in May 2023";
 const REGISTRATION_CLOSED_MESSAGE_TNP = "Signups are currently closed.";
-const REGISTRATION_CLOSED_MESSAGE_TNP_BEGINNER = `Signups for beginner divisions are currently closed. They will open on **${BEGINNER_REGISTRATION_OPEN_DATE}** for divisions running from **${BEGINNER_START_DATE}** until **${BEGINNER_END_DATE}**.`;
 
 class RegistrationAndMatchBot {
   constructor(isTNP) {
@@ -269,15 +264,10 @@ class RegistrationAndMatchBot {
         // Main registration section
         await channel.send(SIGN_UP_MESSAGE + LINE_ASCII);
         for (const divisionName of Object.keys(DIVISIONS)) {
-          if (divisionName === "Beginner" && !BEGINNER_REGISTRATION_OPEN_TNP)
-            continue;
 
-          let messageString = isTNP
-            ? divisionName === "Beginner"
-              ? "Sign up for a Beginner (Oak/Elm/Birch) division"
-              : `Sign up for a ${divisionName} division`
-            : `Sign up for Division ${divisionName}`;
-
+          const messageString = divisionName.length > 2 
+            ? `Sign up for the ${divisionName} division`
+            : `Sign up for division ${divisionName}`
           const message = await channel.send(messageString);
           await message.react(MAIN_EMOJI);
           const collector = message.createReactionCollector();
@@ -286,10 +276,6 @@ class RegistrationAndMatchBot {
           });
 
           await sleep(100);
-        }
-
-        if (isTNP && !BEGINNER_REGISTRATION_OPEN_TNP) {
-          await channel.send(REGISTRATION_CLOSED_MESSAGE_TNP_BEGINNER);
         }
 
         // Check registration button
