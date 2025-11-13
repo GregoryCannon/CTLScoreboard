@@ -365,6 +365,27 @@ const divisionData = [
       "KLOVELACE"
     ]
   },
+  {
+    divisionName: "Gold 69",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "BARRYBLANKET",
+      "MANTASKUTOP",
+      "SEBIE",
+      "RORY",
+      "KINGSMAN",
+      "HUNTERZZZZ",
+      "ENSCALIGHT",
+      "ETHANTHOUGHTS",
+    ]
+  },
 
   // END GOLD
   // BEGIN SILVER
@@ -454,6 +475,25 @@ const divisionData = [
       "GILDEDLIZARD"
     ]
   },
+  {
+    divisionName: "Silver 79",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "JUST_WOBERT",
+      "ADAMIRISH",
+      "KAT_5528",
+      "MAXXF386",
+      "SUPERSTEP",
+      "GBTOAST",
+    ]
+  },
 
   // END SILVER
   // BEGIN BRONZE
@@ -461,6 +501,7 @@ const divisionData = [
   {
     divisionName: "Bronze 82",
     competition: "tnp",
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -473,6 +514,7 @@ const divisionData = [
   {
     divisionName: "Bronze 83",
     competition: "tnp",
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -494,6 +536,7 @@ const divisionData = [
   {
     divisionName: "Bronze 85",
     competition: "tnp",
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -551,6 +594,7 @@ const divisionData = [
   {
     divisionName: "Elm 15",
     competition: "tnp",
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 1,
@@ -566,6 +610,23 @@ const divisionData = [
       "THEONLYCEDRIC",
       "MRBRAIN",
       "EXITY"
+    ]
+  },
+  {
+    divisionName: "Elm 16",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "ASLEEPIEALLIE",
+      "MRBRAIN",
+      "52KANON",
+      "EXITY",
     ]
   },
 
