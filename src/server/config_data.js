@@ -627,6 +627,7 @@ const divisionData = [
       "MRBRAIN",
       "52KANON",
       "EXITY",
+      "SAYMYNAME"
     ]
   },
 
