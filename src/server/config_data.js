@@ -272,6 +272,7 @@ const divisionData = [
   {
     divisionName: "Gold 64",
     competition: "tnp",
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 10,
     numWinner: 0,
@@ -284,6 +285,7 @@ const divisionData = [
   {
     divisionName: "Gold 65",
     competition: "tnp",
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -304,6 +306,7 @@ const divisionData = [
   {
     divisionName: "Gold 66",
     competition: "tnp",
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -369,6 +372,7 @@ const divisionData = [
   {
     divisionName: "Silver 74",
     competition: "tnp",
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -389,6 +393,7 @@ const divisionData = [
   {
     divisionName: "Silver 76",
     competition: "tnp",
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -410,6 +415,7 @@ const divisionData = [
   {
     divisionName: "Silver 77",
     competition: "tnp",
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
