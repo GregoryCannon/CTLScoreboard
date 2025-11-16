@@ -28,9 +28,11 @@ const db = monk(process.env.DB_URI || "localhost:27017/ctl-matches");
 const matchListDb = db.get("matchList"); // List of matches in JSON form
 const penaltyDb = db.get("penalty"); // List of players and their penalty points
 
-// Configure the second discord bot
-const CTLBot = new RegistrationAndMatchBot(/* isTNP= */ false);
-const TNPBot = new RegistrationAndMatchBot(/* isTNP= */ true);
+// Configure the reporting/signup Discord bots
+const discordBots = {};
+for (comp of configData.competitions) {
+  discordBots[comp.abbreviation] = new RegistrationAndMatchBot(comp);
+}
 
 // Add discord authentication router
 app.use("/discord-api", discordAuthRouter);
@@ -387,11 +389,7 @@ app.post("/api/match-data", function(req, res) {
           invalidateCacheForDivision(newMatch.division);
           const comp = util.getCompetition(newMatch);
           console.log("Reporting new match, competition =", comp);
-          if (comp === "tnp") {
-            TNPBot.reportMatch(newMatch);
-          } else if (comp == "ctl") {
-            CTLBot.reportMatch(newMatch);
-          }
+          discordBots[comp].reportMatch(newMatch);
 
           const responseBody = {
             didSucceed: true,

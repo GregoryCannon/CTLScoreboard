@@ -614,17 +614,40 @@ const competitions = [
   {
     abbreviation: "ctl",
     buttonName: "CTL",
-    eloName: "CT League"
+    eloName: "CT League",
+    registrationBotInfo: {
+      registrationOpen: true,
+      divisions: ["1", "2", "3", "4", "5"],
+      signupMessage:
+        "Signups for upcoming CTL seasons will be announced at the end of each previous season and will be closed a week before the start of the next one. Click the appropriate reaction for the tier level you are assigned to if you wish to participate. Should you need to withdraw after the CTL draw takes place, notify the King immediately so a replacement may be found, if necessary. For full details, refer to #rules-and-standings.\n\n",
+      registrationClosedMessage:
+        "Signups for the current season are now closed. Please wait for an announcement later in the season for when you may begin to react to participate for the next season starting in May 2023",
+    }
   },
   {
     abbreviation: "tnp",
     buttonName: "TNP",
-    eloName: "TNP"
+    eloName: "TNP",
+    registrationBotInfo: {
+      registrationOpen: true,
+      divisions: ["Gold", "Silver", "Bronze", "Beginner"],
+      signupMessage: `
+        React to sign up for a new division below! Your reaction will be hidden after 3 seconds.
+
+        If you are currently in a division, do not sign up here until both (1) 100% of your own matches have been completed, and (2) your division deadline is at the end of the current week or your tier for the next season is already a 100% certainty. Make sure you sign up for the correct tier, and if you want to withdraw, do so before 23:59 UTC on Monday. New divisions will be created shortly thereafter and withdrawal after this point may be penalised. For full details, refer to #about.`,
+      registrationClosedMessage: "Signups are now closed."
+    }
   },
   {
     abbreviation: "dl",
     buttonName: "DAS League",
-    eloName: "DAS League"
+    eloName: "DAS League",
+    registrationBotInfo: {
+      registrationOpen: false,
+      divisions: ["1", "2", "3", "4", "5", "6"],
+      signupMessage: "React to signup below :)\n",
+      registrationClosedMessage: "Signups are now closed."
+    }
   },
 ]
 
