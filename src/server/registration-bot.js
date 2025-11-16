@@ -2,53 +2,26 @@ const { Client, Intents } = require("discord.js");
 const logger = require("./logger");
 const { getMatchDateFormatted } = require("./util");
 
-const REGISTRATION_OPEN_CTL = true;
-const REGISTRATION_OPEN_TNP = true;
 const MAIN_EMOJI = "👍";
 const CANCEL_EMOJI = "❌";
 const INFO_EMOJI = "ℹ️";
 const LINE_ASCII = "—————————————————————————";
 const DELAY_MS = 4000;
 const HIDE_REACTION_DELAY_MS = 4000;
-let DIVISIONS_CTL = {
-  "1": [],
-  "2": [],
-  "3": [],
-  "4": [],
-  "5": []
-};
-let DIVISIONS_TNP = {
-  // Roentgenium: [],
-  Gold: [],
-  Silver: [],
-  Bronze: [],
-  // Oak: [],
-  // Elm: []
-  Beginner: []
-  // VeryLarge: [],
-};
-const SIGN_UP_MESSAGE_TNP = `
- React to sign up for a new division below! Your reaction will be hidden after 3 seconds.
-
- If you are currently in a division, do not sign up here until both (1) 100% of your own matches have been completed, and (2) your division deadline is at the end of the current week or your tier for the next season is already a 100% certainty. Make sure you sign up for the correct tier, and if you want to withdraw, do so before 23:59 UTC on Monday. New divisions will be created shortly thereafter and withdrawal after this point may be penalised. For full details, refer to #about.
-
- **Oak** divisions are open to players with a personal best of 500,000 and below, while **Elm** divisions are open to players with a personal best of 350,000 and below.`;
-const SIGN_UP_MESSAGE_CTL =
-  "Sign ups for upcoming CTL seasons will be announced at the end of each previous season and will be closed a week before the start of the next one. Click the appropriate reaction for the tier level you are assigned to if you wish to participate. Should you need to withdraw after the CTL draw takes place, notify the King immediately so a replacement may be found, if necessary. For full details, refer to #rules-and-standings.\n\n";
-const REGISTRATION_CLOSED_MESSAGE_CTL =
-  "Signups for the current season are now closed. Please wait for an announcement later in the season for when you may begin to react to participate for the next season starting in May 2023";
-const REGISTRATION_CLOSED_MESSAGE_TNP = "Signups are currently closed.";
 
 class RegistrationAndMatchBot {
-  constructor(isTNP) {
-    let DIVISIONS = isTNP ? DIVISIONS_TNP : DIVISIONS_CTL;
-    let SIGN_UP_MESSAGE = isTNP ? SIGN_UP_MESSAGE_TNP : SIGN_UP_MESSAGE_CTL;
+  constructor(competition) {
+    let divisions = {};
+    for (const divisionName of competition.registrationBotInfo.divisions) {
+      divisions[divisionName] = [];
+    }
+    
     let previousVodUrl = "";
     let dataStoreChannel = null;
     let dataStoreBackupChannel = null;
     let reportingChannel = null;
 
-    const compSuffix = isTNP ? "TNP" : "CTL";
+    const compSuffix = competition.abbreviation.toUpperCase();
     const dataStoreId = process.env[`DATA_STORE_CHANNEL_${compSuffix}`];
     const dataStoreBackupId =
       process.env[`DATA_STORE_BACKUP_CHANNEL_${compSuffix}`];
@@ -137,7 +110,7 @@ class RegistrationAndMatchBot {
 
     function getExistingDivision(formattedUser) {
       let registeredDiv = null;
-      for (const [divisionName, playerList] of Object.entries(DIVISIONS)) {
+      for (const [divisionName, playerList] of Object.entries(divisions)) {
         if (playerList.includes(formattedUser)) {
           registeredDiv = divisionName;
         }
@@ -147,19 +120,19 @@ class RegistrationAndMatchBot {
 
     async function registerUsers(divisionName, formattedUserList) {
       for (const user of formattedUserList) {
-        DIVISIONS[divisionName].push(user);
+        divisions[divisionName].push(user);
       }
       await updateRegistrationData();
     }
 
     async function registerUser(divisionName, formattedUser) {
-      DIVISIONS[divisionName].push(formattedUser);
+      divisions[divisionName].push(formattedUser);
       await updateRegistrationData();
     }
 
     function deregisterUser(formattedUser) {
       let registeredDiv = null;
-      for (const [divisionName, playerList] of Object.entries(DIVISIONS)) {
+      for (const [divisionName, playerList] of Object.entries(divisions)) {
         removeItemAll(playerList, formattedUser);
       }
       return registeredDiv;
@@ -168,7 +141,7 @@ class RegistrationAndMatchBot {
     /** Attempts to deregister a list of users, and returns a list of those that weren't able to be removed. */
     function deregisterUsers(divisionName, formattedUserList) {
       let notFound = [];
-      const playerList = DIVISIONS[divisionName];
+      const playerList = divisions[divisionName];
       if (!playerList) {
         return formattedUserList;
       }
@@ -206,17 +179,17 @@ class RegistrationAndMatchBot {
         console.log("Loading from data string", dataString);
 
         try {
-          const oldDivKeys = Object.keys(DIVISIONS);
-          DIVISIONS = JSON.parse(dataString);
+          const oldDivKeys = Object.keys(divisions);
+          divisions = JSON.parse(dataString);
           // Delete any divisions that used to exist but have been removed from the config set
-          for (const key of Object.keys(DIVISIONS)) {
+          for (const key of Object.keys(divisions)) {
             if (!oldDivKeys.includes(key)) {
-              delete DIVISIONS[key];
+              delete divisions[key];
             }
           }
           for (const key of oldDivKeys) {
-            if (!Object.keys(DIVISIONS).includes(key)) {
-              DIVISIONS[key] = [];
+            if (!Object.keys(divisions).includes(key)) {
+              divisions[key] = [];
             }
           }
         } catch (error) {
@@ -227,7 +200,7 @@ class RegistrationAndMatchBot {
     }
 
     async function updateRegistrationData() {
-      let msgString = JSON.stringify(DIVISIONS);
+      let msgString = JSON.stringify(divisions);
       msgString = msgString.replace(/,/g, ",\n");
       let splitMessages = msgString.match(/(.|[\r\n]){1,1000}/g); // Replace n with the size of the substring
 
@@ -257,16 +230,13 @@ class RegistrationAndMatchBot {
         console.error(error);
       }
 
-      if (
-        (isTNP && REGISTRATION_OPEN_TNP) ||
-        (!isTNP && REGISTRATION_OPEN_CTL)
-      ) {
+      if (competition.registrationBotInfo.registrationOpen) {
         // Main registration section
-        await channel.send(SIGN_UP_MESSAGE + LINE_ASCII);
-        for (const divisionName of Object.keys(DIVISIONS)) {
+        await channel.send(competition.registrationBotInfo.signupMessage + LINE_ASCII);
+        for (const divisionName of Object.keys(divisions)) {
 
           const messageString = divisionName.length > 2 
-            ? `Sign up for the ${divisionName} division`
+            ? `Sign up for a ${divisionName} division`
             : `Sign up for division ${divisionName}`
           const message = await channel.send(messageString);
           await message.react(MAIN_EMOJI);
@@ -299,11 +269,7 @@ class RegistrationAndMatchBot {
           checkForCancelReacts(cancelMsg);
         });
       } else {
-        channel.send(
-          isTNP
-            ? REGISTRATION_CLOSED_MESSAGE_TNP
-            : REGISTRATION_CLOSED_MESSAGE_CTL
-        );
+        channel.send(competition.registrationBotInfo.registrationClosedMessage);
       }
     }
 
@@ -347,10 +313,10 @@ class RegistrationAndMatchBot {
           await registerUser(divisionName, formattedUser);
 
           // Send a temporary confirmation message
-          sendTemporaryMessage(
-            message.channel,
-            `${formatUser(user)} is now signed up for Division ${divisionName}.`
-          );
+          const temporaryMessage = divisionName.length > 2
+            ? `${formatUser(user)} is now signed up for a ${divisionName} Division.`
+            : `${formatUser(user)} is now signed up for Division ${divisionName}.`;
+          sendTemporaryMessage(message.channel, temporaryMessage);
         } else {
           // Send a temporary error message
           sendTemporaryMessage(
@@ -459,10 +425,10 @@ class RegistrationAndMatchBot {
 
       if (msg.content.match(/^!removeall /)) {
         const divisionName = msg.content.split(" ")[1];
-        const existingDivisions = Object.keys(DIVISIONS);
+        const existingDivisions = Object.keys(divisions);
         if (existingDivisions.includes(divisionName)) {
-          const removedPlayers = DIVISIONS[divisionName];
-          DIVISIONS[divisionName] = [];
+          const removedPlayers = divisions[divisionName];
+          divisions[divisionName] = [];
           msg.channel.send(
             `Removed ${removedPlayers.length} players from division ${divisionName}`
           );
@@ -474,9 +440,9 @@ class RegistrationAndMatchBot {
 
       if (msg.content.match(/^!count/)) {
         let response = "Counts of registered players:";
-        for (const divisionName of Object.keys(DIVISIONS)) {
+        for (const divisionName of Object.keys(divisions)) {
           response += `\n Division ${divisionName}:\t${
-            (DIVISIONS[divisionName] || []).length
+            (divisions[divisionName] || []).length
           }`;
         }
         msg.channel.send(response);
