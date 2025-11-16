@@ -653,7 +653,8 @@ const divisionData = [
       "Vulture",
       "Kingsman",
       "Marshall",
-      "PB"
+      "PB",
+      "Smokey the Bear"
     ]
   },
   {
