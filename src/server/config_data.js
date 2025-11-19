@@ -587,6 +587,27 @@ const divisionData = [
     numAutoRelegate: 0,
     players: ["LOUCY", "WILSON", "CONDENSED_ARIN", "RAVIOLI", "TYOW", "SIERRAE"]
   },
+  {
+    divisionName: "Bronze 88",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "LADYVADER",
+      "LEYMBDA",
+      "YAMA",
+      "KRYPTON",
+      "WEEGLOOGI",
+      "SWAGGIE",
+      "BEAN",
+      "POSSUMBAKES",
+    ]
+  },
 
   // END BRONZE
   // BEGIN BEGINNER
