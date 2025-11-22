@@ -1164,6 +1164,7 @@ const restreamerRole = [
   "teainrain#0",
   "temphuibis#0",
   "TetrisMasterRafał#0598",
+  "tetrisroma#0",
   "TetrisTime#8026",
   "thatguywearingblue#7417",
   "The1stNoel#0001",
