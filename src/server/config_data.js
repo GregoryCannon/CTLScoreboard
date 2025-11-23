@@ -706,11 +706,10 @@ const divisionData = [
     numAutoPromo: 2,
     numPlayoffPromo: 2,
     numPlayoffRelegate: 1,
-    numAutoRelegate: 1,
+    numAutoRelegate: 0,
     players: [
       "SHUICHI",
       "USERNAMEGOLD",
-      "SERENITYINSORROW",
       "POOPYOLDHAG",
       "IANKEITH",
       "WEISBROT",
