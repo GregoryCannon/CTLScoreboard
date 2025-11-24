@@ -486,7 +486,6 @@ const divisionData = [
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
-      "JUST_WOBERT",
       "ADAMIRISH",
       "KAT_5528",
       "MAXXF386",
