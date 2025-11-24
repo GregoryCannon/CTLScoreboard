@@ -993,6 +993,7 @@ const restreamerRole = [
   "homejacob#0",
   "huffulufugus#0",
   "hunn14#0",
+  "hunter.four.z.",
   "hydrantdude#0",
   "ian.capalot#0008",
   "iceblade73#0",
