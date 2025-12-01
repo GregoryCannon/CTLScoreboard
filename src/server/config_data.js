@@ -823,7 +823,7 @@ const competitions = [
     eloName: "TNP",
     registrationBotInfo: {
       registrationOpen: true,
-      divisions: ["Gold", "Silver", "Bronze", "Beginner"],
+      divisions: ["Gold", "Silver", "Bronze", "Beginner", "Roentgenium"],
       signupMessage: `
         React to sign up for a new division below! Your reaction will be hidden after 3 seconds.
 
