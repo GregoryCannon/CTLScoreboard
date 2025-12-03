@@ -28,16 +28,14 @@ function PlayerAdvancedStats(props) {
         {props.division.numAutoPromo + props.division.numWinner > 0 && (
           <tr
             className={
-              props.division.divisionName.match(/^1[^0-9]/) ||
-              props.division.divisionName === "1"
+              props.division.numWinner > 0
                 ? "Stats-winner"
                 : "Stats-auto-promo"
             }
           >
             <td>
-              {props.division.divisionName.match(/^1[^0-9]/) ||
-              props.division.divisionName === "1"
-                ? "Winner's Bracket"
+              {props.division.numWinner > 0
+                ? "Win Division"
                 : "Promotion"}
             </td>
             <td>
@@ -48,7 +46,7 @@ function PlayerAdvancedStats(props) {
 
         {props.division.numPrizeMoney > 0 && (
           <tr className={"Stats-prize-money"}>
-            <td>Loser's Bracket</td>
+            <td>Make Playoffs</td>
             <td>
               {props.renderPercentageFunc(
                 props.playerData.prizeMoneyChance -

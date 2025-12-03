@@ -39,7 +39,7 @@ function DivisionHeadings(props) {
         <div className="Header-sortable-inner">
           <div>
             {props.data.divisionName.match(/^1[^0-9]/) ||
-            props.data.divisionName === "1"
+            props.data.numPrizeMoney > 0
               ? "Playoff Chance"
               : "Promo Chance"}
           </div>
