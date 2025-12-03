@@ -780,11 +780,10 @@ const divisionData = [
     numAutoPromo: 2,
     numPlayoffPromo: 1,
     numPlayoffRelegate: 1,
-    numAutoRelegate: 1,
+    numAutoRelegate: 0,
     players: [
       "PENGUINPANIC",
       "ADAMANATITE",
-      "RXS",
       "ANGRYRORO",
       "GUERREROASDF",
       "FIREDOX",
