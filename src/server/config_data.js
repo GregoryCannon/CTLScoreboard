@@ -386,6 +386,42 @@ const divisionData = [
       "ETHANTHOUGHTS",
     ]
   },
+  {
+    divisionName: "Gold 70",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "SUPERJAYCODER",
+      "TIRED_RL",
+      "SNOWYTETRIS",
+      "LILIANA",
+      "M149",
+    ]
+  },
+  {
+    divisionName: "Gold 71",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "MAEDHROS",
+      "MARTS",
+      "KOCCHIRA",
+      "CHEFBOYARGEEBS",
+      "PLACEHOLDER"
+    ]
+  },
 
   // END GOLD
   // BEGIN SILVER
@@ -491,6 +527,24 @@ const divisionData = [
       "MAXXF386",
       "SUPERSTEP",
       "GBTOAST",
+    ]
+  },
+  {
+    divisionName: "Silver 80",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "ALICE_FERN",
+      "RAVIOLI",
+      "GRAVEL1942",
+      "LUKIDELUXE",
+      "ARBARO",
     ]
   },
 
