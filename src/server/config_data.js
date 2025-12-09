@@ -266,6 +266,36 @@ const divisionData = [
       "SERENITYINSORROW",
     ]
   },
+  {
+    divisionName: "Roentgenium 4",
+    competition: "tnp",
+    completed: false,
+    bestOf: 7,
+    oneMatchPerPair: true,
+    numWinner: 2,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "BRIANTHEONE",
+      "THISINTHAT",
+      "ANJING",
+      "SPECTRIC",
+      "KANNPLAYSTETRIS",
+      "STOLENSHORTSWORD",
+      "BLINGUS",
+      "MOODEUCE",
+      "ICEBLADE73",
+      "HECATE",
+      "PENGUINPANIC",
+      "MATHWIZ",
+      "ZENON",
+      "JEDIEVAN",
+      "GUSTAVOCUBISTA7",
+      "UNOR1GINALNAME",
+    ]
+  },
 
   // BEGIN GOLD
 
@@ -361,7 +391,6 @@ const divisionData = [
       "LILIANA",
       "TIRED_RL",
       "COVERDALES",
-      "BRANGUY",
       "KLOVELACE"
     ]
   },
