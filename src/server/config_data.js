@@ -272,7 +272,7 @@ const divisionData = [
     completed: false,
     bestOf: 7,
     oneMatchPerPair: true,
-    numWinner: 2,
+    numWinner: 1,
     numAutoPromo: 0,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 0,
