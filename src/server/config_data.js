@@ -690,6 +690,26 @@ const divisionData = [
       "POSSUMBAKES",
     ]
   },
+  {
+    divisionName: "Bronze 89",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "WILSON",
+      "TYOW",
+      "RATTAILEDJAGUAR",
+      "ASHLEYYYY",
+      "COXDANNYJ",
+      "GENIALERGANDALF",
+      "BBOT",
+    ]
+  },
 
   // END BRONZE
   // BEGIN BEGINNER
@@ -731,6 +751,23 @@ const divisionData = [
       "52KANON",
       "EXITY",
       "SAYMYNAME"
+    ]
+  },
+  {
+    divisionName: "Elm 17",
+    competition: "tnp",
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "VINZCHILLIN",
+      "KIMBERLYSAYS",
+      "THETIGERSHARK",
+      "JCHCDABOI",
     ]
   },
 
