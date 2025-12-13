@@ -934,7 +934,7 @@ const competitions = [
       signupMessage:
         "Signups for upcoming CTL seasons will be announced at the end of each previous season and will be closed a week before the start of the next one. Click the appropriate reaction for the tier level you are assigned to if you wish to participate. Should you need to withdraw after the CTL draw takes place, notify the King immediately so a replacement may be found, if necessary. For full details, refer to #rules-and-standings.\n\n",
       registrationClosedMessage:
-        "Signups for the current season are now closed. Please wait for an announcement later in the season for when you may begin to react to participate for the next season starting in May 2023",
+        "Signups for the current season are now closed. Please wait for an announcement later in the season for when you may begin to react to participate for the next season.",
     }
   },
   {
