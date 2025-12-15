@@ -997,8 +997,7 @@ const adminRole = [
   "chobge#0",
   "chillalla#0",
   "richardwolfvi#0",
-  "frenchiestfrie#0",
-  "snowlilyx#0"
+  "lilhana4#0"
 ];
 
 const restreamerRole = [
