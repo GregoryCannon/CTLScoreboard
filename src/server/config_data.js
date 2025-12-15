@@ -337,7 +337,7 @@ const divisionData = [
   {
     divisionName: "Gold 66",
     competition: "tnp",
-    completed: false,
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -358,6 +358,7 @@ const divisionData = [
   {
     divisionName: "Gold 67",
     competition: "tnp",
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -379,6 +380,7 @@ const divisionData = [
   {
     divisionName: "Gold 68",
     competition: "tnp",
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -398,6 +400,7 @@ const divisionData = [
   {
     divisionName: "Gold 69",
     competition: "tnp",
+    completed: false,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -419,6 +422,7 @@ const divisionData = [
   {
     divisionName: "Gold 70",
     competition: "tnp",
+    completed: false,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -437,6 +441,7 @@ const divisionData = [
   {
     divisionName: "Gold 71",
     competition: "tnp",
+    completed: false,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -524,6 +529,7 @@ const divisionData = [
   {
     divisionName: "Silver 78",
     competition: "tnp",
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -544,6 +550,7 @@ const divisionData = [
   {
     divisionName: "Silver 79",
     competition: "tnp",
+    completed: false,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -562,6 +569,7 @@ const divisionData = [
   {
     divisionName: "Silver 80",
     competition: "tnp",
+    completed: false,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -640,6 +648,7 @@ const divisionData = [
   {
     divisionName: "Bronze 86",
     competition: "tnp",
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -661,6 +670,7 @@ const divisionData = [
   {
     divisionName: "Bronze 87",
     competition: "tnp",
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -673,6 +683,7 @@ const divisionData = [
   {
     divisionName: "Bronze 88",
     competition: "tnp",
+    completed: false,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -694,6 +705,7 @@ const divisionData = [
   {
     divisionName: "Bronze 89",
     competition: "tnp",
+    completed: false,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -739,6 +751,7 @@ const divisionData = [
   {
     divisionName: "Elm 16",
     competition: "tnp",
+    completed: false,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 1,
@@ -757,6 +770,7 @@ const divisionData = [
   {
     divisionName: "Elm 17",
     competition: "tnp",
+    completed: false,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 1,
@@ -779,6 +793,7 @@ const divisionData = [
   {
     divisionName: "DL-S4-1A",
     competition: "dl",
+    completed: false,
     oneMatchPerPair: true,
     maxPointsPerMatch: 8,
     numWinner: 1,
@@ -799,6 +814,7 @@ const divisionData = [
   {
     divisionName: "DL-S4-1B",
     competition: "dl",
+    completed: false,
     oneMatchPerPair: true,
     maxPointsPerMatch: 8,
     numWinner: 1,
@@ -819,6 +835,7 @@ const divisionData = [
   {
     divisionName: "DL-S4-2",
     competition: "dl",
+    completed: false,
     oneMatchPerPair: true,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -840,6 +857,7 @@ const divisionData = [
   {
     divisionName: "DL-S4-3",
     competition: "dl",
+    completed: false,
     oneMatchPerPair: true,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -861,6 +879,7 @@ const divisionData = [
   {
     divisionName: "DL-S4-4",
     competition: "dl",
+    completed: false,
     oneMatchPerPair: true,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -882,6 +901,7 @@ const divisionData = [
   {
     divisionName: "DL-S4-5",
     competition: "dl",
+    completed: false,
     oneMatchPerPair: true,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -902,6 +922,7 @@ const divisionData = [
   {
     divisionName: "DL-S4-6",
     competition: "dl",
+    completed: false,
     oneMatchPerPair: true,
     maxPointsPerMatch: 8,
     numWinner: 0,
