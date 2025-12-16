@@ -411,7 +411,6 @@ const divisionData = [
     players: [
       "BARRYBLANKET",
       "MANTASKUTOP",
-      "SEBIE",
       "RORY",
       "KINGSMAN",
       "HUNTERZZZZ",
