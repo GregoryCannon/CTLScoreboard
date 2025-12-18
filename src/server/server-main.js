@@ -278,7 +278,7 @@ function getMatchAlreadyExistsErrorMessage(winner, loser, winnerHome) {
 app.get("/api/standings", function(req, res) {
   logger.logRequest("Get standings", req.body);
 
-  if (isCacheValid() && !!cachedFinalStandings !== null) {
+  if (isCacheValid() && cachedFinalStandings !== null) {
     logger.logResponseDescription("Sending cached standings");
     return res.send(cachedFinalStandings || {});
   } else {
