@@ -1,11 +1,11 @@
 // Credit for most of this file goes to orel- on Github: https://github.com/orels1/discord-token-generator
-const express = require("express");
-const fetch = require("node-fetch");
-const FormData = require("form-data");
-const btoa = require("btoa");
-const configData = require("./config_data");
-const util = require("./util");
-const logger = require("./logger");
+import express from 'express';
+import fetch from 'node-fetch';
+import FormData from 'form-data';
+import { createHmac } from 'crypto';
+
+import * as configData from './config_data.js';
+import * as logger from './logger.js';
 
 /* Login flow:
   - User clicks link on CTL site (GET /discord-api/login)
@@ -37,8 +37,7 @@ Helper Functions
 
 // Sign a string of text with a secret key, so that the server can verify that it hasn't changed
 function hmacSign(rawText) {
-  // Crypto is *NOT* reusable, so need to require it each time
-  const cryptoHmac = require("crypto").createHmac(
+  const cryptoHmac = createHmac(
     "sha256",
     process.env.ENCRYPTION_KEY
   );
@@ -162,6 +161,6 @@ router.post("/validate", (req, res) => {
   }
 });
 
-module.exports = {
+export {
   router
 };

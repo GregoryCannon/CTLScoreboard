@@ -1,19 +1,25 @@
-require("dotenv").config();
+import 'dotenv/config';
+import express from 'express';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import monk from 'monk';
 
-const express = require("express");
-const bodyParser = require("body-parser");
-const path = require("path");
-const compute = require("./compute");
-const simulate = require("./simulate");
-const util = require("./util");
-const { RegistrationAndMatchBot } = require("./registration-bot");
-const discordAuthRouter = require("./discord-auth").router;
-const configData = require("./config_data");
-const logger = require("./logger");
+import { RegistrationAndMatchBot } from './registration-bot.js';
+import { router as discordAuthRouter } from './discord-auth.js';
+import * as compute from './compute.js';
+import * as simulate from './simulate.js';
+import * as logger from './logger.js';
+import * as configData from './config_data.js';
+import {
+  getMatchSchedule,
+  getCompetition
+} from './util.js';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Configure express
 const app = express();
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(express.static(path.join(__dirname, "../../build")));
 
 // Set CORS policy
@@ -23,14 +29,13 @@ app.use((req, res, next) => {
 });
 
 // Database config
-const monk = require("monk");
 const db = monk(process.env.DB_URI || "localhost:27017/ctl-matches");
 const matchListDb = db.get("matchList"); // List of matches in JSON form
 const penaltyDb = db.get("penalty"); // List of players and their penalty points
 
 // Configure the reporting/signup Discord bots
 const discordBots = {};
-for (comp of configData.competitions) {
+for (let comp of configData.competitions) {
   discordBots[comp.abbreviation] = new RegistrationAndMatchBot(comp);
 }
 
@@ -138,7 +143,7 @@ function calculateStandingsForInvalidDivisions(matches, penaltyPoints) {
       const divMatches = matches.filter(match => {
         return match.division == division.divisionName;
       });
-      const divMatchSchedule = util.getMatchSchedule(division, divMatches);
+      const divMatchSchedule = getMatchSchedule(division, divMatches);
       const simulationResults = simulate.runSimulation(
         division,
         divMatchSchedule
@@ -387,7 +392,7 @@ app.post("/api/match-data", function(req, res) {
         } else {
           // If succeeded, invalidate cache, report the match to discord, and send success response
           invalidateCacheForDivision(newMatch.division);
-          const comp = util.getCompetition(newMatch);
+          const comp = getCompetition(newMatch);
           console.log("Reporting new match, competition =", comp);
           discordBots[comp].reportMatch(newMatch);
 

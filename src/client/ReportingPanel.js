@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import "./ReportingPanel.css";
-const moment = require("moment");
-const configData = require("../server/config_data");
-const util = require("../server/util");
+import moment from 'moment';
+import * as configData from '../server/config_data.js';
+import {
+  getApiUrl
+} from '../server/util.js';
 
 class ReportingPanel extends Component {
   constructor(props) {
@@ -147,7 +149,7 @@ class ReportingPanel extends Component {
     var request = new XMLHttpRequest();
 
     // Open a new connection, using the POST request on the URL endpoint
-    request.open("POST", util.getApiUrl("api/match-data"), true);
+    request.open("POST", getApiUrl("api/match-data"), true);
     request.setRequestHeader("Content-type", "application/json");
 
     // Set a callback for the result
@@ -212,7 +214,7 @@ class ReportingPanel extends Component {
         <div>
           <div className="Report-matches-title">Report a Match</div>
           <div className="Error-message">
-            <a href={util.getApiUrl("discord-api/login")}>Login with Discord</a>{" "}
+            <a href={getApiUrl("discord-api/login")}>Login with Discord</a>{" "}
             to report a match!
           </div>
         </div>

@@ -3,8 +3,7 @@ import ReportingPanel from "./ReportingPanel";
 import MatchHistory from "./MatchHistory";
 import Division from "./division/Division";
 import "./StandingsPage.css";
-const util = require("../server/util");
-const configData = require("../server/config_data");
+import * as configData from '../server/config_data.js';
 
 class StandingsPage extends Component {
   constructor(props) {

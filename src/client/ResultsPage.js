@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import "./ResultsPage.css";
-
-const util = require("../server/util");
-const configData = require("../server/config_data");
+import * as configData from '../server/config_data.js';
+import {
+  getCompetition,
+  getMatchDateFormatted,
+  getCompetitionEloName
+} from '../server/util.js';
 
 class ResultsPage extends Component {
   constructor(props) {
@@ -58,7 +61,7 @@ class ResultsPage extends Component {
                 console.log(match);
                 if (this.state.showCompetition === "") return true;
                 return (
-                  this.state.showCompetition === util.getCompetition(match)
+                  this.state.showCompetition === getCompetition(match)
                 );
               })
               .map(match => {
@@ -77,7 +80,7 @@ class ResultsPage extends Component {
 
                 return (
                   <tr>
-                    <td>{util.getMatchDateFormatted(match)}</td>
+                    <td>{getMatchDateFormatted(match)}</td>
                     <td>{this.dewobertifyRestreamer(match.restreamer)}</td>
                     <td>{homePlayer}</td>
                     <td>{homeScore}</td>
@@ -85,7 +88,7 @@ class ResultsPage extends Component {
                     <td>{awayPlayer}</td>
                     <td>{match.division}</td>
                     <td>
-                      {util.getCompetitionEloName(match)}
+                      {getCompetitionEloName(match)}
                     </td>
                   </tr>
                 );

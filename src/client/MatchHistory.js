@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import "./MatchHistory.css";
+import {
+  getApiUrl,
+  getMatchDateFormatted
 
-const util = require("../server/util");
+} from "../server/util.js"
+
 const ALL_DIVISIONS = "(All)";
 
 class MatchHistory extends Component {
@@ -30,7 +34,7 @@ class MatchHistory extends Component {
 
   makeDeleteRequest(matchData) {
     var request = new XMLHttpRequest();
-    request.open("DELETE", util.getApiUrl("api/match-data", true));
+    request.open("DELETE", getApiUrl("api/match-data", true));
     request.setRequestHeader("Content-type", "application/json");
 
     // Set callback for response
@@ -111,7 +115,7 @@ class MatchHistory extends Component {
                         {this.getMatchText(match)}
                         <br />
                         <span className="Match-date">
-                          {util.getMatchDateFormatted(match)}
+                          {getMatchDateFormatted(match)}
                         </span>
                       </td>
                       <td>
