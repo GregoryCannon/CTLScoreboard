@@ -1,8 +1,6 @@
-import { Client, Intents } from "discord.js";
-import * as logger from "./logger.js";
-import { 
-  getMatchDateFormatted
-} from "./util.js";
+const { Client, Intents } = require("discord.js");
+const logger = require("./logger");
+const { getMatchDateFormatted } = require("./util");
 
 const MAIN_EMOJI = "👍";
 const CANCEL_EMOJI = "❌";
@@ -468,6 +466,6 @@ class RegistrationAndMatchBot {
   }
 }
 
-export {
+module.exports = {
   RegistrationAndMatchBot
 };

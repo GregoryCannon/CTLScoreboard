@@ -1,13 +1,6 @@
-import {
-  getPlayerLookupMap,
-  getPlayerData,
-  calculatePointsWon,
-  compareRaw
-} from "./util.js";
-import {
-  getMatchResult
-} from "./adjusted-probability.js"
-import * as clinchChecker from "./clinch-checker.js";
+const util = require("./util");
+const adjustedProbability = require("./adjusted-probability");
+const clinchChecker = require("./clinch-checker");
 
 const NUM_ITERATIONS = 20000;
 // Whether or not to adjust players' simulated winrates based on their performance so far
@@ -26,7 +19,7 @@ function simulateOneIteration(division, matchSchedule, resultCounts) {
   const startOfSeasonCloneDivision = JSON.parse(JSON.stringify(division));
 
   const divisionStandings = simulationCloneDivision.standings;
-  const startOfSimPlayerLookup = getPlayerLookupMap(
+  const startOfSimPlayerLookup = util.getPlayerLookupMap(
     startOfSeasonCloneDivision
   );
 
@@ -34,14 +27,14 @@ function simulateOneIteration(division, matchSchedule, resultCounts) {
   for (const match of matchSchedule) {
     const homePlayerName = match.homePlayerName;
     const awayPlayerName = match.awayPlayerName;
-    const playerData1 = getPlayerData(divisionStandings, homePlayerName);
-    const playerData2 = getPlayerData(divisionStandings, awayPlayerName);
+    const playerData1 = util.getPlayerData(divisionStandings, homePlayerName);
+    const playerData2 = util.getPlayerData(divisionStandings, awayPlayerName);
 
     // Pick a match result
     let winner, loser, loserGames;
     if (USE_ADJUSTED_PROBABILITIES) {
       // Use statistical analysis for more accurate simulation
-      const result = getMatchResult(
+      const result = adjustedProbability.getMatchResult(
         homePlayerName,
         awayPlayerName,
         startOfSimPlayerLookup
@@ -54,8 +47,8 @@ function simulateOneIteration(division, matchSchedule, resultCounts) {
       const randWinIndex = Math.floor(Math.random() * 2);
       const winnerName = [homePlayerName, awayPlayerName][randWinIndex];
       const loserName = [homePlayerName, awayPlayerName][1 - randWinIndex];
-      winner = getPlayerData(divisionStandings, winnerName);
-      loser = getPlayerData(divisionStandings, loserName);
+      winner = util.getPlayerData(divisionStandings, winnerName);
+      loser = util.getPlayerData(divisionStandings, loserName);
       loserGames = Math.floor(Math.random() * gamesToWin);
     }
 
@@ -65,7 +58,7 @@ function simulateOneIteration(division, matchSchedule, resultCounts) {
     winner["wins"] += 1;
     winner["gf"] += gamesToWin;
     winner["ga"] += loserGames;
-    winner["points"] += calculatePointsWon(
+    winner["points"] += util.calculatePointsWon(
       true,
       loserGames,
       maxPointsPerMatch
@@ -73,7 +66,7 @@ function simulateOneIteration(division, matchSchedule, resultCounts) {
     loser["losses"] += 1;
     loser["gf"] += loserGames;
     loser["ga"] += gamesToWin;
-    loser["points"] += calculatePointsWon(
+    loser["points"] += util.calculatePointsWon(
       false,
       loserGames,
       maxPointsPerMatch
@@ -85,13 +78,13 @@ function simulateOneIteration(division, matchSchedule, resultCounts) {
   // Loop through the standings by player and update the rest of the properties
   // (MP, GD)
   for (let p = 0; p < divisionStandings.length; p++) {
-    let player = divisionStandings[p];
+    player = divisionStandings[p];
     player.mp = player.wins + player.losses;
     player.gd = player.gf - player.ga;
   }
 
   // Sort the simulated results by points, GD, etc.
-  divisionStandings.sort(compareRaw);
+  divisionStandings.sort(util.compareRaw);
 
   // Determine who gets promoted
   const numPromo = division.numAutoPromo + division.numPlayoffPromo;
@@ -143,13 +136,13 @@ function playersHaveEquivalentUpcomingMatches(
   const mwdList1 = player1Schedule.map(x => {
     const opponentName =
       x.homePlayerName === player1.name ? x.awayPlayerName : x.homePlayerName;
-    const opponent = getPlayerData(division.standings, opponentName);
+    const opponent = util.getPlayerData(division.standings, opponentName);
     return player1.wins - player1.losses - (opponent.wins - opponent.losses);
   });
   const mwdList2 = player2Schedule.map(x => {
     const opponentName =
       x.homePlayerName === player2.name ? x.awayPlayerName : x.homePlayerName;
-    const opponent = getPlayerData(division.standings, opponentName);
+    const opponent = util.getPlayerData(division.standings, opponentName);
     return player2.wins - player2.losses - (opponent.wins - opponent.losses);
   });
   mwdList1.sort();
@@ -229,7 +222,7 @@ function correctForVariance(division, matchSchedule) {
     let playoffRelTotal = 0;
     let divisionWinTotal = 0;
     let prizeMoneyTotal = 0;
-    for (let player of cluster) {
+    for (player of cluster) {
       autoPromoTotal += parseFloat(player.autoPromoChance);
       playoffPromoTotal += parseFloat(player.playoffPromoChance);
       autoRelTotal += parseFloat(player.autoRelegationChance);
@@ -244,7 +237,7 @@ function correctForVariance(division, matchSchedule) {
     const normalizedDivisionWin = divisionWinTotal / cluster.length;
     const normalizedPrizeMoney = prizeMoneyTotal / cluster.length;
 
-    for (let player of cluster) {
+    for (player of cluster) {
       player.autoPromoChance = normalizedAutoPromo;
       player.playoffPromoChance = normalizedPlayoffPromo;
       player.autoRelegationChance = normalizedAutoRel;
@@ -320,6 +313,6 @@ function runSimulation(division, matchSchedule) {
   return division;
 }
 
-export {
+module.exports = {
   runSimulation
 };

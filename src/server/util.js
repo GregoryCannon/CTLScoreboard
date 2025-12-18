@@ -1,9 +1,6 @@
-import moment from "moment";
-import { 
-  divisionData,
-  competitions
- } from "./config_data.js";
+const moment = require("moment");
 
+const configData = require("../server/config_data");
 
 // CHANGE THIS WHEN DEBUGGING
 const IS_PRODUCTION =
@@ -625,7 +622,7 @@ function getMatchDateFormatted(match) {
 
 function getCompetition(match) {
   console.log(match.division);
-  const div = divisionData.find(div => div.divisionName === match.division);
+  const div = configData.divisionData.find(div => div.divisionName === match.division);
 
   return div ? div.competition : null;
 }
@@ -634,7 +631,7 @@ function getCompetitionEloName(match) {
   const abbreviation = getCompetition(match);
   if (!abbreviation) return null;
 
-  return competitions.find(comp => comp.abbreviation === abbreviation).eloName;
+  return configData.competitions.find(comp => comp.abbreviation === abbreviation).eloName;
 }
 
 function downloadCanvasAsPng(canvas, filename) {
@@ -679,7 +676,7 @@ function downloadCanvasAsPng(canvas, filename) {
 
 const SortBy = Object.freeze({ points: "points", simulation: "simulation" });
 
-export {
+module.exports = {
   memeDivisionData,
   downloadCanvasAsPng,
   sampleMatchData,
@@ -689,7 +686,7 @@ export {
   getMatchSchedule,
   getPlayerScheduleInfo,
   getPlayerLookupMap,
-  clientGetApiUrl as getApiUrl,
+  getApiUrl: clientGetApiUrl,
   calculatePointsWon,
   makeHttpRequest,
   getMatchDateFormatted,

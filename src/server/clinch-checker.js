@@ -1,6 +1,4 @@
-import {
-  compareRaw
-} from "./util.js"
+const util = require("./util");
 
 /**
  * A class for checking if players have naïvely clinched any one of many positions.
@@ -50,7 +48,7 @@ function simulateWorstSeasonForPlayer(division, targetPlayer) {
   }
 
   // Sort the simulated results by points, GD, etc.
-  divisionStandings.sort(compareRaw);
+  divisionStandings.sort(util.compareRaw);
   return divisionStandings;
 }
 
@@ -90,7 +88,7 @@ function simulateBestSeasonForPlayer(division, targetPlayer) {
   }
 
   // Sort the simulated results by points, GD, etc.
-  divisionStandings.sort(compareRaw);
+  divisionStandings.sort(util.compareRaw);
   return divisionStandings;
 }
 
@@ -400,7 +398,7 @@ function checkClinchesForDivision(division) {
   }
 }
 
-export {
+module.exports = {
   checkClinchesForDivision /* the only one used externally, others exported for testing */,
   simulateBestSeasonForPlayer,
   simulateWorstSeasonForPlayer,

@@ -1,17 +1,12 @@
 /*
  Computes stats for each player based on match data
  */
-import { 
-  divisionData
-} from "./config_data.js";
-import {
-  getPlayerData,
-  calculatePointsWon,
-  compareRaw
-} from "./util.js";
+
+const configData = require("./config_data");
+const util = require("./util");
 
 function generateEmptyStandings() {
-  return divisionData.map(division => {
+  return configData.divisionData.map(division => {
     // Add empty standings to the division
     division["standings"] = division.players.map(player => {
       return {
@@ -43,12 +38,12 @@ function computeRawStandings(matchData, penaltyPoints) {
       if (match.division !== standings[d].divisionName) {
         continue;
       }
-      const winner = getPlayerData(divisionStandings, match.winner);
-      const loser = getPlayerData(divisionStandings, match.loser);
+      const winner = util.getPlayerData(divisionStandings, match.winner);
+      const loser = util.getPlayerData(divisionStandings, match.loser);
       winner["wins"] += 1;
       winner["gf"] += match.winner_games;
       winner["ga"] += match.loser_games;
-      winner["points"] += calculatePointsWon(
+      winner["points"] += util.calculatePointsWon(
         true,
         match.loser_games,
         maxPointsPerMatch
@@ -56,7 +51,7 @@ function computeRawStandings(matchData, penaltyPoints) {
       loser["losses"] += 1;
       loser["gf"] += match.loser_games;
       loser["ga"] += match.winner_games;
-      loser["points"] += calculatePointsWon(
+      loser["points"] += util.calculatePointsWon(
         false,
         match.loser_games,
         maxPointsPerMatch
@@ -65,7 +60,7 @@ function computeRawStandings(matchData, penaltyPoints) {
 
     // Handle penalty points
     for (let p = 0; p < divisionStandings.length; p++) {
-      let player = divisionStandings[p];
+      player = divisionStandings[p];
       player.penaltyPoints = penaltyPoints[player.name] || 0;
       player.points -= player.penaltyPoints;
     }
@@ -73,19 +68,19 @@ function computeRawStandings(matchData, penaltyPoints) {
     // Loop through the standings by player and update the rest of the properties
     // (MP, GD)
     for (let p = 0; p < divisionStandings.length; p++) {
-      let player = divisionStandings[p];
+      player = divisionStandings[p];
       player.mp = player.wins + player.losses;
       player.gd = player.gf - player.ga;
     }
 
     // Sort by points
-    divisionStandings.sort(compareRaw);
+    divisionStandings.sort(util.compareRaw);
   }
 
   return standings;
 }
 
-export {
+module.exports = {
   generateEmptyStandings,
   computeRawStandings
 };

@@ -4,16 +4,8 @@ import { SortBy } from "../../server/util.js";
 import DivisionHeadings from "./DivisionHeadings";
 import DivisionRow from "./DivisionRow";
 import html2canvas from "html2canvas";
-import moment from 'moment';
-
-import {
-  downloadCanvasAsPng,
-  getApiUrl,
-  compareRaw,
-  compareSimulated,
-  getPlayerScheduleInfo
-} from '../../server/util.js'
-
+const moment = require("moment");
+const util = require("../../server/util.js");
 import {
   BACKGROUND_COLOR_STR,
   WINNER_COLOR_STR,
@@ -80,13 +72,13 @@ class Division extends Component {
         moment()
           .utc()
           .format("MM/DD/YYYY");
-      downloadCanvasAsPng(canvas, fileName);
+      util.downloadCanvasAsPng(canvas, fileName);
     });
   }
 
   makePurgeDivisionRequest() {
     var request = new XMLHttpRequest();
-    request.open("DELETE", getApiUrl("api/match-data/purge", true));
+    request.open("DELETE", util.getApiUrl("api/match-data/purge", true));
     request.setRequestHeader("Content-type", "application/json");
 
     // Set callback for response
@@ -117,9 +109,9 @@ class Division extends Component {
     // Get a sorted list of players
     const playerList = [...this.props.data.standings];
     if (this.props.sortBy === SortBy.points) {
-      playerList.sort(compareRaw);
+      playerList.sort(util.compareRaw);
     } else {
-      playerList.sort(compareSimulated);
+      playerList.sort(util.compareSimulated);
     }
 
     // Calculate other constants
@@ -138,7 +130,7 @@ class Division extends Component {
       !isNaN(divName) || divName[1] === "A" || divName[1] === "a";
 
     // Calculate lists of players played and upcoming matches for each player
-    const divisionScheduleInfo = getPlayerScheduleInfo(
+    const divisionScheduleInfo = util.getPlayerScheduleInfo(
       this.props.data,
       this.props.matchList
     );

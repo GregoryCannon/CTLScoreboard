@@ -10,17 +10,11 @@ import {
   Route,
   Redirect
 } from "react-router-dom";
-import { 
-  SortBy,
-  memeDivisionData,
-  sampleMatchData,
-  IS_PRODUCTION,
-  makeHttpRequest,
-  downloadCanvasAsPng,
-  getApiUrl
-} from "../server/util.js";
+import { SortBy } from "../server/util.js";
 import Cookies from "js-cookie";
-import moment from "moment";
+
+const moment = require("moment");
+const util = require("../server/util.js");
 
 class App extends Component {
   constructor(props) {
@@ -30,8 +24,8 @@ class App extends Component {
       isFetchingStandings: false,
       isFetchingMatches: false,
       isEditingPenaltyPoints: false,
-      divisionData: memeDivisionData,
-      matchList: sampleMatchData,
+      divisionData: util.memeDivisionData,
+      matchList: util.sampleMatchData,
       currentPage: "standings",
       sortBy: SortBy.simulation,
       discordIdentity: "",
@@ -51,7 +45,7 @@ class App extends Component {
   }
 
   isAdmin() {
-    return !IS_PRODUCTION || this.state.privilegeLevel == "Admin";
+    return !util.IS_PRODUCTION || this.state.privilegeLevel == "Admin";
   }
 
   isRestreamer() {
@@ -66,7 +60,7 @@ class App extends Component {
     const discordIdentitySignature = Cookies.get("discordIdentitySignature");
 
     if (discordIdentity && discordIdentitySignature) {
-      const jsonResponse = await makeHttpRequest(
+      const jsonResponse = await util.makeHttpRequest(
         "POST",
         "discord-api/validate",
         {
@@ -130,7 +124,7 @@ class App extends Component {
         moment()
           .utc()
           .format("MM/DD/YYYY");
-      downloadCanvasAsPng(canvas, fileName);
+      util.downloadCanvasAsPng(canvas, fileName);
     });
 
     html2canvas(document.querySelector("#Page-2")).then(function(canvas) {
@@ -139,7 +133,7 @@ class App extends Component {
         moment()
           .utc()
           .format("MM/DD/YYYY");
-      downloadCanvasAsPng(canvas, fileName);
+      util.downloadCanvasAsPng(canvas, fileName);
     });
 
     html2canvas(document.querySelector("#Page-3")).then(function(canvas) {
@@ -148,7 +142,7 @@ class App extends Component {
         moment()
           .utc()
           .format("MM/DD/YYYY");
-      downloadCanvasAsPng(canvas, fileName);
+      util.downloadCanvasAsPng(canvas, fileName);
     });
 
     html2canvas(document.querySelector("#Page-4")).then(function(canvas) {
@@ -157,7 +151,7 @@ class App extends Component {
         moment()
           .utc()
           .format("MM/DD/YYYY");
-      downloadCanvasAsPng(canvas, fileName);
+      util.downloadCanvasAsPng(canvas, fileName);
     });
 
     html2canvas(document.querySelector("#Page-5")).then(function(canvas) {
@@ -166,7 +160,7 @@ class App extends Component {
         moment()
           .utc()
           .format("MM/DD/YYYY");
-      downloadCanvasAsPng(canvas, fileName);
+      util.downloadCanvasAsPng(canvas, fileName);
     });
 
     html2canvas(document.querySelector("#Page-6")).then(function(canvas) {
@@ -175,7 +169,7 @@ class App extends Component {
         moment()
           .utc()
           .format("MM/DD/YYYY");
-      downloadCanvasAsPng(canvas, fileName);
+      util.downloadCanvasAsPng(canvas, fileName);
     });
 
     html2canvas(document.querySelector("#Page-7")).then(function(canvas) {
@@ -184,7 +178,7 @@ class App extends Component {
         moment()
           .utc()
           .format("MM/DD/YYYY");
-      downloadCanvasAsPng(canvas, fileName);
+      util.downloadCanvasAsPng(canvas, fileName);
     });
   }
 
@@ -192,7 +186,7 @@ class App extends Component {
     this.setState({ ...this.state, isFetchingStandings: true });
 
     var request = new XMLHttpRequest();
-    request.open("GET", getApiUrl("api/standings"), true);
+    request.open("GET", util.getApiUrl("api/standings"), true);
 
     // Callback for result
     request.onload = function() {
@@ -209,7 +203,7 @@ class App extends Component {
 
   fetchMatches() {
     var request = new XMLHttpRequest();
-    request.open("GET", getApiUrl("api/match-data"), true);
+    request.open("GET", util.getApiUrl("api/match-data"), true);
 
     // Callback for result
     request.onload = function() {
@@ -258,7 +252,7 @@ class App extends Component {
               ) : (
                 <a
                   className="Nav-button"
-                  href={getApiUrl("discord-api/login")}
+                  href={util.getApiUrl("discord-api/login")}
                 >
                   Log in with Discord
                 </a>

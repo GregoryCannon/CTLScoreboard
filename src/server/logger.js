@@ -23,7 +23,7 @@ function logResponseDescription(description) {
   console.log("(RESPONSE):", description);
 }
 
-export {
+module.exports = {
   log,
   logRequest,
   logResponse,

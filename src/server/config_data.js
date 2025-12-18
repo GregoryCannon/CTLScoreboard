@@ -1352,7 +1352,7 @@ const restreamerRole = [
   "ちどり#2119"
 ];
 
-export {
+module.exports = {
   divisionData,
   adminRole,
   restreamerRole,

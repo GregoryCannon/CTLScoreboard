@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PenaltyPointsEditor from "./PenaltyPointsEditor";
 import PlayerAdvancedStats from "./PlayerAdvancedStats";
 import PlayerOpponents from "./PlayerOpponents";
-import * as divisionColorUtil from "./division-color-util.js"
+const divisionColorUtil = require("./division-color-util");
 import "./DivisionRow.css";
 import { USE_PLAYOFFS_FOR_HYBRID_DIVISIONS } from "../../server/util";
 

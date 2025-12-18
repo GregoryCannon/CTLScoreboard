@@ -156,6 +156,6 @@ function getMatchResult(playerName1, playerName2, startOfSimPlayerLookup) {
 //   console.log(getMatchResult(testPlayer1, testPlayer2));
 // }
 
-export {
+module.exports = {
   getMatchResult
 };
