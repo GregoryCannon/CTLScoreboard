@@ -400,7 +400,7 @@ const divisionData = [
   {
     divisionName: "Gold 69",
     competition: "tnp",
-    completed: false,
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -454,6 +454,27 @@ const divisionData = [
       "KOCCHIRA",
       "CHEFBOYARGEEBS",
       "BRAN"
+    ]
+  },
+  {
+    divisionName: "Gold 72",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "M149",
+      "MANTASKUTOP",
+      "MARTS",
+      "THATKIDKIM",
+      "ROMA",
+      "PETERTHECHAIR",
+      "LILIANA",
     ]
   },
 
