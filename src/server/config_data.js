@@ -421,7 +421,7 @@ const divisionData = [
   {
     divisionName: "Gold 70",
     competition: "tnp",
-    completed: false,
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -605,6 +605,28 @@ const divisionData = [
       "ARBARO",
     ]
   },
+  {
+    divisionName: "Silver 81",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "TEMPHUIBIS",
+      "ADAMIRISH",
+      "LOUCY",
+      "GILDEDLIZARD",
+      "KALIMOTXO",
+      "MAXXF386",
+      "LUKIDELUXE",
+      "SUPERNINJA",
+    ]
+  },
 
   // END SILVER
   // BEGIN BRONZE
@@ -743,6 +765,27 @@ const divisionData = [
       "BBOT",
     ]
   },
+  {
+    divisionName: "Bronze 90",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "CONDENSED_ARIN",
+      "CROIOS",
+      "FALSEMINUTE",
+      "EXITY",
+      "VENT",
+      "THETIGERSHARK",
+      "JUST_JOE",
+    ]
+  },
 
   // END BRONZE
   // BEGIN BEGINNER
@@ -790,7 +833,7 @@ const divisionData = [
   {
     divisionName: "Elm 17",
     competition: "tnp",
-    completed: false,
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 1,
@@ -1017,7 +1060,8 @@ const adminRole = [
   "chobge#0",
   "chillalla#0",
   "richardwolfvi#0",
-  "lilhana4#0"
+  "lilhana4#0",
+  "snowytetris#0",
 ];
 
 const restreamerRole = [
