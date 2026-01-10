@@ -1150,6 +1150,7 @@ const restreamerRole = [
   "hunter.four.z.#0",
   "hydrantdude#0",
   "iceblade73#0",
+  "invertedthewing#0",
   "itzsharky#0",
   "iuqe#0",
   "jati727#0",
