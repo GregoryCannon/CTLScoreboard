@@ -11,14 +11,13 @@ const divisionData = [
     numPlayoffRelegate: 1,
     numAutoRelegate: 1,
     players: [
-      "Alex T",
-      "Coal",
-      "Cobra",
-      "Cryticalapis",
-      "PixelAndy",
-      "Redshurt",
-      "Sodium",
-      "Wallbant"
+      'Akatu',
+      'Alice',
+      'Blue Scuti',
+      'Cryticalapis',
+      'ID Kirby',
+      'Phloxae',
+      'Sam Vaughan',
     ]
   },
   {
@@ -33,70 +32,81 @@ const divisionData = [
     numPlayoffRelegate: 1,
     numAutoRelegate: 1,
     players: [
-      "Blue Scuti",
-      "Hydrant",
-      "ID Kirby",
-      "Nek0",
-      "O",
-      "Peek",
-      "Sam Vaughan",
-      "Somalian"
+      'Alex T',
+      'Coal',
+      'Cobra',
+      'Hydrant',
+      'Peek',
+      'Sidnev',
+      'Winterra',
     ]
   },
 
   {
-    divisionName: "2A",
-    competition: "ctl",
-    oneMatchPerPair: true,
-    maxPointsPerMatch: 7,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: ["Evesy", "Firedox", "Melhk", "Maisie", "Robin", "TetrisTime"]
-  },
-  {
-    divisionName: "2B",
-    competition: "ctl",
-    oneMatchPerPair: true,
-    maxPointsPerMatch: 7,
-    numWinner: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 1,
-    numAutoRelegate: 0,
-    players: [
-      "Dengler",
-      "Doodle",
-      "Gwafey",
-      "Oscar Godinez",
-      "TobiGH3",
-      "Winterra"
-    ]
-  },
-
-  {
-    divisionName: "3",
+    divisionName: "2",
     competition: "ctl",
     oneMatchPerPair: true,
     maxPointsPerMatch: 7,
     numWinner: 0,
     numAutoPromo: 2,
     numPlayoffPromo: 2,
-    numPlayoffRelegate: 3,
+    numPlayoffRelegate: 2,
     numAutoRelegate: 0,
     players: [
-      "20Dan03",
-      "Alejo",
-      "Chrissy",
-      "Draco",
-      "DrKnockers",
-      "Jati",
-      "MLGCaptainVirgil",
-      "Sillyshark",
-      "Smoljordan",
-      "TeaforDinner"
+      'TobeGH3',
+      'Smoljordan',
+      'DuzyK',
+      'Alejo',
+      'Doodle',
+      'Crabrangoon',
+      'Somalian',
+      'SillyShark',
+      'TetrisTime',
+      'Gwafey',
+    ]
+  },
+  
+
+  {
+    divisionName: "3A",
+    competition: "ctl",
+    oneMatchPerPair: true,
+    maxPointsPerMatch: 7,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 2,
+    numAutoRelegate: 0,
+    players: [
+      'Anpu',
+      'Jati',
+      'Lokenze',
+      'Neutrisicacid',
+      'Odinn',
+      'Scamper',
+      'Vance',
+      'Whitemonster',
+    ]
+  },
+  {
+    divisionName: "3B",
+    competition: "ctl",
+    oneMatchPerPair: true,
+    maxPointsPerMatch: 7,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 2,
+    numAutoRelegate: 0,
+    players: [
+      '20Dan03',
+      'Guerrero',
+      'IanKeith',
+      'PacoisTaco',
+      'Shake',
+      'TeainRain',
+      'Tyler',
+      'NotZempro',
     ]
   },
 
@@ -110,7 +120,14 @@ const divisionData = [
     numPlayoffPromo: 1,
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
-    players: ["AFMirror", "Da3mon1420", "Gresiu", "IanKeith", "Toka", "Tyler"]
+    players: [
+      'Draco',
+      'Gresiu',
+      'JediEvan',
+      'MLGCaptainVirgil',
+      'Morelando',
+      'Roman',
+    ]
   },
   {
     divisionName: "4B",
@@ -123,12 +140,12 @@ const divisionData = [
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
-      "Grand Designs",
-      "Guerrero",
-      "Lapis Lazuli",
-      "Mari",
-      "Ninja of Ninjas",
-      "Swedish Chef"
+      'AFMirror',
+      'Hecate',
+      'Jojo',
+      'Ninja of Ninjas',
+      'ThisinThat',
+      'WDSubia',
     ]
   },
   {
@@ -141,7 +158,14 @@ const divisionData = [
     numPlayoffPromo: 1,
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
-    players: ["Eliwa", "JediEvan", "Jojo", "Morelando", "Scamper", "TeainRain"]
+    players: [
+      'Da3mon1420',
+      'DrKnockers',
+      'Eliwa',
+      'Mari',
+      'Mr.Faq',
+      'Toka',
+    ]
   },
   {
     divisionName: "5A",
@@ -149,18 +173,19 @@ const divisionData = [
     oneMatchPerPair: true,
     maxPointsPerMatch: 7,
     numWinner: 0,
-    numAutoPromo: 1,
+    numAutoPromo: 2,
     numPlayoffPromo: 1,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
     players: [
-      "Adamanatite",
-      "Anjing",
-      "K Ham",
-      "Max Wu",
-      "Mikaway",
-      "PacoisTaco",
-      "M149"
+      'Catvinity',
+      'EvanJ',
+      'Grand Designs',
+      'Iceblade73',
+      'Liptoneq',
+      'M149',
+      'Roncli',
+      'Spectric',
     ]
   },
   {
@@ -169,18 +194,19 @@ const divisionData = [
     oneMatchPerPair: true,
     maxPointsPerMatch: 7,
     numWinner: 0,
-    numAutoPromo: 1,
+    numAutoPromo: 2,
     numPlayoffPromo: 1,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
     players: [
-      "Balbar",
-      "EvanJ",
-      "Iceblade73",
-      "Juravljov",
-      "ThisinThat",
-      "WDSubia",
-      "Gerhard Adler"
+      'Bran',
+      'Hunter',
+      'K Ham',
+      'Kannplaystetris',
+      'Kingsman',
+      'Mikaway',
+      'moodeuce',
+      'Vasco',
     ]
   },
   {
@@ -189,18 +215,19 @@ const divisionData = [
     oneMatchPerPair: true,
     maxPointsPerMatch: 7,
     numWinner: 0,
-    numAutoPromo: 1,
+    numAutoPromo: 2,
     numPlayoffPromo: 1,
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
     players: [
-      "Blingus",
-      "Dobreee",
-      "Mathwiz",
-      "Roncli",
-      "SnowyTetris",
-      "Violet",
-      "Roman"
+      'Adamantite',
+      'Anjing',
+      'Barry',
+      'Blingus',
+      'Jaysupercoder',
+      'StolenShortSword',
+      'Tired',
+      'Unskill',
     ]
   },
 
