@@ -224,7 +224,7 @@ const divisionData = [
       'Anjing',
       'Barry',
       'Blingus',
-      'Jaysupercoder',
+      'Jay',
       'StolenShortSword',
       'Tired',
       'Unskill',
