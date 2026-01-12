@@ -1180,6 +1180,7 @@ const restreamerRole = [
   "invertedthewing#0",
   "itzsharky#0",
   "iuqe#0",
+  "jacksonthebest#0",
   "jati727#0",
   "javantea#0",
   "jayissuperawesome1#0",
