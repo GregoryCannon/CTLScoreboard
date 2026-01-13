@@ -220,7 +220,6 @@ const divisionData = [
     numPlayoffRelegate: 0,
     numAutoRelegate: 1,
     players: [
-      'Adamantite',
       'Anjing',
       'Barry',
       'Blingus',
