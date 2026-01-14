@@ -503,6 +503,25 @@ const divisionData = [
       "LILIANA",
     ]
   },
+  {
+    divisionName: "Gold 73",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "SNOWYTETRIS",
+      "ROMA",
+      "MARTS",
+      "LILIANA",
+      "PUMMYZOI",
+    ]
+  },
 
   // END GOLD
   // BEGIN SILVER
@@ -840,7 +859,7 @@ const divisionData = [
   {
     divisionName: "Elm 16",
     competition: "tnp",
-    completed: false,
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 1,
@@ -872,6 +891,25 @@ const divisionData = [
       "KIMBERLYSAYS",
       "THETIGERSHARK",
       "JDHCDABOI",
+    ]
+  },
+  {
+    divisionName: "Elm 18",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "DAZZELOIDS",
+      "ASLEEPIEALLIE",
+      "VINZCHILLIN",
+      "MRBRAIN",
+      "UNNAMED USER",
     ]
   },
 
