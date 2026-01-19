@@ -828,7 +828,6 @@ const divisionData = [
       "EXITY",
       "VENT",
       "THETIGERSHARK",
-      "JUST_JOE"
     ]
   },
 
