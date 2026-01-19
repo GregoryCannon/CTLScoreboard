@@ -1103,7 +1103,7 @@ const competitions = [
     buttonName: "DAS League",
     eloName: "DAS League",
     registrationBotInfo: {
-      registrationOpen: true,
+      registrationOpen: false,
       divisions: ["1", "2", "3", "4", "5", "6"],
       signupMessage: "React to signup below :)\n",
       registrationClosedMessage: "Signups are now closed."
