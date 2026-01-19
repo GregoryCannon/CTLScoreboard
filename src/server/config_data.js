@@ -466,7 +466,7 @@ const divisionData = [
   {
     divisionName: "Gold 71",
     competition: "tnp",
-    completed: true,
+    completed: false,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -634,7 +634,7 @@ const divisionData = [
   {
     divisionName: "Silver 80",
     competition: "tnp",
-    completed: true,
+    completed: false,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -770,7 +770,7 @@ const divisionData = [
   {
     divisionName: "Bronze 88",
     competition: "tnp",
-    completed: true,
+    completed: false,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -828,6 +828,7 @@ const divisionData = [
       "EXITY",
       "VENT",
       "THETIGERSHARK",
+      "JUST_JOE",
     ]
   },
 
@@ -1090,7 +1091,7 @@ const competitions = [
     eloName: "TNP",
     registrationBotInfo: {
       registrationOpen: true,
-      divisions: ["Gold", "Silver", "Bronze", "Beginner"],
+      divisions: ["Gold", "Silver", "Bronze", "Beginner", "Roentgenium"],
       signupMessage: `
         React to sign up for a new division below! Your reaction will be hidden after 3 seconds.
 
@@ -1103,7 +1104,7 @@ const competitions = [
     buttonName: "DAS League",
     eloName: "DAS League",
     registrationBotInfo: {
-      registrationOpen: true,
+      registrationOpen: false,
       divisions: ["1", "2", "3", "4", "5", "6"],
       signupMessage: "React to signup below :)\n",
       registrationClosedMessage: "Signups are now closed."
