@@ -1177,6 +1177,7 @@ const restreamerRole = [
   "codecracker01#0",
   "cooltouchdown#0",
   "coverdales4#0",
+  "coxdannyj#0",
   "cwiiis#0",
   "cylersrc#0",
   "dannymage#0",
