@@ -31,6 +31,11 @@ const penaltyDb = db.get("penalty"); // List of players and their penalty points
 // Configure the reporting/signup Discord bots
 const discordBots = {};
 for (comp of configData.competitions) {
+  // TEMPORARY TEST FIX
+  if (comp.abbreviation == "dl"){
+    continue
+  }
+  
   discordBots[comp.abbreviation] = new RegistrationAndMatchBot(comp);
 }
 
