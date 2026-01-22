@@ -1145,6 +1145,7 @@ const restreamerRole = [
   "alexthach#0",
   "alice_fern#0",
   "allenbot#0",
+  "allpowerfulorange#0",
   "anangryroro#0",
   "angrytrashyperson#0",
   "aptiz712#0",
