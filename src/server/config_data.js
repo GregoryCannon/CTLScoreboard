@@ -200,7 +200,6 @@ const divisionData = [
     numAutoRelegate: 1,
     players: [
       'Bran',
-      'Hunter',
       'K Ham',
       'Kannplaystetris',
       'Kingsman',
