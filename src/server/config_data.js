@@ -1315,6 +1315,7 @@ const restreamerRole = [
   "tstorm281#0",
   "tugi#0",
   "tweak_beacon#0",
+  "tyow#0",
   "unor1ginalname#0",
   "vachetbeasty#0",
   "visor702#0",
