@@ -1164,6 +1164,7 @@ const restreamerRole = [
   "blingus#0",
   "boppyreal#0",
   "boxie3210#0",
+  "brantheepic#0",
   "bunnyboing#0",
   "burritodad#0",
   "catsugiri#0",
