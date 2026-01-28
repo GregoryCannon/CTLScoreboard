@@ -294,7 +294,7 @@ const divisionData = [
   {
     divisionName: "Roentgenium 4",
     competition: "tnp",
-    completed: false,
+    completed: true,
     bestOf: 7,
     oneMatchPerPair: true,
     maxPointsPerMatch: 10,
@@ -465,7 +465,7 @@ const divisionData = [
   {
     divisionName: "Gold 71",
     competition: "tnp",
-    completed: false,
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -633,7 +633,7 @@ const divisionData = [
   {
     divisionName: "Silver 80",
     competition: "tnp",
-    completed: false,
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -789,7 +789,7 @@ const divisionData = [
   {
     divisionName: "Bronze 88",
     competition: "tnp",
-    completed: false,
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -811,7 +811,7 @@ const divisionData = [
   {
     divisionName: "Bronze 89",
     competition: "tnp",
-    completed: false,
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -928,7 +928,6 @@ const divisionData = [
       "ASLEEPIEALLIE",
       "VINZCHILLIN",
       "MRBRAIN",
-      "UNNAMED USER",
     ]
   },
 
