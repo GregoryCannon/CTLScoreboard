@@ -484,7 +484,7 @@ const divisionData = [
   {
     divisionName: "Gold 72",
     competition: "tnp",
-    completed: false,
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -519,6 +519,26 @@ const divisionData = [
       "MARTS",
       "LILIANA",
       "PUMMYZOI",
+    ]
+  },
+  {
+    divisionName: "Gold 74",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "CHEFBOYARGEEBS",
+      "GRAVEL1942",
+      "MARTS",
+      "KLOVELACE",
+      "LILIANA",
+      "HUNN14",
     ]
   },
 
