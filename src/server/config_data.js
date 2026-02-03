@@ -505,7 +505,7 @@ const divisionData = [
   {
     divisionName: "Gold 73",
     competition: "tnp",
-    completed: false,
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
