@@ -852,7 +852,7 @@ const divisionData = [
   {
     divisionName: "Bronze 90",
     competition: "tnp",
-    completed: false,
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -868,6 +868,44 @@ const divisionData = [
       "VENT",
       "THETIGERSHARK",
       "JUST_JOE",
+    ]
+  },
+  {
+    divisionName: "Bronze 91",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "TALVOT",
+      "FALSEMINUTE",
+      "GENIALERGANDALF",
+      "JDHCDABOI",
+      "LEYMBDA",
+    ]
+  },
+  {
+    divisionName: "Bronze 92",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "SUPERSTEP",
+      "IDUDHJF",
+      "DJANKOFF",
+      "RANCE",
+      "CONDENSED_ARIN",
     ]
   },
 
@@ -948,6 +986,24 @@ const divisionData = [
       "ASLEEPIEALLIE",
       "VINZCHILLIN",
       "MRBRAIN",
+    ]
+  },
+  {
+    divisionName: "Elm 19",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "TALE3339XD",
+      "SAKURAINBLOOM",
+      "ASLEEPIEALLIE",
+      "VINZCHILLIN",
     ]
   },
 
