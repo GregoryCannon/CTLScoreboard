@@ -55,7 +55,6 @@ const divisionData = [
     players: [
       'TobeGH3',
       'Smoljordan',
-      'DuzyK',
       'Alejo',
       'Doodle',
       'Crabrangoon',
