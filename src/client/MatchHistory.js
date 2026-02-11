@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./MatchHistory.css";
 
 const util = require("../server/util");
@@ -6,6 +6,22 @@ const ALL_DIVISIONS = "(All)";
 
 function MatchHistory(props) {
   const [selectedDivision, setSelectedDivision] = useState(ALL_DIVISIONS);
+  const [filteredMatches, setFilteredMatches] = useState(props.matchList);
+
+  useEffect(() => {
+    setFilteredMatches(filterMatches(selectedDivision, props.matchList));
+  }, [props.matchList])
+
+  const filterMatches = (div, matches) => {
+    return div === ALL_DIVISIONS
+      ? matches
+      : matches.filter(match => match.division === div);
+  }
+
+  const selectDivision = div => {
+    setSelectedDivision(div);
+    setFilteredMatches(filterMatches(div, props.matchList));
+  }
 
   const getMatchDivision = match => {
     return match.division.match(/^[1-9]/)
@@ -67,7 +83,7 @@ function MatchHistory(props) {
   }
 
   const ondivisionChanged = event => {
-    setSelectedDivision(event.target.value);
+    selectDivision(event.target.value);
   }
 
   return (
@@ -81,13 +97,13 @@ function MatchHistory(props) {
           })}
         </select>
       </div>
-      {getFilteredMatchList().length === 0 ? (
+      {filteredMatches.length === 0 ? (
         <div className="No-matches-found">No matches found</div>
       ) : (
         <div className="Scrollable-list">
           <table>
             <tbody>
-              {getFilteredMatchList().map(match => {
+              {filteredMatches.map(match => {
                 return (
                   <tr
                     key={getMatchText(match)}
