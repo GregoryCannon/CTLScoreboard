@@ -20,6 +20,7 @@ function MatchHistory(props) {
 
   const selectDivision = div => {
     setSelectedDivision(div);
+    console.log(filterMatches(div, props.matchList));
     setFilteredMatches(filterMatches(div, props.matchList));
   }
 
@@ -66,15 +67,6 @@ function MatchHistory(props) {
     }
   }
 
-  const getFilteredMatchList = () => {
-    if (selectedDivision === ALL_DIVISIONS) {
-      return props.matchList;
-    }
-    return props.matchList.filter(
-      match => match.division === selectedDivision
-    );
-  }
-
   const isMatchDeletable = match => {
     return (
       props.isAdmin ||
@@ -83,6 +75,7 @@ function MatchHistory(props) {
   }
 
   const ondivisionChanged = event => {
+    console.log(event);
     selectDivision(event.target.value);
   }
 
@@ -90,7 +83,7 @@ function MatchHistory(props) {
     <div className="Match-history">
       <div className="Match-history-title">
         <span>Match History</span>
-        <select className="Division-select" onChange={ondivisionChanged}>
+        <select className="Division-select" value={selectedDivision} onChange={ondivisionChanged}>
           <option>{ALL_DIVISIONS}</option>
           {props.divisionList.map(divisionName => {
             return <option>{divisionName}</option>;
