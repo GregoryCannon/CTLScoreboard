@@ -93,7 +93,7 @@ function MatchHistory(props) {
       {filteredMatches.length === 0 ? (
         <div className="No-matches-found">No matches found</div>
       ) : (
-        <div className="Scrollable-list">
+        <div className="Scrollable-list" key={selectedDivision}>
           <table>
             <tbody>
               {filteredMatches.map(match => {
