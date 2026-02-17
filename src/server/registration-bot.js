@@ -88,7 +88,7 @@ class RegistrationAndMatchBot {
 
       const vodSameness = checkVodSameness(match.vod_url, previousVodUrl);
       previousVodUrl = match.vod_url;
-      const matchLine = `:fire: ${formattedDate} ${match.winner} def. ${match.loser} ${match.winner_games}-${match.loser_games}`;
+      const matchLine = `:fire: ${formattedDate} [${match.division}] **${match.winner}** def. **${match.loser}** (${match.winner_games}-${match.loser_games})`;
 
       if (vodSameness === "different") {
         // New post
