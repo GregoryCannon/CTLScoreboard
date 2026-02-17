@@ -972,7 +972,7 @@ const divisionData = [
   {
     divisionName: "Elm 18",
     competition: "tnp",
-    completed: false,
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 1,
