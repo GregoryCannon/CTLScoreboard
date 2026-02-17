@@ -180,7 +180,8 @@ class RegistrationAndMatchBot {
 
         try {
           const oldDivKeys = Object.keys(divisions);
-          divisions = JSON.parse(dataString);
+          const dataStringNoBackticks = dataString.replace('`', '');
+          divisions = JSON.parse(dataStringNoBackticks);
           // Delete any divisions that used to exist but have been removed from the config set
           for (const key of Object.keys(divisions)) {
             if (!oldDivKeys.includes(key)) {
@@ -201,7 +202,7 @@ class RegistrationAndMatchBot {
 
     async function updateRegistrationData() {
       let msgString = JSON.stringify(divisions);
-      msgString = msgString.replace(/,/g, ",\n");
+      msgString = "```\n" + msgString.replace(/,/g, ",\n") + "\n```";
       let splitMessages = msgString.match(/(.|[\r\n]){1,1000}/g); // Replace n with the size of the substring
 
       // Clear existing messages
