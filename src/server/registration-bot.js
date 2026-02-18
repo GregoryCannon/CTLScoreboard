@@ -180,7 +180,7 @@ class RegistrationAndMatchBot {
 
         try {
           const oldDivKeys = Object.keys(divisions);
-          const dataStringNoBackticks = dataString.replace('`', '');
+          const dataStringNoBackticks = dataString.replaceAll('`', '');
           divisions = JSON.parse(dataStringNoBackticks);
           // Delete any divisions that used to exist but have been removed from the config set
           for (const key of Object.keys(divisions)) {
