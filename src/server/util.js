@@ -1,15 +1,5 @@
-const moment = require("moment");
-
-const configData = require("../server/config_data");
-
-// CHANGE THIS WHEN DEBUGGING
-const IS_PRODUCTION =
-  process.env.REACT_APP_IS_PRODUCTION == undefined
-    ? true
-    : process.env.REACT_APP_IS_PRODUCTION;
-
-const API_BASE =
-  process.env.REACT_APP_API_BASE || "https://ctlscoreboard.herokuapp.com/";
+import moment from "moment";
+import { divisionData, competitions } from "./config_data.js";
 
 const USE_PLAYOFFS_FOR_HYBRID_DIVISIONS = false;
 
@@ -570,46 +560,6 @@ function getPlayerLookupMap(division) {
   return map;
 }
 
-function clientGetApiUrl(suffix) {
-  // console.log(process.env.COMMAND_CHANNEL_TNP);
-  // if (process.env.API_BASE) {
-  //   return process.env.API_BASE + suffix;
-  // } else {
-  //   return "https://ctlscoreboard.herokuapp.com/" + suffix;
-  // }
-  return API_BASE + suffix;
-}
-
-// function makeHttpRequest(type, localUrl, body, callback) {
-//   // Configure request object properties
-//   var request = new XMLHttpRequest();
-//   request.open(type, getApiUrl(localUrl), true);
-//   request.setRequestHeader("Content-type", "application/json");
-
-//   // Set callback for response
-//   request.onload = function() {
-//     console.log("Received response:", request.response);
-//     callback(JSON.parse(request.response));
-//   };
-
-//   // Send request
-//   console.log(
-//     `Sending ${type} request to ${localUrl} with body ${JSON.stringify(body)}`
-//   );
-//   request.send(JSON.stringify(body));
-// }
-
-async function makeHttpRequest(methodStr, localUrl, body) {
-  const response = await fetch(clientGetApiUrl(localUrl), {
-    method: methodStr,
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(body)
-  });
-  return response.json();
-}
-
 function getMatchDateFormatted(match) {
   if (!match.match_date) {
     return "unknown date";
@@ -622,7 +572,7 @@ function getMatchDateFormatted(match) {
 
 function getCompetition(match) {
   console.log(match.division);
-  const div = configData.divisionData.find(div => div.divisionName === match.division);
+  const div = divisionData.find(div => div.divisionName === match.division);
 
   return div ? div.competition : null;
 }
@@ -631,7 +581,7 @@ function getCompetitionEloName(match) {
   const abbreviation = getCompetition(match);
   if (!abbreviation) return null;
 
-  return configData.competitions.find(comp => comp.abbreviation === abbreviation).eloName;
+  return competitions.find(comp => comp.abbreviation === abbreviation).eloName;
 }
 
 function downloadCanvasAsPng(canvas, filename) {
@@ -676,7 +626,7 @@ function downloadCanvasAsPng(canvas, filename) {
 
 const SortBy = Object.freeze({ points: "points", simulation: "simulation" });
 
-module.exports = {
+export {
   memeDivisionData,
   downloadCanvasAsPng,
   sampleMatchData,
@@ -686,13 +636,10 @@ module.exports = {
   getMatchSchedule,
   getPlayerScheduleInfo,
   getPlayerLookupMap,
-  getApiUrl: clientGetApiUrl,
   calculatePointsWon,
-  makeHttpRequest,
   getMatchDateFormatted,
   SortBy,
   getCompetition,
   getCompetitionEloName,
-  IS_PRODUCTION,
   USE_PLAYOFFS_FOR_HYBRID_DIVISIONS
 };

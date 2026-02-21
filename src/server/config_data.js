@@ -1426,7 +1426,7 @@ const restreamerRole = [
   "zydras07#0"
 ];
 
-module.exports = {
+export {
   divisionData,
   adminRole,
   restreamerRole,

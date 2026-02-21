@@ -3,8 +3,7 @@ import ReportingPanel from "./ReportingPanel";
 import MatchHistory from "./MatchHistory";
 import Division from "./division/Division";
 import "./StandingsPage.css";
-const util = require("../server/util");
-const configData = require("../server/config_data");
+import { competitions } from "../server/config_data";
 
 class StandingsPage extends Component {
   constructor(props) {
@@ -60,7 +59,7 @@ class StandingsPage extends Component {
     return (
       <div className="Standings-container">
         <div className="Left-panel">
-          {configData.competitions.map(competition => (
+          {competitions.map(competition => (
             <button 
               className="Nav-button"
               onClick={() => this.setShowCompetition(competition.abbreviation)}

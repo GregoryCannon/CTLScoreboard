@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import PenaltyPointsEditor from "./PenaltyPointsEditor";
 import PlayerAdvancedStats from "./PlayerAdvancedStats";
 import PlayerOpponents from "./PlayerOpponents";
-const divisionColorUtil = require("./division-color-util");
+import {
+  getWinGradientColor,
+  getPromoGradientColor,
+  getRelegationGradientColor,
+} from './division-color-util';
 import "./DivisionRow.css";
 import { USE_PLAYOFFS_FOR_HYBRID_DIVISIONS } from "../../server/util";
 
@@ -115,8 +119,8 @@ class DivisionRow extends Component {
               backgroundColor: this.state.isHovered
                 ? "rgb(239 250 255)"
                 : this.props.data.numWinner > 0
-                ? divisionColorUtil.getWinGradientColor(overallPromoChance)
-                : divisionColorUtil.getPromoGradientColor(overallPromoChance)
+                ? getWinGradientColor(overallPromoChance)
+                : getPromoGradientColor(overallPromoChance)
             }}
           >
             {this.renderPercentage(overallPromoChance)}
@@ -126,7 +130,7 @@ class DivisionRow extends Component {
             style={{
               backgroundColor: this.state.isHovered
                 ? "rgb(239 250 255)"
-                : divisionColorUtil.getRelegationGradientColor(
+                : getRelegationGradientColor(
                     overallRelegationChance
                   )
             }}

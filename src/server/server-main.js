@@ -522,11 +522,17 @@ app.post("/api/penalty", function(req, res) {
   );
 });
 
+app.get(["/assets/*", "*.ico", "*.css", "*.png"], function(req, res) {
+  logger.logRequest("Get asset", req.originalUrl);
+  logger.logResponseDescription("Sending asset");
+  res.sendFile(path.join(__dirname, "../../dist", req.originalUrl));
+});
+
 /** GET request for serving the frontend */
 app.get("*", function(req, res) {
   logger.logRequest("Get frontend", req.body);
   logger.logResponseDescription("Sending frontend");
-  res.sendFile(path.join(__dirname, "../../build", "index.html"));
+  res.sendFile(path.join(__dirname, "../../dist", "index.html"));
 });
 
 /*

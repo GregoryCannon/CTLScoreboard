@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./ReportingPanel.css";
-const moment = require("moment");
-const configData = require("../server/config_data");
-const util = require("../server/util");
+import moment from "moment";
+import { divisionData } from "../server/config_data";
+import { getApiUrl } from "./util";
 
 class ReportingPanel extends Component {
   constructor(props) {
@@ -10,7 +10,7 @@ class ReportingPanel extends Component {
     this.state = {
       statusText: "",
       statusTextIsError: false,
-      reportingDivision: configData.divisionData[0].divisionName,
+      reportingDivision: divisionData[0].divisionName,
       winnerHome: "",
       matchDate: moment
         .utc()
@@ -30,17 +30,17 @@ class ReportingPanel extends Component {
     this.submitClicked = this.submitClicked.bind(this);
   }
 
-  componentDidMount() {
-    setInterval(() => {
-      const animationClassSet =
-        this.datePickerInput.current.className === "highlighted";
-      const animationTimePassed =
-        moment().diff(this.state.animationStart) > 500;
-      if (animationClassSet && animationTimePassed) {
-        this.datePickerInput.current.className = "";
-      }
-    }, 1000);
-  }
+  // componentDidMount() {
+  //   setInterval(() => {
+  //     const animationClassSet =
+  //       this.datePickerInput?.current?.className === "highlighted";
+  //     const animationTimePassed =
+  //       moment().diff(this.state.animationStart) > 500;
+  //     if (animationClassSet && animationTimePassed) {
+  //       this.datePickerInput.current.className = "";
+  //     }
+  //   }, 1000);
+  // }
 
   changeReportingDivision(event) {
     this.setState({
@@ -75,13 +75,14 @@ class ReportingPanel extends Component {
       animationStart: moment()
     });
     this.datePickerInput.current.className = "highlighted";
+    setTimeout(() => { this.datePickerInput.current.className = "" }, 500);
   }
 
   getPlayerList() {
     if (this.state.reportingDivision === "") {
       return [];
     }
-    const filteredDivisions = configData.divisionData.filter(
+    const filteredDivisions = divisionData.filter(
       div => div.divisionName === this.state.reportingDivision
     );
     if (filteredDivisions.length !== 1) {
@@ -93,7 +94,7 @@ class ReportingPanel extends Component {
   getGamesToWin(reportingDivision) {
     if (this.state.reportingDivision === "") return 0;
 
-    const division = configData.divisionData.find(
+    const division = divisionData.find(
       div => div.divisionName === reportingDivision
     );
     if (division === undefined) return 0;
@@ -147,7 +148,7 @@ class ReportingPanel extends Component {
     var request = new XMLHttpRequest();
 
     // Open a new connection, using the POST request on the URL endpoint
-    request.open("POST", util.getApiUrl("api/match-data"), true);
+    request.open("POST", getApiUrl("api/match-data"), true);
     request.setRequestHeader("Content-type", "application/json");
 
     // Set a callback for the result
@@ -212,7 +213,7 @@ class ReportingPanel extends Component {
         <div>
           <div className="Report-matches-title">Report a Match</div>
           <div className="Error-message">
-            <a href={util.getApiUrl("discord-api/login")}>Login with Discord</a>{" "}
+            <a href={getApiUrl("discord-api/login")}>Login with Discord</a>{" "}
             to report a match!
           </div>
         </div>
@@ -244,7 +245,7 @@ class ReportingPanel extends Component {
               ref={this.divisionInput}
               onChange={this.changeReportingDivision}
             >
-              {configData.divisionData
+              {divisionData
                 .filter(division => !division.completed)
                 .map((division) => {
                 return (

@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./MatchHistory.css";
+import {
+  getMatchDateFormatted
+} from "../server/util";
+import {
+  getApiUrl
+} from "./util";
 
-const util = require("../server/util");
 const ALL_DIVISIONS = "(All)";
 
 function MatchHistory(props) {
@@ -40,7 +45,7 @@ function MatchHistory(props) {
 
   const makeDeleteRequest = matchData => {
     var request = new XMLHttpRequest();
-    request.open("DELETE", util.getApiUrl("api/match-data", true));
+    request.open("DELETE", getApiUrl("api/match-data", true));
     request.setRequestHeader("Content-type", "application/json");
 
     // Set callback for response
@@ -109,7 +114,7 @@ function MatchHistory(props) {
                       {getMatchText(match)}
                       <br />
                       <span className="Match-date">
-                        {util.getMatchDateFormatted(match)}
+                        {getMatchDateFormatted(match)}
                       </span>
                     </td>
                     <td>

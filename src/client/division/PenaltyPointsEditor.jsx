@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./PenaltyPointsEditor.css";
-const util = require("../../server/util");
+import { getApiUrl } from "../util";
 
 class PenaltyPointsEditor extends Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class PenaltyPointsEditor extends Component {
 
   submitPenaltyPoints(numPoints) {
     var request = new XMLHttpRequest();
-    request.open("POST", util.getApiUrl("api/penalty"), true);
+    request.open("POST", getApiUrl("api/penalty"), true);
     request.setRequestHeader("Content-type", "application/json");
 
     // Set callback for response

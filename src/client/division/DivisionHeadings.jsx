@@ -1,5 +1,5 @@
 import React from "react";
-import { SortBy } from "../../server/util.js";
+import { SortBy } from "../../server/util";
 
 function DivisionHeadings(props) {
   return (
