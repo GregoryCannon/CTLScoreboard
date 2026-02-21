@@ -1458,6 +1458,7 @@ const restreamerRole = [
   "bunnyboing#0",
   "burritodad#0",
   "catsugiri#0",
+  "catvinity#0",
   "cchristm#0",
   "cdoug17#0",
   "chefboyargeebs#0",
