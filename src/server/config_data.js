@@ -1609,6 +1609,7 @@ const restreamerRole = [
   "tyow#0",
   "unor1ginalname#0",
   "vachetbeasty#0",
+  "vinzchillin#0",
   "visor702#0",
   "w___i___d___e#0",
   "wally4426#0",
