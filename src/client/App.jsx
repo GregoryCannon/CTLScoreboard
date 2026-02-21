@@ -16,11 +16,11 @@ import {
   memeDivisionData,
   sampleMatchData,
   downloadCanvasAsPng,
-} from "../server/util";
+} from "../server/util.js";
 import {
   makeHttpRequest,
   getApiUrl
-} from "./util";
+} from "./util.js";
 import Cookies from "js-cookie";
 
 function App() {
