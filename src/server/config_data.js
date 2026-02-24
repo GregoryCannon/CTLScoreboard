@@ -1083,7 +1083,7 @@ const divisionData = [
     numWinner: 0,
     numPrizeMoney: 0,
     numAutoPromo: 2,
-    numPlayoffPromo: 2,
+    numPlayoffPromo: 1,
     numPlayoffRelegate: 1,
     numAutoRelegate: 0,
     players: [
@@ -1256,7 +1256,7 @@ const divisionData = [
     numWinner: 0,
     numPrizeMoney: 0,
     numAutoPromo: 2,
-    numPlayoffPromo: 1,
+    numPlayoffPromo: 2,
     numPlayoffRelegate: 1,
     numAutoRelegate: 1,
     players: [
