@@ -540,6 +540,26 @@ const divisionData = [
       "HUNN14",
     ]
   },
+    {
+    divisionName: "Gold 75",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "THATKIDKIM",
+      "ROMA",
+      "ANBER",
+      "MAEDHROS",
+      "MIKAWAY",
+      "MAXXF386",
+    ]
+  },
 
   // END GOLD
   // BEGIN SILVER
@@ -671,7 +691,7 @@ const divisionData = [
   {
     divisionName: "Silver 81",
     competition: "tnp",
-    completed: false,
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -708,6 +728,27 @@ const divisionData = [
       "ASHLEYYYY",
       "FURIO",
       "DANNYMAGE",
+    ]
+  },
+    {
+    divisionName: "Silver 83",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "LUKIDELUXE",
+      "ARBARO",
+      "KASANETETO123",
+      "TEMPHUIBIS",
+      "ADAMIRISH",
+      "JUST_WOBERT",
+      "SUPERNINJA",
     ]
   },
 
