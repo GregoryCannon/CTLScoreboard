@@ -1633,6 +1633,7 @@ const restreamerRole = [
   "suds1821#0",
   "superjaycoder#0",
   "tacomom18#0",
+  "talvot21#0",
   "teainrain#0",
   "temphuibis#0",
   "tetrisroma#0",
