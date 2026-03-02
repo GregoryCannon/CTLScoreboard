@@ -321,6 +321,36 @@ const divisionData = [
       "UNOR1GINALNAME",
     ]
   },
+  {
+    divisionName: "Roentgenium 5",
+    competition: "tnp",
+    completed: true,
+    bestOf: 7,
+    oneMatchPerPair: true,
+    maxPointsPerMatch: 10,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "SPECTRIC",
+      "MATHWIZ",
+      "TIRED_RL",
+      "MOODEUCE",
+      "SUPERJAYCODER",
+      "M149",
+      "ZENON",
+      "ANJING",
+      "SNOWYTETRIS",
+      "VASCO",
+      "MORELANDO",
+      "ICEBLADE73",
+      "JEDIEVAN",
+      "BRANGUY",
+      "AFMIRROR",
+    ]
+  },
 
   // BEGIN GOLD
 
