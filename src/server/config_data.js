@@ -324,7 +324,7 @@ const divisionData = [
   {
     divisionName: "Roentgenium 5",
     competition: "tnp",
-    completed: true,
+    completed: false,
     bestOf: 7,
     oneMatchPerPair: true,
     maxPointsPerMatch: 10,
