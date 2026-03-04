@@ -26,7 +26,7 @@ const divisionData = [
     oneMatchPerPair: true,
     maxPointsPerMatch: 7,
     numWinner: 1,
-    numPrizeMoney: 2,
+    numPrizeMoney: 4,
     numAutoPromo: 0,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 1,
