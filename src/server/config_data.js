@@ -590,7 +590,45 @@ const divisionData = [
       "MAXXF386",
     ]
   },
-
+  {
+    divisionName: "Gold 76",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "KLOVELACE",
+      "PETERTHECHAIR",
+      "PUMMYZOI",
+      "MARTS",
+      "PLACEHOLDER",
+    ]
+  },
+  {
+    divisionName: "Gold 77",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "SEBIE",
+      "LOUCY",
+      "LILIANA",
+      "GBTOAST",
+      "PLACEHOLDER",
+    ]
+  },
+  
   // END GOLD
   // BEGIN SILVER
 
@@ -978,7 +1016,26 @@ const divisionData = [
       "CONDENSED_ARIN",
     ]
   },
-
+  {
+    divisionName: "Bronze 93",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "CALEBSGAMESANDSTUFF",
+      "WILSON",
+      "TALE",
+      "VINZCHILLIN",
+      "BLOODLUSTFAIL",
+    ]
+  },
+  
   // END BRONZE
   // BEGIN BEGINNER
 
