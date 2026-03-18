@@ -553,7 +553,7 @@ const divisionData = [
   {
     divisionName: "Gold 74",
     competition: "tnp",
-    completed: false,
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -1131,6 +1131,24 @@ const divisionData = [
       "SAKURAINBLOOM",
       "ASLEEPIEALLIE",
       "VINZCHILLIN",
+    ]
+  },
+  {
+    divisionName: "Elm 20",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "DAZZELOIDS",
+      "THEONLYCEDRIC",
+      "ASLEEPIEALLIE",
+      "GODATTETRIS",
     ]
   },
 
