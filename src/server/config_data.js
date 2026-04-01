@@ -1035,6 +1035,25 @@ const divisionData = [
       "BLOODLUSTFAIL",
     ]
   },
+    {
+    divisionName: "Bronze 94",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "MANSION",
+      "WILSON",
+      "DJANKOFF",
+      "LEYMBDA",
+      "SUPERSTEP",
+    ]
+  },
   
   // END BRONZE
   // BEGIN BEGINNER
