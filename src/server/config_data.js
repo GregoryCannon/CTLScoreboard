@@ -1781,6 +1781,7 @@ const restreamerRole = [
   "temphuibis#0",
   "tetrisroma#0",
   "theianwright#0",
+  "thecresp#0",
   "thelovasman#0",
   "thisinthat#0",
   "threestwos#0",
