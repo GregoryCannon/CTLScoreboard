@@ -599,7 +599,6 @@ const divisionData = [
     numAutoRelegate: 0,
     players: [
       "THATKIDKIM",
-      "ROMA",
       "ANBER",
       "MAEDHROS",
       "MIKAWAY",
@@ -622,7 +621,6 @@ const divisionData = [
       "PETERTHECHAIR",
       "PUMMYZOI",
       "MARTS",
-      "PLACEHOLDER",
     ]
   },
   {
@@ -641,7 +639,6 @@ const divisionData = [
       "LOUCY",
       "LILIANA",
       "GBTOAST",
-      "PLACEHOLDER",
     ]
   },
   
