@@ -794,7 +794,7 @@ const divisionData = [
   {
     divisionName: "Silver 82",
     competition: "tnp",
-    completed: false,
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -830,6 +830,28 @@ const divisionData = [
       "ADAMIRISH",
       "JUST_WOBERT",
       "SUPERNINJA",
+    ]
+  },
+  {
+    divisionName: "Silver 84",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: true,
+    maxPointsPerMatch: 10,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "TYOW",
+      "ERILIONESS",
+      "IDUDHJF",
+      "GERT",
+      "GENIALERGANDALF",
+      "FALSEMINUTE",
+      "TALE3339",
+      "ASHLEYYYY",
     ]
   },
 
