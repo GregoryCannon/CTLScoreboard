@@ -836,6 +836,7 @@ const divisionData = [
     divisionName: "Silver 84",
     competition: "tnp",
     completed: false,
+    bestOf: 7,
     oneMatchPerPair: true,
     maxPointsPerMatch: 10,
     numWinner: 0,
