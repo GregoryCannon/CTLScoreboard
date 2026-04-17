@@ -1455,7 +1455,7 @@ const divisionData = [
     numAutoPromo: 2,
     numPlayoffPromo: 1,
     numPlayoffRelegate: 1,
-    numAutoRelegate: 1,
+    numAutoRelegate: 0,
     players: [
       "FIREDOX",
       "JEDIEVAN",
@@ -1522,7 +1522,7 @@ const divisionData = [
     numAutoPromo: 2,
     numPlayoffPromo: 1,
     numPlayoffRelegate: 2,
-    numAutoRelegate: 1,
+    numAutoRelegate: 0,
     players: [
       "KINGSMAN",
       "SUPERJAYCODER",
