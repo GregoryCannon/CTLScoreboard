@@ -1462,7 +1462,6 @@ const divisionData = [
       "STEELCE",
       "OSCAR",
       "VANCE",
-      "WEISBROT",
       "MASY"
     ]
   },
@@ -1530,7 +1529,6 @@ const divisionData = [
       "BARRYBLANKET",
       "TIRED_RL",
       "LILIANA",
-      "BRANGUY",
       "ANJING",
       "GBTOAST"
     ]
