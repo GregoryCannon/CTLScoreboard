@@ -1812,6 +1812,7 @@ const restreamerRole = [
   "storminorman#0",
   "suds1821#0",
   "superjaycoder#0",
+  "superninja9999#0",
   "swagj13#0",
   "tacomom18#0",
   "talvot21#0",
