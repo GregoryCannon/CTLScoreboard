@@ -641,6 +641,29 @@ const divisionData = [
       "GBTOAST",
     ]
   },
+  {
+    divisionName: "Gold 78",
+    competition: "tnp",
+    completed: false,
+    bestOf: 7,
+    oneMatchPerPair: true,
+    maxPointsPerMatch: 10,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "MIKAWAY",
+      "LUKIDELUXE",
+      "MARTS",
+      "PUMMYZOI",
+      "LOUCY",
+      "NIA",
+      "BILLYMAC",
+      "GBTOAST",
+    ]
+  },
   
   // END GOLD
   // BEGIN SILVER
