@@ -1679,6 +1679,7 @@ const restreamerRole = [
   "angrytrashyperson#0",
   "aptiz712#0",
   "asherfullback#0",
+  "asleepyallie#0",
   "augmenttheampwave#0",
   "avgeekw159#0",
   "avriix#0",
