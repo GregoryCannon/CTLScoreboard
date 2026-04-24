@@ -1764,6 +1764,7 @@ const restreamerRole = [
   "kalimotxojm#0",
   "kat_#0",
   "kingsman36#0",
+  "klovelace10",
   "kominestris#0",
   "kyira#0",
   "ladyvader13_43642#0",
