@@ -1,8 +1,8 @@
-const getApiUrl = suffix => {
+const getApiUrl = (suffix: string) => {
   return import.meta.env.VITE_API_BASE + suffix;
 }
 
-async function makeHttpRequest(methodStr, localUrl, body) {
+async function makeHttpRequest(methodStr: string, localUrl: string, body: any) {
   const response = await fetch(getApiUrl(localUrl), {
     method: methodStr,
     headers: {

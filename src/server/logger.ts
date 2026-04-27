@@ -1,29 +1,35 @@
 /** Acts like console.log, but formats with a custom prefix */
-function log() {
+function log(...args: string[]) {
   const PREFIX = " -- ";
 
   // Log the arguments of this function with the added prefix
-  var args = Array.prototype.slice.call(arguments);
+  // var args = Array.prototype.slice.call(arguments);
   args.unshift(PREFIX);
   console.log.apply(console, args);
 }
 
 /** Logs an incoming request with its body. */
-function logRequest(description, requestBody) {
+function logRequest(
+  description: string, 
+  requestBody: any
+): void {
   console.log("\n(REQUEST):", description, "\n", requestBody);
 }
 
 /** Logs an outgoing response with its body. */
-function logResponse(description, responseBody) {
+function logResponse(
+  description: string, 
+  responseBody: any
+): void {
   console.log("(RESPONSE):", description, "\n", responseBody);
 }
 
 /** Logs a description of what the server is sending in an outgoing response, without logging the request body. (Used for large responses). */
-function logResponseDescription(description) {
+function logResponseDescription(description: string): void {
   console.log("(RESPONSE):", description);
 }
 
-module.exports = {
+export {
   log,
   logRequest,
   logResponse,

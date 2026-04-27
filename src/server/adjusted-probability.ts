@@ -32,7 +32,7 @@ const COEFFICIENTS = {
  * Generate the probability array (ordered from 3-0 win to 0-3 loss).
  * @param {number} matchWinDiff
  */
-function getProbabilities(matchWinDiff) {
+function getProbabilities(matchWinDiff: number): number[] {
   // Generate the outcome probabilities based on the coefficients
   let probabilities = [];
   probabilities.push(
@@ -72,7 +72,7 @@ function getProbabilities(matchWinDiff) {
   return probabilities;
 }
 
-function makeProbabilitiesCumulative(probabilities) {
+function makeProbabilitiesCumulative(probabilities: number[]) {
   let runningTotal = 0;
   const cumulativeProbabilities = [];
   for (const prob of probabilities) {
@@ -86,7 +86,11 @@ function makeProbabilitiesCumulative(probabilities) {
  * Takes two players' data and gets a match result for them in accordance with statistical research.
  * Returns an object { player1win :bool, loserGames :number }
  */
-function getMatchResult(playerName1, playerName2, startOfSimPlayerLookup) {
+function getMatchResult(
+  playerName1: string, 
+  playerName2: string, 
+  startOfSimPlayerLookup: any // this isn't currently being used, and will probably be replaced
+): { player1Win: boolean, loserGames: number } {
   // Match win difference from player 1 perspective
   const playerData1 = startOfSimPlayerLookup[playerName1];
   const playerData2 = startOfSimPlayerLookup[playerName2];
@@ -132,30 +136,6 @@ function getMatchResult(playerName1, playerName2, startOfSimPlayerLookup) {
   }
 }
 
-// const testPlayer1 = {
-//   name: "greg",
-//   mp: 12,
-//   wins: 12,
-//   losses: 0,
-//   gf: 36,
-//   ga: 1,
-//   gd: 36,
-//   points: 48
-// };
-// const testPlayer2 = {
-//   name: "jdmfx_",
-//   mp: 2,
-//   wins: 0,
-//   losses: 2,
-//   gf: 1,
-//   ga: 6,
-//   gd: -5,
-//   points: 1
-// };
-// for (let i = 0; i < 10; i ++){
-//   console.log(getMatchResult(testPlayer1, testPlayer2));
-// }
-
-module.exports = {
+export {
   getMatchResult
 };

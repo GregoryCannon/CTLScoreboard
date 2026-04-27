@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/express": "^5.0.6",
     "body-parser": "^1.19.0",
     "btoa": "^1.2.1",
+    "cors": "^2.8.6",
     "discord.js": "^13.17.1",
     "dotenv": "^16.0.3",
     "eslint": "^10.0.0",
@@ -21,6 +23,8 @@
     "react-router-dom": "7.13.0"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/js-cookie": "^3.0.6",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.4",
@@ -33,7 +37,7 @@
   },
   "proxy": "http://localhost:8080",
   "scripts": {
-    "start": "node src/server/server-main.js",
+    "start": "node src/server/server-main.ts",
     "start-vite": "vite",
     "build": "vite build",
     "go": "vite build && npm start"

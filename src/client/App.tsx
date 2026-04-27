@@ -1,45 +1,70 @@
 import React, { Component, useState, useEffect } from "react";
-import moment from "moment";
-import ResultsPage from "./ResultsPage.jsx";
-import StandingsPage from "./StandingsPage.jsx";
-import logo from "./logo.svg";
-import "./App.css";
-import html2canvas from "html2canvas";
 import {
   Link,
   Routes,
   Route,
   Navigate
 } from "react-router-dom";
+import moment from "moment";
+import html2canvas from "html2canvas";
+import Cookies from "js-cookie";
+
+import ResultsPage from "./ResultsPage.tsx";
+import StandingsPage from "./StandingsPage.tsx";
+import logo from "./logo.svg";
 import { 
-  SortBy,
-  memeDivisionData,
-  sampleMatchData,
   downloadCanvasAsPng,
-} from "../server/util.js";
+  compareRaw,
+  compareSimulated
+} from "../server/util.ts";
+import {
+  type DivisionWithChances,
+  type Match,
+  type SortBy
+} from "../types.ts";
 import {
   makeHttpRequest,
   getApiUrl
-} from "./util.js";
-import Cookies from "js-cookie";
+} from "./util.ts";
+
+import "./App.css";
+
+type DiscordInfo = {
+  discordIdentity: string;
+  privilegeLevel: string
+}
 
 function App() {
   const [isFetchingStandings, setIsFetchingStandings] = useState(false);
   const [isFetchingMatches, setIsFetchingMatches] = useState(false);
   const [isEditingPenaltyPoints, setIsEditingPenaltyPoints] = useState(false);
-  const [divisionData, setDivisionData] = useState(memeDivisionData);
-  const [matchList, setMatchList] = useState(sampleMatchData);
-  const [sortBy, setSortBy] = useState(SortBy.simulation);
+  const [divisionData, setDivisionData] = useState([] as DivisionWithChances[]);
+  const [matchList, setMatchList] = useState([] as Match[]);
+  const [sortBy, setSortBy] = useState("simulation" as SortBy);
   const [discordIdentity, setDiscordIdentity] = useState("");
   const [privilegeLevel, setPrivilegeLevel] = useState("");
 
   useEffect(() => {
+    console.log("Logging into Discord from cookies");
     logInToDiscordFromCookies()
       .then(discordInfo => { 
-        updateSortByState(discordInfo);
+        setDiscordIdentity(discordInfo.discordIdentity);
+        setPrivilegeLevel(discordInfo.privilegeLevel);
       });
+    let sortBy = (Cookies.get("sortBy") || "simulation") as SortBy;
+    updatePlayerSorting(sortBy);
     refreshData();
   }, []);
+
+  function updatePlayerSorting(sortBy: SortBy): void {
+    setSortBy(sortBy);
+    Cookies.set("sortBy", sortBy);
+    const comparisonFunction = (sortBy === "Simulation") ? compareSimulated : compareRaw;
+    setDivisionData(divisionData.map(d => ({ 
+      ...d, 
+      standings: d.standings.sort(comparisonFunction)
+    })));
+  }
 
   function isAdmin() {
     return privilegeLevel == "Admin";
@@ -82,97 +107,27 @@ function App() {
     };
   }
 
-  function updateSortByState(discordInfo) {
-    // Get "sort by" state from cookies
-    let sortBy = Cookies.get("sortBy");
-    if (sortBy === undefined) {
-      // Sort by % chance by default, unless you're moo (he likes sorting by points)
-      sortBy =
-        discordInfo.discordIdentity == "moodeuce#8573" ||
-        discordInfo.discordIdentity == "GregBoomCannon#4087"
-          ? SortBy.points
-          : SortBy.simulation;
-    }
-    setSortBy(sortBy);
-    setDiscordIdentity(discordInfo.discordIdentity);
-    setPrivilegeLevel(discordInfo.privilegeLevel);
-  }
-
   function logOutOfDiscord() {
     Cookies.remove("discordIdentity");
     Cookies.remove("discordIdentitySignature");
     Cookies.remove("sortBy");
-    window.location.reload(false);
-  }
-
-  function toggleEditPenaltyPoints() {
-    setIsEditingPenaltyPoints(!isEditingPenaltyPoints);
+    window.location.reload();
   }
 
   function saveImage() {
     // Note: page size is determined in StandingsPage.js, getPages()
-    html2canvas(document.querySelector("#Page-1")).then(function(canvas) {
-      const fileName =
-        "CTL Standings part 1 " +
-        moment()
-          .utc()
-          .format("MM/DD/YYYY");
-      downloadCanvasAsPng(canvas, fileName);
-    });
-
-    html2canvas(document.querySelector("#Page-2")).then(function(canvas) {
-      const fileName =
-        "CTL Standings part 2 " +
-        moment()
-          .utc()
-          .format("MM/DD/YYYY");
-      downloadCanvasAsPng(canvas, fileName);
-    });
-
-    html2canvas(document.querySelector("#Page-3")).then(function(canvas) {
-      const fileName =
-        "CTL Standings part 3 " +
-        moment()
-          .utc()
-          .format("MM/DD/YYYY");
-      downloadCanvasAsPng(canvas, fileName);
-    });
-
-    html2canvas(document.querySelector("#Page-4")).then(function(canvas) {
-      const fileName =
-        "CTL Standings part 4 " +
-        moment()
-          .utc()
-          .format("MM/DD/YYYY");
-      downloadCanvasAsPng(canvas, fileName);
-    });
-
-    html2canvas(document.querySelector("#Page-5")).then(function(canvas) {
-      const fileName =
-        "CTL Standings part 5 " +
-        moment()
-          .utc()
-          .format("MM/DD/YYYY");
-      downloadCanvasAsPng(canvas, fileName);
-    });
-
-    html2canvas(document.querySelector("#Page-6")).then(function(canvas) {
-      const fileName =
-        "CTL Standings part 6 " +
-        moment()
-          .utc()
-          .format("MM/DD/YYYY");
-      downloadCanvasAsPng(canvas, fileName);
-    });
-
-    html2canvas(document.querySelector("#Page-7")).then(function(canvas) {
-      const fileName =
-        "CTL Standings part 7 " +
-        moment()
-          .utc()
-          .format("MM/DD/YYYY");
-      downloadCanvasAsPng(canvas, fileName);
-    });
+    // This only does the first seven pages -- could use a rethink
+    for (let i = 1; i < 8; i++) {
+      console.log(`page ${i}`)
+      html2canvas(document.querySelector(`#Page-${i}`) as HTMLElement).then(function(canvas) {
+        const fileName =
+          `CTL Standings part ${i} ` +
+          moment()
+            .utc()
+            .format("MM/DD/YYYY");
+        downloadCanvasAsPng(canvas, fileName);
+      });
+    }
   }
 
   function fetchStandings() {
@@ -197,7 +152,7 @@ function App() {
 
     // Callback for result
     request.onload = () => {
-      var newMatchList = JSON.parse(request.response);
+      var newMatchList = JSON.parse(request.response) as Match[];
       // Sort matches by match date
       newMatchList.sort((a, b) => b.report_date - a.report_date);
       setMatchList(newMatchList);
@@ -256,7 +211,7 @@ function App() {
             <button
               style={{ visibility: isAdmin() ? "visible" : "hidden" }}
               className="Nav-button"
-              onClick={toggleEditPenaltyPoints}
+              onClick={() => setIsEditingPenaltyPoints(!isEditingPenaltyPoints)}
             >
               {isEditingPenaltyPoints
                 ? "Finish editing penalty points"
@@ -290,7 +245,7 @@ function App() {
 
         <Routes>
           <Route 
-            exact path="/"
+            path="/"
             element={<Navigate replace to="/standings" />}
           />
 
@@ -301,10 +256,7 @@ function App() {
                 divisionData={divisionData}
                 matchList={matchList}
                 sortBy={sortBy}
-                setSortBy={val => {
-                  setSortBy(val);
-                  Cookies.set("sortBy", val);
-                }}
+                setSortBy={updatePlayerSorting}
                 isAdmin={isAdmin()}
                 isRestreamer={isRestreamer()}
                 discordIdentity={discordIdentity}

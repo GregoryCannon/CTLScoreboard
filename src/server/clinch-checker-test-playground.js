@@ -6,7 +6,7 @@
  * different test cases anyways. ¯\_(ツ)_/¯
  */
 
-const clinchChecker = require("./clinch-checker");
+const clinchChecker = require("./clinch-checker.ts");
 
 const testDivision = {
   divisionName: "1.3m",

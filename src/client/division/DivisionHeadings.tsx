@@ -1,7 +1,20 @@
 import React from "react";
-import { SortBy } from "../../server/util";
+import type { SortBy, DivisionWithChances, PlayerRow, Match } from "../../types";
 
-function DivisionHeadings(props) {
+type DivisionHeadingsProps = {
+  key: string;
+  division: DivisionWithChances;
+  sortBy: SortBy;
+  isAdmin: boolean;
+  setSortBy: (value: SortBy) => void;
+  expandedPlayerRow: PlayerRow;
+  isEditingPenaltyPoints: boolean;
+  refreshFunction: () => void;
+  setExpandedPlayer: (value: PlayerRow) => void;
+  matchList: Match[];
+}
+
+function DivisionHeadings(props: DivisionHeadingsProps) {
   return (
     <tr className="Division-row-headings">
       <th className="Extra-padding-left">Place</th>
@@ -13,12 +26,12 @@ function DivisionHeadings(props) {
       <th>Penalty Points</th>
       <th
         className={
-          props.sortBy === SortBy.points
+          props.sortBy === "Points"
             ? "Header-sorted-by"
             : "Header-sortable"
         }
         onClick={() => {
-          props.setSortBy(SortBy.points);
+          props.setSortBy("Points");
         }}
       >
         <div className="Header-sortable-inner">
@@ -28,18 +41,18 @@ function DivisionHeadings(props) {
       </th>
       <th
         className={
-          props.sortBy === SortBy.simulation
+          props.sortBy === "Simulation"
             ? "Header-sorted-by"
             : "Header-sortable"
         }
         onClick={() => {
-          props.setSortBy(SortBy.simulation);
+          props.setSortBy("Simulation");
         }}
       >
         <div className="Header-sortable-inner">
           <div>
-            {props.data.divisionName.match(/^1[^0-9]/) ||
-            props.data.numPrizeMoney > 0
+            {props.division.settings.divisionName.match(/^1[^0-9]/) ||
+            props.division.settings.numPrizeMoney > 0
               ? "Playoff Chance"
               : "Promo Chance"}
           </div>
@@ -48,12 +61,12 @@ function DivisionHeadings(props) {
       </th>
       <th
         className={
-          props.sortBy === SortBy.simulation
+          props.sortBy === "Simulation"
             ? "Header-sorted-by"
             : "Header-sortable"
         }
         onClick={() => {
-          props.setSortBy(SortBy.simulation);
+          props.setSortBy("Points");
         }}
       >
         <div className="Header-sortable-inner">

@@ -6,10 +6,19 @@ import {
 import {
   getApiUrl
 } from "./util";
+import type { Match } from "../types";
 
 const ALL_DIVISIONS = "(All)";
 
-function MatchHistory(props) {
+type MatchHistoryProps = {
+  matchList: Match[];
+  divisionList: string[];
+  refreshFunction: () => void;
+  isAdmin: boolean;
+  discordIdentity: string;
+}
+
+function MatchHistory(props: MatchHistoryProps) {
   const [selectedDivision, setSelectedDivision] = useState(ALL_DIVISIONS);
   const [filteredMatches, setFilteredMatches] = useState(props.matchList);
 
@@ -17,25 +26,24 @@ function MatchHistory(props) {
     setFilteredMatches(filterMatches(selectedDivision, props.matchList));
   }, [props.matchList])
 
-  const filterMatches = (div, matches) => {
+  const filterMatches = (div: string, matches: Match[]) => {
     return div === ALL_DIVISIONS
       ? matches
       : matches.filter(match => match.division === div);
   }
 
-  const selectDivision = div => {
+  const selectDivision = (div: string) => {
     setSelectedDivision(div);
-    console.log(filterMatches(div, props.matchList));
     setFilteredMatches(filterMatches(div, props.matchList));
   }
 
-  const getMatchDivision = match => {
+  const getMatchDivision = (match: Match): string => {
     return match.division.match(/^[1-9]/)
       ? `D${match.division}`
       : match.division;
   }
 
-  const getMatchText = match => {
+  const getMatchText = (match: Match): string => {
     return `${match.winner} ${match.winner_home ? "(H)" : "(A)"} def. ${
       match.loser
     } ${match.winner_home ? "(A)" : "(H)"}, ${match.winner_games}-${
@@ -43,9 +51,9 @@ function MatchHistory(props) {
     }`;
   }
 
-  const makeDeleteRequest = matchData => {
+  const makeDeleteRequest = (matchData: Match) => {
     var request = new XMLHttpRequest();
-    request.open("DELETE", getApiUrl("api/match-data", true));
+    request.open("DELETE", getApiUrl("api/match-data"));
     request.setRequestHeader("Content-type", "application/json");
 
     // Set callback for response
@@ -57,14 +65,14 @@ function MatchHistory(props) {
       } else {
         alert("Failed to delete match. Reason:\n\n" + response.errorMessage);
       }
-    }.bind(this);
+    }
 
     // Send request with the id of the match to delete
     const requestBody = matchData;
     request.send(JSON.stringify(requestBody));
   }
 
-  const deleteMatchClicked = matchData => {
+  const deleteMatchClicked = (matchData: Match) => {
     const confirmMessage = `Are you sure you want to delete this match between ${matchData.winner} and ${matchData.loser}?`;
     var result = confirm(confirmMessage);
     if (result) {
@@ -72,26 +80,25 @@ function MatchHistory(props) {
     }
   }
 
-  const isMatchDeletable = match => {
+  const isMatchDeletable = (match: Match): boolean => {
     return (
       props.isAdmin ||
       props.discordIdentity.split("#")[0] === match.restreamer
     );
   }
 
-  const ondivisionChanged = event => {
-    console.log(event);
-    selectDivision(event.target.value);
-  }
-
   return (
     <div className="Match-history">
       <div className="Match-history-title">
         <span>Match History</span>
-        <select className="Division-select" value={selectedDivision} onChange={ondivisionChanged}>
+        <select 
+          className="Division-select" 
+          value={selectedDivision} 
+          onChange={e => selectDivision(e.target.value)}
+        >
           <option>{ALL_DIVISIONS}</option>
           {props.divisionList.map(divisionName => {
-            return <option>{divisionName}</option>;
+            return <option key={divisionName}>{divisionName}</option>;
           })}
         </select>
       </div>

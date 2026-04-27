@@ -1,20 +1,27 @@
 import "./PlayerAdvancedStats.css";
 import React from "react";
 import { USE_PLAYOFFS_FOR_HYBRID_DIVISIONS } from "../../server/util";
+import type { DivisionWithChances, PlayerStandingsWithChances } from "../../types";
 
-function PlayerAdvancedStats(props) {
+type PlayerAdvancedStatsProps = {
+  playerData: PlayerStandingsWithChances;
+  renderPercentageFunc: (percentChance: number) => string;
+  division: DivisionWithChances;
+}
+
+function PlayerAdvancedStats(props: PlayerAdvancedStatsProps) {
   const shouldShowUnchangedRow =
     !USE_PLAYOFFS_FOR_HYBRID_DIVISIONS ||
-    (props.division.numPlayoffPromo == 0 &&
-      props.division.numPlayoffRelegate == 0);
+    (props.division.settings.numPlayoffPromo == 0 &&
+      props.division.settings.numPlayoffRelegate == 0);
 
   return (
     <div className="Player-advanced-stats">
       <h4>Advanced Stats</h4>
-      {props.division.numWinner === 0 && (
+      {props.division.settings.numWinner === 0 && (
         <div className="Stats-winner">
           Division Win Chance:{" "}
-          {props.renderPercentageFunc(props.playerData.divisionWinChance)}
+          {props.renderPercentageFunc(props.playerData.chances.divisionWin)}
         </div>
       )}
       {/* {props.division.numPrizeMoney && (
@@ -24,39 +31,39 @@ function PlayerAdvancedStats(props) {
         </div>
       )} */}
       Placement Odds:
-      <table>
-        {props.division.numAutoPromo + props.division.numWinner > 0 && (
+      <table><tbody>
+        {props.division.settings.numAutoPromo + props.division.settings.numWinner > 0 && (
           <tr
             className={
-              props.division.numWinner > 0
+              props.division.settings.numWinner > 0
                 ? "Stats-winner"
                 : "Stats-auto-promo"
             }
           >
             <td>
-              {props.division.numWinner > 0
+              {props.division.settings.numWinner > 0
                 ? "Win Division"
                 : "Promotion"}
             </td>
             <td>
-              {props.renderPercentageFunc(props.playerData.autoPromoChance)}
+              {props.renderPercentageFunc(props.playerData.chances.autoPromo)}
             </td>
           </tr>
         )}
 
-        {props.division.numPrizeMoney > 0 && (
+        {props.division.settings.numPrizeMoney > 0 && (
           <tr className={"Stats-prize-money"}>
             <td>Make Playoffs</td>
             <td>
               {props.renderPercentageFunc(
-                props.playerData.prizeMoneyChance -
-                  props.playerData.autoPromoChance
+                props.playerData.chances.prizeMoney -
+                  props.playerData.chances.autoPromo
               )}
             </td>
           </tr>
         )}
 
-        {props.division.numPlayoffPromo > 0 && (
+        {props.division.settings.numPlayoffPromo > 0 && (
           <tr className="Stats-playoff-promo">
             <td>
               {USE_PLAYOFFS_FOR_HYBRID_DIVISIONS
@@ -64,7 +71,7 @@ function PlayerAdvancedStats(props) {
                 : "Promotion Playoff"}
             </td>
             <td>
-              {props.renderPercentageFunc(props.playerData.playoffPromoChance)}
+              {props.renderPercentageFunc(props.playerData.chances.playoffPromo)}
             </td>
           </tr>
         )}
@@ -75,18 +82,18 @@ function PlayerAdvancedStats(props) {
             <td>
               {props.renderPercentageFunc(
                 100 -
-                  (props.division.numPrizeMoney > 0
-                    ? props.playerData.prizeMoneyChance
-                    : props.playerData.autoPromoChance +
-                      props.playerData.playoffPromoChance) -
-                  props.playerData.autoRelegationChance -
-                  props.playerData.playoffRelegationChance
+                  (props.division.settings.numPrizeMoney > 0
+                    ? props.playerData.chances.prizeMoney
+                    : props.playerData.chances.autoPromo +
+                      props.playerData.chances.playoffPromo) -
+                  props.playerData.chances.autoRelegation -
+                  props.playerData.chances.playoffRelegation
               )}
             </td>
           </tr>
         )}
 
-        {props.division.numPlayoffRelegate > 0 && (
+        {props.division.settings.numPlayoffRelegate > 0 && (
           <tr className="Stats-playoff-relegation">
             <td>
               {USE_PLAYOFFS_FOR_HYBRID_DIVISIONS
@@ -95,23 +102,23 @@ function PlayerAdvancedStats(props) {
             </td>
             <td>
               {props.renderPercentageFunc(
-                props.playerData.playoffRelegationChance
+                props.playerData.chances.playoffRelegation
               )}
             </td>
           </tr>
         )}
 
-        {props.division.numAutoRelegate > 0 && (
+        {props.division.settings.numAutoRelegate > 0 && (
           <tr className="Stats-auto-relegation">
             <td>Relegation</td>
             <td>
               {props.renderPercentageFunc(
-                props.playerData.autoRelegationChance
+                props.playerData.chances.autoRelegation
               )}
             </td>
           </tr>
         )}
-      </table>
+      </tbody></table>
     </div>
   );
 }
