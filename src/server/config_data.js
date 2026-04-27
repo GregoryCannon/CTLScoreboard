@@ -626,7 +626,7 @@ const divisionData = [
   {
     divisionName: "Gold 77",
     competition: "tnp",
-    completed: false,
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
@@ -1079,7 +1079,7 @@ const divisionData = [
     divisionName: "Bronze 93",
     competition: "tnp",
     completed: false,
-    oneMatchPerPair: false,
+    oneMatchPerPair: true,
     maxPointsPerMatch: 8,
     numWinner: 0,
     numAutoPromo: 1,
