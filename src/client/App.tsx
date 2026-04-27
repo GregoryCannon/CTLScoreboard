@@ -28,6 +28,7 @@ import {
 } from "./util.ts";
 
 import "./App.css";
+import { AboutPage } from "./AboutPage.tsx";
 
 type DiscordInfo = {
   discordIdentity: string;
@@ -240,6 +241,10 @@ function App() {
             <Link className="Nav-button" to="/results">
               Results
             </Link>
+
+            <Link className="Nav-button" to="/about">
+              About
+            </Link>
           </div>
         </div>
 
@@ -275,6 +280,14 @@ function App() {
               />
             }
           />
+
+          <Route
+            path="/about"
+            element={
+              <AboutPage />
+            }
+          />
+
         </Routes>
 
         <div className="Attribution-text">
