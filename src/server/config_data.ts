@@ -354,7 +354,7 @@ const divisionData: DivisionSettings[] = [
   {
     divisionName: "Roentgenium 4",
     competition: "tnp",
-    completed: false,
+    completed: true,
     bestOf: 7,
     oneMatchPerPair: true,
     maxPointsPerMatch: 10,
