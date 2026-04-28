@@ -1195,7 +1195,7 @@ const divisionData: DivisionSettings[] = [
     competition: "tnp",
     completed: false,
     bestOf: 5,
-    oneMatchPerPair: true,
+    oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 0,
     numAutoPromo: 1,
