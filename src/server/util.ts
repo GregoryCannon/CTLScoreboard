@@ -658,7 +658,7 @@ function getPlayerData(
       return player;
     }
   }
-  throw new Error("Unable to find player " + playerName + "in list:\n" + list);
+  throw new Error("Unable to find player " + playerName + "in list: \n" + list.map(s => s.name));
 }
 
 /**

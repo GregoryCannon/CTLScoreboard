@@ -59,8 +59,15 @@ function simulateOneIteration(
     const randWinIndex = Math.floor(Math.random() * 2);
     const winnerName = [homePlayerName, awayPlayerName][randWinIndex];
     const loserName = [homePlayerName, awayPlayerName][1 - randWinIndex];
-    winner = getPlayerData(divisionStandings, winnerName);
-    loser = getPlayerData(divisionStandings, loserName);
+
+    try {
+      winner = getPlayerData(divisionStandings, winnerName);
+      loser = getPlayerData(divisionStandings, loserName);
+    } catch(e) {
+      console.log(`(simulate.ts) Unable to get player data for match ${winnerName} vs ${loserName}`);
+      console.error(e);
+      continue;
+    }
     loserGames = Math.floor(Math.random() * gamesToWin);
 
     // Update the four key source of truth properties (W,L,GF,GA) for each match

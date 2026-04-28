@@ -57,8 +57,17 @@ function computeRawStandings(
       if (match.division !== division.settings.divisionName) {
         continue;
       }
-      const winner = getPlayerData(divisionStandings, match.winner);
-      const loser = getPlayerData(divisionStandings, match.loser);
+
+      let winner, loser;
+      try {
+        winner = getPlayerData(divisionStandings, match.winner);
+        loser = getPlayerData(divisionStandings, match.loser);
+      } catch(e) {
+        console.log(`(compute.ts) Unable to get player data for match ${match.winner} vs ${match.loser}`);
+        console.error(e);
+        continue;
+      }
+
       winner["wins"] += 1;
       winner["gf"] += match.winner_games;
       winner["ga"] += match.loser_games;
