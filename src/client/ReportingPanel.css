@@ -29,6 +29,17 @@
   font-size: 16px;
 }
 
+.Match-reporting-center-subpanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  font-size: 16px;
+}
+
+#switcheroo-button {
+  margin-top: 12px;
+}
+
 select {
   font-size: 16px;
   text-align: center;

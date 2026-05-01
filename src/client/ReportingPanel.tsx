@@ -97,6 +97,13 @@ function ReportingPanel(props: ReportingPanelProps) {
     return isDivBo7 ? 4 : 3;
   };
 
+  const switcheroo = () => {
+    const newWinner = loserName;
+    const newLoser = winnerName;
+    setWinnerName(newWinner);
+    setLoserName(newLoser);
+  };
+
   // Check the form and return either 'valid' or the error to be displayed
   const validateFormData = () => {
     // Missing info
@@ -265,7 +272,14 @@ function ReportingPanel(props: ReportingPanelProps) {
                 }
               </div>
 
-              <div className="Defeated-text">defeated</div>
+              <div className="Match-reporting-center-subpanel">
+                <div className="Defeated-text">defeated</div>
+                <div className="switcheroo">
+                  <button onClick={switcheroo} id="switcheroo-button">⇄</button>
+                </div>
+              </div>
+
+
 
               {/* Loser panel */}
 
