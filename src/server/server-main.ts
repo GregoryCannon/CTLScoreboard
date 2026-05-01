@@ -316,7 +316,7 @@ app.post("/api/match-data", async function(req, res) {
       errorMessage: "Division data not found. Please contact the moderators of the competition."
     };
     logResponse("Report match", responseBody);
-    res.send(responseBody);
+    res.status(400).send(responseBody);
     return;
   }
   const isDivBo7 = !(divData.bestOf === undefined) && divData.bestOf === 7;
@@ -326,7 +326,7 @@ app.post("/api/match-data", async function(req, res) {
       errorMessage: "The winner should have won 4 games."
     };
     logResponse("Report match", responseBody);
-    res.send(responseBody);
+    res.status(400).send(responseBody);
     return;
   }
   if (!isDivBo7 && newMatch.winner_games !== 3) {
@@ -335,7 +335,7 @@ app.post("/api/match-data", async function(req, res) {
       errorMessage: "The winner should have won 3 games."
     };
     logResponse("Report match", responseBody);
-    res.send(responseBody);
+    res.status(400).send(responseBody);
     return;
   }
 
@@ -361,7 +361,7 @@ app.post("/api/match-data", async function(req, res) {
       )
     };
     logResponse("Report match", responseBody);
-    res.send(responseBody);
+    res.status(400).send(responseBody);
     // function checkPreviousMatchHasSameTime(matches, winner, loser, time) {
   } else if (
     checkPreviousMatchHasSameTime(
@@ -377,7 +377,7 @@ app.post("/api/match-data", async function(req, res) {
         "Please make sure matches between the same two players have different match times."
     };
     logResponse("Report match", responseBody);
-    res.send(responseBody);
+    res.status(400).send(responseBody);
   } else {
     // Continue with the post
     const newMatchData = { ...newMatch, valid: true, corrupted: false };
@@ -404,7 +404,7 @@ app.post("/api/match-data", async function(req, res) {
         errorMessage: err
       };
       logResponse("Report match", responseBody);
-      res.send(responseBody);
+      res.status(400).send(responseBody);
     }
   }
 });
@@ -419,7 +419,7 @@ app.delete("/api/match-data/purge", function(req, res) {
         "The server didn't receive any data on which division to purge"
     };
     logResponse("Purge division", responseBody);
-    res.send(responseBody);
+    res.status(400).send(responseBody);
   }
 
   const divisionName = req.body.divisionName;
@@ -436,7 +436,7 @@ app.delete("/api/match-data/purge", function(req, res) {
           errorMessage: err
         };
         logResponse("Purge division", responseBody);
-        res.send(responseBody);
+        res.status(400).send(responseBody);
       } else {
         // Otherwise, return success
         invalidateCacheForDivision(divisionName);
@@ -463,7 +463,7 @@ app.delete("/api/match-data", async function(req, res) {
         "The server didn't receive any data on which match to delete"
     };
     logResponse("Delete match", responseBody);
-    res.send(responseBody);
+    res.status(400).send(responseBody);
   }
 
   const idOnlyBody = { _id: matchToDelete._id };
@@ -482,7 +482,7 @@ app.delete("/api/match-data", async function(req, res) {
       errorMessage: err
     };
     logResponse("Delete match", responseBody);
-    res.send(responseBody);
+    res.status(400).send(responseBody);
    }
 });
 
@@ -506,7 +506,7 @@ app.post("/api/penalty", function(req, res) {
           errorMessage: err
         };
         logResponse("Report penalty", responseBody);
-        res.send(responseBody);
+        res.status(400).send(responseBody);
       } else {
         // If DB operation succeeded, invalidate the cache and send success
         invalidateCacheForDivision(playerDivision);

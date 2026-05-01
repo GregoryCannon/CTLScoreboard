@@ -1,4 +1,4 @@
-import React, { Component, useRef, useState } from "react";
+import React, { Component, useEffect, useRef, useState } from "react";
 import "./ReportingPanel.css";
 import moment from "moment";
 import { divisionData } from "../server/config_data.ts";
@@ -9,6 +9,7 @@ type ReportingPanelProps = {
   divisionData: DivisionWithChances[];
   refreshFunction: () => void;
   isRestreamer: boolean;
+  isAdmin: boolean;
   discordIdentity: string;
 }
 
@@ -25,19 +26,20 @@ function ReportingPanel(props: ReportingPanelProps) {
   const [winnerHome, setWinnerHome] = useState(true);
   const [vodUrl, setVodUrl] = useState("");
   const [matchDate, setMatchDate] = useState(moment.utc().toISOString().slice(0,16));
-  const [reportDate, setReportDate] = useState(moment());
+  const [restreamer, setRestreamer] = useState(props.discordIdentity.split("#")[0]);
 
   const [animationStart, setAnimationStart] = useState(moment());
 
-  // const divisionInput = useRef<HTMLInputElement>(null);
-  // const winnerNameInput = useRef<HTMLInputElement>(null);
-  // const loserNameInput = useRef<HTMLInputElement>(null);
-  // const loserGamesInput = useRef<HTMLInputElement>(null);
-  // const winnerGamesInput = useRef<HTMLInputElement>(null);
-  // const vodUrlInput = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (restreamer === "") {
+      setRestreamer(props.discordIdentity.split("#")[0]);
+    }
+  }, [props.discordIdentity]);
+
+
   const datePickerInput = useRef<HTMLInputElement>(null);
 
-  const restreamer = props.discordIdentity.split("#")[0];
 
   const changeReportingDivision = (div: string) => {
     setReportingDivision(div);
@@ -113,8 +115,6 @@ function ReportingPanel(props: ReportingPanelProps) {
   };
 
   const submitMatch = async () => {
-    setReportDate(moment());
-
     const validationResult = validateFormData();
     if (validationResult !== "valid") {
       setStatusText(validationResult);
@@ -145,7 +145,9 @@ function ReportingPanel(props: ReportingPanelProps) {
       });
 
       if (!rawResponse.ok) {
-        const errorMessage = `Match submission request failed with status ${rawResponse.status}`;
+        const responseError = await rawResponse.json();
+        const errorMessage = responseError.errorMessage || 
+          `Match submission request failed with status ${rawResponse.status}`;
         throw new Error(errorMessage);
       }
 
@@ -312,6 +314,19 @@ function ReportingPanel(props: ReportingPanelProps) {
                     />
                   </td>
                 </tr>
+                {props.isAdmin ? (
+                <tr>
+                  <td>Restreamer</td>
+                  <td>
+                    <input
+                      type="text"
+                      // placeholder="Twitch URL"
+                      value={restreamer}
+                      onChange={e => setRestreamer(e.target.value)}
+                    />
+                  </td>
+                </tr>
+                ) : '' }
               </tbody>
             </table>
           </div>

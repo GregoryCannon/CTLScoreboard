@@ -82,6 +82,7 @@ function StandingsPage(props: StandingsPageProps) {
           <ReportingPanel
             refreshFunction={props.refreshFunction}
             isRestreamer={props.isRestreamer}
+            isAdmin={props.isAdmin}
             discordIdentity={props.discordIdentity}
             divisionData={props.divisionData}
           />
