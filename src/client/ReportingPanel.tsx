@@ -61,17 +61,28 @@ function ReportingPanel(props: ReportingPanelProps) {
     }
   };
 
-  const getPlayerList = () => {
-    if (reportingDivision === "") {
-      return [];
+  const getDivision = (divName: string) => {
+    if (divName === "") {
+      return null;
     }
+
     const filteredDivisions = divisionData.filter(
       div => div.divisionName === reportingDivision
     );
     if (filteredDivisions.length !== 1) {
+      return null;
+    }
+
+    return filteredDivisions[0];
+
+  }
+
+  const getPlayerList = (divName: string) => {
+    const div = getDivision(divName);
+    if (div === null) {
       return [];
     }
-    return filteredDivisions[0].players;
+    return div.players;
   };
 
   const getGamesToWin = (div: string) => {
@@ -227,7 +238,7 @@ function ReportingPanel(props: ReportingPanelProps) {
                   <option value="" disabled>
                     (winner)
                   </option>
-                  {getPlayerList().map(playerName => {
+                  {getPlayerList(reportingDivision).map(playerName => {
                     return <option key={playerName}>{playerName}</option>;
                   })}
                 </select>
@@ -239,16 +250,19 @@ function ReportingPanel(props: ReportingPanelProps) {
                   onChange={e => setWinnerGameCount(parseInt(e.target.value))}
                   disabled
                 ></input>
-                <div>
-                  <label htmlFor="winner-home">Home</label>
-                  <input
-                    id="winner-home"
-                    type="radio"
-                    name="home-away"
-                    value={winnerHome ? "winner-home" : "loser-home"}
-                    onChange={e => setWinnerHome(e.target.value === "winner-home")}
-                  ></input>
-                </div>
+                {getDivision(reportingDivision)?.oneMatchPerPair ? '' :
+                  <div>
+                    <label htmlFor="winner-home">Home</label>
+                    <input
+                      id="winner-home"
+                      type="radio"
+                      name="home-away"
+                      value="winner-home"
+                      checked={winnerHome}
+                      onChange={() => setWinnerHome(true)}
+                    ></input>
+                  </div>
+                }
               </div>
 
               <div className="Defeated-text">defeated</div>
@@ -264,7 +278,7 @@ function ReportingPanel(props: ReportingPanelProps) {
                   <option value="" disabled>
                     (loser)
                   </option>
-                  {getPlayerList().map((playerName, i) => {
+                  {getPlayerList(reportingDivision).map((playerName, i) => {
                     return <option key={playerName}>{playerName}</option>;
                   })}
                 </select>
@@ -276,16 +290,19 @@ function ReportingPanel(props: ReportingPanelProps) {
                   onChange={e => setLoserGameCount(parseInt(e.target.value))}
                 ></input>
 
-                <div>
-                  <label htmlFor="loser-home">Home</label>
-                  <input
-                    id="loser-home"
-                    type="radio"
-                    name="home-away"
-                    value={winnerHome ? "winner-home" : "loser-home"}
-                    onChange={e => setWinnerHome(e.target.value === "winner-home")}
-                  ></input>
-                </div>
+                {getDivision(reportingDivision)?.oneMatchPerPair ? '' :
+                  <div>
+                    <label htmlFor="loser-home">Home</label>
+                    <input
+                      id="loser-home"
+                      type="radio"
+                      name="home-away"
+                      value="loser-home"
+                      checked={!winnerHome}
+                      onChange={() => setWinnerHome(false)}
+                    ></input>
+                  </div>
+                }
               </div>
             </div>
 
