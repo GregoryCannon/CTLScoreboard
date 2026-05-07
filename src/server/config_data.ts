@@ -1386,7 +1386,7 @@ const divisionData: DivisionSettings[] = [
   {
     divisionName: "Elm 20",
     competition: "tnp",
-    completed: false,
+    completed: true,
     oneMatchPerPair: false,
     bestOf: 5,
     maxPointsPerMatch: 8,
@@ -1401,6 +1401,26 @@ const divisionData: DivisionSettings[] = [
       "THEONLYCEDRIC",
       "ASLEEPIEALLIE",
       "GODATTETRIS",
+    ]
+  },
+  {
+    divisionName: "Elm 21",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    bestOf: 5,
+    maxPointsPerMatch: 8,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "DGORDON888",
+      "GUNENG24",
+      "THEONLYCEDRIC",
+      "KANON",
     ]
   },
 
