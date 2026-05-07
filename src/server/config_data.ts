@@ -1367,7 +1367,7 @@ const divisionData: DivisionSettings[] = [
     divisionName: "Elm 19",
     competition: "tnp",
     bestOf: 5,
-    completed: false,
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     numWinner: 1,
@@ -1386,7 +1386,7 @@ const divisionData: DivisionSettings[] = [
   {
     divisionName: "Elm 20",
     competition: "tnp",
-    completed: true,
+    completed: false,
     oneMatchPerPair: false,
     bestOf: 5,
     maxPointsPerMatch: 8,
