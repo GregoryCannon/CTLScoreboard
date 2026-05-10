@@ -1,0 +1,33 @@
+.App-header {
+  background-color: #222;
+  color: white;
+  padding-bottom: 5px;
+}
+
+.App-header h1 {
+  padding: 18px 0;
+  margin: 0;
+}
+
+.App-header a {
+  text-decoration: none;
+}
+
+.Header-nav {
+  display: flex;
+  flex-direction: row-reverse;
+  position: relative;
+}
+
+.Content-nav {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+}
+
+.Discord-status-text {
+  text-align: right;
+  font-size: 1.1vw;
+  margin: 5px 10px 5px 0;
+}

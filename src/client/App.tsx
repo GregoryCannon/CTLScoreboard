@@ -9,31 +9,28 @@ import moment from "moment";
 import html2canvas from "html2canvas";
 import Cookies from "js-cookie";
 
+import AppHeader from "./AppHeader.tsx";
 import ResultsPage from "./ResultsPage.tsx";
 import StandingsPage from "./StandingsPage.tsx";
-import logo from "./logo.svg";
+import { AboutPage } from "./AboutPage.tsx";
+
 import { 
   downloadCanvasAsPng,
   compareRaw,
   compareSimulated
 } from "../server/util.ts";
 import {
-  type DivisionWithChances,
-  type Match,
-  type SortBy
-} from "../types.ts";
-import {
   makeHttpRequest,
   getApiUrl
 } from "./util.ts";
 
-import "./App.css";
-import { AboutPage } from "./AboutPage.tsx";
+import {
+  type DivisionWithChances,
+  type Match,
+  type SortBy
+} from "../types.ts";
 
-type DiscordInfo = {
-  discordIdentity: string;
-  privilegeLevel: string
-}
+import "./App.css";
 
 function App() {
   const [isFetchingStandings, setIsFetchingStandings] = useState(false);
@@ -66,6 +63,11 @@ function App() {
       standings: d.standings.sort(comparisonFunction)
     })));
   }
+
+  function flipPenEdit(): void {
+    setIsEditingPenaltyPoints(!isEditingPenaltyPoints);
+  }
+
 
   function isAdmin() {
     return privilegeLevel == "Admin";
@@ -182,71 +184,16 @@ function App() {
           <div className="Loading-background" />
           <div className="Loading-spinner" />
         </div>
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <div className="Header-nav">
-            {/* Log in/out button */}
-            {discordIdentity ? (
-              <button className="Nav-button" onClick={logOutOfDiscord}>
-                Log out
-              </button>
-            ) : (
-              <a
-                className="Nav-button"
-                href={getApiUrl("discord-api/login")}
-              >
-                Log in with Discord
-              </a>
-            )}
 
-            {/* Save standings button (admin-only) */}
-            <button
-              style={{ visibility: isAdmin() ? "visible" : "hidden" }}
-              className="Nav-button"
-              onClick={saveImage}
-            >
-              Export standings to images
-            </button>
+        <AppHeader
+          discordIdentity={discordIdentity}
+          privilegeLevel={privilegeLevel}
+          logOutOfDiscord={logOutOfDiscord}
+          saveImage={saveImage}
+          isEditingPenaltyPoints={isEditingPenaltyPoints}
+          flipPenEdit={flipPenEdit}
+        />
 
-            {/* Assign penalty points button (admin-only) */}
-            <button
-              style={{ visibility: isAdmin() ? "visible" : "hidden" }}
-              className="Nav-button"
-              onClick={() => setIsEditingPenaltyPoints(!isEditingPenaltyPoints)}
-            >
-              {isEditingPenaltyPoints
-                ? "Finish editing penalty points"
-                : "Edit penalty points"}
-            </button>
-          </div>
-
-          <div className="Discord-status-text">
-            {discordIdentity ? (
-              <div>
-                Logged in as {discordIdentity} (
-                {privilegeLevel})
-              </div>
-            ) : (
-              ""
-            )}
-          </div>
-
-          <h1>CTL Standings</h1>
-
-          <div className="Content-nav">
-            <Link className="Nav-button" to="/standings">
-              Standings
-            </Link>
-
-            <Link className="Nav-button" to="/results">
-              Results
-            </Link>
-
-            <Link className="Nav-button" to="/about">
-              About
-            </Link>
-          </div>
-        </div>
 
         <Routes>
           <Route 
