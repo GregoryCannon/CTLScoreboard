@@ -3,8 +3,8 @@
  */
 import type { Division, 
   PlayerStandings,
-  Match
 } from "../types.ts";
+import type { Match } from "../types/Match.ts";
 import { divisionData } from "./config_data.ts";
 import {
   getPlayerData,

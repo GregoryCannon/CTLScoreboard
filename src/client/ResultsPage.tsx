@@ -6,7 +6,8 @@ import {
   getCompetitionEloName
 } from "../server/util.ts";
 import { competitions } from "../server/config_data.ts";
-import type { DivisionWithChances, Match } from "../types.ts";
+import type { DivisionWithChances } from "../types.ts";
+import type { Match } from "../types/Match.ts";
 
 type ResultsPageProps = {
   matchList: Match[];

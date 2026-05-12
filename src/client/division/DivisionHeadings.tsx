@@ -1,5 +1,6 @@
 import React from "react";
-import type { SortBy, DivisionWithChances, PlayerRow, Match } from "../../types";
+import type { SortBy, DivisionWithChances, PlayerRow } from "../../types";
+import type { Match } from "../../types/Match";
 
 type DivisionHeadingsProps = {
   key: string;

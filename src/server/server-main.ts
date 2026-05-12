@@ -1,17 +1,22 @@
 import "dotenv/config";
 
-import type {
-  DivisionWithChances,
-  Match,
-  Penalty
-} from "../types.ts";
-
 import express from "express";
 import bodyParser from "body-parser";
 import path from "path";
 import { fileURLToPath } from "url";
 import monk from "monk";
 import cors from "cors";
+
+import type {
+  DivisionWithChances,
+  Penalty
+} from "../types.ts";
+import { 
+  type Match,
+  checkMatchAlreadyExists,
+  checkPreviousMatchHasSameTime,
+  getMatchAlreadyExistsErrorMessage
+} from "../types/Match.ts";
 
 import { computeRawStandings } from "./compute.ts";
 import { runSimulation } from "./simulate.ts";
@@ -200,73 +205,6 @@ async function getPenaltyPointMap() {
   }
   return penaltyPointsMap;
 }
-
-function checkMatchAlreadyExists(
-  matches: Match[], 
-  division: string, 
-  winner: string, 
-  loser: string, 
-  winnerHome: boolean
-) {
-  for (let i = 0; i < matches.length; i++) {
-    const match = matches[i];
-    if (
-      match.division === division &&
-      match.winner === winner &&
-      match.loser === loser &&
-      match.winner_home === winnerHome
-    ) {
-      return true;
-    }
-    if (
-      match.division === division &&
-      match.winner === loser &&
-      match.loser === winner &&
-      match.winner_home !== winnerHome
-    ) {
-      return true;
-    }
-  }
-  return false;
-}
-
-function checkPreviousMatchHasSameTime(
-  matches: Match[], 
-  winner: string, 
-  loser: string, 
-  time: number
-){
-  for (let i = 0; i < matches.length; i++) {
-    const match = matches[i];
-    console.log(match);
-    if (match.match_date !== time) continue;
-    if (match.winner === winner && match.loser === loser) return true;
-    if (match.loser === winner && match.winner === loser) return true;
-  }
-  return false;
-}
-
-function getMatchAlreadyExistsErrorMessage(
-  winner: string, 
-  loser: string, 
-  winnerHome: boolean
-) {
-  return (
-    "A match has already been reported between " +
-    winner +
-    " and " +
-    loser +
-    " (with " +
-    (winnerHome ? winner : loser) +
-    " at home)"
-  );
-}
-
-/* 
-  ----------
-  Main request handlers
-  ----------
-  */
 
 /** GET standings request */
 app.get("/api/standings", async function(req, res) {

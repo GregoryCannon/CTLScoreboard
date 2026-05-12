@@ -20,7 +20,8 @@ import {
   PLAYOFF_RELEGATE_COLOR_STR,
   PRIZE_COLOR_STR
 } from "./division-color-util";
-import type { DivisionWithChances, Match, PlayerRow, SortBy } from "../../types";
+import type { DivisionWithChances, PlayerRow, SortBy } from "../../types";
+import type { Match } from "../../types/Match";
 
 type DivisionTableProps = {
   key: string;

@@ -26,9 +26,11 @@ import {
 
 import {
   type DivisionWithChances,
-  type Match,
   type SortBy
 } from "../types.ts";
+import { 
+  type Match 
+} from "../types/Match.ts";
 
 import "./App.css";
 

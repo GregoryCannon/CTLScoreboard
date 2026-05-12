@@ -1,12 +1,12 @@
 import moment from "moment";
 import type {
   Division,
-  Match,
   PlayerScheduleMatchInfo,
   PlayerStandings,
   MatchSchedule,
   PlayerStandingsWithChances
 } from "../types.ts"
+import type { Match } from "../types/Match.ts";
 import { divisionData, competitions } from "./config_data.ts";
 
 const USE_PLAYOFFS_FOR_HYBRID_DIVISIONS = false;

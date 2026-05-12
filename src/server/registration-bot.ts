@@ -1,7 +1,7 @@
 import type {
   CompetitionSettings,
-  Match
 } from "../types.ts";
+import type { Match } from "../types/Match.ts";
 import { TextChannel, Client, Intents, User, Message, DiscordAPIError } from "discord.js";
 import { log } from "./logger.ts";
 import { getMatchDateFormatted } from "./util.ts";

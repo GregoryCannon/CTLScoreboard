@@ -9,7 +9,8 @@ import {
 } from './division-color-util';
 import "./DivisionRow.css";
 import { USE_PLAYOFFS_FOR_HYBRID_DIVISIONS } from "../../server/util";
-import type { DivisionWithChances, Match, PlayerRow, PlayerScheduleMatchInfo, PlayerStandingsWithChances, SortBy } from "../../types";
+import type { DivisionWithChances, PlayerRow, PlayerScheduleMatchInfo, PlayerStandingsWithChances, SortBy } from "../../types";
+import type { Match } from "../../types/Match";
 
 // this is probably way too many attributes
 type DivisionRowProps = {

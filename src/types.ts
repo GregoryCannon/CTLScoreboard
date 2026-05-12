@@ -61,19 +61,6 @@ type PromoChances = {
   prizeMoney: number;
 };
 
-type Match = {
-  division: string;
-  winner: string;
-  loser: string;
-  winner_games: number;
-  loser_games: number;
-  winner_home: boolean;
-  match_date: number;
-  report_date: number;
-  vod_url: string;
-  restreamer: string;
-};
-
 type MatchSchedule = { homePlayerName: string, awayPlayerName: string }[]
 
 type ScheduleMatchInfo = {
@@ -114,7 +101,6 @@ export type {
   PlayerStandings,
   PlayerStandingsWithChances,
   PromoChances,
-  Match,
   StandingsSpot,
   GuaranteeType,
   SimType,

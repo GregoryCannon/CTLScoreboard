@@ -6,7 +6,7 @@ import {
 import {
   getApiUrl
 } from "./util";
-import type { Match } from "../types";
+import type { Match } from "../types/Match";
 
 const ALL_DIVISIONS = "(All)";
 

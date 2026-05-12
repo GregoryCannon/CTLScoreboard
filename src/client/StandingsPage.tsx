@@ -4,7 +4,8 @@ import MatchHistory from "./MatchHistory.tsx";
 import DivisionTable from "./division/DivisionTable.tsx";
 import "./StandingsPage.css";
 import { competitions } from "../server/config_data.ts"; // bad
-import type { DivisionWithChances, Match, PlayerRow, SortBy } from "../types.ts";
+import type { DivisionWithChances, PlayerRow, SortBy } from "../types.ts";
+import type { Match } from "../types/Match.ts";
 
 type StandingsPageProps = {
   divisionData: DivisionWithChances[];
