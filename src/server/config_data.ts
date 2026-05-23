@@ -740,6 +740,28 @@ const divisionData: DivisionSettings[] = [
       "GBTOAST",
     ]
   },
+  {
+    divisionName: "Gold 79",
+    competition: "tnp",
+    completed: false,
+    bestOf: 5,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "FELIX",
+      "MAEDHROS",
+      "MARTS",
+      "EMOKID",
+      "ARBARO",
+      "PETERTHECHAIR",
+    ]
+  },
   
   // END GOLD
   // BEGIN SILVER
@@ -1273,6 +1295,27 @@ const divisionData: DivisionSettings[] = [
       "CALEBSGAMESANDSTUFF",
       "ANDALUSIAN_RG",
       "BLOODLUSTFAIL",
+    ]
+  },
+  {
+    divisionName: "Bronze 96",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    bestOf: 5,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+    "DAZZELOIDS",
+    "KRYPTON",
+    "DARK_SHADOW",
+    "ASLEEPIEALLIE",
+    "MANSION",
     ]
   },
   
@@ -1824,7 +1867,7 @@ const competitions: CompetitionSettings[] = [
     buttonName: "DAS League",
     eloName: "DAS League",
     registrationBotInfo: {
-      registrationOpen: false,
+      registrationOpen: true,
       divisions: ["1", "2", "3", "4", "5", "6"],
       signupMessage: "React to signup below :)\n",
       registrationClosedMessage: "Signups are now closed."
