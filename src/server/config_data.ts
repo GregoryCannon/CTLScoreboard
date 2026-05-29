@@ -1017,6 +1017,29 @@ const divisionData: DivisionSettings[] = [
       "FURIO",
     ]
   },
+  {
+    divisionName: "Silver 86",
+    competition: "tnp",
+    completed: false,
+    bestOf: 5,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "ALICE",
+      "BACON382",
+      "RANCE",
+      "ARISZ",
+      "SUPERSTEP",
+      "GERT",
+      "MIRRORRIKER",
+    ]
+  },
 
   // END SILVER
   // BEGIN BRONZE
