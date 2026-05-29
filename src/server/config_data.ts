@@ -1032,7 +1032,6 @@ const divisionData: DivisionSettings[] = [
     numAutoRelegate: 0,
     players: [
       "ALICE",
-      "BACON382",
       "RANCE",
       "ARISZ",
       "SUPERSTEP",
