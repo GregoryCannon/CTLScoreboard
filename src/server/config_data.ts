@@ -414,6 +414,39 @@ const divisionData: DivisionSettings[] = [
       "AFMIRROR",
     ]
   },
+  {
+    divisionName: "Roentgenium 6",
+    competition: "tnp",
+    completed: false,
+    bestOf: 7,
+    oneMatchPerPair: true,
+    maxPointsPerMatch: 10,
+    numWinner: 1,
+    numPrizeMoney: 0,
+    numAutoPromo: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "SNOWYTETRIS",
+      "KANNPLAYSTETRIS",
+      "RAVIOLI",
+      "SPECTRIC",
+      "TIRED_RL",
+      "MATHWIZ",
+      "M149",
+      "MOODEUCE",
+      "WHITE MONSTER",
+      "EZHEDEH",
+      "20DAN03",
+      "JEDIEVAN",
+      "ZENON",
+      "ICEBLADE73",
+      "VASCO",
+      "DOBRYCZLEK",
+      "MORELANDO",
+    ]
+  },
 
   // BEGIN GOLD
 
@@ -760,6 +793,48 @@ const divisionData: DivisionSettings[] = [
       "EMOKID",
       "ARBARO",
       "PETERTHECHAIR",
+    ]
+  },
+  {
+    divisionName: "Gold 80",
+    competition: "tnp",
+    completed: false,
+    bestOf: 5,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "MANTASKUTOP",
+      "KOMI",
+      "ADAMIRISH",
+      "TYOW",
+      "KASANETETO123",
+    ]
+  },
+  {
+    divisionName: "Gold 81",
+    competition: "tnp",
+    completed: false,
+    bestOf: 5,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "MFRERCK",
+      "LUKIDELUXE",
+      "RAVALO",
+      "HECATE",
+      "321MRHAATZ",
     ]
   },
   
