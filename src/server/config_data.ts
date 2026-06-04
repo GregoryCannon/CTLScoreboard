@@ -445,6 +445,7 @@ const divisionData: DivisionSettings[] = [
       "VASCO",
       "DOBRYCZLEK",
       "MORELANDO",
+      "LILIANA",
     ]
   },
 
