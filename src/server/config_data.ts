@@ -1416,6 +1416,28 @@ const divisionData: DivisionSettings[] = [
     "MANSION",
     ]
   },
+  {
+    divisionName: "Bronze 97",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    bestOf: 5,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "BLOODLUSTFAIL",
+      "CONDENSED_ARIN",
+      "WILSON",
+      "YAMA",
+      "ROGUEPOTATO",
+      "LEYMBDA",
+    ]
+  },
   
   // END BRONZE
   // BEGIN BEGINNER
