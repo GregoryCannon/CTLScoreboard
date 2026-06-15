@@ -2034,7 +2034,7 @@ const divisionData: DivisionSettings[] = [
     numWinner: 0,
     numPrizeMoney: 0,
     numAutoPromo: 2,
-    numPlayoffPromo: 2,
+    numPlayoffPromo: 1,
     numPlayoffRelegate: 1,
     numAutoRelegate: 1,
     players: [
@@ -2059,8 +2059,8 @@ const divisionData: DivisionSettings[] = [
     numWinner: 0,
     numPrizeMoney: 0,
     numAutoPromo: 2,
-    numPlayoffPromo: 2,
-    numPlayoffRelegate: 1,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 2,
     numAutoRelegate: 1,
     players: [
       "ELPAILTEM",
