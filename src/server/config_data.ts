@@ -838,6 +838,30 @@ const divisionData: DivisionSettings[] = [
       "321MRHAATZ",
     ]
   },
+  {
+    divisionName: "Gold 82",
+    competition: "tnp",
+    completed: false,
+    bestOf: 7,
+    oneMatchPerPair: true,
+    maxPointsPerMatch: 10,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "R36S",
+      "MIKAWAY",
+      "MARTS",
+      "THATKIDKIM",
+      "KASANETETO123",
+      "SEBIE",
+      "MFRERCK",
+      "BACON3821MRHAATZ",
+    ]
+  },
   
   // END GOLD
   // BEGIN SILVER
@@ -1113,6 +1137,29 @@ const divisionData: DivisionSettings[] = [
       "SUPERSTEP",
       "GERT",
       "MIRRORRIKER",
+    ]
+  },
+  {
+    divisionName: "Silver 87",
+    competition: "tnp",
+    completed: false,
+    bestOf: 7,
+    oneMatchPerPair: true,
+    maxPointsPerMatch: 10,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "IDUDHJF",
+      "DARK_SHADOW",
+      "MANSION",
+      "ERILIONESS",
+      "CALEBSGAMESANDSTUFF",
+      "ALICE",
+      "VINZCHILLIN",
     ]
   },
 
@@ -1584,6 +1631,46 @@ const divisionData: DivisionSettings[] = [
       "GUNENG24",
       "THEONLYCEDRIC",
       "KANON",
+    ]
+  },
+  {
+    divisionName: "Elm 22",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    bestOf: 5,
+    maxPointsPerMatch: 8,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "JADESTONE",
+      "MINOFLOOF",
+      "CEDRIC",
+      "SNOW",
+    ]
+  },
+  {
+    divisionName: "Birch 4",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    bestOf: 5,
+    maxPointsPerMatch: 8,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "FISH",
+      "LOWREZ",
+      "KALNON",
+      "STNB",
     ]
   },
 
