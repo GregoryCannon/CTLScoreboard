@@ -859,7 +859,7 @@ const divisionData: DivisionSettings[] = [
       "KASANETETO123",
       "SEBIE",
       "MFRERCK",
-      "BACON3821MRHAATZ",
+      "BACON382",
     ]
   },
   
