@@ -1649,7 +1649,7 @@ const divisionData: DivisionSettings[] = [
     players: [
       "JADESTONE",
       "MINOFLOOF",
-      "CEDRIC",
+      "THEONLYCEDRIC",
       "SNOW",
     ]
   },
