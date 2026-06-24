@@ -2369,6 +2369,7 @@ const restreamerRole: string[] = [
   "firedox#0",
   "frenchiestfrie#0",
   "frodododo#0",
+  "fynny0#0",
   "gabrielbondon#0",
   "gbtoast#0",
   "gekki.jb#0",
