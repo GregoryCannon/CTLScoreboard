@@ -177,6 +177,7 @@ const divisionData: DivisionSettings[] = [
       'Ravioli',
       'Roma',
       'ThreesTwos',
+	  'BillyMac',
     ]
   },
   {
@@ -202,6 +203,7 @@ const divisionData: DivisionSettings[] = [
       'MaxxF386',
       'Mantaskutop',
       'Talvot',
+	  'BBot',
     ]
   },
 
