@@ -204,30 +204,6 @@ const divisionData: DivisionSettings[] = [
       'Talvot',
     ]
   },
-  {
-    divisionName: "5C",
-    competition: "ctl",
-    completed: false,
-    oneMatchPerPair: true,
-    maxPointsPerMatch: 7,
-    bestOf: 5,
-    numWinner: 0,
-    numPrizeMoney: 0,
-    numAutoPromo: 1,
-    numPlayoffPromo: 1,
-    numPlayoffRelegate: 0,
-    numAutoRelegate: 1,
-    players: [
-      'Barry',
-      'Hecate',
-      'Iceblade73',
-      'Letcreate',
-      'M149',
-      'Mathwiz',
-      'StolenShortSword',
-      'Talvot',
-    ]
-  },
 
   // END CTL
 
