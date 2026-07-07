@@ -2323,7 +2323,7 @@ const restreamerRole: string[] = [
   "kat_#0",
   "kingsman36#0",
   "klovelace10#0",
-  "kominestris#0",
+  "komitaps#0",
   "kyira#0",
   "ladyvader13_43642#0",
   "lanheg#0",
