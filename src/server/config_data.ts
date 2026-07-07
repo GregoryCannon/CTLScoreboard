@@ -60,7 +60,7 @@ const divisionData: DivisionSettings[] = [
     maxPointsPerMatch: 7,
     numWinner: 0,
     numPrizeMoney: 0,
-    numAutoPromo: 2,
+    numAutoPromo: 1,
     numPlayoffPromo: 2,
     numPlayoffRelegate: 2,
     numAutoRelegate: 0,
