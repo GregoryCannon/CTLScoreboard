@@ -70,7 +70,6 @@ const divisionData: DivisionSettings[] = [
       'Robin',
       'Crabrangoon',
       'Alejo',
-      'Night',
       'Jati',
       'DuzyK',
     ]
