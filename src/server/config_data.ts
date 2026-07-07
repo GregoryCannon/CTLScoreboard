@@ -2246,7 +2246,6 @@ const restreamerRole: string[] = [
   "billymac_#0",
   "birbia#0",
   "birbwizard#0",
-  "birbia#0",
   "blank0432#0",
   "blargmeister#0",
   "blingus#0",
