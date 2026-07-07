@@ -22,7 +22,7 @@ const divisionData: DivisionSettings[] = [
       'Falkite',
       'Evesy',
       'Gwafey',
-      'Night/ID Kirby',
+      'ID Kirby',
       'iBall',
       'Sodium',
     ]
@@ -70,7 +70,7 @@ const divisionData: DivisionSettings[] = [
       'Robin',
       'Crabrangoon',
       'Alejo',
-      'Night/ID Kirby',
+      'Night',
       'Jati',
       'DuzyK',
     ]
