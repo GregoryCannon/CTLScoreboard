@@ -785,6 +785,28 @@ const divisionData: DivisionSettings[] = [
       "BACON382",
     ]
   },
+  {
+    divisionName: "Gold 83",
+    competition: "tnp",
+    completed: false,
+    bestOf: 5,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "FALSEMINUTE",
+      "MAEDHROS",
+      "ADAMIRISH",
+      "FELIX",
+      "GERT",
+      "KOMI",
+    ]
+  },
   
   // END GOLD
   // BEGIN SILVER
@@ -1406,6 +1428,28 @@ const divisionData: DivisionSettings[] = [
       "YAMA",
       "ROGUEPOTATO",
       "LEYMBDA",
+    ]
+  },
+  {
+    divisionName: "Bronze 98",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    bestOf: 5,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "CROIOS",
+      "ASLEEPIEALLIE",
+      "DAZZELOIDS",
+      "WILSON",
+      "CONDENSED_ARIN",
+      "JAWNNJAWN",
     ]
   },
   
