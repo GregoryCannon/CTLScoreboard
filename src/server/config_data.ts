@@ -340,7 +340,7 @@ const divisionData: DivisionSettings[] = [
   {
     divisionName: "Roentgenium 6",
     competition: "tnp",
-    completed: false,
+    completed: true,
     bestOf: 7,
     oneMatchPerPair: true,
     maxPointsPerMatch: 10,
@@ -722,7 +722,7 @@ const divisionData: DivisionSettings[] = [
   {
     divisionName: "Gold 80",
     competition: "tnp",
-    completed: false,
+    completed: true,
     bestOf: 5,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
@@ -743,7 +743,7 @@ const divisionData: DivisionSettings[] = [
   {
     divisionName: "Gold 81",
     competition: "tnp",
-    completed: false,
+    completed: true,
     bestOf: 5,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
@@ -1065,7 +1065,7 @@ const divisionData: DivisionSettings[] = [
   {
     divisionName: "Silver 86",
     competition: "tnp",
-    completed: false,
+    completed: true,
     bestOf: 5,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
