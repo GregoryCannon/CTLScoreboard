@@ -1081,7 +1081,6 @@ const divisionData: DivisionSettings[] = [
       "ARISZ",
       "SUPERSTEP",
       "GERT",
-      "MIRRORRIKER",
     ]
   },
   {
