@@ -2317,6 +2317,7 @@ const restreamerRole: string[] = [
   "dannymage#0",
   "danvvv#0",
   "dazzeloids#0",
+  "deckedout#0",
   "deepshock#0",
   "deewee7#0",
   "dekk_cl#0",
