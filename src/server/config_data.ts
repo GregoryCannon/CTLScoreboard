@@ -2255,6 +2255,7 @@ const adminRole: string[] = [
   "richardwolfvi#0",
   "lilhana4#0",
   "snowytetris#0",
+  "mathwiz100#0",
 ];
 
 const restreamerRole: string[] = [
