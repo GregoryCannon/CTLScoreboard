@@ -2463,6 +2463,7 @@ const restreamerRole: string[] = [
   "tweak_beacon#0",
   "tyow#0",
   "unor1ginalname#0",
+  "upchessbyabzolute13#0",
   "vachetbeasty#0",
   "vinzchillin#0",
   "visor702#0",
