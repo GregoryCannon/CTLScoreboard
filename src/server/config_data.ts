@@ -2023,7 +2023,6 @@ const divisionData: DivisionSettings[] = [
       "MICETRO",
       "IANKEITH",
       "SALTEDSOFA",
-      "NIGHT",
       "TEGAMECH",
       "TUGI",
     ]
