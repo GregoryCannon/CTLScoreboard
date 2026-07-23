@@ -1656,7 +1656,7 @@ const divisionData: DivisionSettings[] = [
     numAutoPromo: 0,
     numPlayoffPromo: 0,
     numPlayoffRelegate: 1,
-    numAutoRelegate: 1,
+    numAutoRelegate: 0,
     players: [
       "ALEX T",
       "VANCE",
