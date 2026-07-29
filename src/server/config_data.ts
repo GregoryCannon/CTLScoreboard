@@ -1620,6 +1620,27 @@ const divisionData: DivisionSettings[] = [
     ]
   },
   {
+    divisionName: "Elm 23",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    bestOf: 5,
+    maxPointsPerMatch: 8,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "7THACE",
+      "VANGERISU-DESU",
+      "FISH",
+      "RIGEL",
+      "STNB",
+    ]
+  },
+  {
     divisionName: "Birch 4",
     competition: "tnp",
     completed: false,
@@ -1637,6 +1658,27 @@ const divisionData: DivisionSettings[] = [
       "LOWREZ",
       "KALNON",
       "STNB",
+    ]
+  },
+  {
+    divisionName: "Birch 5",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    bestOf: 5,
+    maxPointsPerMatch: 8,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "NULLKID",
+      "ADS20000",
+      "MCD573",
+      "LEAF",
+      "MR_JACK2121",
     ]
   },
 
