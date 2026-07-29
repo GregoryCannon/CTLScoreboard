@@ -1410,7 +1410,7 @@ const divisionData: DivisionSettings[] = [
   {
     divisionName: "Bronze 97",
     competition: "tnp",
-    completed: false,
+    completed: true,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
     bestOf: 5,
@@ -1602,7 +1602,7 @@ const divisionData: DivisionSettings[] = [
   {
     divisionName: "Elm 22",
     competition: "tnp",
-    completed: false,
+    completed: true,
     oneMatchPerPair: false,
     bestOf: 5,
     maxPointsPerMatch: 8,
@@ -1643,7 +1643,7 @@ const divisionData: DivisionSettings[] = [
   {
     divisionName: "Birch 4",
     competition: "tnp",
-    completed: false,
+    completed: true,
     oneMatchPerPair: false,
     bestOf: 5,
     maxPointsPerMatch: 8,
