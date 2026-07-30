@@ -2430,6 +2430,7 @@ const restreamerRole: string[] = [
   "mathmaster13#0",
   "mathwiz100#0",
   "maxwu27#0",
+  "maxxf386#0",
   "mcfloatlover#0",
   "me_in_2023#0",
   "mel0nsoda#0",
