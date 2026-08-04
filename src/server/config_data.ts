@@ -810,7 +810,7 @@ const divisionData: DivisionSettings[] = [
 	{
     divisionName: "Gold 84",
     competition: "tnp",
-    completed: true,
+    completed: false,
     bestOf: 5,
     oneMatchPerPair: false,
     maxPointsPerMatch: 8,
