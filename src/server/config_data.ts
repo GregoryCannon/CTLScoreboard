@@ -807,7 +807,7 @@ const divisionData: DivisionSettings[] = [
       "KOMI",
     ]
   },
-	{
+  {
     divisionName: "Gold 84",
     competition: "tnp",
     completed: false,
