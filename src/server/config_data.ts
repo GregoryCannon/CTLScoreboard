@@ -1127,7 +1127,48 @@ const divisionData: DivisionSettings[] = [
       "VINZCHILLIN",
     ]
   },
-
+  {
+    divisionName: "Silver 88",
+    competition: "tnp",
+    completed: false,
+    bestOf: 5,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "GENIALERGANDALF",
+      "KALIMOTXO",
+      "ERILIONESS",
+      "MANSION",
+      "IDUDHJF",
+    ]
+  },
+  {
+    divisionName: "Silver 89",
+    competition: "tnp",
+    completed: false,
+    bestOf: 5,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "TIZAGO",
+      "CALEBSGAMESADNSTUFF",
+      "ASHLEYYYY",
+      "ARISZ",
+      "FURIO",
+    ]
+  },
   // END SILVER
   // BEGIN BRONZE
 
@@ -1469,6 +1510,50 @@ const divisionData: DivisionSettings[] = [
       "DAZZELOIDS",
       "WILSON",
       "CONDENSED_ARIN",
+      "JAWNNJAWN",
+    ]
+  },
+  {
+    divisionName: "Bronze 99",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    bestOf: 5,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "JUST_JOE",
+      "ELI65536",
+      "HONTNOG",
+      "WCOXDANNYJ",
+      "TEMPHUIBIS",
+      "MERSENNE",
+    ]
+  },
+  {
+    divisionName: "Bronze 100",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    bestOf: 5,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "LEYMBDA",
+      "WILSON",
+      "UPCHESS",
+      "JADESTONE",
+      "DGORDON888",
       "JAWNNJAWN",
     ]
   },
