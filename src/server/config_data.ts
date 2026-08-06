@@ -67,7 +67,6 @@ const divisionData: DivisionSettings[] = [
     players: [
       'Birbia',
       'Somalian',
-      'Robin',
       'Crabrangoon',
       'Alejo',
       'Jati',
