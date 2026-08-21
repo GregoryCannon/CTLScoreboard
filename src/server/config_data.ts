@@ -2239,7 +2239,6 @@ const divisionData: DivisionSettings[] = [
     players: [
       "WEISBROT",
       "GIOVANNI",
-      "JAY",
       "TIRED",
       "ROMAN",
       "GUERRERO",
