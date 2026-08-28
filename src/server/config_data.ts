@@ -1529,7 +1529,7 @@ const divisionData: DivisionSettings[] = [
       "JUST_JOE",
       "ELI65536",
       "HONTNOG",
-      "WCOXDANNYJ",
+      "COXDANNYJ",
       "TEMPHUIBIS",
       "MERSENNE",
     ]
@@ -1740,7 +1740,6 @@ const divisionData: DivisionSettings[] = [
     players: [
       "7THACE",
       "VANGERISU-DESU",
-      "FISH",
       "RIGEL",
       "STNB",
     ]
@@ -2491,6 +2490,7 @@ const restreamerRole: string[] = [
   "hai5772#0",
   "heist#0",
   "homejacob#0",
+  "hontnog#0",
   "huffulufugus#0",
   "hunn14#0",
   "hunter.four.z.#0",
