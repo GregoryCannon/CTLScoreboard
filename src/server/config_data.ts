@@ -1529,7 +1529,7 @@ const divisionData: DivisionSettings[] = [
       "JUST_JOE",
       "ELI65536",
       "HONTNOG",
-      "COXDANNYJ",
+      "WCOXDANNYJ",
       "TEMPHUIBIS",
       "MERSENNE",
     ]
