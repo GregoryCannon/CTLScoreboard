@@ -1785,7 +1785,46 @@ const divisionData: DivisionSettings[] = [
       "MR_JACK2121",
     ]
   },
-
+  {
+    divisionName: "Elm 24",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    bestOf: 5,
+    maxPointsPerMatch: 8,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "LEWIS",
+      "SNOW",
+      "ADS20000",
+      "RICCARDO_DL",
+    ]
+  },
+  {
+    divisionName: "Oak 16",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    bestOf: 5,
+    maxPointsPerMatch: 8,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "52KANON",
+      "TIFFYFLOWR",
+      "DUCKRENTAL",
+      "RIGEL",
+    ]
+  },
 
   // END TNP
   // BEGIN DAS LEAGUE
