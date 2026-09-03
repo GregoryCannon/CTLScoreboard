@@ -827,6 +827,52 @@ const divisionData: DivisionSettings[] = [
       "OMENVOIR",
     ]
   },
+  {
+    divisionName: "Gold 85",
+    competition: "tnp",
+    completed: false,
+    bestOf: 7,
+    oneMatchPerPair: true,
+    maxPointsPerMatch: 10,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "KASANETETO123",
+      "BOPPY",
+      "MIKAWAY",
+      "CASUALLY",
+      "TIZAGO",
+      "GERT",
+      "BILLYMAC",
+    ]
+  },
+  {
+    divisionName: "Gold 86",
+    competition: "tnp",
+    completed: false,
+    bestOf: 7,
+    oneMatchPerPair: true,
+    maxPointsPerMatch: 10,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "SEBIE",
+      "ARISZ",
+      "ALICE",
+      "PUMMYZOI",
+      "ELLIOT",
+      "MARTS",
+      "MAEDHROS",
+    ]
+  },
   
   // END GOLD
   // BEGIN SILVER
