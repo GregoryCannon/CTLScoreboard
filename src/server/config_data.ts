@@ -2525,6 +2525,7 @@ const restreamerRole: string[] = [
   "brantheepic#0",
   "bunnyboing#0",
   "burritodad#0",
+  "casually#0",
   "catsugiri#0",
   "catvinity#0",
   "cchristm#0",
