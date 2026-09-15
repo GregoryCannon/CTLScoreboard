@@ -873,6 +873,28 @@ const divisionData: DivisionSettings[] = [
       "MAEDHROS",
     ]
   },
+  {
+    divisionName: "Gold 87",
+    competition: "tnp",
+    completed: false,
+    bestOf: 5,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "ERILIONESS",
+      "J3T851",
+      "MRAK",
+      "KASANETETO123",
+      "BOPPY",
+      "ARISZ",
+    ]
+  },
   
   // END GOLD
   // BEGIN SILVER
@@ -1212,6 +1234,28 @@ const divisionData: DivisionSettings[] = [
       "ASHLEYYYY",
       "ARISZ",
       "FURIO",
+    ]
+  },
+  {
+    divisionName: "Silver 90",
+    competition: "tnp",
+    completed: false,
+    bestOf: 5,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "NEINGEBEN",
+      "CALEBSGAMESADNSTUFF",
+      "KALIMOTXO",
+	  "GENIALERGANDALF",
+      "DANNYMAGE",
+      "LEYMBDA",
     ]
   },
   // END SILVER
