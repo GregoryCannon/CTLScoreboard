@@ -1646,6 +1646,29 @@ const divisionData: DivisionSettings[] = [
       "JAWNNJAWN",
     ]
   },
+  {
+    divisionName: "Bronze 101",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: true,
+    maxPointsPerMatch: 10,
+    bestOf: 7,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "7THACE",
+      "TEMPHUIBIS",
+      "UPCHESS",
+      "JAWNNJAWN",
+      "SNOW",
+      "RAIKOURDR",
+	  "WILSON",
+    ]
+  },
   
   // END BRONZE
   // BEGIN BEGINNER
