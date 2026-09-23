@@ -2746,6 +2746,7 @@ const restreamerRole: string[] = [
   "talvot21#0",
   "teainrain#0",
   "temphuibis#0",
+  "tetohatestetris#0",
   "tetrisroma#0",
   "theianwright#0",
   "thecresp#0",
