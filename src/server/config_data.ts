@@ -1938,6 +1938,28 @@ const divisionData: DivisionSettings[] = [
       "RIGEL",
     ]
   },
+  {
+    divisionName: "Elm 25",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    bestOf: 5,
+    maxPointsPerMatch: 8,
+    numWinner: 1,
+    numAutoPromo: 0,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 0,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "RIGEL",
+      "52KANON",
+      "ADS20000",
+	  "STNB",
+	  "TIFFYFLOWR",
+      "RICCARDO_DL",
+    ]
+  },
 
   // END TNP
   // BEGIN DAS LEAGUE
