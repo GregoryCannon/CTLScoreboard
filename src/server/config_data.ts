@@ -24,7 +24,7 @@ const divisionData: DivisionSettings[] = [
       'Birbia',
       'TetrisTime',
       'Lokenze',
-      'Kpoke/Cryticalapis',
+      'Cryticalapis',
     ]
   },
   {
@@ -74,7 +74,7 @@ const divisionData: DivisionSettings[] = [
       'Smoljordan',
       'Falkite',
       'Phloxae',
-      'Kpoke/Cryticalapis',
+      'Kpoke',
     ]
   },
   
