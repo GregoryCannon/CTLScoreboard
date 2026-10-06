@@ -896,6 +896,27 @@ const divisionData: DivisionSettings[] = [
       "ARISZ",
     ]
   },
+  {
+    divisionName: "Gold 88",
+    competition: "tnp",
+    completed: false,
+    bestOf: 5,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "HUNN14",
+      "GERT",
+      "MARTS",
+      "KASANETETO123",
+      "ALICE",
+    ]
+  },
   
   // END GOLD
   // BEGIN SILVER
