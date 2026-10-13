@@ -1687,7 +1687,6 @@ const divisionData: DivisionSettings[] = [
       "UPCHESS",
       "JAWNNJAWN",
       "SNOW",
-      "RAIKOURDR",
 	  "WILSON",
     ]
   },
