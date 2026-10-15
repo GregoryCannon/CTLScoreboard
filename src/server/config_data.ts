@@ -2593,7 +2593,7 @@ const divisionData: DivisionSettings[] = [
     numPlayoffRelegate: 1,
     numAutoRelegate: 1,
     players: [
-      "Zachattack",
+      "Zachgameswell",
       "Tired",
       "Josh Tolles",
       "MarkTris",
