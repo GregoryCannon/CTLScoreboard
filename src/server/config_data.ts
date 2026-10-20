@@ -1280,6 +1280,28 @@ const divisionData: DivisionSettings[] = [
       "LEYMBDA",
     ]
   },
+  {
+    divisionName: "Silver 91",
+    competition: "tnp",
+    completed: false,
+    bestOf: 5,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "HONTNOG",
+      "ASHLEYYYY",
+      "VEE_WHY",
+	  "VINZCHILLIN",
+      "KRYPTON",
+      "SUPERSTEP",
+    ]
+  },
   // END SILVER
   // BEGIN BRONZE
 
@@ -1688,6 +1710,30 @@ const divisionData: DivisionSettings[] = [
       "JAWNNJAWN",
       "SNOW",
 	  "WILSON",
+    ]
+  },
+  {
+    divisionName: "Bronze 102",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: true,
+    maxPointsPerMatch: 10,
+    bestOf: 7,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "MIKOMALO",
+      "SPACEANAND",
+      "TREEPRIEST",
+      "SWIFTSLAYER",
+      "ELI65536",
+	  "THEONLYCEDRIC",
+      "GOSCIU",
+	  "SROT",
     ]
   },
   
