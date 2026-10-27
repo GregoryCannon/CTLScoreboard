@@ -2872,6 +2872,7 @@ const restreamerRole: string[] = [
   "angrytrashyperson#0",
   "aptiz712#0",
   "arinsealess#0",
+  "ariszanimaciok#0",
   "asherfullback#0",
   "asleepyallie#0",
   "augmenttheampwave#0",
