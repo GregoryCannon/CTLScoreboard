@@ -3043,6 +3043,7 @@ const restreamerRole: string[] = [
   "superninja9999#0",
   "swagj13#0",
   "swidr#0",
+  "tacit_turn#0",	
   "tacomom18#0",
   "talvot21#0",
   "teainrain#0",
