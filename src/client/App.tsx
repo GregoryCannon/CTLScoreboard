@@ -13,6 +13,7 @@ import AppHeader from "./AppHeader.tsx";
 import ResultsPage from "./ResultsPage.tsx";
 import StandingsPage from "./StandingsPage.tsx";
 import { AboutPage } from "./AboutPage.tsx";
+import { AdminPage } from "./AdminPage.tsx";
 
 import { 
   downloadCanvasAsPng,
@@ -234,6 +235,13 @@ function App() {
             path="/about"
             element={
               <AboutPage />
+            }
+          />
+
+          <Route
+            path="/admin"
+            element={
+              <AdminPage />
             }
           />
 

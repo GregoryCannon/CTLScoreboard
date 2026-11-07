@@ -82,6 +82,12 @@ function AppHeader(props: AppHeaderProps) {
        <Link className="Nav-button" to="/about">
          About
        </Link>
+
+       {props.privilegeLevel === "Admin" ?
+         <Link className="Nav-button" to="/admin">
+           Admin
+         </Link>
+       : <></> }
      </div>
     </div>
   )
