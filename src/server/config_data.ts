@@ -172,7 +172,6 @@ const divisionData: DivisionSettings[] = [
       'Falseminute',
       'Decklad',
       'Kingsman',
-      'Iceblade73',
       'Liliana',
       'Vasco',
       'M149',
