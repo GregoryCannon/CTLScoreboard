@@ -1323,6 +1323,28 @@ const divisionData: DivisionSettings[] = [
       "SUPERSTEP",
     ]
   },
+  {
+    divisionName: "Silver 92",
+    competition: "tnp",
+    completed: false,
+    bestOf: 5,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 1,
+    numAutoRelegate: 0,
+    players: [
+      "WILLIASHATNER",
+      "CALEBSGAMESANDSTUFF",
+      "NEINGEBEN",
+	  "JACQUES",
+      "CONDENSED_ARIN",
+      "LEYMBDA",
+    ]
+  },
   // END SILVER
   // BEGIN BRONZE
 
@@ -1755,6 +1777,27 @@ const divisionData: DivisionSettings[] = [
 	  "THEONLYCEDRIC",
       "GOSCIU",
 	  "SROT",
+    ]
+  },
+  {
+    divisionName: "Bronze 103",
+    competition: "tnp",
+    completed: false,
+    oneMatchPerPair: false,
+    maxPointsPerMatch: 8,
+    bestOf: 5,
+    numWinner: 0,
+    numAutoPromo: 1,
+    numPrizeMoney: 0,
+    numPlayoffPromo: 1,
+    numPlayoffRelegate: 0,
+    numAutoRelegate: 0,
+    players: [
+      "JHONNYTHEFISHERMAN",
+      "WILSON",
+      "UPCHESS",
+      "MEES",
+      "VANGERISU-DESU",
     ]
   },
   
